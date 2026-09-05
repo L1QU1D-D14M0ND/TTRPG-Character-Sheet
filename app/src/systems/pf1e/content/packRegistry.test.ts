@@ -46,15 +46,31 @@ describe('pack registry id namespace', () => {
     expect(lookupItem('weapon.longsword')?.pounds).not.toBe(999)
   })
 
-  it('treats re-registering the same rows as a no-op', () => {
-    const rows: ItemCatalogRow[] = [
-      { id: 'item.registry-idempotency-probe', name: 'Probe', kind: 'item', pounds: 1 },
+  it('treats a re-imported pack as a no-op even with fresh objects', () => {
+    // A module re-evaluated under HMR rebuilds rows into new objects that are
+    // equal but not identical, so an identity check would wrongly throw here.
+    const build = (): ItemCatalogRow[] => [
+      {
+        id: 'item.registry-idempotency-probe',
+        name: 'Probe',
+        kind: 'item',
+        pounds: 1,
+      },
     ]
 
-    registerItemPack(rows)
-    // A duplicate import (HMR, re-imported module) must not throw or double-add.
-    expect(() => registerItemPack(rows)).not.toThrow()
+    registerItemPack(build())
+    expect(() => registerItemPack(build())).not.toThrow()
     expect(lookupItem('item.registry-idempotency-probe')?.name).toBe('Probe')
+  })
+
+  it('still rejects a same-id row whose contents actually disagree', () => {
+    const id = 'item.registry-conflict-probe'
+    registerItemPack([{ id, name: 'Probe', kind: 'item', pounds: 1 }])
+    // Same id, different weight: a genuine conflict, not a re-import.
+    expect(() =>
+      registerItemPack([{ id, name: 'Probe', kind: 'item', pounds: 99 }]),
+    ).toThrow(new RegExp(id.replace('.', '\\.')))
+    expect(lookupItem(id)?.pounds).toBe(1)
   })
 
   it('keeps every shipped pack id unique within its entity kind', () => {

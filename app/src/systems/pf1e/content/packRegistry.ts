@@ -78,9 +78,23 @@ export interface EvolutionCatalogRow {
  * shadowed by CRB rather than reported. Ids are now unique per kind and a
  * collision throws at registration, which surfaces in CI via the pack tests.
  */
+function deepEqual(a: unknown, b: unknown): boolean {
+  if (a === b) return true
+  if (typeof a !== 'object' || typeof b !== 'object' || !a || !b) return false
+  if (Array.isArray(a) !== Array.isArray(b)) return false
+  const left = a as Record<string, unknown>
+  const right = b as Record<string, unknown>
+  const keys = Object.keys(left)
+  if (keys.length !== Object.keys(right).length) return false
+  return keys.every(
+    (key) =>
+      Object.prototype.hasOwnProperty.call(right, key) &&
+      deepEqual(left[key], right[key]),
+  )
+}
+
 class PackIndex<T extends { id: string }> {
   readonly #byId = new Map<string, T>()
-  readonly #registered = new Set<readonly T[]>()
 
   readonly #kind: string
 
@@ -88,19 +102,22 @@ class PackIndex<T extends { id: string }> {
     this.#kind = kind
   }
 
-  /** Re-registering the same rows (HMR, repeated import) is a no-op. */
+  /**
+   * Re-registering an identical row is a no-op, because a module re-evaluated
+   * under HMR rebuilds its rows into *new* objects that are equal but not
+   * identical. Only a row that genuinely disagrees with the registered one is
+   * a real collision worth failing on.
+   */
   register(rows: readonly T[]): void {
-    if (this.#registered.has(rows)) return
     for (const row of rows) {
       const existing = this.#byId.get(row.id)
-      if (existing && existing !== row) {
+      if (existing && !deepEqual(existing, row)) {
         throw new Error(
           `Duplicate ${this.#kind} id '${row.id}' across PF1e content packs. ` +
             'Ids are one shared namespace per kind; rename the new row.',
         )
       }
     }
-    this.#registered.add(rows)
     for (const row of rows) this.#byId.set(row.id, row)
   }
 
