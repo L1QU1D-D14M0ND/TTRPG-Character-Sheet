@@ -137,14 +137,15 @@ export function InventoryPanel({
                     value={item.item.id ?? ''}
                     onChange={(e) => {
                       const id = e.target.value || null
-                      update((c) => {
-                        const items = [...c.inventory.items]
-                        items[index] = applyCrbItem(items[index], id)
-                        return {
-                          ...c,
-                          inventory: { ...c.inventory, items },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        inventory: {
+                          ...c.inventory,
+                          items: updateAt(c.inventory.items, index, (row) =>
+                            applyCrbItem(row, id),
+                          ),
+                        },
+                      }))
                     }}
                   >
                     <option value="">{t('pf1e.common.custom')}</option>

@@ -366,11 +366,15 @@ export function IdentityPanel({
                 <input
                   value={speed.kind}
                   onChange={(e) =>
-                    update((c) => {
-                      const speeds = [...c.vitals.speeds]
-                      speeds[index] = { ...speeds[index], kind: e.target.value }
-                      return { ...c, vitals: { ...c.vitals, speeds } }
-                    })
+                    update((c) => ({
+                      ...c,
+                      vitals: {
+                        ...c.vitals,
+                        speeds: patchAt(c.vitals.speeds, index, {
+                          kind: e.target.value,
+                        }),
+                      },
+                    }))
                   }
                 />
               </td>
@@ -380,14 +384,15 @@ export function IdentityPanel({
                   min={0}
                   value={speed.feet}
                   onChange={(e) =>
-                    update((c) => {
-                      const speeds = [...c.vitals.speeds]
-                      speeds[index] = {
-                        ...speeds[index],
-                        feet: Math.max(0, Number(e.target.value) || 0),
-                      }
-                      return { ...c, vitals: { ...c.vitals, speeds } }
-                    })
+                    update((c) => ({
+                      ...c,
+                      vitals: {
+                        ...c.vitals,
+                        speeds: patchAt(c.vitals.speeds, index, {
+                          feet: Math.max(0, Number(e.target.value) || 0),
+                        }),
+                      },
+                    }))
                   }
                 />
               </td>
@@ -457,11 +462,15 @@ export function IdentityPanel({
                   <input
                     value={sense.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const senses = [...c.vitals.senses]
-                        senses[index] = { ...senses[index], name: e.target.value }
-                        return { ...c, vitals: { ...c.vitals, senses } }
-                      })
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          senses: patchAt(c.vitals.senses, index, {
+                            name: e.target.value,
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -471,17 +480,18 @@ export function IdentityPanel({
                     min={0}
                     value={sense.rangeFeet ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const senses = [...c.vitals.senses]
-                        senses[index] = {
-                          ...senses[index],
-                          rangeFeet:
-                            e.target.value === ''
-                              ? null
-                              : Math.max(0, Number(e.target.value) || 0),
-                        }
-                        return { ...c, vitals: { ...c.vitals, senses } }
-                      })
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          senses: patchAt(c.vitals.senses, index, {
+                            rangeFeet:
+                              e.target.value === ''
+                                ? null
+                                : Math.max(0, Number(e.target.value) || 0),
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -550,14 +560,15 @@ export function IdentityPanel({
                   <input
                     value={bonus.label}
                     onChange={(e) =>
-                      update((c) => {
-                        const bonuses = [...c.vitals.bonuses]
-                        bonuses[index] = {
-                          ...bonuses[index],
-                          label: e.target.value,
-                        }
-                        return { ...c, vitals: { ...c.vitals, bonuses } }
-                      })
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          bonuses: patchAt(c.vitals.bonuses, index, {
+                            label: e.target.value,
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -566,14 +577,15 @@ export function IdentityPanel({
                     type="number"
                     value={bonus.amount}
                     onChange={(e) =>
-                      update((c) => {
-                        const bonuses = [...c.vitals.bonuses]
-                        bonuses[index] = {
-                          ...bonuses[index],
-                          amount: Number(e.target.value) || 0,
-                        }
-                        return { ...c, vitals: { ...c.vitals, bonuses } }
-                      })
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          bonuses: patchAt(c.vitals.bonuses, index, {
+                            amount: Number(e.target.value) || 0,
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -582,14 +594,15 @@ export function IdentityPanel({
                     type="checkbox"
                     checked={Boolean(bonus.perLevel)}
                     onChange={(e) =>
-                      update((c) => {
-                        const bonuses = [...c.vitals.bonuses]
-                        bonuses[index] = {
-                          ...bonuses[index],
-                          perLevel: e.target.checked,
-                        }
-                        return { ...c, vitals: { ...c.vitals, bonuses } }
-                      })
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          bonuses: patchAt(c.vitals.bonuses, index, {
+                            perLevel: e.target.checked,
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>

@@ -340,11 +340,12 @@ export function CombatPanel({
                     <input
                       value={strike.name}
                       onChange={(e) =>
-                        update((c) => {
-                          const strikes = [...c.strikes]
-                          strikes[index] = { ...strikes[index], name: e.target.value }
-                          return { ...c, strikes }
-                        })
+                        update((c) => ({
+                          ...c,
+                          strikes: patchAt(c.strikes, index, {
+                            name: e.target.value,
+                          }),
+                        }))
                       }
                     />
                   </td>
