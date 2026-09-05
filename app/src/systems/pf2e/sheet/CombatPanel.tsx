@@ -392,13 +392,13 @@ export function CombatPanel({
                       onChange={(e) =>
                         update((c) => {
                           const attr = e.target.value as AttributeKey
-                          const strikes = [...c.strikes]
-                          strikes[index] = {
-                            ...strikes[index],
-                            attackAttribute: attr,
-                            damageAttribute: attr,
+                          return {
+                            ...c,
+                            strikes: patchAt(c.strikes, index, {
+                              attackAttribute: attr,
+                              damageAttribute: attr,
+                            }),
                           }
-                          return { ...c, strikes }
                         })
                       }
                     >
