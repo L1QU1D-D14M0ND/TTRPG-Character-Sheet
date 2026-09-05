@@ -1,13 +1,5 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-  type ReactNode,
-} from 'react'
-import en from '../locales/en.json'
-import es from '../locales/es.json'
+import en from '../../locales/en.json'
+import es from '../../locales/es.json'
 
 export type Locale = 'en' | 'es'
 
@@ -74,57 +66,10 @@ export function readStoredLocale(): Locale {
   return DEFAULT_LOCALE
 }
 
-function writeStoredLocale(locale: Locale): void {
+export function writeStoredLocale(locale: Locale): void {
   try {
     window.localStorage.setItem(LOCALE_STORAGE_KEY, locale)
   } catch {
     // Ignore quota / private mode.
   }
-}
-
-interface I18nContextValue {
-  locale: Locale
-  setLocale: (locale: Locale) => void
-  t: TranslateFn
-}
-
-const I18nContext = createContext<I18nContextValue | null>(null)
-
-export function I18nProvider({
-  children,
-  initialLocale,
-}: {
-  children: ReactNode
-  initialLocale?: Locale
-}) {
-  const [locale, setLocaleState] = useState<Locale>(
-    () => initialLocale ?? readStoredLocale(),
-  )
-  const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next)
-    writeStoredLocale(next)
-  }, [])
-  const t = useCallback<TranslateFn>(
-    (key, vars) => translate(CATALOGS[locale], key, vars),
-    [locale],
-  )
-  const value = useMemo(
-    () => ({ locale, setLocale, t }),
-    [locale, setLocale, t],
-  )
-  return (
-    <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
-  )
-}
-
-export function useI18n(): I18nContextValue {
-  const ctx = useContext(I18nContext)
-  if (!ctx) {
-    throw new Error('useI18n must be used inside I18nProvider')
-  }
-  return ctx
-}
-
-export function useT(): TranslateFn {
-  return useI18n().t
 }
