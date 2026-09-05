@@ -9,6 +9,7 @@ import { characterLevel, type DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
 import { SynthesistPanel } from './SynthesistPanel'
+import { patchAt, updateAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 const SIZES: Size[] = [
@@ -309,17 +310,16 @@ export function IdentityPanel({
                     aria-label={t('pf1e.identity.className')}
                     value={row.class.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const classes = [...c.classes]
-                        classes[index] = {
-                          ...classes[index],
+                      update((c) => ({
+                        ...c,
+                        classes: updateAt(c.classes, index, (row) => ({
+                          ...row,
                           class: {
-                            ...classes[index].class,
+                            ...row.class,
                             name: e.target.value,
                           },
-                        }
-                        return { ...c, classes }
-                      })
+                        })),
+                      }))
                     }
                   />
                   {row.class.id === 'class.summoner' ? (
@@ -357,18 +357,17 @@ export function IdentityPanel({
                         aria-label={t('pf1e.identity.archetypeName')}
                         value={row.archetype?.name ?? ''}
                         onChange={(e) =>
-                          update((c) => {
-                            const classes = [...c.classes]
-                            classes[index] = {
-                              ...classes[index],
+                          update((c) => ({
+                            ...c,
+                            classes: updateAt(c.classes, index, (row) => ({
+                              ...row,
                               archetype: {
-                                id: classes[index].archetype?.id ?? null,
+                                id: row.archetype?.id ?? null,
                                 name: e.target.value,
-                                source: classes[index].archetype?.source,
+                                source: row.archetype?.source,
                               },
-                            }
-                            return { ...c, classes }
-                          })
+                            })),
+                          }))
                         }
                       />
                     </>
@@ -381,14 +380,12 @@ export function IdentityPanel({
                     aria-label={t('pf1e.identity.levels')}
                     value={row.levels}
                     onChange={(e) =>
-                      update((c) => {
-                        const classes = [...c.classes]
-                        classes[index] = {
-                          ...classes[index],
+                      update((c) => ({
+                        ...c,
+                        classes: patchAt(c.classes, index, {
                           levels: Math.max(1, Number(e.target.value) || 1),
-                        }
-                        return { ...c, classes }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -399,14 +396,12 @@ export function IdentityPanel({
                     aria-label={t('pf1e.identity.hitDie')}
                     value={row.hitDie}
                     onChange={(e) =>
-                      update((c) => {
-                        const classes = [...c.classes]
-                        classes[index] = {
-                          ...classes[index],
+                      update((c) => ({
+                        ...c,
+                        classes: patchAt(c.classes, index, {
                           hitDie: Math.max(1, Number(e.target.value) || 8),
-                        }
-                        return { ...c, classes }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -415,15 +410,13 @@ export function IdentityPanel({
                     aria-label={t('pf1e.identity.bab')}
                     value={row.babProgression}
                     onChange={(e) =>
-                      update((c) => {
-                        const classes = [...c.classes]
-                        classes[index] = {
-                          ...classes[index],
+                      update((c) => ({
+                        ...c,
+                        classes: patchAt(c.classes, index, {
                           babProgression: e.target
                             .value as (typeof BAB)[number],
-                        }
-                        return { ...c, classes }
-                      })
+                        }),
+                      }))
                     }
                   >
                     {BAB.map((value) => (
@@ -439,17 +432,16 @@ export function IdentityPanel({
                       aria-label={t(`pf1e.identity.${save}`)}
                       value={row.saves[save]}
                       onChange={(e) =>
-                        update((c) => {
-                          const classes = [...c.classes]
-                          classes[index] = {
-                            ...classes[index],
+                        update((c) => ({
+                          ...c,
+                          classes: updateAt(c.classes, index, (row) => ({
+                            ...row,
                             saves: {
-                              ...classes[index].saves,
+                              ...row.saves,
                               [save]: e.target.value as 'good' | 'poor',
                             },
-                          }
-                          return { ...c, classes }
-                        })
+                          })),
+                        }))
                       }
                     >
                       {SAVE.map((value) => (
@@ -467,17 +459,16 @@ export function IdentityPanel({
                     aria-label={t('pf1e.identity.favoredHp')}
                     value={row.favored?.hp ?? 0}
                     onChange={(e) =>
-                      update((c) => {
-                        const classes = [...c.classes]
-                        classes[index] = {
-                          ...classes[index],
+                      update((c) => ({
+                        ...c,
+                        classes: updateAt(c.classes, index, (row) => ({
+                          ...row,
                           favored: {
                             hp: Math.max(0, Number(e.target.value) || 0),
-                            skillRanks: classes[index].favored?.skillRanks ?? 0,
+                            skillRanks: row.favored?.skillRanks ?? 0,
                           },
-                        }
-                        return { ...c, classes }
-                      })
+                        })),
+                      }))
                     }
                   />
                 </td>
@@ -488,20 +479,19 @@ export function IdentityPanel({
                     aria-label={t('pf1e.identity.favoredRanks')}
                     value={row.favored?.skillRanks ?? 0}
                     onChange={(e) =>
-                      update((c) => {
-                        const classes = [...c.classes]
-                        classes[index] = {
-                          ...classes[index],
+                      update((c) => ({
+                        ...c,
+                        classes: updateAt(c.classes, index, (row) => ({
+                          ...row,
                           favored: {
-                            hp: classes[index].favored?.hp ?? 0,
+                            hp: row.favored?.hp ?? 0,
                             skillRanks: Math.max(
                               0,
                               Number(e.target.value) || 0,
                             ),
                           },
-                        }
-                        return { ...c, classes }
-                      })
+                        })),
+                      }))
                     }
                   />
                 </td>

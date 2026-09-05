@@ -5,6 +5,7 @@ import {
   type CharacterDocument,
 } from '../character'
 import type { FeatEntry } from '../character/types'
+import { patchAt, updateAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 const FEAT_CATEGORIES: FeatEntry['category'][] = [
@@ -71,14 +72,13 @@ export function FeatsPanel({
                   <input
                     value={feat.feat.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = {
-                          ...feats[index],
-                          feat: { ...feats[index].feat, name: e.target.value },
-                        }
-                        return { ...c, feats }
-                      })
+                      update((c) => ({
+                        ...c,
+                        feats: updateAt(c.feats, index, (row) => ({
+                          ...row,
+                          feat: { ...row.feat, name: e.target.value },
+                        })),
+                      }))
                     }
                   />
                 </td>
@@ -86,14 +86,12 @@ export function FeatsPanel({
                   <select
                     value={feat.category}
                     onChange={(e) =>
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = {
-                          ...feats[index],
+                      update((c) => ({
+                        ...c,
+                        feats: patchAt(c.feats, index, {
                           category: e.target.value as FeatEntry['category'],
-                        }
-                        return { ...c, feats }
-                      })
+                        }),
+                      }))
                     }
                   >
                     {FEAT_CATEGORIES.map((cat) => (
@@ -109,14 +107,12 @@ export function FeatsPanel({
                     min={1}
                     value={feat.levelGained}
                     onChange={(e) =>
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = {
-                          ...feats[index],
+                      update((c) => ({
+                        ...c,
+                        feats: patchAt(c.feats, index, {
                           levelGained: Math.max(1, Number(e.target.value) || 1),
-                        }
-                        return { ...c, feats }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -124,14 +120,12 @@ export function FeatsPanel({
                   <input
                     value={feat.summary ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = {
-                          ...feats[index],
+                      update((c) => ({
+                        ...c,
+                        feats: patchAt(c.feats, index, {
                           summary: e.target.value,
-                        }
-                        return { ...c, feats }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -191,17 +185,16 @@ export function FeatsPanel({
                   <input
                     value={feature.feature.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const features = [...c.features]
-                        features[index] = {
-                          ...features[index],
+                      update((c) => ({
+                        ...c,
+                        features: updateAt(c.features, index, (row) => ({
+                          ...row,
                           feature: {
-                            ...features[index].feature,
+                            ...row.feature,
                             name: e.target.value,
                           },
-                        }
-                        return { ...c, features }
-                      })
+                        })),
+                      }))
                     }
                   />
                 </td>
@@ -211,14 +204,12 @@ export function FeatsPanel({
                     min={1}
                     value={feature.levelGained}
                     onChange={(e) =>
-                      update((c) => {
-                        const features = [...c.features]
-                        features[index] = {
-                          ...features[index],
+                      update((c) => ({
+                        ...c,
+                        features: patchAt(c.features, index, {
                           levelGained: Math.max(1, Number(e.target.value) || 1),
-                        }
-                        return { ...c, features }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -226,14 +217,12 @@ export function FeatsPanel({
                   <input
                     value={feature.summary ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const features = [...c.features]
-                        features[index] = {
-                          ...features[index],
+                      update((c) => ({
+                        ...c,
+                        features: patchAt(c.features, index, {
                           summary: e.target.value,
-                        }
-                        return { ...c, features }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -294,14 +283,12 @@ export function FeatsPanel({
                   <input
                     value={action.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const actions = [...c.actions]
-                        actions[index] = {
-                          ...actions[index],
+                      update((c) => ({
+                        ...c,
+                        actions: patchAt(c.actions, index, {
                           name: e.target.value,
-                        }
-                        return { ...c, actions }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -309,15 +296,13 @@ export function FeatsPanel({
                   <select
                     value={action.actionType}
                     onChange={(e) =>
-                      update((c) => {
-                        const actions = [...c.actions]
-                        actions[index] = {
-                          ...actions[index],
+                      update((c) => ({
+                        ...c,
+                        actions: patchAt(c.actions, index, {
                           actionType: e.target
                             .value as (typeof ACTION_TYPES)[number],
-                        }
-                        return { ...c, actions }
-                      })
+                        }),
+                      }))
                     }
                   >
                     {ACTION_TYPES.map((type) => (
@@ -334,17 +319,15 @@ export function FeatsPanel({
                     max={3}
                     value={action.actionCost ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const actions = [...c.actions]
-                        actions[index] = {
-                          ...actions[index],
+                      update((c) => ({
+                        ...c,
+                        actions: patchAt(c.actions, index, {
                           actionCost:
                             e.target.value === ''
                               ? null
                               : Math.min(3, Math.max(0, Number(e.target.value) || 0)),
-                        }
-                        return { ...c, actions }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -352,14 +335,12 @@ export function FeatsPanel({
                   <input
                     value={action.summary ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const actions = [...c.actions]
-                        actions[index] = {
-                          ...actions[index],
+                      update((c) => ({
+                        ...c,
+                        actions: patchAt(c.actions, index, {
                           summary: e.target.value,
-                        }
-                        return { ...c, actions }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>

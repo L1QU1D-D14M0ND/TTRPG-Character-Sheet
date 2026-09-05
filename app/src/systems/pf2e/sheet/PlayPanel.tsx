@@ -5,6 +5,7 @@ import {
 } from '../character'
 import type { DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
+import { patchAt, updateAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 const RESETS = ['daily', 'encounter', 'refocus', 'other'] as const
@@ -157,17 +158,16 @@ export function PlayPanel({
                   <input
                     value={row.condition.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const conditions = [...c.conditions]
-                        conditions[index] = {
-                          ...conditions[index],
+                      update((c) => ({
+                        ...c,
+                        conditions: updateAt(c.conditions, index, (row) => ({
+                          ...row,
                           condition: {
-                            ...conditions[index].condition,
+                            ...row.condition,
                             name: e.target.value,
                           },
-                        }
-                        return { ...c, conditions }
-                      })
+                        })),
+                      }))
                     }
                   />
                 </td>
@@ -176,17 +176,15 @@ export function PlayPanel({
                     type="number"
                     value={row.value ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const conditions = [...c.conditions]
-                        conditions[index] = {
-                          ...conditions[index],
+                      update((c) => ({
+                        ...c,
+                        conditions: patchAt(c.conditions, index, {
                           value:
                             e.target.value === ''
                               ? null
                               : Number(e.target.value) || 0,
-                        }
-                        return { ...c, conditions }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -194,14 +192,12 @@ export function PlayPanel({
                   <input
                     value={row.duration ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const conditions = [...c.conditions]
-                        conditions[index] = {
-                          ...conditions[index],
+                      update((c) => ({
+                        ...c,
+                        conditions: patchAt(c.conditions, index, {
                           duration: e.target.value,
-                        }
-                        return { ...c, conditions }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -209,14 +205,12 @@ export function PlayPanel({
                   <input
                     value={row.notes ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const conditions = [...c.conditions]
-                        conditions[index] = {
-                          ...conditions[index],
+                      update((c) => ({
+                        ...c,
+                        conditions: patchAt(c.conditions, index, {
                           notes: e.target.value,
-                        }
-                        return { ...c, conditions }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>

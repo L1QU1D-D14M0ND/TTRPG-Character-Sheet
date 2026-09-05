@@ -6,6 +6,7 @@ import type { AbilityKey } from '../character/types'
 import { formatIteratives, signed, type DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
+import { patchAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 const ABILITY_OPTIONS: AbilityKey[] = [
@@ -278,14 +279,12 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.name')}
                       value={row.name}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             name: e.target.value,
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>
@@ -294,14 +293,12 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.type')}
                       value={row.attackType}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             attackType: e.target.value as 'melee' | 'ranged',
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     >
                       <option value="melee">{t('pf1e.combat.melee')}</option>
@@ -313,14 +310,12 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.dice')}
                       value={row.damageDice}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             damageDice: e.target.value,
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>
@@ -329,14 +324,12 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.damageType')}
                       value={row.damageType}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             damageType: e.target.value,
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>
@@ -345,14 +338,12 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.atkAbility')}
                       value={row.attackAbility ?? (row.attackType === 'ranged' ? 'dex' : 'str')}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             attackAbility: e.target.value as AbilityKey,
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     >
                       {ABILITY_OPTIONS.map((key) => (
@@ -367,17 +358,15 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.dmgAbility')}
                       value={row.damageAbility === null ? '' : (row.damageAbility ?? row.attackAbility ?? 'str')}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             damageAbility:
                               e.target.value === ''
                                 ? null
                                 : (e.target.value as AbilityKey),
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     >
                       <option value="">{t('pf1e.combat.none')}</option>
@@ -394,14 +383,12 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.miscAtk')}
                       value={row.miscAttack ?? 0}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             miscAttack: Number(e.target.value) || 0,
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>
@@ -411,14 +398,12 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.miscDmg')}
                       value={row.miscDamage ?? 0}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             miscDamage: Number(e.target.value) || 0,
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>
@@ -428,17 +413,15 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.crit')}
                       value={row.critRange ?? 20}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             critRange: Math.min(
                               20,
                               Math.max(1, Number(e.target.value) || 20),
                             ),
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     />
                     ×
@@ -447,17 +430,15 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.crit')}
                       value={row.critMultiplier ?? 2}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             critMultiplier: Math.max(
                               2,
                               Number(e.target.value) || 2,
                             ),
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>
@@ -467,17 +448,15 @@ export function CombatPanel({
                       aria-label={t('pf1e.combat.range')}
                       value={row.rangeFeet ?? ''}
                       onChange={(e) =>
-                        update((c) => {
-                          const attacks = [...c.attacks]
-                          attacks[index] = {
-                            ...attacks[index],
+                        update((c) => ({
+                          ...c,
+                          attacks: patchAt(c.attacks, index, {
                             rangeFeet:
                               e.target.value === ''
                                 ? null
                                 : Math.max(0, Number(e.target.value) || 0),
-                          }
-                          return { ...c, attacks }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>

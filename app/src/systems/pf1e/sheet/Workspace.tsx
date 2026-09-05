@@ -16,6 +16,7 @@ import { IdentityPanel } from './IdentityPanel'
 import { InventoryPanel } from './InventoryPanel'
 import { PlayPanel } from './PlayPanel'
 import { SpellsPanel } from './SpellsPanel'
+import { patchAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 type TabId =
@@ -349,14 +350,12 @@ export function Pf1eWorkspace({
                         value={skill.ranks}
                         aria-invalid={overCap || undefined}
                         onChange={(e) =>
-                          update((c) => {
-                            const skills = [...c.skills]
-                            skills[index] = {
-                              ...skills[index],
+                          update((c) => ({
+                            ...c,
+                            skills: patchAt(c.skills, index, {
                               ranks: Math.max(0, Number(e.target.value) || 0),
-                            }
-                            return { ...c, skills }
-                          })
+                            }),
+                          }))
                         }
                       />
                       {overCap ? (
@@ -371,14 +370,12 @@ export function Pf1eWorkspace({
                         aria-label={`${skill.name} ${t('pf1e.skills.class')}`}
                         checked={skill.classSkill}
                         onChange={(e) =>
-                          update((c) => {
-                            const skills = [...c.skills]
-                            skills[index] = {
-                              ...skills[index],
+                          update((c) => ({
+                            ...c,
+                            skills: patchAt(c.skills, index, {
                               classSkill: e.target.checked,
-                            }
-                            return { ...c, skills }
-                          })
+                            }),
+                          }))
                         }
                       />
                     </td>
@@ -388,14 +385,12 @@ export function Pf1eWorkspace({
                         aria-label={`${skill.name} ${t('pf1e.skills.misc')}`}
                         value={skill.misc ?? 0}
                         onChange={(e) =>
-                          update((c) => {
-                            const skills = [...c.skills]
-                            skills[index] = {
-                              ...skills[index],
+                          update((c) => ({
+                            ...c,
+                            skills: patchAt(c.skills, index, {
                               misc: Number(e.target.value) || 0,
-                            }
-                            return { ...c, skills }
-                          })
+                            }),
+                          }))
                         }
                       />
                     </td>

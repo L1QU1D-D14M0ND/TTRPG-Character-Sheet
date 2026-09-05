@@ -2,6 +2,7 @@ import { createEmptyStrike, type CharacterDocument } from '../character'
 import type { AttributeKey, ProficiencyRank } from '../character/types'
 import { signed, type DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
+import { patchAt, updateAt } from '../../../shared/ui/rows'
 
 const ATTRS: AttributeKey[] = ['str', 'dex', 'con', 'int', 'wis', 'cha']
 const RANKS: ProficiencyRank[] = [
@@ -351,14 +352,12 @@ export function CombatPanel({
                     <select
                       value={strike.strikeType}
                       onChange={(e) =>
-                        update((c) => {
-                          const strikes = [...c.strikes]
-                          strikes[index] = {
-                            ...strikes[index],
+                        update((c) => ({
+                          ...c,
+                          strikes: patchAt(c.strikes, index, {
                             strikeType: e.target.value as typeof strike.strikeType,
-                          }
-                          return { ...c, strikes }
-                        })
+                          }),
+                        }))
                       }
                     >
                       <option value="melee">melee</option>
@@ -370,15 +369,13 @@ export function CombatPanel({
                     <select
                       value={strike.weaponCategory ?? 'martial'}
                       onChange={(e) =>
-                        update((c) => {
-                          const strikes = [...c.strikes]
-                          strikes[index] = {
-                            ...strikes[index],
+                        update((c) => ({
+                          ...c,
+                          strikes: patchAt(c.strikes, index, {
                             weaponCategory: e.target
                               .value as NonNullable<typeof strike.weaponCategory>,
-                          }
-                          return { ...c, strikes }
-                        })
+                          }),
+                        }))
                       }
                     >
                       {([...WEAPON_CATS, 'other'] as const).map((cat) => (
@@ -415,14 +412,12 @@ export function CombatPanel({
                     <input
                       value={strike.damageDice}
                       onChange={(e) =>
-                        update((c) => {
-                          const strikes = [...c.strikes]
-                          strikes[index] = {
-                            ...strikes[index],
+                        update((c) => ({
+                          ...c,
+                          strikes: patchAt(c.strikes, index, {
                             damageDice: e.target.value,
-                          }
-                          return { ...c, strikes }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>
@@ -430,14 +425,12 @@ export function CombatPanel({
                     <input
                       value={strike.damageType}
                       onChange={(e) =>
-                        update((c) => {
-                          const strikes = [...c.strikes]
-                          strikes[index] = {
-                            ...strikes[index],
+                        update((c) => ({
+                          ...c,
+                          strikes: patchAt(c.strikes, index, {
                             damageType: e.target.value,
-                          }
-                          return { ...c, strikes }
-                        })
+                          }),
+                        }))
                       }
                     />
                   </td>
@@ -446,17 +439,16 @@ export function CombatPanel({
                       type="number"
                       value={strike.modifiers?.item ?? 0}
                       onChange={(e) =>
-                        update((c) => {
-                          const strikes = [...c.strikes]
-                          strikes[index] = {
-                            ...strikes[index],
+                        update((c) => ({
+                          ...c,
+                          strikes: updateAt(c.strikes, index, (row) => ({
+                            ...row,
                             modifiers: {
-                              ...strikes[index].modifiers,
+                              ...row.modifiers,
                               item: Number(e.target.value) || 0,
                             },
-                          }
-                          return { ...c, strikes }
-                        })
+                          })),
+                        }))
                       }
                     />
                   </td>

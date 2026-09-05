@@ -12,6 +12,7 @@ import { IdentityPanel } from './IdentityPanel'
 import { InventoryPanel } from './InventoryPanel'
 import { PlayPanel } from './PlayPanel'
 import { SpellsPanel } from './SpellsPanel'
+import { patchAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 type TabId =
@@ -295,14 +296,12 @@ export function Pf2eWorkspace({
                       <select
                         value={skill.rank}
                         onChange={(e) =>
-                          update((c) => {
-                            const skills = [...c.skills]
-                            skills[index] = {
-                              ...skills[index],
+                          update((c) => ({
+                            ...c,
+                            skills: patchAt(c.skills, index, {
                               rank: e.target.value as ProficiencyRank,
-                            }
-                            return { ...c, skills }
-                          })
+                            }),
+                          }))
                         }
                       >
                         {RANKS.map((r) => (
