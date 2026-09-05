@@ -284,17 +284,15 @@ export function PlayPanel({
                     aria-label={t('pf1e.play.name')}
                     value={row.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const dailyResources = [...c.play.dailyResources]
-                        dailyResources[index] = {
-                          ...dailyResources[index],
-                          name: e.target.value,
-                        }
-                        return {
-                          ...c,
-                          play: { ...c.play, dailyResources },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        play: {
+                          ...c.play,
+                          dailyResources: patchAt(c.play.dailyResources, index, {
+                            name: e.target.value,
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -305,17 +303,15 @@ export function PlayPanel({
                     aria-label={t('pf1e.play.max')}
                     value={row.max}
                     onChange={(e) =>
-                      update((c) => {
-                        const dailyResources = [...c.play.dailyResources]
-                        dailyResources[index] = {
-                          ...dailyResources[index],
-                          max: Math.max(0, Number(e.target.value) || 0),
-                        }
-                        return {
-                          ...c,
-                          play: { ...c.play, dailyResources },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        play: {
+                          ...c.play,
+                          dailyResources: patchAt(c.play.dailyResources, index, {
+                            max: Math.max(0, Number(e.target.value) || 0),
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -326,17 +322,15 @@ export function PlayPanel({
                     aria-label={t('pf1e.play.left')}
                     value={row.remaining}
                     onChange={(e) =>
-                      update((c) => {
-                        const dailyResources = [...c.play.dailyResources]
-                        dailyResources[index] = {
-                          ...dailyResources[index],
-                          remaining: Math.max(0, Number(e.target.value) || 0),
-                        }
-                        return {
-                          ...c,
-                          play: { ...c.play, dailyResources },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        play: {
+                          ...c.play,
+                          dailyResources: patchAt(c.play.dailyResources, index, {
+                            remaining: Math.max(0, Number(e.target.value) || 0),
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -345,17 +339,15 @@ export function PlayPanel({
                     aria-label={t('pf1e.play.resets')}
                     value={row.resetsOn ?? 'daily'}
                     onChange={(e) =>
-                      update((c) => {
-                        const dailyResources = [...c.play.dailyResources]
-                        dailyResources[index] = {
-                          ...dailyResources[index],
-                          resetsOn: e.target.value as (typeof RESETS)[number],
-                        }
-                        return {
-                          ...c,
-                          play: { ...c.play, dailyResources },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        play: {
+                          ...c.play,
+                          dailyResources: patchAt(c.play.dailyResources, index, {
+                            resetsOn: e.target.value as (typeof RESETS)[number],
+                          }),
+                        },
+                      }))
                     }
                   >
                     {RESETS.map((value) => (

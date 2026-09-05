@@ -10,6 +10,7 @@ import type { DerivedView } from '../engine'
 import { formatLoadSummary } from '../engine/encumbrance'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
+import { patchAt, updateAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 const LOCATIONS: ItemLocation[] = ['equipped', 'carried', 'stowed', 'dropped']
@@ -157,17 +158,16 @@ export function InventoryPanel({
                     aria-label={t('pf1e.inventory.itemName')}
                     value={item.item.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const items = [...c.inventory.items]
-                        items[index] = {
-                          ...items[index],
-                          item: { ...items[index].item, name: e.target.value },
-                        }
-                        return {
-                          ...c,
-                          inventory: { ...c.inventory, items },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        inventory: {
+                          ...c.inventory,
+                          items: updateAt(c.inventory.items, index, (row) => ({
+                            ...row,
+                            item: { ...row.item, name: e.target.value },
+                          })),
+                        },
+                      }))
                     }
                   />
                   {item.weapon ? (
@@ -198,17 +198,15 @@ export function InventoryPanel({
                     aria-label={t('pf1e.inventory.qty')}
                     value={item.quantity}
                     onChange={(e) =>
-                      update((c) => {
-                        const items = [...c.inventory.items]
-                        items[index] = {
-                          ...items[index],
-                          quantity: Math.max(0, Number(e.target.value) || 0),
-                        }
-                        return {
-                          ...c,
-                          inventory: { ...c.inventory, items },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        inventory: {
+                          ...c.inventory,
+                          items: patchAt(c.inventory.items, index, {
+                            quantity: Math.max(0, Number(e.target.value) || 0),
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -220,17 +218,15 @@ export function InventoryPanel({
                     aria-label={t('pf1e.inventory.lb')}
                     value={item.pounds}
                     onChange={(e) =>
-                      update((c) => {
-                        const items = [...c.inventory.items]
-                        items[index] = {
-                          ...items[index],
-                          pounds: Math.max(0, Number(e.target.value) || 0),
-                        }
-                        return {
-                          ...c,
-                          inventory: { ...c.inventory, items },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        inventory: {
+                          ...c.inventory,
+                          items: patchAt(c.inventory.items, index, {
+                            pounds: Math.max(0, Number(e.target.value) || 0),
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
@@ -239,17 +235,15 @@ export function InventoryPanel({
                     aria-label={t('pf1e.inventory.location')}
                     value={item.location}
                     onChange={(e) =>
-                      update((c) => {
-                        const items = [...c.inventory.items]
-                        items[index] = {
-                          ...items[index],
-                          location: e.target.value as ItemLocation,
-                        }
-                        return {
-                          ...c,
-                          inventory: { ...c.inventory, items },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        inventory: {
+                          ...c.inventory,
+                          items: patchAt(c.inventory.items, index, {
+                            location: e.target.value as ItemLocation,
+                          }),
+                        },
+                      }))
                     }
                   >
                     {LOCATIONS.map((loc) => (

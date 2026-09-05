@@ -1,4 +1,5 @@
 import { blankRef, type CharacterDocument } from '../character'
+import { patchAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 const SIZES = [
@@ -297,17 +298,15 @@ export function IdentityPanel({
                   <input
                     value={lang.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const languages = [...c.identity.languages]
-                        languages[index] = {
-                          ...languages[index],
-                          name: e.target.value,
-                        }
-                        return {
-                          ...c,
-                          identity: { ...c.identity, languages },
-                        }
-                      })
+                      update((c) => ({
+                        ...c,
+                        identity: {
+                          ...c.identity,
+                          languages: patchAt(c.identity.languages, index, {
+                            name: e.target.value,
+                          }),
+                        },
+                      }))
                     }
                   />
                 </td>
