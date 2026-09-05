@@ -6,6 +6,7 @@ import {
 import type { FeatEntry } from '../character/types'
 import { applyCrbFeat, CRB_FEATS } from '../content'
 import { useT } from '../../../shared/i18n'
+import { appendRow, patchAt, removeAt, updateAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 const FEAT_CATEGORIES: FeatEntry['category'][] = [
@@ -31,7 +32,7 @@ export function FeatsPanel({
         <button
           type="button"
           onClick={() =>
-            update((c) => ({ ...c, feats: [...c.feats, createEmptyFeat()] }))
+            update((c) => ({ ...c, feats: appendRow(c.feats, createEmptyFeat()) }))
           }
         >
           {t('pf1e.feats.addFeat')}
@@ -63,11 +64,12 @@ export function FeatsPanel({
                     value={feat.feat.id ?? ''}
                     onChange={(e) => {
                       const id = e.target.value || null
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = applyCrbFeat(feats[index], id)
-                        return { ...c, feats }
-                      })
+                      update((c) => ({
+                        ...c,
+                        feats: updateAt(c.feats, index, (row) =>
+                          applyCrbFeat(row, id),
+                        ),
+                      }))
                     }}
                   >
                     <option value="">{t('pf1e.common.custom')}</option>
@@ -81,14 +83,13 @@ export function FeatsPanel({
                     aria-label={t('pf1e.feats.featName')}
                     value={feat.feat.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = {
-                          ...feats[index],
-                          feat: { ...feats[index].feat, name: e.target.value },
-                        }
-                        return { ...c, feats }
-                      })
+                      update((c) => ({
+                        ...c,
+                        feats: updateAt(c.feats, index, (row) => ({
+                          ...row,
+                          feat: { ...row.feat, name: e.target.value },
+                        })),
+                      }))
                     }
                   />
                 </td>
@@ -97,14 +98,12 @@ export function FeatsPanel({
                     aria-label={t('pf1e.feats.category')}
                     value={feat.category}
                     onChange={(e) =>
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = {
-                          ...feats[index],
+                      update((c) => ({
+                        ...c,
+                        feats: patchAt(c.feats, index, {
                           category: e.target.value as FeatEntry['category'],
-                        }
-                        return { ...c, feats }
-                      })
+                        }),
+                      }))
                     }
                   >
                     {FEAT_CATEGORIES.map((category) => (
@@ -121,14 +120,12 @@ export function FeatsPanel({
                     aria-label={t('pf1e.feats.level')}
                     value={feat.levelGained}
                     onChange={(e) =>
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = {
-                          ...feats[index],
+                      update((c) => ({
+                        ...c,
+                        feats: patchAt(c.feats, index, {
                           levelGained: Math.max(1, Number(e.target.value) || 1),
-                        }
-                        return { ...c, feats }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -137,14 +134,12 @@ export function FeatsPanel({
                     aria-label={t('pf1e.feats.summary')}
                     value={feat.summary ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const feats = [...c.feats]
-                        feats[index] = {
-                          ...feats[index],
+                      update((c) => ({
+                        ...c,
+                        feats: patchAt(c.feats, index, {
                           summary: e.target.value,
-                        }
-                        return { ...c, feats }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -154,7 +149,7 @@ export function FeatsPanel({
                     onClick={() =>
                       update((c) => ({
                         ...c,
-                        feats: c.feats.filter((item) => item.id !== feat.id),
+                        feats: removeAt(c.feats, index),
                       }))
                     }
                   >
@@ -174,7 +169,7 @@ export function FeatsPanel({
           onClick={() =>
             update((c) => ({
               ...c,
-              features: [...c.features, createEmptyFeature()],
+              features: appendRow(c.features, createEmptyFeature()),
             }))
           }
         >
@@ -205,17 +200,13 @@ export function FeatsPanel({
                     aria-label={t('pf1e.feats.featureName')}
                     value={feature.feature.name}
                     onChange={(e) =>
-                      update((c) => {
-                        const features = [...c.features]
-                        features[index] = {
-                          ...features[index],
-                          feature: {
-                            ...features[index].feature,
-                            name: e.target.value,
-                          },
-                        }
-                        return { ...c, features }
-                      })
+                      update((c) => ({
+                        ...c,
+                        features: updateAt(c.features, index, (row) => ({
+                          ...row,
+                          feature: { ...row.feature, name: e.target.value },
+                        })),
+                      }))
                     }
                   />
                 </td>
@@ -226,14 +217,12 @@ export function FeatsPanel({
                     aria-label={t('pf1e.feats.level')}
                     value={feature.levelGained}
                     onChange={(e) =>
-                      update((c) => {
-                        const features = [...c.features]
-                        features[index] = {
-                          ...features[index],
+                      update((c) => ({
+                        ...c,
+                        features: patchAt(c.features, index, {
                           levelGained: Math.max(1, Number(e.target.value) || 1),
-                        }
-                        return { ...c, features }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -242,14 +231,12 @@ export function FeatsPanel({
                     aria-label={t('pf1e.feats.summary')}
                     value={feature.summary ?? ''}
                     onChange={(e) =>
-                      update((c) => {
-                        const features = [...c.features]
-                        features[index] = {
-                          ...features[index],
+                      update((c) => ({
+                        ...c,
+                        features: patchAt(c.features, index, {
                           summary: e.target.value,
-                        }
-                        return { ...c, features }
-                      })
+                        }),
+                      }))
                     }
                   />
                 </td>
@@ -259,9 +246,7 @@ export function FeatsPanel({
                     onClick={() =>
                       update((c) => ({
                         ...c,
-                        features: c.features.filter(
-                          (item) => item.id !== feature.id,
-                        ),
+                        features: removeAt(c.features, index),
                       }))
                     }
                   >
