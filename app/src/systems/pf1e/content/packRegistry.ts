@@ -6,7 +6,6 @@ import type {
   ItemEntry,
   Size,
 } from '../character/types'
-import { lookupById } from './catalogLookup'
 
 export interface ClassProgression {
   id: string
@@ -71,96 +70,124 @@ export interface EvolutionCatalogRow {
   source?: ContentRef['source']
 }
 
-const classPacks: ClassProgression[][] = []
-const racePacks: RaceCatalogRow[][] = []
-const itemPacks: ItemCatalogRow[][] = []
-const featPacks: FeatCatalogRow[][] = []
-const spellPacks: SpellCatalogRow[][] = []
-const archetypePacks: ArchetypeCatalogRow[][] = []
-const evolutionPacks: EvolutionCatalogRow[][] = []
+/**
+ * One id space per entity kind, shared across packs.
+ *
+ * Lookup used to scan packs in registration order and return the first hit, so
+ * a later pack reusing an id (say APG shipping `class.wizard`) was silently
+ * shadowed by CRB rather than reported. Ids are now unique per kind and a
+ * collision throws at registration, which surfaces in CI via the pack tests.
+ */
+class PackIndex<T extends { id: string }> {
+  readonly #byId = new Map<string, T>()
+  readonly #registered = new Set<readonly T[]>()
 
-function lookupRegistered<T extends { id: string }>(
-  packs: readonly T[][],
-  id: string | null | undefined,
-): T | null {
-  if (!id) return null
-  for (const rows of packs) {
-    const found = lookupById(rows, id)
-    if (found) return found
+  readonly #kind: string
+
+  constructor(kind: string) {
+    this.#kind = kind
   }
-  return null
+
+  /** Re-registering the same rows (HMR, repeated import) is a no-op. */
+  register(rows: readonly T[]): void {
+    if (this.#registered.has(rows)) return
+    for (const row of rows) {
+      const existing = this.#byId.get(row.id)
+      if (existing && existing !== row) {
+        throw new Error(
+          `Duplicate ${this.#kind} id '${row.id}' across PF1e content packs. ` +
+            'Ids are one shared namespace per kind; rename the new row.',
+        )
+      }
+    }
+    this.#registered.add(rows)
+    for (const row of rows) this.#byId.set(row.id, row)
+  }
+
+  lookup(id: string | null | undefined): T | null {
+    if (!id) return null
+    return this.#byId.get(id) ?? null
+  }
 }
 
+const classIndex = new PackIndex<ClassProgression>('class')
+const raceIndex = new PackIndex<RaceCatalogRow>('race')
+const itemIndex = new PackIndex<ItemCatalogRow>('item')
+const featIndex = new PackIndex<FeatCatalogRow>('feat')
+const spellIndex = new PackIndex<SpellCatalogRow>('spell')
+const archetypeIndex = new PackIndex<ArchetypeCatalogRow>('archetype')
+const evolutionIndex = new PackIndex<EvolutionCatalogRow>('evolution')
+
 export function registerClassPack(rows: readonly ClassProgression[]): void {
-  classPacks.push([...rows])
+  classIndex.register(rows)
 }
 
 export function registerRacePack(rows: readonly RaceCatalogRow[]): void {
-  racePacks.push([...rows])
+  raceIndex.register(rows)
 }
 
 export function registerItemPack(rows: readonly ItemCatalogRow[]): void {
-  itemPacks.push([...rows])
+  itemIndex.register(rows)
 }
 
 export function registerFeatPack(rows: readonly FeatCatalogRow[]): void {
-  featPacks.push([...rows])
+  featIndex.register(rows)
 }
 
 export function registerSpellPack(rows: readonly SpellCatalogRow[]): void {
-  spellPacks.push([...rows])
+  spellIndex.register(rows)
 }
 
 export function registerArchetypePack(
   rows: readonly ArchetypeCatalogRow[],
 ): void {
-  archetypePacks.push([...rows])
+  archetypeIndex.register(rows)
 }
 
 export function registerEvolutionPack(
   rows: readonly EvolutionCatalogRow[],
 ): void {
-  evolutionPacks.push([...rows])
+  evolutionIndex.register(rows)
 }
 
 export function lookupClassProgression(
   id: string | null | undefined,
 ): ClassProgression | null {
-  return lookupRegistered(classPacks, id)
+  return classIndex.lookup(id)
 }
 
 export function lookupRace(
   id: string | null | undefined,
 ): RaceCatalogRow | null {
-  return lookupRegistered(racePacks, id)
+  return raceIndex.lookup(id)
 }
 
 export function lookupItem(
   id: string | null | undefined,
 ): ItemCatalogRow | null {
-  return lookupRegistered(itemPacks, id)
+  return itemIndex.lookup(id)
 }
 
 export function lookupFeat(
   id: string | null | undefined,
 ): FeatCatalogRow | null {
-  return lookupRegistered(featPacks, id)
+  return featIndex.lookup(id)
 }
 
 export function lookupSpell(
   id: string | null | undefined,
 ): SpellCatalogRow | null {
-  return lookupRegistered(spellPacks, id)
+  return spellIndex.lookup(id)
 }
 
 export function lookupArchetype(
   id: string | null | undefined,
 ): ArchetypeCatalogRow | null {
-  return lookupRegistered(archetypePacks, id)
+  return archetypeIndex.lookup(id)
 }
 
 export function lookupEvolution(
   id: string | null | undefined,
 ): EvolutionCatalogRow | null {
-  return lookupRegistered(evolutionPacks, id)
+  return evolutionIndex.lookup(id)
 }
