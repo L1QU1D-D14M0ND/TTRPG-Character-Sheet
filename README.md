@@ -33,6 +33,7 @@ npm run dev
 - [PF1e CRB pack (Phase 3c, batch reviews)](docs/pf1e-crb-pack-design.md)
 - [PF1e CRB remaining feat/spell ids (F1–F4, S1–S5)](docs/pf1e-crb-feat-spell-ids.md)
 - [PF1e APG pack (1.0 Synthesist)](docs/pf1e-apg-pack-design.md)
+- [PF1e playtest reference — Flare Nightingale (priority-override source)](docs/pf1e-playtest-flare-nightingale.md)
 - [Attack Helper (later tool)](docs/sidebar-tools-attack-helper.md)
 - [Actions List (later tool)](docs/sidebar-tools-actions-list.md)
 - [Budget Calculator (later tool)](docs/sidebar-tools-budget-calculator.md)

@@ -70,6 +70,12 @@ PF2e proficiency ranks, typed item/status/circumstance stacking, single AC, MAP 
 
 **Postscript (2026-09-03):** **Sidebar tools are the last character-sheet feature** in the First Edition finish (Attack Helper, Actions List, Budget Calculator). They are not gated on a “~90% sheet” midpoint. Next code after mundane CRB 16–21 / W1–W7 is honesty/code fixes, then remaining feats/spells.
 
+**Postscript (2026-09-12):** Stakeholder override: for the next slice, prioritize getting the app to an **optimal state to build and play a specific PF1e playtest character** — a CRB Wizard 7, Transmutation specialist (opposition schools Necromancy and Enchantment) — ahead of the default Phase 1x order (honesty fixes → remaining feats/spells → APG follow-through → optional goldens → magic overlay → OGL → sidebar tools). That default order resumes once this bar is met; it is not replaced.
+
+Pulled forward: Wizard **arcane school** modeling (school pick + opposition schools, structured not just notes — this is CRB core, already flagged as a gap in [`pf1e-character-sheet-design.md`](../pf1e-character-sheet-design.md) row 10), the specialist's **bonus school spell slot**, the three CRB **school powers** (Physical Enhancement, Telekinetic Fist, Arcane Bond) as documentary catalog features, and a CRB spell/feat catalog fill **targeted at this character's spellbook and feat list** rather than the locked F1–F4/S1–S5 alphabetical order (that order still governs whatever this targeted pass doesn't cover). Also pulled forward: exposing the already-schema'd `vitals.resistances`/`senses`/`speeds` in a PF1e panel, since no panel reaches them today.
+
+**Not** overridden: the "omit house-rule flags" default stays — the character's homebrew Mana pool and Hero Points get no new mechanical subsystem, they fit the existing generic `play.dailyResources` rows. Sidebar tools stay the last character-sheet feature; this override does not pull one in earlier. See [`ROADMAP.md`](../ROADMAP.md) Phase 1x ("priority override: playtest character") and the full transcription in [`pf1e-playtest-flare-nightingale.md`](../pf1e-playtest-flare-nightingale.md).
+
 ## Defaults for open questions
 
 These are **locked for sequencing** unless the stakeholder overrides them. See also [the umbrella design](../ttrpg-character-sheet-design.md) § open picks.

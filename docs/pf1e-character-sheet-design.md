@@ -1,6 +1,6 @@
 # Pathfinder First Edition — Character sheet (system spec)
 
-**Status:** System specification locked (ADR 0003). PF1e **0.9 bar landed**. **1.0 landed** (Synthesist golden + Spanish UI catalog + stability). **Next:** honesty/code fixes, then remaining First Edition catalog. Remaining PF2e work waits for a later release. **Sidebar tools are the last character-sheet feature.**  
+**Status:** System specification locked (ADR 0003). PF1e **0.9 bar landed**. **1.0 landed** (Synthesist golden + Spanish UI catalog + stability). **Next (stakeholder override, 2026-09-12):** an optimal-play pass for a specific Wizard 7 Transmutation-specialist playtest character — arcane school + opposition schools, bonus school spell slot, CRB school powers, targeted spell/feat catalog fill, `vitals.resistances`/`senses`/`speeds` UI — see [`ROADMAP.md`](ROADMAP.md) Phase 1x. Honesty/code fixes and the remaining alphabetical First Edition catalog resume after. Remaining PF2e work waits for a later release. **Sidebar tools are still the last character-sheet feature.**  
 **Parent:** [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md)  
 **Schema:** [ADR 0006](adr/0006-pf1e-character-schema.md), [`pf1e-schema-design-notes.md`](pf1e-schema-design-notes.md), [`../schemas/pf1e/character.schema.json`](../schemas/pf1e/character.schema.json)  
 **Priority:** **Finish** this system in the current release (ahead of remaining PF2e work, which waits for a later release)
@@ -30,7 +30,7 @@ Ruleset target: **Core Rulebook**, player-facing, for **0.9**. No GM-exclusive b
 | 7 | Attacks | Iterative attacks from BAB (−5 steps). MAP is a PF2e concept — do not reuse |
 | 8 | HP | Max at level 1 HD + Con; later levels user-entered rolled/fixed HD + Con (+ favored class HP if chosen). Engine sums; does not roll |
 | 9 | Spell DC | `10 + spell level + ability mod` per spellcasting class entry. Caster level from class levels in that class |
-| 10 | Spells per day | Default Max = class table + bonus spells from ability. Click to type a custom amount; empty resets to default. Domain/school slots are extra rows, not auto-granted |
+| 10 | Spells per day | Default Max = class table + bonus spells from ability. Click to type a custom amount; empty resets to default. Domain/school slots are extra rows, not auto-granted (Wizard school bonus slot pulled forward by the 2026-09-12 override, see ROADMAP.md Phase 1x) |
 | 11 | Encumbrance | Item **pounds**; total weight derived. Light/medium/heavy from Strength table (engine). No PF2e bulk |
 | 12 | Play / dying | Negative HP allowed; dead at −Con (display threshold). **No** PF2e dying/wounded/doomed track, **no** hero points in 0.9 (optional later as a custom resource) |
 | 13 | Alignment | First-class identity field (nine alignments + optional deity) |
