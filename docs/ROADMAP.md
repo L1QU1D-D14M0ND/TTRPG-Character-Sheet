@@ -2,8 +2,8 @@
 
 Operational tracker for **TTRPG Character Sheet** (working title). Product decisions live in [ADR 0003](adr/0003-multi-system-product-direction.md) and the [umbrella design](ttrpg-character-sheet-design.md). Reuse boundaries: [ADR 0004](adr/0004-shared-kernel.md), [`shared-kernel-design.md`](shared-kernel-design.md). Sidebar host: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md). Content licensing: [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md). PF1e system spec: [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md). PF2e system spec: [`pf2e-dynamic-character-sheet-design.md`](pf2e-dynamic-character-sheet-design.md) (ADR 0001 superseded; [ADR 0002](adr/0002-character-schema.md) still governs PF2e documents). Sequencing: [multi-system next increment](next-increment-multi-system.md). Historical PF2e sequencing: [continuation design](continuation-design.md) (S1/S4 executed), [next increment (PF2e)](next-increment-design.md) (T1/T3 executed; leftover goldens deprioritized).
 
-**Status date:** 2026-09-03  
-**Current phase:** **Finish First Edition.** 1.0 landed (Spanish + playable Synthesist). CRB batches 1–21 and W1–W7 landed (mundane weapons/armor/shields plus documentary `weapon.properties`). **Next code** is [honesty / code fixes](#phase-1x--honesty--code-fixes) from the 2026-09-03 docs-vs-code pass — not remaining feats/spells yet. Feat/spell ids are locked (F1–F4 / S1–S5). After those fixes: pack those tables, APG follow-through, optional extra PF1e goldens, magic overlay, OGL when rules text ships. **Sidebar tools are the last character-sheet feature** (Attack Helper, Actions List, Budget Calculator). The PF2e slice stays in the app and must not regress. Remaining PF2e work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n).  
+**Status date:** 2026-09-12  
+**Current phase:** **Finish First Edition — stakeholder override: get to an optimal state to play a specific PF1e Wizard playtest character** (CRB Wizard 7, Transmutation specialist; see [Phase 1x — playtest priority](#phase-1x--priority-override-playtest-character) below). This supersedes the default Phase 1x ordering for the next slice only: honesty/code fixes and the alphabetical feat/spell fill-out are queued **after** it, not dropped. 1.0 landed (Spanish + playable Synthesist). CRB batches 1–21 and W1–W7 landed (mundane weapons/armor/shields plus documentary `weapon.properties`). **Sidebar tools are still the last character-sheet feature** (Attack Helper, Actions List, Budget Calculator). The PF2e slice stays in the app and must not regress. Remaining PF2e work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n).  
 
 **0.9 bar:** landed (English PWA, PF1e Fighter 5 / Wizard 5 / multiclass, PF2e slice, Save/Load, empty Tools sidebar). **1.0** is Spanish + playable APG Synthesist.
 
@@ -213,9 +213,28 @@ Landed catalog (do not re-open):
 - [x] **CRB Batch 20** — remaining light + medium armor
 - [x] **CRB Batch 21** — heavy armor + shields
 
+### Phase 1x — priority override: playtest character
+
+**Status:** Next (stakeholder override, 2026-09-12). Supersedes the default Phase 1x order (honesty fixes → remaining feats/spells → APG → optional goldens → magic overlay → OGL → sidebar tools) **for this slice only**; that order resumes once this bar is met.
+
+**Source:** a played character sheet (CRB Wizard 7, Transmutation specialist, opposition schools Necromancy + Enchantment; homebrew Mana pool, Hero Points, and several custom magic items/spells). Full gap analysis in-session; not a new design doc.
+
+Bar: that character (or an equivalent CRB Transmutation Wizard) can be **built and played** in the app, not just saved as a document:
+
+- [ ] **Wizard arcane school (specialist)** — school pick + opposition schools as a structured field on the class row (documentary; `compute()` does not enforce prepared-spell legality against opposition schools yet, matching the existing "no auto-application" bar for feats/effects). This is CRB core, not APG — closes the gap called out since [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md) row 10 ("domain/school slots are extra rows, not auto-granted")
+- [ ] **Bonus school spell slot** — one extra slot per spell level the specialist can cast, from the chosen school; same hybrid-Max pattern as Batch 15 (typed override, empty resets)
+- [ ] **CRB Wizard school powers as catalog features** — Physical Enhancement, Telekinetic Fist, Arcane Bond (Batch 11's per-class feature stamp pattern); documentary text + `levelGained`, no automatic ability-score/attack math (same boundary as feats)
+- [ ] **Targeted CRB spell catalog fill** — pack the Wizard-list spells this character's spellbook actually uses (levels 0–4) ahead of the rest of the locked S1–S5 alphabetical order; anything outside the CRB list (homebrew spells) stays a custom `ContentRef` row, unpacked
+- [ ] **Targeted CRB feat catalog fill** — pack this character's remaining feats (Eschew Materials, Heighten Spell, Craft Wondrous Item, Craft Magic Arms and Armor, Craft Construct, Point Blank Shot) ahead of the rest of the locked F1–F4 order
+- [ ] **Expose `vitals.resistances` / `senses` / `speeds` in a PF1e panel** — schema already carries these ([ADR 0006](adr/0006-pf1e-character-schema.md)); no panel reads or writes them today, so damage reduction and similar defenses have no UI entry point
+- [ ] Confirm **Mana pool** and **Hero Points** need no schema/engine change — both fit today as named `play.dailyResources` rows (name/max/remaining); do **not** build a bespoke resource-pool mechanic for this (would reopen the "omit house-rule flags" default in [ADR 0003](adr/0003-multi-system-product-direction.md))
+- [ ] Optional: a **Transmutation Wizard 7 golden** exercising the above, if it does not block the rest of this slice
+
+Not in this slice: auto-applying opposition-school prepare/cast legality, auto-computing school-power bonuses onto abilities/attacks, a general magic-item "special ability" rules engine (custom items keep living in `notes`/`effects` as documentary text), and anything from the honesty-fixes or sidebar-tools lists below.
+
 ### Phase 1x — honesty / code fixes
 
-**Status:** Next. Do this **before** remaining feats/spells. Do **not** start sidebar tools here. Combat/spell math stays typed; do not auto-apply feat text, weapon Special tags, or AC from inventory.
+**Status:** Queued after the playtest-character override above. Do this **before** remaining feats/spells. Do **not** start sidebar tools here. Combat/spell math stays typed; do not auto-apply feat text, weapon Special tags, or AC from inventory.
 
 Findings from the 2026-09-03 docs-vs-code pass (code disagrees with landed W7 / catalog stamp / host contract):
 
@@ -297,10 +316,11 @@ Out of scope for 0.9/1.0: dice roller, cloud, VTT interop, house-rule flags, GM-
 
 ## Recommended next work (in order)
 
-1. **Honesty / code fixes** (Phase 1x) — leftover W7 test titles, golden `weapon.properties` / `secondHead` vs catalog stamp, honest `focusTab`. Do not start remaining feats/spells or sidebar tools in that change.
-2. **Remaining CRB feats/spells** from the locked F1–F4 / S1–S5 tables, then **APG follow-through**, optional PF1e goldens, magic overlay, OGL with first rules text. Keep Summoner out of the CRB pack.
-3. **Sidebar tools** — last character-sheet feature (**Attack Helper**, **Actions List**, **Budget Calculator**). Empty host until then.
-4. **Later release** — leftover PF2e (PC2 golden, companion editor, Remaster packs, PF2e panel i18n). Encyclopedia / `effects[]` wait until after the sheet.
+1. **Playtest-character priority override** (Phase 1x) — Wizard arcane school + opposition schools + bonus school slot, CRB school powers (Physical Enhancement, Telekinetic Fist, Arcane Bond) as catalog features, a targeted CRB spell/feat catalog fill for that character's spellbook and feats, and exposing `vitals.resistances`/`senses`/`speeds` in a panel. Confirm Mana/Hero Points need no new mechanic (generic `dailyResources` already covers them).
+2. **Honesty / code fixes** (Phase 1x) — leftover W7 test titles, golden `weapon.properties` / `secondHead` vs catalog stamp, honest `focusTab`. Do not start remaining feats/spells or sidebar tools in that change.
+3. **Remaining CRB feats/spells** from the locked F1–F4 / S1–S5 tables (minus whatever #1 already packed), then **APG follow-through**, optional PF1e goldens, magic overlay, OGL with first rules text. Keep Summoner out of the CRB pack.
+4. **Sidebar tools** — last character-sheet feature (**Attack Helper**, **Actions List**, **Budget Calculator**). Empty host until then.
+5. **Later release** — leftover PF2e (PC2 golden, companion editor, Remaster packs, PF2e panel i18n). Encyclopedia / `effects[]` wait until after the sheet.
 
 Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-agent-env-2c8f` or `cursor/multi-system-docs-990b` (superseded / would regress).
 
@@ -384,3 +404,4 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-09-01 | Phase 1x batch 21: heavy armor + shields + extras; next is remaining feats/spells |
 | 2026-09-03 | Docs-vs-code pass: next code is honesty/code fixes (not feats/spells). Sidebar tools are the last character-sheet feature, not a ~90% mid-pack gate |
 | 2026-09-03 | Locked remaining CRB feat/spell id tables (F1–F4, S1–S5). Packing waits for honesty/code fixes |
+| 2026-09-12 | Stakeholder override: prioritize an optimal state to play a specific PF1e Wizard 7 Transmutation-specialist playtest character ahead of the default Phase 1x order. Pulled forward: arcane school + opposition schools, bonus school spell slot, CRB school powers as catalog features, a targeted spell/feat catalog fill, and exposing `vitals.resistances`/`senses`/`speeds` in a panel. Honesty fixes and the alphabetical F1–F4/S1–S5 fill resume after. See ADR 0003 postscript |
