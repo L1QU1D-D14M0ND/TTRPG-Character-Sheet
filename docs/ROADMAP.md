@@ -217,7 +217,7 @@ Landed catalog (do not re-open):
 
 **Status:** Next (stakeholder override, 2026-09-12). Supersedes the default Phase 1x order (honesty fixes → remaining feats/spells → APG → optional goldens → magic overlay → OGL → sidebar tools) **for this slice only**; that order resumes once this bar is met.
 
-**Source:** a played character sheet (CRB Wizard 7, Transmutation specialist, opposition schools Necromancy + Enchantment; homebrew Mana pool, Hero Points, and several custom magic items/spells). Full gap analysis in-session; not a new design doc.
+**Source:** a played character sheet (CRB Wizard 7, Transmutation specialist, opposition schools Necromancy + Enchantment; homebrew Mana pool, Hero Points, and several custom magic items/spells). Full transcription and gap cross-reference: [`pf1e-playtest-flare-nightingale.md`](pf1e-playtest-flare-nightingale.md).
 
 Bar: that character (or an equivalent CRB Transmutation Wizard) can be **built and played** in the app, not just saved as a document:
 
