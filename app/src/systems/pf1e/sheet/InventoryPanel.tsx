@@ -6,8 +6,6 @@ import {
   removeItemProperty,
 } from '../character/itemProperties'
 import {
-  applyCrbItem,
-  CRB_ITEMS,
   getPropertiesForKind,
   computeSuggestedMagicPrice,
 } from '../content'
@@ -15,7 +13,8 @@ import type { DerivedView } from '../engine'
 import { formatLoadSummary } from '../engine/encumbrance'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
-import { patchAt, updateAt } from '../../../shared/ui/rows'
+import { patchAt, replaceAt } from '../../../shared/ui/rows'
+import { CatalogPicker } from './CatalogPicker'
 import type { SheetUpdate } from './update'
 
 const LOCATIONS: ItemLocation[] = ['equipped', 'carried', 'stowed', 'dropped']
@@ -180,48 +179,22 @@ export function InventoryPanel({
               return (
                 <tr key={item.id}>
                   <td className="item-cell">
-                    <select
-                      aria-label={t('pf1e.inventory.catalog')}
-                      value={item.item.id ?? ''}
-                      onChange={(e) => {
-                        const id = e.target.value || null
+                    <CatalogPicker
+                      kind="item"
+                      value={item}
+                      catalogLabel={t('pf1e.inventory.catalog')}
+                      nameLabel={t('pf1e.inventory.itemName')}
+                      onPick={(next) =>
                         update((c) => ({
                           ...c,
                           inventory: {
                             ...c.inventory,
-                            items: updateAt(c.inventory.items, index, (row) =>
-                              applyCrbItem(row, id),
-                            ),
+                            items: replaceAt(c.inventory.items, index, next),
                           },
                         }))
-                      }}
-                    >
-                      <option value="">{t('pf1e.common.custom')}</option>
-                      {CRB_ITEMS.map((entry) => (
-                        <option key={entry.id} value={entry.id}>
-                          {entry.name}
-                        </option>
-                      ))}
-                    </select>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                      <input
-                        aria-label={t('pf1e.inventory.itemName')}
-                        value={item.item.name}
-                        onChange={(e) =>
-                          update((c) => ({
-                            ...c,
-                            inventory: {
-                              ...c.inventory,
-                              items: updateAt(c.inventory.items, index, (row) => ({
-                                ...row,
-                                item: { ...row.item, name: e.target.value },
-                              })),
-                            },
-                          }))
-                        }
-                      />
-                      {badge ? <span className="magic-badge">{badge}</span> : null}
-                    </div>
+                      }
+                    />
+                    {badge ? <span className="magic-badge">{badge}</span> : null}
 
                     {item.weapon ? (
                       <div className="weapon-controls">

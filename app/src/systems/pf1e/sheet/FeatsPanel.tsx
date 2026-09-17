@@ -4,9 +4,9 @@ import {
   type CharacterDocument,
 } from '../character'
 import type { FeatEntry } from '../character/types'
-import { applyCrbFeat, applyCrbFeature, CRB_FEATS, CRB_FEATURES } from '../content'
 import { useT } from '../../../shared/i18n'
-import { appendRow, patchAt, removeAt, updateAt } from '../../../shared/ui/rows'
+import { appendRow, patchAt, removeAt, replaceAt } from '../../../shared/ui/rows'
+import { CatalogPicker } from './CatalogPicker'
 import type { SheetUpdate } from './update'
 
 const FEAT_CATEGORIES: FeatEntry['category'][] = [
@@ -59,36 +59,15 @@ export function FeatsPanel({
             character.feats.map((feat, index) => (
               <tr key={feat.id}>
                 <td className="feat-cell">
-                  <select
-                    aria-label={t('pf1e.feats.catalog')}
-                    value={feat.feat.id ?? ''}
-                    onChange={(e) => {
-                      const id = e.target.value || null
+                  <CatalogPicker
+                    kind="feat"
+                    value={feat}
+                    catalogLabel={t('pf1e.feats.catalog')}
+                    nameLabel={t('pf1e.feats.featName')}
+                    onPick={(next) =>
                       update((c) => ({
                         ...c,
-                        feats: updateAt(c.feats, index, (row) =>
-                          applyCrbFeat(row, id),
-                        ),
-                      }))
-                    }}
-                  >
-                    <option value="">{t('pf1e.common.custom')}</option>
-                    {CRB_FEATS.map((entry) => (
-                      <option key={entry.id} value={entry.id}>
-                        {entry.name}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    aria-label={t('pf1e.feats.featName')}
-                    value={feat.feat.name}
-                    onChange={(e) =>
-                      update((c) => ({
-                        ...c,
-                        feats: updateAt(c.feats, index, (row) => ({
-                          ...row,
-                          feat: { ...row.feat, name: e.target.value },
-                        })),
+                        feats: replaceAt(c.feats, index, next),
                       }))
                     }
                   />
@@ -196,36 +175,15 @@ export function FeatsPanel({
             character.features.map((feature, index) => (
               <tr key={feature.id}>
                 <td className="feat-cell">
-                  <select
-                    aria-label={t('pf1e.feats.featureCatalog')}
-                    value={feature.feature.id ?? ''}
-                    onChange={(e) => {
-                      const id = e.target.value || null
+                  <CatalogPicker
+                    kind="feature"
+                    value={feature}
+                    catalogLabel={t('pf1e.feats.featureCatalog')}
+                    nameLabel={t('pf1e.feats.featureName')}
+                    onPick={(next) =>
                       update((c) => ({
                         ...c,
-                        features: updateAt(c.features, index, (row) =>
-                          applyCrbFeature(row, id),
-                        ),
-                      }))
-                    }}
-                  >
-                    <option value="">{t('pf1e.common.custom')}</option>
-                    {CRB_FEATURES.map((entry) => (
-                      <option key={entry.id} value={entry.id}>
-                        {entry.name}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    aria-label={t('pf1e.feats.featureName')}
-                    value={feature.feature.name}
-                    onChange={(e) =>
-                      update((c) => ({
-                        ...c,
-                        features: updateAt(c.features, index, (row) => ({
-                          ...row,
-                          feature: { ...row.feature, name: e.target.value },
-                        })),
+                        features: replaceAt(c.features, index, next),
                       }))
                     }
                   />

@@ -462,6 +462,43 @@ button.hp-max-button.overridden {
   gap: 0.4rem;
 }
 
+.catalog-picker-dialog {
+  max-width: 36rem;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-picker-dialog input[type='search'] {
+  width: 100%;
+  margin: 0 0 0.6rem;
+}
+
+.catalog-picker-list {
+  overflow: auto;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0 0 0.8rem;
+}
+
+.catalog-picker-list > button,
+.catalog-picker-list > div > button {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.catalog-picker-group {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #555;
+}
+
 .rank-warning {
   color: #8a4b00;
   font-size: 0.75rem;

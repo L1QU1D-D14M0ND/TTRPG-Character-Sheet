@@ -145,6 +145,11 @@
       "none": "(none)",
       "classFallback": "Class"
     },
+    "catalogPicker": {
+      "search": "Search catalog",
+      "noMatches": "No matching names.",
+      "close": "Close"
+    },
     "identity": {
       "player": "Player",
       "race": "Race",

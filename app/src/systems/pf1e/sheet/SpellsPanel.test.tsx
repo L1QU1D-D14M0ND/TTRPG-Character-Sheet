@@ -1,9 +1,10 @@
 // @vitest-environment jsdom
 import { useMemo, useState } from 'react'
-import { fireEvent, render, screen, cleanup } from '@testing-library/react'
+import { fireEvent, render, screen, cleanup, within } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import '@testing-library/jest-dom/vitest'
 import { I18nProvider } from '../../../shared/i18n'
+import { pickCatalog } from '../../../test/pickCatalog'
 import { createEmptyCharacter } from '../character'
 import {
   createEmptyClass,
@@ -80,5 +81,24 @@ describe('SpellsPanel slot max hybrid', () => {
     })
     expect(restored).toHaveTextContent('4')
     expect(restored).not.toHaveClass('overridden')
+  })
+
+  it('stamps a catalog spell onto the spell list', () => {
+    render(
+      <I18nProvider>
+        <SpellsHarness />
+      </I18nProvider>,
+    )
+    fireEvent.click(screen.getAllByRole('button', { name: 'Add spell' })[1])
+    pickCatalog('CRB spell', 'Fireball')
+    const spellRow = (
+      screen.getByLabelText('Spell name') as HTMLElement
+    ).closest('tr')!
+    expect(
+      (within(spellRow).getByLabelText('Spell name') as HTMLInputElement).value,
+    ).toBe('Fireball')
+    expect(
+      (within(spellRow).getByLabelText('Level') as HTMLInputElement).value,
+    ).toBe('3')
   })
 })

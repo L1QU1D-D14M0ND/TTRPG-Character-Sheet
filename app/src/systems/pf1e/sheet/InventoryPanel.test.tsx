@@ -1,9 +1,10 @@
 // @vitest-environment jsdom
 import { useMemo, useState } from 'react'
-import { fireEvent, render, screen, cleanup } from '@testing-library/react'
+import { fireEvent, render, screen, cleanup, within } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import '@testing-library/jest-dom/vitest'
 import { I18nProvider } from '../../../shared/i18n'
+import { pickCatalog } from '../../../test/pickCatalog'
 import { createEmptyCharacter } from '../character'
 import { computeCharacter } from '../engine'
 import { InventoryPanel } from './InventoryPanel'
@@ -30,9 +31,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.spear' },
-    })
+    pickCatalog('CRB item', 'Spear')
     expect(screen.getByText('brace')).toBeInTheDocument()
     expect(screen.queryByText('reach')).not.toBeInTheDocument()
     fireEvent.change(screen.getByLabelText('Add property'), {
@@ -50,9 +49,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.kama' },
-    })
+    pickCatalog('CRB item', 'Kama')
     expect(screen.getByText('trip')).toBeInTheDocument()
     expect(screen.getByText('monk')).toBeInTheDocument()
     expect(screen.queryByText('reach')).not.toBeInTheDocument()
@@ -66,9 +63,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.guisarme' },
-    })
+    pickCatalog('CRB item', 'Guisarme')
     expect(screen.getByText('reach')).toBeInTheDocument()
     expect(screen.getByText('trip')).toBeInTheDocument()
   })
@@ -80,9 +75,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.nunchaku' },
-    })
+    pickCatalog('CRB item', 'Nunchaku')
     expect(screen.getByText('disarm')).toBeInTheDocument()
     expect(screen.getByText('monk')).toBeInTheDocument()
     expect(screen.queryByText('reach')).not.toBeInTheDocument()
@@ -96,9 +89,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.siangham' },
-    })
+    pickCatalog('CRB item', 'Siangham')
     expect(screen.getByText('monk')).toBeInTheDocument()
     expect(screen.queryByText('trip')).not.toBeInTheDocument()
     expect(screen.queryByText('disarm')).not.toBeInTheDocument()
@@ -111,9 +102,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.whip' },
-    })
+    pickCatalog('CRB item', 'Whip')
     expect(screen.getByText('reach')).toBeInTheDocument()
     expect(screen.getByText('trip')).toBeInTheDocument()
     expect(screen.getByText('disarm')).toBeInTheDocument()
@@ -127,9 +116,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.two-bladed-sword' },
-    })
+    pickCatalog('CRB item', 'Two-bladed sword')
     expect(screen.getByText('double')).toBeInTheDocument()
     expect(screen.queryByText('trip')).not.toBeInTheDocument()
     expect(screen.queryByText('brace')).not.toBeInTheDocument()
@@ -142,9 +129,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.quarterstaff' },
-    })
+    pickCatalog('CRB item', 'Quarterstaff')
     expect(screen.getByText('monk')).toBeInTheDocument()
     expect(screen.getByText('double')).toBeInTheDocument()
   })
@@ -156,9 +141,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.sap' },
-    })
+    pickCatalog('CRB item', 'Sap')
     expect(screen.getByText('nonlethal')).toBeInTheDocument()
     expect(screen.queryByText('trip')).not.toBeInTheDocument()
     expect(screen.queryByText('reach')).not.toBeInTheDocument()
@@ -171,9 +154,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.longspear' },
-    })
+    pickCatalog('CRB item', 'Longspear')
     expect(screen.getByText('reach')).toBeInTheDocument()
     expect(screen.getByText('brace')).toBeInTheDocument()
   })
@@ -185,9 +166,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.spear' },
-    })
+    pickCatalog('CRB item', 'Spear')
     fireEvent.change(screen.getByLabelText('Add property'), {
       target: { value: 'flaming' },
     })
@@ -204,9 +183,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.longsword' },
-    })
+    pickCatalog('CRB item', 'Longsword')
 
     const mwkCheckbox = screen.getByLabelText('Masterwork') as HTMLInputElement
     expect(mwkCheckbox.checked).toBe(false)
@@ -228,9 +205,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.longsword' },
-    })
+    pickCatalog('CRB item', 'Longsword')
 
     const selectAbility = screen.getByLabelText('Add special ability…')
     fireEvent.change(selectAbility, { target: { value: 'flaming' } })
@@ -244,9 +219,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'armor.full-plate' },
-    })
+    pickCatalog('CRB item', 'Full plate')
 
     const enhancementSelect = screen.getByLabelText('Enhancement')
     fireEvent.change(enhancementSelect, { target: { value: '1' } })
@@ -264,9 +237,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.two-bladed-sword' },
-    })
+    pickCatalog('CRB item', 'Two-bladed sword')
 
     const secondHeadMwk = screen.getByLabelText('Second head masterwork') as HTMLInputElement
     expect(secondHeadMwk.checked).toBe(false)
@@ -285,9 +256,7 @@ describe('InventoryPanel weapon properties', () => {
       </I18nProvider>,
     )
     fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
-    fireEvent.change(screen.getByLabelText('CRB item'), {
-      target: { value: 'weapon.longsword' },
-    })
+    pickCatalog('CRB item', 'Longsword')
     fireEvent.change(screen.getByLabelText('Enhancement'), {
       target: { value: '2' },
     })
@@ -309,6 +278,25 @@ describe('InventoryPanel weapon properties', () => {
     expect(
       screen.getByText('Suggested market price: 8,300 gp'),
     ).toBeInTheDocument()
+  })
+
+  it('stamps catalog picks onto only the targeted item row', () => {
+    render(
+      <I18nProvider>
+        <InventoryHarness />
+      </I18nProvider>,
+    )
+    const add = screen.getByRole('button', { name: 'Add item' })
+    fireEvent.click(add)
+    fireEvent.click(add)
+    const rows = screen.getAllByLabelText('Item name').map((el) => el.closest('tr')!)
+    pickCatalog('CRB item', 'Spear', rows[0])
+    pickCatalog('CRB item', 'Kama', rows[1])
+    expect(within(rows[0]).getByText('brace')).toBeInTheDocument()
+    expect(within(rows[0]).queryByText('trip')).not.toBeInTheDocument()
+    expect(within(rows[1]).getByText('trip')).toBeInTheDocument()
+    expect(within(rows[1]).getByText('monk')).toBeInTheDocument()
+    expect(within(rows[1]).queryByText('brace')).not.toBeInTheDocument()
   })
 })
 

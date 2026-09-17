@@ -8,7 +8,7 @@ Phase 1x honesty / code fixes landed (2026-09-12): leftover W7 test titles renam
 
 ### CRB catalog fill-out (completed — next is APG follow-through)
 
-All 177 CRB feats (110 combat, 49 general, 9 item creation, 9 metamagic) and all 622 CRB spells (Batches S1–S5) have landed under [ADR 0007](docs/adr/0007-content-licensing.md) (names + category/level only, mechanics-only). Next is APG follow-through (Summoner `spellsPerDay` + spell catalog).
+All 177 CRB feats (110 combat, 49 general, 9 item creation, 9 metamagic) and all 622 CRB spells (Batches S1–S5) have landed under [ADR 0007](docs/adr/0007-content-licensing.md) (names + category/level only, mechanics-only). Next catalog increment is APG follow-through (Summoner `spellsPerDay` + spell catalog). Architecture deepening: PF1e catalog picker ([ADR 0009](docs/adr/0009-pf1e-catalog-picker.md)) — slice 1 landed; slice 2 is Identity race / class / archetype.
 
 - From `app/`, run `npx vitest run src/systems/pf1e`.
 - Do **not** record a demo video or upload Inventory screenshots unless the Inventory UI itself changed.

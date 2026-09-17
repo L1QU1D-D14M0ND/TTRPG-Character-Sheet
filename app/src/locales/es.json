@@ -145,6 +145,11 @@
       "none": "(ninguno)",
       "classFallback": "Clase"
     },
+    "catalogPicker": {
+      "search": "Buscar catálogo",
+      "noMatches": "Ningún nombre coincide.",
+      "close": "Cerrar"
+    },
     "identity": {
       "player": "Jugador",
       "race": "Raza",

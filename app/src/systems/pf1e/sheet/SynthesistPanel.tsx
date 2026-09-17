@@ -7,10 +7,10 @@ import type {
   CompanionStub,
   FusedOverlay,
 } from '../character/types'
-import { applyApgEvolution, APG_EVOLUTIONS } from '../content'
 import { useT } from '../../../shared/i18n'
 import type { DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
+import { CatalogPicker } from './CatalogPicker'
 import type { SheetUpdate } from './update'
 
 function patchEidolon(
@@ -168,39 +168,16 @@ export function SynthesistPanel({
             evolutions.map((row, index) => (
               <tr key={row.id}>
                 <td className="feat-cell">
-                  <select
-                    aria-label={t('pf1e.synthesist.catalog')}
-                    value={row.evolution.id ?? ''}
-                    onChange={(e) => {
-                      const id = e.target.value || null
+                  <CatalogPicker
+                    kind="evolution"
+                    value={row}
+                    catalogLabel={t('pf1e.synthesist.catalog')}
+                    nameLabel={t('pf1e.synthesist.evolutionName')}
+                    onPick={(next) =>
                       writeEidolon((companion) => {
-                        const next = [...(companion.evolutions ?? [])]
-                        next[index] = applyApgEvolution(next[index], id)
-                        return { ...companion, evolutions: next }
-                      })
-                    }}
-                  >
-                    <option value="">{t('pf1e.common.custom')}</option>
-                    {APG_EVOLUTIONS.map((entry) => (
-                      <option key={entry.id} value={entry.id}>
-                        {entry.name}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    aria-label={t('pf1e.synthesist.evolutionName')}
-                    value={row.evolution.name}
-                    onChange={(e) =>
-                      writeEidolon((companion) => {
-                        const next = [...(companion.evolutions ?? [])]
-                        next[index] = {
-                          ...next[index],
-                          evolution: {
-                            ...next[index].evolution,
-                            name: e.target.value,
-                          },
-                        }
-                        return { ...companion, evolutions: next }
+                        const copy = [...(companion.evolutions ?? [])]
+                        copy[index] = next
+                        return { ...companion, evolutions: copy }
                       })
                     }
                   />

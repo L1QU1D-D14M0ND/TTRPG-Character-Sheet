@@ -5,10 +5,10 @@ import {
   type CharacterDocument,
 } from '../character'
 import type { AbilityKey, SpellListEntry, SpellcastingEntry } from '../character/types'
-import { applyCrbSpell, CRB_SPELLS } from '../content'
 import type { DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
+import { CatalogPicker } from './CatalogPicker'
 import type { SheetUpdate } from './update'
 
 const ATTRS: AbilityKey[] = ['str', 'dex', 'con', 'int', 'wis', 'cha']
@@ -428,33 +428,15 @@ function SpellListTable({
             rows.map((row, index) => (
               <tr key={row.id}>
                 <td className="spell-cell">
-                  <select
-                    aria-label={t('pf1e.spells.catalog')}
-                    value={row.spell.id ?? ''}
-                    onChange={(e) => {
-                      const id = e.target.value || null
-                      const next = [...rows]
-                      next[index] = applyCrbSpell(next[index], id)
-                      onChange(next)
-                    }}
-                  >
-                    <option value="">{t('pf1e.common.custom')}</option>
-                    {CRB_SPELLS.map((entry) => (
-                      <option key={entry.id} value={entry.id}>
-                        {entry.name}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    aria-label={t('pf1e.spells.spellName')}
-                    value={row.spell.name}
-                    onChange={(e) => {
-                      const next = [...rows]
-                      next[index] = {
-                        ...next[index],
-                        spell: { ...next[index].spell, name: e.target.value },
-                      }
-                      onChange(next)
+                  <CatalogPicker
+                    kind="spell"
+                    value={row}
+                    catalogLabel={t('pf1e.spells.catalog')}
+                    nameLabel={t('pf1e.spells.spellName')}
+                    onPick={(next) => {
+                      const copy = [...rows]
+                      copy[index] = next
+                      onChange(copy)
                     }}
                   />
                 </td>

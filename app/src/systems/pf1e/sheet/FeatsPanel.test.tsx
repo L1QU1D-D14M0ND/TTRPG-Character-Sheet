@@ -4,6 +4,7 @@ import { fireEvent, render, screen, cleanup, within } from '@testing-library/rea
 import { afterEach, describe, expect, it } from 'vitest'
 import '@testing-library/jest-dom/vitest'
 import { I18nProvider } from '../../../shared/i18n'
+import { pickCatalog } from '../../../test/pickCatalog'
 import { createEmptyCharacter } from '../character'
 import { FeatsPanel } from './FeatsPanel'
 import type { SheetUpdate } from './update'
@@ -136,13 +137,27 @@ describe('FeatsPanel row editing', () => {
     ).toBe('Untouched feat')
   })
 
+  it('stamps catalog feats onto only the targeted row', () => {
+    renderPanel()
+    const addFeat = screen.getByRole('button', { name: 'Add feat' })
+    fireEvent.click(addFeat)
+    fireEvent.click(addFeat)
+    const rows = screen
+      .getAllByLabelText('Feat name')
+      .map((el) => el.closest('tr')!)
+    pickCatalog('CRB feat', 'Power Attack', rows[0])
+    pickCatalog('CRB feat', 'Dodge', rows[1])
+    const names = screen.getAllByLabelText('Feat name') as HTMLInputElement[]
+    expect(names[0].value).toBe('Power Attack')
+    expect(names[1].value).toBe('Dodge')
+    expect(within(rows[0]).getByLabelText('Category')).toHaveValue('combat')
+    expect(within(rows[1]).getByLabelText('Category')).toHaveValue('combat')
+  })
+
   it('stamps catalog feature on selection', () => {
     renderPanel()
     fireEvent.click(screen.getByRole('button', { name: 'Add feature' }))
-    const catalog = screen.getByLabelText('CRB feature') as HTMLSelectElement
-    fireEvent.change(catalog, {
-      target: { value: 'feature.physical-enhancement' },
-    })
+    pickCatalog('CRB feature', 'Physical Enhancement')
     const nameInput = screen.getByLabelText('Feature name') as HTMLInputElement
     expect(nameInput.value).toBe('Physical Enhancement')
   })
