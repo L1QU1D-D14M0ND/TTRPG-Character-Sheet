@@ -49,7 +49,7 @@ describe('golden PF1e Synthesist 5 (Radiant Striker)', () => {
     )
     expect(lookupCrbItem('weapon.dagger')?.name).toBe('Dagger')
     expect(lookupCrbSpell('spell.detect-magic')?.name).toBe('Detect Magic')
-    expect(lookupCrbSpell('spell.mage-armor')).toBeNull()
+    expect(lookupCrbSpell('spell.rejuvenate-eidolon-lesser')).toBeNull()
   })
 
   it('round-trips Save then Load without derived', () => {

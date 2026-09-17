@@ -579,13 +579,16 @@ describe('CRB pack batch 11: remaining CRB classes', () => {
 
 describe('CRB pack batch 12: feat catalog', () => {
   it('lists the golden feat ids', () => {
-    expect(CRB_FEATS.map((row) => row.id)).toEqual([
+    const ids = CRB_FEATS.map((row) => row.id)
+    for (const goldenId of [
       'feat.improved-initiative',
       'feat.power-attack',
       'feat.scribe-scroll',
       'feat.spell-focus',
       'feat.weapon-focus',
-    ])
+    ]) {
+      expect(ids).toContain(goldenId)
+    }
     expect(lookupCrbFeat('feat.power-attack')).toMatchObject({
       name: 'Power Attack',
       category: 'combat',
@@ -642,12 +645,15 @@ describe('CRB pack batch 12: feat catalog', () => {
 
 describe('CRB pack batch 13: spell catalog', () => {
   it('lists the golden spell ids', () => {
-    expect(CRB_SPELLS.map((row) => row.id)).toEqual([
+    const ids = CRB_SPELLS.map((row) => row.id)
+    for (const goldenId of [
       'spell.detect-magic',
       'spell.fireball',
       'spell.light',
       'spell.magic-missile',
-    ])
+    ]) {
+      expect(ids).toContain(goldenId)
+    }
     expect(lookupCrbSpell('spell.fireball')).toMatchObject({
       name: 'Fireball',
       spellLevel: 3,
@@ -657,7 +663,7 @@ describe('CRB pack batch 13: spell catalog', () => {
   })
 
   it('returns null for an unknown spell id', () => {
-    expect(lookupCrbSpell('spell.mage-armor')).toBeNull()
+    expect(lookupCrbSpell('spell.unknown-spell-id')).toBeNull()
     expect(lookupCrbSpell(null)).toBeNull()
     expect(lookupCrbSpell('')).toBeNull()
   })
@@ -679,7 +685,7 @@ describe('CRB pack batch 13: spell catalog', () => {
   it('unknown apply clears id and leaves the typed name and level', () => {
     const row = applyCrbSpell(createEmptySpellListEntry(), 'spell.fireball')
     row.spell.name = 'Fireball (empower)'
-    const custom = applyCrbSpell(row, 'spell.mage-armor')
+    const custom = applyCrbSpell(row, 'spell.unknown-spell-id')
     expect(custom.spell.id).toBeNull()
     expect(custom.spell.name).toBe('Fireball (empower)')
     expect(custom.spellLevel).toBe(3)

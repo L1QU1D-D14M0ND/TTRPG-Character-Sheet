@@ -30,23 +30,29 @@ Id pattern stays `feat.<kebab>` and `spell.<kebab>`. Category enum stays `genera
 
 ## Batch plan
 
-Two groups per PR, same as mundane equipment. **Do not start** these until [honesty / code fixes](ROADMAP.md#phase-1x--honesty--code-fixes) land.
+Two groups per PR, same as mundane equipment. Honesty / code fixes and the Wizard 7 playtest override have landed.
 
 | Batch | What | Remaining rows |
 | --- | --- | ---: |
-| **F1** | Remaining combat feats, alphabetical first half (Agile Maneuvers–Improved Trip) | 54 |
-| **F2** | Remaining combat feats, alphabetical second half (Improved Two-Weapon Fighting–Wind Stance) | 53 |
-| **F3** | Remaining general feats | 48 |
-| **F4** | Remaining item creation + all metamagic | 16 |
-| **S1** | Remaining spell levels 0 and 1 | 108 |
-| **S2** | Remaining spell levels 2 and 3 | 159 |
-| **S3** | Remaining spell levels 4 and 5 | 141 |
-| **S4** | Remaining spell levels 6 and 7 | 127 |
-| **S5** | Remaining spell levels 8 and 9 | 83 |
+| **F1a** | Remaining combat feats, part 1 of 6 (Agile Maneuvers–Dazzling Display) — *Packed* | 0 (18 packed) |
+| **F1b** | Remaining combat feats, part 2 of 6 (Deadly Aim–Greater Overrun) — *Packed* | 0 (18 packed) |
+| **F1c** | Remaining combat feats, part 3 of 6 (Greater Penetrating Strike–Improved Trip) — *Packed* | 0 (18 packed) |
+| **F2a** | Remaining combat feats, part 4 of 6 (Improved Two-Weapon Fighting–Quick Draw) — *Packed* | 0 (17 packed) |
+| **F2b** | Remaining combat feats, part 5 of 6 (Rapid Reload–Staggering Critical) — *Packed* | 0 (17 packed) |
+| **F2c** | Remaining combat feats, part 6 of 6 (Stand Still–Wind Stance) — *Packed* | 0 (18 packed) |
+| **F3a** | Remaining general feats, part 1 of 3 (Acrobatic–Extra Ki) — *Packed* | 0 (16 packed) |
+| **F3b** | Remaining general feats, part 2 of 3 (Extra Lay On Hands–Leadership) — *Packed* | 0 (16 packed) |
+| **F3c** | Remaining general feats, part 3 of 3 (Lightning Reflexes–Turn Undead) — *Packed* | 0 (15 packed) |
+| **F4** | Remaining item creation + all metamagic — *Packed* | 0 (13 packed) |
+| **S1** | Remaining spell levels 0 and 1 — *Packed* | 0 (82 packed) |
+| **S2** | Remaining spell levels 2 and 3 — *Packed* | 0 (147 packed) |
+| **S3** | Remaining spell levels 4 and 5 — *Packed* | 0 (139 packed) |
+| **S4** | Remaining spell levels 6 and 7 — *Packed* | 0 (127 packed) |
+| **S5** | Remaining spell levels 8 and 9 — *Packed* | 0 (83 packed) |
 
 Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7.5](pf1e-crb-pack-design.md#75-reserved-magic-weapons-and-armor)). APG Summoner spells stay in the APG pack.
 
-## Packed already (Batch 12 / 13 — skip)
+## Packed already (Batch 12 / 13 + Wizard 7 playtest + Batches F1a–F1c + Batches F2a–F2c + Batches F3a–F3c + Batch F4 + Batches S1–S5 — all 177 CRB feats and all 622 CRB spells packed)
 | Id | Name | Category |
 | --- | --- | --- |
 | `feat.improved-initiative` | Improved Initiative | combat |
@@ -54,17 +60,12 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `feat.scribe-scroll` | Scribe Scroll | itemCreation |
 | `feat.spell-focus` | Spell Focus | general |
 | `feat.weapon-focus` | Weapon Focus | combat |
-
-| Id | Name | Level |
-| --- | --- | --- |
-| `spell.detect-magic` | Detect Magic | 0 |
-| `spell.fireball` | Fireball | 3 |
-| `spell.light` | Light | 0 |
-| `spell.magic-missile` | Magic Missile | 1 |
-
-## F1 — remaining combat (first half)
-| Id | Name | Category |
-| --- | --- | --- |
+| `feat.point-blank-shot` | Point-Blank Shot | combat |
+| `feat.eschew-materials` | Eschew Materials | general |
+| `feat.heighten-spell` | Heighten Spell | metamagic |
+| `feat.craft-wondrous-item` | Craft Wondrous Item | itemCreation |
+| `feat.craft-magic-arms-and-armor` | Craft Magic Arms and Armor | itemCreation |
+| `feat.craft-construct` | Craft Construct | itemCreation |
 | `feat.agile-maneuvers` | Agile Maneuvers | combat |
 | `feat.arcane-armor-mastery` | Arcane Armor Mastery | combat |
 | `feat.arcane-armor-training` | Arcane Armor Training | combat |
@@ -119,10 +120,6 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `feat.improved-shield-bash` | Improved Shield Bash | combat |
 | `feat.improved-sunder` | Improved Sunder | combat |
 | `feat.improved-trip` | Improved Trip | combat |
-
-## F2 — remaining combat (second half)
-| Id | Name | Category |
-| --- | --- | --- |
 | `feat.improved-two-weapon-fighting` | Improved Two-Weapon Fighting | combat |
 | `feat.improved-unarmed-strike` | Improved Unarmed Strike | combat |
 | `feat.improved-vital-strike` | Improved Vital Strike | combat |
@@ -138,7 +135,6 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `feat.mounted-combat` | Mounted Combat | combat |
 | `feat.penetrating-strike` | Penetrating Strike | combat |
 | `feat.pinpoint-targeting` | Pinpoint Targeting | combat |
-| `feat.point-blank-shot` | Point-Blank Shot | combat |
 | `feat.precise-shot` | Precise Shot | combat |
 | `feat.quick-draw` | Quick Draw | combat |
 | `feat.rapid-reload` | Rapid Reload | combat |
@@ -176,10 +172,6 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `feat.weapon-specialization` | Weapon Specialization | combat |
 | `feat.whirlwind-attack` | Whirlwind Attack | combat |
 | `feat.wind-stance` | Wind Stance | combat |
-
-## F3 — remaining general
-| Id | Name | Category |
-| --- | --- | --- |
 | `feat.acrobatic` | Acrobatic | general |
 | `feat.acrobatic-steps` | Acrobatic Steps | general |
 | `feat.alertness` | Alertness | general |
@@ -194,7 +186,6 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `feat.diehard` | Diehard | general |
 | `feat.elemental-channel` | Elemental Channel | general |
 | `feat.endurance` | Endurance | general |
-| `feat.eschew-materials` | Eschew Materials | general |
 | `feat.extra-channel` | Extra Channel | general |
 | `feat.extra-ki` | Extra Ki | general |
 | `feat.extra-lay-on-hands` | Extra Lay On Hands | general |
@@ -228,28 +219,70 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `feat.stealthy` | Stealthy | general |
 | `feat.toughness` | Toughness | general |
 | `feat.turn-undead` | Turn Undead | general |
-
-## F4 — remaining item creation + metamagic
-| Id | Name | Category |
-| --- | --- | --- |
 | `feat.brew-potion` | Brew Potion | itemCreation |
-| `feat.craft-magic-arms-and-armor` | Craft Magic Arms and Armor | itemCreation |
 | `feat.craft-rod` | Craft Rod | itemCreation |
 | `feat.craft-staff` | Craft Staff | itemCreation |
 | `feat.craft-wand` | Craft Wand | itemCreation |
-| `feat.craft-wondrous-item` | Craft Wondrous Item | itemCreation |
 | `feat.forge-ring` | Forge Ring | itemCreation |
 | `feat.empower-spell` | Empower Spell | metamagic |
 | `feat.enlarge-spell` | Enlarge Spell | metamagic |
 | `feat.extend-spell` | Extend Spell | metamagic |
-| `feat.heighten-spell` | Heighten Spell | metamagic |
 | `feat.maximize-spell` | Maximize Spell | metamagic |
 | `feat.quicken-spell` | Quicken Spell | metamagic |
 | `feat.silent-spell` | Silent Spell | metamagic |
 | `feat.still-spell` | Still Spell | metamagic |
 | `feat.widen-spell` | Widen Spell | metamagic |
+| Id | Name | Level |
+| --- | --- | --- |
+| `spell.detect-magic` | Detect Magic | 0 |
+| `spell.fireball` | Fireball | 3 |
+| `spell.light` | Light | 0 |
+| `spell.magic-missile` | Magic Missile | 1 |
+| `spell.detect-poison` | Detect Poison | 0 |
+| `spell.read-magic` | Read Magic | 0 |
+| `spell.resistance` | Resistance | 0 |
+| `spell.acid-splash` | Acid Splash | 0 |
+| `spell.flare` | Flare | 0 |
+| `spell.dancing-lights` | Dancing Lights | 0 |
+| `spell.ray-of-frost` | Ray of Frost | 0 |
+| `spell.ghost-sound` | Ghost Sound | 0 |
+| `spell.open-close` | Open/Close | 0 |
+| `spell.message` | Message | 0 |
+| `spell.mage-hand` | Mage Hand | 0 |
+| `spell.mending` | Mending | 0 |
+| `spell.arcane-mark` | Arcane Mark | 0 |
+| `spell.prestidigitation` | Prestidigitation | 0 |
+| `spell.alarm` | Alarm | 1 |
+| `spell.comprehend-languages` | Comprehend Languages | 1 |
+| `spell.detect-secret-doors` | Detect Secret Doors | 1 |
+| `spell.true-strike` | True Strike | 1 |
+| `spell.mage-armor` | Mage Armor | 1 |
+| `spell.obscuring-mist` | Obscuring Mist | 1 |
+| `spell.floating-disk` | Floating Disk | 1 |
+| `spell.mount` | Mount | 1 |
+| `spell.burning-hands` | Burning Hands | 1 |
+| `spell.unseen-servant` | Unseen Servant | 1 |
+| `spell.shield` | Shield | 1 |
+| `spell.protection-from-evil` | Protection from Evil | 1 |
+| `spell.arcane-lock` | Arcane Lock | 2 |
+| `spell.detect-thoughts` | Detect Thoughts | 2 |
+| `spell.see-invisibility` | See Invisibility | 2 |
+| `spell.scorching-ray` | Scorching Ray | 2 |
+| `spell.invisibility` | Invisibility | 2 |
+| `spell.glitterdust` | Glitterdust | 2 |
+| `spell.dispel-magic` | Dispel Magic | 3 |
+| `spell.haste` | Haste | 3 |
+| `spell.blink` | Blink | 3 |
+| `spell.shrink-item` | Shrink Item | 3 |
+| `spell.clairaudience-clairvoyance` | Clairaudience/Clairvoyance | 3 |
+| `spell.water-breathing` | Water Breathing | 3 |
+| `spell.greater-invisibility` | Greater Invisibility | 4 |
+| `spell.lesser-globe-of-invulnerability` | Lesser Globe of Invulnerability | 4 |
 
-## S1 — remaining spell levels 0 and 1
+
+
+
+## S1 — remaining spell levels 0 and 1 (Packed)
 | Id | Name | Level |
 | --- | --- | --- |
 | `spell.acid-splash` | Acid Splash | 0 |
@@ -361,7 +394,7 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `spell.unseen-servant` | Unseen Servant | 1 |
 | `spell.ventriloquism` | Ventriloquism | 1 |
 
-## S2 — remaining spell levels 2 and 3
+## S2 — remaining spell levels 2 and 3 (Packed)
 | Id | Name | Level |
 | --- | --- | --- |
 | `spell.acid-arrow` | Acid Arrow | 2 |
@@ -524,7 +557,7 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `spell.water-walk` | Water Walk | 3 |
 | `spell.wind-wall` | Wind Wall | 3 |
 
-## S3 — remaining spell levels 4 and 5
+## S3 — remaining spell levels 4 and 5 (Packed)
 | Id | Name | Level |
 | --- | --- | --- |
 | `spell.air-walk` | Air Walk | 4 |
@@ -669,7 +702,7 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `spell.wall-of-thorns` | Wall of Thorns | 5 |
 | `spell.waves-of-fatigue` | Waves of Fatigue | 5 |
 
-## S4 — remaining spell levels 6 and 7
+## S4 — remaining spell levels 6 and 7 (Packed)
 | Id | Name | Level |
 | --- | --- | --- |
 | `spell.acid-fog` | Acid Fog | 6 |
@@ -800,7 +833,7 @@ Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7
 | `spell.waves-of-exhaustion` | Waves of Exhaustion | 7 |
 | `spell.word-of-chaos` | Word of Chaos | 7 |
 
-## S5 — remaining spell levels 8 and 9
+## S5 — remaining spell levels 8 and 9 (Packed)
 | Id | Name | Level |
 | --- | --- | --- |
 | `spell.animal-shapes` | Animal Shapes | 8 |

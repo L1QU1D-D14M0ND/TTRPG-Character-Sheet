@@ -26,6 +26,866 @@
       "id": "feat.weapon-focus",
       "name": "Weapon Focus",
       "category": "combat"
+    },
+    {
+      "id": "feat.point-blank-shot",
+      "name": "Point-Blank Shot",
+      "category": "combat"
+    },
+    {
+      "id": "feat.eschew-materials",
+      "name": "Eschew Materials",
+      "category": "general"
+    },
+    {
+      "id": "feat.heighten-spell",
+      "name": "Heighten Spell",
+      "category": "metamagic"
+    },
+    {
+      "id": "feat.craft-wondrous-item",
+      "name": "Craft Wondrous Item",
+      "category": "itemCreation"
+    },
+    {
+      "id": "feat.craft-magic-arms-and-armor",
+      "name": "Craft Magic Arms and Armor",
+      "category": "itemCreation"
+    },
+    {
+      "id": "feat.craft-construct",
+      "name": "Craft Construct",
+      "category": "itemCreation"
+    },
+    {
+      "id": "feat.agile-maneuvers",
+      "name": "Agile Maneuvers",
+      "category": "combat"
+    },
+    {
+      "id": "feat.arcane-armor-mastery",
+      "name": "Arcane Armor Mastery",
+      "category": "combat"
+    },
+    {
+      "id": "feat.arcane-armor-training",
+      "name": "Arcane Armor Training",
+      "category": "combat"
+    },
+    {
+      "id": "feat.arcane-strike",
+      "name": "Arcane Strike",
+      "category": "combat"
+    },
+    {
+      "id": "feat.armor-proficiency-heavy",
+      "name": "Armor Proficiency, Heavy",
+      "category": "combat"
+    },
+    {
+      "id": "feat.armor-proficiency-light",
+      "name": "Armor Proficiency, Light",
+      "category": "combat"
+    },
+    {
+      "id": "feat.armor-proficiency-medium",
+      "name": "Armor Proficiency, Medium",
+      "category": "combat"
+    },
+    {
+      "id": "feat.bleeding-critical",
+      "name": "Bleeding Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.blind-fight",
+      "name": "Blind-Fight",
+      "category": "combat"
+    },
+    {
+      "id": "feat.blinding-critical",
+      "name": "Blinding Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.catch-off-guard",
+      "name": "Catch Off-Guard",
+      "category": "combat"
+    },
+    {
+      "id": "feat.channel-smite",
+      "name": "Channel Smite",
+      "category": "combat"
+    },
+    {
+      "id": "feat.cleave",
+      "name": "Cleave",
+      "category": "combat"
+    },
+    {
+      "id": "feat.combat-expertise",
+      "name": "Combat Expertise",
+      "category": "combat"
+    },
+    {
+      "id": "feat.combat-reflexes",
+      "name": "Combat Reflexes",
+      "category": "combat"
+    },
+    {
+      "id": "feat.critical-focus",
+      "name": "Critical Focus",
+      "category": "combat"
+    },
+    {
+      "id": "feat.critical-mastery",
+      "name": "Critical Mastery",
+      "category": "combat"
+    },
+    {
+      "id": "feat.dazzling-display",
+      "name": "Dazzling Display",
+      "category": "combat"
+    },
+    {
+      "id": "feat.deadly-aim",
+      "name": "Deadly Aim",
+      "category": "combat"
+    },
+    {
+      "id": "feat.deadly-stroke",
+      "name": "Deadly Stroke",
+      "category": "combat"
+    },
+    {
+      "id": "feat.deafening-critical",
+      "name": "Deafening Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.defensive-combat-training",
+      "name": "Defensive Combat Training",
+      "category": "combat"
+    },
+    {
+      "id": "feat.deflect-arrows",
+      "name": "Deflect Arrows",
+      "category": "combat"
+    },
+    {
+      "id": "feat.disruptive",
+      "name": "Disruptive",
+      "category": "combat"
+    },
+    {
+      "id": "feat.dodge",
+      "name": "Dodge",
+      "category": "combat"
+    },
+    {
+      "id": "feat.double-slice",
+      "name": "Double Slice",
+      "category": "combat"
+    },
+    {
+      "id": "feat.exhausting-critical",
+      "name": "Exhausting Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.exotic-weapon-proficiency",
+      "name": "Exotic Weapon Proficiency",
+      "category": "combat"
+    },
+    {
+      "id": "feat.far-shot",
+      "name": "Far Shot",
+      "category": "combat"
+    },
+    {
+      "id": "feat.gorgons-fist",
+      "name": "Gorgon's Fist",
+      "category": "combat"
+    },
+    {
+      "id": "feat.great-cleave",
+      "name": "Great Cleave",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-bull-rush",
+      "name": "Greater Bull Rush",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-disarm",
+      "name": "Greater Disarm",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-feint",
+      "name": "Greater Feint",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-grapple",
+      "name": "Greater Grapple",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-overrun",
+      "name": "Greater Overrun",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-penetrating-strike",
+      "name": "Greater Penetrating Strike",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-shield-focus",
+      "name": "Greater Shield Focus",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-sunder",
+      "name": "Greater Sunder",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-trip",
+      "name": "Greater Trip",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-two-weapon-fighting",
+      "name": "Greater Two-Weapon Fighting",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-vital-strike",
+      "name": "Greater Vital Strike",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-weapon-focus",
+      "name": "Greater Weapon Focus",
+      "category": "combat"
+    },
+    {
+      "id": "feat.greater-weapon-specialization",
+      "name": "Greater Weapon Specialization",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-bull-rush",
+      "name": "Improved Bull Rush",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-critical",
+      "name": "Improved Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-disarm",
+      "name": "Improved Disarm",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-feint",
+      "name": "Improved Feint",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-grapple",
+      "name": "Improved Grapple",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-overrun",
+      "name": "Improved Overrun",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-precise-shot",
+      "name": "Improved Precise Shot",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-shield-bash",
+      "name": "Improved Shield Bash",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-sunder",
+      "name": "Improved Sunder",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-trip",
+      "name": "Improved Trip",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-two-weapon-fighting",
+      "name": "Improved Two-Weapon Fighting",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-unarmed-strike",
+      "name": "Improved Unarmed Strike",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improved-vital-strike",
+      "name": "Improved Vital Strike",
+      "category": "combat"
+    },
+    {
+      "id": "feat.improvised-weapon-mastery",
+      "name": "Improvised Weapon Mastery",
+      "category": "combat"
+    },
+    {
+      "id": "feat.intimidating-prowess",
+      "name": "Intimidating Prowess",
+      "category": "combat"
+    },
+    {
+      "id": "feat.lightning-stance",
+      "name": "Lightning Stance",
+      "category": "combat"
+    },
+    {
+      "id": "feat.lunge",
+      "name": "Lunge",
+      "category": "combat"
+    },
+    {
+      "id": "feat.manyshot",
+      "name": "Manyshot",
+      "category": "combat"
+    },
+    {
+      "id": "feat.martial-weapon-proficiency",
+      "name": "Martial Weapon Proficiency",
+      "category": "combat"
+    },
+    {
+      "id": "feat.medusas-wrath",
+      "name": "Medusa's Wrath",
+      "category": "combat"
+    },
+    {
+      "id": "feat.mobility",
+      "name": "Mobility",
+      "category": "combat"
+    },
+    {
+      "id": "feat.mounted-archery",
+      "name": "Mounted Archery",
+      "category": "combat"
+    },
+    {
+      "id": "feat.mounted-combat",
+      "name": "Mounted Combat",
+      "category": "combat"
+    },
+    {
+      "id": "feat.penetrating-strike",
+      "name": "Penetrating Strike",
+      "category": "combat"
+    },
+    {
+      "id": "feat.pinpoint-targeting",
+      "name": "Pinpoint Targeting",
+      "category": "combat"
+    },
+    {
+      "id": "feat.precise-shot",
+      "name": "Precise Shot",
+      "category": "combat"
+    },
+    {
+      "id": "feat.quick-draw",
+      "name": "Quick Draw",
+      "category": "combat"
+    },
+    {
+      "id": "feat.rapid-reload",
+      "name": "Rapid Reload",
+      "category": "combat"
+    },
+    {
+      "id": "feat.rapid-shot",
+      "name": "Rapid Shot",
+      "category": "combat"
+    },
+    {
+      "id": "feat.ride-by-attack",
+      "name": "Ride-By Attack",
+      "category": "combat"
+    },
+    {
+      "id": "feat.scorpion-style",
+      "name": "Scorpion Style",
+      "category": "combat"
+    },
+    {
+      "id": "feat.shatter-defenses",
+      "name": "Shatter Defenses",
+      "category": "combat"
+    },
+    {
+      "id": "feat.shield-focus",
+      "name": "Shield Focus",
+      "category": "combat"
+    },
+    {
+      "id": "feat.shield-master",
+      "name": "Shield Master",
+      "category": "combat"
+    },
+    {
+      "id": "feat.shield-proficiency",
+      "name": "Shield Proficiency",
+      "category": "combat"
+    },
+    {
+      "id": "feat.shield-slam",
+      "name": "Shield Slam",
+      "category": "combat"
+    },
+    {
+      "id": "feat.shot-on-the-run",
+      "name": "Shot on the Run",
+      "category": "combat"
+    },
+    {
+      "id": "feat.sickening-critical",
+      "name": "Sickening Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.simple-weapon-proficiency",
+      "name": "Simple Weapon Proficiency",
+      "category": "combat"
+    },
+    {
+      "id": "feat.snatch-arrows",
+      "name": "Snatch Arrows",
+      "category": "combat"
+    },
+    {
+      "id": "feat.spellbreaker",
+      "name": "Spellbreaker",
+      "category": "combat"
+    },
+    {
+      "id": "feat.spirited-charge",
+      "name": "Spirited Charge",
+      "category": "combat"
+    },
+    {
+      "id": "feat.spring-attack",
+      "name": "Spring Attack",
+      "category": "combat"
+    },
+    {
+      "id": "feat.staggering-critical",
+      "name": "Staggering Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.stand-still",
+      "name": "Stand Still",
+      "category": "combat"
+    },
+    {
+      "id": "feat.step-up",
+      "name": "Step Up",
+      "category": "combat"
+    },
+    {
+      "id": "feat.strike-back",
+      "name": "Strike Back",
+      "category": "combat"
+    },
+    {
+      "id": "feat.stunning-critical",
+      "name": "Stunning Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.stunning-fist",
+      "name": "Stunning Fist",
+      "category": "combat"
+    },
+    {
+      "id": "feat.throw-anything",
+      "name": "Throw Anything",
+      "category": "combat"
+    },
+    {
+      "id": "feat.tiring-critical",
+      "name": "Tiring Critical",
+      "category": "combat"
+    },
+    {
+      "id": "feat.tower-shield-proficiency",
+      "name": "Tower Shield Proficiency",
+      "category": "combat"
+    },
+    {
+      "id": "feat.trample",
+      "name": "Trample",
+      "category": "combat"
+    },
+    {
+      "id": "feat.two-weapon-defense",
+      "name": "Two-Weapon Defense",
+      "category": "combat"
+    },
+    {
+      "id": "feat.two-weapon-fighting",
+      "name": "Two-Weapon Fighting",
+      "category": "combat"
+    },
+    {
+      "id": "feat.two-weapon-rend",
+      "name": "Two-Weapon Rend",
+      "category": "combat"
+    },
+    {
+      "id": "feat.unseat",
+      "name": "Unseat",
+      "category": "combat"
+    },
+    {
+      "id": "feat.vital-strike",
+      "name": "Vital Strike",
+      "category": "combat"
+    },
+    {
+      "id": "feat.weapon-finesse",
+      "name": "Weapon Finesse",
+      "category": "combat"
+    },
+    {
+      "id": "feat.weapon-specialization",
+      "name": "Weapon Specialization",
+      "category": "combat"
+    },
+    {
+      "id": "feat.whirlwind-attack",
+      "name": "Whirlwind Attack",
+      "category": "combat"
+    },
+    {
+      "id": "feat.wind-stance",
+      "name": "Wind Stance",
+      "category": "combat"
+    },
+    {
+      "id": "feat.acrobatic",
+      "name": "Acrobatic",
+      "category": "general"
+    },
+    {
+      "id": "feat.acrobatic-steps",
+      "name": "Acrobatic Steps",
+      "category": "general"
+    },
+    {
+      "id": "feat.alertness",
+      "name": "Alertness",
+      "category": "general"
+    },
+    {
+      "id": "feat.alignment-channel",
+      "name": "Alignment Channel",
+      "category": "general"
+    },
+    {
+      "id": "feat.animal-affinity",
+      "name": "Animal Affinity",
+      "category": "general"
+    },
+    {
+      "id": "feat.athletic",
+      "name": "Athletic",
+      "category": "general"
+    },
+    {
+      "id": "feat.augment-summoning",
+      "name": "Augment Summoning",
+      "category": "general"
+    },
+    {
+      "id": "feat.combat-casting",
+      "name": "Combat Casting",
+      "category": "general"
+    },
+    {
+      "id": "feat.command-undead",
+      "name": "Command Undead",
+      "category": "general"
+    },
+    {
+      "id": "feat.deceitful",
+      "name": "Deceitful",
+      "category": "general"
+    },
+    {
+      "id": "feat.deft-hands",
+      "name": "Deft Hands",
+      "category": "general"
+    },
+    {
+      "id": "feat.diehard",
+      "name": "Diehard",
+      "category": "general"
+    },
+    {
+      "id": "feat.elemental-channel",
+      "name": "Elemental Channel",
+      "category": "general"
+    },
+    {
+      "id": "feat.endurance",
+      "name": "Endurance",
+      "category": "general"
+    },
+    {
+      "id": "feat.extra-channel",
+      "name": "Extra Channel",
+      "category": "general"
+    },
+    {
+      "id": "feat.extra-ki",
+      "name": "Extra Ki",
+      "category": "general"
+    },
+    {
+      "id": "feat.extra-lay-on-hands",
+      "name": "Extra Lay On Hands",
+      "category": "general"
+    },
+    {
+      "id": "feat.extra-mercy",
+      "name": "Extra Mercy",
+      "category": "general"
+    },
+    {
+      "id": "feat.extra-performance",
+      "name": "Extra Performance",
+      "category": "general"
+    },
+    {
+      "id": "feat.extra-rage",
+      "name": "Extra Rage",
+      "category": "general"
+    },
+    {
+      "id": "feat.fleet",
+      "name": "Fleet",
+      "category": "general"
+    },
+    {
+      "id": "feat.great-fortitude",
+      "name": "Great Fortitude",
+      "category": "general"
+    },
+    {
+      "id": "feat.greater-spell-focus",
+      "name": "Greater Spell Focus",
+      "category": "general"
+    },
+    {
+      "id": "feat.greater-spell-penetration",
+      "name": "Greater Spell Penetration",
+      "category": "general"
+    },
+    {
+      "id": "feat.improved-channel",
+      "name": "Improved Channel",
+      "category": "general"
+    },
+    {
+      "id": "feat.improved-counterspell",
+      "name": "Improved Counterspell",
+      "category": "general"
+    },
+    {
+      "id": "feat.improved-familiar",
+      "name": "Improved Familiar",
+      "category": "general"
+    },
+    {
+      "id": "feat.improved-great-fortitude",
+      "name": "Improved Great Fortitude",
+      "category": "general"
+    },
+    {
+      "id": "feat.improved-iron-will",
+      "name": "Improved Iron Will",
+      "category": "general"
+    },
+    {
+      "id": "feat.improved-lightning-reflexes",
+      "name": "Improved Lightning Reflexes",
+      "category": "general"
+    },
+    {
+      "id": "feat.iron-will",
+      "name": "Iron Will",
+      "category": "general"
+    },
+    {
+      "id": "feat.leadership",
+      "name": "Leadership",
+      "category": "general"
+    },
+    {
+      "id": "feat.lightning-reflexes",
+      "name": "Lightning Reflexes",
+      "category": "general"
+    },
+    {
+      "id": "feat.magical-aptitude",
+      "name": "Magical Aptitude",
+      "category": "general"
+    },
+    {
+      "id": "feat.master-craftsman",
+      "name": "Master Craftsman",
+      "category": "general"
+    },
+    {
+      "id": "feat.natural-spell",
+      "name": "Natural Spell",
+      "category": "general"
+    },
+    {
+      "id": "feat.nimble-moves",
+      "name": "Nimble Moves",
+      "category": "general"
+    },
+    {
+      "id": "feat.persuasive",
+      "name": "Persuasive",
+      "category": "general"
+    },
+    {
+      "id": "feat.run",
+      "name": "Run",
+      "category": "general"
+    },
+    {
+      "id": "feat.selective-channeling",
+      "name": "Selective Channeling",
+      "category": "general"
+    },
+    {
+      "id": "feat.self-sufficient",
+      "name": "Self-Sufficient",
+      "category": "general"
+    },
+    {
+      "id": "feat.skill-focus",
+      "name": "Skill Focus",
+      "category": "general"
+    },
+    {
+      "id": "feat.spell-mastery",
+      "name": "Spell Mastery",
+      "category": "general"
+    },
+    {
+      "id": "feat.spell-penetration",
+      "name": "Spell Penetration",
+      "category": "general"
+    },
+    {
+      "id": "feat.stealthy",
+      "name": "Stealthy",
+      "category": "general"
+    },
+    {
+      "id": "feat.toughness",
+      "name": "Toughness",
+      "category": "general"
+    },
+    {
+      "id": "feat.turn-undead",
+      "name": "Turn Undead",
+      "category": "general"
+    },
+    {
+      "id": "feat.brew-potion",
+      "name": "Brew Potion",
+      "category": "itemCreation"
+    },
+    {
+      "id": "feat.craft-rod",
+      "name": "Craft Rod",
+      "category": "itemCreation"
+    },
+    {
+      "id": "feat.craft-staff",
+      "name": "Craft Staff",
+      "category": "itemCreation"
+    },
+    {
+      "id": "feat.craft-wand",
+      "name": "Craft Wand",
+      "category": "itemCreation"
+    },
+    {
+      "id": "feat.forge-ring",
+      "name": "Forge Ring",
+      "category": "itemCreation"
+    },
+    {
+      "id": "feat.empower-spell",
+      "name": "Empower Spell",
+      "category": "metamagic"
+    },
+    {
+      "id": "feat.enlarge-spell",
+      "name": "Enlarge Spell",
+      "category": "metamagic"
+    },
+    {
+      "id": "feat.extend-spell",
+      "name": "Extend Spell",
+      "category": "metamagic"
+    },
+    {
+      "id": "feat.maximize-spell",
+      "name": "Maximize Spell",
+      "category": "metamagic"
+    },
+    {
+      "id": "feat.quicken-spell",
+      "name": "Quicken Spell",
+      "category": "metamagic"
+    },
+    {
+      "id": "feat.silent-spell",
+      "name": "Silent Spell",
+      "category": "metamagic"
+    },
+    {
+      "id": "feat.still-spell",
+      "name": "Still Spell",
+      "category": "metamagic"
+    },
+    {
+      "id": "feat.widen-spell",
+      "name": "Widen Spell",
+      "category": "metamagic"
     }
   ],
   "packedSpells": [
@@ -48,3971 +908,3097 @@
       "id": "spell.magic-missile",
       "name": "Magic Missile",
       "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-poison",
+      "name": "Detect Poison",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.read-magic",
+      "name": "Read Magic",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.resistance",
+      "name": "Resistance",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.acid-splash",
+      "name": "Acid Splash",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.flare",
+      "name": "Flare",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.dancing-lights",
+      "name": "Dancing Lights",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.ray-of-frost",
+      "name": "Ray of Frost",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.ghost-sound",
+      "name": "Ghost Sound",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.open-close",
+      "name": "Open/Close",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.message",
+      "name": "Message",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.mage-hand",
+      "name": "Mage Hand",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.mending",
+      "name": "Mending",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.arcane-mark",
+      "name": "Arcane Mark",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.prestidigitation",
+      "name": "Prestidigitation",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.alarm",
+      "name": "Alarm",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.comprehend-languages",
+      "name": "Comprehend Languages",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-secret-doors",
+      "name": "Detect Secret Doors",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.true-strike",
+      "name": "True Strike",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.mage-armor",
+      "name": "Mage Armor",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.obscuring-mist",
+      "name": "Obscuring Mist",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.floating-disk",
+      "name": "Floating Disk",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.mount",
+      "name": "Mount",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.burning-hands",
+      "name": "Burning Hands",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.unseen-servant",
+      "name": "Unseen Servant",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.shield",
+      "name": "Shield",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.protection-from-evil",
+      "name": "Protection from Evil",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.arcane-lock",
+      "name": "Arcane Lock",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.detect-thoughts",
+      "name": "Detect Thoughts",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.see-invisibility",
+      "name": "See Invisibility",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.scorching-ray",
+      "name": "Scorching Ray",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.invisibility",
+      "name": "Invisibility",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.glitterdust",
+      "name": "Glitterdust",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.dispel-magic",
+      "name": "Dispel Magic",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.haste",
+      "name": "Haste",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.blink",
+      "name": "Blink",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.shrink-item",
+      "name": "Shrink Item",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.clairaudience-clairvoyance",
+      "name": "Clairaudience/Clairvoyance",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.water-breathing",
+      "name": "Water Breathing",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.greater-invisibility",
+      "name": "Greater Invisibility",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.lesser-globe-of-invulnerability",
+      "name": "Lesser Globe of Invulnerability",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.bleed",
+      "name": "Bleed",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.create-water",
+      "name": "Create Water",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.daze",
+      "name": "Daze",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.disrupt-undead",
+      "name": "Disrupt Undead",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.guidance",
+      "name": "Guidance",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.know-direction",
+      "name": "Know Direction",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.lullaby",
+      "name": "Lullaby",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.purify-food-and-drink",
+      "name": "Purify Food and Drink",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.stabilize",
+      "name": "Stabilize",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.summon-instrument",
+      "name": "Summon Instrument",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.touch-of-fatigue",
+      "name": "Touch of Fatigue",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.virtue",
+      "name": "Virtue",
+      "spellLevel": 0
+    },
+    {
+      "id": "spell.animal-messenger",
+      "name": "Animal Messenger",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.animate-rope",
+      "name": "Animate Rope",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.bane",
+      "name": "Bane",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.bless",
+      "name": "Bless",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.bless-water",
+      "name": "Bless Water",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.bless-weapon",
+      "name": "Bless Weapon",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.calm-animals",
+      "name": "Calm Animals",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.cause-fear",
+      "name": "Cause Fear",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.charm-animal",
+      "name": "Charm Animal",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.charm-person",
+      "name": "Charm Person",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.chill-touch",
+      "name": "Chill Touch",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.color-spray",
+      "name": "Color Spray",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.command",
+      "name": "Command",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.cure-light-wounds",
+      "name": "Cure Light Wounds",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.curse-water",
+      "name": "Curse Water",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.deathwatch",
+      "name": "Deathwatch",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.delay-poison",
+      "name": "Delay Poison",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-animals-or-plants",
+      "name": "Detect Animals or Plants",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-chaos",
+      "name": "Detect Chaos",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-evil",
+      "name": "Detect Evil",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-good",
+      "name": "Detect Good",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-law",
+      "name": "Detect Law",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-snares-and-pits",
+      "name": "Detect Snares and Pits",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.detect-undead",
+      "name": "Detect Undead",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.disguise-self",
+      "name": "Disguise Self",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.divine-favor",
+      "name": "Divine Favor",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.doom",
+      "name": "Doom",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.endure-elements",
+      "name": "Endure Elements",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.enlarge-person",
+      "name": "Enlarge Person",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.entangle",
+      "name": "Entangle",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.entropic-shield",
+      "name": "Entropic Shield",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.erase",
+      "name": "Erase",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.expeditious-retreat",
+      "name": "Expeditious Retreat",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.faerie-fire",
+      "name": "Faerie Fire",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.feather-fall",
+      "name": "Feather Fall",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.goodberry",
+      "name": "Goodberry",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.grease",
+      "name": "Grease",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.hide-from-animals",
+      "name": "Hide from Animals",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.hide-from-undead",
+      "name": "Hide from Undead",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.hold-portal",
+      "name": "Hold Portal",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.hypnotism",
+      "name": "Hypnotism",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.identify",
+      "name": "Identify",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.inflict-light-wounds",
+      "name": "Inflict Light Wounds",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.jump",
+      "name": "Jump",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.lesser-confusion",
+      "name": "Lesser Confusion",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.lesser-restoration",
+      "name": "Lesser Restoration",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.longstrider",
+      "name": "Longstrider",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.magic-aura",
+      "name": "Magic Aura",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.magic-fang",
+      "name": "Magic Fang",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.magic-stone",
+      "name": "Magic Stone",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.magic-weapon",
+      "name": "Magic Weapon",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.pass-without-trace",
+      "name": "Pass without Trace",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.produce-flame",
+      "name": "Produce Flame",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.protection-from-chaos",
+      "name": "Protection from Chaos",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.protection-from-good",
+      "name": "Protection from Good",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.protection-from-law",
+      "name": "Protection from Law",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.ray-of-enfeeblement",
+      "name": "Ray of Enfeeblement",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.reduce-person",
+      "name": "Reduce Person",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.remove-fear",
+      "name": "Remove Fear",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.sanctuary",
+      "name": "Sanctuary",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.shield-of-faith",
+      "name": "Shield of Faith",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.shillelagh",
+      "name": "Shillelagh",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.shocking-grasp",
+      "name": "Shocking Grasp",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.silent-image",
+      "name": "Silent Image",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.sleep",
+      "name": "Sleep",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.speak-with-animals",
+      "name": "Speak with Animals",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.summon-monster-i",
+      "name": "Summon Monster I",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.summon-natures-ally-i",
+      "name": "Summon Nature's Ally I",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.undetectable-alignment",
+      "name": "Undetectable Alignment",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.ventriloquism",
+      "name": "Ventriloquism",
+      "spellLevel": 1
+    },
+    {
+      "id": "spell.acid-arrow",
+      "name": "Acid Arrow",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.aid",
+      "name": "Aid",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.align-weapon",
+      "name": "Align Weapon",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.alter-self",
+      "name": "Alter Self",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.animal-trance",
+      "name": "Animal Trance",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.augury",
+      "name": "Augury",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.barkskin",
+      "name": "Barkskin",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.bears-endurance",
+      "name": "Bear's Endurance",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.blindness-deafness",
+      "name": "Blindness/Deafness",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.blur",
+      "name": "Blur",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.bulls-strength",
+      "name": "Bull's Strength",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.calm-emotions",
+      "name": "Calm Emotions",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.cats-grace",
+      "name": "Cat's Grace",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.chill-metal",
+      "name": "Chill Metal",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.command-undead",
+      "name": "Command Undead",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.consecrate",
+      "name": "Consecrate",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.continual-flame",
+      "name": "Continual Flame",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.cure-moderate-wounds",
+      "name": "Cure Moderate Wounds",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.darkness",
+      "name": "Darkness",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.darkvision",
+      "name": "Darkvision",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.daze-monster",
+      "name": "Daze Monster",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.death-knell",
+      "name": "Death Knell",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.desecrate",
+      "name": "Desecrate",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.eagles-splendor",
+      "name": "Eagle's Splendor",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.enthrall",
+      "name": "Enthrall",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.false-life",
+      "name": "False Life",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.find-traps",
+      "name": "Find Traps",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.flame-blade",
+      "name": "Flame Blade",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.flaming-sphere",
+      "name": "Flaming Sphere",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.fog-cloud",
+      "name": "Fog Cloud",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.foxs-cunning",
+      "name": "Fox's Cunning",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.ghoul-touch",
+      "name": "Ghoul Touch",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.gust-of-wind",
+      "name": "Gust of Wind",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.heat-metal",
+      "name": "Heat Metal",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.hideous-laughter",
+      "name": "Hideous Laughter",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.hold-animal",
+      "name": "Hold Animal",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.hypnotic-pattern",
+      "name": "Hypnotic Pattern",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.inflict-moderate-wounds",
+      "name": "Inflict Moderate Wounds",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.knock",
+      "name": "Knock",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.levitate",
+      "name": "Levitate",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.locate-object",
+      "name": "Locate Object",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.magic-mouth",
+      "name": "Magic Mouth",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.make-whole",
+      "name": "Make Whole",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.minor-image",
+      "name": "Minor Image",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.mirror-image",
+      "name": "Mirror Image",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.misdirection",
+      "name": "Misdirection",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.obscure-object",
+      "name": "Obscure Object",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.owls-wisdom",
+      "name": "Owl's Wisdom",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.phantom-trap",
+      "name": "Phantom Trap",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.protection-from-arrows",
+      "name": "Protection from Arrows",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.pyrotechnics",
+      "name": "Pyrotechnics",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.reduce-animal",
+      "name": "Reduce Animal",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.remove-paralysis",
+      "name": "Remove Paralysis",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.resist-energy",
+      "name": "Resist Energy",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.rope-trick",
+      "name": "Rope Trick",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.scare",
+      "name": "Scare",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.shatter",
+      "name": "Shatter",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.shield-other",
+      "name": "Shield Other",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.silence",
+      "name": "Silence",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.snare",
+      "name": "Snare",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.soften-earth-and-stone",
+      "name": "Soften Earth and Stone",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.sound-burst",
+      "name": "Sound Burst",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.speak-with-plants",
+      "name": "Speak with Plants",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.spectral-hand",
+      "name": "Spectral Hand",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.spider-climb",
+      "name": "Spider Climb",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.spike-growth",
+      "name": "Spike Growth",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.spiritual-weapon",
+      "name": "Spiritual Weapon",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.status",
+      "name": "Status",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.summon-monster-ii",
+      "name": "Summon Monster II",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.summon-natures-ally-ii",
+      "name": "Summon Nature's Ally II",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.summon-swarm",
+      "name": "Summon Swarm",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.touch-of-idiocy",
+      "name": "Touch of Idiocy",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.tree-shape",
+      "name": "Tree Shape",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.warp-wood",
+      "name": "Warp Wood",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.web",
+      "name": "Web",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.whispering-wind",
+      "name": "Whispering Wind",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.wood-shape",
+      "name": "Wood Shape",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.zone-of-truth",
+      "name": "Zone of Truth",
+      "spellLevel": 2
+    },
+    {
+      "id": "spell.arcane-sight",
+      "name": "Arcane Sight",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.beast-shape-i",
+      "name": "Beast Shape I",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.call-lightning",
+      "name": "Call Lightning",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.command-plants",
+      "name": "Command Plants",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.create-food-and-water",
+      "name": "Create Food and Water",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.cure-serious-wounds",
+      "name": "Cure Serious Wounds",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.daylight",
+      "name": "Daylight",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.deep-slumber",
+      "name": "Deep Slumber",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.deeper-darkness",
+      "name": "Deeper Darkness",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.diminish-plants",
+      "name": "Diminish Plants",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.discern-lies",
+      "name": "Discern Lies",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.displacement",
+      "name": "Displacement",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.dominate-animal",
+      "name": "Dominate Animal",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.explosive-runes",
+      "name": "Explosive Runes",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.flame-arrow",
+      "name": "Flame Arrow",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.fly",
+      "name": "Fly",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.gaseous-form",
+      "name": "Gaseous Form",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.gentle-repose",
+      "name": "Gentle Repose",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.glibness",
+      "name": "Glibness",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.glyph-of-warding",
+      "name": "Glyph of Warding",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.good-hope",
+      "name": "Good Hope",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.greater-magic-fang",
+      "name": "Greater Magic Fang",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.greater-magic-weapon",
+      "name": "Greater Magic Weapon",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.halt-undead",
+      "name": "Halt Undead",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.heal-mount",
+      "name": "Heal Mount",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.helping-hand",
+      "name": "Helping Hand",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.heroism",
+      "name": "Heroism",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.hold-person",
+      "name": "Hold Person",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.illusory-script",
+      "name": "Illusory Script",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.inflict-serious-wounds",
+      "name": "Inflict Serious Wounds",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.invisibility-purge",
+      "name": "Invisibility Purge",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.invisibility-sphere",
+      "name": "Invisibility Sphere",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.keen-edge",
+      "name": "Keen Edge",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.lightning-bolt",
+      "name": "Lightning Bolt",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.magic-circle-against-chaos",
+      "name": "Magic Circle against Chaos",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.magic-circle-against-evil",
+      "name": "Magic Circle against Evil",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.magic-circle-against-good",
+      "name": "Magic Circle against Good",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.magic-circle-against-law",
+      "name": "Magic Circle against Law",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.magic-vestment",
+      "name": "Magic Vestment",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.major-image",
+      "name": "Major Image",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.meld-into-stone",
+      "name": "Meld into Stone",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.neutralize-poison",
+      "name": "Neutralize Poison",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.nondetection",
+      "name": "Nondetection",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.phantom-steed",
+      "name": "Phantom Steed",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.plant-growth",
+      "name": "Plant Growth",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.poison",
+      "name": "Poison",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.prayer",
+      "name": "Prayer",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.protection-from-energy",
+      "name": "Protection from Energy",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.quench",
+      "name": "Quench",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.ray-of-exhaustion",
+      "name": "Ray of Exhaustion",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.remove-blindness-deafness",
+      "name": "Remove Blindness/Deafness",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.remove-disease",
+      "name": "Remove Disease",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.repel-vermin",
+      "name": "Repel Vermin",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.sculpt-sound",
+      "name": "Sculpt Sound",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.searing-light",
+      "name": "Searing Light",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.secret-page",
+      "name": "Secret Page",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.sepia-snake-sigil",
+      "name": "Sepia Snake Sigil",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.sleet-storm",
+      "name": "Sleet Storm",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.slow",
+      "name": "Slow",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.speak-with-dead",
+      "name": "Speak with Dead",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.stinking-cloud",
+      "name": "Stinking Cloud",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.suggestion",
+      "name": "Suggestion",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.summon-monster-iii",
+      "name": "Summon Monster III",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.summon-natures-ally-iii",
+      "name": "Summon Nature's Ally III",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.tiny-hut",
+      "name": "Tiny Hut",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.tongues",
+      "name": "Tongues",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.vampiric-touch",
+      "name": "Vampiric Touch",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.water-walk",
+      "name": "Water Walk",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.wind-wall",
+      "name": "Wind Wall",
+      "spellLevel": 3
+    },
+    {
+      "id": "spell.air-walk",
+      "name": "Air Walk",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.animate-dead",
+      "name": "Animate Dead",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.antiplant-shell",
+      "name": "Antiplant Shell",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.arcane-eye",
+      "name": "Arcane Eye",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.beast-shape-ii",
+      "name": "Beast Shape II",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.bestow-curse",
+      "name": "Bestow Curse",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.black-tentacles",
+      "name": "Black Tentacles",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.chaos-hammer",
+      "name": "Chaos Hammer",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.charm-monster",
+      "name": "Charm Monster",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.commune-with-nature",
+      "name": "Commune with Nature",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.confusion",
+      "name": "Confusion",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.contagion",
+      "name": "Contagion",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.crushing-despair",
+      "name": "Crushing Despair",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.cure-critical-wounds",
+      "name": "Cure Critical Wounds",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.death-ward",
+      "name": "Death Ward",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.detect-scrying",
+      "name": "Detect Scrying",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.dimension-door",
+      "name": "Dimension Door",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.dimensional-anchor",
+      "name": "Dimensional Anchor",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.dispel-chaos",
+      "name": "Dispel Chaos",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.dispel-evil",
+      "name": "Dispel Evil",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.divination",
+      "name": "Divination",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.divine-power",
+      "name": "Divine Power",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.elemental-body-i",
+      "name": "Elemental Body I",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.enervation",
+      "name": "Enervation",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.fear",
+      "name": "Fear",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.fire-shield",
+      "name": "Fire Shield",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.fire-trap",
+      "name": "Fire Trap",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.flame-strike",
+      "name": "Flame Strike",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.freedom-of-movement",
+      "name": "Freedom of Movement",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.giant-vermin",
+      "name": "Giant Vermin",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.hallucinatory-terrain",
+      "name": "Hallucinatory Terrain",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.holy-smite",
+      "name": "Holy Smite",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.holy-sword",
+      "name": "Holy Sword",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.ice-storm",
+      "name": "Ice Storm",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.illusory-wall",
+      "name": "Illusory Wall",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.imbue-with-spell-ability",
+      "name": "Imbue with Spell Ability",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.inflict-critical-wounds",
+      "name": "Inflict Critical Wounds",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.lesser-geas",
+      "name": "Lesser Geas",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.lesser-planar-ally",
+      "name": "Lesser Planar Ally",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.locate-creature",
+      "name": "Locate Creature",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.mark-of-justice",
+      "name": "Mark of Justice",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.mass-enlarge-person",
+      "name": "Mass Enlarge Person",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.mass-reduce-person",
+      "name": "Mass Reduce Person",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.minor-creation",
+      "name": "Minor Creation",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.mnemonic-enhancer",
+      "name": "Mnemonic Enhancer",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.modify-memory",
+      "name": "Modify Memory",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.orders-wrath",
+      "name": "Order's Wrath",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.phantasmal-killer",
+      "name": "Phantasmal Killer",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.rainbow-pattern",
+      "name": "Rainbow Pattern",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.reincarnate",
+      "name": "Reincarnate",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.remove-curse",
+      "name": "Remove Curse",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.resilient-sphere",
+      "name": "Resilient Sphere",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.restoration",
+      "name": "Restoration",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.rusting-grasp",
+      "name": "Rusting Grasp",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.scrying",
+      "name": "Scrying",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.secure-shelter",
+      "name": "Secure Shelter",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.shadow-conjuration",
+      "name": "Shadow Conjuration",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.shout",
+      "name": "Shout",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.solid-fog",
+      "name": "Solid Fog",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.spell-immunity",
+      "name": "Spell Immunity",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.spike-stones",
+      "name": "Spike Stones",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.stone-shape",
+      "name": "Stone Shape",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.stoneskin",
+      "name": "Stoneskin",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.summon-monster-iv",
+      "name": "Summon Monster IV",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.summon-natures-ally-iv",
+      "name": "Summon Nature's Ally IV",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.tree-stride",
+      "name": "Tree Stride",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.unholy-blight",
+      "name": "Unholy Blight",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.wall-of-fire",
+      "name": "Wall of Fire",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.wall-of-ice",
+      "name": "Wall of Ice",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.zone-of-silence",
+      "name": "Zone of Silence",
+      "spellLevel": 4
+    },
+    {
+      "id": "spell.animal-growth",
+      "name": "Animal Growth",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.atonement-fm",
+      "name": "Atonement FM",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.awaken",
+      "name": "Awaken",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.baleful-polymorph",
+      "name": "Baleful Polymorph",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.beast-shape-iii",
+      "name": "Beast Shape III",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.blight",
+      "name": "Blight",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.break-enchantment",
+      "name": "Break Enchantment",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.breath-of-life",
+      "name": "Breath of Life",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.call-lightning-storm",
+      "name": "Call Lightning Storm",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.cloudkill",
+      "name": "Cloudkill",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.commune",
+      "name": "Commune",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.cone-of-cold",
+      "name": "Cone of Cold",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.contact-other-plane",
+      "name": "Contact Other Plane",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.control-winds",
+      "name": "Control Winds",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.dismissal",
+      "name": "Dismissal",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.dispel-good",
+      "name": "Dispel Good",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.dispel-law",
+      "name": "Dispel Law",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.disrupting-weapon",
+      "name": "Disrupting Weapon",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.dominate-person",
+      "name": "Dominate Person",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.dream",
+      "name": "Dream",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.elemental-body-ii",
+      "name": "Elemental Body II",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.fabricate",
+      "name": "Fabricate",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.false-vision",
+      "name": "False Vision",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.feeblemind",
+      "name": "Feeblemind",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.greater-command",
+      "name": "Greater Command",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.hallow",
+      "name": "Hallow",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.hold-monster",
+      "name": "Hold Monster",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.insect-plague",
+      "name": "Insect Plague",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.interposing-hand",
+      "name": "Interposing Hand",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.lesser-planar-binding",
+      "name": "Lesser Planar Binding",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.mages-faithful-hound",
+      "name": "Mage's Faithful Hound",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.mages-private-sanctum",
+      "name": "Mage's Private Sanctum",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.magic-jar",
+      "name": "Magic Jar",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.major-creation",
+      "name": "Major Creation",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.mass-cure-light-wounds",
+      "name": "Mass Cure Light Wounds",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.mass-inflict-light-wounds",
+      "name": "Mass Inflict Light Wounds",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.mind-fog",
+      "name": "Mind Fog",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.mirage-arcana",
+      "name": "Mirage Arcana",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.nightmare",
+      "name": "Nightmare",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.overland-flight",
+      "name": "Overland Flight",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.passwall",
+      "name": "Passwall",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.permanency",
+      "name": "Permanency",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.persistent-image",
+      "name": "Persistent Image",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.plant-shape-i",
+      "name": "Plant Shape I",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.polymorph",
+      "name": "Polymorph",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.prying-eyes",
+      "name": "Prying Eyes",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.raise-dead",
+      "name": "Raise Dead",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.righteous-might",
+      "name": "Righteous Might",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.secret-chest",
+      "name": "Secret Chest",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.seeming",
+      "name": "Seeming",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.sending",
+      "name": "Sending",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.shadow-evocation",
+      "name": "Shadow Evocation",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.slay-living",
+      "name": "Slay Living",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.song-of-discord",
+      "name": "Song of Discord",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.spell-resistance",
+      "name": "Spell Resistance",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.summon-monster-v",
+      "name": "Summon Monster V",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.summon-natures-ally-v",
+      "name": "Summon Nature's Ally V",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.symbol-of-pain",
+      "name": "Symbol of Pain",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.symbol-of-sleep",
+      "name": "Symbol of Sleep",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.telekinesis",
+      "name": "Telekinesis",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.telepathic-bond",
+      "name": "Telepathic Bond",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.teleport",
+      "name": "Teleport",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.transmute-mud-to-rock",
+      "name": "Transmute Mud to Rock",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.transmute-rock-to-mud",
+      "name": "Transmute Rock to Mud",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.unhallow",
+      "name": "Unhallow",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.wall-of-force",
+      "name": "Wall of Force",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.wall-of-stone",
+      "name": "Wall of Stone",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.wall-of-thorns",
+      "name": "Wall of Thorns",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.waves-of-fatigue",
+      "name": "Waves of Fatigue",
+      "spellLevel": 5
+    },
+    {
+      "id": "spell.acid-fog",
+      "name": "Acid Fog",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.analyze-dweomer",
+      "name": "Analyze Dweomer",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.animate-objects",
+      "name": "Animate Objects",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.antilife-shell",
+      "name": "Antilife Shell",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.antimagic-field",
+      "name": "Antimagic Field",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.beast-shape-iv",
+      "name": "Beast Shape IV",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.blade-barrier",
+      "name": "Blade Barrier",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.chain-lightning",
+      "name": "Chain Lightning",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.circle-of-death",
+      "name": "Circle of Death",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.contingency",
+      "name": "Contingency",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.control-water",
+      "name": "Control Water",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.create-undead",
+      "name": "Create Undead",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.disintegrate",
+      "name": "Disintegrate",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.elemental-body-iii",
+      "name": "Elemental Body III",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.eyebite",
+      "name": "Eyebite",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.find-the-path",
+      "name": "Find the Path",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.fire-seeds",
+      "name": "Fire Seeds",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.flesh-to-stone",
+      "name": "Flesh to Stone",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.forbiddance",
+      "name": "Forbiddance",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.forceful-hand",
+      "name": "Forceful Hand",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.form-of-the-dragon-i",
+      "name": "Form of the Dragon I",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.freezing-sphere",
+      "name": "Freezing Sphere",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.geas-quest",
+      "name": "Geas/Quest",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.globe-of-invulnerability",
+      "name": "Globe of Invulnerability",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.greater-dispel-magic",
+      "name": "Greater Dispel Magic",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.greater-glyph-of-warding",
+      "name": "Greater Glyph of Warding",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.greater-heroism",
+      "name": "Greater Heroism",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.guards-and-wards",
+      "name": "Guards and Wards",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.harm",
+      "name": "Harm",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.heal",
+      "name": "Heal",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.heroes-feast",
+      "name": "Heroes' Feast",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.ironwood",
+      "name": "Ironwood",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.legend-lore",
+      "name": "Legend Lore",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.liveoak",
+      "name": "Liveoak",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mages-lucubration",
+      "name": "Mage's Lucubration",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-bears-endurance",
+      "name": "Mass Bear's Endurance",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-bulls-strength",
+      "name": "Mass Bull's Strength",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-cats-grace",
+      "name": "Mass Cat's Grace",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-cure-moderate-wounds",
+      "name": "Mass Cure Moderate Wounds",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-eagles-splendor",
+      "name": "Mass Eagle's Splendor",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-foxs-cunning",
+      "name": "Mass Fox's Cunning",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-inflict-moderate-wounds",
+      "name": "Mass Inflict Moderate Wounds",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-owls-wisdom",
+      "name": "Mass Owl's Wisdom",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mass-suggestion",
+      "name": "Mass Suggestion",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.mislead",
+      "name": "Mislead",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.move-earth",
+      "name": "Move Earth",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.permanent-image",
+      "name": "Permanent Image",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.planar-ally",
+      "name": "Planar Ally",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.planar-binding",
+      "name": "Planar Binding",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.plant-shape-ii",
+      "name": "Plant Shape II",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.programmed-image",
+      "name": "Programmed Image",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.repel-wood",
+      "name": "Repel Wood",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.repulsion",
+      "name": "Repulsion",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.shadow-walk",
+      "name": "Shadow Walk",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.spellstaff",
+      "name": "Spellstaff",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.stone-tell",
+      "name": "Stone Tell",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.stone-to-flesh",
+      "name": "Stone to Flesh",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.summon-monster-vi",
+      "name": "Summon Monster VI",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.summon-natures-ally-vi",
+      "name": "Summon Nature's Ally VI",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.symbol-of-fear",
+      "name": "Symbol of Fear",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.symbol-of-persuasion",
+      "name": "Symbol of Persuasion",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.sympathetic-vibration",
+      "name": "Sympathetic Vibration",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.transformation",
+      "name": "Transformation",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.transport-via-plants",
+      "name": "Transport via Plants",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.true-seeing",
+      "name": "True Seeing",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.undeath-to-death",
+      "name": "Undeath to Death",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.veil",
+      "name": "Veil",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.wall-of-iron",
+      "name": "Wall of Iron",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.wind-walk",
+      "name": "Wind Walk",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.word-of-recall",
+      "name": "Word of Recall",
+      "spellLevel": 6
+    },
+    {
+      "id": "spell.animate-plants",
+      "name": "Animate Plants",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.banishment",
+      "name": "Banishment",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.blasphemy",
+      "name": "Blasphemy",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.changestaff",
+      "name": "Changestaff",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.control-undead",
+      "name": "Control Undead",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.control-weather",
+      "name": "Control Weather",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.creeping-doom",
+      "name": "Creeping Doom",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.delayed-blast-fireball",
+      "name": "Delayed Blast Fireball",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.destruction",
+      "name": "Destruction",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.dictum",
+      "name": "Dictum",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.elemental-body-iv",
+      "name": "Elemental Body IV",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.ethereal-jaunt",
+      "name": "Ethereal Jaunt",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.finger-of-death",
+      "name": "Finger of Death",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.fire-storm",
+      "name": "Fire Storm",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.forcecage",
+      "name": "Forcecage",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.form-of-the-dragon-ii",
+      "name": "Form of the Dragon II",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.giant-form-i",
+      "name": "Giant Form I",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.grasping-hand",
+      "name": "Grasping Hand",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.greater-arcane-sight",
+      "name": "Greater Arcane Sight",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.greater-polymorph",
+      "name": "Greater Polymorph",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.greater-restoration",
+      "name": "Greater Restoration",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.greater-scrying",
+      "name": "Greater Scrying",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.greater-shadow-conjuration",
+      "name": "Greater Shadow Conjuration",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.greater-teleport",
+      "name": "Greater Teleport",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.holy-word",
+      "name": "Holy Word",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.insanity",
+      "name": "Insanity",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.instant-summons",
+      "name": "Instant Summons",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.limited-wish",
+      "name": "Limited Wish",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.mages-magnificent-mansion",
+      "name": "Mage's Magnificent Mansion",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.mages-sword",
+      "name": "Mage's Sword",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.mass-cure-serious-wounds",
+      "name": "Mass Cure Serious Wounds",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.mass-hold-person",
+      "name": "Mass Hold Person",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.mass-inflict-serious-wounds",
+      "name": "Mass Inflict Serious Wounds",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.mass-invisibility",
+      "name": "Mass Invisibility",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.phase-door",
+      "name": "Phase Door",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.plane-shift",
+      "name": "Plane Shift",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.plant-shape-iii",
+      "name": "Plant Shape III",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.power-word-blind",
+      "name": "Power Word Blind",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.prismatic-spray",
+      "name": "Prismatic Spray",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.project-image",
+      "name": "Project Image",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.regenerate",
+      "name": "Regenerate",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.resurrection",
+      "name": "Resurrection",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.reverse-gravity",
+      "name": "Reverse Gravity",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.sequester",
+      "name": "Sequester",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.simulacrum",
+      "name": "Simulacrum",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.spell-turning",
+      "name": "Spell Turning",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.statue",
+      "name": "Statue",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.summon-monster-vii",
+      "name": "Summon Monster VII",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.summon-natures-ally-vii",
+      "name": "Summon Nature's Ally VII",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.sunbeam",
+      "name": "Sunbeam",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.symbol-of-stunning",
+      "name": "Symbol of Stunning",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.symbol-of-weakness",
+      "name": "Symbol of Weakness",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.teleport-object",
+      "name": "Teleport Object",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.transmute-metal-to-wood",
+      "name": "Transmute Metal to Wood",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.vision",
+      "name": "Vision",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.waves-of-exhaustion",
+      "name": "Waves of Exhaustion",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.word-of-chaos",
+      "name": "Word of Chaos",
+      "spellLevel": 7
+    },
+    {
+      "id": "spell.animal-shapes",
+      "name": "Animal Shapes",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.antipathy",
+      "name": "Antipathy",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.binding",
+      "name": "Binding",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.clenched-fist",
+      "name": "Clenched Fist",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.cloak-of-chaos",
+      "name": "Cloak of Chaos",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.clone",
+      "name": "Clone",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.control-plants",
+      "name": "Control Plants",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.create-greater-undead",
+      "name": "Create Greater Undead",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.demand",
+      "name": "Demand",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.dimensional-lock",
+      "name": "Dimensional Lock",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.discern-location",
+      "name": "Discern Location",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.earthquake",
+      "name": "Earthquake",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.form-of-the-dragon-iii",
+      "name": "Form of the Dragon III",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.giant-form-ii",
+      "name": "Giant Form II",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.greater-planar-ally",
+      "name": "Greater Planar Ally",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.greater-planar-binding",
+      "name": "Greater Planar Binding",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.greater-prying-eyes",
+      "name": "Greater Prying Eyes",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.greater-shadow-evocation",
+      "name": "Greater Shadow Evocation",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.greater-shout",
+      "name": "Greater Shout",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.greater-spell-immunity",
+      "name": "Greater Spell Immunity",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.holy-aura",
+      "name": "Holy Aura",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.horrid-wilting",
+      "name": "Horrid Wilting",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.incendiary-cloud",
+      "name": "Incendiary Cloud",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.iron-body",
+      "name": "Iron Body",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.irresistible-dance",
+      "name": "Irresistible Dance",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.mass-charm-monster",
+      "name": "Mass Charm Monster",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.mass-cure-critical-wounds",
+      "name": "Mass Cure Critical Wounds",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.mass-inflict-critical-wounds",
+      "name": "Mass Inflict Critical Wounds",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.maze",
+      "name": "Maze",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.mind-blank",
+      "name": "Mind Blank",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.moment-of-prescience",
+      "name": "Moment of Prescience",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.polar-ray",
+      "name": "Polar Ray",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.polymorph-any-object",
+      "name": "Polymorph Any Object",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.power-word-stun",
+      "name": "Power Word Stun",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.prismatic-wall",
+      "name": "Prismatic Wall",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.protection-from-spells",
+      "name": "Protection from Spells",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.repel-metal-or-stone",
+      "name": "Repel Metal or Stone",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.scintillating-pattern",
+      "name": "Scintillating Pattern",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.screen",
+      "name": "Screen",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.shield-of-law",
+      "name": "Shield of Law",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.summon-monster-viii",
+      "name": "Summon Monster VIII",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.summon-natures-ally-viii",
+      "name": "Summon Nature's Ally VIII",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.sunburst",
+      "name": "Sunburst",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.symbol-of-death",
+      "name": "Symbol of Death",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.symbol-of-insanity",
+      "name": "Symbol of Insanity",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.sympathy",
+      "name": "Sympathy",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.telekinetic-sphere",
+      "name": "Telekinetic Sphere",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.temporal-stasis",
+      "name": "Temporal Stasis",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.trap-the-soul",
+      "name": "Trap the Soul",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.unholy-aura",
+      "name": "Unholy Aura",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.whirlwind",
+      "name": "Whirlwind",
+      "spellLevel": 8
+    },
+    {
+      "id": "spell.astral-projection",
+      "name": "Astral Projection",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.crushing-hand",
+      "name": "Crushing Hand",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.dominate-monster",
+      "name": "Dominate Monster",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.elemental-swarm",
+      "name": "Elemental Swarm",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.energy-drain",
+      "name": "Energy Drain",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.etherealness",
+      "name": "Etherealness",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.foresight",
+      "name": "Foresight",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.freedom",
+      "name": "Freedom",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.gate",
+      "name": "Gate",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.implosion",
+      "name": "Implosion",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.imprisonment",
+      "name": "Imprisonment",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.mages-disjunction",
+      "name": "Mage's Disjunction",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.mass-heal",
+      "name": "Mass Heal",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.mass-hold-monster",
+      "name": "Mass Hold Monster",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.meteor-swarm",
+      "name": "Meteor Swarm",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.miracle",
+      "name": "Miracle",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.power-word-kill",
+      "name": "Power Word Kill",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.prismatic-sphere",
+      "name": "Prismatic Sphere",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.refuge",
+      "name": "Refuge",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.shades",
+      "name": "Shades",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.shambler",
+      "name": "Shambler",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.shapechange",
+      "name": "Shapechange",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.soul-bind",
+      "name": "Soul Bind",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.storm-of-vengeance",
+      "name": "Storm of Vengeance",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.summon-monster-ix",
+      "name": "Summon Monster IX",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.summon-natures-ally-ix",
+      "name": "Summon Nature's Ally IX",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.teleportation-circle",
+      "name": "Teleportation Circle",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.time-stop",
+      "name": "Time Stop",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.true-resurrection",
+      "name": "True Resurrection",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.wail-of-the-banshee",
+      "name": "Wail of the Banshee",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.weird",
+      "name": "Weird",
+      "spellLevel": 9
+    },
+    {
+      "id": "spell.wish",
+      "name": "Wish",
+      "spellLevel": 9
     }
   ],
-  "batches": {
-    "F1": [
-      {
-        "id": "feat.agile-maneuvers",
-        "name": "Agile Maneuvers",
-        "category": "combat"
-      },
-      {
-        "id": "feat.arcane-armor-mastery",
-        "name": "Arcane Armor Mastery",
-        "category": "combat"
-      },
-      {
-        "id": "feat.arcane-armor-training",
-        "name": "Arcane Armor Training",
-        "category": "combat"
-      },
-      {
-        "id": "feat.arcane-strike",
-        "name": "Arcane Strike",
-        "category": "combat"
-      },
-      {
-        "id": "feat.armor-proficiency-heavy",
-        "name": "Armor Proficiency, Heavy",
-        "category": "combat"
-      },
-      {
-        "id": "feat.armor-proficiency-light",
-        "name": "Armor Proficiency, Light",
-        "category": "combat"
-      },
-      {
-        "id": "feat.armor-proficiency-medium",
-        "name": "Armor Proficiency, Medium",
-        "category": "combat"
-      },
-      {
-        "id": "feat.bleeding-critical",
-        "name": "Bleeding Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.blind-fight",
-        "name": "Blind-Fight",
-        "category": "combat"
-      },
-      {
-        "id": "feat.blinding-critical",
-        "name": "Blinding Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.catch-off-guard",
-        "name": "Catch Off-Guard",
-        "category": "combat"
-      },
-      {
-        "id": "feat.channel-smite",
-        "name": "Channel Smite",
-        "category": "combat"
-      },
-      {
-        "id": "feat.cleave",
-        "name": "Cleave",
-        "category": "combat"
-      },
-      {
-        "id": "feat.combat-expertise",
-        "name": "Combat Expertise",
-        "category": "combat"
-      },
-      {
-        "id": "feat.combat-reflexes",
-        "name": "Combat Reflexes",
-        "category": "combat"
-      },
-      {
-        "id": "feat.critical-focus",
-        "name": "Critical Focus",
-        "category": "combat"
-      },
-      {
-        "id": "feat.critical-mastery",
-        "name": "Critical Mastery",
-        "category": "combat"
-      },
-      {
-        "id": "feat.dazzling-display",
-        "name": "Dazzling Display",
-        "category": "combat"
-      },
-      {
-        "id": "feat.deadly-aim",
-        "name": "Deadly Aim",
-        "category": "combat"
-      },
-      {
-        "id": "feat.deadly-stroke",
-        "name": "Deadly Stroke",
-        "category": "combat"
-      },
-      {
-        "id": "feat.deafening-critical",
-        "name": "Deafening Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.defensive-combat-training",
-        "name": "Defensive Combat Training",
-        "category": "combat"
-      },
-      {
-        "id": "feat.deflect-arrows",
-        "name": "Deflect Arrows",
-        "category": "combat"
-      },
-      {
-        "id": "feat.disruptive",
-        "name": "Disruptive",
-        "category": "combat"
-      },
-      {
-        "id": "feat.dodge",
-        "name": "Dodge",
-        "category": "combat"
-      },
-      {
-        "id": "feat.double-slice",
-        "name": "Double Slice",
-        "category": "combat"
-      },
-      {
-        "id": "feat.exhausting-critical",
-        "name": "Exhausting Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.exotic-weapon-proficiency",
-        "name": "Exotic Weapon Proficiency",
-        "category": "combat"
-      },
-      {
-        "id": "feat.far-shot",
-        "name": "Far Shot",
-        "category": "combat"
-      },
-      {
-        "id": "feat.gorgons-fist",
-        "name": "Gorgon's Fist",
-        "category": "combat"
-      },
-      {
-        "id": "feat.great-cleave",
-        "name": "Great Cleave",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-bull-rush",
-        "name": "Greater Bull Rush",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-disarm",
-        "name": "Greater Disarm",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-feint",
-        "name": "Greater Feint",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-grapple",
-        "name": "Greater Grapple",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-overrun",
-        "name": "Greater Overrun",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-penetrating-strike",
-        "name": "Greater Penetrating Strike",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-shield-focus",
-        "name": "Greater Shield Focus",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-sunder",
-        "name": "Greater Sunder",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-trip",
-        "name": "Greater Trip",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-two-weapon-fighting",
-        "name": "Greater Two-Weapon Fighting",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-vital-strike",
-        "name": "Greater Vital Strike",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-weapon-focus",
-        "name": "Greater Weapon Focus",
-        "category": "combat"
-      },
-      {
-        "id": "feat.greater-weapon-specialization",
-        "name": "Greater Weapon Specialization",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-bull-rush",
-        "name": "Improved Bull Rush",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-critical",
-        "name": "Improved Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-disarm",
-        "name": "Improved Disarm",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-feint",
-        "name": "Improved Feint",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-grapple",
-        "name": "Improved Grapple",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-overrun",
-        "name": "Improved Overrun",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-precise-shot",
-        "name": "Improved Precise Shot",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-shield-bash",
-        "name": "Improved Shield Bash",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-sunder",
-        "name": "Improved Sunder",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-trip",
-        "name": "Improved Trip",
-        "category": "combat"
-      }
-    ],
-    "F2": [
-      {
-        "id": "feat.improved-two-weapon-fighting",
-        "name": "Improved Two-Weapon Fighting",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-unarmed-strike",
-        "name": "Improved Unarmed Strike",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improved-vital-strike",
-        "name": "Improved Vital Strike",
-        "category": "combat"
-      },
-      {
-        "id": "feat.improvised-weapon-mastery",
-        "name": "Improvised Weapon Mastery",
-        "category": "combat"
-      },
-      {
-        "id": "feat.intimidating-prowess",
-        "name": "Intimidating Prowess",
-        "category": "combat"
-      },
-      {
-        "id": "feat.lightning-stance",
-        "name": "Lightning Stance",
-        "category": "combat"
-      },
-      {
-        "id": "feat.lunge",
-        "name": "Lunge",
-        "category": "combat"
-      },
-      {
-        "id": "feat.manyshot",
-        "name": "Manyshot",
-        "category": "combat"
-      },
-      {
-        "id": "feat.martial-weapon-proficiency",
-        "name": "Martial Weapon Proficiency",
-        "category": "combat"
-      },
-      {
-        "id": "feat.medusas-wrath",
-        "name": "Medusa's Wrath",
-        "category": "combat"
-      },
-      {
-        "id": "feat.mobility",
-        "name": "Mobility",
-        "category": "combat"
-      },
-      {
-        "id": "feat.mounted-archery",
-        "name": "Mounted Archery",
-        "category": "combat"
-      },
-      {
-        "id": "feat.mounted-combat",
-        "name": "Mounted Combat",
-        "category": "combat"
-      },
-      {
-        "id": "feat.penetrating-strike",
-        "name": "Penetrating Strike",
-        "category": "combat"
-      },
-      {
-        "id": "feat.pinpoint-targeting",
-        "name": "Pinpoint Targeting",
-        "category": "combat"
-      },
-      {
-        "id": "feat.point-blank-shot",
-        "name": "Point-Blank Shot",
-        "category": "combat"
-      },
-      {
-        "id": "feat.precise-shot",
-        "name": "Precise Shot",
-        "category": "combat"
-      },
-      {
-        "id": "feat.quick-draw",
-        "name": "Quick Draw",
-        "category": "combat"
-      },
-      {
-        "id": "feat.rapid-reload",
-        "name": "Rapid Reload",
-        "category": "combat"
-      },
-      {
-        "id": "feat.rapid-shot",
-        "name": "Rapid Shot",
-        "category": "combat"
-      },
-      {
-        "id": "feat.ride-by-attack",
-        "name": "Ride-By Attack",
-        "category": "combat"
-      },
-      {
-        "id": "feat.scorpion-style",
-        "name": "Scorpion Style",
-        "category": "combat"
-      },
-      {
-        "id": "feat.shatter-defenses",
-        "name": "Shatter Defenses",
-        "category": "combat"
-      },
-      {
-        "id": "feat.shield-focus",
-        "name": "Shield Focus",
-        "category": "combat"
-      },
-      {
-        "id": "feat.shield-master",
-        "name": "Shield Master",
-        "category": "combat"
-      },
-      {
-        "id": "feat.shield-proficiency",
-        "name": "Shield Proficiency",
-        "category": "combat"
-      },
-      {
-        "id": "feat.shield-slam",
-        "name": "Shield Slam",
-        "category": "combat"
-      },
-      {
-        "id": "feat.shot-on-the-run",
-        "name": "Shot on the Run",
-        "category": "combat"
-      },
-      {
-        "id": "feat.sickening-critical",
-        "name": "Sickening Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.simple-weapon-proficiency",
-        "name": "Simple Weapon Proficiency",
-        "category": "combat"
-      },
-      {
-        "id": "feat.snatch-arrows",
-        "name": "Snatch Arrows",
-        "category": "combat"
-      },
-      {
-        "id": "feat.spellbreaker",
-        "name": "Spellbreaker",
-        "category": "combat"
-      },
-      {
-        "id": "feat.spirited-charge",
-        "name": "Spirited Charge",
-        "category": "combat"
-      },
-      {
-        "id": "feat.spring-attack",
-        "name": "Spring Attack",
-        "category": "combat"
-      },
-      {
-        "id": "feat.staggering-critical",
-        "name": "Staggering Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.stand-still",
-        "name": "Stand Still",
-        "category": "combat"
-      },
-      {
-        "id": "feat.step-up",
-        "name": "Step Up",
-        "category": "combat"
-      },
-      {
-        "id": "feat.strike-back",
-        "name": "Strike Back",
-        "category": "combat"
-      },
-      {
-        "id": "feat.stunning-critical",
-        "name": "Stunning Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.stunning-fist",
-        "name": "Stunning Fist",
-        "category": "combat"
-      },
-      {
-        "id": "feat.throw-anything",
-        "name": "Throw Anything",
-        "category": "combat"
-      },
-      {
-        "id": "feat.tiring-critical",
-        "name": "Tiring Critical",
-        "category": "combat"
-      },
-      {
-        "id": "feat.tower-shield-proficiency",
-        "name": "Tower Shield Proficiency",
-        "category": "combat"
-      },
-      {
-        "id": "feat.trample",
-        "name": "Trample",
-        "category": "combat"
-      },
-      {
-        "id": "feat.two-weapon-defense",
-        "name": "Two-Weapon Defense",
-        "category": "combat"
-      },
-      {
-        "id": "feat.two-weapon-fighting",
-        "name": "Two-Weapon Fighting",
-        "category": "combat"
-      },
-      {
-        "id": "feat.two-weapon-rend",
-        "name": "Two-Weapon Rend",
-        "category": "combat"
-      },
-      {
-        "id": "feat.unseat",
-        "name": "Unseat",
-        "category": "combat"
-      },
-      {
-        "id": "feat.vital-strike",
-        "name": "Vital Strike",
-        "category": "combat"
-      },
-      {
-        "id": "feat.weapon-finesse",
-        "name": "Weapon Finesse",
-        "category": "combat"
-      },
-      {
-        "id": "feat.weapon-specialization",
-        "name": "Weapon Specialization",
-        "category": "combat"
-      },
-      {
-        "id": "feat.whirlwind-attack",
-        "name": "Whirlwind Attack",
-        "category": "combat"
-      },
-      {
-        "id": "feat.wind-stance",
-        "name": "Wind Stance",
-        "category": "combat"
-      }
-    ],
-    "F3": [
-      {
-        "id": "feat.acrobatic",
-        "name": "Acrobatic",
-        "category": "general"
-      },
-      {
-        "id": "feat.acrobatic-steps",
-        "name": "Acrobatic Steps",
-        "category": "general"
-      },
-      {
-        "id": "feat.alertness",
-        "name": "Alertness",
-        "category": "general"
-      },
-      {
-        "id": "feat.alignment-channel",
-        "name": "Alignment Channel",
-        "category": "general"
-      },
-      {
-        "id": "feat.animal-affinity",
-        "name": "Animal Affinity",
-        "category": "general"
-      },
-      {
-        "id": "feat.athletic",
-        "name": "Athletic",
-        "category": "general"
-      },
-      {
-        "id": "feat.augment-summoning",
-        "name": "Augment Summoning",
-        "category": "general"
-      },
-      {
-        "id": "feat.combat-casting",
-        "name": "Combat Casting",
-        "category": "general"
-      },
-      {
-        "id": "feat.command-undead",
-        "name": "Command Undead",
-        "category": "general"
-      },
-      {
-        "id": "feat.deceitful",
-        "name": "Deceitful",
-        "category": "general"
-      },
-      {
-        "id": "feat.deft-hands",
-        "name": "Deft Hands",
-        "category": "general"
-      },
-      {
-        "id": "feat.diehard",
-        "name": "Diehard",
-        "category": "general"
-      },
-      {
-        "id": "feat.elemental-channel",
-        "name": "Elemental Channel",
-        "category": "general"
-      },
-      {
-        "id": "feat.endurance",
-        "name": "Endurance",
-        "category": "general"
-      },
-      {
-        "id": "feat.eschew-materials",
-        "name": "Eschew Materials",
-        "category": "general"
-      },
-      {
-        "id": "feat.extra-channel",
-        "name": "Extra Channel",
-        "category": "general"
-      },
-      {
-        "id": "feat.extra-ki",
-        "name": "Extra Ki",
-        "category": "general"
-      },
-      {
-        "id": "feat.extra-lay-on-hands",
-        "name": "Extra Lay On Hands",
-        "category": "general"
-      },
-      {
-        "id": "feat.extra-mercy",
-        "name": "Extra Mercy",
-        "category": "general"
-      },
-      {
-        "id": "feat.extra-performance",
-        "name": "Extra Performance",
-        "category": "general"
-      },
-      {
-        "id": "feat.extra-rage",
-        "name": "Extra Rage",
-        "category": "general"
-      },
-      {
-        "id": "feat.fleet",
-        "name": "Fleet",
-        "category": "general"
-      },
-      {
-        "id": "feat.great-fortitude",
-        "name": "Great Fortitude",
-        "category": "general"
-      },
-      {
-        "id": "feat.greater-spell-focus",
-        "name": "Greater Spell Focus",
-        "category": "general"
-      },
-      {
-        "id": "feat.greater-spell-penetration",
-        "name": "Greater Spell Penetration",
-        "category": "general"
-      },
-      {
-        "id": "feat.improved-channel",
-        "name": "Improved Channel",
-        "category": "general"
-      },
-      {
-        "id": "feat.improved-counterspell",
-        "name": "Improved Counterspell",
-        "category": "general"
-      },
-      {
-        "id": "feat.improved-familiar",
-        "name": "Improved Familiar",
-        "category": "general"
-      },
-      {
-        "id": "feat.improved-great-fortitude",
-        "name": "Improved Great Fortitude",
-        "category": "general"
-      },
-      {
-        "id": "feat.improved-iron-will",
-        "name": "Improved Iron Will",
-        "category": "general"
-      },
-      {
-        "id": "feat.improved-lightning-reflexes",
-        "name": "Improved Lightning Reflexes",
-        "category": "general"
-      },
-      {
-        "id": "feat.iron-will",
-        "name": "Iron Will",
-        "category": "general"
-      },
-      {
-        "id": "feat.leadership",
-        "name": "Leadership",
-        "category": "general"
-      },
-      {
-        "id": "feat.lightning-reflexes",
-        "name": "Lightning Reflexes",
-        "category": "general"
-      },
-      {
-        "id": "feat.magical-aptitude",
-        "name": "Magical Aptitude",
-        "category": "general"
-      },
-      {
-        "id": "feat.master-craftsman",
-        "name": "Master Craftsman",
-        "category": "general"
-      },
-      {
-        "id": "feat.natural-spell",
-        "name": "Natural Spell",
-        "category": "general"
-      },
-      {
-        "id": "feat.nimble-moves",
-        "name": "Nimble Moves",
-        "category": "general"
-      },
-      {
-        "id": "feat.persuasive",
-        "name": "Persuasive",
-        "category": "general"
-      },
-      {
-        "id": "feat.run",
-        "name": "Run",
-        "category": "general"
-      },
-      {
-        "id": "feat.selective-channeling",
-        "name": "Selective Channeling",
-        "category": "general"
-      },
-      {
-        "id": "feat.self-sufficient",
-        "name": "Self-Sufficient",
-        "category": "general"
-      },
-      {
-        "id": "feat.skill-focus",
-        "name": "Skill Focus",
-        "category": "general"
-      },
-      {
-        "id": "feat.spell-mastery",
-        "name": "Spell Mastery",
-        "category": "general"
-      },
-      {
-        "id": "feat.spell-penetration",
-        "name": "Spell Penetration",
-        "category": "general"
-      },
-      {
-        "id": "feat.stealthy",
-        "name": "Stealthy",
-        "category": "general"
-      },
-      {
-        "id": "feat.toughness",
-        "name": "Toughness",
-        "category": "general"
-      },
-      {
-        "id": "feat.turn-undead",
-        "name": "Turn Undead",
-        "category": "general"
-      }
-    ],
-    "F4": [
-      {
-        "id": "feat.brew-potion",
-        "name": "Brew Potion",
-        "category": "itemCreation"
-      },
-      {
-        "id": "feat.craft-magic-arms-and-armor",
-        "name": "Craft Magic Arms and Armor",
-        "category": "itemCreation"
-      },
-      {
-        "id": "feat.craft-rod",
-        "name": "Craft Rod",
-        "category": "itemCreation"
-      },
-      {
-        "id": "feat.craft-staff",
-        "name": "Craft Staff",
-        "category": "itemCreation"
-      },
-      {
-        "id": "feat.craft-wand",
-        "name": "Craft Wand",
-        "category": "itemCreation"
-      },
-      {
-        "id": "feat.craft-wondrous-item",
-        "name": "Craft Wondrous Item",
-        "category": "itemCreation"
-      },
-      {
-        "id": "feat.forge-ring",
-        "name": "Forge Ring",
-        "category": "itemCreation"
-      },
-      {
-        "id": "feat.empower-spell",
-        "name": "Empower Spell",
-        "category": "metamagic"
-      },
-      {
-        "id": "feat.enlarge-spell",
-        "name": "Enlarge Spell",
-        "category": "metamagic"
-      },
-      {
-        "id": "feat.extend-spell",
-        "name": "Extend Spell",
-        "category": "metamagic"
-      },
-      {
-        "id": "feat.heighten-spell",
-        "name": "Heighten Spell",
-        "category": "metamagic"
-      },
-      {
-        "id": "feat.maximize-spell",
-        "name": "Maximize Spell",
-        "category": "metamagic"
-      },
-      {
-        "id": "feat.quicken-spell",
-        "name": "Quicken Spell",
-        "category": "metamagic"
-      },
-      {
-        "id": "feat.silent-spell",
-        "name": "Silent Spell",
-        "category": "metamagic"
-      },
-      {
-        "id": "feat.still-spell",
-        "name": "Still Spell",
-        "category": "metamagic"
-      },
-      {
-        "id": "feat.widen-spell",
-        "name": "Widen Spell",
-        "category": "metamagic"
-      }
-    ],
-    "S1": [
-      {
-        "id": "spell.acid-splash",
-        "name": "Acid Splash",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.arcane-mark",
-        "name": "Arcane Mark",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.bleed",
-        "name": "Bleed",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.create-water",
-        "name": "Create Water",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.dancing-lights",
-        "name": "Dancing Lights",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.daze",
-        "name": "Daze",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.detect-poison",
-        "name": "Detect Poison",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.disrupt-undead",
-        "name": "Disrupt Undead",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.flare",
-        "name": "Flare",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.ghost-sound",
-        "name": "Ghost Sound",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.guidance",
-        "name": "Guidance",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.know-direction",
-        "name": "Know Direction",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.lullaby",
-        "name": "Lullaby",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.mage-hand",
-        "name": "Mage Hand",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.mending",
-        "name": "Mending",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.message",
-        "name": "Message",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.open-close",
-        "name": "Open/Close",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.prestidigitation",
-        "name": "Prestidigitation",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.purify-food-and-drink",
-        "name": "Purify Food and Drink",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.ray-of-frost",
-        "name": "Ray of Frost",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.read-magic",
-        "name": "Read Magic",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.resistance",
-        "name": "Resistance",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.stabilize",
-        "name": "Stabilize",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.summon-instrument",
-        "name": "Summon Instrument",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.touch-of-fatigue",
-        "name": "Touch of Fatigue",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.virtue",
-        "name": "Virtue",
-        "spellLevel": 0
-      },
-      {
-        "id": "spell.alarm",
-        "name": "Alarm",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.animal-messenger",
-        "name": "Animal Messenger",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.animate-rope",
-        "name": "Animate Rope",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.bane",
-        "name": "Bane",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.bless",
-        "name": "Bless",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.bless-water",
-        "name": "Bless Water",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.bless-weapon",
-        "name": "Bless Weapon",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.burning-hands",
-        "name": "Burning Hands",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.calm-animals",
-        "name": "Calm Animals",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.cause-fear",
-        "name": "Cause Fear",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.charm-animal",
-        "name": "Charm Animal",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.charm-person",
-        "name": "Charm Person",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.chill-touch",
-        "name": "Chill Touch",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.color-spray",
-        "name": "Color Spray",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.command",
-        "name": "Command",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.comprehend-languages",
-        "name": "Comprehend Languages",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.cure-light-wounds",
-        "name": "Cure Light Wounds",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.curse-water",
-        "name": "Curse Water",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.deathwatch",
-        "name": "Deathwatch",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.delay-poison",
-        "name": "Delay Poison",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.detect-animals-or-plants",
-        "name": "Detect Animals or Plants",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.detect-chaos",
-        "name": "Detect Chaos",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.detect-evil",
-        "name": "Detect Evil",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.detect-good",
-        "name": "Detect Good",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.detect-law",
-        "name": "Detect Law",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.detect-secret-doors",
-        "name": "Detect Secret Doors",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.detect-snares-and-pits",
-        "name": "Detect Snares and Pits",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.detect-undead",
-        "name": "Detect Undead",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.disguise-self",
-        "name": "Disguise Self",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.divine-favor",
-        "name": "Divine Favor",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.doom",
-        "name": "Doom",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.endure-elements",
-        "name": "Endure Elements",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.enlarge-person",
-        "name": "Enlarge Person",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.entangle",
-        "name": "Entangle",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.entropic-shield",
-        "name": "Entropic Shield",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.erase",
-        "name": "Erase",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.expeditious-retreat",
-        "name": "Expeditious Retreat",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.faerie-fire",
-        "name": "Faerie Fire",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.feather-fall",
-        "name": "Feather Fall",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.floating-disk",
-        "name": "Floating Disk",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.goodberry",
-        "name": "Goodberry",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.grease",
-        "name": "Grease",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.hide-from-animals",
-        "name": "Hide from Animals",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.hide-from-undead",
-        "name": "Hide from Undead",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.hold-portal",
-        "name": "Hold Portal",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.hypnotism",
-        "name": "Hypnotism",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.identify",
-        "name": "Identify",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.inflict-light-wounds",
-        "name": "Inflict Light Wounds",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.jump",
-        "name": "Jump",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.lesser-confusion",
-        "name": "Lesser Confusion",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.lesser-restoration",
-        "name": "Lesser Restoration",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.longstrider",
-        "name": "Longstrider",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.mage-armor",
-        "name": "Mage Armor",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.magic-aura",
-        "name": "Magic Aura",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.magic-fang",
-        "name": "Magic Fang",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.magic-stone",
-        "name": "Magic Stone",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.magic-weapon",
-        "name": "Magic Weapon",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.mount",
-        "name": "Mount",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.obscuring-mist",
-        "name": "Obscuring Mist",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.pass-without-trace",
-        "name": "Pass without Trace",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.produce-flame",
-        "name": "Produce Flame",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.protection-from-chaos",
-        "name": "Protection from Chaos",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.protection-from-evil",
-        "name": "Protection from Evil",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.protection-from-good",
-        "name": "Protection from Good",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.protection-from-law",
-        "name": "Protection from Law",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.ray-of-enfeeblement",
-        "name": "Ray of Enfeeblement",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.reduce-person",
-        "name": "Reduce Person",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.remove-fear",
-        "name": "Remove Fear",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.sanctuary",
-        "name": "Sanctuary",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.shield",
-        "name": "Shield",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.shield-of-faith",
-        "name": "Shield of Faith",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.shillelagh",
-        "name": "Shillelagh",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.shocking-grasp",
-        "name": "Shocking Grasp",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.silent-image",
-        "name": "Silent Image",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.sleep",
-        "name": "Sleep",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.speak-with-animals",
-        "name": "Speak with Animals",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.summon-monster-i",
-        "name": "Summon Monster I",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.summon-natures-ally-i",
-        "name": "Summon Nature's Ally I",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.true-strike",
-        "name": "True Strike",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.undetectable-alignment",
-        "name": "Undetectable Alignment",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.unseen-servant",
-        "name": "Unseen Servant",
-        "spellLevel": 1
-      },
-      {
-        "id": "spell.ventriloquism",
-        "name": "Ventriloquism",
-        "spellLevel": 1
-      }
-    ],
-    "S2": [
-      {
-        "id": "spell.acid-arrow",
-        "name": "Acid Arrow",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.aid",
-        "name": "Aid",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.align-weapon",
-        "name": "Align Weapon",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.alter-self",
-        "name": "Alter Self",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.animal-trance",
-        "name": "Animal Trance",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.arcane-lock",
-        "name": "Arcane Lock",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.augury",
-        "name": "Augury",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.barkskin",
-        "name": "Barkskin",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.bears-endurance",
-        "name": "Bear's Endurance",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.blindness-deafness",
-        "name": "Blindness/Deafness",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.blur",
-        "name": "Blur",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.bulls-strength",
-        "name": "Bull's Strength",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.calm-emotions",
-        "name": "Calm Emotions",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.cats-grace",
-        "name": "Cat's Grace",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.chill-metal",
-        "name": "Chill Metal",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.command-undead",
-        "name": "Command Undead",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.consecrate",
-        "name": "Consecrate",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.continual-flame",
-        "name": "Continual Flame",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.cure-moderate-wounds",
-        "name": "Cure Moderate Wounds",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.darkness",
-        "name": "Darkness",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.darkvision",
-        "name": "Darkvision",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.daze-monster",
-        "name": "Daze Monster",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.death-knell",
-        "name": "Death Knell",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.desecrate",
-        "name": "Desecrate",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.detect-thoughts",
-        "name": "Detect Thoughts",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.eagles-splendor",
-        "name": "Eagle's Splendor",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.enthrall",
-        "name": "Enthrall",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.false-life",
-        "name": "False Life",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.find-traps",
-        "name": "Find Traps",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.flame-blade",
-        "name": "Flame Blade",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.flaming-sphere",
-        "name": "Flaming Sphere",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.fog-cloud",
-        "name": "Fog Cloud",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.foxs-cunning",
-        "name": "Fox's Cunning",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.ghoul-touch",
-        "name": "Ghoul Touch",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.glitterdust",
-        "name": "Glitterdust",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.gust-of-wind",
-        "name": "Gust of Wind",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.heat-metal",
-        "name": "Heat Metal",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.hideous-laughter",
-        "name": "Hideous Laughter",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.hold-animal",
-        "name": "Hold Animal",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.hypnotic-pattern",
-        "name": "Hypnotic Pattern",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.inflict-moderate-wounds",
-        "name": "Inflict Moderate Wounds",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.invisibility",
-        "name": "Invisibility",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.knock",
-        "name": "Knock",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.levitate",
-        "name": "Levitate",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.locate-object",
-        "name": "Locate Object",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.magic-mouth",
-        "name": "Magic Mouth",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.make-whole",
-        "name": "Make Whole",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.minor-image",
-        "name": "Minor Image",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.mirror-image",
-        "name": "Mirror Image",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.misdirection",
-        "name": "Misdirection",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.obscure-object",
-        "name": "Obscure Object",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.owls-wisdom",
-        "name": "Owl's Wisdom",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.phantom-trap",
-        "name": "Phantom Trap",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.protection-from-arrows",
-        "name": "Protection from Arrows",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.pyrotechnics",
-        "name": "Pyrotechnics",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.reduce-animal",
-        "name": "Reduce Animal",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.remove-paralysis",
-        "name": "Remove Paralysis",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.resist-energy",
-        "name": "Resist Energy",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.rope-trick",
-        "name": "Rope Trick",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.scare",
-        "name": "Scare",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.scorching-ray",
-        "name": "Scorching Ray",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.see-invisibility",
-        "name": "See Invisibility",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.shatter",
-        "name": "Shatter",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.shield-other",
-        "name": "Shield Other",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.silence",
-        "name": "Silence",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.snare",
-        "name": "Snare",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.soften-earth-and-stone",
-        "name": "Soften Earth and Stone",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.sound-burst",
-        "name": "Sound Burst",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.speak-with-plants",
-        "name": "Speak with Plants",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.spectral-hand",
-        "name": "Spectral Hand",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.spider-climb",
-        "name": "Spider Climb",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.spike-growth",
-        "name": "Spike Growth",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.spiritual-weapon",
-        "name": "Spiritual Weapon",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.status",
-        "name": "Status",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.summon-monster-ii",
-        "name": "Summon Monster II",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.summon-natures-ally-ii",
-        "name": "Summon Nature's Ally II",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.summon-swarm",
-        "name": "Summon Swarm",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.touch-of-idiocy",
-        "name": "Touch of Idiocy",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.tree-shape",
-        "name": "Tree Shape",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.warp-wood",
-        "name": "Warp Wood",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.web",
-        "name": "Web",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.whispering-wind",
-        "name": "Whispering Wind",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.wood-shape",
-        "name": "Wood Shape",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.zone-of-truth",
-        "name": "Zone of Truth",
-        "spellLevel": 2
-      },
-      {
-        "id": "spell.arcane-sight",
-        "name": "Arcane Sight",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.beast-shape-i",
-        "name": "Beast Shape I",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.blink",
-        "name": "Blink",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.call-lightning",
-        "name": "Call Lightning",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.clairaudience-clairvoyance",
-        "name": "Clairaudience/Clairvoyance",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.command-plants",
-        "name": "Command Plants",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.create-food-and-water",
-        "name": "Create Food and Water",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.cure-serious-wounds",
-        "name": "Cure Serious Wounds",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.daylight",
-        "name": "Daylight",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.deep-slumber",
-        "name": "Deep Slumber",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.deeper-darkness",
-        "name": "Deeper Darkness",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.diminish-plants",
-        "name": "Diminish Plants",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.discern-lies",
-        "name": "Discern Lies",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.dispel-magic",
-        "name": "Dispel Magic",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.displacement",
-        "name": "Displacement",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.dominate-animal",
-        "name": "Dominate Animal",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.explosive-runes",
-        "name": "Explosive Runes",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.flame-arrow",
-        "name": "Flame Arrow",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.fly",
-        "name": "Fly",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.gaseous-form",
-        "name": "Gaseous Form",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.gentle-repose",
-        "name": "Gentle Repose",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.glibness",
-        "name": "Glibness",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.glyph-of-warding",
-        "name": "Glyph of Warding",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.good-hope",
-        "name": "Good Hope",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.greater-magic-fang",
-        "name": "Greater Magic Fang",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.greater-magic-weapon",
-        "name": "Greater Magic Weapon",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.halt-undead",
-        "name": "Halt Undead",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.haste",
-        "name": "Haste",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.heal-mount",
-        "name": "Heal Mount",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.helping-hand",
-        "name": "Helping Hand",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.heroism",
-        "name": "Heroism",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.hold-person",
-        "name": "Hold Person",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.illusory-script",
-        "name": "Illusory Script",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.inflict-serious-wounds",
-        "name": "Inflict Serious Wounds",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.invisibility-purge",
-        "name": "Invisibility Purge",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.invisibility-sphere",
-        "name": "Invisibility Sphere",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.keen-edge",
-        "name": "Keen Edge",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.lightning-bolt",
-        "name": "Lightning Bolt",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.magic-circle-against-chaos",
-        "name": "Magic Circle against Chaos",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.magic-circle-against-evil",
-        "name": "Magic Circle against Evil",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.magic-circle-against-good",
-        "name": "Magic Circle against Good",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.magic-circle-against-law",
-        "name": "Magic Circle against Law",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.magic-vestment",
-        "name": "Magic Vestment",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.major-image",
-        "name": "Major Image",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.meld-into-stone",
-        "name": "Meld into Stone",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.neutralize-poison",
-        "name": "Neutralize Poison",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.nondetection",
-        "name": "Nondetection",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.phantom-steed",
-        "name": "Phantom Steed",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.plant-growth",
-        "name": "Plant Growth",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.poison",
-        "name": "Poison",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.prayer",
-        "name": "Prayer",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.protection-from-energy",
-        "name": "Protection from Energy",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.quench",
-        "name": "Quench",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.ray-of-exhaustion",
-        "name": "Ray of Exhaustion",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.remove-blindness-deafness",
-        "name": "Remove Blindness/Deafness",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.remove-disease",
-        "name": "Remove Disease",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.repel-vermin",
-        "name": "Repel Vermin",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.sculpt-sound",
-        "name": "Sculpt Sound",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.searing-light",
-        "name": "Searing Light",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.secret-page",
-        "name": "Secret Page",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.sepia-snake-sigil",
-        "name": "Sepia Snake Sigil",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.shrink-item",
-        "name": "Shrink Item",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.sleet-storm",
-        "name": "Sleet Storm",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.slow",
-        "name": "Slow",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.speak-with-dead",
-        "name": "Speak with Dead",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.stinking-cloud",
-        "name": "Stinking Cloud",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.suggestion",
-        "name": "Suggestion",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.summon-monster-iii",
-        "name": "Summon Monster III",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.summon-natures-ally-iii",
-        "name": "Summon Nature's Ally III",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.tiny-hut",
-        "name": "Tiny Hut",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.tongues",
-        "name": "Tongues",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.vampiric-touch",
-        "name": "Vampiric Touch",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.water-breathing",
-        "name": "Water Breathing",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.water-walk",
-        "name": "Water Walk",
-        "spellLevel": 3
-      },
-      {
-        "id": "spell.wind-wall",
-        "name": "Wind Wall",
-        "spellLevel": 3
-      }
-    ],
-    "S3": [
-      {
-        "id": "spell.air-walk",
-        "name": "Air Walk",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.animate-dead",
-        "name": "Animate Dead",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.antiplant-shell",
-        "name": "Antiplant Shell",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.arcane-eye",
-        "name": "Arcane Eye",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.beast-shape-ii",
-        "name": "Beast Shape II",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.bestow-curse",
-        "name": "Bestow Curse",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.black-tentacles",
-        "name": "Black Tentacles",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.chaos-hammer",
-        "name": "Chaos Hammer",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.charm-monster",
-        "name": "Charm Monster",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.commune-with-nature",
-        "name": "Commune with Nature",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.confusion",
-        "name": "Confusion",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.contagion",
-        "name": "Contagion",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.crushing-despair",
-        "name": "Crushing Despair",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.cure-critical-wounds",
-        "name": "Cure Critical Wounds",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.death-ward",
-        "name": "Death Ward",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.detect-scrying",
-        "name": "Detect Scrying",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.dimension-door",
-        "name": "Dimension Door",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.dimensional-anchor",
-        "name": "Dimensional Anchor",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.dispel-chaos",
-        "name": "Dispel Chaos",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.dispel-evil",
-        "name": "Dispel Evil",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.divination",
-        "name": "Divination",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.divine-power",
-        "name": "Divine Power",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.elemental-body-i",
-        "name": "Elemental Body I",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.enervation",
-        "name": "Enervation",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.fear",
-        "name": "Fear",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.fire-shield",
-        "name": "Fire Shield",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.fire-trap",
-        "name": "Fire Trap",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.flame-strike",
-        "name": "Flame Strike",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.freedom-of-movement",
-        "name": "Freedom of Movement",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.giant-vermin",
-        "name": "Giant Vermin",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.greater-invisibility",
-        "name": "Greater Invisibility",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.hallucinatory-terrain",
-        "name": "Hallucinatory Terrain",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.holy-smite",
-        "name": "Holy Smite",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.holy-sword",
-        "name": "Holy Sword",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.ice-storm",
-        "name": "Ice Storm",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.illusory-wall",
-        "name": "Illusory Wall",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.imbue-with-spell-ability",
-        "name": "Imbue with Spell Ability",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.inflict-critical-wounds",
-        "name": "Inflict Critical Wounds",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.lesser-geas",
-        "name": "Lesser Geas",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.lesser-globe-of-invulnerability",
-        "name": "Lesser Globe of Invulnerability",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.lesser-planar-ally",
-        "name": "Lesser Planar Ally",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.locate-creature",
-        "name": "Locate Creature",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.mark-of-justice",
-        "name": "Mark of Justice",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.mass-enlarge-person",
-        "name": "Mass Enlarge Person",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.mass-reduce-person",
-        "name": "Mass Reduce Person",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.minor-creation",
-        "name": "Minor Creation",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.mnemonic-enhancer",
-        "name": "Mnemonic Enhancer",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.modify-memory",
-        "name": "Modify Memory",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.orders-wrath",
-        "name": "Order's Wrath",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.phantasmal-killer",
-        "name": "Phantasmal Killer",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.rainbow-pattern",
-        "name": "Rainbow Pattern",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.reincarnate",
-        "name": "Reincarnate",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.remove-curse",
-        "name": "Remove Curse",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.resilient-sphere",
-        "name": "Resilient Sphere",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.restoration",
-        "name": "Restoration",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.rusting-grasp",
-        "name": "Rusting Grasp",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.scrying",
-        "name": "Scrying",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.secure-shelter",
-        "name": "Secure Shelter",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.shadow-conjuration",
-        "name": "Shadow Conjuration",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.shout",
-        "name": "Shout",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.solid-fog",
-        "name": "Solid Fog",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.spell-immunity",
-        "name": "Spell Immunity",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.spike-stones",
-        "name": "Spike Stones",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.stone-shape",
-        "name": "Stone Shape",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.stoneskin",
-        "name": "Stoneskin",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.summon-monster-iv",
-        "name": "Summon Monster IV",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.summon-natures-ally-iv",
-        "name": "Summon Nature's Ally IV",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.tree-stride",
-        "name": "Tree Stride",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.unholy-blight",
-        "name": "Unholy Blight",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.wall-of-fire",
-        "name": "Wall of Fire",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.wall-of-ice",
-        "name": "Wall of Ice",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.zone-of-silence",
-        "name": "Zone of Silence",
-        "spellLevel": 4
-      },
-      {
-        "id": "spell.animal-growth",
-        "name": "Animal Growth",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.atonement-fm",
-        "name": "Atonement FM",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.awaken",
-        "name": "Awaken",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.baleful-polymorph",
-        "name": "Baleful Polymorph",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.beast-shape-iii",
-        "name": "Beast Shape III",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.blight",
-        "name": "Blight",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.break-enchantment",
-        "name": "Break Enchantment",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.breath-of-life",
-        "name": "Breath of Life",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.call-lightning-storm",
-        "name": "Call Lightning Storm",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.cloudkill",
-        "name": "Cloudkill",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.commune",
-        "name": "Commune",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.cone-of-cold",
-        "name": "Cone of Cold",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.contact-other-plane",
-        "name": "Contact Other Plane",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.control-winds",
-        "name": "Control Winds",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.dismissal",
-        "name": "Dismissal",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.dispel-good",
-        "name": "Dispel Good",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.dispel-law",
-        "name": "Dispel Law",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.disrupting-weapon",
-        "name": "Disrupting Weapon",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.dominate-person",
-        "name": "Dominate Person",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.dream",
-        "name": "Dream",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.elemental-body-ii",
-        "name": "Elemental Body II",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.fabricate",
-        "name": "Fabricate",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.false-vision",
-        "name": "False Vision",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.feeblemind",
-        "name": "Feeblemind",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.greater-command",
-        "name": "Greater Command",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.hallow",
-        "name": "Hallow",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.hold-monster",
-        "name": "Hold Monster",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.insect-plague",
-        "name": "Insect Plague",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.interposing-hand",
-        "name": "Interposing Hand",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.lesser-planar-binding",
-        "name": "Lesser Planar Binding",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.mages-faithful-hound",
-        "name": "Mage's Faithful Hound",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.mages-private-sanctum",
-        "name": "Mage's Private Sanctum",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.magic-jar",
-        "name": "Magic Jar",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.major-creation",
-        "name": "Major Creation",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.mass-cure-light-wounds",
-        "name": "Mass Cure Light Wounds",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.mass-inflict-light-wounds",
-        "name": "Mass Inflict Light Wounds",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.mind-fog",
-        "name": "Mind Fog",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.mirage-arcana",
-        "name": "Mirage Arcana",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.nightmare",
-        "name": "Nightmare",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.overland-flight",
-        "name": "Overland Flight",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.passwall",
-        "name": "Passwall",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.permanency",
-        "name": "Permanency",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.persistent-image",
-        "name": "Persistent Image",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.plant-shape-i",
-        "name": "Plant Shape I",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.polymorph",
-        "name": "Polymorph",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.prying-eyes",
-        "name": "Prying Eyes",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.raise-dead",
-        "name": "Raise Dead",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.righteous-might",
-        "name": "Righteous Might",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.secret-chest",
-        "name": "Secret Chest",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.seeming",
-        "name": "Seeming",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.sending",
-        "name": "Sending",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.shadow-evocation",
-        "name": "Shadow Evocation",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.slay-living",
-        "name": "Slay Living",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.song-of-discord",
-        "name": "Song of Discord",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.spell-resistance",
-        "name": "Spell Resistance",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.summon-monster-v",
-        "name": "Summon Monster V",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.summon-natures-ally-v",
-        "name": "Summon Nature's Ally V",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.symbol-of-pain",
-        "name": "Symbol of Pain",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.symbol-of-sleep",
-        "name": "Symbol of Sleep",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.telekinesis",
-        "name": "Telekinesis",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.telepathic-bond",
-        "name": "Telepathic Bond",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.teleport",
-        "name": "Teleport",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.transmute-mud-to-rock",
-        "name": "Transmute Mud to Rock",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.transmute-rock-to-mud",
-        "name": "Transmute Rock to Mud",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.unhallow",
-        "name": "Unhallow",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.wall-of-force",
-        "name": "Wall of Force",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.wall-of-stone",
-        "name": "Wall of Stone",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.wall-of-thorns",
-        "name": "Wall of Thorns",
-        "spellLevel": 5
-      },
-      {
-        "id": "spell.waves-of-fatigue",
-        "name": "Waves of Fatigue",
-        "spellLevel": 5
-      }
-    ],
-    "S4": [
-      {
-        "id": "spell.acid-fog",
-        "name": "Acid Fog",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.analyze-dweomer",
-        "name": "Analyze Dweomer",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.animate-objects",
-        "name": "Animate Objects",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.antilife-shell",
-        "name": "Antilife Shell",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.antimagic-field",
-        "name": "Antimagic Field",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.beast-shape-iv",
-        "name": "Beast Shape IV",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.blade-barrier",
-        "name": "Blade Barrier",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.chain-lightning",
-        "name": "Chain Lightning",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.circle-of-death",
-        "name": "Circle of Death",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.contingency",
-        "name": "Contingency",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.control-water",
-        "name": "Control Water",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.create-undead",
-        "name": "Create Undead",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.disintegrate",
-        "name": "Disintegrate",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.elemental-body-iii",
-        "name": "Elemental Body III",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.eyebite",
-        "name": "Eyebite",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.find-the-path",
-        "name": "Find the Path",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.fire-seeds",
-        "name": "Fire Seeds",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.flesh-to-stone",
-        "name": "Flesh to Stone",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.forbiddance",
-        "name": "Forbiddance",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.forceful-hand",
-        "name": "Forceful Hand",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.form-of-the-dragon-i",
-        "name": "Form of the Dragon I",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.freezing-sphere",
-        "name": "Freezing Sphere",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.geas-quest",
-        "name": "Geas/Quest",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.globe-of-invulnerability",
-        "name": "Globe of Invulnerability",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.greater-dispel-magic",
-        "name": "Greater Dispel Magic",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.greater-glyph-of-warding",
-        "name": "Greater Glyph of Warding",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.greater-heroism",
-        "name": "Greater Heroism",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.guards-and-wards",
-        "name": "Guards and Wards",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.harm",
-        "name": "Harm",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.heal",
-        "name": "Heal",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.heroes-feast",
-        "name": "Heroes' Feast",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.ironwood",
-        "name": "Ironwood",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.legend-lore",
-        "name": "Legend Lore",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.liveoak",
-        "name": "Liveoak",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mages-lucubration",
-        "name": "Mage's Lucubration",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-bears-endurance",
-        "name": "Mass Bear's Endurance",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-bulls-strength",
-        "name": "Mass Bull's Strength",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-cats-grace",
-        "name": "Mass Cat's Grace",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-cure-moderate-wounds",
-        "name": "Mass Cure Moderate Wounds",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-eagles-splendor",
-        "name": "Mass Eagle's Splendor",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-foxs-cunning",
-        "name": "Mass Fox's Cunning",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-inflict-moderate-wounds",
-        "name": "Mass Inflict Moderate Wounds",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-owls-wisdom",
-        "name": "Mass Owl's Wisdom",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mass-suggestion",
-        "name": "Mass Suggestion",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.mislead",
-        "name": "Mislead",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.move-earth",
-        "name": "Move Earth",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.permanent-image",
-        "name": "Permanent Image",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.planar-ally",
-        "name": "Planar Ally",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.planar-binding",
-        "name": "Planar Binding",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.plant-shape-ii",
-        "name": "Plant Shape II",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.programmed-image",
-        "name": "Programmed Image",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.repel-wood",
-        "name": "Repel Wood",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.repulsion",
-        "name": "Repulsion",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.shadow-walk",
-        "name": "Shadow Walk",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.spellstaff",
-        "name": "Spellstaff",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.stone-tell",
-        "name": "Stone Tell",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.stone-to-flesh",
-        "name": "Stone to Flesh",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.summon-monster-vi",
-        "name": "Summon Monster VI",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.summon-natures-ally-vi",
-        "name": "Summon Nature's Ally VI",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.symbol-of-fear",
-        "name": "Symbol of Fear",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.symbol-of-persuasion",
-        "name": "Symbol of Persuasion",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.sympathetic-vibration",
-        "name": "Sympathetic Vibration",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.transformation",
-        "name": "Transformation",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.transport-via-plants",
-        "name": "Transport via Plants",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.true-seeing",
-        "name": "True Seeing",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.undeath-to-death",
-        "name": "Undeath to Death",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.veil",
-        "name": "Veil",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.wall-of-iron",
-        "name": "Wall of Iron",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.wind-walk",
-        "name": "Wind Walk",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.word-of-recall",
-        "name": "Word of Recall",
-        "spellLevel": 6
-      },
-      {
-        "id": "spell.animate-plants",
-        "name": "Animate Plants",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.banishment",
-        "name": "Banishment",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.blasphemy",
-        "name": "Blasphemy",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.changestaff",
-        "name": "Changestaff",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.control-undead",
-        "name": "Control Undead",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.control-weather",
-        "name": "Control Weather",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.creeping-doom",
-        "name": "Creeping Doom",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.delayed-blast-fireball",
-        "name": "Delayed Blast Fireball",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.destruction",
-        "name": "Destruction",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.dictum",
-        "name": "Dictum",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.elemental-body-iv",
-        "name": "Elemental Body IV",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.ethereal-jaunt",
-        "name": "Ethereal Jaunt",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.finger-of-death",
-        "name": "Finger of Death",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.fire-storm",
-        "name": "Fire Storm",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.forcecage",
-        "name": "Forcecage",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.form-of-the-dragon-ii",
-        "name": "Form of the Dragon II",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.giant-form-i",
-        "name": "Giant Form I",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.grasping-hand",
-        "name": "Grasping Hand",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.greater-arcane-sight",
-        "name": "Greater Arcane Sight",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.greater-polymorph",
-        "name": "Greater Polymorph",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.greater-restoration",
-        "name": "Greater Restoration",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.greater-scrying",
-        "name": "Greater Scrying",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.greater-shadow-conjuration",
-        "name": "Greater Shadow Conjuration",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.greater-teleport",
-        "name": "Greater Teleport",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.holy-word",
-        "name": "Holy Word",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.insanity",
-        "name": "Insanity",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.instant-summons",
-        "name": "Instant Summons",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.limited-wish",
-        "name": "Limited Wish",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.mages-magnificent-mansion",
-        "name": "Mage's Magnificent Mansion",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.mages-sword",
-        "name": "Mage's Sword",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.mass-cure-serious-wounds",
-        "name": "Mass Cure Serious Wounds",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.mass-hold-person",
-        "name": "Mass Hold Person",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.mass-inflict-serious-wounds",
-        "name": "Mass Inflict Serious Wounds",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.mass-invisibility",
-        "name": "Mass Invisibility",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.phase-door",
-        "name": "Phase Door",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.plane-shift",
-        "name": "Plane Shift",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.plant-shape-iii",
-        "name": "Plant Shape III",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.power-word-blind",
-        "name": "Power Word Blind",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.prismatic-spray",
-        "name": "Prismatic Spray",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.project-image",
-        "name": "Project Image",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.regenerate",
-        "name": "Regenerate",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.resurrection",
-        "name": "Resurrection",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.reverse-gravity",
-        "name": "Reverse Gravity",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.sequester",
-        "name": "Sequester",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.simulacrum",
-        "name": "Simulacrum",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.spell-turning",
-        "name": "Spell Turning",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.statue",
-        "name": "Statue",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.summon-monster-vii",
-        "name": "Summon Monster VII",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.summon-natures-ally-vii",
-        "name": "Summon Nature's Ally VII",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.sunbeam",
-        "name": "Sunbeam",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.symbol-of-stunning",
-        "name": "Symbol of Stunning",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.symbol-of-weakness",
-        "name": "Symbol of Weakness",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.teleport-object",
-        "name": "Teleport Object",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.transmute-metal-to-wood",
-        "name": "Transmute Metal to Wood",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.vision",
-        "name": "Vision",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.waves-of-exhaustion",
-        "name": "Waves of Exhaustion",
-        "spellLevel": 7
-      },
-      {
-        "id": "spell.word-of-chaos",
-        "name": "Word of Chaos",
-        "spellLevel": 7
-      }
-    ],
-    "S5": [
-      {
-        "id": "spell.animal-shapes",
-        "name": "Animal Shapes",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.antipathy",
-        "name": "Antipathy",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.binding",
-        "name": "Binding",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.clenched-fist",
-        "name": "Clenched Fist",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.cloak-of-chaos",
-        "name": "Cloak of Chaos",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.clone",
-        "name": "Clone",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.control-plants",
-        "name": "Control Plants",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.create-greater-undead",
-        "name": "Create Greater Undead",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.demand",
-        "name": "Demand",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.dimensional-lock",
-        "name": "Dimensional Lock",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.discern-location",
-        "name": "Discern Location",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.earthquake",
-        "name": "Earthquake",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.form-of-the-dragon-iii",
-        "name": "Form of the Dragon III",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.giant-form-ii",
-        "name": "Giant Form II",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.greater-planar-ally",
-        "name": "Greater Planar Ally",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.greater-planar-binding",
-        "name": "Greater Planar Binding",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.greater-prying-eyes",
-        "name": "Greater Prying Eyes",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.greater-shadow-evocation",
-        "name": "Greater Shadow Evocation",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.greater-shout",
-        "name": "Greater Shout",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.greater-spell-immunity",
-        "name": "Greater Spell Immunity",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.holy-aura",
-        "name": "Holy Aura",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.horrid-wilting",
-        "name": "Horrid Wilting",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.incendiary-cloud",
-        "name": "Incendiary Cloud",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.iron-body",
-        "name": "Iron Body",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.irresistible-dance",
-        "name": "Irresistible Dance",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.mass-charm-monster",
-        "name": "Mass Charm Monster",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.mass-cure-critical-wounds",
-        "name": "Mass Cure Critical Wounds",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.mass-inflict-critical-wounds",
-        "name": "Mass Inflict Critical Wounds",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.maze",
-        "name": "Maze",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.mind-blank",
-        "name": "Mind Blank",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.moment-of-prescience",
-        "name": "Moment of Prescience",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.polar-ray",
-        "name": "Polar Ray",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.polymorph-any-object",
-        "name": "Polymorph Any Object",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.power-word-stun",
-        "name": "Power Word Stun",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.prismatic-wall",
-        "name": "Prismatic Wall",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.protection-from-spells",
-        "name": "Protection from Spells",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.repel-metal-or-stone",
-        "name": "Repel Metal or Stone",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.scintillating-pattern",
-        "name": "Scintillating Pattern",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.screen",
-        "name": "Screen",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.shield-of-law",
-        "name": "Shield of Law",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.summon-monster-viii",
-        "name": "Summon Monster VIII",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.summon-natures-ally-viii",
-        "name": "Summon Nature's Ally VIII",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.sunburst",
-        "name": "Sunburst",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.symbol-of-death",
-        "name": "Symbol of Death",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.symbol-of-insanity",
-        "name": "Symbol of Insanity",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.sympathy",
-        "name": "Sympathy",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.telekinetic-sphere",
-        "name": "Telekinetic Sphere",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.temporal-stasis",
-        "name": "Temporal Stasis",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.trap-the-soul",
-        "name": "Trap the Soul",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.unholy-aura",
-        "name": "Unholy Aura",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.whirlwind",
-        "name": "Whirlwind",
-        "spellLevel": 8
-      },
-      {
-        "id": "spell.astral-projection",
-        "name": "Astral Projection",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.crushing-hand",
-        "name": "Crushing Hand",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.dominate-monster",
-        "name": "Dominate Monster",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.elemental-swarm",
-        "name": "Elemental Swarm",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.energy-drain",
-        "name": "Energy Drain",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.etherealness",
-        "name": "Etherealness",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.foresight",
-        "name": "Foresight",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.freedom",
-        "name": "Freedom",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.gate",
-        "name": "Gate",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.implosion",
-        "name": "Implosion",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.imprisonment",
-        "name": "Imprisonment",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.mages-disjunction",
-        "name": "Mage's Disjunction",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.mass-heal",
-        "name": "Mass Heal",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.mass-hold-monster",
-        "name": "Mass Hold Monster",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.meteor-swarm",
-        "name": "Meteor Swarm",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.miracle",
-        "name": "Miracle",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.power-word-kill",
-        "name": "Power Word Kill",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.prismatic-sphere",
-        "name": "Prismatic Sphere",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.refuge",
-        "name": "Refuge",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.shades",
-        "name": "Shades",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.shambler",
-        "name": "Shambler",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.shapechange",
-        "name": "Shapechange",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.soul-bind",
-        "name": "Soul Bind",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.storm-of-vengeance",
-        "name": "Storm of Vengeance",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.summon-monster-ix",
-        "name": "Summon Monster IX",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.summon-natures-ally-ix",
-        "name": "Summon Nature's Ally IX",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.teleportation-circle",
-        "name": "Teleportation Circle",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.time-stop",
-        "name": "Time Stop",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.true-resurrection",
-        "name": "True Resurrection",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.wail-of-the-banshee",
-        "name": "Wail of the Banshee",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.weird",
-        "name": "Weird",
-        "spellLevel": 9
-      },
-      {
-        "id": "spell.wish",
-        "name": "Wish",
-        "spellLevel": 9
-      }
-    ]
-  }
+  "batches": {}
 }

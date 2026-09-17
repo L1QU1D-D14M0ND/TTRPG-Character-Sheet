@@ -3,30 +3,1416 @@
     "id": "feat.improved-initiative",
     "name": "Improved Initiative",
     "category": "combat",
-    "source": { "book": "CRB" }
+    "source": {
+      "book": "CRB"
+    }
   },
   {
     "id": "feat.power-attack",
     "name": "Power Attack",
     "category": "combat",
-    "source": { "book": "CRB" }
+    "source": {
+      "book": "CRB"
+    }
   },
   {
     "id": "feat.scribe-scroll",
     "name": "Scribe Scroll",
     "category": "itemCreation",
-    "source": { "book": "CRB" }
+    "source": {
+      "book": "CRB"
+    }
   },
   {
     "id": "feat.spell-focus",
     "name": "Spell Focus",
     "category": "general",
-    "source": { "book": "CRB" }
+    "source": {
+      "book": "CRB"
+    }
   },
   {
     "id": "feat.weapon-focus",
     "name": "Weapon Focus",
     "category": "combat",
-    "source": { "book": "CRB" }
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.eschew-materials",
+    "name": "Eschew Materials",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.heighten-spell",
+    "name": "Heighten Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.craft-wondrous-item",
+    "name": "Craft Wondrous Item",
+    "category": "itemCreation",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.craft-magic-arms-and-armor",
+    "name": "Craft Magic Arms and Armor",
+    "category": "itemCreation",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.craft-construct",
+    "name": "Craft Construct",
+    "category": "itemCreation",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.point-blank-shot",
+    "name": "Point-Blank Shot",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.agile-maneuvers",
+    "name": "Agile Maneuvers",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.arcane-armor-mastery",
+    "name": "Arcane Armor Mastery",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.arcane-armor-training",
+    "name": "Arcane Armor Training",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.arcane-strike",
+    "name": "Arcane Strike",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.armor-proficiency-heavy",
+    "name": "Armor Proficiency, Heavy",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.armor-proficiency-light",
+    "name": "Armor Proficiency, Light",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.armor-proficiency-medium",
+    "name": "Armor Proficiency, Medium",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.bleeding-critical",
+    "name": "Bleeding Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.blind-fight",
+    "name": "Blind-Fight",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.blinding-critical",
+    "name": "Blinding Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.catch-off-guard",
+    "name": "Catch Off-Guard",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.channel-smite",
+    "name": "Channel Smite",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.cleave",
+    "name": "Cleave",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.combat-expertise",
+    "name": "Combat Expertise",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.combat-reflexes",
+    "name": "Combat Reflexes",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.critical-focus",
+    "name": "Critical Focus",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.critical-mastery",
+    "name": "Critical Mastery",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.dazzling-display",
+    "name": "Dazzling Display",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.deadly-aim",
+    "name": "Deadly Aim",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.deadly-stroke",
+    "name": "Deadly Stroke",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.deafening-critical",
+    "name": "Deafening Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.defensive-combat-training",
+    "name": "Defensive Combat Training",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.deflect-arrows",
+    "name": "Deflect Arrows",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.disruptive",
+    "name": "Disruptive",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.dodge",
+    "name": "Dodge",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.double-slice",
+    "name": "Double Slice",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.exhausting-critical",
+    "name": "Exhausting Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.exotic-weapon-proficiency",
+    "name": "Exotic Weapon Proficiency",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.far-shot",
+    "name": "Far Shot",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.gorgons-fist",
+    "name": "Gorgon's Fist",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.great-cleave",
+    "name": "Great Cleave",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-bull-rush",
+    "name": "Greater Bull Rush",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-disarm",
+    "name": "Greater Disarm",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-feint",
+    "name": "Greater Feint",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-grapple",
+    "name": "Greater Grapple",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-overrun",
+    "name": "Greater Overrun",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-penetrating-strike",
+    "name": "Greater Penetrating Strike",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-shield-focus",
+    "name": "Greater Shield Focus",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-sunder",
+    "name": "Greater Sunder",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-trip",
+    "name": "Greater Trip",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-two-weapon-fighting",
+    "name": "Greater Two-Weapon Fighting",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-vital-strike",
+    "name": "Greater Vital Strike",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-weapon-focus",
+    "name": "Greater Weapon Focus",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-weapon-specialization",
+    "name": "Greater Weapon Specialization",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-bull-rush",
+    "name": "Improved Bull Rush",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-critical",
+    "name": "Improved Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-disarm",
+    "name": "Improved Disarm",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-feint",
+    "name": "Improved Feint",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-grapple",
+    "name": "Improved Grapple",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-overrun",
+    "name": "Improved Overrun",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-precise-shot",
+    "name": "Improved Precise Shot",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-shield-bash",
+    "name": "Improved Shield Bash",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-sunder",
+    "name": "Improved Sunder",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-trip",
+    "name": "Improved Trip",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-two-weapon-fighting",
+    "name": "Improved Two-Weapon Fighting",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-unarmed-strike",
+    "name": "Improved Unarmed Strike",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-vital-strike",
+    "name": "Improved Vital Strike",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improvised-weapon-mastery",
+    "name": "Improvised Weapon Mastery",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.intimidating-prowess",
+    "name": "Intimidating Prowess",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.lightning-stance",
+    "name": "Lightning Stance",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.lunge",
+    "name": "Lunge",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.manyshot",
+    "name": "Manyshot",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.martial-weapon-proficiency",
+    "name": "Martial Weapon Proficiency",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.medusas-wrath",
+    "name": "Medusa's Wrath",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.mobility",
+    "name": "Mobility",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.mounted-archery",
+    "name": "Mounted Archery",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.mounted-combat",
+    "name": "Mounted Combat",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.penetrating-strike",
+    "name": "Penetrating Strike",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.pinpoint-targeting",
+    "name": "Pinpoint Targeting",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.precise-shot",
+    "name": "Precise Shot",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.quick-draw",
+    "name": "Quick Draw",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.rapid-reload",
+    "name": "Rapid Reload",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.rapid-shot",
+    "name": "Rapid Shot",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.ride-by-attack",
+    "name": "Ride-By Attack",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.scorpion-style",
+    "name": "Scorpion Style",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.shatter-defenses",
+    "name": "Shatter Defenses",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.shield-focus",
+    "name": "Shield Focus",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.shield-master",
+    "name": "Shield Master",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.shield-proficiency",
+    "name": "Shield Proficiency",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.shield-slam",
+    "name": "Shield Slam",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.shot-on-the-run",
+    "name": "Shot on the Run",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.sickening-critical",
+    "name": "Sickening Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.simple-weapon-proficiency",
+    "name": "Simple Weapon Proficiency",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.snatch-arrows",
+    "name": "Snatch Arrows",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.spellbreaker",
+    "name": "Spellbreaker",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.spirited-charge",
+    "name": "Spirited Charge",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.spring-attack",
+    "name": "Spring Attack",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.staggering-critical",
+    "name": "Staggering Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.stand-still",
+    "name": "Stand Still",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.step-up",
+    "name": "Step Up",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.strike-back",
+    "name": "Strike Back",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.stunning-critical",
+    "name": "Stunning Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.stunning-fist",
+    "name": "Stunning Fist",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.throw-anything",
+    "name": "Throw Anything",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.tiring-critical",
+    "name": "Tiring Critical",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.tower-shield-proficiency",
+    "name": "Tower Shield Proficiency",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.trample",
+    "name": "Trample",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.two-weapon-defense",
+    "name": "Two-Weapon Defense",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.two-weapon-fighting",
+    "name": "Two-Weapon Fighting",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.two-weapon-rend",
+    "name": "Two-Weapon Rend",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.unseat",
+    "name": "Unseat",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.vital-strike",
+    "name": "Vital Strike",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.weapon-finesse",
+    "name": "Weapon Finesse",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.weapon-specialization",
+    "name": "Weapon Specialization",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.whirlwind-attack",
+    "name": "Whirlwind Attack",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.wind-stance",
+    "name": "Wind Stance",
+    "category": "combat",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.acrobatic",
+    "name": "Acrobatic",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.acrobatic-steps",
+    "name": "Acrobatic Steps",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.alertness",
+    "name": "Alertness",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.alignment-channel",
+    "name": "Alignment Channel",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.animal-affinity",
+    "name": "Animal Affinity",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.athletic",
+    "name": "Athletic",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.augment-summoning",
+    "name": "Augment Summoning",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.combat-casting",
+    "name": "Combat Casting",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.command-undead",
+    "name": "Command Undead",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.deceitful",
+    "name": "Deceitful",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.deft-hands",
+    "name": "Deft Hands",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.diehard",
+    "name": "Diehard",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.elemental-channel",
+    "name": "Elemental Channel",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.endurance",
+    "name": "Endurance",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.extra-channel",
+    "name": "Extra Channel",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.extra-ki",
+    "name": "Extra Ki",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.extra-lay-on-hands",
+    "name": "Extra Lay On Hands",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.extra-mercy",
+    "name": "Extra Mercy",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.extra-performance",
+    "name": "Extra Performance",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.extra-rage",
+    "name": "Extra Rage",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.fleet",
+    "name": "Fleet",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.great-fortitude",
+    "name": "Great Fortitude",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-spell-focus",
+    "name": "Greater Spell Focus",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.greater-spell-penetration",
+    "name": "Greater Spell Penetration",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-channel",
+    "name": "Improved Channel",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-counterspell",
+    "name": "Improved Counterspell",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-familiar",
+    "name": "Improved Familiar",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-great-fortitude",
+    "name": "Improved Great Fortitude",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-iron-will",
+    "name": "Improved Iron Will",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.improved-lightning-reflexes",
+    "name": "Improved Lightning Reflexes",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.iron-will",
+    "name": "Iron Will",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.leadership",
+    "name": "Leadership",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.lightning-reflexes",
+    "name": "Lightning Reflexes",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.magical-aptitude",
+    "name": "Magical Aptitude",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.master-craftsman",
+    "name": "Master Craftsman",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.natural-spell",
+    "name": "Natural Spell",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.nimble-moves",
+    "name": "Nimble Moves",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.persuasive",
+    "name": "Persuasive",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.run",
+    "name": "Run",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.selective-channeling",
+    "name": "Selective Channeling",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.self-sufficient",
+    "name": "Self-Sufficient",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.skill-focus",
+    "name": "Skill Focus",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.spell-mastery",
+    "name": "Spell Mastery",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.spell-penetration",
+    "name": "Spell Penetration",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.stealthy",
+    "name": "Stealthy",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.toughness",
+    "name": "Toughness",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.turn-undead",
+    "name": "Turn Undead",
+    "category": "general",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.brew-potion",
+    "name": "Brew Potion",
+    "category": "itemCreation",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.craft-rod",
+    "name": "Craft Rod",
+    "category": "itemCreation",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.craft-staff",
+    "name": "Craft Staff",
+    "category": "itemCreation",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.craft-wand",
+    "name": "Craft Wand",
+    "category": "itemCreation",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.forge-ring",
+    "name": "Forge Ring",
+    "category": "itemCreation",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.empower-spell",
+    "name": "Empower Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.enlarge-spell",
+    "name": "Enlarge Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.extend-spell",
+    "name": "Extend Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.maximize-spell",
+    "name": "Maximize Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.quicken-spell",
+    "name": "Quicken Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.silent-spell",
+    "name": "Silent Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.still-spell",
+    "name": "Still Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
+  },
+  {
+    "id": "feat.widen-spell",
+    "name": "Widen Spell",
+    "category": "metamagic",
+    "source": {
+      "book": "CRB"
+    }
   }
 ]
