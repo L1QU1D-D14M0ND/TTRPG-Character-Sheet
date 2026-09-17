@@ -37,6 +37,8 @@ Use [`schemas/pf1e/character.schema.json`](../../schemas/pf1e/character.schema.j
 
 **Postscript (2026-08-27):** `spellcasting[].slots[].max` may be null (or omitted). Null uses class table + ability bonus as the displayed Max. A number is a custom override. Remaining stays play state. Does not bump `schemaVersion`.
 
+**Postscript (2026-09-12):** Optional `classes[].arcaneSchool` with `specialized` and `opposition[]` (Wizard school specialization and opposition schools; documentary). Does not bump `schemaVersion`. Exercised in `wizard-transmutation-7.json`.
+
 ## References
 
 - [`../../schemas/pf1e/character.schema.json`](../../schemas/pf1e/character.schema.json)
@@ -44,6 +46,7 @@ Use [`schemas/pf1e/character.schema.json`](../../schemas/pf1e/character.schema.j
 - [`../../fixtures/characters/golden/pf1e/wizard-5.json`](../../fixtures/characters/golden/pf1e/wizard-5.json)
 - [`../../fixtures/characters/golden/pf1e/fighter-2-wizard-3.json`](../../fixtures/characters/golden/pf1e/fighter-2-wizard-3.json)
 - [`../../fixtures/characters/golden/pf1e/synthesist-5.json`](../../fixtures/characters/golden/pf1e/synthesist-5.json)
+- [`../../fixtures/characters/golden/pf1e/wizard-transmutation-7.json`](../../fixtures/characters/golden/pf1e/wizard-transmutation-7.json)
 - [`../pf1e-schema-design-notes.md`](../pf1e-schema-design-notes.md)
 - [`../pf1e-character-sheet-design.md`](../pf1e-character-sheet-design.md)
 - [`0002-character-schema.md`](0002-character-schema.md) — PF2e documents only

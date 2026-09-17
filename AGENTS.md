@@ -2,17 +2,13 @@
 
 ## Testing
 
-### Honesty / code fixes (next)
+### Honesty / code fixes (landed)
 
-Phase 1x next code: leftover W7 test titles, golden `weapon.properties` / `secondHead` vs catalog stamp, honest `focusTab`. See [`docs/ROADMAP.md`](docs/ROADMAP.md) Phase 1x honesty / code fixes.
+Phase 1x honesty / code fixes landed (2026-09-12): leftover W7 test titles renamed, golden `weapon.properties` / `secondHead` stamped vs catalog, honest `focusTab` wired. See [`docs/ROADMAP.md`](docs/ROADMAP.md) Phase 1x honesty / code fixes.
 
-- From `app/`, run `npx vitest run src/systems/pf1e`.
-- Do **not** start remaining feats/spells or sidebar tools in that change.
-- Do **not** record a demo video unless sheet control, layout, or Combat math actually changes. Stamping golden inventory fields is not an Inventory UI change.
+### CRB catalog fill-out (completed — next is APG follow-through)
 
-### CRB catalog fill-out (remaining feats/spells)
-
-These batches append remaining catalog rows **after** the honesty/code fixes. Id tables are locked ([`docs/pf1e-crb-feat-spell-ids.md`](docs/pf1e-crb-feat-spell-ids.md); F1–F4 then S1–S5). Inventory already lists chips for weapon properties. Names + category/level only ([ADR 0007](docs/adr/0007-content-licensing.md)).
+All 177 CRB feats (110 combat, 49 general, 9 item creation, 9 metamagic) and all 622 CRB spells (Batches S1–S5) have landed under [ADR 0007](docs/adr/0007-content-licensing.md) (names + category/level only, mechanics-only). Next is APG follow-through (Summoner `spellsPerDay` + spell catalog).
 
 - From `app/`, run `npx vitest run src/systems/pf1e`.
 - Do **not** record a demo video or upload Inventory screenshots unless the Inventory UI itself changed.

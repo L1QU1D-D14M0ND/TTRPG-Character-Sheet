@@ -1,6 +1,6 @@
 # Pathfinder First Edition — Character sheet (system spec)
 
-**Status:** System specification locked (ADR 0003). PF1e **0.9 bar landed**. **1.0 landed** (Synthesist golden + Spanish UI catalog + stability). **Next (stakeholder override, 2026-09-12):** an optimal-play pass for a specific Wizard 7 Transmutation-specialist playtest character — arcane school + opposition schools, bonus school spell slot, CRB school powers, targeted spell/feat catalog fill, `vitals.resistances`/`senses`/`speeds` UI — see [`ROADMAP.md`](ROADMAP.md) Phase 1x. Honesty/code fixes and the remaining alphabetical First Edition catalog resume after. Remaining PF2e work waits for a later release. **Sidebar tools are still the last character-sheet feature.**  
+**Status:** System specification locked (ADR 0003). PF1e **0.9 bar landed**. **1.0 landed** (Synthesist golden + Spanish UI catalog + stability). Wizard 7 playtest override (arcane school, opposition schools, bonus school slot, school powers, targeted spells/feats, vitals UI) and Phase 1x honesty/code fixes landed (2026-09-12). Feat batches F1–F4 (all 177 CRB feats) and spell batches S1–S5 (all 622 CRB spells) landed, completing the entire CRB player catalog. **Next:** APG follow-through (Summoner `spellsPerDay` + spell catalog). Remaining PF2e work waits for a later release. **Sidebar tools are still the last character-sheet feature.**  
 **Parent:** [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md)  
 **Schema:** [ADR 0006](adr/0006-pf1e-character-schema.md), [`pf1e-schema-design-notes.md`](pf1e-schema-design-notes.md), [`../schemas/pf1e/character.schema.json`](../schemas/pf1e/character.schema.json)  
 **Priority:** **Finish** this system in the current release (ahead of remaining PF2e work, which waits for a later release)
@@ -162,7 +162,7 @@ Engineering fixtures. Assert core outputs. Until catalog batches 8–10 land, go
 
 Exact ability scores, feats, and spell picks are chosen when writing the fixture. Roles above stay covered.
 
-Optional later (this First Edition finish): Cleric 5 (domains/channel as daily resources), prestige smoke test, familiar/companion table fixture. **1.0 Synthesist golden:** landed (`synthesist-5.json`).
+Optional later (this First Edition finish): Cleric 5 (domains/channel as daily resources), prestige smoke test, familiar/companion table fixture. **1.0 Synthesist golden:** landed (`synthesist-5.json`). **Playtest priority override golden:** landed (`wizard-transmutation-7.json` — CRB Wizard 7 Transmutation specialist).
 
 ---
 
@@ -170,7 +170,7 @@ Optional later (this First Edition finish): Cleric 5 (domains/channel as daily r
 
 Curated CRB player catalog under [`content/pf1e/crb/`](../content/pf1e/crb/). Review process: [`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) — **two mechanics per batch**.
 
-Batch 1–15 (landed, including Batch 7): ability modifiers + BAB/saves; HP dialog + iteratives; AC/CMB; skills; size; encumbrance (Ignore weight opt-out); spell DC + bonus slots from ability; Human race catalog (ability +2 stays typed); Fighter/Wizard class skills + skill-point pool; documentary weapons/armor ids; remaining 9 CRB classes; documentary feat ids (Combat math stays typed); documentary spell ids; remaining CRB player races + size stamp; class spells-per-day tables with hybrid Max. Remaining mundane weapons/armor are queued as batches 16–21 ([pack design §7](pf1e-crb-pack-design.md)); **batches 16–19 landed** (simple, martial, and exotic weapons). **W1–W7 landed** `reach`, `brace`, `trip`, `disarm`, `monk`, `nonlethal`, and `double` on `weapon.properties`, an **array of N tags** (one is valid; many are valid; later magic uses the same list). Double weapons also stamp a documentary `secondHead` ([pack design §7.6](pf1e-crb-pack-design.md)). **Batch 20 landed** remaining light + medium armor. **Batch 21 landed** heavy armor, shields (`kind: shield`), and mundane extras. Magic weapons/armor are a later overlay, not plus-N catalog rows. **Next code** is honesty/code fixes (stale W7 test titles; golden inventory vs catalog stamp; honest `focusTab`), then remaining feats/spells from the locked F1–F4 / S1–S5 tables ([`pf1e-crb-feat-spell-ids.md`](pf1e-crb-feat-spell-ids.md)). Load penalties, equipped-item AC, class features, feat combat math, Spell Focus DC, domain/specialist extras, and auto-filled spellbooks are not auto-written.
+Batch 1–15 (landed, including Batch 7): ability modifiers + BAB/saves; HP dialog + iteratives; AC/CMB; skills; size; encumbrance (Ignore weight opt-out); spell DC + bonus slots from ability; Human race catalog (ability +2 stays typed); Fighter/Wizard class skills + skill-point pool; documentary weapons/armor ids; remaining 9 CRB classes; documentary feat ids (Combat math stays typed); documentary spell ids; remaining CRB player races + size stamp; class spells-per-day tables with hybrid Max. Remaining mundane weapons/armor are queued as batches 16–21 ([pack design §7](pf1e-crb-pack-design.md)); **batches 16–19 landed** (simple, martial, and exotic weapons). **W1–W7 landed** `reach`, `brace`, `trip`, `disarm`, `monk`, `nonlethal`, and `double` on `weapon.properties`, an **array of N tags** (one is valid; many are valid; later magic uses the same list). Double weapons also stamp a documentary `secondHead` ([pack design §7.6](pf1e-crb-pack-design.md)). **Batch 20 landed** remaining light + medium armor. **Batch 21 landed** heavy armor, shields (`kind: shield`), and mundane extras. Magic weapons/armor are a later overlay, not plus-N catalog rows. Honesty/code fixes and Wizard 7 playtest additions landed (stale W7 test titles; golden inventory vs catalog stamp; honest `focusTab`; Wizard features and spells packed). Batches F1a–F1c, F2a–F2c, F3a–F3c, F4, and S1–S5 landed (all 177 CRB feats and all 622 CRB spells packed, completing the entire CRB player catalog). **Next code** is APG follow-through (Summoner `spellsPerDay` + spell catalog; [`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)). Load penalties, equipped-item AC, class features, feat combat math, Spell Focus DC, domain/specialist extras, and auto-filled spellbooks are not auto-written.
 
 License: mechanics-only until rules text ([ADR 0007](adr/0007-content-licensing.md)). **1.0 landed.** Spanish UI catalog: [`../app/src/locales/es.json`](../app/src/locales/es.json). Synthesist golden landed.
 
@@ -239,3 +239,14 @@ PF2e Dual Class (campaign option) stays out of PF2e 0.9; it is **not** the same 
 | 2026-09-01 | CRB batch 21: heavy armor + shields + extras. Next is remaining feats/spells. |
 | 2026-09-03 | Next code is honesty/code fixes; sidebar tools are the last character-sheet feature. |
 | 2026-09-03 | Remaining CRB feat/spell ids locked (F1–F4, S1–S5). |
+| 2026-09-12 | Wizard 7 playtest override (Flare Nightingale) landed: features, feats, spells, and golden fixture. |
+| 2026-09-12 | Honesty/code fixes landed: W7 test renames, golden weapon stamps vs catalog, focusTab wired. |
+| 2026-09-12 | Next code is remaining CRB feats/spells from locked tables (F1–F4, S1–S5). |
+| 2026-09-12 | Batches F1a–F1c landed (54 combat feats; 65 CRB feats packed); next is F2a |
+| 2026-09-14 | Document audit & sync: align First Edition finish status and next code step (F2a) |
+| 2026-09-14 | Batch F2a landed (17 combat feats; 82 CRB feats packed); next is F2b |
+| 2026-09-14 | Batch F2b landed (17 combat feats; 99 CRB feats packed); next is F2c |
+| 2026-09-14 | Batch F2c landed (18 combat feats; 117 CRB feats packed; combat category complete); next is F3a |
+| 2026-09-14 | Batches F3a–F3c landed (47 general feats; 164 CRB feats packed; general category complete); next is F4 |
+| 2026-09-14 | Batch F4 landed (13 item creation + metamagic feats; all 177 CRB feats packed); next is S1 |
+| 2026-09-14 | Batches S1–S5 landed (578 spells packed; all 622 CRB spells packed; CRB catalog complete); next is APG follow-through |

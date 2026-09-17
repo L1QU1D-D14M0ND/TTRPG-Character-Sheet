@@ -44,7 +44,7 @@ See the JSON Schema for types. Summary:
 | Area | Fields |
 | --- | --- |
 | Identity | `characterName`, `playerName`, `race`, `size` (includes Fine/Diminutive/Colossal), `alignment`, `deity` (string), `xp`, `languages` |
-| Classes | `id`, `class` ContentRef, `levels`, `hitDie`, `babProgression` (`full` / `threeQuarter` / `half`), `saves` good/poor, `favored.hp` / `favored.skillRanks`, optional `archetype` ContentRef (documentary) |
+| Classes | `id`, `class` ContentRef, `levels`, `hitDie`, `babProgression` (`full` / `threeQuarter` / `half`), `saves` good/poor, `favored.hp` / `favored.skillRanks`, optional `archetype` ContentRef, optional `arcaneSchool` (`{ specialized, opposition[] }`) (documentary) |
 | Abilities | `score` + optional `tempScore` (score addend) + optional `tempModifier` (check/DC addend) per key |
 | Vitals | `hpRolled[]` (before Con), `currentHp` (may be negative), `tempHp`, `nonlethal`, speeds/senses |
 | AC | explicit `armorBonus`, `shieldBonus`, `natural`, `deflection`, `dodge`, `other`, `maxDex` (null = no cap), `armorCheckPenalty` (≤ 0) |
@@ -162,3 +162,4 @@ Sidebar **tools** (Attack Helper, Actions List, Budget Calculator) are the **las
 | 2026-08-19 | CRB batch 14: remaining player races + optional catalog `size`; ability adjustments stay typed |
 | 2026-08-27 | CRB batch 15: `slots[].max` nullable; default Max is class table + bonus |
 | 2026-09-03 | Next code is honesty/code fixes; sidebar tools are the last character-sheet feature |
+| 2026-09-12 | Optional `classes[].arcaneSchool` (`specialized` + `opposition[]`); Wizard 7 playtest golden |

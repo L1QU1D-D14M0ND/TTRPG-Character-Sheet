@@ -1,6 +1,6 @@
 # PF1e Core Rulebook pack (Phase 3c)
 
-**Status:** Mechanic batches 1–21 and W1–W7 landed (Batch 15 is class spells-per-day + hybrid Max; W7 is double plus a documentary second head; Batch 20 is remaining light + medium armor; Batch 21 is heavy armor + shields). OGL / Product Identity review landed ([ADR 0007](adr/0007-content-licensing.md)). APG Synthesist lives in a **separate** pack ([`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md) slice 3 golden landed). This CRB folder stays CRB-only. **Next code** is honesty/code fixes ([`ROADMAP.md`](ROADMAP.md) Phase 1x), then remaining feats/spells.  
+**Status:** Mechanic batches 1–21 and W1–W7 landed (Batch 15 is class spells-per-day + hybrid Max; W7 is double plus a documentary second head; Batch 20 is remaining light + medium armor; Batch 21 is heavy armor + shields). OGL / Product Identity review landed ([ADR 0007](adr/0007-content-licensing.md)). Stakeholder priority override (Wizard 7 playtest character) and Phase 1x honesty / code fixes landed (2026-09-12). APG Synthesist lives in a **separate** pack ([`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md) slice 3 golden landed). This CRB folder stays CRB-only. All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) have landed, completing the entire CRB player catalog. **Next code** is APG follow-through (Summoner `spellsPerDay` + spell catalog; [`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)).  
 
 **Parent:** [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md) §7, [ADR 0003](adr/0003-multi-system-product-direction.md)  
 **On disk:** [`../content/pf1e/crb/`](../content/pf1e/crb/)  
@@ -32,7 +32,7 @@ Resolver rule (locked): missing catalog id → treat as **custom**; isolate to t
 
 Order is CRB character-build order, not encyclopedia order. Sidebar tools stay out. **Two mechanics per PR** — do not start the following pair in the same change.
 
-**How to pick the next PR:** the 0.9 character-basics queue and mundane 16–21 / W1–W7 rows are **Done**. Remaining feat/spell ids are **locked** ([§8](#8-remaining-crb-feats-and-spells)). The next **code** PR is still honesty/code fixes on [`ROADMAP.md`](ROADMAP.md). After that, pack **F1** (then F2–F4, S1–S5). Goldens must stay green. Do not start Attack Helper / Actions List / Budget Calculator here; they are the last character-sheet feature.
+**How to pick the next PR:** the 0.9 character-basics queue and mundane 16–21 / W1–W7 rows are **Done**. Honesty / code fixes and Wizard 7 playtest rows landed. Remaining feat/spell ids are **locked** ([§8](#8-remaining-crb-feats-and-spells)). Batches **F1a–F1c**, **F2a–F2c**, **F3a–F3c**, **F4**, and **S1–S5** landed (all 177 CRB feats and all 622 CRB spells packed, completing the entire CRB player catalog). The next **code** PR is APG follow-through. Goldens must stay green. Do not start Attack Helper / Actions List / Budget Calculator here; they are the last character-sheet feature.
 
 | Batch | Mechanics | Why this pair | Kind | Status |
 | --- | --- | --- | --- | --- |
@@ -64,18 +64,24 @@ Order is CRB character-build order, not encyclopedia order. Sidebar tools stay o
 | **W7** | Double (second head) | Last: needs a second documentary head, not only a tag | Catalog | Done |
 | **20** | Remaining light armor; remaining medium armor | Skip packed chain shirt / chainmail | Catalog | Done |
 | **21** | Heavy armor; shields (+ mundane extras) | Finish the CRB armor table. New `kind: shield` stamps `ItemEntry.shield` | Catalog | Done |
-| **later** | Magic weapons; magic armor | Reserved overlay / named items. **Do not start** in 16–21. No `plus-1` catalog ids | Catalog | Later |
-| **F1** | Remaining combat feats (first half) | After honesty/code fixes. Documentary stamp | Catalog | Locked |
-| **F2** | Remaining combat feats (second half) | Same list as F1 | Catalog | Locked |
-| **F3** | Remaining general feats | After F2 | Catalog | Locked |
-| **F4** | Remaining item creation + metamagic | After F3 | Catalog | Locked |
-| **S1** | Remaining spells levels 0–1 | After F4. `spellLevel` = wizard else lowest CRB list | Catalog | Locked |
-| **S2** | Remaining spells levels 2–3 | Skip packed Fireball | Catalog | Locked |
-| **S3** | Remaining spells levels 4–5 | | Catalog | Locked |
-| **S4** | Remaining spells levels 6–7 | | Catalog | Locked |
-| **S5** | Remaining spells levels 8–9 | | Catalog | Locked |
+| **later** | Magic weapons; magic armor | Overlay on mundane ids; no `plus-1` catalog ids | Catalog | Done |
+| **F1a** | Remaining combat feats (part 1 of 6: Agile Maneuvers–Dazzling Display) | First 18 combat feats. Documentary stamp | Catalog | Done |
+| **F1b** | Remaining combat feats (part 2 of 6: Deadly Aim–Greater Overrun) | Next 18 combat feats | Catalog | Done |
+| **F1c** | Remaining combat feats (part 3 of 6: Greater Penetrating Strike–Improved Trip) | Next 18 combat feats | Catalog | Done |
+| **F2a** | Remaining combat feats (part 4 of 6: Improved Two-Weapon Fighting–Quick Draw) | Next 17 combat feats | Catalog | Done |
+| **F2b** | Remaining combat feats (part 5 of 6: Rapid Reload–Staggering Critical) | Next 17 combat feats | Catalog | Done |
+| **F2c** | Remaining combat feats (part 6 of 6: Stand Still–Wind Stance) | Next 18 combat feats | Catalog | Done |
+| **F3a** | Remaining general feats (part 1 of 3: Acrobatic–Extra Ki) | Next 16 general feats | Catalog | Done |
+| **F3b** | Remaining general feats (part 2 of 3: Extra Lay On Hands–Leadership) | Next 16 general feats | Catalog | Done |
+| **F3c** | Remaining general feats (part 3 of 3: Lightning Reflexes–Turn Undead) | Next 15 general feats | Catalog | Done |
+| **F4** | Remaining item creation + metamagic (Brew Potion–Widen Spell) | Remaining 13 item creation and metamagic feats | Catalog | Done |
+| **S1** | Remaining spells levels 0–1 | Finished in S1–S5 bulk landing (82 spells) | Catalog | Done |
+| **S2** | Remaining spells levels 2–3 | Finished in S1–S5 bulk landing (147 spells) | Catalog | Done |
+| **S3** | Remaining spells levels 4–5 | Finished in S1–S5 bulk landing (139 spells) | Catalog | Done |
+| **S4** | Remaining spells levels 6–7 | Finished in S1–S5 bulk landing (127 spells) | Catalog | Done |
+| **S5** | Remaining spells levels 8–9 | Finished in S1–S5 bulk landing (83 spells) | Catalog | Done |
 
-The 0.9 character-basics write-ups are in §4. Batches 14–15 are 1x fill-out. Batches 16–19 landed remaining simple, martial, and exotic weapon ids. **W1–W7** landed `reach`, `brace`, `trip`, `disarm`, `monk`, `nonlethal`, and `double` on a `weapon.properties` array of **N** tags (one is valid; many are valid). W7 also stamps a documentary `secondHead`. **Batches 20–21** landed remaining armor and shields. **Next code** is honesty/code fixes (stale W7 test titles; golden inventory vs catalog `properties` / `secondHead`; honest `focusTab`). Next catalog work after that is remaining **feats/spells**. Later magic properties use the same list. Mundane equipment fill-out is locked in [§7](#7-remaining-mundane-weapons-and-armor). **Sidebar tools are the last character-sheet feature**, not a pack batch.
+The 0.9 character-basics write-ups are in §4. Batches 14–15 are 1x fill-out. Batches 16–19 landed remaining simple, martial, and exotic weapon ids. **W1–W7** landed `reach`, `brace`, `trip`, `disarm`, `monk`, `nonlethal`, and `double` on a `weapon.properties` array of **N** tags (one is valid; many are valid). W7 also stamps a documentary `secondHead`. **Batches 20–21** landed remaining armor and shields. Honesty/code fixes landed (stale W7 test titles; golden inventory vs catalog `properties` / `secondHead`; honest `focusTab`). CRB feat and spell catalog work is complete (all 177 feats and all 622 spells packed). Later magic properties use the same list. Mundane equipment fill-out is locked in [§7](#7-remaining-mundane-weapons-and-armor). Next catalog work is APG follow-through. **Sidebar tools are the last character-sheet feature**, not a pack batch.
 
 ---
 
@@ -87,9 +93,10 @@ content/pf1e/crb/
   pack.json          # manifest + which batches have landed
   classes.json       # HD/BAB/saves + class skills + skill points + spells/day (casters)
   races.json         # race id + name + size (batch 8 Human; batch 14 remaining CRB player races)
-  items.json         # weapon/armor/gear ids (batch 10 goldens; 16–21 remaining mundane; magic later)
-  feats.json         # feat id + name + category (batch 12 goldens; F1–F4 remaining — locked, not packed)
-  spells.json        # spell id + name + spellLevel (batch 13 goldens; S1–S5 remaining — locked, not packed)
+  items.json         # weapon/armor/gear ids (batch 10 goldens; 16–21 remaining mundane; magic overlay)
+  feats.json         # feat id + name + category (all 177 CRB feats packed)
+  features.json      # class feature id + name + source (Arcane Bond, Physical Enhancement, Telekinetic Fist)
+  spells.json        # spell id + name + spellLevel (all 622 CRB spells packed)
 ```
 
 A class catalog row in this phase is **not** a class description. It is:
@@ -1287,7 +1294,7 @@ Those bonus slots are added to the class table’s spells per day. Batch 15 fill
 
 The 0.9 character-basics queue (batches 1–13) is done. Batches 14–15 landed remaining CRB player races and class spells-per-day. Batches 16–19 landed remaining simple, martial, and exotic weapon ids. W1–W7 landed reach, brace, trip, disarm, monk, nonlethal, and double (plus a documentary second head). Batches 20–21 landed remaining armor and shields. Do **not** start the next pair of CRB encyclopedia rows in the same change as a platform increment.
 
-**Next product work:** [honesty / code fixes](ROADMAP.md#phase-1x--honesty--code-fixes), then remaining **feats/spells** using the locked id tables in [§8](#8-remaining-crb-feats-and-spells) (names + category/level only — [ADR 0007](adr/0007-content-licensing.md)), then APG follow-through. Magic weapons and magic armor stay **later**. Leftover PF2e waits for a later release. Do **not** add Summoner to this CRB folder. **Sidebar tools are the last character-sheet feature** (after this pack work).
+**Next product work:** **APG follow-through**. Honesty/code fixes, playtest Wizard 7, remaining CRB feats/spells, and magic weapons/armor overlay have landed. Leftover PF2e waits for a later release. Do **not** add Summoner to this CRB folder. **Sidebar tools are the last character-sheet feature** (after this pack work).
 
 ---
 
@@ -1295,7 +1302,7 @@ The 0.9 character-basics queue (batches 1–13) is done. Batches 14–15 landed 
 
 Locked fill-out after batch 15. Same rules as batch 10: documentary stamp of id, name, pounds, and weapon/armor (or later shield) stats. Combat numbers stay on `armorClass` / `attacks`. Unknown id → custom. Mechanics-only names and numbers. Two mechanics per PR.
 
-**Already packed (do not duplicate):** Batch 10 goldens plus Batches 16–19 remaining simple, martial, and exotic weapons and their ammo. W1–W7 Special tags (and W7 `secondHead`) are on the matching weapons. Batches 20–21 remaining armor, shields, and mundane extras. Skip those ids in later batches. Next code is honesty/code fixes; next catalog is remaining feats/spells.
+**Already packed (do not duplicate):** Batch 10 goldens plus Batches 16–19 remaining simple, martial, and exotic weapons and their ammo. W1–W7 Special tags (and W7 `secondHead`) are on the matching weapons. Batches 20–21 remaining armor, shields, and mundane extras. Skip those ids in later batches. Honesty fixes, remaining feats/spells, and the magic overlay have landed.
 
 ### 7.1 Shared locks (every 16–21 PR)
 
@@ -1515,11 +1522,11 @@ Shield-bash damage may live as an optional `weapon` subobject on the shield row 
 | Armor | 12 (2 goldens + 3 light + 3 medium + 4 heavy) | 0 | Magic armor |
 | Shields | 6 | 0 | Magic shields |
 | Ammo / extras | spellbook + 5 ammo + armor spikes + shield spikes | 0 | Priced treasure as a later slice |
-| Magic weapons / armor | 0 | 0 | Entirely [§7.5](#75-reserved-magic-weapons-and-armor) |
+| Magic weapons / armor | overlay landed | 0 | Sheet overlay + named items; see [§7.5](#75-reserved-magic-weapons-and-armor) |
 
-### 7.5 Reserved: magic weapons and armor
+### 7.5 Magic weapons and armor
 
-**Do not implement in batches 16–21.** Leave the door open so mundane rows do not have to be renamed later.
+**Landed** as a sheet overlay after batches 16–21 (no plus-N catalog rows). Mundane ids stayed stable.
 
 | Decision | Lock |
 | --- | --- |
@@ -1592,19 +1599,25 @@ See the lock file. Highlights:
 
 | Batch | Remaining rows | Status |
 | --- | ---: | --- |
-| F1 remaining combat (Agile Maneuvers–Improved Trip) | 54 | Locked — not packed |
-| F2 remaining combat (Improved Two-Weapon Fighting–Wind Stance) | 53 | Locked — not packed |
-| F3 remaining general | 48 | Locked — not packed |
-| F4 remaining item creation + metamagic | 16 | Locked — not packed |
-| S1 remaining levels 0–1 | 108 | Locked — not packed |
-| S2 remaining levels 2–3 | 159 | Locked — not packed |
-| S3 remaining levels 4–5 | 141 | Locked — not packed |
-| S4 remaining levels 6–7 | 127 | Locked — not packed |
-| S5 remaining levels 8–9 | 83 | Locked — not packed |
+| F1a remaining combat (Agile Maneuvers–Dazzling Display) | 0 (18 packed) | Done |
+| F1b remaining combat (Deadly Aim–Greater Overrun) | 0 (18 packed) | Done |
+| F1c remaining combat (Greater Penetrating Strike–Improved Trip) | 0 (18 packed) | Done |
+| F2a remaining combat (Improved Two-Weapon Fighting–Quick Draw) | 0 (17 packed) | Done |
+| F2b remaining combat (Rapid Reload–Staggering Critical) | 0 (17 packed) | Done |
+| F2c remaining combat (Stand Still–Wind Stance) | 0 (18 packed) | Done |
+| F3a remaining general (Acrobatic–Extra Ki) | 0 (16 packed) | Done |
+| F3b remaining general (Extra Lay On Hands–Leadership) | 0 (16 packed) | Done |
+| F3c remaining general (Lightning Reflexes–Turn Undead) | 0 (15 packed) | Done |
+| F4 remaining item creation + metamagic | 0 (13 packed) | Done |
+| S1 remaining levels 0–1 | 0 (82 packed) | Done |
+| S2 remaining levels 2–3 | 0 (147 packed) | Done |
+| S3 remaining levels 4–5 | 0 (139 packed) | Done |
+| S4 remaining levels 6–7 | 0 (127 packed) | Done |
+| S5 remaining levels 8–9 | 0 (83 packed) | Done |
 
-**Already packed (do not duplicate):** `feat.improved-initiative`, `feat.power-attack`, `feat.scribe-scroll`, `feat.spell-focus`, `feat.weapon-focus`; `spell.detect-magic`, `spell.light`, `spell.magic-missile`, `spell.fireball`.
+**Already packed (do not duplicate):** Batch 12 / 13 goldens, Wizard 7 playtest additions, Batches F1a–F1c, Batches F2a–F2c, Batches F3a–F3c, Batch F4, and Batches S1–S5 (all 177 feats and all 622 spells packed; see [`pf1e-crb-feat-spell-ids.md`](pf1e-crb-feat-spell-ids.md) and [`pf1e-crb-feat-spell-ids.json`](pf1e-crb-feat-spell-ids.json)).
 
-Do **not** start F1 in the same change as honesty/code fixes or a platform increment.
+Do **not** start APG follow-through in the same change as a platform increment.
 
 ---
 
@@ -1656,3 +1669,15 @@ Do **not** start F1 in the same change as honesty/code fixes or a platform incre
 | 2026-09-01 | Batch 21: heavy armor + shields (kind shield) + extras; Combat stays typed; next is remaining feats/spells |
 | 2026-09-03 | Next code is honesty/code fixes (not feats/spells). Sidebar tools are the last character-sheet feature |
 | 2026-09-03 | Locked remaining CRB feat/spell ids (F1–F4, S1–S5). Do not pack until after honesty/code fixes |
+| 2026-09-12 | Playtest priority override landed: Wizard 7 features (Arcane Bond, Physical Enhancement, Telekinetic Fist), 6 feats, 40 spells packed |
+| 2026-09-12 | Phase 1x honesty / code fixes landed: W7 test renames, golden weapon stamps vs catalog, focusTab wired |
+| 2026-09-12 | Feat batches subdivided into 10 steps (F1a–F1c, F2a–F2c, F3a–F3c, F4); Batch F1a landed (18 combat feats); next is F1b |
+| 2026-09-12 | Batch F1b landed (18 combat feats; 47 CRB feats packed); next is F1c |
+| 2026-09-12 | Batch F1c landed (18 combat feats; 65 CRB feats packed; F1 combat first-half complete); next is F2a |
+| 2026-09-14 | Batch F2a landed (17 combat feats; 82 CRB feats packed; 71 combat feats packed total); next is F2b |
+| 2026-09-14 | Batch F2b landed (17 combat feats; 99 CRB feats packed; 88 combat feats packed total); next is F2c |
+| 2026-09-14 | Batch F2c landed (18 combat feats; 117 CRB feats packed; 106 combat feats packed total; combat category complete); next is F3a |
+| 2026-09-14 | Batches F3a–F3c landed (47 general feats; 164 CRB feats packed; 49 general feats packed total; general category complete); next is F4 |
+| 2026-09-14 | Batch F4 landed (13 item creation + metamagic feats; all 177 CRB feats packed); next is S1 |
+| 2026-09-14 | Batches S1–S5 landed (578 spells packed; all 622 CRB spells packed; CRB catalog complete); next is APG follow-through |
+| 2026-09-14 | Magic weapons and armor landed: sheet overlay (enhancementBonus, masterwork, properties), CRB special abilities catalog, baseItemId inheritance, and specific magic weapons/armor/shields |

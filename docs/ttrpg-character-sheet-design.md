@@ -1,7 +1,7 @@
 # TTRPG Character Sheet — Product design
 
 **Status:** Product direction lock (ADR 0003) — 2026-08-18  
-**Implementation:** PF1e **0.9 bar landed**. **1.0 landed** — Synthesist golden + Spanish UI catalog + stability. **Next:** honesty/code fixes, then remaining First Edition catalog. Remaining PF2e work waits for a **later release**. **Sidebar tools are the last character-sheet feature** (Attack Helper, Actions List, Budget Calculator specified).  
+**Implementation:** PF1e **0.9 bar landed**. **1.0 landed** — Synthesist golden + Spanish UI catalog + stability. Wizard 7 playtest override and Phase 1x honesty/code fixes landed (2026-09-12). All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) landed, completing the entire CRB player catalog. **Next:** APG follow-through (Summoner `spellsPerDay` + spell catalog). Remaining PF2e work waits for a **later release**. **Sidebar tools are the last character-sheet feature** (Attack Helper, Actions List, Budget Calculator specified).  
 **Next coding increment:** [`next-increment-multi-system.md`](next-increment-multi-system.md)  
 **Repo context:** `ttrpg-character-sheet` (renamed from `Pathfinder-2E-Card`, [ADR 0008](adr/0008-repo-package-rename.md))  
 **Audience:** Product / engineering  
@@ -79,7 +79,7 @@ See [ADR 0003](adr/0003-multi-system-product-direction.md).
 
 **After 1.0 (current release)**
 
-- Finish First Edition past the 1.0 goldens: honesty/code fixes first, then CRB pack fill-out, APG follow-through, optional extra PF1e goldens, OGL when rules text ships.
+- Finish First Edition past the 1.0 goldens: honesty/code fixes and Wizard 7 playtest override landed, CRB player catalog complete (all 177 CRB feats and all 622 CRB spells packed), APG follow-through next, optional extra PF1e goldens, OGL when rules text ships.
 - **Sidebar tools** are the last character-sheet feature in this release.
 
 **Later (design must not block)**
@@ -286,3 +286,12 @@ Live checkboxes: [`ROADMAP.md`](ROADMAP.md).
 | 2026-08-19 | PF2e Ranger 5 golden (nested companion); next leftover is a PC2 class |
 | 2026-08-19 | Finish First Edition this release; leftover PF2e waits for a later release |
 | 2026-09-03 | Next code is honesty/code fixes; sidebar tools are the last character-sheet feature |
+| 2026-09-12 | Wizard 7 playtest override and Phase 1x honesty/code fixes landed; next is remaining catalog |
+| 2026-09-12 | Batches F1a–F1c landed (54 combat feats; 65 CRB feats total packed); next is F2a |
+| 2026-09-14 | Document audit & sync: align First Edition finish status and next code step (F2a) |
+| 2026-09-14 | Batch F2a landed (17 combat feats; 82 CRB feats packed); next is F2b |
+| 2026-09-14 | Batch F2b landed (17 combat feats; 99 CRB feats packed); next is F2c |
+| 2026-09-14 | Batch F2c landed (18 combat feats; 117 CRB feats packed; combat category complete); next is F3a |
+| 2026-09-14 | Batches F3a–F3c landed (47 general feats; 164 CRB feats packed; general category complete); next is F4 |
+| 2026-09-14 | Batch F4 landed (13 item creation + metamagic feats; all 177 CRB feats packed); next is S1 |
+| 2026-09-14 | Batches S1–S5 landed (578 spells packed; all 622 CRB spells packed; CRB catalog complete); next is APG follow-through |

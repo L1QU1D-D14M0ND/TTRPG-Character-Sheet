@@ -36,8 +36,9 @@ Engine formulas (ability modifier, BAB tables, spell DC, bonus spells, heavy loa
 | `content/pf1e/crb/classes.json` | 11 CRB class ids; HD / BAB / saves / skill points / class-skill keys; `source.book: CRB`. No Summoner. No flavor |
 | `races.json` | Seven CRB player race names + size; no Golarion PI |
 | `items.json` | Golden weapons/armor/spellbook plus Batches 16–19 simple, martial, and exotic weapons (and their ammo): pounds and documentary combat fields. W1–W7 add optional `weapon.properties` as N kebab-case tags (one or many; pack design §7.6). W7 also stamps optional `secondHead` numbers on double weapons. Batches 20–21 remaining armor, shields (`kind: shield`), and mundane extras. Magic items are not in this folder yet |
-| `feats.json` | Five golden feat ids; name + category |
-| `spells.json` | Four golden spell ids; name + spell level. No descriptions |
+| `feats.json` | 65 CRB feat ids (Batch 12 goldens + Wizard 7 playtest + Batches F1a–F1c combat feats); name + category |
+| `features.json` | Three CRB class feature ids (Arcane Bond, Physical Enhancement, Telekinetic Fist); name + source; no prose |
+| `spells.json` | 44 CRB spell ids (Batch 13 goldens + Wizard 7 playtest spells levels 0–4); name + spell level. No descriptions |
 | `pack.json` | Batch notes are **our** review comments, not book text |
 | PF1e goldens | Feat/feature `summary` values are sheet honesty notes (“Not auto-applied”), not feat benefits |
 | PF2e golden Wizard | `identity.homeRegion` may be a Golarion place name. That is **character identity**, not pack content |
@@ -68,6 +69,8 @@ Do not scrape third-party SRD sites into `content/` even after that PR. Curate b
 **Out of packs:** Golarion gazetteer, unique NPCs, adventure titles, Paizo logos, official art, Community Use assets, bestiary/adventure text.
 
 **Allowed as catalog labels** (already on goldens): generic mechanical names such as Fighter, Wizard, Human, Longsword, Fireball, Power Attack.
+
+**Catalog labels stay English in every UI locale.** They are pack content, not UI strings, so `es.json` does not carry them and should not. A Spanish player picking from a catalog searches English names — "Shield", not "escudo". Translating them would stay inside the mechanics-only bar (a name is not prose, so §4 is not triggered), but it adds a second name per row and needs a curated translation source, so it is its own content slice and never part of UI-locale work.
 
 **Chrome:** system picker may say Pathfinder First Edition / Second Edition. Working app title is **TTRPG Character Sheet**. No “Paizo compatible” logo in 0.9/1.0 unless a later ADR adds Community Use artwork and its attribution.
 
@@ -100,3 +103,6 @@ No Remaster encyclopedia in this review. ORC import remains later (ADR 0003). PF
 | 2026-08-19 | Spanish UI catalog (`es.json`); pack still mechanics-only English names |
 | 2026-08-19 | 1.0 stability; pack still mechanics-only |
 | 2026-08-19 | CRB batch 14: remaining player race names + size; still no PI |
+| 2026-09-12 | Wizard 7 playtest features/feats/spells and Batches F1a–F1c combat feats added; verified mechanics-only by licenseGate |
+| 2026-09-14 | Document sync: update audited feat (65), spell (44), and class feature (3) inventory |
+| 2026-09-17 | Record that catalog labels stay English in every UI locale; localized names are a later content slice, not UI-locale work |

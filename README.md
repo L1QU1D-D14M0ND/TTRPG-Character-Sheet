@@ -2,7 +2,7 @@
 
 **TTRPG Character Sheet** (working title) — installable local PWA for **player** characters. **Pathfinder First Edition** is the development priority; **Pathfinder Second Edition** is a preserved slice that also computes (Build + Play) and must not regress.
 
-**Current phase:** **Finish First Edition.** 1.0 landed (Spanish + playable APG Synthesist). Next **code** is honesty/code fixes (see the [roadmap](docs/ROADMAP.md)); remaining feats/spells wait until those land. PF2e slice stays in the app and must not regress; remaining PF2e work waits for a **later release**. **Sidebar tools are the last character-sheet feature.** See [ADR 0003](docs/adr/0003-multi-system-product-direction.md), [APG pack](docs/pf1e-apg-pack-design.md), and [CRB pack](docs/pf1e-crb-pack-design.md).
+**Current phase:** **Finish First Edition — CRB catalog complete; APG follow-through next.** 1.0 landed (Spanish + playable APG Synthesist). Wizard 7 playtest override and honesty/code fixes landed (2026-09-12). All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) landed, completing the entire CRB player catalog. Next is APG follow-through (Summoner spells-per-day + spell catalog). PF2e slice stays in the app and must not regress; remaining PF2e work waits for a **later release**. **Sidebar tools are the last character-sheet feature.** See [ADR 0003](docs/adr/0003-multi-system-product-direction.md), [APG pack](docs/pf1e-apg-pack-design.md), and [CRB pack](docs/pf1e-crb-pack-design.md).
 
 The repository and npm package were renamed from `Pathfinder-2E-Card` / `pathfinder-2e-character-sheet` to `ttrpg-character-sheet` — see [ADR 0008](docs/adr/0008-repo-package-rename.md).
 
@@ -17,7 +17,7 @@ npm run dev
 - React + TypeScript + Vite
 - Save/Load `.json` (Ajv). Missing `system` loads as PF2e; Save writes `"system": "pf1e"` or `"pf2e"`
 - Layout: `app/src/shared` kernel, `app/src/shell` (chrome + empty Tools sidebar), `app/src/systems/pf1e`, `app/src/systems/pf2e`
-- PF1e martial + spell calc (Fighter 5, Wizard 5, Fighter 2 / Wizard 3, and Synthesist 5 goldens) and PF2e core calc engine (Fighter 5, Wizard 5, Bard 5, Cleric 5, and Ranger 5 goldens)
+- PF1e martial + spell calc (Fighter 5, Wizard 5, Fighter 2 / Wizard 3, Synthesist 5, and Wizard 7 goldens) and PF2e core calc engine (Fighter 5, Wizard 5, Bard 5, Cleric 5, and Ranger 5 goldens)
 - Spreadsheet editors per system (PF1e: identity/classes, abilities, skills, combat, spells, inventory, play)
 - **Last sheet feature:** **Attack Helper**, **Actions List**, and **Budget Calculator** sidebar tools (no dice roller). Remaining PF2e work waits for a later release.
 
@@ -66,7 +66,8 @@ npm run dev
 - [`fixtures/characters/golden/pf1e/wizard-5.json`](fixtures/characters/golden/pf1e/wizard-5.json) — PF1e Wizard 5
 - [`fixtures/characters/golden/pf1e/fighter-2-wizard-3.json`](fixtures/characters/golden/pf1e/fighter-2-wizard-3.json) — PF1e Fighter 2 / Wizard 3
 - [`fixtures/characters/golden/pf1e/synthesist-5.json`](fixtures/characters/golden/pf1e/synthesist-5.json) — PF1e Summoner 5 Synthesist (Radiant Striker)
-- [`content/pf1e/crb/`](content/pf1e/crb/) — PF1e CRB pack (batches 1–21 and W1–W7 complete; remaining feats/spells after honesty/code fixes; mechanics-only)
+- [`fixtures/characters/golden/pf1e/wizard-transmutation-7.json`](fixtures/characters/golden/pf1e/wizard-transmutation-7.json) — PF1e Wizard 7 (Transmutation specialist, Flare Nightingale)
+- [`content/pf1e/crb/`](content/pf1e/crb/) — PF1e CRB pack (batches 1–21, W1–W7, and F1–F4 complete; all 177 feats / 44 spells / 3 class features packed; Batch S1 next; mechanics-only)
 - [`content/pf1e/apg/`](content/pf1e/apg/) — PF1e APG pack (Summoner / Synthesist; mechanics-only)
 
 ## License

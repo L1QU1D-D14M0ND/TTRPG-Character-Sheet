@@ -29,7 +29,9 @@ When a character document is in memory (New or Load), the shell shows a **sideba
 - ADR 0001’s Spells / Afflictions / Actions browser is a candidate **encyclopedia** tool (rules text), distinct from Actions List (this PC, right now).
 - Sidebar strings go through i18n (`shell.tools*`, tool keys under `shell.*` or `pf1e.*` / `pf2e.*`).
 
-**Postscript (2026-09-03):** Named tools (Attack Helper, Actions List, Budget Calculator) ship as the **last character-sheet feature** after Phase 1x honesty/code fixes, remaining catalog, APG follow-through, optional goldens, magic overlay, and OGL-with-rules-text. The “~90% done” gate is retired. Empty/collapsed host remains correct until then.
+**Postscript (2026-09-03):** Named tools (Attack Helper, Actions List, Budget Calculator) ship as the **last character-sheet feature** after Phase 1x honesty/code fixes, remaining catalog, APG follow-through, optional goldens, and OGL-with-rules-text (magic overlay landed). The “~90% done” gate is retired. Empty/collapsed host remains correct until then.
+
+**Postscript (2026-09-12):** Phase 1x honesty fixes wired `SidebarToolContext.focusTab` in `App.tsx` / `SheetSession` to `Workspace` tab switching and tested it, aligning the host implementation with the interface contract.
 
 ## Defaults
 

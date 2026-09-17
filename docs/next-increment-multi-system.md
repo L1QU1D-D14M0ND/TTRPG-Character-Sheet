@@ -1,6 +1,6 @@
 # Next increment — multi-system refactor, then PF1e
 
-**Status:** Active sequencing document (2026-09-03)  
+**Status:** Active sequencing document (2026-09-14)  
 **Depends on:** [ADR 0003](adr/0003-multi-system-product-direction.md), [ADR 0004](adr/0004-shared-kernel.md), [ADR 0005](adr/0005-sidebar-host.md), [ADR 0007](adr/0007-content-licensing.md), [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md), [`shared-kernel-design.md`](shared-kernel-design.md), [`sidebar-host-design.md`](sidebar-host-design.md), [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md)  
 **Historical PF2e increment (T1/T3 executed, leftover goldens deprioritized):** [`next-increment-design.md`](next-increment-design.md)
 
@@ -12,7 +12,7 @@ This document **does** change product sequencing: **finish First Edition** in th
 
 The repo is a working multi-system sheet: **PF1e** is the development priority; **PF2e** is a preserved slice (schema, `compute()`, Fighter 5 / Wizard 5 / Bard 5 / Cleric 5 / Ranger 5 goldens, spreadsheet editors).
 
-The next **code** increment is **honesty / code fixes** ([`ROADMAP.md`](ROADMAP.md) Phase 1x): leftover W7 test titles, golden `weapon.properties` / `secondHead` vs catalog stamp, honest `focusTab`. Remaining CRB feats/spells are **id-locked** ([`pf1e-crb-feat-spell-ids.md`](pf1e-crb-feat-spell-ids.md); F1–F4 / S1–S5) and wait to pack until those fixes land. Then APG follow-through, optional extra PF1e goldens, magic overlay, OGL when rules text ships. **Sidebar tools are the last character-sheet feature** (Attack Helper, Actions List, Budget Calculator). Remaining **PF2e** work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n). The PF2e slice stays in the app and must not regress. **1.0 landed:** Spanish (`es.json`) covers chrome + PF1e panels; PF2e panel literals remain. Batches 1–21, W1–W7, APG Synthesist, IndexedDB draft, and PWA dist check are in the repo.
+The next **code** increment is **APG follow-through (Summoner spellsPerDay + spell catalog)** ([`ROADMAP.md`](ROADMAP.md) Phase 1x). Stakeholder priority override (CRB Wizard 7 Transmutation specialist Flare Nightingale) and honesty / code fixes landed (2026-09-12). Feat batches F1–F4 (all 177 CRB feats) and spell batches S1–S5 (all 622 CRB spells) have landed, completing the entire CRB player catalog. APG follow-through is the immediate next code increment (Summoner `spellsPerDay` + spell catalog), followed by optional extra PF1e goldens and OGL when rules text ships (magic overlay landed). **Sidebar tools are the last character-sheet feature** (Attack Helper, Actions List, Budget Calculator). Remaining **PF2e** work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n). The PF2e slice stays in the app and must not regress. **1.0 landed:** Spanish (`es.json`) covers chrome + PF1e panels; PF2e panel literals remain. Batches 1–21, W1–W7, APG Synthesist, IndexedDB draft, and PWA dist check are in the repo.
 
 ---
 
@@ -42,8 +42,8 @@ Settled PF2e engineering (keep through the refactor): Vitest, Ajv 2020-12 reject
 | Schema | PF2e `character.schema.json`; PF1e `schemas/pf1e/character.schema.json` |
 | Engine | PF1e martial + spell DC/bonus slots; PF2e under `systems/pf2e/engine` |
 | UI | PF1e + PF2e workspaces (PF1e Spells tab); empty Tools sidebar |
-| Goldens | PF2e `fighter-5.json`, `wizard-5.json`, `bard-5.json`, `cleric-5.json`, `ranger-5.json`; PF1e `golden/pf1e/fighter-5.json`, `wizard-5.json`, `fighter-2-wizard-3.json`, `synthesist-5.json` |
-| Content | `content/pf1e/crb/` batches 1–21 and W1–W7 (5 feats / 4 spells — golden rows only). `content/pf1e/apg/` Synthesist + golden. Spanish UI catalog landed |
+| Goldens | PF2e `fighter-5.json`, `wizard-5.json`, `bard-5.json`, `cleric-5.json`, `ranger-5.json`; PF1e `golden/pf1e/fighter-5.json`, `wizard-5.json`, `fighter-2-wizard-3.json`, `synthesist-5.json`, `wizard-transmutation-7.json` |
+| Content | `content/pf1e/crb/` batches 1–21, W1–W7, and F1a–F1c (65 feats / 44 spells / 3 class features — golden, playtest, and combat-first-half rows). `content/pf1e/apg/` Synthesist + golden. Spanish UI catalog landed |
 
 ---
 
@@ -88,7 +88,7 @@ Several of these have since landed or moved: Bard/Cleric/Ranger 5 goldens exist;
 
 ### Recommendation
 
-**Honesty/code fixes → remaining feats/spells → APG follow-through**, then optional goldens / magic overlay / OGL-with-rules-text. **Attack Helper**, **Actions List**, and **Budget Calculator** are the **last character-sheet features** (not during schema, pack, or honesty work). M / 1e / 2e / 3e / 1.0 already landed.
+**CRB catalog complete: all 177 feats and all 622 spells packed.** Magic overlay landed. → **APG follow-through next** (Summoner `spellsPerDay` + spell catalog) → then optional goldens / OGL-with-rules-text. **Attack Helper**, **Actions List**, and **Budget Calculator** are the **last character-sheet features** (not during schema, pack, or honesty work). M / 1e / 2e / 3e / 1.0 / honesty fixes already landed.
 
 ---
 
@@ -127,7 +127,7 @@ Second class row; stacked progressions; multiclass golden.
 
 ### WP-3c — PF1e CRB pack
 
-After goldens can be typed by hand. Review CRB character mechanics **two at a time** ([`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) §2 and §6). Batches 1–21 and W1–W7 landed (including Batch 7). Draft buffer + PWA proof landed. OGL/PI review landed ([ADR 0007](adr/0007-content-licensing.md)). APG slice 3 + Synthesist golden landed ([`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)). Spanish UI catalog landed. 1.0 stability landed. Next code is honesty/code fixes, then remaining feats/spells. Resolver: miss → custom; do not fail Load.
+After goldens can be typed by hand. Review CRB character mechanics **two at a time** ([`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) §2 and §6). Batches 1–21 and W1–W7 landed (including Batch 7). Draft buffer + PWA proof landed. OGL/PI review landed ([ADR 0007](adr/0007-content-licensing.md)). APG slice 3 + Synthesist golden landed ([`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)). Spanish UI catalog landed. 1.0 stability landed. Honesty fixes and Wizard 7 playtest override landed. CRB catalog fill-out complete (all 177 feats and 622 spells packed). Next code is APG follow-through. Resolver: miss → custom; do not fail Load.
 
 ---
 
@@ -146,10 +146,10 @@ After goldens can be typed by hand. Review CRB character mechanics **two at a ti
 | 8 | Platform | IndexedDB draft; PWA install/offline proof |
 | 9 | 0.9 | English; PF1e bar; PF2e slice still works; sidebar host may be empty |
 | 10 | Phase 4 | `es` + playable APG Synthesist = 1.0 |
-| 11 | 1x | Finish First Edition (honesty/code fixes, remaining catalog, APG follow-through, optional goldens, magic overlay, OGL-with-rules-text, **then** sidebar tools as the last sheet feature) |
+| 11 | 1x | Finish First Edition (honesty/code fixes [landed], playtest priority [landed], CRB catalog [landed], magic overlay [landed], APG follow-through [next], optional goldens, OGL-with-rules-text, **then** sidebar tools as the last sheet feature) |
 | 12 | Later release | Leftover PF2e goldens/content; encyclopedia / `effects[]` / more systems |
 
-Steps 2–10 landed. The **next development increment** is Phase 1x honesty/code fixes.
+Steps 2–10, Phase 1x honesty fixes, and CRB catalog fill-out (all 177 feats and all 622 spells) landed. The **next development increment** is APG follow-through (Summoner `spellsPerDay` + spell catalog).
 
 ---
 
@@ -278,7 +278,7 @@ Code/docs pass after Phases M–3e and 3c batches 1–2. **First pass:** Wizard 
 | OGL notice + Section 15 | Same PR as first pack **rules text** |
 | App’s one typed switch to pick `pf1eModule` vs `pf2eModule` | TypeScript cannot erase the `LoadedSheet` union; tabs stay inside each Workspace |
 | Remaining PF2e panel literals | Later PF2e *release* (when those panels next change) |
-| Finish First Edition (honesty/code fixes, then CRB fill-out, APG follow-through, sidebar tools last) | **Next code** is honesty/code fixes (Batches 15–21 and W1–W7 landed; remaining feats/spells wait) |
+| Finish First Edition (honesty/code fixes [landed], then CRB fill-out, APG follow-through, sidebar tools last) | **Next code** is APG follow-through (all 177 CRB feats and 622 CRB spells packed; Summoner follow-through follows) |
 | Leftover PF2e (PC2 golden, companion editor, Remaster packs) | Later *release* |
 
 ---
@@ -343,3 +343,13 @@ Code/docs pass after Phases M–3e and 3c batches 1–2. **First pass:** Wizard 
 | 2026-09-01 | CRB batch 21: heavy armor + shields + extras; next is remaining feats/spells |
 | 2026-09-03 | Next code is honesty/code fixes; sidebar tools are the last character-sheet feature |
 | 2026-09-03 | Remaining CRB feat/spell ids locked (F1–F4, S1–S5); packing waits for honesty/code fixes |
+| 2026-09-12 | Stakeholder priority override (Wizard 7 Transmutation specialist Flare Nightingale) landed |
+| 2026-09-12 | Phase 1x honesty / code fixes landed (W7 test renames, golden weapon stamps, focusTab wired) |
+| 2026-09-12 | Batches F1a–F1c landed (54 combat feats; 65 CRB feats packed); next code is F2a |
+| 2026-09-14 | Document sync: update status date, CRB feat counts (65), and next code recommendation to F2a |
+| 2026-09-14 | Batch F2a landed (17 combat feats; 82 CRB feats packed); next is F2b |
+| 2026-09-14 | Batch F2b landed (17 combat feats; 99 CRB feats packed); next is F2c |
+| 2026-09-14 | Batch F2c landed (18 combat feats; 117 CRB feats packed; combat category complete); next is F3a |
+| 2026-09-14 | Batches F3a–F3c landed (47 general feats; 164 CRB feats packed; general category complete); next is F4 |
+| 2026-09-14 | Batch F4 landed (13 item creation + metamagic feats; all 177 CRB feats packed); next is S1 |
+| 2026-09-14 | Batches S1–S5 landed (578 spells packed; all 622 CRB spells packed; CRB catalog complete); next is APG follow-through |
