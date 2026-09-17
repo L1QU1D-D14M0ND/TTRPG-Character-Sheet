@@ -48,7 +48,7 @@ describe('CRB W6: nonlethal', () => {
     ])
   })
 
-  it('does not pack double yet', () => {
+  it('does not tag nonlethal weapons with double', () => {
     for (const id of NONLETHAL_IDS) {
       const tags = lookupCrbItem(id)?.weapon?.properties ?? []
       expect(tags).not.toContain('double')

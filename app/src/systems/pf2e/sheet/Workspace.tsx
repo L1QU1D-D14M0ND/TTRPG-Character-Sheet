@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { CharacterDocument } from '../character'
 import type { AttributeKey, ProficiencyRank } from '../character/types'
 import { signed } from '../../../shared/format'
@@ -52,14 +52,34 @@ export function Pf2eWorkspace({
   derived,
   update,
   setStatus,
+  activeTab,
+  onTabChange,
 }: {
   character: CharacterDocument
   derived: DerivedView
   update: SheetUpdate
-  setStatus: (message: string) => void
+  setStatus?: (message: string) => void
+  activeTab?: string
+  onTabChange?: (tab: string) => void
 }) {
   const t = useT()
-  const [tab, setTab] = useState<TabId>('identity')
+  const [internalTab, setInternalTab] = useState<TabId>('identity')
+  const validActiveTab =
+    activeTab !== undefined && TAB_IDS.includes(activeTab as TabId)
+      ? (activeTab as TabId)
+      : null
+  const tab: TabId = validActiveTab ?? internalTab
+
+  useEffect(() => {
+    if (validActiveTab) {
+      setInternalTab(validActiveTab)
+    }
+  }, [validActiveTab])
+
+  const handleTabChange = (next: TabId) => {
+    setInternalTab(next)
+    onTabChange?.(next)
+  }
 
   function addLore() {
     const raw = window.prompt('Lore topic (e.g. Warfare)')
@@ -67,7 +87,7 @@ export function Pf2eWorkspace({
     const topic = raw.trim()
     const key = `lore:${topic.toLowerCase().replace(/\s+/g, '-')}`
     if (character.skills.some((skill) => skill.key === key)) {
-      setStatus(`Lore already exists: ${key}`)
+      setStatus?.(`Lore already exists: ${key}`)
       return
     }
     update((c) => ({
@@ -194,7 +214,7 @@ export function Pf2eWorkspace({
             key={id}
             type="button"
             className={tab === id ? 'active' : ''}
-            onClick={() => setTab(id)}
+            onClick={() => handleTabChange(id)}
           >
             {t(`pf2e.tabs.${id}`)}
           </button>

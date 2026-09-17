@@ -85,4 +85,17 @@ describe('golden PF1e Wizard 5', () => {
     expect(view.weightUsed).toBe(7)
     expect(view.loadCategory).toBe('light')
   })
+
+  it('stamps catalog properties and secondHead on the quarterstaff item', () => {
+    const item = character.inventory.items.find(
+      (row) => row.item.id === 'weapon.quarterstaff',
+    )
+    expect(item?.weapon?.properties).toEqual(['monk', 'double'])
+    expect(item?.weapon?.secondHead).toEqual({
+      damageDice: '1d6',
+      damageType: 'bludgeoning',
+      critRange: 20,
+      critMultiplier: 2,
+    })
+  })
 })

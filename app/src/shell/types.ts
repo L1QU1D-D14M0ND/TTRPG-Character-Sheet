@@ -21,6 +21,8 @@ export interface SheetWorkspaceProps<Doc, Derived> {
   derived: Derived
   update: (mutator: (c: Doc) => Doc) => void
   setStatus: (message: string) => void
+  activeTab?: string
+  onTabChange?: (tab: string) => void
 }
 
 export interface SystemModule<Doc, Derived> {

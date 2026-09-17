@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   skillKeyFromName,
   type CharacterDocument,
@@ -59,14 +59,35 @@ export function Pf1eWorkspace({
   derived,
   update,
   setStatus,
+  activeTab,
+  onTabChange,
 }: {
   character: CharacterDocument
   derived: DerivedView
   update: SheetUpdate
-  setStatus: (message: string) => void
+  setStatus?: (message: string) => void
+  activeTab?: string
+  onTabChange?: (tab: string) => void
 }) {
   const t = useT()
-  const [tab, setTab] = useState<TabId>('identity')
+  const [internalTab, setInternalTab] = useState<TabId>('identity')
+  const validActiveTab =
+    activeTab !== undefined && TAB_IDS.includes(activeTab as TabId)
+      ? (activeTab as TabId)
+      : null
+  const tab: TabId = validActiveTab ?? internalTab
+
+  useEffect(() => {
+    if (validActiveTab) {
+      setInternalTab(validActiveTab)
+    }
+  }, [validActiveTab])
+
+  const handleTabChange = (next: TabId) => {
+    setInternalTab(next)
+    onTabChange?.(next)
+  }
+
   const [hpOpen, setHpOpen] = useState(false)
 
   function addWildcardSkill(kind: 'craft' | 'perform' | 'profession') {
@@ -75,7 +96,7 @@ export function Pf1eWorkspace({
     const topic = raw.trim()
     const key = skillKeyFromName(topic, kind)
     if (character.skills.some((skill) => skill.key === key)) {
-      setStatus(t('pf1e.skills.alreadyExists', { key }))
+      setStatus?.(t('pf1e.skills.alreadyExists', { key }))
       return
     }
     const ability: AbilityKey =
@@ -181,7 +202,7 @@ export function Pf1eWorkspace({
             key={id}
             type="button"
             className={tab === id ? 'active' : ''}
-            onClick={() => setTab(id)}
+            onClick={() => handleTabChange(id)}
           >
             {t(`pf1e.tabs.${id}`)}
           </button>

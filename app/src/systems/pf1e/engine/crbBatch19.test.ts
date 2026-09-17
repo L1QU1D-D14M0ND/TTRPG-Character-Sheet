@@ -304,7 +304,7 @@ describe('CRB batch 19: exotic melee', () => {
     })
   })
 
-  it('does not pack double yet', () => {
+  it('does not tag kama, whip, nunchaku, or siangham with double', () => {
     expect(lookupCrbItem('weapon.kama')?.weapon?.properties).toEqual([
       'trip',
       'monk',

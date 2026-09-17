@@ -176,7 +176,14 @@
         "item": { "id": "weapon.dagger", "name": "Dagger" },
         "quantity": 1,
         "pounds": 1,
-        "location": "carried"
+        "location": "carried",
+        "weapon": {
+          "damageDice": "1d4",
+          "damageType": "piercing",
+          "critRange": 19,
+          "critMultiplier": 2,
+          "rangeFeet": 10
+        }
       }
     ],
     "notes": "AC numbers live on armorClass; item stats are documentary."

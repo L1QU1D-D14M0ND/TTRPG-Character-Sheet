@@ -205,7 +205,14 @@
           "damageDice": "1d6",
           "damageType": "bludgeoning",
           "critRange": 20,
-          "critMultiplier": 2
+          "critMultiplier": 2,
+          "properties": ["monk", "double"],
+          "secondHead": {
+            "damageDice": "1d6",
+            "damageType": "bludgeoning",
+            "critRange": 20,
+            "critMultiplier": 2
+          }
         }
       },
       {

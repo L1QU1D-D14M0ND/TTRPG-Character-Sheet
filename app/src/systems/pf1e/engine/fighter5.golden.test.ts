@@ -70,4 +70,17 @@ describe('golden PF1e Fighter 5', () => {
     expect(view.heavyLoad).toBe(300)
     expect(view.loadCategory).toBe('light')
   })
+
+  it('stamps catalog weapon numbers on the carried dagger', () => {
+    const dagger = character.inventory.items.find(
+      (row) => row.item.id === 'weapon.dagger',
+    )
+    expect(dagger?.weapon).toEqual({
+      damageDice: '1d4',
+      damageType: 'piercing',
+      critRange: 19,
+      critMultiplier: 2,
+      rangeFeet: 10,
+    })
+  })
 })

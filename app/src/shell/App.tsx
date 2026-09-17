@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react'
 import { APP_DISPLAY_NAME } from '../shared/constants'
 import { LOCALES, useI18n } from '../shared/i18n'
 import { CharacterSaveError, readTextFile } from '../shared/saveLoad'
@@ -28,7 +28,7 @@ function touchMeta<T extends { meta: { updatedAt: string } }>(character: T): T {
   }
 }
 
-function SheetSession<Doc extends { meta: { updatedAt: string } }, Derived>({
+export function SheetSession<Doc extends { meta: { updatedAt: string } }, Derived>({
   module,
   character,
   setCharacter,
@@ -43,10 +43,14 @@ function SheetSession<Doc extends { meta: { updatedAt: string } }, Derived>({
   sidebarCollapsed: boolean
   setSidebarCollapsed: (value: boolean | ((prev: boolean) => boolean)) => void
 }) {
+  const [activeTab, setActiveTab] = useState<string>('identity')
   const derived = useMemo(() => module.compute(character), [character, module])
   const update = (mutator: (c: Doc) => Doc) => {
     setCharacter((c) => touchMeta(mutator(c)))
   }
+  const focusTab = useCallback((tabId: string) => {
+    setActiveTab(tabId)
+  }, [])
   const Workspace = module.Workspace
   return (
     <>
@@ -56,6 +60,8 @@ function SheetSession<Doc extends { meta: { updatedAt: string } }, Derived>({
           derived={derived}
           update={update}
           setStatus={setStatus}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
         />
       </div>
       <SidebarHost
@@ -65,6 +71,7 @@ function SheetSession<Doc extends { meta: { updatedAt: string } }, Derived>({
           character,
           derived,
           update,
+          focusTab,
         }}
         collapsed={sidebarCollapsed}
         onToggle={() => setSidebarCollapsed((value) => !value)}
@@ -237,6 +244,7 @@ export default function App() {
       <div className="workspace-layout">
         {sheet.system === 'pf1e' ? (
           <SheetSession
+            key="session-pf1e"
             module={pf1eModule}
             character={sheet.character}
             setCharacter={(mutator) => {
@@ -257,6 +265,7 @@ export default function App() {
           />
         ) : (
           <SheetSession
+            key="session-pf2e"
             module={pf2eModule}
             character={sheet.character}
             setCharacter={(mutator) => {
