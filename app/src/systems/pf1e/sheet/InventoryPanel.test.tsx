@@ -196,4 +196,119 @@ describe('InventoryPanel weapon properties', () => {
     expect(screen.queryByText('brace')).not.toBeInTheDocument()
     expect(screen.getByText('flaming')).toBeInTheDocument()
   })
+
+  it('allows toggling masterwork and selecting enhancement on a weapon', () => {
+    render(
+      <I18nProvider>
+        <InventoryHarness />
+      </I18nProvider>,
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
+    fireEvent.change(screen.getByLabelText('CRB item'), {
+      target: { value: 'weapon.longsword' },
+    })
+
+    const mwkCheckbox = screen.getByLabelText('Masterwork') as HTMLInputElement
+    expect(mwkCheckbox.checked).toBe(false)
+    fireEvent.click(mwkCheckbox)
+    expect(mwkCheckbox.checked).toBe(true)
+    expect(screen.getByText('MWK')).toBeInTheDocument()
+
+    const enhancementSelect = screen.getByLabelText('Enhancement') as HTMLSelectElement
+    fireEvent.change(enhancementSelect, { target: { value: '2' } })
+    expect(enhancementSelect.value).toBe('2')
+    expect(screen.getByText('+2', { selector: '.magic-badge' })).toBeInTheDocument()
+    expect(mwkCheckbox.checked).toBe(true)
+  })
+
+  it('allows adding properties via the special ability select', () => {
+    render(
+      <I18nProvider>
+        <InventoryHarness />
+      </I18nProvider>,
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
+    fireEvent.change(screen.getByLabelText('CRB item'), {
+      target: { value: 'weapon.longsword' },
+    })
+
+    const selectAbility = screen.getByLabelText('Add special ability…')
+    fireEvent.change(selectAbility, { target: { value: 'flaming' } })
+    expect(screen.getByText('flaming')).toBeInTheDocument()
+  })
+
+  it('supports magic overlay and properties on armor and shields', () => {
+    render(
+      <I18nProvider>
+        <InventoryHarness />
+      </I18nProvider>,
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
+    fireEvent.change(screen.getByLabelText('CRB item'), {
+      target: { value: 'armor.full-plate' },
+    })
+
+    const enhancementSelect = screen.getByLabelText('Enhancement')
+    fireEvent.change(enhancementSelect, { target: { value: '1' } })
+    expect(screen.getByText('+1', { selector: '.magic-badge' })).toBeInTheDocument()
+
+    const selectAbility = screen.getByLabelText('Add special ability…')
+    fireEvent.change(selectAbility, { target: { value: 'fortification-light' } })
+    expect(screen.getByText('fortification-light')).toBeInTheDocument()
+  })
+
+  it('supports second head enhancement and masterwork on double weapons', () => {
+    render(
+      <I18nProvider>
+        <InventoryHarness />
+      </I18nProvider>,
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
+    fireEvent.change(screen.getByLabelText('CRB item'), {
+      target: { value: 'weapon.two-bladed-sword' },
+    })
+
+    const secondHeadMwk = screen.getByLabelText('Second head masterwork') as HTMLInputElement
+    expect(secondHeadMwk.checked).toBe(false)
+    fireEvent.click(secondHeadMwk)
+    expect(secondHeadMwk.checked).toBe(true)
+
+    const secondHeadEnhancement = screen.getByLabelText('Second head enhancement') as HTMLSelectElement
+    fireEvent.change(secondHeadEnhancement, { target: { value: '1' } })
+    expect(secondHeadEnhancement.value).toBe('1')
+  })
+
+  it('feeds the base price field into the suggested market price', () => {
+    render(
+      <I18nProvider>
+        <InventoryHarness />
+      </I18nProvider>,
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'Add item' }))
+    fireEvent.change(screen.getByLabelText('CRB item'), {
+      target: { value: 'weapon.longsword' },
+    })
+    fireEvent.change(screen.getByLabelText('Enhancement'), {
+      target: { value: '2' },
+    })
+
+    // Catalog rows carry no price, so the overlay alone is 300 mwk + 2^2 * 2000.
+    expect(
+      screen.getByText('Suggested market price: 8,300 gp'),
+    ).toBeInTheDocument()
+
+    const price = screen.getByLabelText('Base price (gp)')
+    fireEvent.change(price, { target: { value: '15' } })
+
+    // CRB +2 longsword: 15 base + 300 mwk + 8,000 enhancement.
+    expect(
+      screen.getByText('Suggested market price: 8,315 gp'),
+    ).toBeInTheDocument()
+
+    fireEvent.change(price, { target: { value: '' } })
+    expect(
+      screen.getByText('Suggested market price: 8,300 gp'),
+    ).toBeInTheDocument()
+  })
 })
+

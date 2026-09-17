@@ -202,7 +202,33 @@
       "babThreeQuarter": "threeQuarter",
       "babHalf": "half",
       "saveGood": "good",
-      "savePoor": "poor"
+      "savePoor": "poor",
+      "arcaneSchool": "Arcane school",
+      "oppositionSchools": "Opposition schools",
+      "oppositionSchool": "Opposition school",
+      "schools": {
+        "universalist": "Universalist",
+        "abjuration": "Abjuration",
+        "conjuration": "Conjuration",
+        "divination": "Divination",
+        "enchantment": "Enchantment",
+        "evocation": "Evocation",
+        "illusion": "Illusion",
+        "necromancy": "Necromancy",
+        "transmutation": "Transmutation"
+      },
+      "speeds": "Speeds",
+      "addSpeed": "Add speed",
+      "noSpeeds": "No speeds entered.",
+      "speedKind": "Kind",
+      "speedFeet": "Feet",
+      "speedNotes": "Notes",
+      "senses": "Senses",
+      "addSense": "Add sense",
+      "noSenses": "No senses entered.",
+      "senseName": "Name",
+      "senseRange": "Range (ft)",
+      "senseNotes": "Notes"
     },
     "spells": {
       "help": "Max is the class spells-per-day table plus bonus slots from ability. Click Max to type a custom amount; leave empty to use the default. Domain and specialist extra slots are not added. Remaining is play state. Spell Focus does not change DC. Catalog spells stamp name and level only.",
@@ -219,6 +245,7 @@
       "level": "Level",
       "dc": "DC",
       "bonusSlots": "Bonus slots",
+      "schoolSlots": "School",
       "max": "Max",
       "maxHint": "Click to set a custom max. Leave empty to use the default ({default}).",
       "maxEdit": "Max slots for level {level}",
@@ -263,7 +290,13 @@
       "resets": "Resets",
       "resetDaily": "daily",
       "resetEncounter": "encounter",
-      "resetOther": "other"
+      "resetOther": "other",
+      "resistances": "Resistances / DR",
+      "addResistance": "Add resistance",
+      "noResistances": "No resistances or damage reduction.",
+      "resistanceType": "Type",
+      "resistanceValue": "Value",
+      "resistanceNotes": "Notes"
     },
     "feats": {
       "feats": "Feats",
@@ -278,6 +311,7 @@
       "features": "Features",
       "addFeature": "Add feature",
       "emptyFeatures": "Class features as user-entered rows.",
+      "featureCatalog": "CRB feature",
       "featureName": "Feature name",
       "categories": {
         "general": "general",
@@ -297,6 +331,7 @@
       "name": "Name",
       "qty": "Qty",
       "lb": "Lb",
+      "priceGp": "Base price (gp)",
       "location": "Location",
       "catalog": "CRB item",
       "itemName": "Item name",
@@ -308,7 +343,18 @@
       "addProperty": "Add property",
       "removeProperty": "Remove property {tag}",
       "propertyPlaceholder": "reach, flaming, …",
-      "propertiesHelp": "N tags: one is valid (disarm), many are valid (reach + trip + disarm, later magic). Reach does not change threatened area yet."
+      "propertiesHelp": "N tags: one is valid (disarm), many are valid (reach + trip + disarm, later magic). Reach does not change threatened area yet.",
+      "masterwork": "Masterwork",
+      "enhancement": "Enhancement",
+      "noEnhancement": "+0 (none)",
+      "secondHead": "Second head",
+      "secondHeadEnhancement": "Second head enhancement",
+      "secondHeadMasterwork": "Second head masterwork",
+      "secondHeadProperties": "Second head properties",
+      "armorProperties": "Armor properties",
+      "shieldProperties": "Shield properties",
+      "suggestedPrice": "Suggested market price: {price} gp",
+      "selectProperty": "Add special ability…"
     },
     "hp": {
       "title": "Max HP breakdown",

@@ -3,6 +3,7 @@ import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import {
   createEmptyClass,
   createEmptyFeat,
+  createEmptyFeature,
   createEmptyItem,
   createEmptySpellListEntry,
 } from '../character/createRows'
@@ -11,18 +12,21 @@ import { parseCharacterJson } from '../character/saveLoad'
 import {
   applyClassProgression,
   applyCrbFeat,
+  applyCrbFeature,
   applyCrbItem,
   applyCrbRace,
   applyCrbSpell,
   classSkillKeySet,
   lookupCrbClass,
   lookupCrbFeat,
+  lookupCrbFeature,
   lookupCrbItem,
   lookupCrbRace,
   lookupCrbSpell,
   stampClassSkills,
   CRB_CLASSES,
   CRB_FEATS,
+  CRB_FEATURES,
   CRB_ITEMS,
   CRB_RACES,
   CRB_SPELLS,
@@ -366,6 +370,32 @@ describe('CRB pack batch 10: weapons and armor catalog', () => {
       'item.sling-bullets',
       'item.arrows',
       'item.repeating-crossbow-bolts',
+      'weapon.adamantine-dagger',
+      'weapon.silver-dagger',
+      'weapon.cold-iron-longsword',
+      'weapon.dagger-of-venom',
+      'weapon.flame-tongue',
+      'weapon.holy-avenger',
+      'weapon.sun-blade',
+      'weapon.luck-blade',
+      'weapon.sword-of-subtlety',
+      'weapon.sword-of-the-planes',
+      'weapon.nine-lives-stealer',
+      'weapon.frost-brand',
+      'weapon.mace-of-smiting',
+      'weapon.dwarven-thrower',
+      'armor.mithral-shirt',
+      'armor.dragonhide-plate',
+      'armor.elven-chain',
+      'armor.rhino-hide',
+      'armor.celestial-armor',
+      'armor.plate-armor-of-the-deep',
+      'armor.breastplate-of-command',
+      'shield.caster-shield',
+      'shield.spined-shield',
+      'shield.lions-shield',
+      'shield.winged-shield',
+      'shield.absorbing-shield',
     ])
     expect(lookupCrbItem('armor.chainmail')).toMatchObject({
       name: 'Chainmail',
@@ -640,6 +670,37 @@ describe('CRB pack batch 12: feat catalog', () => {
     }
     expect(lookupCrbFeat(fighter.feats[0]?.feat.id)?.id).toBe('feat.weapon-focus')
     expect(lookupCrbFeat(wizard.feats[1]?.feat.id)?.id).toBe('feat.spell-focus')
+  })
+})
+
+describe('CRB pack features: Wizard school powers and arcane bond', () => {
+  it('lists the Wizard school powers and arcane bond', () => {
+    const ids = CRB_FEATURES.map((row) => row.id)
+    expect(ids).toContain('feature.arcane-bond')
+    expect(ids).toContain('feature.physical-enhancement')
+    expect(ids).toContain('feature.telekinetic-fist')
+    expect(lookupCrbFeature('feature.physical-enhancement')).toMatchObject({
+      name: 'Physical Enhancement',
+    })
+  })
+
+  it('stamps id and name without changing levelGained, summary, or notes', () => {
+    const row = createEmptyFeature()
+    row.levelGained = 5
+    row.summary = 'Keep summary'
+    row.notes = 'Custom notes'
+    const stamped = applyCrbFeature(row, 'feature.physical-enhancement')
+    expect(stamped.feature.id).toBe('feature.physical-enhancement')
+    expect(stamped.feature.name).toBe('Physical Enhancement')
+    expect(stamped.levelGained).toBe(5)
+    expect(stamped.summary).toBe('Keep summary')
+    expect(stamped.notes).toBe('Custom notes')
+  })
+
+  it('returns null for an unknown feature id', () => {
+    expect(lookupCrbFeature('feature.unknown')).toBeNull()
+    expect(lookupCrbFeature(null)).toBeNull()
+    expect(lookupCrbFeature('')).toBeNull()
   })
 })
 

@@ -49,19 +49,27 @@ export function minAbilityToCast(spellLevel: number): number {
   return 10 + spellLevel
 }
 
+export function isSpecialistWizard(classRow?: ClassEntry): boolean {
+  if (!classRow) return false
+  const school = classRow.arcaneSchool?.specialized?.trim().toLowerCase()
+  return Boolean(school && school !== 'universalist')
+}
+
 /**
- * Default max slots: class table + ability bonus, only if the class can
- * already cast that level and the score meets 10 + spell level.
- * No table (or a dash) → 0. Domain/specialist extras are not added.
+ * Default max slots: class table + ability bonus (+ school slot for specialist wizards),
+ * only if the class can already cast that level and the score meets 10 + spell level.
+ * No table (or a dash) → 0.
  */
 export function defaultSlotMax(
   classSlot: number | null,
   abilityScore: number,
   spellLevel: number,
+  hasSchoolSlot = false,
 ): number {
   if (classSlot == null) return 0
   if (abilityScore < minAbilityToCast(spellLevel)) return 0
-  return classSlot + bonusSpellsFromAbility(abilityScore, spellLevel)
+  const schoolBonus = hasSchoolSlot && spellLevel >= 1 ? 1 : 0
+  return classSlot + bonusSpellsFromAbility(abilityScore, spellLevel) + schoolBonus
 }
 
 export function storedSlotMax(
@@ -77,10 +85,11 @@ export function effectiveSlotMax(
   spellLevel: number,
   classSlot: number | null,
   abilityScore: number,
+  hasSchoolSlot = false,
 ): number {
   const custom = storedSlotMax(entry, spellLevel)
   if (custom != null) return custom
-  return defaultSlotMax(classSlot, abilityScore, spellLevel)
+  return defaultSlotMax(classSlot, abilityScore, spellLevel, hasSchoolSlot)
 }
 
 export interface SpellcastingDerived {
@@ -89,6 +98,7 @@ export interface SpellcastingDerived {
   abilityMod: number
   dcByLevel: number[]
   bonusSlotsByLevel: number[]
+  schoolSlotsByLevel: number[]
   classSlotsByLevel: Array<number | null>
   slotMaxByLevel: number[]
 }
@@ -111,15 +121,27 @@ export function spellcastingDerived(
       { length: 10 },
       (_, spellLevel) => table?.[spellLevel] ?? null,
     )
+    const hasSchoolSlot = isSpecialistWizard(classRow)
+    const schoolSlotsByLevel: number[] = Array.from(
+      { length: 10 },
+      (_, spellLevel) =>
+        hasSchoolSlot &&
+        spellLevel >= 1 &&
+        classSlotsByLevel[spellLevel] != null &&
+        abilityScore >= minAbilityToCast(spellLevel)
+          ? 1
+          : 0,
+    )
     result[entry.id] = {
       casterLevel: casterLevelForEntry(entry, classes),
       ability: entry.ability,
       abilityMod,
       dcByLevel: dcByLevel(abilityMod),
       bonusSlotsByLevel: bonusSlotsByLevel(abilityScore),
+      schoolSlotsByLevel,
       classSlotsByLevel,
       slotMaxByLevel: classSlotsByLevel.map((classSlot, spellLevel) =>
-        effectiveSlotMax(entry, spellLevel, classSlot, abilityScore),
+        effectiveSlotMax(entry, spellLevel, classSlot, abilityScore, hasSchoolSlot),
       ),
     }
   }

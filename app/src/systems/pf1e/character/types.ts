@@ -71,6 +71,11 @@ export interface ClassSaves {
   will: SaveQuality
 }
 
+export interface ArcaneSchoolChoice {
+  specialized: string
+  opposition?: string[]
+}
+
 export interface ClassEntry {
   id: string
   class: ContentRef
@@ -82,6 +87,8 @@ export interface ClassEntry {
   skillPointsPerLevel?: number
   /** Documentary APG archetype (Synthesist). Does not rewrite HD/BAB/saves. */
   archetype?: ContentRef
+  /** Documentary Wizard arcane school and opposition schools. */
+  arcaneSchool?: ArcaneSchoolChoice
   favored?: FavoredClassBonus
   prestige?: boolean
   notes?: string
@@ -216,6 +223,9 @@ export interface ArmorItemStats {
   maxDex?: number | null
   armorCheckPenalty?: number
   spellFailurePercent?: number
+  enhancementBonus?: number
+  masterwork?: boolean
+  properties?: string[]
 }
 
 export interface WeaponHeadStats {
@@ -223,12 +233,14 @@ export interface WeaponHeadStats {
   damageType?: string
   critRange?: number
   critMultiplier?: number
+  enhancementBonus?: number
+  masterwork?: boolean
+  properties?: string[]
 }
 
 /** Documentary combat fields. Optional `properties` is N kebab-case tags (one or many; omit when empty). Later magic uses the same list. Optional `secondHead` is the off-hand dice on a double weapon. */
 export interface WeaponItemStats extends WeaponHeadStats {
   rangeFeet?: number | null
-  properties?: string[]
   secondHead?: WeaponHeadStats
 }
 
@@ -237,6 +249,9 @@ export interface ShieldItemStats {
   maxDex?: number | null
   armorCheckPenalty?: number
   spellFailurePercent?: number
+  enhancementBonus?: number
+  masterwork?: boolean
+  properties?: string[]
 }
 
 export interface ItemEntry {

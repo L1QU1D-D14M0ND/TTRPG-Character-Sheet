@@ -1,0 +1,17 @@
+[
+  {
+    "id": "feature.arcane-bond",
+    "name": "Arcane Bond",
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "feature.physical-enhancement",
+    "name": "Physical Enhancement",
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "feature.telekinetic-fist",
+    "name": "Telekinetic Fist",
+    "source": { "book": "CRB" }
+  }
+]

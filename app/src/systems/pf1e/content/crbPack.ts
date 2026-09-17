@@ -1,5 +1,6 @@
 import type {
   FeatEntry,
+  FeatureEntry,
   Identity,
   ItemEntry,
   SpellListEntry,
@@ -9,11 +10,13 @@ import { loadCatalog } from './loadCatalog'
 import {
   registerClassPack,
   registerFeatPack,
+  registerFeaturePack,
   registerItemPack,
   registerRacePack,
   registerSpellPack,
   type ClassProgression,
   type FeatCatalogRow,
+  type FeatureCatalogRow,
   type ItemCatalogRow,
   type ItemKind,
   type RaceCatalogRow,
@@ -24,17 +27,20 @@ import racesSchema from '../../../../../schemas/content/pf1e/races.schema.json'
 import itemsSchema from '../../../../../schemas/content/pf1e/items.schema.json'
 import featsSchema from '../../../../../schemas/content/pf1e/feats.schema.json'
 import spellsSchema from '../../../../../schemas/content/pf1e/spells.schema.json'
+import featuresSchema from '../../../../../schemas/content/pf1e/features.schema.json'
 import classesJson from '../../../../../content/pf1e/crb/classes.json'
 import racesJson from '../../../../../content/pf1e/crb/races.json'
 import itemsJson from '../../../../../content/pf1e/crb/items.json'
 import featsJson from '../../../../../content/pf1e/crb/feats.json'
 import spellsJson from '../../../../../content/pf1e/crb/spells.json'
+import featuresJson from '../../../../../content/pf1e/crb/features.json'
 
 export type CrbClassProgression = ClassProgression
 export type CrbRace = RaceCatalogRow
 export type CrbItem = ItemCatalogRow
 export type CrbFeat = FeatCatalogRow
 export type CrbSpell = SpellCatalogRow
+export type CrbFeature = FeatureCatalogRow
 
 const classRows = loadCatalog<ClassProgression[]>(
   classesSchema,
@@ -61,6 +67,11 @@ const spellRows = loadCatalog<SpellCatalogRow[]>(
   spellsJson,
   'content/pf1e/crb/spells.json',
 )
+const featureRows = loadCatalog<FeatureCatalogRow[]>(
+  featuresSchema,
+  featuresJson,
+  'content/pf1e/crb/features.json',
+)
 
 export const CRB_CLASSES: ClassProgression[] = classRows.map((row) => ({
   ...row,
@@ -81,11 +92,14 @@ export const CRB_FEATS: FeatCatalogRow[] = featRows.map((row) => ({ ...row }))
 
 export const CRB_SPELLS: SpellCatalogRow[] = spellRows.map((row) => ({ ...row }))
 
+export const CRB_FEATURES: FeatureCatalogRow[] = featureRows.map((row) => ({ ...row }))
+
 registerClassPack(CRB_CLASSES)
 registerRacePack(CRB_RACES)
 registerItemPack(CRB_ITEMS)
 registerFeatPack(CRB_FEATS)
 registerSpellPack(CRB_SPELLS)
+registerFeaturePack(CRB_FEATURES)
 
 /** Unknown or empty id → null. Never throws (isolate to the row). CRB only. */
 export function lookupCrbClass(
@@ -116,6 +130,12 @@ export function lookupCrbSpell(
   id: string | null | undefined,
 ): SpellCatalogRow | null {
   return lookupById(CRB_SPELLS, id)
+}
+
+export function lookupCrbFeature(
+  id: string | null | undefined,
+): FeatureCatalogRow | null {
+  return lookupById(CRB_FEATURES, id)
 }
 
 export { applyClassProgression as applyCrbClassProgression } from './classLookup'
@@ -164,7 +184,98 @@ export function applyCrbItem(row: ItemEntry, id: string | null): ItemEntry {
       item: { ...row.item, id: null },
     }
   }
-  const kind: ItemKind = found.kind
+  const base = found.baseItemId ? lookupCrbItem(found.baseItemId) : null
+  const kind: ItemKind = found.kind || base?.kind || 'item'
+  const pounds = found.pounds ?? base?.pounds ?? 0
+
+  let weapon: ItemEntry['weapon'] = undefined
+  if (kind === 'weapon') {
+    const baseWeapon = base?.weapon
+    const foundWeapon = found.weapon
+    if (baseWeapon || foundWeapon) {
+      const mergedProperties = Array.from(
+        new Set([
+          ...(baseWeapon?.properties ?? []),
+          ...(foundWeapon?.properties ?? []),
+        ]),
+      )
+      weapon = {
+        ...(baseWeapon ? { ...baseWeapon } : {}),
+        ...(foundWeapon ? { ...foundWeapon } : {}),
+      }
+      if (mergedProperties.length > 0) {
+        weapon.properties = mergedProperties
+      } else {
+        delete weapon.properties
+      }
+      if (baseWeapon?.secondHead || foundWeapon?.secondHead) {
+        const baseHead = baseWeapon?.secondHead
+        const foundHead = foundWeapon?.secondHead
+        const secondProps = Array.from(
+          new Set([
+            ...(baseHead?.properties ?? []),
+            ...(foundHead?.properties ?? []),
+          ]),
+        )
+        weapon.secondHead = {
+          ...(baseHead ? { ...baseHead } : {}),
+          ...(foundHead ? { ...foundHead } : {}),
+        }
+        if (secondProps.length > 0) {
+          weapon.secondHead.properties = secondProps
+        } else {
+          delete weapon.secondHead.properties
+        }
+      }
+    }
+  }
+
+  let armor: ItemEntry['armor'] = undefined
+  if (kind === 'armor') {
+    const baseArmor = base?.armor
+    const foundArmor = found.armor
+    if (baseArmor || foundArmor) {
+      const mergedProperties = Array.from(
+        new Set([
+          ...(baseArmor?.properties ?? []),
+          ...(foundArmor?.properties ?? []),
+        ]),
+      )
+      armor = {
+        ...(baseArmor ? { ...baseArmor } : {}),
+        ...(foundArmor ? { ...foundArmor } : {}),
+      }
+      if (mergedProperties.length > 0) {
+        armor.properties = mergedProperties
+      } else {
+        delete armor.properties
+      }
+    }
+  }
+
+  let shield: ItemEntry['shield'] = undefined
+  if (kind === 'shield') {
+    const baseShield = base?.shield
+    const foundShield = found.shield
+    if (baseShield || foundShield) {
+      const mergedProperties = Array.from(
+        new Set([
+          ...(baseShield?.properties ?? []),
+          ...(foundShield?.properties ?? []),
+        ]),
+      )
+      shield = {
+        ...(baseShield ? { ...baseShield } : {}),
+        ...(foundShield ? { ...foundShield } : {}),
+      }
+      if (mergedProperties.length > 0) {
+        shield.properties = mergedProperties
+      } else {
+        delete shield.properties
+      }
+    }
+  }
+
   return {
     ...row,
     item: {
@@ -172,21 +283,10 @@ export function applyCrbItem(row: ItemEntry, id: string | null): ItemEntry {
       name: found.name,
       source: found.source,
     },
-    pounds: found.pounds,
-    weapon:
-      kind === 'weapon' && found.weapon
-        ? {
-            ...found.weapon,
-            ...(found.weapon.properties
-              ? { properties: [...found.weapon.properties] }
-              : {}),
-            ...(found.weapon.secondHead
-              ? { secondHead: { ...found.weapon.secondHead } }
-              : {}),
-          }
-        : undefined,
-    armor: kind === 'armor' && found.armor ? { ...found.armor } : undefined,
-    shield: kind === 'shield' && found.shield ? { ...found.shield } : undefined,
+    pounds,
+    weapon,
+    armor,
+    shield,
   }
 }
 
@@ -238,5 +338,31 @@ export function applyCrbSpell(
       source: found.source,
     },
     spellLevel: found.spellLevel,
+  }
+}
+
+/**
+ * Stamp catalog id, name, and source for a class feature.
+ * Does not rewrite levelGained, summary, or notes.
+ * Unknown id clears `feature.id` and leaves the rest of the row.
+ */
+export function applyCrbFeature(
+  row: FeatureEntry,
+  id: string | null,
+): FeatureEntry {
+  const found = lookupCrbFeature(id)
+  if (!found) {
+    return {
+      ...row,
+      feature: { ...row.feature, id: null },
+    }
+  }
+  return {
+    ...row,
+    feature: {
+      id: found.id,
+      name: found.name,
+      source: found.source,
+    },
   }
 }

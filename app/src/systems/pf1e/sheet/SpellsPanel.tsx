@@ -190,6 +190,9 @@ function SpellcastingBlock({
             <th>{t('pf1e.spells.level')}</th>
             <th>{t('pf1e.spells.dc')}</th>
             <th>{t('pf1e.spells.bonusSlots')}</th>
+            {derived?.schoolSlotsByLevel?.some((v) => v > 0) ? (
+              <th>{t('pf1e.spells.schoolSlots')}</th>
+            ) : null}
             <th>{t('pf1e.spells.max')}</th>
             <th>{t('pf1e.spells.left')}</th>
           </tr>
@@ -202,6 +205,8 @@ function SpellcastingBlock({
                 max: null,
                 remaining: 0,
               }
+            const hasSchoolCol =
+              derived?.schoolSlotsByLevel?.some((v) => v > 0) ?? false
             return (
               <tr key={spellLevel}>
                 <th>
@@ -225,6 +230,14 @@ function SpellcastingBlock({
                     )}
                   />
                 </td>
+                {hasSchoolCol ? (
+                  <td>
+                    <DerivedCell
+                      value={derived?.schoolSlotsByLevel[spellLevel] ?? 0}
+                      overridden={false}
+                    />
+                  </td>
+                ) : null}
                 <td>
                   <SlotMaxCell
                     spellLevel={spellLevel}

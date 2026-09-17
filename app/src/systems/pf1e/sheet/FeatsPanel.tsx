@@ -4,7 +4,7 @@ import {
   type CharacterDocument,
 } from '../character'
 import type { FeatEntry } from '../character/types'
-import { applyCrbFeat, CRB_FEATS } from '../content'
+import { applyCrbFeat, applyCrbFeature, CRB_FEATS, CRB_FEATURES } from '../content'
 import { useT } from '../../../shared/i18n'
 import { appendRow, patchAt, removeAt, updateAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
@@ -195,7 +195,27 @@ export function FeatsPanel({
           ) : (
             character.features.map((feature, index) => (
               <tr key={feature.id}>
-                <td>
+                <td className="feat-cell">
+                  <select
+                    aria-label={t('pf1e.feats.featureCatalog')}
+                    value={feature.feature.id ?? ''}
+                    onChange={(e) => {
+                      const id = e.target.value || null
+                      update((c) => ({
+                        ...c,
+                        features: updateAt(c.features, index, (row) =>
+                          applyCrbFeature(row, id),
+                        ),
+                      }))
+                    }}
+                  >
+                    <option value="">{t('pf1e.common.custom')}</option>
+                    {CRB_FEATURES.map((entry) => (
+                      <option key={entry.id} value={entry.id}>
+                        {entry.name}
+                      </option>
+                    ))}
+                  </select>
                   <input
                     aria-label={t('pf1e.feats.featureName')}
                     value={feature.feature.name}

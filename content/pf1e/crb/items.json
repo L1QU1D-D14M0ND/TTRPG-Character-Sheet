@@ -1294,5 +1294,343 @@
     "kind": "item",
     "pounds": 1,
     "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.adamantine-dagger",
+    "name": "Adamantine dagger",
+    "baseItemId": "weapon.dagger",
+    "kind": "weapon",
+    "pounds": 1,
+    "weapon": {
+      "masterwork": true
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.silver-dagger",
+    "name": "Silver dagger",
+    "baseItemId": "weapon.dagger",
+    "kind": "weapon",
+    "pounds": 1,
+    "weapon": {
+      "masterwork": true
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.cold-iron-longsword",
+    "name": "Cold iron longsword",
+    "baseItemId": "weapon.longsword",
+    "kind": "weapon",
+    "pounds": 4,
+    "weapon": {
+      "masterwork": true
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.dagger-of-venom",
+    "name": "Dagger of venom",
+    "baseItemId": "weapon.dagger",
+    "kind": "weapon",
+    "pounds": 1,
+    "weapon": {
+      "enhancementBonus": 1
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.flame-tongue",
+    "name": "Flame tongue",
+    "baseItemId": "weapon.longsword",
+    "kind": "weapon",
+    "pounds": 4,
+    "weapon": {
+      "enhancementBonus": 1,
+      "properties": ["flaming-burst"]
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.holy-avenger",
+    "name": "Holy avenger",
+    "baseItemId": "weapon.longsword",
+    "kind": "weapon",
+    "pounds": 4,
+    "weapon": {
+      "enhancementBonus": 2,
+      "properties": ["holy"]
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.sun-blade",
+    "name": "Sun blade",
+    "baseItemId": "weapon.bastard-sword",
+    "kind": "weapon",
+    "pounds": 2,
+    "weapon": {
+      "enhancementBonus": 2
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.luck-blade",
+    "name": "Luck blade",
+    "baseItemId": "weapon.short-sword",
+    "kind": "weapon",
+    "pounds": 2,
+    "weapon": {
+      "enhancementBonus": 2
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.sword-of-subtlety",
+    "name": "Sword of subtlety",
+    "baseItemId": "weapon.short-sword",
+    "kind": "weapon",
+    "pounds": 2,
+    "weapon": {
+      "enhancementBonus": 1
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.sword-of-the-planes",
+    "name": "Sword of the planes",
+    "baseItemId": "weapon.longsword",
+    "kind": "weapon",
+    "pounds": 4,
+    "weapon": {
+      "enhancementBonus": 1
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.nine-lives-stealer",
+    "name": "Nine lives stealer",
+    "baseItemId": "weapon.longsword",
+    "kind": "weapon",
+    "pounds": 4,
+    "weapon": {
+      "enhancementBonus": 2
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.frost-brand",
+    "name": "Frost brand",
+    "baseItemId": "weapon.greatsword",
+    "kind": "weapon",
+    "pounds": 8,
+    "weapon": {
+      "enhancementBonus": 3,
+      "properties": ["frost"]
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.mace-of-smiting",
+    "name": "Mace of smiting",
+    "baseItemId": "weapon.heavy-mace",
+    "kind": "weapon",
+    "pounds": 8,
+    "weapon": {
+      "enhancementBonus": 3
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "weapon.dwarven-thrower",
+    "name": "Dwarven thrower",
+    "baseItemId": "weapon.warhammer",
+    "kind": "weapon",
+    "pounds": 5,
+    "weapon": {
+      "enhancementBonus": 2,
+      "properties": ["throwing", "returning"]
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "armor.mithral-shirt",
+    "name": "Mithral shirt",
+    "baseItemId": "armor.chain-shirt",
+    "kind": "armor",
+    "pounds": 10,
+    "armor": {
+      "acBonus": 4,
+      "maxDex": 6,
+      "armorCheckPenalty": 0,
+      "spellFailurePercent": 10,
+      "masterwork": true
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "armor.dragonhide-plate",
+    "name": "Dragonhide plate",
+    "baseItemId": "armor.full-plate",
+    "kind": "armor",
+    "pounds": 50,
+    "armor": {
+      "acBonus": 9,
+      "maxDex": 1,
+      "armorCheckPenalty": -6,
+      "spellFailurePercent": 35,
+      "masterwork": true
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "armor.elven-chain",
+    "name": "Elven chain",
+    "baseItemId": "armor.chainmail",
+    "kind": "armor",
+    "pounds": 20,
+    "armor": {
+      "acBonus": 6,
+      "maxDex": 4,
+      "armorCheckPenalty": -2,
+      "spellFailurePercent": 20,
+      "masterwork": true
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "armor.rhino-hide",
+    "name": "Rhino hide",
+    "baseItemId": "armor.hide",
+    "kind": "armor",
+    "pounds": 25,
+    "armor": {
+      "acBonus": 4,
+      "maxDex": 4,
+      "armorCheckPenalty": -1,
+      "spellFailurePercent": 20,
+      "enhancementBonus": 2
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "armor.celestial-armor",
+    "name": "Celestial armor",
+    "baseItemId": "armor.chainmail",
+    "kind": "armor",
+    "pounds": 20,
+    "armor": {
+      "acBonus": 6,
+      "maxDex": 8,
+      "armorCheckPenalty": -2,
+      "spellFailurePercent": 15,
+      "enhancementBonus": 3
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "armor.plate-armor-of-the-deep",
+    "name": "Plate armor of the deep",
+    "baseItemId": "armor.full-plate",
+    "kind": "armor",
+    "pounds": 50,
+    "armor": {
+      "acBonus": 9,
+      "maxDex": 1,
+      "armorCheckPenalty": -6,
+      "spellFailurePercent": 35,
+      "enhancementBonus": 1
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "armor.breastplate-of-command",
+    "name": "Breastplate of command",
+    "baseItemId": "armor.breastplate",
+    "kind": "armor",
+    "pounds": 30,
+    "armor": {
+      "acBonus": 6,
+      "maxDex": 3,
+      "armorCheckPenalty": -4,
+      "spellFailurePercent": 25,
+      "enhancementBonus": 2
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "shield.caster-shield",
+    "name": "Caster's shield",
+    "baseItemId": "shield.light-wooden-shield",
+    "kind": "shield",
+    "pounds": 5,
+    "shield": {
+      "acBonus": 1,
+      "maxDex": null,
+      "armorCheckPenalty": 0,
+      "spellFailurePercent": 5,
+      "enhancementBonus": 1
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "shield.spined-shield",
+    "name": "Spined shield",
+    "baseItemId": "shield.heavy-steel-shield",
+    "kind": "shield",
+    "pounds": 15,
+    "shield": {
+      "acBonus": 2,
+      "maxDex": null,
+      "armorCheckPenalty": -1,
+      "spellFailurePercent": 15,
+      "enhancementBonus": 1
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "shield.lions-shield",
+    "name": "Lion's shield",
+    "baseItemId": "shield.heavy-steel-shield",
+    "kind": "shield",
+    "pounds": 15,
+    "shield": {
+      "acBonus": 2,
+      "maxDex": null,
+      "armorCheckPenalty": -1,
+      "spellFailurePercent": 15,
+      "enhancementBonus": 2
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "shield.winged-shield",
+    "name": "Winged shield",
+    "baseItemId": "shield.heavy-wooden-shield",
+    "kind": "shield",
+    "pounds": 10,
+    "shield": {
+      "acBonus": 2,
+      "maxDex": null,
+      "armorCheckPenalty": -1,
+      "spellFailurePercent": 15,
+      "enhancementBonus": 3
+    },
+    "source": { "book": "CRB" }
+  },
+  {
+    "id": "shield.absorbing-shield",
+    "name": "Absorbing shield",
+    "baseItemId": "shield.heavy-steel-shield",
+    "kind": "shield",
+    "pounds": 15,
+    "shield": {
+      "acBonus": 2,
+      "maxDex": null,
+      "armorCheckPenalty": -1,
+      "spellFailurePercent": 15,
+      "enhancementBonus": 1
+    },
+    "source": { "book": "CRB" }
   }
 ]

@@ -11,6 +11,7 @@
     "properties": {
       "id": { "type": "string", "minLength": 1 },
       "name": { "type": "string", "minLength": 1 },
+      "baseItemId": { "type": "string", "minLength": 1 },
       "kind": { "enum": ["weapon", "armor", "shield", "item"] },
       "pounds": { "type": "number", "minimum": 0 },
       "weapon": {
@@ -22,6 +23,8 @@
           "critRange": { "type": "integer", "minimum": 1, "maximum": 20 },
           "critMultiplier": { "type": "integer", "minimum": 2 },
           "rangeFeet": { "type": ["number", "null"] },
+          "enhancementBonus": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "masterwork": { "type": "boolean" },
           "properties": {
             "type": "array",
             "description": "N kebab-case tags. Omit when empty. One tag is valid (longspear: reach). Many tags are valid (whip later; magic later). Not a single enum.",
@@ -37,7 +40,15 @@
               "damageDice": { "type": "string" },
               "damageType": { "type": "string" },
               "critRange": { "type": "integer", "minimum": 1, "maximum": 20 },
-              "critMultiplier": { "type": "integer", "minimum": 2 }
+              "critMultiplier": { "type": "integer", "minimum": 2 },
+              "enhancementBonus": { "type": "integer", "minimum": 1, "maximum": 5 },
+              "masterwork": { "type": "boolean" },
+              "properties": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 },
+                "minItems": 1,
+                "uniqueItems": true
+              }
             }
           }
         }
@@ -49,7 +60,15 @@
           "acBonus": { "type": "number" },
           "maxDex": { "type": ["number", "null"] },
           "armorCheckPenalty": { "type": "number", "maximum": 0 },
-          "spellFailurePercent": { "type": "number", "minimum": 0 }
+          "spellFailurePercent": { "type": "number", "minimum": 0 },
+          "enhancementBonus": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "masterwork": { "type": "boolean" },
+          "properties": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "uniqueItems": true
+          }
         }
       },
       "shield": {
@@ -60,7 +79,15 @@
           "acBonus": { "type": "number" },
           "maxDex": { "type": ["number", "null"] },
           "armorCheckPenalty": { "type": "number", "maximum": 0 },
-          "spellFailurePercent": { "type": "number", "minimum": 0 }
+          "spellFailurePercent": { "type": "number", "minimum": 0 },
+          "enhancementBonus": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "masterwork": { "type": "boolean" },
+          "properties": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "uniqueItems": true
+          }
         }
       },
       "source": {

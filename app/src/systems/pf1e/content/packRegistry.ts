@@ -35,6 +35,7 @@ export type ItemKind = 'weapon' | 'armor' | 'shield' | 'item'
 export interface ItemCatalogRow {
   id: string
   name: string
+  baseItemId?: string
   kind: ItemKind
   pounds: number
   weapon?: ItemEntry['weapon']
@@ -65,6 +66,12 @@ export interface ArchetypeCatalogRow {
 }
 
 export interface EvolutionCatalogRow {
+  id: string
+  name: string
+  source?: ContentRef['source']
+}
+
+export interface FeatureCatalogRow {
   id: string
   name: string
   source?: ContentRef['source']
@@ -134,6 +141,7 @@ const featIndex = new PackIndex<FeatCatalogRow>('feat')
 const spellIndex = new PackIndex<SpellCatalogRow>('spell')
 const archetypeIndex = new PackIndex<ArchetypeCatalogRow>('archetype')
 const evolutionIndex = new PackIndex<EvolutionCatalogRow>('evolution')
+const featureIndex = new PackIndex<FeatureCatalogRow>('feature')
 
 export function registerClassPack(rows: readonly ClassProgression[]): void {
   classIndex.register(rows)
@@ -165,6 +173,12 @@ export function registerEvolutionPack(
   rows: readonly EvolutionCatalogRow[],
 ): void {
   evolutionIndex.register(rows)
+}
+
+export function registerFeaturePack(
+  rows: readonly FeatureCatalogRow[],
+): void {
+  featureIndex.register(rows)
 }
 
 export function lookupClassProgression(
@@ -207,4 +221,10 @@ export function lookupEvolution(
   id: string | null | undefined,
 ): EvolutionCatalogRow | null {
   return evolutionIndex.lookup(id)
+}
+
+export function lookupFeature(
+  id: string | null | undefined,
+): FeatureCatalogRow | null {
+  return featureIndex.lookup(id)
 }

@@ -202,7 +202,33 @@
       "babThreeQuarter": "¾",
       "babHalf": "½",
       "saveGood": "buena",
-      "savePoor": "pobre"
+      "savePoor": "pobre",
+      "arcaneSchool": "Escuela arcana",
+      "oppositionSchools": "Escuelas de oposición",
+      "oppositionSchool": "Escuela de oposición",
+      "schools": {
+        "universalist": "Universalista",
+        "abjuration": "Abjuración",
+        "conjuration": "Conjuración",
+        "divination": "Adivinación",
+        "enchantment": "Encantamiento",
+        "evocation": "Evocación",
+        "illusion": "Ilusión",
+        "necromancy": "Nigromancia",
+        "transmutation": "Transmutación"
+      },
+      "speeds": "Velocidades",
+      "addSpeed": "Añadir velocidad",
+      "noSpeeds": "Sin velocidades.",
+      "speedKind": "Tipo",
+      "speedFeet": "Pies",
+      "speedNotes": "Notas",
+      "senses": "Sentidos",
+      "addSense": "Añadir sentido",
+      "noSenses": "Sin sentidos.",
+      "senseName": "Nombre",
+      "senseRange": "Alcance (pies)",
+      "senseNotes": "Notas"
     },
     "spells": {
       "help": "El máximo es la tabla de conjuros diarios de la clase más los espacios extra por característica. Pulsa Máx. para escribir una cantidad propia; déjalo vacío para volver al valor por defecto. No se añaden espacios de dominio ni de especialista. Restantes es el estado de juego. Foco en conjuros no cambia la CD. Los conjuros del catálogo sellan nombre y nivel.",
@@ -219,6 +245,7 @@
       "level": "Nivel",
       "dc": "CD",
       "bonusSlots": "Espacios extra",
+      "schoolSlots": "Escuela",
       "max": "Máx.",
       "maxHint": "Pulsa para fijar un máximo propio. Déjalo vacío para usar el valor por defecto ({default}).",
       "maxEdit": "Espacios máximos del nivel {level}",
@@ -263,7 +290,13 @@
       "resets": "Se reinicia",
       "resetDaily": "diario",
       "resetEncounter": "encuentro",
-      "resetOther": "otro"
+      "resetOther": "otro",
+      "resistances": "Resistencias / RD",
+      "addResistance": "Añadir resistencia",
+      "noResistances": "Sin resistencias ni reducción de daño.",
+      "resistanceType": "Tipo",
+      "resistanceValue": "Valor",
+      "resistanceNotes": "Notas"
     },
     "feats": {
       "feats": "Dotes",
@@ -278,6 +311,7 @@
       "features": "Rasgos",
       "addFeature": "Añadir rasgo",
       "emptyFeatures": "Rasgos de clase como filas escritas a mano.",
+      "featureCatalog": "Rasgo CRB",
       "featureName": "Nombre del rasgo",
       "categories": {
         "general": "general",
@@ -297,6 +331,7 @@
       "name": "Nombre",
       "qty": "Cant.",
       "lb": "Lb",
+      "priceGp": "Precio base (po)",
       "location": "Ubicación",
       "catalog": "Objeto del Manual Básico",
       "itemName": "Nombre del objeto",
@@ -308,7 +343,18 @@
       "addProperty": "Añadir propiedad",
       "removeProperty": "Quitar propiedad {tag}",
       "propertyPlaceholder": "reach, flaming, …",
-      "propertiesHelp": "N etiquetas: una vale (disarm), varias valen (reach + trip + disarm, luego magia). Alcance no cambia el área amenazada todavía."
+      "propertiesHelp": "N etiquetas: una vale (disarm), varias valen (reach + trip + disarm, luego magia). Alcance no cambia el área amenazada todavía.",
+      "masterwork": "Obra maestra",
+      "enhancement": "Mejora",
+      "noEnhancement": "+0 (ninguna)",
+      "secondHead": "Segunda cabeza",
+      "secondHeadEnhancement": "Mejora de la segunda cabeza",
+      "secondHeadMasterwork": "Obra maestra de la segunda cabeza",
+      "secondHeadProperties": "Propiedades de la segunda cabeza",
+      "armorProperties": "Propiedades de armadura",
+      "shieldProperties": "Propiedades de escudo",
+      "suggestedPrice": "Precio de mercado sugerido: {price} po",
+      "selectProperty": "Añadir habilidad especial…"
     },
     "hp": {
       "title": "Desglose de PG máximos",

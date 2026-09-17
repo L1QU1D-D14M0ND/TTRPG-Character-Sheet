@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "system": "pf1e",
+  "meta": {
+    "createdAt": "2026-09-12T12:00:00.000Z",
+    "updatedAt": "2026-09-12T12:00:00.000Z",
+    "appVersion": "0.0.0",
+    "locale": "en",
+    "characterId": "golden-pf1e-wizard-transmutation-7"
+  },
+  "identity": {
+    "characterName": "Flare Nightingale",
+    "playerName": "Playtest",
+    "race": { "id": "race.human", "name": "Human" },
+    "size": "medium",
+    "alignment": "lawful good",
+    "deity": "",
+    "xp": 38875,
+    "languages": [
+      { "id": null, "name": "Common" },
+      { "id": null, "name": "Auralis" }
+    ]
+  },
+  "classes": [
+    {
+      "id": "class-row-wizard",
+      "class": { "id": "class.wizard", "name": "Wizard" },
+      "levels": 7,
+      "hitDie": 6,
+      "babProgression": "half",
+      "saves": { "fort": "poor", "ref": "poor", "will": "good" },
+      "arcaneSchool": {
+        "specialized": "transmutation",
+        "opposition": ["necromancy", "enchantment"]
+      },
+      "favored": { "hp": 7, "skillRanks": 0 }
+    }
+  ],
+  "abilities": {
+    "str": { "score": 11 },
+    "dex": { "score": 22 },
+    "con": { "score": 12 },
+    "int": { "score": 23 },
+    "wis": { "score": 12 },
+    "cha": { "score": 12 }
+  },
+  "vitals": {
+    "hpRolled": [6, 4, 4, 4, 4, 4, 4],
+    "currentHp": 57,
+    "tempHp": 0,
+    "nonlethal": 0,
+    "speeds": [
+      { "kind": "land", "feet": 30 },
+      { "kind": "fly", "feet": 60, "notes": "with Fly spell" }
+    ],
+    "senses": [
+      { "name": "normal", "rangeFeet": null }
+    ],
+    "resistances": [
+      { "type": "DR", "value": 17, "notes": "RD 17 on sheet" }
+    ]
+  },
+  "armorClass": {
+    "armorBonus": 0,
+    "shieldBonus": 0,
+    "natural": 0,
+    "deflection": 1,
+    "dodge": 0,
+    "other": 0,
+    "maxDex": null,
+    "armorCheckPenalty": 0,
+    "notes": "Unarmored, deflection ring"
+  },
+  "combat": {
+    "initiativeMisc": 4,
+    "meleeAttackMisc": 0,
+    "rangedAttackMisc": 0,
+    "cmbMisc": 0,
+    "cmdMisc": 0,
+    "fortMisc": 0,
+    "refMisc": 0,
+    "willMisc": 0
+  },
+  "skills": [
+    { "key": "acrobatics", "name": "Acrobatics", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "appraise", "name": "Appraise", "ability": "int", "ranks": 1, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "bluff", "name": "Bluff", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "climb", "name": "Climb", "ability": "str", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "diplomacy", "name": "Diplomacy", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "disable-device", "name": "Disable Device", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "disguise", "name": "Disguise", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "escape-artist", "name": "Escape Artist", "ability": "dex", "ranks": 6, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "fly", "name": "Fly", "ability": "dex", "ranks": 7, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "handle-animal", "name": "Handle Animal", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "heal", "name": "Heal", "ability": "wis", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "intimidate", "name": "Intimidate", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "linguistics", "name": "Linguistics", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "perception", "name": "Perception", "ability": "wis", "ranks": 7, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "ride", "name": "Ride", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "sense-motive", "name": "Sense Motive", "ability": "wis", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "sleight-of-hand", "name": "Sleight of Hand", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "spellcraft", "name": "Spellcraft", "ability": "int", "ranks": 7, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "stealth", "name": "Stealth", "ability": "dex", "ranks": 1, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "survival", "name": "Survival", "ability": "wis", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "swim", "name": "Swim", "ability": "str", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "use-magic-device", "name": "Use Magic Device", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-arcana", "name": "Knowledge (arcana)", "ability": "int", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-dungeoneering", "name": "Knowledge (dungeoneering)", "ability": "int", "ranks": 1, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-engineering", "name": "Knowledge (engineering)", "ability": "int", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-geography", "name": "Knowledge (geography)", "ability": "int", "ranks": 1, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-history", "name": "Knowledge (history)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-local", "name": "Knowledge (local)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-nature", "name": "Knowledge (nature)", "ability": "int", "ranks": 1, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-nobility", "name": "Knowledge (nobility)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-planes", "name": "Knowledge (planes)", "ability": "int", "ranks": 1, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-religion", "name": "Knowledge (religion)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "craft-weaponsmithing", "name": "Craft (weaponsmithing)", "ability": "int", "ranks": 7, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "profession-engineer", "name": "Profession (engineer)", "ability": "wis", "ranks": 6, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 }
+  ],
+  "attacks": [
+    {
+      "id": "attack-hoja-oscura",
+      "name": "Hoja Oscura Indivisible",
+      "attackType": "melee",
+      "itemId": "item-dagger-hoja-oscura",
+      "attackAbility": "dex",
+      "damageAbility": "str",
+      "damageDice": "1d6",
+      "damageType": "piercing/slashing",
+      "critRange": 19,
+      "critMultiplier": 2,
+      "miscAttack": 2,
+      "miscDamage": 2,
+      "notes": "+2 weapon, Dex-based attack (+3 BAB + 6 Dex + 2 weapon = +11), Letal on crit"
+    }
+  ],
+  "feats": [
+    {
+      "id": "feat-scribe-scroll",
+      "feat": { "id": "feat.scribe-scroll", "name": "Scribe Scroll", "source": { "book": "CRB" } },
+      "category": "itemCreation",
+      "levelGained": 1
+    },
+    {
+      "id": "feat-improved-initiative",
+      "feat": { "id": "feat.improved-initiative", "name": "Improved Initiative", "source": { "book": "CRB" } },
+      "category": "combat",
+      "levelGained": 1
+    },
+    {
+      "id": "feat-point-blank-shot",
+      "feat": { "id": "feat.point-blank-shot", "name": "Point-Blank Shot", "source": { "book": "CRB" } },
+      "category": "combat",
+      "levelGained": 3
+    },
+    {
+      "id": "feat-eschew-materials",
+      "feat": { "id": "feat.eschew-materials", "name": "Eschew Materials", "source": { "book": "CRB" } },
+      "category": "general",
+      "levelGained": 5
+    },
+    {
+      "id": "feat-craft-wondrous-item",
+      "feat": { "id": "feat.craft-wondrous-item", "name": "Craft Wondrous Item", "source": { "book": "CRB" } },
+      "category": "itemCreation",
+      "levelGained": 5
+    },
+    {
+      "id": "feat-craft-magic-arms-and-armor",
+      "feat": { "id": "feat.craft-magic-arms-and-armor", "name": "Craft Magic Arms and Armor", "source": { "book": "CRB" } },
+      "category": "itemCreation",
+      "levelGained": 7
+    },
+    {
+      "id": "feat-craft-construct",
+      "feat": { "id": "feat.craft-construct", "name": "Craft Construct", "source": { "book": "CRB" } },
+      "category": "itemCreation",
+      "levelGained": 7
+    },
+    {
+      "id": "feat-heighten-spell",
+      "feat": { "id": "feat.heighten-spell", "name": "Heighten Spell", "source": { "book": "CRB" } },
+      "category": "metamagic",
+      "levelGained": 7
+    }
+  ],
+  "features": [
+    {
+      "id": "feature-arcane-bond",
+      "feature": { "id": "feature.arcane-bond", "name": "Arcane Bond", "source": { "book": "CRB" } },
+      "levelGained": 1,
+      "summary": "Bonded dagger. Usable once per day to cast any one spell in spellbook."
+    },
+    {
+      "id": "feature-physical-enhancement",
+      "feature": { "id": "feature.physical-enhancement", "name": "Physical Enhancement", "source": { "book": "CRB" } },
+      "levelGained": 1,
+      "summary": "+2 enhancement bonus to Dex (at level 7: +1 base, +1 at 5th level)."
+    },
+    {
+      "id": "feature-telekinetic-fist",
+      "feature": { "id": "feature.telekinetic-fist", "name": "Telekinetic Fist", "source": { "book": "CRB" } },
+      "levelGained": 1,
+      "summary": "Ranged touch attack within 30 ft dealing 1d4+3 bludgeoning damage (9/day)."
+    }
+  ],
+  "spellcasting": [
+    {
+      "id": "cast-wizard",
+      "name": "Wizard",
+      "ability": "int",
+      "classRowId": "class-row-wizard",
+      "casterLevelOverride": null,
+      "slots": [
+        { "spellLevel": 0, "max": null, "remaining": 4 },
+        { "spellLevel": 1, "max": null, "remaining": 7 },
+        { "spellLevel": 2, "max": null, "remaining": 6 },
+        { "spellLevel": 3, "max": null, "remaining": 4 },
+        { "spellLevel": 4, "max": null, "remaining": 3 }
+      ],
+      "cantrips": [
+        { "id": "sp-detect-magic", "spell": { "id": "spell.detect-magic", "name": "Detect Magic" }, "spellLevel": 0, "prepared": true },
+        { "id": "sp-read-magic", "spell": { "id": "spell.read-magic", "name": "Read Magic" }, "spellLevel": 0, "prepared": true },
+        { "id": "sp-resistance", "spell": { "id": "spell.resistance", "name": "Resistance" }, "spellLevel": 0, "prepared": true },
+        { "id": "sp-mage-hand", "spell": { "id": "spell.mage-hand", "name": "Mage Hand" }, "spellLevel": 0, "prepared": true }
+      ],
+      "spells": [
+        { "id": "sp-mage-armor", "spell": { "id": "spell.mage-armor", "name": "Mage Armor" }, "spellLevel": 1, "prepared": true },
+        { "id": "sp-shield", "spell": { "id": "spell.shield", "name": "Shield" }, "spellLevel": 1, "prepared": true },
+        { "id": "sp-true-strike", "spell": { "id": "spell.true-strike", "name": "True Strike" }, "spellLevel": 1, "prepared": true },
+        { "id": "sp-invisibility", "spell": { "id": "spell.invisibility", "name": "Invisibility" }, "spellLevel": 2, "prepared": true },
+        { "id": "sp-glitterdust", "spell": { "id": "spell.glitterdust", "name": "Glitterdust" }, "spellLevel": 2, "prepared": true },
+        { "id": "sp-scorching-ray", "spell": { "id": "spell.scorching-ray", "name": "Scorching Ray" }, "spellLevel": 2, "prepared": true },
+        { "id": "sp-haste", "spell": { "id": "spell.haste", "name": "Haste" }, "spellLevel": 3, "prepared": true },
+        { "id": "sp-blink", "spell": { "id": "spell.blink", "name": "Blink" }, "spellLevel": 3, "prepared": true },
+        { "id": "sp-dispel-magic", "spell": { "id": "spell.dispel-magic", "name": "Dispel Magic" }, "spellLevel": 3, "prepared": true },
+        { "id": "sp-greater-invis", "spell": { "id": "spell.greater-invisibility", "name": "Greater Invisibility" }, "spellLevel": 4, "prepared": true },
+        { "id": "sp-lesser-globe", "spell": { "id": "spell.lesser-globe-of-invulnerability", "name": "Lesser Globe of Invulnerability" }, "spellLevel": 4, "prepared": true },
+        { "id": "sp-named-bullet", "spell": { "id": null, "name": "Named Bullet" }, "spellLevel": 4, "prepared": false },
+        { "id": "sp-shadowform", "spell": { "id": null, "name": "Shadowform" }, "spellLevel": 4, "prepared": false }
+      ]
+    }
+  ],
+  "inventory": {
+    "currency": { "cp": 0, "sp": 0, "gp": 1500, "pp": 0 },
+    "items": [
+      {
+        "id": "item-dagger-hoja-oscura",
+        "item": { "id": null, "name": "Hoja Oscura Indivisible" },
+        "quantity": 1,
+        "pounds": 1,
+        "location": "equipped",
+        "weapon": {
+          "damageDice": "1d6",
+          "damageType": "piercing/slashing",
+          "critRange": 19,
+          "critMultiplier": 2
+        }
+      },
+      {
+        "id": "item-spellbook",
+        "item": { "id": "item.spellbook", "name": "Spellbook" },
+        "quantity": 1,
+        "pounds": 3,
+        "location": "carried"
+      }
+    ]
+  },
+  "companions": [],
+  "conditions": [],
+  "play": {
+    "dailyResources": [
+      { "id": "res-mana", "name": "Mana", "max": 25, "remaining": 25, "resetsOn": "daily" },
+      { "id": "res-hero-points", "name": "Hero Points", "max": 3, "remaining": 0, "resetsOn": "other" }
+    ]
+  },
+  "notes": {
+    "appearance": "Playtest character: Flare Nightingale, CRB Wizard 7 Transmutation specialist.",
+    "personality": "",
+    "campaign": "Playtest",
+    "other": "Transmutation specialist (+1 school slot / level), opposition Necromancy and Enchantment. Mana pool and Hero Points tracked in dailyResources."
+  },
+  "overrides": {
+    "derived.maxHp": { "value": 57 }
+  },
+  "extensions": {}
+}

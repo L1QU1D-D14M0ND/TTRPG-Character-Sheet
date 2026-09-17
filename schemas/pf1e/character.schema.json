@@ -287,6 +287,24 @@
           "$ref": "#/$defs/ContentRef",
           "description": "Optional documentary archetype (e.g. Synthesist). Stamps id and name only. Does not rewrite HD, BAB, saves, fused ability scores, or evolutions."
         },
+        "arcaneSchool": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["specialized"],
+          "properties": {
+            "specialized": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Specialized arcane school (e.g. transmutation, abjuration, or universalist)."
+            },
+            "opposition": {
+              "type": "array",
+              "items": { "type": "string", "minLength": 1 },
+              "description": "Opposition schools chosen by the specialist (e.g. necromancy, enchantment)."
+            }
+          },
+          "description": "Wizard arcane school specialization and opposition schools. Documentary; opposition prepared-spell legality is not auto-enforced."
+        },
         "notes": { "type": "string" },
         "effects": {
           "type": "array",
@@ -644,7 +662,15 @@
         "acBonus": { "type": "integer" },
         "maxDex": { "type": ["integer", "null"] },
         "armorCheckPenalty": { "type": "integer", "maximum": 0 },
-        "spellFailurePercent": { "type": "integer", "minimum": 0, "maximum": 100 }
+        "spellFailurePercent": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "enhancementBonus": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "masterwork": { "type": "boolean" },
+        "properties": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        }
       }
     },
     "WeaponHeadStats": {
@@ -655,7 +681,15 @@
         "damageDice": { "type": "string" },
         "damageType": { "type": "string" },
         "critRange": { "type": "integer", "minimum": 1, "maximum": 20 },
-        "critMultiplier": { "type": "integer", "minimum": 2 }
+        "critMultiplier": { "type": "integer", "minimum": 2 },
+        "enhancementBonus": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "masterwork": { "type": "boolean" },
+        "properties": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        }
       }
     },
     "WeaponItemStats": {
@@ -668,6 +702,8 @@
         "critRange": { "type": "integer", "minimum": 1, "maximum": 20 },
         "critMultiplier": { "type": "integer", "minimum": 2 },
         "rangeFeet": { "type": ["integer", "null"] },
+        "enhancementBonus": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "masterwork": { "type": "boolean" },
         "properties": {
           "type": "array",
           "items": { "type": "string", "minLength": 1 },
@@ -684,7 +720,15 @@
         "acBonus": { "type": "integer" },
         "maxDex": { "type": ["integer", "null"] },
         "armorCheckPenalty": { "type": "integer", "maximum": 0 },
-        "spellFailurePercent": { "type": "integer", "minimum": 0, "maximum": 100 }
+        "spellFailurePercent": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "enhancementBonus": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "masterwork": { "type": "boolean" },
+        "properties": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        }
       }
     },
     "ItemEntry": {

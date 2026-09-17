@@ -9,8 +9,20 @@ import { characterLevel, type DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
 import { SynthesistPanel } from './SynthesistPanel'
-import { patchAt, updateAt } from '../../../shared/ui/rows'
+import { patchAt, removeAt, updateAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
+
+const ARCANE_SCHOOLS = [
+  'universalist',
+  'abjuration',
+  'conjuration',
+  'divination',
+  'enchantment',
+  'evocation',
+  'illusion',
+  'necromancy',
+  'transmutation',
+] as const
 
 const SIZES: Size[] = [
   'fine',
@@ -372,6 +384,84 @@ export function IdentityPanel({
                       />
                     </>
                   ) : null}
+                  {row.class.id === 'class.wizard' ? (
+                    <div className="wizard-school-controls">
+                      <select
+                        aria-label={t('pf1e.identity.arcaneSchool')}
+                        value={row.arcaneSchool?.specialized ?? 'universalist'}
+                        onChange={(e) => {
+                          const specialized = e.target.value
+                          update((c) => ({
+                            ...c,
+                            classes: updateAt(c.classes, index, (r) => ({
+                              ...r,
+                              arcaneSchool: {
+                                specialized,
+                                opposition: (r.arcaneSchool?.opposition ?? []).filter(
+                                  (s) => s !== specialized,
+                                ),
+                              },
+                            })),
+                          }))
+                        }}
+                      >
+                        {ARCANE_SCHOOLS.map((school) => (
+                          <option key={school} value={school}>
+                            {t(`pf1e.identity.schools.${school}`)}
+                          </option>
+                        ))}
+                      </select>
+                      {row.arcaneSchool?.specialized &&
+                      row.arcaneSchool.specialized !== 'universalist' ? (
+                        <div className="opposition-schools">
+                          <span className="muted">
+                            {t('pf1e.identity.oppositionSchools')}:
+                          </span>
+                          {ARCANE_SCHOOLS.filter(
+                            (s) =>
+                              s !== 'universalist' &&
+                              s !== row.arcaneSchool?.specialized,
+                          ).map((school) => {
+                            const isOpposed =
+                              row.arcaneSchool?.opposition?.includes(school) ??
+                              false
+                            return (
+                              <label
+                                key={school}
+                                className="school-checkbox-label"
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={isOpposed}
+                                  aria-label={`${t('pf1e.identity.oppositionSchool')} ${school}`}
+                                  onChange={(e) => {
+                                    const current =
+                                      row.arcaneSchool?.opposition ?? []
+                                    const updated = e.target.checked
+                                      ? [...current, school]
+                                      : current.filter((s) => s !== school)
+                                    update((c) => ({
+                                      ...c,
+                                      classes: updateAt(c.classes, index, (r) => ({
+                                        ...r,
+                                        arcaneSchool: {
+                                          specialized:
+                                            r.arcaneSchool?.specialized ??
+                                            'universalist',
+                                          opposition: updated,
+                                        },
+                                      })),
+                                    }))
+                                  }}
+                                />
+                                {t(`pf1e.identity.schools.${school}`)}
+                              </label>
+                            )
+                          })}
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
                 </td>
                 <td>
                   <input
@@ -529,6 +619,237 @@ export function IdentityPanel({
         derived={derived}
         update={update}
       />
+
+      <div className="table-toolbar">
+        <strong>{t('pf1e.identity.speeds')}</strong>
+        <button
+          type="button"
+          onClick={() =>
+            update((c) => ({
+              ...c,
+              vitals: {
+                ...c.vitals,
+                speeds: [
+                  ...(c.vitals.speeds ?? []),
+                  { kind: 'land', feet: 30, notes: '' },
+                ],
+              },
+            }))
+          }
+        >
+          {t('pf1e.identity.addSpeed')}
+        </button>
+      </div>
+      <table className="sheet-table wide">
+        <thead>
+          <tr>
+            <th>{t('pf1e.identity.speedKind')}</th>
+            <th>{t('pf1e.identity.speedFeet')}</th>
+            <th>{t('pf1e.identity.speedNotes')}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {!character.vitals.speeds || character.vitals.speeds.length === 0 ? (
+            <tr>
+              <td colSpan={4} className="muted">
+                {t('pf1e.identity.noSpeeds')}
+              </td>
+            </tr>
+          ) : (
+            character.vitals.speeds.map((row, index) => (
+              <tr key={index}>
+                <td>
+                  <input
+                    aria-label={t('pf1e.identity.speedKind')}
+                    value={row.kind}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          speeds: patchAt(c.vitals.speeds ?? [], index, {
+                            kind: e.target.value,
+                          }),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min={0}
+                    aria-label={t('pf1e.identity.speedFeet')}
+                    value={row.feet}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          speeds: patchAt(c.vitals.speeds ?? [], index, {
+                            feet: Math.max(0, Number(e.target.value) || 0),
+                          }),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    aria-label={t('pf1e.identity.speedNotes')}
+                    value={row.notes ?? ''}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          speeds: patchAt(c.vitals.speeds ?? [], index, {
+                            notes: e.target.value,
+                          }),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          speeds: removeAt(c.vitals.speeds ?? [], index),
+                        },
+                      }))
+                    }
+                  >
+                    {t('pf1e.common.remove')}
+                  </button>
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+
+      <div className="table-toolbar">
+        <strong>{t('pf1e.identity.senses')}</strong>
+        <button
+          type="button"
+          onClick={() =>
+            update((c) => ({
+              ...c,
+              vitals: {
+                ...c.vitals,
+                senses: [
+                  ...(c.vitals.senses ?? []),
+                  { name: '', rangeFeet: null, notes: '' },
+                ],
+              },
+            }))
+          }
+        >
+          {t('pf1e.identity.addSense')}
+        </button>
+      </div>
+      <table className="sheet-table wide">
+        <thead>
+          <tr>
+            <th>{t('pf1e.identity.senseName')}</th>
+            <th>{t('pf1e.identity.senseRange')}</th>
+            <th>{t('pf1e.identity.senseNotes')}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {!character.vitals.senses || character.vitals.senses.length === 0 ? (
+            <tr>
+              <td colSpan={4} className="muted">
+                {t('pf1e.identity.noSenses')}
+              </td>
+            </tr>
+          ) : (
+            character.vitals.senses.map((row, index) => (
+              <tr key={index}>
+                <td>
+                  <input
+                    aria-label={t('pf1e.identity.senseName')}
+                    value={row.name}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          senses: patchAt(c.vitals.senses ?? [], index, {
+                            name: e.target.value,
+                          }),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min={0}
+                    aria-label={t('pf1e.identity.senseRange')}
+                    value={row.rangeFeet ?? ''}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          senses: patchAt(c.vitals.senses ?? [], index, {
+                            rangeFeet:
+                              e.target.value === ''
+                                ? null
+                                : Math.max(0, Number(e.target.value) || 0),
+                          }),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    aria-label={t('pf1e.identity.senseNotes')}
+                    value={row.notes ?? ''}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          senses: patchAt(c.vitals.senses ?? [], index, {
+                            notes: e.target.value,
+                          }),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          senses: removeAt(c.vitals.senses ?? [], index),
+                        },
+                      }))
+                    }
+                  >
+                    {t('pf1e.common.remove')}
+                  </button>
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }

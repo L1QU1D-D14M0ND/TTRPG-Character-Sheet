@@ -135,4 +135,15 @@ describe('FeatsPanel row editing', () => {
       (screen.getAllByLabelText('Feat name')[0] as HTMLInputElement).value,
     ).toBe('Untouched feat')
   })
+
+  it('stamps catalog feature on selection', () => {
+    renderPanel()
+    fireEvent.click(screen.getByRole('button', { name: 'Add feature' }))
+    const catalog = screen.getByLabelText('CRB feature') as HTMLSelectElement
+    fireEvent.change(catalog, {
+      target: { value: 'feature.physical-enhancement' },
+    })
+    const nameInput = screen.getByLabelText('Feature name') as HTMLInputElement
+    expect(nameInput.value).toBe('Physical Enhancement')
+  })
 })
