@@ -6,7 +6,7 @@ import {
 import type { DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
-import { patchAt, updateAt } from '../../../shared/ui/rows'
+import { patchAt, removeAt, updateAt } from '../../../shared/ui/rows'
 import type { SheetUpdate } from './update'
 
 const RESETS = ['daily', 'encounter', 'other'] as const
@@ -373,6 +373,132 @@ export function PlayPanel({
                           ...c.play,
                           dailyResources: c.play.dailyResources.filter(
                             (item) => item.id !== row.id,
+                          ),
+                        },
+                      }))
+                    }
+                  >
+                    {t('pf1e.common.remove')}
+                  </button>
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+
+      <div className="table-toolbar">
+        <strong>{t('pf1e.play.resistances')}</strong>
+        <button
+          type="button"
+          onClick={() =>
+            update((c) => ({
+              ...c,
+              vitals: {
+                ...c.vitals,
+                resistances: [
+                  ...(c.vitals.resistances ?? []),
+                  { type: '', value: 0, notes: '' },
+                ],
+              },
+            }))
+          }
+        >
+          {t('pf1e.play.addResistance')}
+        </button>
+      </div>
+      <table className="sheet-table wide">
+        <thead>
+          <tr>
+            <th>{t('pf1e.play.resistanceType')}</th>
+            <th>{t('pf1e.play.resistanceValue')}</th>
+            <th>{t('pf1e.play.resistanceNotes')}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {!character.vitals.resistances ||
+          character.vitals.resistances.length === 0 ? (
+            <tr>
+              <td colSpan={4} className="muted">
+                {t('pf1e.play.noResistances')}
+              </td>
+            </tr>
+          ) : (
+            character.vitals.resistances.map((row, index) => (
+              <tr key={index}>
+                <td>
+                  <input
+                    aria-label={t('pf1e.play.resistanceType')}
+                    value={row.type}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          resistances: patchAt(
+                            c.vitals.resistances ?? [],
+                            index,
+                            { type: e.target.value },
+                          ),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min={0}
+                    aria-label={t('pf1e.play.resistanceValue')}
+                    value={row.value}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          resistances: patchAt(
+                            c.vitals.resistances ?? [],
+                            index,
+                            {
+                              value: Math.max(0, Number(e.target.value) || 0),
+                            },
+                          ),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    aria-label={t('pf1e.play.resistanceNotes')}
+                    value={row.notes ?? ''}
+                    onChange={(e) =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          resistances: patchAt(
+                            c.vitals.resistances ?? [],
+                            index,
+                            { notes: e.target.value },
+                          ),
+                        },
+                      }))
+                    }
+                  />
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      update((c) => ({
+                        ...c,
+                        vitals: {
+                          ...c.vitals,
+                          resistances: removeAt(
+                            c.vitals.resistances ?? [],
+                            index,
                           ),
                         },
                       }))
