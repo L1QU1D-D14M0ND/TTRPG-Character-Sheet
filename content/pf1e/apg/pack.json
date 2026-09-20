@@ -3,7 +3,7 @@
   "system": "pf1e",
   "title": "Pathfinder APG player catalog (Synthesist slice)",
   "schemaVersion": 1,
-  "status": "slice-3",
+  "status": "slice-4",
   "license": "Mechanics-only curated numbers. No Product Identity. No class flavor, eidolon prose, or spell text.",
   "contentKind": "mechanics-only",
   "oglNoticeRequired": false,
@@ -22,6 +22,11 @@
       "id": 3,
       "mechanics": ["synthesist-golden"],
       "notes": "Half-Elf Radiant Striker golden. Summoner spells stay typed; no APG spellsPerDay table yet. Evolutions stay documentary."
+    },
+    {
+      "id": 4,
+      "mechanics": ["summoner-spells-per-day", "summoner-spell-catalog"],
+      "notes": "Summoner Table 2-8 spellsPerDay progression (6-level spontaneous). APG Summoner spell catalog (mechanics-only: id, name, spellLevel, source)."
     }
   ]
 }

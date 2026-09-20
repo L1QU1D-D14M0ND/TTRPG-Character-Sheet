@@ -12,6 +12,8 @@ import { compute, type DerivedView } from './engine'
 import { Pf1eWorkspace } from './sheet/Workspace'
 import type { SystemModule } from '../../shell/types'
 
+import { pf1eSidebarTools } from './sidebar/tools'
+
 export const pf1eModule: SystemModule<CharacterDocument, DerivedView> = {
   id: 'pf1e',
   displayNameKey: 'pf1e.displayName',
@@ -24,7 +26,7 @@ export const pf1eModule: SystemModule<CharacterDocument, DerivedView> = {
   readFile: readCharacterFile,
   suggestedFilename: suggestedSaveFilename,
   Workspace: Pf1eWorkspace,
-  sidebarTools: [],
+  sidebarTools: pf1eSidebarTools,
 }
 
 export type { CharacterDocument, DerivedView }

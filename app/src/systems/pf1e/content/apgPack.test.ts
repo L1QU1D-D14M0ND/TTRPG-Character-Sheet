@@ -4,6 +4,7 @@ import {
   createEmptyClass,
   createEmptyEidolon,
   createEmptyEvolution,
+  createEmptySpellListEntry,
 } from '../character/createRows'
 import { STANDARD_SKILLS } from '../character/standardSkills'
 import { parseCharacterJson } from '../character/saveLoad'
@@ -11,17 +12,24 @@ import { readRepoFile } from '../../../test/readRepoFile'
 import {
   applyApgArchetype,
   applyApgEvolution,
+  applyApgSpell,
   applyClassProgression,
+  applySpell,
   classSkillKeySet,
+  classSpellsPerDayRow,
   lookupApgArchetype,
   lookupApgClass,
   lookupApgEvolution,
+  lookupApgSpell,
   lookupCrbClass,
   lookupCrbFeat,
+  lookupCrbSpell,
+  lookupSpell,
   stampClassSkills,
   APG_ARCHETYPES,
   APG_CLASSES,
   APG_EVOLUTIONS,
+  APG_SPELLS,
 } from './index'
 import { compute } from '../engine/compute'
 import {
@@ -251,3 +259,121 @@ describe('APG slice 2: documentary evolutions + fused overlay', () => {
     expect(view.maxHp).toBe(view.pilotMaxHp)
   })
 })
+
+describe('APG slice 4: Summoner spellsPerDay + APG spells', () => {
+  it('provides Table 2-8 spellsPerDay on class.summoner', () => {
+    expect(classSpellsPerDayRow('class.summoner', 0)).toBeNull()
+    expect(classSpellsPerDayRow('class.summoner', 1)).toEqual([
+      null,
+      1,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ])
+    expect(classSpellsPerDayRow('class.summoner', 4)).toEqual([
+      null,
+      3,
+      1,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ])
+    expect(classSpellsPerDayRow('class.summoner', 5)).toEqual([
+      null,
+      4,
+      2,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ])
+    expect(classSpellsPerDayRow('class.summoner', 10)).toEqual([
+      null,
+      5,
+      4,
+      3,
+      1,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ])
+    expect(classSpellsPerDayRow('class.summoner', 20)).toEqual([
+      null,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      null,
+      null,
+      null,
+    ])
+  })
+
+  it('keeps APG spells out of CRB lookup and resolves in APG', () => {
+    expect(lookupCrbSpell('spell.rejuvenate-eidolon-lesser')).toBeNull()
+    expect(lookupCrbSpell('spell.summon-eidolon')).toBeNull()
+    expect(lookupApgSpell('spell.rejuvenate-eidolon-lesser')).toEqual({
+      id: 'spell.rejuvenate-eidolon-lesser',
+      name: 'Rejuvenate Eidolon, Lesser',
+      spellLevel: 1,
+      source: { book: 'APG' },
+    })
+    expect(lookupApgSpell('spell.summon-eidolon')).toEqual({
+      id: 'spell.summon-eidolon',
+      name: 'Summon Eidolon',
+      spellLevel: 2,
+      source: { book: 'APG' },
+    })
+    expect(lookupApgSpell('spell.mage-armor')).toBeNull()
+    expect(APG_SPELLS.length).toBe(27)
+  })
+
+  it('resolves both CRB and APG spells through unified lookupSpell', () => {
+    expect(lookupSpell('spell.mage-armor')?.name).toBe('Mage Armor')
+    expect(lookupSpell('spell.rejuvenate-eidolon-lesser')?.name).toBe(
+      'Rejuvenate Eidolon, Lesser',
+    )
+    expect(lookupSpell('spell.non-existent')).toBeNull()
+  })
+
+  it('stamps APG spell id, name, source, and level via applyApgSpell and applySpell', () => {
+    const entry = createEmptySpellListEntry()
+    const stampedApg = applyApgSpell(entry, 'spell.rejuvenate-eidolon-lesser')
+    expect(stampedApg.spell).toEqual({
+      id: 'spell.rejuvenate-eidolon-lesser',
+      name: 'Rejuvenate Eidolon, Lesser',
+      source: { book: 'APG' },
+    })
+    expect(stampedApg.spellLevel).toBe(1)
+
+    const unknown = applyApgSpell(stampedApg, 'spell.unknown')
+    expect(unknown.spell.id).toBeNull()
+    expect(unknown.spell.name).toBe('Rejuvenate Eidolon, Lesser')
+
+    const unifiedCrb = applySpell(entry, 'spell.mage-armor')
+    expect(unifiedCrb.spell.id).toBe('spell.mage-armor')
+    expect(unifiedCrb.spell.name).toBe('Mage Armor')
+
+    const unifiedApg = applySpell(entry, 'spell.summon-eidolon')
+    expect(unifiedApg.spell.id).toBe('spell.summon-eidolon')
+    expect(unifiedApg.spell.name).toBe('Summon Eidolon')
+    expect(unifiedApg.spellLevel).toBe(2)
+  })
+})
+

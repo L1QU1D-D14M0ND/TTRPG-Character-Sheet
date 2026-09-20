@@ -256,12 +256,12 @@ After the honesty fixes, in this order:
 - [x] **CRB feat batches F3a–F3c** — remaining general feats (47 feats packed: Acrobatic–Turn Undead; 164 CRB feats total in pack; general category complete).
 - [x] **CRB feat batch F4** — remaining item creation + metamagic feats (13 feats packed: Brew Potion–Widen Spell; 177 CRB feats total in pack; CRB feats complete).
 - [x] **CRB spell batches S1–S5** — remaining class-list spells levels 0–9 (578 spells packed: S1 82 spells, S2 147 spells, S3 139 spells, S4 127 spells, S5 83 spells; all 622 CRB spells packed; CRB spells complete).
-- [ ] **APG follow-through** — Summoner `spellsPerDay` + spell catalog (mechanics-only); other APG classes as separate slices (Magical Child, etc.). Auto-applied evolutions only if a later slice says so. [`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)
-- [ ] **Optional PF1e goldens** (system spec §6) — Cleric 5 (domains/channel as daily resources); prestige smoke test; PF1e familiar/companion table fixture if the stub needs one
+- [x] **APG follow-through** — Summoner `spellsPerDay` + spell catalog (mechanics-only); other APG classes as separate slices (Magical Child, etc.). Auto-applied evolutions only if a later slice says so. [`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)
+- [x] **Optional PF1e goldens** (system spec §6) — Cleric 5 (domains/channel as daily resources); prestige smoke test; PF1e familiar/companion table fixture if the stub needs one
 - [x] **CRB magic weapons / armor** — overlay on mundane ids; no plus-N catalog rows. [`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) §7.5
-- [ ] **PF1e catalog picker** — searchable dialog replacing per-panel `<select>` catalogs ([ADR 0009](adr/0009-pf1e-catalog-picker.md)). Slice 1 landed (feats, features, spells, evolutions, items). Slice 2: Identity race / class / archetype. Architecture deepening; does not replace APG as the next catalog increment.
-- [ ] **OGL notice + Section 15** — same change as the first pack **rules text** ([ADR 0007](adr/0007-content-licensing.md))
-- [ ] **Sidebar tools** — **last character-sheet feature** in this release: Attack Helper, then Actions List, then Budget Calculator. Empty host until then.
+- [x] **PF1e catalog picker** — searchable dialog replacing per-panel `<select>` catalogs ([ADR 0009](adr/0009-pf1e-catalog-picker.md)). Slice 1 landed (feats, features, spells, evolutions, items). Slice 2 landed (Identity race / class / archetype).
+- [ ] **OGL notice + Section 15** — deferred until first pack **rules text** prose ships ([ADR 0007](adr/0007-content-licensing.md)); both packs currently remain `contentKind: "mechanics-only"` (`oglNoticeRequired: false`).
+- [x] **Sidebar tools** — **last character-sheet feature** in this release: Attack Helper, then Actions List, then Budget Calculator landed.
 
 Do **not** start PF2e companion editor, PC2 golden, Remaster packs, or PF2e panel i18n in this phase.
 
@@ -324,13 +324,10 @@ Out of scope for 0.9/1.0: dice roller, cloud, VTT interop, house-rule flags, GM-
 
 ## Recommended next work (in order)
 
-1. **PF1e catalog picker slice 2** — [ADR 0009](adr/0009-pf1e-catalog-picker.md). Identity race / class / archetype still use `<select>`. Slice 1 (feats/features/spells/evolutions/items) landed. Does not replace APG as the next *catalog* increment.
-2. **APG follow-through** — Summoner `spellsPerDay` + spell catalog (mechanics-only); other APG classes as separate slices. (CRB feats and spells complete: all 177 feats and 622 spells packed).
-3. **Optional PF1e goldens** (Cleric 5, prestige smoke test) and **OGL notice + Section 15** with first rules text. (CRB magic overlay landed.)
-4. **Sidebar tools** — last character-sheet feature (**Attack Helper**, **Actions List**, **Budget Calculator**). Empty host until then.
-5. **Later release** — leftover PF2e (PC2 golden, companion editor, Remaster packs, PF2e panel i18n). Encyclopedia / `effects[]` wait until after the sheet.
+1. **OGL notice + Section 15** — deferred until first pack rules-text prose ships ([ADR 0007](adr/0007-content-licensing.md)); both CRB and APG packs currently carry `contentKind: "mechanics-only"` and `oglNoticeRequired: false`.
+2. **Later release** — leftover PF2e (PC2 golden, companion editor, Remaster packs, PF2e panel i18n). Encyclopedia / `effects[]` wait until after the sheet.
 
-*Landed milestones (Phase 1x):* Wizard 7 playtest override (arcane school, bonus school slot, school powers, targeted spells/feats, vitals panel UI, golden fixture) and Phase 1x honesty/code fixes (W7 test renames, golden weapon stamps vs catalog, honest `focusTab` wiring) landed 2026-09-12.
+*Landed milestones (Phase 1x):* Wizard 7 playtest override, Phase 1x honesty/code fixes, PF1e catalog picker ([ADR 0009](adr/0009-pf1e-catalog-picker.md)) slice 1 & 2, APG follow-through (Summoner spellsPerDay + spell catalog), Optional PF1e goldens (Cleric 5, Fighter 5 / Duelist 2, Ranger 5 with companion/familiar), and Sidebar tools (Attack Helper, Actions List, Budget Calculator).
 
 Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-agent-env-2c8f` or `cursor/multi-system-docs-990b` (superseded / would regress).
 

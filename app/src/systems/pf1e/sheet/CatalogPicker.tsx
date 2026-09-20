@@ -17,12 +17,14 @@ export function CatalogPicker<K extends CatalogKind>({
   value,
   catalogLabel,
   nameLabel,
+  customLabel,
   onPick,
 }: {
   kind: K
   value: HostFor<K>
   catalogLabel: string
   nameLabel: string
+  customLabel?: string
   onPick: (next: HostFor<K>) => void
 }) {
   const t = useT()
@@ -33,6 +35,7 @@ export function CatalogPicker<K extends CatalogKind>({
   const selectedName = catalogName(kind, value)
   const withSearch = showsSearch(kind)
   const groups = useMemo(() => groupsFor(kind), [kind])
+  const emptyLabel = customLabel ?? t('pf1e.common.custom')
 
   useEffect(() => {
     if (!open) return
@@ -57,8 +60,8 @@ export function CatalogPicker<K extends CatalogKind>({
   }
 
   const triggerText = selectedId
-    ? selectedName || t('pf1e.common.custom')
-    : t('pf1e.common.custom')
+    ? selectedName || emptyLabel
+    : emptyLabel
 
   return (
     <>
@@ -104,7 +107,7 @@ export function CatalogPicker<K extends CatalogKind>({
               groups={groups}
               query={query}
               selectedId={selectedId}
-              customLabel={t('pf1e.common.custom')}
+              customLabel={emptyLabel}
               noMatches={t('pf1e.catalogPicker.noMatches')}
               onPick={pick}
               t={t}

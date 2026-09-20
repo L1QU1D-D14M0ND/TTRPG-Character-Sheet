@@ -1,4 +1,8 @@
-import type { ClassEntry, EvolutionEntry } from '../character/types'
+import type {
+  ClassEntry,
+  EvolutionEntry,
+  SpellListEntry,
+} from '../character/types'
 import { lookupById, seededClassSkills } from './catalogLookup'
 import { loadCatalog } from './loadCatalog'
 import {
@@ -6,20 +10,25 @@ import {
   registerArchetypePack,
   registerClassPack,
   registerEvolutionPack,
+  registerSpellPack,
   type ArchetypeCatalogRow,
   type ClassProgression,
   type EvolutionCatalogRow,
+  type SpellCatalogRow,
 } from './packRegistry'
 import archetypesSchema from '../../../../../schemas/content/pf1e/archetypes.schema.json'
 import classesSchema from '../../../../../schemas/content/pf1e/classes.schema.json'
 import evolutionsSchema from '../../../../../schemas/content/pf1e/evolutions.schema.json'
+import spellsSchema from '../../../../../schemas/content/pf1e/spells.schema.json'
 import archetypesJson from '../../../../../content/pf1e/apg/archetypes.json'
 import classesJson from '../../../../../content/pf1e/apg/classes.json'
 import evolutionsJson from '../../../../../content/pf1e/apg/evolutions.json'
+import spellsJson from '../../../../../content/pf1e/apg/spells.json'
 
 export type ApgClassProgression = ClassProgression
 export type ApgArchetype = ArchetypeCatalogRow
 export type ApgEvolution = EvolutionCatalogRow
+export type ApgSpell = SpellCatalogRow
 
 const classRows = loadCatalog<ClassProgression[]>(
   classesSchema,
@@ -36,6 +45,11 @@ const evolutionRows = loadCatalog<EvolutionCatalogRow[]>(
   evolutionsJson,
   'content/pf1e/apg/evolutions.json',
 )
+const spellRows = loadCatalog<SpellCatalogRow[]>(
+  spellsSchema,
+  spellsJson,
+  'content/pf1e/apg/spells.json',
+)
 
 export const APG_CLASSES: ClassProgression[] = classRows.map((row) => ({
   ...row,
@@ -50,9 +64,12 @@ export const APG_EVOLUTIONS: EvolutionCatalogRow[] = evolutionRows.map(
   (row) => ({ ...row }),
 )
 
+export const APG_SPELLS: SpellCatalogRow[] = spellRows.map((row) => ({ ...row }))
+
 registerClassPack(APG_CLASSES)
 registerArchetypePack(APG_ARCHETYPES)
 registerEvolutionPack(APG_EVOLUTIONS)
+registerSpellPack(APG_SPELLS)
 
 /** Unknown or empty id → null. Never throws. CRB lookup stays on lookupCrbClass. */
 export function lookupApgClass(
@@ -71,6 +88,12 @@ export function lookupApgEvolution(
   id: string | null | undefined,
 ): EvolutionCatalogRow | null {
   return lookupEvolution(id)
+}
+
+export function lookupApgSpell(
+  id: string | null | undefined,
+): SpellCatalogRow | null {
+  return lookupById(APG_SPELLS, id)
 }
 
 /**
@@ -119,5 +142,32 @@ export function applyApgEvolution(
       name: found.name,
       source: found.source,
     },
+  }
+}
+
+/**
+ * Stamp catalog id, name, source, and spell level from the APG catalog.
+ * Does not rewrite prepared flags, summaries, slots, or DCs.
+ * Unknown id clears `spell.id` and leaves the rest of the row.
+ */
+export function applyApgSpell(
+  row: SpellListEntry,
+  id: string | null,
+): SpellListEntry {
+  const found = lookupApgSpell(id)
+  if (!found) {
+    return {
+      ...row,
+      spell: { ...row.spell, id: null },
+    }
+  }
+  return {
+    ...row,
+    spell: {
+      id: found.id,
+      name: found.name,
+      source: found.source,
+    },
+    spellLevel: found.spellLevel,
   }
 }

@@ -428,6 +428,416 @@ button.hp-max-button.overridden {
   padding-left: 1.1rem;
 }
 
+.sidebar-tool-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.35rem;
+}
+
+.sidebar-tool-tab-btn {
+  background: #eaeaea;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.sidebar-tool-tab-btn.active {
+  background: #2b4c7e;
+  color: #fff;
+  border-color: #20385d;
+  font-weight: bold;
+}
+
+.sidebar-tool-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Attack Helper styles */
+.attack-helper-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.attack-helper-field select {
+  width: 100%;
+  padding: 0.25rem;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.attack-helper-toggles {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+  background: #fafafa;
+}
+
+.attack-helper-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0.2rem 0;
+  cursor: pointer;
+}
+
+.attack-helper-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.attack-helper-card h4 {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.2rem;
+}
+
+.math-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin: 0.15rem 0;
+}
+
+.math-row .highlight {
+  font-weight: bold;
+  color: #1a4480;
+  font-size: 0.95rem;
+}
+
+.math-breakdown {
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+.mechanic-section {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.mechanic-section ul {
+  margin: 0.2rem 0;
+  padding-left: 1rem;
+}
+
+.trigger-item.warning {
+  color: #b78103;
+}
+
+.attack-helper-notice {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Actions List styles */
+.actions-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.actions-list-toolbar {
+  font-size: 0.8rem;
+  padding-bottom: 0.25rem;
+}
+
+.actions-list-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.action-group-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.35rem;
+  overflow: hidden;
+}
+
+.action-group-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  border: none;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.action-group-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.action-item-row {
+  padding: 0.35rem 0.5rem;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.action-item-row.unavailable {
+  opacity: 0.55;
+  background: #fdf2f2;
+}
+
+.action-item-row.hindered {
+  background: #fffdf5;
+}
+
+.action-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-cost-badge {
+  font-size: 0.7rem;
+  background: #e0e0e0;
+  padding: 0.05rem 0.3rem;
+  border-radius: 3px;
+}
+
+.action-reason-chip {
+  font-size: 0.72rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.action-reason-chip.unavailable {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.action-reason-chip.hindered {
+  background: #fff8e1;
+  color: #b78103;
+}
+
+/* Budget Calculator styles */
+.budget-calculator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.budget-summary-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.budget-summary-card h4 {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.2rem;
+}
+
+.budget-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.summary-stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-stat.affordable .stat-value {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.summary-stat.deficit .stat-value {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.budget-blocked-warning {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  color: #b78103;
+}
+
+.budget-items-list h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+.budget-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.budget-item-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.budget-item-card.mode-craft {
+  border-left: 3px solid #1976d2;
+}
+
+.budget-item-card.mode-buy {
+  border-left: 3px solid #757575;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: #c62828;
+}
+
+.item-mode-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.2rem 0;
+}
+
+.btn-mode-toggle {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.1rem 0.3rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.item-craft-details {
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 0.2rem 0.3rem;
+  border-radius: 2px;
+  margin-top: 0.2rem;
+}
+
+.craft-reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-top: 0.2rem;
+}
+
+.craft-reason-chip {
+  color: #c62828;
+  font-size: 0.72rem;
+}
+
+.magic-badge {
+  font-size: 0.7rem;
+  background: #e8eaf6;
+  color: #283593;
+  padding: 0.05rem 0.25rem;
+  border-radius: 2px;
+  margin-left: 0.3rem;
+}
+
+.budget-add-form {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.budget-add-form h4 {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.85rem;
+}
+
+.budget-add-form input[type="text"],
+.budget-add-form input[type="number"],
+.budget-add-form select {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.3rem;
+}
+
+.form-row input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-row-multi {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.form-row-multi label {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.magic-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.btn-add-item {
+  background: #2b4c7e;
+  color: #fff;
+  border: 1px solid #20385d;
+  border-radius: 3px;
+  padding: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.budget-notice {
+  font-size: 0.75rem;
+}
+
 .dialog-backdrop {
   position: fixed;
   inset: 0;

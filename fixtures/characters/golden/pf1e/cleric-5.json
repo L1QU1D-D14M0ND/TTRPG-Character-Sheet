@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "system": "pf1e",
+  "meta": {
+    "createdAt": "2026-09-20T14:30:00.000Z",
+    "updatedAt": "2026-09-20T14:30:00.000Z",
+    "appVersion": "0.0.0",
+    "locale": "en",
+    "characterId": "golden-pf1e-cleric-5"
+  },
+  "identity": {
+    "characterName": "Golden Cleric",
+    "playerName": "Fixture",
+    "race": { "id": "race.human", "name": "Human" },
+    "size": "medium",
+    "alignment": "lawful good",
+    "deity": "Sarenrae",
+    "xp": 10000,
+    "languages": [
+      { "id": null, "name": "Common" },
+      { "id": null, "name": "Celestial" }
+    ]
+  },
+  "classes": [
+    {
+      "id": "class-row-cleric",
+      "class": { "id": "class.cleric", "name": "Cleric" },
+      "levels": 5,
+      "hitDie": 8,
+      "babProgression": "threeQuarter",
+      "saves": { "fort": "good", "ref": "poor", "will": "good" },
+      "skillPointsPerLevel": 2,
+      "favored": { "hp": 5, "skillRanks": 0 }
+    }
+  ],
+  "abilities": {
+    "str": { "score": 14 },
+    "dex": { "score": 10 },
+    "con": { "score": 14 },
+    "int": { "score": 10 },
+    "wis": { "score": 18 },
+    "cha": { "score": 14 }
+  },
+  "vitals": {
+    "hpRolled": [8, 5, 5, 5, 5],
+    "currentHp": 43,
+    "tempHp": 0,
+    "nonlethal": 0,
+    "speeds": [{ "kind": "land", "feet": 20 }]
+  },
+  "armorClass": {
+    "armorBonus": 6,
+    "shieldBonus": 2,
+    "natural": 0,
+    "deflection": 0,
+    "dodge": 0,
+    "other": 0,
+    "maxDex": 3,
+    "armorCheckPenalty": -6,
+    "notes": "Breastplate (+6) and Heavy Wooden Shield (+2)"
+  },
+  "combat": {
+    "initiativeMisc": 0,
+    "meleeAttackMisc": 0,
+    "rangedAttackMisc": 0,
+    "cmbMisc": 0,
+    "cmdMisc": 0,
+    "fortMisc": 0,
+    "refMisc": 0,
+    "willMisc": 0
+  },
+  "skills": [
+    { "key": "acrobatics", "name": "Acrobatics", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "appraise", "name": "Appraise", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "bluff", "name": "Bluff", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "climb", "name": "Climb", "ability": "str", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "diplomacy", "name": "Diplomacy", "ability": "cha", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "disable-device", "name": "Disable Device", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "disguise", "name": "Disguise", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "escape-artist", "name": "Escape Artist", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "fly", "name": "Fly", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "handle-animal", "name": "Handle Animal", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "heal", "name": "Heal", "ability": "wis", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "intimidate", "name": "Intimidate", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "linguistics", "name": "Linguistics", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "perception", "name": "Perception", "ability": "wis", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "ride", "name": "Ride", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "sense-motive", "name": "Sense Motive", "ability": "wis", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "sleight-of-hand", "name": "Sleight of Hand", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "spellcraft", "name": "Spellcraft", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "stealth", "name": "Stealth", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "survival", "name": "Survival", "ability": "wis", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "swim", "name": "Swim", "ability": "str", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "use-magic-device", "name": "Use Magic Device", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-arcana", "name": "Knowledge (arcana)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-dungeoneering", "name": "Knowledge (dungeoneering)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-engineering", "name": "Knowledge (engineering)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-geography", "name": "Knowledge (geography)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-history", "name": "Knowledge (history)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-local", "name": "Knowledge (local)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-nature", "name": "Knowledge (nature)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-nobility", "name": "Knowledge (nobility)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-planes", "name": "Knowledge (planes)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-religion", "name": "Knowledge (religion)", "ability": "int", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 }
+  ],
+  "feats": [
+    {
+      "id": "feat-selective-channeling",
+      "category": "general",
+      "feat": { "id": "feat.selective-channeling", "name": "Selective Channeling" },
+      "levelGained": 1,
+      "summary": "Exclude targets up to Cha mod (2) from channel energy."
+    },
+    {
+      "id": "feat-extra-channel",
+      "category": "general",
+      "feat": { "id": "feat.extra-channel", "name": "Extra Channel" },
+      "levelGained": 1,
+      "summary": "Channel energy +2 uses per day."
+    },
+    {
+      "id": "feat-combat-casting",
+      "category": "general",
+      "feat": { "id": "feat.combat-casting", "name": "Combat Casting" },
+      "levelGained": 3,
+      "summary": "+4 concentration on defensive casting."
+    },
+    {
+      "id": "feat-weapon-focus",
+      "category": "combat",
+      "feat": { "id": "feat.weapon-focus", "name": "Weapon Focus" },
+      "levelGained": 5,
+      "summary": "+1 attack with heavy mace."
+    }
+  ],
+  "features": [
+    {
+      "id": "feat-channel-energy",
+      "feature": { "id": null, "name": "Channel Energy" },
+      "levelGained": 1,
+      "summary": "3d6 positive energy in a 30-ft burst."
+    },
+    {
+      "id": "feat-aura",
+      "feature": { "id": null, "name": "Aura" },
+      "levelGained": 1,
+      "summary": "Moderate good aura."
+    },
+    {
+      "id": "feat-spontaneous-casting",
+      "feature": { "id": null, "name": "Spontaneous Casting" },
+      "levelGained": 1,
+      "summary": "Can spontaneously convert prepared spells into cure spells."
+    }
+  ],
+  "attacks": [
+    {
+      "id": "atk-heavy-mace",
+      "name": "Heavy Mace",
+      "attackType": "melee",
+      "itemId": "item-heavy-mace",
+      "attackAbility": "str",
+      "damageAbility": "str",
+      "damageDice": "1d8",
+      "damageType": "bludgeoning",
+      "critRange": 20,
+      "critMultiplier": 2,
+      "miscAttack": 1,
+      "miscDamage": 0
+    }
+  ],
+  "spellcasting": [
+    {
+      "id": "cast-cleric",
+      "name": "Cleric Spells",
+      "ability": "wis",
+      "classRowId": "class-row-cleric",
+      "casterLevelOverride": null,
+      "slots": [
+        { "spellLevel": 1, "max": 4, "remaining": 4 },
+        { "spellLevel": 2, "max": 3, "remaining": 3 },
+        { "spellLevel": 3, "max": 2, "remaining": 2 }
+      ],
+      "cantrips": [
+        {
+          "id": "spell-guidance",
+          "spell": { "id": "spell.guidance", "name": "Guidance" },
+          "spellLevel": 0,
+          "prepared": true
+        },
+        {
+          "id": "spell-light",
+          "spell": { "id": "spell.light", "name": "Light" },
+          "spellLevel": 0,
+          "prepared": true
+        },
+        {
+          "id": "spell-resistance",
+          "spell": { "id": "spell.resistance", "name": "Resistance" },
+          "spellLevel": 0,
+          "prepared": true
+        },
+        {
+          "id": "spell-purify-food-and-drink",
+          "spell": { "id": "spell.purify-food-and-drink", "name": "Purify Food and Drink" },
+          "spellLevel": 0,
+          "prepared": true
+        }
+      ],
+      "spells": [
+        {
+          "id": "spell-bless",
+          "spell": { "id": "spell.bless", "name": "Bless" },
+          "spellLevel": 1,
+          "prepared": true
+        },
+        {
+          "id": "spell-shield-of-faith",
+          "spell": { "id": "spell.shield-of-faith", "name": "Shield of Faith" },
+          "spellLevel": 1,
+          "prepared": true
+        },
+        {
+          "id": "spell-cure-light-wounds",
+          "spell": { "id": "spell.cure-light-wounds", "name": "Cure Light Wounds" },
+          "spellLevel": 1,
+          "prepared": true
+        },
+        {
+          "id": "spell-remove-fear",
+          "spell": { "id": "spell.remove-fear", "name": "Remove Fear" },
+          "spellLevel": 1,
+          "prepared": true
+        },
+        {
+          "id": "spell-spiritual-weapon",
+          "spell": { "id": "spell.spiritual-weapon", "name": "Spiritual Weapon" },
+          "spellLevel": 2,
+          "prepared": true
+        },
+        {
+          "id": "spell-bulls-strength",
+          "spell": { "id": "spell.bulls-strength", "name": "Bull's Strength" },
+          "spellLevel": 2,
+          "prepared": true
+        },
+        {
+          "id": "spell-hold-person",
+          "spell": { "id": "spell.hold-person", "name": "Hold Person" },
+          "spellLevel": 2,
+          "prepared": true
+        },
+        {
+          "id": "spell-prayer",
+          "spell": { "id": "spell.prayer", "name": "Prayer" },
+          "spellLevel": 3,
+          "prepared": true
+        },
+        {
+          "id": "spell-searing-light",
+          "spell": { "id": "spell.searing-light", "name": "Searing Light" },
+          "spellLevel": 3,
+          "prepared": true
+        }
+      ]
+    }
+  ],
+  "inventory": {
+    "currency": { "cp": 0, "sp": 0, "gp": 150, "pp": 0 },
+    "items": [
+      {
+        "id": "item-heavy-mace",
+        "item": { "id": "weapon.heavy-mace", "name": "Heavy mace" },
+        "quantity": 1,
+        "pounds": 8,
+        "location": "equipped",
+        "weapon": {
+          "damageDice": "1d8",
+          "damageType": "bludgeoning",
+          "critRange": 20,
+          "critMultiplier": 2
+        }
+      },
+      {
+        "id": "item-breastplate",
+        "item": { "id": "armor.breastplate", "name": "Breastplate" },
+        "quantity": 1,
+        "pounds": 30,
+        "location": "equipped",
+        "armor": {
+          "acBonus": 6,
+          "maxDex": 3,
+          "armorCheckPenalty": -4,
+          "spellFailurePercent": 25
+        }
+      },
+      {
+        "id": "item-heavy-wooden-shield",
+        "item": { "id": "shield.heavy-wooden", "name": "Heavy wooden shield" },
+        "quantity": 1,
+        "pounds": 10,
+        "location": "equipped",
+        "shield": {
+          "acBonus": 2,
+          "armorCheckPenalty": -2,
+          "spellFailurePercent": 15
+        }
+      },
+      {
+        "id": "item-wooden-holy-symbol",
+        "item": { "id": "item.wooden-holy-symbol", "name": "Wooden holy symbol" },
+        "quantity": 1,
+        "pounds": 0,
+        "location": "carried"
+      }
+    ],
+    "notes": "Standard cleric adventuring gear."
+  },
+  "companions": [],
+  "conditions": [],
+  "play": {
+    "dailyResources": [
+      {
+        "id": "res-channel-energy",
+        "name": "Channel Energy",
+        "max": 7,
+        "remaining": 7,
+        "resetsOn": "daily"
+      },
+      {
+        "id": "res-rebuke-death",
+        "name": "Rebuke Death (Healing Domain)",
+        "max": 7,
+        "remaining": 7,
+        "resetsOn": "daily"
+      }
+    ]
+  },
+  "notes": {
+    "appearance": "Devoted cleric of Sarenrae in polished breastplate carrying a heavy mace and wooden sun shield.",
+    "personality": "Compassionate healer and radiant beacon against undead and fiends.",
+    "campaign": "Sun and Healing domains.",
+    "other": "Domain powers: Rebuke Death (heal 1d4+2 when below 0 hp, 7/day); Sun's Blessing (add +5 damage to undead when channeling)."
+  },
+  "overrides": {},
+  "extensions": {}
+}

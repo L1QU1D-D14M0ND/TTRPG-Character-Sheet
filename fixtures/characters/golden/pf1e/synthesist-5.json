@@ -190,25 +190,25 @@
       "spells": [
         {
           "id": "spell-mage-armor",
-          "spell": { "id": null, "name": "Mage Armor" },
+          "spell": { "id": "spell.mage-armor", "name": "Mage Armor" },
           "spellLevel": 1,
           "prepared": true
         },
         {
           "id": "spell-shield",
-          "spell": { "id": null, "name": "Shield" },
+          "spell": { "id": "spell.shield", "name": "Shield" },
           "spellLevel": 1,
           "prepared": true
         },
         {
           "id": "spell-rejuvenate-eidolon-lesser",
-          "spell": { "id": null, "name": "Rejuvenate Eidolon, Lesser" },
+          "spell": { "id": "spell.rejuvenate-eidolon-lesser", "name": "Rejuvenate Eidolon, Lesser" },
           "spellLevel": 1,
           "prepared": true
         },
         {
           "id": "spell-summon-eidolon",
-          "spell": { "id": null, "name": "Summon Eidolon" },
+          "spell": { "id": "spell.summon-eidolon", "name": "Summon Eidolon" },
           "spellLevel": 2,
           "prepared": true
         }

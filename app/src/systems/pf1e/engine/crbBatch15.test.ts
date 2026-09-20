@@ -106,9 +106,21 @@ describe('CRB batch 15: class spells-per-day tables', () => {
 
   it('omits spellsPerDay on non-casters and unknown ids', () => {
     expect(lookupCrbClass('class.fighter')?.spellsPerDay).toBeUndefined()
+    expect(lookupCrbClass('class.summoner')).toBeNull()
     expect(classSpellsPerDayRow('class.fighter', 5)).toBeNull()
     expect(classSpellsPerDayRow('class.barbarian', 1)).toBeNull()
-    expect(classSpellsPerDayRow('class.summoner', 5)).toBeNull()
+    expect(classSpellsPerDayRow('class.summoner', 5)).toEqual([
+      null,
+      4,
+      2,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ])
     expect(classSpellsPerDayRow('class.alchemist', 5)).toBeNull()
     expect(classSpellsPerDayRow('class.wizard', 0)).toBeNull()
   })

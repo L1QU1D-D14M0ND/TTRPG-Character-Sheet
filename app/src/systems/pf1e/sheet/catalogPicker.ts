@@ -18,6 +18,7 @@ import {
   APG_ARCHETYPES,
   APG_CLASSES,
   APG_EVOLUTIONS,
+  APG_SPELLS,
   applyApgArchetype,
   applyApgEvolution,
   applyClassProgression,
@@ -25,7 +26,7 @@ import {
   applyCrbFeature,
   applyCrbItem,
   applyCrbRace,
-  applyCrbSpell,
+  applySpell,
   CRB_CLASSES,
   CRB_FEATS,
   CRB_FEATURES,
@@ -96,7 +97,16 @@ export function groupsFor(kind: CatalogKind): CatalogGroup[] {
     case 'spell':
       return [
         {
+          labelKey: 'pf1e.identity.optgroupCrb',
           rows: CRB_SPELLS.map((row) => ({
+            id: row.id,
+            name: row.name,
+            detail: String(row.spellLevel),
+          })),
+        },
+        {
+          labelKey: 'pf1e.identity.optgroupApg',
+          rows: APG_SPELLS.map((row) => ({
             id: row.id,
             name: row.name,
             detail: String(row.spellLevel),
@@ -162,7 +172,7 @@ export function stamp<K extends CatalogKind>(
     case 'feature':
       return applyCrbFeature(host as FeatureEntry, id) as HostFor<K>
     case 'spell':
-      return applyCrbSpell(host as SpellListEntry, id) as HostFor<K>
+      return applySpell(host as SpellListEntry, id) as HostFor<K>
     case 'item':
       return applyCrbItem(host as ItemEntry, id) as HostFor<K>
     case 'evolution':
@@ -218,7 +228,11 @@ export function setCatalogName<K extends CatalogKind>(
       const row = host as ClassEntry
       return {
         ...row,
-        archetype: { id: row.archetype?.id ?? null, name },
+        archetype: {
+          id: row.archetype?.id ?? null,
+          name,
+          source: row.archetype?.source,
+        },
       } as HostFor<K>
     }
     default: {

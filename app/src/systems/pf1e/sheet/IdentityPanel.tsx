@@ -4,12 +4,13 @@ import {
   type CharacterDocument,
 } from '../character'
 import type { Alignment, Size } from '../character/types'
-import { applyClassProgression, applyCrbRace, applyApgArchetype, APG_ARCHETYPES, APG_CLASSES, CRB_CLASSES, CRB_RACES, stampClassSkills } from '../content'
+import { stampClassSkills } from '../content'
 import { characterLevel, type DerivedView } from '../engine'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
 import { SynthesistPanel } from './SynthesistPanel'
-import { patchAt, removeAt, updateAt } from '../../../shared/ui/rows'
+import { patchAt, removeAt, replaceAt, updateAt } from '../../../shared/ui/rows'
+import { CatalogPicker } from './CatalogPicker'
 import type { SheetUpdate } from './update'
 
 const ARCANE_SCHOOLS = [
@@ -107,34 +108,15 @@ export function IdentityPanel({
           <tr>
             <th>{t('pf1e.identity.race')}</th>
             <td className="race-cell">
-              <select
-                aria-label={t('pf1e.identity.raceCatalog')}
-                value={character.identity.race.id ?? ''}
-                onChange={(e) => {
-                  const id = e.target.value || null
+              <CatalogPicker
+                kind="race"
+                value={character.identity}
+                catalogLabel={t('pf1e.identity.raceCatalog')}
+                nameLabel={t('pf1e.identity.raceName')}
+                onPick={(next) =>
                   update((c) => ({
                     ...c,
-                    identity: applyCrbRace(c.identity, id),
-                  }))
-                }}
-              >
-                <option value="">{t('pf1e.common.custom')}</option>
-                {CRB_RACES.map((entry) => (
-                  <option key={entry.id} value={entry.id}>
-                    {entry.name}
-                  </option>
-                ))}
-              </select>
-              <input
-                aria-label={t('pf1e.identity.raceName')}
-                value={character.identity.race.name}
-                onChange={(e) =>
-                  update((c) => ({
-                    ...c,
-                    identity: {
-                      ...c.identity,
-                      race: { ...c.identity.race, name: e.target.value },
-                    },
+                    identity: next,
                   }))
                 }
               />
@@ -283,106 +265,43 @@ export function IdentityPanel({
             character.classes.map((row, index) => (
               <tr key={row.id}>
                 <td className="class-cell">
-                  <select
-                    aria-label={t('pf1e.identity.classCatalog')}
-                    value={row.class.id ?? ''}
-                    onChange={(e) => {
-                      const id = e.target.value || null
+                  <CatalogPicker
+                    kind="class"
+                    value={row}
+                    catalogLabel={t('pf1e.identity.classCatalog')}
+                    nameLabel={t('pf1e.identity.className')}
+                    onPick={(next) =>
                       update((c) => {
-                        const classes = [...c.classes]
-                        classes[index] = applyClassProgression(
-                          classes[index],
-                          id,
-                        )
+                        const classes = replaceAt(c.classes, index, next)
                         return {
                           ...c,
                           classes,
                           skills: stampClassSkills(c.skills, classes),
                         }
                       })
-                    }}
-                  >
-                    <option value="">{t('pf1e.common.custom')}</option>
-                    <optgroup label={t('pf1e.identity.optgroupCrb')}>
-                      {CRB_CLASSES.map((entry) => (
-                        <option key={entry.id} value={entry.id}>
-                          {entry.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                    <optgroup label={t('pf1e.identity.optgroupApg')}>
-                      {APG_CLASSES.map((entry) => (
-                        <option key={entry.id} value={entry.id}>
-                          {entry.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                  </select>
-                  <input
-                    aria-label={t('pf1e.identity.className')}
-                    value={row.class.name}
-                    onChange={(e) =>
-                      update((c) => ({
-                        ...c,
-                        classes: updateAt(c.classes, index, (row) => ({
-                          ...row,
-                          class: {
-                            ...row.class,
-                            name: e.target.value,
-                          },
-                        })),
-                      }))
                     }
                   />
                   {row.class.id === 'class.summoner' ? (
-                    <>
-                      <select
-                        aria-label={t('pf1e.identity.archetype')}
-                        value={row.archetype?.id ?? ''}
-                        onChange={(e) => {
-                          const id = e.target.value || null
-                          update((c) => {
-                            const classes = [...c.classes]
-                            classes[index] = applyApgArchetype(
-                              classes[index],
-                              id,
-                            )
-                            return {
-                              ...c,
-                              classes,
-                              companions:
-                                id === 'archetype.synthesist'
-                                  ? ensureEidolonCompanion(c.companions)
-                                  : c.companions,
-                            }
-                          })
-                        }}
-                      >
-                        <option value="">{t('pf1e.identity.noArchetype')}</option>
-                        {APG_ARCHETYPES.map((entry) => (
-                          <option key={entry.id} value={entry.id}>
-                            {entry.name}
-                          </option>
-                        ))}
-                      </select>
-                      <input
-                        aria-label={t('pf1e.identity.archetypeName')}
-                        value={row.archetype?.name ?? ''}
-                        onChange={(e) =>
-                          update((c) => ({
+                    <CatalogPicker
+                      kind="archetype"
+                      value={row}
+                      catalogLabel={t('pf1e.identity.archetype')}
+                      nameLabel={t('pf1e.identity.archetypeName')}
+                      customLabel={t('pf1e.identity.noArchetype')}
+                      onPick={(next) =>
+                        update((c) => {
+                          const classes = replaceAt(c.classes, index, next)
+                          return {
                             ...c,
-                            classes: updateAt(c.classes, index, (row) => ({
-                              ...row,
-                              archetype: {
-                                id: row.archetype?.id ?? null,
-                                name: e.target.value,
-                                source: row.archetype?.source,
-                              },
-                            })),
-                          }))
-                        }
-                      />
-                    </>
+                            classes,
+                            companions:
+                              next.archetype?.id === 'archetype.synthesist'
+                                ? ensureEidolonCompanion(c.companions)
+                                : c.companions,
+                          }
+                        })
+                      }
+                    />
                   ) : null}
                   {row.class.id === 'class.wizard' ? (
                     <div className="wizard-school-controls">

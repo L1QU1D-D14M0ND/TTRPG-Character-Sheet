@@ -6,9 +6,9 @@
 
 Phase 1x honesty / code fixes landed (2026-09-12): leftover W7 test titles renamed, golden `weapon.properties` / `secondHead` stamped vs catalog, honest `focusTab` wired. See [`docs/ROADMAP.md`](docs/ROADMAP.md) Phase 1x honesty / code fixes.
 
-### CRB catalog fill-out (completed — next is APG follow-through)
+### CRB catalog fill-out & APG follow-through (completed)
 
-All 177 CRB feats (110 combat, 49 general, 9 item creation, 9 metamagic) and all 622 CRB spells (Batches S1–S5) have landed under [ADR 0007](docs/adr/0007-content-licensing.md) (names + category/level only, mechanics-only). Next catalog increment is APG follow-through (Summoner `spellsPerDay` + spell catalog). Architecture deepening: PF1e catalog picker ([ADR 0009](docs/adr/0009-pf1e-catalog-picker.md)) — slice 1 landed; slice 2 is Identity race / class / archetype.
+All 177 CRB feats (110 combat, 49 general, 9 item creation, 9 metamagic) and all 622 CRB spells (Batches S1–S5) have landed under [ADR 0007](docs/adr/0007-content-licensing.md) (names + category/level only, mechanics-only). APG follow-through (Summoner `spellsPerDay` + 27-spell catalog) landed. Architecture deepening: PF1e catalog picker ([ADR 0009](docs/adr/0009-pf1e-catalog-picker.md)) — slice 1 and slice 2 (Identity race / class / archetype) landed.
 
 - From `app/`, run `npx vitest run src/systems/pf1e`.
 - Do **not** record a demo video or upload Inventory screenshots unless the Inventory UI itself changed.
@@ -20,6 +20,6 @@ See [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md) §8.
 
 Record a browser walkthrough when the sheet **control**, **layout**, or **Combat math** actually changes (new editor, restyle, derived AC/CMB/attack behavior, and similar).
 
-### Sidebar tools
+### Sidebar tools (landed)
 
-Named tools (Attack Helper, Actions List, Budget Calculator) are the **last character-sheet feature**. Do not implement one unless asked, and not before remaining catalog / APG follow-through / optional goldens / magic overlay / OGL-with-rules-text.
+All three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed for both PF1e and PF2e with active session switching, complete formulas, and table-dice reminders. Empty/collapsed host default and `focusTab` contracts preserved.

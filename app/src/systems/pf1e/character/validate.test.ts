@@ -47,7 +47,7 @@ describe('PF1e character JSON Schema validation', () => {
     )
   })
 
-  it('accepts the Fighter 5, Wizard 5, Fighter 2 / Wizard 3, Synthesist 5, and Wizard 7 goldens', () => {
+  it('accepts the Fighter 5, Wizard 5, Fighter 2 / Wizard 3, Synthesist 5, Wizard 7, Cleric 5, Duelist 2, and Ranger 5 goldens', () => {
     expect(() =>
       parseCharacterJson(
         readRepoFile('fixtures/characters/golden/pf1e/fighter-5.json'),
@@ -73,6 +73,21 @@ describe('PF1e character JSON Schema validation', () => {
         readRepoFile(
           'fixtures/characters/golden/pf1e/wizard-transmutation-7.json',
         ),
+      ),
+    ).not.toThrow()
+    expect(() =>
+      parseCharacterJson(
+        readRepoFile('fixtures/characters/golden/pf1e/cleric-5.json'),
+      ),
+    ).not.toThrow()
+    expect(() =>
+      parseCharacterJson(
+        readRepoFile('fixtures/characters/golden/pf1e/fighter-5-duelist-2.json'),
+      ),
+    ).not.toThrow()
+    expect(() =>
+      parseCharacterJson(
+        readRepoFile('fixtures/characters/golden/pf1e/ranger-5-companion.json'),
       ),
     ).not.toThrow()
   })

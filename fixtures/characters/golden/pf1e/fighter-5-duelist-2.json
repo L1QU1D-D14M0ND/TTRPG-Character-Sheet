@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "system": "pf1e",
+  "meta": {
+    "createdAt": "2026-09-20T14:31:00.000Z",
+    "updatedAt": "2026-09-20T14:31:00.000Z",
+    "appVersion": "0.0.0",
+    "locale": "en",
+    "characterId": "golden-pf1e-fighter-5-duelist-2"
+  },
+  "identity": {
+    "characterName": "Golden Duelist",
+    "playerName": "Fixture",
+    "race": { "id": "race.human", "name": "Human" },
+    "size": "medium",
+    "alignment": "neutral",
+    "deity": "",
+    "xp": 23000,
+    "languages": [
+      { "id": null, "name": "Common" }
+    ]
+  },
+  "classes": [
+    {
+      "id": "class-row-fighter",
+      "class": { "id": "class.fighter", "name": "Fighter" },
+      "levels": 5,
+      "hitDie": 10,
+      "babProgression": "full",
+      "saves": { "fort": "good", "ref": "poor", "will": "poor" },
+      "skillPointsPerLevel": 2,
+      "favored": { "hp": 5, "skillRanks": 0 }
+    },
+    {
+      "id": "class-row-duelist",
+      "class": { "id": null, "name": "Duelist" },
+      "levels": 2,
+      "hitDie": 10,
+      "babProgression": "full",
+      "saves": { "fort": "poor", "ref": "good", "will": "poor" },
+      "prestige": true,
+      "skillPointsPerLevel": 4
+    }
+  ],
+  "abilities": {
+    "str": { "score": 14 },
+    "dex": { "score": 18 },
+    "con": { "score": 14 },
+    "int": { "score": 14 },
+    "wis": { "score": 10 },
+    "cha": { "score": 8 }
+  },
+  "vitals": {
+    "hpRolled": [10, 6, 6, 6, 6, 6, 6],
+    "currentHp": 65,
+    "tempHp": 0,
+    "nonlethal": 0,
+    "speeds": [{ "kind": "land", "feet": 30 }]
+  },
+  "armorClass": {
+    "armorBonus": 2,
+    "shieldBonus": 0,
+    "natural": 0,
+    "deflection": 0,
+    "dodge": 1,
+    "other": 2,
+    "maxDex": 6,
+    "armorCheckPenalty": 0,
+    "notes": "Leather armor (+2), Dodge feat (+1), and Canny Defense Int bonus (+2)"
+  },
+  "combat": {
+    "initiativeMisc": 4,
+    "meleeAttackMisc": 0,
+    "rangedAttackMisc": 0,
+    "cmbMisc": 0,
+    "cmdMisc": 0,
+    "fortMisc": 0,
+    "refMisc": 0,
+    "willMisc": 0
+  },
+  "skills": [
+    { "key": "acrobatics", "name": "Acrobatics", "ability": "dex", "ranks": 7, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "appraise", "name": "Appraise", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "bluff", "name": "Bluff", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "climb", "name": "Climb", "ability": "str", "ranks": 0, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "diplomacy", "name": "Diplomacy", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "disable-device", "name": "Disable Device", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "disguise", "name": "Disguise", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "escape-artist", "name": "Escape Artist", "ability": "dex", "ranks": 7, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "fly", "name": "Fly", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "handle-animal", "name": "Handle Animal", "ability": "cha", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "heal", "name": "Heal", "ability": "wis", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "intimidate", "name": "Intimidate", "ability": "cha", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "linguistics", "name": "Linguistics", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "perception", "name": "Perception", "ability": "wis", "ranks": 7, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "ride", "name": "Ride", "ability": "dex", "ranks": 0, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "sense-motive", "name": "Sense Motive", "ability": "wis", "ranks": 4, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "sleight-of-hand", "name": "Sleight of Hand", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "spellcraft", "name": "Spellcraft", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "stealth", "name": "Stealth", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "survival", "name": "Survival", "ability": "wis", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "swim", "name": "Swim", "ability": "str", "ranks": 0, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "use-magic-device", "name": "Use Magic Device", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-arcana", "name": "Knowledge (arcana)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-dungeoneering", "name": "Knowledge (dungeoneering)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-engineering", "name": "Knowledge (engineering)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-geography", "name": "Knowledge (geography)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-history", "name": "Knowledge (history)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-local", "name": "Knowledge (local)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-nature", "name": "Knowledge (nature)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-nobility", "name": "Knowledge (nobility)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-planes", "name": "Knowledge (planes)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-religion", "name": "Knowledge (religion)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 }
+  ],
+  "feats": [
+    {
+      "id": "feat-dodge",
+      "category": "combat",
+      "feat": { "id": "feat.dodge", "name": "Dodge" },
+      "levelGained": 1,
+      "summary": "+1 dodge bonus to AC."
+    },
+    {
+      "id": "feat-weapon-finesse",
+      "category": "combat",
+      "feat": { "id": "feat.weapon-finesse", "name": "Weapon Finesse" },
+      "levelGained": 1,
+      "summary": "Use Dex modifier on attack rolls with light weapons and rapier."
+    },
+    {
+      "id": "feat-combat-expertise",
+      "category": "combat",
+      "feat": { "id": "feat.combat-expertise", "name": "Combat Expertise" },
+      "levelGained": 2,
+      "summary": "Trade attack bonus for dodge bonus to AC."
+    },
+    {
+      "id": "feat-mobility",
+      "category": "combat",
+      "feat": { "id": "feat.mobility", "name": "Mobility" },
+      "levelGained": 3,
+      "summary": "+4 dodge bonus to AC against attacks of opportunity."
+    },
+    {
+      "id": "feat-weapon-focus",
+      "category": "combat",
+      "feat": { "id": "feat.weapon-focus", "name": "Weapon Focus" },
+      "levelGained": 4,
+      "summary": "+1 attack with rapier."
+    },
+    {
+      "id": "feat-improved-initiative",
+      "category": "combat",
+      "feat": { "id": "feat.improved-initiative", "name": "Improved Initiative" },
+      "levelGained": 5,
+      "summary": "+4 bonus on initiative checks."
+    }
+  ],
+  "features": [
+    {
+      "id": "feat-canny-defense",
+      "feature": { "id": null, "name": "Canny Defense" },
+      "levelGained": 6,
+      "summary": "When wearing light or no armor and not using a shield, add Int bonus (up to Duelist level 2) to AC."
+    },
+    {
+      "id": "feat-precise-strike",
+      "feature": { "id": null, "name": "Precise Strike" },
+      "levelGained": 6,
+      "summary": "+1d6 precision damage with a light or one-handed piercing weapon when not attacking with an off-hand weapon or shield."
+    },
+    {
+      "id": "feat-improved-reaction",
+      "feature": { "id": null, "name": "Improved Reaction" },
+      "levelGained": 7,
+      "summary": "+2 bonus on initiative checks (stacks with Improved Initiative)."
+    }
+  ],
+  "attacks": [
+    {
+      "id": "atk-rapier",
+      "name": "Rapier",
+      "attackType": "melee",
+      "itemId": "item-rapier",
+      "attackAbility": "dex",
+      "damageAbility": "str",
+      "damageDice": "1d6",
+      "damageType": "piercing",
+      "critRange": 18,
+      "critMultiplier": 2,
+      "miscAttack": 1,
+      "miscDamage": 0
+    }
+  ],
+  "spellcasting": [],
+  "inventory": {
+    "currency": { "cp": 0, "sp": 0, "gp": 300, "pp": 0 },
+    "items": [
+      {
+        "id": "item-rapier",
+        "item": { "id": "weapon.rapier", "name": "Rapier" },
+        "quantity": 1,
+        "pounds": 2,
+        "location": "equipped",
+        "weapon": {
+          "damageDice": "1d6",
+          "damageType": "piercing",
+          "critRange": 18,
+          "critMultiplier": 2
+        }
+      },
+      {
+        "id": "item-leather",
+        "item": { "id": "armor.leather", "name": "Leather armor" },
+        "quantity": 1,
+        "pounds": 15,
+        "location": "equipped",
+        "armor": {
+          "acBonus": 2,
+          "maxDex": 6,
+          "armorCheckPenalty": 0,
+          "spellFailurePercent": 10
+        }
+      }
+    ],
+    "notes": "Light duelist equipment."
+  },
+  "companions": [],
+  "conditions": [],
+  "play": {
+    "dailyResources": []
+  },
+  "notes": {
+    "appearance": "Athletic and graceful fencer with a keen eye and polished steel.",
+    "personality": "Proud, calculating, and honor-bound in combat.",
+    "campaign": "Prestige Duelist.",
+    "other": "Prestige class smoke test character exercising multiclass progression and prestige: true flag."
+  },
+  "overrides": {},
+  "extensions": {}
+}

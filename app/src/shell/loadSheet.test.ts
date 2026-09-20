@@ -88,6 +88,39 @@ describe('parseLoadedSheet', () => {
     }
   })
 
+  it('loads the PF1e Cleric 5 golden as pf1e with daily resources', () => {
+    const loaded = parseLoadedSheet(
+      readRepoFile('fixtures/characters/golden/pf1e/cleric-5.json'),
+    )
+    expect(loaded.system).toBe('pf1e')
+    if (loaded.system === 'pf1e') {
+      expect(loaded.character.classes[0]?.class.id).toBe('class.cleric')
+      expect(loaded.character.play.dailyResources.length).toBe(2)
+    }
+  })
+
+  it('loads the PF1e Prestige Duelist golden as pf1e', () => {
+    const loaded = parseLoadedSheet(
+      readRepoFile('fixtures/characters/golden/pf1e/fighter-5-duelist-2.json'),
+    )
+    expect(loaded.system).toBe('pf1e')
+    if (loaded.system === 'pf1e') {
+      expect(loaded.character.classes[1]?.prestige).toBe(true)
+    }
+  })
+
+  it('loads the PF1e Ranger companion golden as pf1e', () => {
+    const loaded = parseLoadedSheet(
+      readRepoFile('fixtures/characters/golden/pf1e/ranger-5-companion.json'),
+    )
+    expect(loaded.system).toBe('pf1e')
+    if (loaded.system === 'pf1e') {
+      expect(loaded.character.companions.length).toBe(2)
+      expect(loaded.character.companions[0]?.kind).toBe('animalCompanion')
+      expect(loaded.character.companions[1]?.kind).toBe('familiar')
+    }
+  })
+
   it('round-trips empty sheets for both systems', () => {
     const pf1e = parseLoadedSheet(serializePf1e(createPf1e()))
     const pf2e = parseLoadedSheet(serializePf2e(createPf2e()))

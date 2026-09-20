@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "system": "pf1e",
+  "meta": {
+    "createdAt": "2026-09-20T14:32:00.000Z",
+    "updatedAt": "2026-09-20T14:32:00.000Z",
+    "appVersion": "0.0.0",
+    "locale": "en",
+    "characterId": "golden-pf1e-ranger-5-companion"
+  },
+  "identity": {
+    "characterName": "Golden Ranger",
+    "playerName": "Fixture",
+    "race": { "id": "race.half-elf", "name": "Half-Elf" },
+    "size": "medium",
+    "alignment": "neutral good",
+    "deity": "Erastil",
+    "xp": 10000,
+    "languages": [
+      { "id": null, "name": "Common" },
+      { "id": null, "name": "Elven" }
+    ]
+  },
+  "classes": [
+    {
+      "id": "class-row-ranger",
+      "class": { "id": "class.ranger", "name": "Ranger" },
+      "levels": 5,
+      "hitDie": 10,
+      "babProgression": "full",
+      "saves": { "fort": "good", "ref": "good", "will": "poor" },
+      "skillPointsPerLevel": 6,
+      "favored": { "hp": 5, "skillRanks": 0 }
+    }
+  ],
+  "abilities": {
+    "str": { "score": 14 },
+    "dex": { "score": 18 },
+    "con": { "score": 14 },
+    "int": { "score": 12 },
+    "wis": { "score": 14 },
+    "cha": { "score": 8 }
+  },
+  "vitals": {
+    "hpRolled": [10, 6, 6, 6, 6],
+    "currentHp": 49,
+    "tempHp": 0,
+    "nonlethal": 0,
+    "speeds": [{ "kind": "land", "feet": 30 }]
+  },
+  "armorClass": {
+    "armorBonus": 4,
+    "shieldBonus": 0,
+    "natural": 0,
+    "deflection": 0,
+    "dodge": 0,
+    "other": 0,
+    "maxDex": 4,
+    "armorCheckPenalty": -2,
+    "notes": "Chain shirt (+4)"
+  },
+  "combat": {
+    "initiativeMisc": 0,
+    "meleeAttackMisc": 0,
+    "rangedAttackMisc": 0,
+    "cmbMisc": 0,
+    "cmdMisc": 0,
+    "fortMisc": 0,
+    "refMisc": 0,
+    "willMisc": 0
+  },
+  "skills": [
+    { "key": "acrobatics", "name": "Acrobatics", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "appraise", "name": "Appraise", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "bluff", "name": "Bluff", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "climb", "name": "Climb", "ability": "str", "ranks": 5, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "diplomacy", "name": "Diplomacy", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "disable-device", "name": "Disable Device", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "disguise", "name": "Disguise", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "escape-artist", "name": "Escape Artist", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "fly", "name": "Fly", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "handle-animal", "name": "Handle Animal", "ability": "cha", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "heal", "name": "Heal", "ability": "wis", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "intimidate", "name": "Intimidate", "ability": "cha", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "linguistics", "name": "Linguistics", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "perception", "name": "Perception", "ability": "wis", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 2 },
+    { "key": "ride", "name": "Ride", "ability": "dex", "ranks": 0, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "sense-motive", "name": "Sense Motive", "ability": "wis", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "sleight-of-hand", "name": "Sleight of Hand", "ability": "dex", "ranks": 0, "classSkill": false, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "spellcraft", "name": "Spellcraft", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "stealth", "name": "Stealth", "ability": "dex", "ranks": 5, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "survival", "name": "Survival", "ability": "wis", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "swim", "name": "Swim", "ability": "str", "ranks": 0, "classSkill": true, "armorPenaltyApplies": true, "misc": 0 },
+    { "key": "use-magic-device", "name": "Use Magic Device", "ability": "cha", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-arcana", "name": "Knowledge (arcana)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-dungeoneering", "name": "Knowledge (dungeoneering)", "ability": "int", "ranks": 0, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-engineering", "name": "Knowledge (engineering)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-geography", "name": "Knowledge (geography)", "ability": "int", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-history", "name": "Knowledge (history)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-local", "name": "Knowledge (local)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-nature", "name": "Knowledge (nature)", "ability": "int", "ranks": 5, "classSkill": true, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-nobility", "name": "Knowledge (nobility)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-planes", "name": "Knowledge (planes)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 },
+    { "key": "knowledge-religion", "name": "Knowledge (religion)", "ability": "int", "ranks": 0, "classSkill": false, "armorPenaltyApplies": false, "misc": 0 }
+  ],
+  "feats": [
+    {
+      "id": "feat-point-blank-shot",
+      "category": "combat",
+      "feat": { "id": "feat.point-blank-shot", "name": "Point-Blank Shot" },
+      "levelGained": 1,
+      "summary": "+1 attack and damage on ranged attacks up to 30 feet."
+    },
+    {
+      "id": "feat-precise-shot",
+      "category": "combat",
+      "feat": { "id": "feat.precise-shot", "name": "Precise Shot" },
+      "levelGained": 2,
+      "summary": "Shoot into melee without the standard -4 penalty."
+    },
+    {
+      "id": "feat-rapid-shot",
+      "category": "combat",
+      "feat": { "id": "feat.rapid-shot", "name": "Rapid Shot" },
+      "levelGained": 3,
+      "summary": "Make one additional ranged attack at highest bonus with -2 on all attacks."
+    },
+    {
+      "id": "feat-deadly-aim",
+      "category": "combat",
+      "feat": { "id": "feat.deadly-aim", "name": "Deadly Aim" },
+      "levelGained": 5,
+      "summary": "Trade ranged attack bonus for bonus damage (-2 attack / +4 damage)."
+    }
+  ],
+  "features": [
+    {
+      "id": "feat-favored-enemy",
+      "feature": { "id": null, "name": "Favored Enemy" },
+      "levelGained": 1,
+      "summary": "+4 vs undead, +2 vs humanoid (orc)."
+    },
+    {
+      "id": "feat-track",
+      "feature": { "id": null, "name": "Track" },
+      "levelGained": 1,
+      "summary": "+2 bonus on Survival checks to follow tracks."
+    },
+    {
+      "id": "feat-wild-empathy",
+      "feature": { "id": null, "name": "Wild Empathy" },
+      "levelGained": 1,
+      "summary": "Improve attitude of an animal with 1d20 + level 5 + Cha mod (-1)."
+    },
+    {
+      "id": "feat-favored-terrain",
+      "feature": { "id": null, "name": "Favored Terrain" },
+      "levelGained": 3,
+      "summary": "+2 on initiative, Knowledge (geography), Perception, Stealth, and Survival in forest terrain."
+    },
+    {
+      "id": "feat-hunters-bond",
+      "feature": { "id": null, "name": "Hunter's Bond" },
+      "levelGained": 4,
+      "summary": "Bond with an animal companion (effective druid level 2)."
+    }
+  ],
+  "attacks": [
+    {
+      "id": "atk-longbow",
+      "name": "Longbow",
+      "attackType": "ranged",
+      "itemId": "item-longbow",
+      "attackAbility": "dex",
+      "damageAbility": null,
+      "damageDice": "1d8",
+      "damageType": "piercing",
+      "critRange": 20,
+      "critMultiplier": 3,
+      "miscAttack": 0,
+      "miscDamage": 0
+    }
+  ],
+  "spellcasting": [
+    {
+      "id": "cast-ranger",
+      "name": "Ranger Spells",
+      "ability": "wis",
+      "classRowId": "class-row-ranger",
+      "casterLevelOverride": null,
+      "slots": [
+        { "spellLevel": 1, "max": 2, "remaining": 2 }
+      ],
+      "cantrips": [],
+      "spells": [
+        {
+          "id": "spell-entangle",
+          "spell": { "id": "spell.entangle", "name": "Entangle" },
+          "spellLevel": 1,
+          "prepared": true
+        },
+        {
+          "id": "spell-pass-without-trace",
+          "spell": { "id": "spell.pass-without-trace", "name": "Pass without Trace" },
+          "spellLevel": 1,
+          "prepared": true
+        }
+      ]
+    }
+  ],
+  "inventory": {
+    "currency": { "cp": 0, "sp": 0, "gp": 180, "pp": 0 },
+    "items": [
+      {
+        "id": "item-longbow",
+        "item": { "id": "weapon.longbow", "name": "Longbow" },
+        "quantity": 1,
+        "pounds": 3,
+        "location": "equipped",
+        "weapon": {
+          "damageDice": "1d8",
+          "damageType": "piercing",
+          "critRange": 20,
+          "critMultiplier": 3,
+          "rangeFeet": 100
+        }
+      },
+      {
+        "id": "item-chain-shirt",
+        "item": { "id": "armor.chain-shirt", "name": "Chain shirt" },
+        "quantity": 1,
+        "pounds": 25,
+        "location": "equipped",
+        "armor": {
+          "acBonus": 4,
+          "maxDex": 4,
+          "armorCheckPenalty": -2,
+          "spellFailurePercent": 20
+        }
+      }
+    ],
+    "notes": "Ranger wilderness gear."
+  },
+  "companions": [
+    {
+      "id": "companion-wolf",
+      "kind": "animalCompanion",
+      "name": "Fang",
+      "notes": "Wolf companion (Medium animal, 35 hp, bite +6 melee [1d6+2 plus trip], trip +4)."
+    },
+    {
+      "id": "companion-falcon",
+      "kind": "familiar",
+      "name": "Aero",
+      "notes": "Falcon hunting bird (+3 Perception in bright light)."
+    }
+  ],
+  "conditions": [],
+  "play": {
+    "dailyResources": []
+  },
+  "notes": {
+    "appearance": "Weathered Half-Elf archer accompanied by a loyal grey wolf and a watchful falcon.",
+    "personality": "Quiet guardian of the borderlands, slow to trust but steadfast in alliance.",
+    "campaign": "Wilderness scout.",
+    "other": "Hunter's bond companion fixture exercising both animalCompanion and familiar companion entries."
+  },
+  "overrides": {},
+  "extensions": {}
+}

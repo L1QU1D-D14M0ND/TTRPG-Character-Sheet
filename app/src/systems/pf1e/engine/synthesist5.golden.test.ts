@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { parseCharacterJson, serializeCharacter } from '../character/saveLoad'
 import {
+  classSpellsPerDayRow,
   lookupApgArchetype,
   lookupApgClass,
   lookupApgEvolution,
+  lookupApgSpell,
   lookupCrbClass,
   lookupCrbFeat,
   lookupCrbItem,
@@ -48,8 +50,11 @@ describe('golden PF1e Synthesist 5 (Radiant Striker)', () => {
       'Improved Initiative',
     )
     expect(lookupCrbItem('weapon.dagger')?.name).toBe('Dagger')
-    expect(lookupCrbSpell('spell.detect-magic')?.name).toBe('Detect Magic')
     expect(lookupCrbSpell('spell.rejuvenate-eidolon-lesser')).toBeNull()
+    expect(lookupApgSpell('spell.rejuvenate-eidolon-lesser')?.name).toBe(
+      'Rejuvenate Eidolon, Lesser',
+    )
+    expect(lookupApgSpell('spell.summon-eidolon')?.name).toBe('Summon Eidolon')
   })
 
   it('round-trips Save then Load without derived', () => {
@@ -125,7 +130,19 @@ describe('golden PF1e Synthesist 5 (Radiant Striker)', () => {
     expect(eidolon?.evolutions?.at(-1)?.evolution.name).toBe('Pounce')
   })
 
-  it('computes CHA spontaneous DCs and bonus slots without a Summoner spell catalog', () => {
+  it('computes CHA spontaneous DCs and bonus slots with Summoner spellsPerDay and spell catalog', () => {
+    expect(classSpellsPerDayRow('class.summoner', 5)).toEqual([
+      null,
+      4,
+      2,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ])
     const casting = view.spellcasting['cast-summoner']
     expect(casting.casterLevel).toBe(5)
     expect(casting.abilityMod).toBe(5)
@@ -141,7 +158,12 @@ describe('golden PF1e Synthesist 5 (Radiant Striker)', () => {
     ])
     expect(
       character.spellcasting[0]?.spells.map((row) => row.spell.id),
-    ).toEqual([null, null, null, null])
+    ).toEqual([
+      'spell.mage-armor',
+      'spell.shield',
+      'spell.rejuvenate-eidolon-lesser',
+      'spell.summon-eidolon',
+    ])
   })
 
   it('computes typed natural attacks and a light load from fused STR', () => {

@@ -75,9 +75,27 @@ Mechanics-only until rules text ([ADR 0007](adr/0007-content-licensing.md), [`co
 
 ---
 
+## Slice 4 — Summoner spellsPerDay + spell catalog
+
+**Pairing:** Summoner Table 2-8 spells-per-day progression and curated APG Summoner spell catalog (mechanics-only).
+
+**In this slice:**
+
+| Piece | What landed |
+| --- | --- |
+| Pack | `content/pf1e/apg/classes.json` — 20-level × 10-spell-level `spellsPerDay` table for `class.summoner` matching standard 6-level spontaneous progression. |
+| Pack | `content/pf1e/apg/spells.json` — 27 mechanics-only APG Summoner spells (levels 1–6: Ant Haul, Rejuvenate Eidolon Lesser/Normal/Greater, Evolution Surge Lesser/Normal/Greater, Summon Eidolon, Pit spells, etc.). |
+| Lookup / Apply | `lookupApgSpell`, `applyApgSpell`, and cross-pack `applySpell` in `app/src/systems/pf1e/content/`. |
+| Picker | `CatalogPicker` groups spells under Core Rulebook and Advanced Player's Guide optgroups. |
+| Golden | `synthesist-5.json` stamps catalog IDs for `spell.mage-armor`, `spell.shield`, `spell.rejuvenate-eidolon-lesser`, `spell.summon-eidolon`. |
+
+**Out:** Auto-applied evolutions, other APG classes (Magical Child, etc.).
+
+---
+
 ## Later slices (not this change)
 
-Auto-applied evolutions and a Summoner spell list wait for the First Edition finish (roadmap Phase 1x APG follow-through, **after** honesty/code fixes and remaining CRB feats/spells), not a PF2e increment. Spanish UI lives in `app/src/locales/es.json`, not this pack.
+Auto-applied evolutions and other APG classes wait for subsequent increments. Spanish UI lives in `app/src/locales/es.json`, not this pack.
 
 ---
 
@@ -92,3 +110,5 @@ Auto-applied evolutions and a Summoner spell list wait for the First Edition fin
 | 2026-08-19 | 1.0 stability; this pack unchanged |
 | 2026-08-19 | Summoner spell catalog / other APG classes sequenced in the First Edition finish, not leftover PF2e |
 | 2026-09-03 | `pack.json` status slice-3 (golden already landed). Next code is honesty/code fixes; APG follow-through waits |
+| 2026-09-20 | Slice 4: Summoner spellsPerDay table + APG Summoner spell catalog (27 spells); synthesist-5 golden stamped |
+

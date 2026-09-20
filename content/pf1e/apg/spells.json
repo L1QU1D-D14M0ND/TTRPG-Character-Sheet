@@ -1,0 +1,218 @@
+[
+  {
+    "id": "spell.acid-pit",
+    "name": "Acid Pit",
+    "spellLevel": 4,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.ant-haul",
+    "name": "Ant Haul",
+    "spellLevel": 1,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.aqueous-orb",
+    "name": "Aqueous Orb",
+    "spellLevel": 3,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.create-pit",
+    "name": "Create Pit",
+    "spellLevel": 2,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.cushioning-bands",
+    "name": "Cushioning Bands",
+    "spellLevel": 2,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.devolution",
+    "name": "Devolution",
+    "spellLevel": 3,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.dust-of-twilight",
+    "name": "Dust of Twilight",
+    "spellLevel": 2,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.evolution-surge",
+    "name": "Evolution Surge",
+    "spellLevel": 3,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.evolution-surge-greater",
+    "name": "Evolution Surge, Greater",
+    "spellLevel": 4,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.evolution-surge-lesser",
+    "name": "Evolution Surge, Lesser",
+    "spellLevel": 2,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.glide",
+    "name": "Glide",
+    "spellLevel": 2,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.hungry-pit",
+    "name": "Hungry Pit",
+    "spellLevel": 5,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.pelagic-storm",
+    "name": "Pelagic Storm",
+    "spellLevel": 3,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.planar-adaptation",
+    "name": "Planar Adaptation",
+    "spellLevel": 5,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.purified-calling",
+    "name": "Purified Calling",
+    "spellLevel": 4,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.rejuvenate-eidolon",
+    "name": "Rejuvenate Eidolon",
+    "spellLevel": 3,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.rejuvenate-eidolon-greater",
+    "name": "Rejuvenate Eidolon, Greater",
+    "spellLevel": 5,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.rejuvenate-eidolon-lesser",
+    "name": "Rejuvenate Eidolon, Lesser",
+    "spellLevel": 1,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.seek-thoughts",
+    "name": "Seek Thoughts",
+    "spellLevel": 3,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.share-senses",
+    "name": "Share Senses",
+    "spellLevel": 2,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.spiked-pit",
+    "name": "Spiked Pit",
+    "spellLevel": 3,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.summon-eidolon",
+    "name": "Summon Eidolon",
+    "spellLevel": 2,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.tar-pool",
+    "name": "Tar Pool",
+    "spellLevel": 6,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.transmogrify",
+    "name": "Transmogrify",
+    "spellLevel": 4,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.unfetter",
+    "name": "Unfetter",
+    "spellLevel": 1,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.vitriolic-mist",
+    "name": "Vitriolic Mist",
+    "spellLevel": 4,
+    "source": {
+      "book": "APG"
+    }
+  },
+  {
+    "id": "spell.walk-through-space",
+    "name": "Walk through Space",
+    "spellLevel": 6,
+    "source": {
+      "book": "APG"
+    }
+  }
+]
