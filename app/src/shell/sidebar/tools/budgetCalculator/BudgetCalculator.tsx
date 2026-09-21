@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useT } from '../../../../shared/i18n'
+import { newId } from '../../../../shared/ids'
 import type { BudgetItemCalculated, BudgetItemInput, BudgetSummary } from './types'
 
 export interface BudgetCalculatorProps {
@@ -7,30 +8,14 @@ export interface BudgetCalculatorProps {
   initialItems?: BudgetItemInput[]
 }
 
-const DEFAULT_ITEMS: BudgetItemInput[] = [
-  {
-    id: 'item-1',
-    name: 'Longsword',
-    marketPrice: 15,
-    quantity: 1,
-    mode: 'buy',
-    isMagic: false,
-  },
-  {
-    id: 'item-2',
-    name: 'Cloak of Resistance +1',
-    marketPrice: 1000,
-    quantity: 1,
-    mode: 'craft',
-    isMagic: true,
-    casterLevelRequired: 3,
-    featRequired: 'Craft Wondrous Item',
-  },
-]
-
+/**
+ * Shopping-list lines are authored by the player, so the planner opens empty.
+ * Seeding example items would put purchases on a plan the player never chose
+ * and would silently inflate every total. See `docs/sidebar-tools-budget-calculator.md`.
+ */
 export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorProps) {
   const t = useT()
-  const [items, setItems] = useState<BudgetItemInput[]>(() => initialItems ?? DEFAULT_ITEMS)
+  const [items, setItems] = useState<BudgetItemInput[]>(() => initialItems ?? [])
 
   // New item inputs
   const [newName, setNewName] = useState('')
@@ -54,7 +39,9 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
     const cl = Math.max(1, parseInt(newCl, 10) || 1)
 
     const newItem: BudgetItemInput = {
-      id: `item-${Date.now()}`,
+      // `Date.now()` alone collides for two items added in the same millisecond,
+      // which produces duplicate React keys and breaks per-line remove/toggle.
+      id: newId('budget-item'),
       name: newName.trim(),
       marketPrice: price,
       quantity: qty,
@@ -94,37 +81,37 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
         <div className="budget-summary-grid">
           <div className="summary-stat">
             <span className="stat-label">{t('shell.budget.buyAll')}:</span>
-            <span className="stat-value">{summary.buyAllTotal} gp</span>
+            <span className="stat-value">{t('shell.budget.gold', { amount: summary.buyAllTotal })}</span>
           </div>
           <div className="summary-stat">
             <span className="stat-label">{t('shell.budget.mixedPlan')}:</span>
-            <span className="stat-value highlight">{summary.mixedTotal} gp</span>
+            <span className="stat-value highlight">{t('shell.budget.gold', { amount: summary.mixedTotal })}</span>
           </div>
           <div className="summary-stat">
             <span className="stat-label">{t('shell.budget.craftAll')}:</span>
-            <span className="stat-value">{summary.craftAllTotal} gp</span>
+            <span className="stat-value">{t('shell.budget.gold', { amount: summary.craftAllTotal })}</span>
           </div>
           <div className="summary-stat">
             <span className="stat-label">{t('shell.budget.craftTime')}:</span>
-            <span className="stat-value">{summary.totalCraftDays} days</span>
+            <span className="stat-value">{t('shell.budget.days', { days: summary.totalCraftDays })}</span>
           </div>
           <div className="summary-stat">
             <span className="stat-label">{t('shell.budget.purseGold')}:</span>
-            <span className="stat-value">{summary.currentGold} gp</span>
+            <span className="stat-value">{t('shell.budget.gold', { amount: summary.currentGold })}</span>
           </div>
           <div className={`summary-stat ${summary.isDeficit ? 'deficit' : 'affordable'}`}>
             <span className="stat-label">{t('shell.budget.remaining')}:</span>
             <span className="stat-value">
               {summary.isDeficit
-                ? `short ${Math.abs(summary.remainingGold)} gp`
-                : `${summary.remainingGold} gp`}
+                ? t('shell.budget.short', { amount: Math.abs(summary.remainingGold) })
+                : t('shell.budget.gold', { amount: summary.remainingGold })}
             </span>
           </div>
         </div>
 
         {summary.blockedCraftCount > 0 && (
           <div className="budget-blocked-warning">
-            <span>⚠️ {summary.blockedCraftCount} craft item(s) blocked by requirements</span>
+            <span>⚠️ {t('shell.budget.blockedCraft', { count: summary.blockedCraftCount })}</span>
           </div>
         )}
       </div>
@@ -143,13 +130,13 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
                   <div className="item-header">
                     <div className="item-title">
                       <strong>{item.name}</strong> {item.quantity > 1 && `× ${item.quantity}`}
-                      {item.isMagic && <span className="magic-badge">✨ Magic</span>}
+                      {item.isMagic && <span className="magic-badge">✨ {t('shell.budget.magicBadge')}</span>}
                     </div>
                     <button
                       type="button"
                       className="btn-delete"
                       onClick={() => handleRemoveItem(item.id)}
-                      aria-label="Remove item"
+                      aria-label={t('shell.budget.removeItem')}
                     >
                       ×
                     </button>
@@ -161,18 +148,26 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
                       className={`btn-mode-toggle ${item.mode}`}
                       onClick={() => handleToggleMode(item.id)}
                     >
-                      Mode: <strong>{item.mode.toUpperCase()}</strong> (click to switch)
+                      {t('shell.budget.modeLabel', {
+                        mode: t(
+                          isCraft ? 'shell.budget.modeCraft' : 'shell.budget.modeBuy',
+                        ),
+                      })}
                     </button>
                     <span className="item-cost-display">
-                      Cost: <strong>{item.lineCost} gp</strong>
+                      {t('shell.budget.lineCost', { cost: item.lineCost })}
                     </span>
                   </div>
 
                   {isCraft && (
                     <div className="item-craft-details">
                       <small>
-                        Materials: {item.craftMaterialsCost} gp | Time: {item.craftTimeDays} days
-                        {item.craftDc != null && ` | DC: ${item.craftDc}`}
+                        {t('shell.budget.craftDetail', {
+                          materials: item.craftMaterialsCost,
+                          days: item.craftTimeDays,
+                        })}
+                        {item.craftDc != null &&
+                          t('shell.budget.craftDc', { dc: item.craftDc })}
                       </small>
                       {!item.canCraft && item.reasons.length > 0 && (
                         <div className="craft-reasons">
@@ -196,7 +191,8 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
         <div className="form-row">
           <input
             type="text"
-            placeholder="Item name"
+            aria-label={t('shell.budget.itemName')}
+            placeholder={t('shell.budget.itemName')}
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
             required
@@ -204,7 +200,7 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
         </div>
         <div className="form-row-multi">
           <label>
-            Price (gp):
+            {t('shell.budget.price')}
             <input
               type="number"
               min="0"
@@ -215,7 +211,7 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
             />
           </label>
           <label>
-            Qty:
+            {t('shell.budget.quantity')}
             <input
               type="number"
               min="1"
@@ -225,13 +221,13 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
             />
           </label>
           <label>
-            Mode:
+            {t('shell.budget.mode')}
             <select
               value={newMode}
               onChange={(e) => setNewMode(e.target.value as 'buy' | 'craft')}
             >
-              <option value="buy">Buy</option>
-              <option value="craft">Craft</option>
+              <option value="buy">{t('shell.budget.modeBuy')}</option>
+              <option value="craft">{t('shell.budget.modeCraft')}</option>
             </select>
           </label>
         </div>
@@ -243,23 +239,23 @@ export function BudgetCalculator({ calculate, initialItems }: BudgetCalculatorPr
               checked={newIsMagic}
               onChange={(e) => setNewIsMagic(e.target.checked)}
             />
-            <span>Is Magic Item?</span>
+            <span>{t('shell.budget.isMagic')}</span>
           </label>
         </div>
 
         {newIsMagic && (
           <div className="form-row-multi magic-fields">
             <label>
-              Req. Feat:
+              {t('shell.budget.reqFeat')}
               <input
                 type="text"
-                placeholder="e.g. Craft Wondrous Item"
+                placeholder={t('shell.budget.reqFeatPlaceholder')}
                 value={newFeat}
                 onChange={(e) => setNewFeat(e.target.value)}
               />
             </label>
             <label>
-              Req. CL:
+              {t('shell.budget.reqCl')}
               <input
                 type="number"
                 min="1"
