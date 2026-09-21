@@ -37,3 +37,24 @@ export function createSchemaValidator(
   addFormats(ajv)
   return ajv.compile(schema)
 }
+
+/**
+ * Compile on first use instead of at module scope.
+ *
+ * Compiling the two character schemas costs ~23ms (PF1e) and ~25ms (PF2e) on
+ * a warm engine, and both ran during import — on the critical path of every
+ * cold start, including the common case of opening the app to keep playing an
+ * already-loaded draft. Validation is only reachable from Save and Load, so
+ * defer it to the first document that actually crosses that boundary.
+ *
+ * The compiled validator is cached, so repeated Save/Load pays nothing extra.
+ */
+export function lazySchemaValidator(
+  schema: object,
+): () => ValidateFunction<unknown> {
+  let compiled: ValidateFunction<unknown> | null = null
+  return () => {
+    compiled ??= createSchemaValidator(schema)
+    return compiled
+  }
+}

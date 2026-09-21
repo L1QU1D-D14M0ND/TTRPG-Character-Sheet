@@ -2,17 +2,18 @@ import characterSchema from '../../../../../schemas/pf1e/character.schema.json'
 import type { CharacterDocument } from './types'
 import {
   CharacterValidationError,
-  createSchemaValidator,
   formatAjvErrors,
+  lazySchemaValidator,
 } from '../../../shared/validate'
 import { PF1E_SYSTEM_ID } from '../../../shared/envelope'
 
-const validateFn = createSchemaValidator(characterSchema)
+const getValidateFn = lazySchemaValidator(characterSchema)
 
 export { CharacterValidationError, formatAjvErrors }
 
 /** Validate an unknown value against schemas/pf1e/character.schema.json. */
 export function validateCharacterDocument(data: unknown): CharacterDocument {
+  const validateFn = getValidateFn()
   if (validateFn(data)) {
     return data as unknown as CharacterDocument
   }

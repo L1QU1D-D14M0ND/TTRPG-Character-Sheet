@@ -2,12 +2,12 @@ import characterSchema from '../../../../../schemas/character.schema.json'
 import type { CharacterDocument } from './types'
 import {
   CharacterValidationError,
-  createSchemaValidator,
   formatAjvErrors,
+  lazySchemaValidator,
 } from '../../../shared/validate'
 import { PF2E_SYSTEM_ID, resolveSystemId } from '../../../shared/envelope'
 
-const validateFn = createSchemaValidator(characterSchema)
+const getValidateFn = lazySchemaValidator(characterSchema)
 
 export { CharacterValidationError, formatAjvErrors }
 
@@ -18,6 +18,7 @@ function withSystem(doc: CharacterDocument): CharacterDocument {
 
 /** Validate an unknown value against character.schema.json (schemaVersion 1). */
 export function validateCharacterDocument(data: unknown): CharacterDocument {
+  const validateFn = getValidateFn()
   if (validateFn(data)) {
     const doc = data as unknown as CharacterDocument
     return withSystem(doc)
