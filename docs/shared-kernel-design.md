@@ -75,7 +75,7 @@ app/src/
 
 Folder names can shift; the **boundaries** are the lock.
 
-**Extracted today:** `envelope.ts`, `ids.ts`, `format.ts` (`signed`), `validate.ts`, `saveLoad.ts` (filename sanitize + `downloadJsonFile` / parse helpers — **not** `stripDerivedForSave`), `constants.ts`, `contentRef.ts`, `effects.ts`, `overrides.ts` (generic apply + per-system `applyOne`), `notes.ts`, `currency.ts`, `abilities.ts` (`AbilityKey`, `abilityModifierFromScore`), `i18n/` (`catalog.ts`, `context.tsx`, `index.ts`), `ui/DerivedCell.tsx`, `ui/NotesPanel.tsx`, `ui/rows.ts` (`replaceAt`, `patchAt`, `updateAt`, `removeAt`, `appendRow`).
+**Extracted today:** `envelope.ts`, `ids.ts`, `format.ts` (`signed`), `validate.ts`, `saveLoad.ts` (filename sanitize + `downloadJsonFile` / parse helpers — **not** `stripDerivedForSave`), `constants.ts`, `contentRef.ts`, `effects.ts`, `overrides.ts` (generic apply + per-system `applyOne`), `notes.ts`, `currency.ts`, `abilities.ts` (`AbilityKey`, `abilityModifierFromScore`), `i18n/` (`catalog.ts`, `context.tsx`, `index.ts`), `ui/DerivedCell.tsx`, `ui/NotesPanel.tsx`, `ui/rows.ts` (`replaceAt`, `patchAt`, `updateAt`, `removeAt`, `appendRow`), `ui/ModalDialog.tsx` (backdrop + `role="dialog"` card, Escape/backdrop dismissal, focus in/trap/restore).
 
 **Not extracted (do not treat as missing files to add unless a second caller needs them):** shared `DailyResource` entity factories (`createRows.ts`), `test/golden.ts`, shared `stripDerivedForSave` (each system owns strip-derived because document shape differs).
 
@@ -366,3 +366,4 @@ Duplicating a 20-line skill total function is cheaper than a shared skill API wi
 | 2026-08-19 | Align `SystemModule` with `shell/types.ts`: `Workspace`, `displayNameKey`, no `schema`/`tabs` on the module |
 | 2026-09-03 | Record that golden.ts and shared stripDerivedForSave were never extracted; i18n.tsx not i18n.ts |
 | 2026-09-14 | Extract ui/rows.ts (replaceAt, patchAt, updateAt, removeAt, appendRow) adopted across panels; split shared/i18n for Fast Refresh |
+| 2026-09-23 | Extract ui/ModalDialog.tsx; all four dialogs (New sheet, Restore draft, About, PF1e CatalogPicker) use it and gain focus management |

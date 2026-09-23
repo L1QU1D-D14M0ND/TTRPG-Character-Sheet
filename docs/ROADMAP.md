@@ -425,3 +425,4 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-09-20 | APG follow-through: Summoner spellsPerDay table + 27 APG spells packed; synthesist-5 golden stamped |
 | 2026-09-21 | Architecture deepening: PF1e catalog picker (ADR 0009 slices 1 & 2 identity race/class/archetype) landed |
 | 2026-09-22 | Sidebar tools landed for PF1e & PF2e (Attack Helper, Actions List, Budget Calculator); pre-release hygiene (disclaimer, NOTICE, About dialog, CONTRIBUTING, SECURITY) landed |
+| 2026-09-23 | Reliability/a11y pass: shared focus-managed ModalDialog, shell ErrorBoundary with autosave rescue, draftStore connection-leak fix, lint gate set to --max-warnings 0 |
