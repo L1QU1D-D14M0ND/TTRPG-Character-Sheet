@@ -1,6 +1,6 @@
 # PF1e Advanced Player’s Guide pack (1.0 Synthesist)
 
-**Status:** Synthesist golden landed (Half-Elf Radiant Striker). Spanish UI catalog landed (`es.json`). **1.0 landed.**  
+**Status:** Synthesist golden landed (Half-Elf Radiant Striker). Slice 4 landed (Summoner spellsPerDay + 27 APG spells). Spanish UI catalog landed (`es.json`). **1.0 landed.**  
 **Parent:** [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md) decisions 16 and 20, [ADR 0007](adr/0007-content-licensing.md)  
 **On disk:** [`../content/pf1e/apg/`](../content/pf1e/apg/)  
 **Code:** `app/src/systems/pf1e/content/apgPack.ts` (apply reuses the CRB class path)  

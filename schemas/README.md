@@ -27,3 +27,6 @@ Examples:
 - [`../fixtures/characters/golden/pf1e/fighter-2-wizard-3.json`](../fixtures/characters/golden/pf1e/fighter-2-wizard-3.json) — PF1e Fighter 2 / Wizard 3
 - [`../fixtures/characters/golden/pf1e/synthesist-5.json`](../fixtures/characters/golden/pf1e/synthesist-5.json) — PF1e Summoner 5 Synthesist
 - [`../fixtures/characters/golden/pf1e/wizard-transmutation-7.json`](../fixtures/characters/golden/pf1e/wizard-transmutation-7.json) — PF1e Wizard 7 (Transmutation specialist)
+- [`../fixtures/characters/golden/pf1e/cleric-5.json`](../fixtures/characters/golden/pf1e/cleric-5.json) — PF1e Cleric 5
+- [`../fixtures/characters/golden/pf1e/fighter-5-duelist-2.json`](../fixtures/characters/golden/pf1e/fighter-5-duelist-2.json) — PF1e Fighter 5 / Duelist 2 (prestige)
+- [`../fixtures/characters/golden/pf1e/ranger-5-companion.json`](../fixtures/characters/golden/pf1e/ranger-5-companion.json) — PF1e Ranger 5 (animal companion)

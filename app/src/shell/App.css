@@ -872,6 +872,25 @@ button.hp-max-button.overridden {
   gap: 0.4rem;
 }
 
+.about-card {
+  max-width: 32rem;
+}
+
+.about-disclaimer {
+  font-size: 0.8rem;
+  color: #555;
+  border-top: 1px solid #ddd;
+  padding-top: 0.6rem;
+  margin-top: 0.6rem;
+  line-height: 1.35;
+}
+
+.about-disclaimer strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
 .catalog-picker-dialog {
   max-width: 36rem;
   max-height: 80vh;

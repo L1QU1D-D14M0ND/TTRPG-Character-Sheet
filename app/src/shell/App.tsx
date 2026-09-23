@@ -16,6 +16,7 @@ import {
 } from './registry'
 import { NewSheetDialog } from './NewSheetDialog'
 import { RestoreDraftDialog } from './RestoreDraftDialog'
+import { AboutDialog } from './AboutDialog'
 import { SidebarHost } from './sidebar/SidebarHost'
 import type { SystemModule } from './types'
 import { usePrefersNarrow } from './usePrefersNarrow'
@@ -86,6 +87,7 @@ export default function App() {
   const [status, setStatus] = useState<string | undefined>(undefined)
   const [sidebarOverride, setSidebarOverride] = useState<boolean | null>(null)
   const [newOpen, setNewOpen] = useState(false)
+  const [aboutOpen, setAboutOpen] = useState(false)
   const [draftGate, setDraftGate] = useState<'boot' | 'prompt' | 'ready'>(
     'boot',
   )
@@ -211,6 +213,9 @@ export default function App() {
           >
             {sidebarCollapsed ? t('shell.showTools') : t('shell.hideTools')}
           </button>
+          <button type="button" onClick={() => setAboutOpen(true)}>
+            {t('shell.about')}
+          </button>
           <label className="locale-picker">
             {t('shell.language')}
             <select
@@ -292,6 +297,10 @@ export default function App() {
         open={newOpen}
         onCancel={() => setNewOpen(false)}
         onChoose={onChooseNew}
+      />
+      <AboutDialog
+        open={aboutOpen}
+        onClose={() => setAboutOpen(false)}
       />
       <RestoreDraftDialog
         open={draftGate === 'prompt'}

@@ -1,7 +1,7 @@
 # TTRPG Character Sheet — Product design
 
 **Status:** Product direction lock (ADR 0003) — 2026-08-18  
-**Implementation:** PF1e **0.9 bar landed**. **1.0 landed** — Synthesist golden + Spanish UI catalog + stability. Wizard 7 playtest override and Phase 1x honesty/code fixes landed (2026-09-12). All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) landed, completing the entire CRB player catalog. **Next:** APG follow-through (Summoner `spellsPerDay` + spell catalog). Remaining PF2e work waits for a **later release**. **Sidebar tools are the last character-sheet feature** (Attack Helper, Actions List, Budget Calculator specified).  
+**Implementation:** PF1e **0.9 bar landed**. **1.0 landed** — Synthesist golden + Spanish UI catalog + stability. Wizard 7 playtest override and Phase 1x honesty/code fixes landed (2026-09-12). All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` table + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2) and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Next is pre-release / hygiene. Remaining PF2e work waits for a **later release**.  
 **Next coding increment:** [`next-increment-multi-system.md`](next-increment-multi-system.md)  
 **Repo context:** `ttrpg-character-sheet` (renamed from `Pathfinder-2E-Card`, [ADR 0008](adr/0008-repo-package-rename.md))  
 **Audience:** Product / engineering  
@@ -78,9 +78,8 @@ See [ADR 0003](adr/0003-multi-system-product-direction.md).
 - Still core calcs only.
 
 **After 1.0 (current release)**
-
-- Finish First Edition past the 1.0 goldens: honesty/code fixes and Wizard 7 playtest override landed, CRB player catalog complete (all 177 CRB feats and all 622 CRB spells packed), APG follow-through next, optional extra PF1e goldens, OGL when rules text ships.
-- **Sidebar tools** are the last character-sheet feature in this release.
+ 
+- Finish First Edition past the 1.0 goldens: honesty/code fixes and Wizard 7 playtest override landed, CRB player catalog complete (all 177 CRB feats and all 622 CRB spells packed), APG follow-through landed (Summoner spells/day + 27-spell catalog), optional extra PF1e goldens landed (Cleric 5, Fighter 5/Duelist 2, Ranger 5 with companion), catalog picker landed, and all three named sidebar tools landed (Attack Helper, Actions List, Budget Calculator). Next is pre-release / hygiene. OGL notice when rules text prose ships.
 
 **Later (design must not block)**
 

@@ -1,8 +1,8 @@
-# Actions List (later sidebar tool)
+# Actions List (sidebar tool)
 
-**Status:** Named future tool — **not implemented**. Host lock: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
-**Id (reserved):** `shell.actions-list` (shared chrome; per-system action catalog and restriction table).  
-**Sequencing:** last character-sheet feature after Phase 1x honesty/code fixes, remaining catalog, APG follow-through, optional goldens, magic overlay, and OGL-with-rules-text. Not on the PF1e 0.9 critical path. Companion to [Attack Helper](sidebar-tools-attack-helper.md), not a replacement for it.
+**Status:** **Landed** (2026-09-20). Implemented under `app/src/shell/sidebar/tools/actionsList/`. Host lock: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
+**Id:** `shell.actions-list` (shared chrome; per-system action catalog and restriction table).  
+**Sequencing:** Shipped as the last character-sheet feature of Phase 1x (alongside [Attack Helper](sidebar-tools-attack-helper.md) and [Budget Calculator](sidebar-tools-budget-calculator.md)). Both PF1e and PF2e supported.
 
 ---
 

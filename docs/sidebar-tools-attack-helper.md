@@ -1,8 +1,8 @@
-# Attack Helper (later sidebar tool)
+# Attack Helper (sidebar tool)
 
-**Status:** Named future tool — **not implemented**. Host lock: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
-**Id (reserved):** `shell.attack-helper` (shared entry; per-system math behind it).  
-**Sequencing:** last character-sheet feature after Phase 1x honesty/code fixes, remaining catalog, APG follow-through, optional goldens, magic overlay, and OGL-with-rules-text (same window as [Actions List](sidebar-tools-actions-list.md) and [Budget Calculator](sidebar-tools-budget-calculator.md)). Not on the PF1e 0.9 critical path.
+**Status:** **Landed** (2026-09-20). Implemented under `app/src/shell/sidebar/tools/attackHelper/`. Host lock: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
+**Id:** `shell.attack-helper` (shared entry; per-system math behind it).  
+**Sequencing:** Shipped as the last character-sheet feature of Phase 1x (alongside [Actions List](sidebar-tools-actions-list.md) and [Budget Calculator](sidebar-tools-budget-calculator.md)). Both PF1e and PF2e supported. No in-app dice.
 
 ---
 

@@ -1,10 +1,10 @@
 # Sidebar host — tools and extra information
 
-**Status:** Product + shell lock (ADR 0005) — 2026-08-17  
+**Status:** Host and named tools landed (Attack Helper, Actions List, Budget Calculator) — 2026-09-22  
 **Parent:** [ADR 0005](adr/0005-sidebar-host.md), [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md), [`shared-kernel-design.md`](shared-kernel-design.md)  
-**Code:** `app/src/shell/sidebar/SidebarHost.tsx`. Types (`SidebarTool`, `SidebarToolContext`) live in `app/src/shell/types.ts`. Named tools not implemented.
+**Code:** `app/src/shell/sidebar/SidebarHost.tsx`. Types (`SidebarTool`, `SidebarToolContext`) live in `app/src/shell/types.ts`. Named tools implemented in `app/src/shell/sidebar/tools/` (`AttackHelperTool.tsx`, `ActionsListTool.tsx`, `BudgetCalculatorTool.tsx`).
 
-This document locks the **host**. Named later tools are listed in §5; they are **not** implemented until a tools increment.
+This document specifies the **host** and lists the named tools in §5 (Attack Helper, Actions List, and Budget Calculator all landed).
 
 ---
 
@@ -117,7 +117,7 @@ The old “reference sidebar” (Spells / Afflictions / Actions) remains a possi
 | Docs (now) | This file + ADR 0005 |
 | **M** | Done — empty collapsed `<aside>` in the shell |
 | **Sb** | Done (thin host: collapse, registry, empty state, context wired) |
-| **Tools** (later) | **Last character-sheet feature** after Phase 1x honesty/code fixes, remaining catalog, APG follow-through, optional goldens, magic overlay, and OGL-with-rules-text. **Attack Helper**, **Actions List**, and **Budget Calculator** are specified; encyclopedia is a candidate after those |
+| **Tools** | **Landed** for both PF1e and PF2e: **Attack Helper**, **Actions List**, and **Budget Calculator** with active session switching, complete formulas, table-dice reminders, and i18n parity |
 | 0.9 | PF1e bar does **not** wait on tools. Empty/collapsed host is fine |
 | 1.0 | Same; Spanish includes `shell.tools*` if the host shipped |
 
@@ -153,3 +153,4 @@ Import rule unchanged: PF1e tools must not import PF2e modules.
 | 2026-08-17 | Reserve **Budget Calculator** (buy vs craft cost, time, DC, requirements) |
 | 2026-08-19 | Types live in `shell/types.ts`; `labelKey`; collapse when no tools or `max-width: 800px` |
 | 2026-09-03 | Named tools are the last character-sheet feature; ~90% gate retired |
+| 2026-09-22 | Named sidebar tools landed: Attack Helper, Actions List, Budget Calculator |

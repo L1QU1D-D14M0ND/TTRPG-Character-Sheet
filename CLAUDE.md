@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A local-first, installable PWA **player** character sheet for tabletop systems, built spreadsheet-style (Build + Play, no dice roller, no VTT). Working title: **TTRPG Character Sheet**. Repo and npm package are named `ttrpg-character-sheet`, renamed from the earlier PF2e-only-phase name `Pathfinder-2E-Card` / `pathfinder-2e-character-sheet` (see [ADR 0008](docs/adr/0008-repo-package-rename.md)); the name is not indicative of current scope beyond that.
 
-**Current product priority (read before making scope calls):** Pathfinder **First Edition (PF1e)** is the system under active development; Pathfinder **Second Edition (PF2e)** is an existing, working vertical slice that **must not regress** but is not being extended right now. If a task looks like "add a PF2e feature," check [`docs/ROADMAP.md`](docs/ROADMAP.md) and [ADR 0003](docs/adr/0003-multi-system-product-direction.md) first — that work is explicitly deferred to a later release unless the user says otherwise.
+**Current product priority (read before making scope calls):** Pathfinder **First Edition (PF1e)** feature scope is complete (CRB catalog, APG follow-through, catalog picker, and sidebar tools landed); the project is in a pre-release and hygiene phase. Pathfinder **Second Edition (PF2e)** is an existing, working vertical slice that **must not regress** and is deferred to a later release. If a task looks like "add a PF2e feature," check [`docs/ROADMAP.md`](docs/ROADMAP.md) and [ADR 0003](docs/adr/0003-multi-system-product-direction.md) first — that work is explicitly deferred to a later release unless the user says otherwise.
 
 Everything here is governed by a stack of ADRs in `docs/adr/`. When a change touches product scope, schema shape, or shared-vs-per-system code, check the relevant ADR before assuming; a lot of scope decisions in this repo are deliberately locked, not open design space.
 
@@ -79,7 +79,7 @@ CRB "batch" test files (`crbBatch1.test.ts` … `crbBatchW6.test.ts`, `crbBatchF
 
 ### Sidebar host (ADR 0005)
 
-`app/src/shell/sidebar/SidebarHost.tsx` is a registry-based rail shown beside the loaded sheet. Tools read `character`/`derived` and write only through the same `update(mutator)` path the spreadsheet panels use — no parallel state, no bypassing Ajv validation on save. Both `pf1eModule.sidebarTools` and `pf2eModule.sidebarTools` are currently **empty arrays** — named tools (Attack Helper, Actions List, Budget Calculator; see `docs/sidebar-tools-*.md`) are the **last character-sheet feature**. Don't implement one unless asked.
+`app/src/shell/sidebar/SidebarHost.tsx` is a registry-based rail shown beside the loaded sheet. Tools read `character`/`derived` and write only through the same `update(mutator)` path the spreadsheet panels use — no parallel state, no bypassing Ajv validation on save. All three named tools (**Attack Helper**, **Actions List**, and **Budget Calculator**; see `docs/sidebar-tools-*.md`) have **landed** in `app/src/shell/sidebar/tools/` and are registered on both `pf1eModule.sidebarTools` and `pf2eModule.sidebarTools` (no in-app dice; physical table dice only). Empty/collapsed host default and `focusTab` contracts are preserved.
 
 ### PWA
 

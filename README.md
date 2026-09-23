@@ -2,7 +2,7 @@
 
 **TTRPG Character Sheet** (working title) — installable local PWA for **player** characters. **Pathfinder First Edition** is the development priority; **Pathfinder Second Edition** is a preserved slice that also computes (Build + Play) and must not regress.
 
-**Current phase:** **Finish First Edition — CRB catalog complete; APG follow-through next.** 1.0 landed (Spanish + playable APG Synthesist). Wizard 7 playtest override and honesty/code fixes landed (2026-09-12). All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) landed, completing the entire CRB player catalog. Next is APG follow-through (Summoner spells-per-day + spell catalog). PF2e slice stays in the app and must not regress; remaining PF2e work waits for a **later release**. **Sidebar tools are the last character-sheet feature.** See [ADR 0003](docs/adr/0003-multi-system-product-direction.md), [APG pack](docs/pf1e-apg-pack-design.md), and [CRB pack](docs/pf1e-crb-pack-design.md).
+**Current phase:** **First Edition complete; pre-release / hygiene.** 1.0 landed (Spanish + playable APG Synthesist). Wizard 7 playtest override and honesty/code fixes landed (2026-09-12). All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) landed, completing the entire CRB player catalog. APG follow-through (Summoner spells-per-day table + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2) and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. PF2e slice stays in the app and must not regress; remaining PF2e work waits for a **later release**. See [ADR 0003](docs/adr/0003-multi-system-product-direction.md), [APG pack](docs/pf1e-apg-pack-design.md), and [CRB pack](docs/pf1e-crb-pack-design.md).
 
 The repository and npm package were renamed from `Pathfinder-2E-Card` / `pathfinder-2e-character-sheet` to `ttrpg-character-sheet` — see [ADR 0008](docs/adr/0008-repo-package-rename.md).
 
@@ -16,14 +16,16 @@ npm run dev
 
 - React + TypeScript + Vite
 - Save/Load `.json` (Ajv). Missing `system` loads as PF2e; Save writes `"system": "pf1e"` or `"pf2e"`
-- Layout: `app/src/shared` kernel, `app/src/shell` (chrome + empty Tools sidebar), `app/src/systems/pf1e`, `app/src/systems/pf2e`
-- PF1e martial + spell calc (Fighter 5, Wizard 5, Fighter 2 / Wizard 3, Synthesist 5, and Wizard 7 goldens) and PF2e core calc engine (Fighter 5, Wizard 5, Bard 5, Cleric 5, and Ranger 5 goldens)
+- Layout: `app/src/shared` kernel, `app/src/shell` (chrome + collapsible Tools sidebar), `app/src/systems/pf1e`, `app/src/systems/pf2e`
+- PF1e martial + spell calc (Fighter 5, Wizard 5, Fighter 2 / Wizard 3, Synthesist 5, Wizard 7, Cleric 5, Duelist 7, and Ranger 5 goldens) and PF2e core calc engine (Fighter 5, Wizard 5, Bard 5, Cleric 5, and Ranger 5 goldens)
 - Spreadsheet editors per system (PF1e: identity/classes, abilities, skills, combat, spells, inventory, play)
-- **Last sheet feature:** **Attack Helper**, **Actions List**, and **Budget Calculator** sidebar tools (no dice roller). Remaining PF2e work waits for a later release.
+- **Sidebar tools:** **Attack Helper**, **Actions List**, and **Budget Calculator** (no in-app dice; physical table dice only). Remaining PF2e work waits for a later release.
 
 ## Docs
 
 - [Roadmap](docs/ROADMAP.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
 - [ADR 0003 — Multi-system product direction](docs/adr/0003-multi-system-product-direction.md) (current lock)
 - [ADR 0004 — Shared kernel vs per-system modules](docs/adr/0004-shared-kernel.md)
 - [ADR 0005 — Loaded-sheet sidebar host](docs/adr/0005-sidebar-host.md)
@@ -35,9 +37,9 @@ npm run dev
 - [PF1e CRB remaining feat/spell ids (F1–F4, S1–S5)](docs/pf1e-crb-feat-spell-ids.md)
 - [PF1e APG pack (1.0 Synthesist)](docs/pf1e-apg-pack-design.md)
 - [PF1e playtest reference — Flare Nightingale (priority-override source)](docs/pf1e-playtest-flare-nightingale.md)
-- [Attack Helper (later tool)](docs/sidebar-tools-attack-helper.md)
-- [Actions List (later tool)](docs/sidebar-tools-actions-list.md)
-- [Budget Calculator (later tool)](docs/sidebar-tools-budget-calculator.md)
+- [Attack Helper (sidebar tool)](docs/sidebar-tools-attack-helper.md)
+- [Actions List (sidebar tool)](docs/sidebar-tools-actions-list.md)
+- [Budget Calculator (sidebar tool)](docs/sidebar-tools-budget-calculator.md)
 - [PF1e system design](docs/pf1e-character-sheet-design.md)
 - [PF2e system design](docs/pf2e-dynamic-character-sheet-design.md) (still valid for PF2e documents)
 - [Next increment — multi-system / PF1e](docs/next-increment-multi-system.md)
@@ -69,9 +71,17 @@ npm run dev
 - [`fixtures/characters/golden/pf1e/fighter-2-wizard-3.json`](fixtures/characters/golden/pf1e/fighter-2-wizard-3.json) — PF1e Fighter 2 / Wizard 3
 - [`fixtures/characters/golden/pf1e/synthesist-5.json`](fixtures/characters/golden/pf1e/synthesist-5.json) — PF1e Summoner 5 Synthesist (Radiant Striker)
 - [`fixtures/characters/golden/pf1e/wizard-transmutation-7.json`](fixtures/characters/golden/pf1e/wizard-transmutation-7.json) — PF1e Wizard 7 (Transmutation specialist, Flare Nightingale)
-- [`content/pf1e/crb/`](content/pf1e/crb/) — PF1e CRB pack (batches 1–21, W1–W7, and F1–F4 complete; all 177 feats / 44 spells / 3 class features packed; Batch S1 next; mechanics-only)
-- [`content/pf1e/apg/`](content/pf1e/apg/) — PF1e APG pack (Summoner / Synthesist; mechanics-only)
+- [`content/pf1e/crb/`](content/pf1e/crb/) — PF1e CRB pack (batches 1–21, W1–W7, F1–F4, and S1–S5 complete; all 177 feats and all 622 spells packed; mechanics-only)
+- [`content/pf1e/apg/`](content/pf1e/apg/) — PF1e APG pack (Summoner class, Synthesist archetype, evolutions, and 27-spell catalog; mechanics-only)
+
+## Trademark & Non-Affiliation Disclaimer
+
+This application is an independent, community-created software tool.
+
+"Pathfinder" and "Pathfinder Roleplaying Game" are registered trademarks of Paizo Inc. **TTRPG Character Sheet** is not affiliated with, endorsed, sponsored, or approved by Paizo Inc.
+
+Game mechanics and rules references used in content packs are provided solely as uncopyrightable functional game statistics under the Open Game License (OGL 1.0a) mechanics-only policy outlined in [ADR 0007](docs/adr/0007-content-licensing.md).
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) · See [NOTICE](NOTICE) for attributions.
