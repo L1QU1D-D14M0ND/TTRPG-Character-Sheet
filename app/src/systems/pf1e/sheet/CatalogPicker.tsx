@@ -1,5 +1,6 @@
-import { useEffect, useId, useMemo, useState } from 'react'
+import { useCallback, useId, useMemo, useState } from 'react'
 import { useT, type TranslateFn } from '../../../shared/i18n'
+import { ModalDialog } from '../../../shared/ui/ModalDialog'
 import {
   catalogId,
   catalogName,
@@ -37,22 +38,10 @@ export function CatalogPicker<K extends CatalogKind>({
   const groups = useMemo(() => groupsFor(kind), [kind])
   const emptyLabel = customLabel ?? t('pf1e.common.custom')
 
-  useEffect(() => {
-    if (!open) return
-    function onKey(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setOpen(false)
-        setQuery('')
-      }
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [open])
-
-  function close() {
+  const close = useCallback(() => {
     setOpen(false)
     setQuery('')
-  }
+  }, [])
 
   function pick(id: string | null) {
     onPick(stamp(kind, value, id))
@@ -79,47 +68,38 @@ export function CatalogPicker<K extends CatalogKind>({
         value={selectedName}
         onChange={(e) => onPick(setCatalogName(kind, value, e.target.value))}
       />
-      {open ? (
-        <div
-          className="dialog-backdrop"
-          role="presentation"
-          onClick={close}
-        >
-          <div
-            className="dialog-card catalog-picker-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={titleId}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2 id={titleId}>{catalogLabel}</h2>
-            {withSearch ? (
-              <input
-                type="search"
-                aria-label={t('pf1e.catalogPicker.search')}
-                placeholder={t('pf1e.catalogPicker.search')}
-                value={query}
-                autoFocus
-                onChange={(e) => setQuery(e.target.value)}
-              />
-            ) : null}
-            <CatalogOptions
-              groups={groups}
-              query={query}
-              selectedId={selectedId}
-              customLabel={emptyLabel}
-              noMatches={t('pf1e.catalogPicker.noMatches')}
-              onPick={pick}
-              t={t}
-            />
-            <div className="dialog-actions">
-              <button type="button" onClick={close}>
-                {t('pf1e.catalogPicker.close')}
-              </button>
-            </div>
-          </div>
+      <ModalDialog
+        open={open}
+        onClose={close}
+        labelledBy={titleId}
+        className="catalog-picker-dialog"
+      >
+        <h2 id={titleId}>{catalogLabel}</h2>
+        {withSearch ? (
+          <input
+            type="search"
+            aria-label={t('pf1e.catalogPicker.search')}
+            placeholder={t('pf1e.catalogPicker.search')}
+            value={query}
+            data-autofocus=""
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        ) : null}
+        <CatalogOptions
+          groups={groups}
+          query={query}
+          selectedId={selectedId}
+          customLabel={emptyLabel}
+          noMatches={t('pf1e.catalogPicker.noMatches')}
+          onPick={pick}
+          t={t}
+        />
+        <div className="dialog-actions">
+          <button type="button" onClick={close}>
+            {t('pf1e.catalogPicker.close')}
+          </button>
         </div>
-      ) : null}
+      </ModalDialog>
     </>
   )
 }

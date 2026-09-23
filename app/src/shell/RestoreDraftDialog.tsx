@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
 import { useT } from '../shared/i18n'
+import { ModalDialog } from '../shared/ui/ModalDialog'
 
 export function RestoreDraftDialog({
   open,
@@ -11,36 +11,27 @@ export function RestoreDraftDialog({
   onDiscard: () => void
 }) {
   const t = useT()
-  useEffect(() => {
-    if (!open) return
-    function onKey(event: KeyboardEvent) {
-      if (event.key === 'Escape') onDiscard()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [open, onDiscard])
-
-  if (!open) return null
   return (
-    <div className="dialog-backdrop" role="presentation" onClick={onDiscard}>
-      <div
-        className="dialog-card"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="restore-draft-title"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h2 id="restore-draft-title">{t('shell.draftRestoreTitle')}</h2>
-        <p>{t('shell.draftRestoreBody')}</p>
-        <div className="dialog-actions">
-          <button type="button" className="primary" onClick={onRestore}>
-            {t('shell.draftRestore')}
-          </button>
-          <button type="button" onClick={onDiscard}>
-            {t('shell.draftDiscard')}
-          </button>
-        </div>
+    <ModalDialog
+      open={open}
+      onClose={onDiscard}
+      labelledBy="restore-draft-title"
+    >
+      <h2 id="restore-draft-title">{t('shell.draftRestoreTitle')}</h2>
+      <p>{t('shell.draftRestoreBody')}</p>
+      <div className="dialog-actions">
+        <button
+          type="button"
+          className="primary"
+          data-autofocus=""
+          onClick={onRestore}
+        >
+          {t('shell.draftRestore')}
+        </button>
+        <button type="button" onClick={onDiscard}>
+          {t('shell.draftDiscard')}
+        </button>
       </div>
-    </div>
+    </ModalDialog>
   )
 }
