@@ -951,3 +951,20 @@ button.hp-max-button.overridden {
     width: 8rem;
   }
 }
+
+.crash-screen {
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  border: 2px solid #222;
+  background: #fff;
+}
+
+.crash-detail {
+  font-size: 0.8rem;
+  background: #f3f3f0;
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}

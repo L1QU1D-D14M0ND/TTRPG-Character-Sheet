@@ -12,11 +12,23 @@ function openDb(): Promise<IDBDatabase> {
         db.createObjectStore(DRAFT_STORE)
       }
     }
-    req.onsuccess = () => resolve(req.result)
+    req.onsuccess = () => {
+      const db = req.result
+      // Another tab upgrading or deleting this database cannot proceed while
+      // we hold the connection open, so yield instead of blocking it.
+      db.onversionchange = () => db.close()
+      resolve(db)
+    }
     req.onerror = () => reject(req.error ?? new Error('IndexedDB open failed'))
   })
 }
 
+/**
+ * Each operation opens and closes its own connection. A connection left open
+ * blocks `deleteDatabase` and any future version upgrade indefinitely, and
+ * autosave touches this store every few seconds, so a leaked handle is the
+ * normal case rather than the rare one.
+ */
 function withStore<T>(
   mode: IDBTransactionMode,
   run: (store: IDBObjectStore) => IDBRequest<T>,
@@ -26,10 +38,18 @@ function withStore<T>(
       new Promise<T>((resolve, reject) => {
         const tx = db.transaction(DRAFT_STORE, mode)
         const req = run(tx.objectStore(DRAFT_STORE))
-        req.onsuccess = () => resolve(req.result)
+        // Resolve on transaction completion, not request success: a write is
+        // only durable once its transaction commits.
+        let result: T
+        req.onsuccess = () => {
+          result = req.result
+        }
+        tx.oncomplete = () => resolve(result)
+        tx.onabort = () =>
+          reject(tx.error ?? new Error('IndexedDB transaction aborted'))
         req.onerror = () =>
           reject(req.error ?? new Error('IndexedDB request failed'))
-      }),
+      }).finally(() => db.close()),
   )
 }
 
