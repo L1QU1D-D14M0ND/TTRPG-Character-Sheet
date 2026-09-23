@@ -1,8 +1,9 @@
 /**
- * Split so React Fast Refresh works: `context.tsx` exports only the provider
- * and its hooks, while message catalogs, `translate`, and locale storage live
- * in `catalog.ts` and can be imported by non-component code. Import sites keep
- * using `shared/i18n`.
+ * Split so React Fast Refresh works, since it only refreshes a module whose
+ * exports are all components: `context.tsx` holds the provider component,
+ * `hooks.ts` the hooks, `contextValue.ts` the context object, and `catalog.ts`
+ * the message catalogs, `translate`, and locale storage that non-component
+ * code imports. Import sites keep using `shared/i18n`.
  */
 export {
   CATALOGS,
@@ -17,4 +18,6 @@ export {
   type MessageTree,
   type TranslateFn,
 } from './catalog'
-export { I18nProvider, useI18n, useT, type I18nContextValue } from './context'
+export { I18nProvider } from './context'
+export { useI18n, useT } from './hooks'
+export { type I18nContextValue } from './contextValue'
