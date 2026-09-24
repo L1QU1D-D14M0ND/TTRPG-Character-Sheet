@@ -5,10 +5,10 @@ import {
   catalogId,
   catalogName,
   groupsFor,
-  matchesName,
   setCatalogName,
   showsSearch,
   stamp,
+  visibleCatalog,
   type CatalogKind,
   type HostFor,
 } from './catalogPicker'
@@ -121,13 +121,10 @@ function CatalogOptions({
   onPick: (id: string | null) => void
   t: TranslateFn
 }) {
-  const filtered = groups
-    .map((group) => ({
-      ...group,
-      rows: group.rows.filter((row) => matchesName(row.name, query)),
-    }))
-    .filter((group) => group.rows.length > 0)
-  const anyRows = filtered.some((group) => group.rows.length > 0)
+  const visible = useMemo(
+    () => visibleCatalog(groups, query, selectedId),
+    [groups, query, selectedId],
+  )
 
   return (
     <div className="catalog-picker-list" role="listbox">
@@ -136,8 +133,8 @@ function CatalogOptions({
         label={customLabel}
         onClick={() => onPick(null)}
       />
-      {!anyRows ? <p className="muted">{noMatches}</p> : null}
-      {filtered.map((group, index) => (
+      {visible.empty ? <p className="muted">{noMatches}</p> : null}
+      {visible.groups.map((group, index) => (
         <div key={group.labelKey ?? index}>
           {group.labelKey ? (
             <p className="catalog-picker-group">{t(group.labelKey)}</p>
@@ -153,6 +150,11 @@ function CatalogOptions({
           ))}
         </div>
       ))}
+      {visible.hidden > 0 ? (
+        <p className="muted catalog-picker-more" role="status">
+          {t('pf1e.catalogPicker.more', { count: visible.hidden })}
+        </p>
+      ) : null}
     </div>
   )
 }

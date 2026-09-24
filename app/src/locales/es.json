@@ -224,6 +224,7 @@
     "catalogPicker": {
       "search": "Buscar catálogo",
       "noMatches": "Ningún nombre coincide.",
+      "more": "{count} más — escribe para acotar la lista.",
       "close": "Cerrar"
     },
     "identity": {

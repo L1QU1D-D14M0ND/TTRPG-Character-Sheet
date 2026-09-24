@@ -16,6 +16,8 @@ import {
   setCatalogName,
   showsSearch,
   stamp,
+  visibleCatalog,
+  VISIBLE_ROW_LIMIT,
 } from './catalogPicker'
 
 describe('catalog picker kinds', () => {
@@ -149,5 +151,43 @@ describe('catalog picker kinds', () => {
     expect(catalogId('spell', apg)).toBe('spell.summon-eidolon')
     expect(catalogName('spell', apg)).toBe('Summon Eidolon')
     expect(apg.spellLevel).toBe(2)
+  })
+
+  it('caps the rendered rows and reports how many it held back', () => {
+    const groups = groupsFor('spell')
+    const total = groups.reduce((sum, g) => sum + g.rows.length, 0)
+    expect(total).toBeGreaterThan(VISIBLE_ROW_LIMIT)
+
+    const visible = visibleCatalog(groups, '', null)
+    const shown = visible.groups.reduce((sum, g) => sum + g.rows.length, 0)
+    expect(shown).toBe(VISIBLE_ROW_LIMIT)
+    expect(visible.hidden).toBe(total - VISIBLE_ROW_LIMIT)
+    expect(visible.empty).toBe(false)
+  })
+
+  it('keeps the selected row visible even when it sorts past the cap', () => {
+    const groups = groupsFor('spell')
+    // An APG spell lives in the second group, far beyond the first page.
+    const visible = visibleCatalog(groups, '', 'spell.summon-eidolon')
+    const ids = visible.groups.flatMap((g) => g.rows.map((r) => r.id))
+    expect(ids).toContain('spell.summon-eidolon')
+    // The pinned row is extra, so the cap still governs the rest.
+    expect(ids.length).toBe(VISIBLE_ROW_LIMIT + 1)
+  })
+
+  it('drops the overflow note once a query fits under the cap', () => {
+    const visible = visibleCatalog(groupsFor('spell'), 'fireball', null)
+    expect(visible.hidden).toBe(0)
+    expect(visible.empty).toBe(false)
+    expect(visible.groups.flatMap((g) => g.rows).map((r) => r.name)).toContain(
+      'Fireball',
+    )
+  })
+
+  it('reports empty rather than hidden when nothing matches', () => {
+    const visible = visibleCatalog(groupsFor('spell'), 'zzzz-not-a-spell', null)
+    expect(visible.empty).toBe(true)
+    expect(visible.hidden).toBe(0)
+    expect(visible.groups).toEqual([])
   })
 })

@@ -224,6 +224,7 @@
     "catalogPicker": {
       "search": "Search catalog",
       "noMatches": "No matching names.",
+      "more": "{count} more — type to narrow the list.",
       "close": "Close"
     },
     "identity": {

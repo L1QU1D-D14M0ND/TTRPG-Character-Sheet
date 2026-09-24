@@ -9,6 +9,7 @@ import { createEmptyFeat } from '../character'
 import type { FeatEntry, SpellListEntry } from '../character/types'
 import { createEmptySpellListEntry } from '../character/createRows'
 import { CatalogPicker } from './CatalogPicker'
+import { VISIBLE_ROW_LIMIT } from './catalogPicker'
 
 function FeatHarness({ initial }: { initial?: FeatEntry }) {
   const [row, setRow] = useState(() => initial ?? createEmptyFeat())
@@ -89,6 +90,30 @@ describe('CatalogPicker', () => {
     expect(
       within(dialog).queryByRole('option', { name: 'Magic Missile' }),
     ).not.toBeInTheDocument()
+  })
+
+  it('shows a first page with an overflow note, and search reaches past it', async () => {
+    const user = userEvent.setup()
+    render(
+      <I18nProvider>
+        <SpellHarness />
+      </I18nProvider>,
+    )
+    await user.click(screen.getByLabelText('CRB spell'))
+    const dialog = screen.getByRole('dialog')
+
+    // Custom plus one capped page, not the whole 600+ row catalog.
+    const firstPage = within(dialog).getAllByRole('option')
+    expect(firstPage.length).toBe(VISIBLE_ROW_LIMIT + 1)
+    expect(within(dialog).getByRole('status')).toHaveTextContent(/more/i)
+
+    // A spell far past the cap is still reachable by name, and once the
+    // matches fit the note goes away.
+    await user.type(screen.getByLabelText('Search catalog'), 'fireball')
+    expect(
+      within(dialog).getByRole('option', { name: 'Fireball' }),
+    ).toBeInTheDocument()
+    expect(within(dialog).queryByRole('status')).not.toBeInTheDocument()
   })
 
   it('closes on Escape', () => {
