@@ -13,6 +13,7 @@ All 177 CRB feats (110 combat, 49 general, 9 item creation, 9 metamagic) and all
 - From `app/`, run `npx vitest run src/systems/pf1e`.
 - Do **not** record a demo video or upload Inventory screenshots unless the Inventory UI itself changed.
 - Do **not** invent ids outside the lock file.
+- The catalog picker renders a capped first page (`VISIBLE_ROW_LIMIT`), so a row past the cap is reachable only by searching. Drive it from panel tests with the shared `src/test/pickCatalog` helper, which narrows by name for you.
 
 See [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md) §8.
 
