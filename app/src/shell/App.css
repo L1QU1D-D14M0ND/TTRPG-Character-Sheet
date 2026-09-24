@@ -245,17 +245,11 @@ button.hp-max-button.overridden {
   border-color: #c4a35a;
 }
 
+/* Sizing only: the card, backdrop, and focus contract come from ModalDialog. */
 .hp-dialog {
-  border: 2px solid #222;
-  padding: 0.75rem 1rem 1rem;
   max-width: 52rem;
-  width: calc(100% - 2rem);
   max-height: 90vh;
   overflow: auto;
-}
-
-.hp-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.35);
 }
 
 .hp-dialog .sheet-table {

@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useId } from 'react'
 import type { CharacterDocument } from '../character'
 import { signed } from '../../../shared/format'
 import { useT } from '../../../shared/i18n'
+import { ModalDialog } from '../../../shared/ui/ModalDialog'
 import { hpBreakdown, setHitDieRoll } from '../engine/vitals'
 import type { SheetUpdate } from './update'
 
@@ -17,16 +18,9 @@ export function HpBreakdownDialog({
   update: SheetUpdate
 }) {
   const t = useT()
-  const ref = useRef<HTMLDialogElement>(null)
+  const titleId = useId()
   const conMod = Math.floor((character.abilities.con.score - 10) / 2)
   const breakdown = hpBreakdown(character.vitals, character.classes, conMod)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    if (open && !el.open) el.showModal()
-    if (!open && el.open) el.close()
-  }, [open])
 
   function writeRoll(index: number, raw: string) {
     if (raw === '') {
@@ -78,15 +72,15 @@ export function HpBreakdownDialog({
   }
 
   return (
-    <dialog
-      ref={ref}
-      className="hp-dialog"
+    <ModalDialog
+      open={open}
       onClose={onClose}
-      aria-labelledby="hp-dialog-title"
+      labelledBy={titleId}
+      className="hp-dialog"
     >
       <div className="table-toolbar">
-        <strong id="hp-dialog-title">{t('pf1e.hp.title')}</strong>
-        <button type="button" onClick={onClose}>
+        <h2 id={titleId}>{t('pf1e.hp.title')}</h2>
+        <button type="button" data-autofocus="" onClick={onClose}>
           {t('pf1e.hp.close')}
         </button>
       </div>
@@ -238,6 +232,6 @@ export function HpBreakdownDialog({
           </tr>
         </tbody>
       </table>
-    </dialog>
+    </ModalDialog>
   )
 }
