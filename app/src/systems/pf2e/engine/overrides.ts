@@ -4,6 +4,8 @@ import {
   applyOverrides as applyOverridesShared,
   isFiniteNumber,
   isOverridden,
+  isSafeKey,
+  ownEntry,
 } from '../../../shared/overrides'
 import type { DerivedView } from './types'
 
@@ -84,7 +86,12 @@ function applyOne(view: DerivedView, path: string, value: unknown): boolean {
     return true
   }
 
-  if (parts.length === 3 && parts[1] === 'skillTotals' && parts[2]) {
+  if (
+    parts.length === 3 &&
+    parts[1] === 'skillTotals' &&
+    parts[2] &&
+    isSafeKey(parts[2])
+  ) {
     if (!isFiniteNumber(value)) return false
     view.skillTotals[parts[2]] = value
     return true
@@ -97,7 +104,7 @@ function applyOne(view: DerivedView, path: string, value: unknown): boolean {
     parts[2]
   ) {
     if (!isFiniteNumber(value)) return false
-    const existing = view.strikes[parts[2]]
+    const existing = ownEntry(view.strikes, parts[2])
     if (!existing) return false
     existing.attack = value
     return true
@@ -110,7 +117,7 @@ function applyOne(view: DerivedView, path: string, value: unknown): boolean {
     parts[2]
   ) {
     if (!isFiniteNumber(value)) return false
-    const existing = view.spellcasting[parts[2]]
+    const existing = ownEntry(view.spellcasting, parts[2])
     if (!existing) return false
     if (parts[3] === 'attack') existing.attack = value
     else existing.dc = value

@@ -14,6 +14,28 @@ export function isFiniteNumber(value: unknown): value is number {
 }
 
 /**
+ * Override paths come from a loaded document, so the segment naming a record
+ * entry is untrusted text. Plain indexing resolves `__proto__`, `constructor`,
+ * and `toString` to things inherited from `Object.prototype`, which made an
+ * override like `derived.attacks.__proto__.attack` look like a real attack row
+ * and then crash on its missing fields. Resolve entries by own key only, so an
+ * unsafe segment is simply an unknown path and lands on ignoredOverridePaths.
+ */
+export function ownEntry<T>(
+  record: Record<string, T>,
+  key: string,
+): T | undefined {
+  return Object.prototype.hasOwnProperty.call(record, key)
+    ? record[key]
+    : undefined
+}
+
+/** True when `key` is safe to write as an own property of a plain record. */
+export function isSafeKey(key: string): boolean {
+  return key !== '__proto__' && key !== 'constructor' && key !== 'prototype'
+}
+
+/**
  * Apply overrides last. `applyOne` is per-system (allow-list + Derived shape).
  * Unknown paths are recorded on ignoredOverridePaths.
  */
