@@ -5,7 +5,11 @@ import { CharacterSaveError, readTextFile } from '../shared/saveLoad'
 import type { SystemId } from '../shared/envelope'
 import { pf1eModule } from '../systems/pf1e/module'
 import { pf2eModule } from '../systems/pf2e/module'
-import { parseLoadedSheet, type LoadedSheet } from './loadSheet'
+import {
+  parseLoadedSheet,
+  type DocumentFor,
+  type LoadedSheet,
+} from './loadSheet'
 import { parseDraft } from './draft'
 import { clearDraft, readDraft, writeDraft } from './draftStore'
 import {
@@ -13,6 +17,7 @@ import {
   downloadSheet,
   serializeSheet,
   stampSheetLocale,
+  SYSTEM_MODULES,
 } from './registry'
 import { NewSheetDialog } from './NewSheetDialog'
 import { RestoreDraftDialog } from './RestoreDraftDialog'
@@ -95,22 +100,49 @@ export default function App() {
   const [autosave, setAutosave] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
   const isNarrow = usePrefersNarrow()
-  const displayNameKey =
-    sheet.system === 'pf1e'
-      ? pf1eModule.displayNameKey
-      : pf2eModule.displayNameKey
-  const toolsEmpty =
-    (sheet.system === 'pf1e'
-      ? pf1eModule.sidebarTools
-      : pf2eModule.sidebarTools
-    ).length === 0
+  const activeModule = SYSTEM_MODULES[sheet.system]
+  const displayNameKey = activeModule.displayNameKey
+  const toolsEmpty = activeModule.sidebarTools.length === 0
   const sidebarCollapsed = sidebarOverride ?? (toolsEmpty || isNarrow)
+
+  /**
+   * The sidebar toggle is shared by the shell chrome and the sidebar itself,
+   * and both must agree on what "collapsed" means, including the derived
+   * default before the player has ever touched it.
+   */
+  const setSidebarCollapsed = useCallback(
+    (value: boolean | ((prev: boolean) => boolean)) => {
+      setSidebarOverride((prev) => {
+        const current = prev ?? (toolsEmpty || isNarrow)
+        return typeof value === 'function' ? value(current) : value
+      })
+    },
+    [toolsEmpty, isNarrow],
+  )
 
   function commitSheet(next: LoadedSheet, message: string) {
     setSheet(next)
     setStatus(message)
     setAutosave(true)
     setDraftGate('ready')
+  }
+
+  /**
+   * Panel edits are applied only when the loaded system still matches the one
+   * the panel was rendered for. A New or Load that swaps systems between a
+   * panel's render and its callback would otherwise write a document of one
+   * shape into the other system's slot.
+   */
+  function editCharacter<S extends SystemId>(
+    system: S,
+    mutator: (character: DocumentFor<S>) => DocumentFor<S>,
+  ) {
+    setAutosave(true)
+    setSheet((prev) => {
+      if (prev.system !== system) return prev
+      const character = mutator(prev.character as DocumentFor<S>)
+      return { system: prev.system, character } as LoadedSheet
+    })
   }
 
   useEffect(() => {
@@ -247,47 +279,30 @@ export default function App() {
       </header>
 
       <div className="workspace-layout">
+        {/*
+          One branch per system, because each `SheetSession` is instantiated at
+          that system's document and derived types; the `key` also discards
+          per-session UI state (active tab) when the loaded system changes.
+        */}
         {sheet.system === 'pf1e' ? (
           <SheetSession
             key="session-pf1e"
             module={pf1eModule}
             character={sheet.character}
-            setCharacter={(mutator) => {
-              setAutosave(true)
-              setSheet((prev) =>
-                prev.system === 'pf1e'
-                  ? { system: 'pf1e', character: mutator(prev.character) }
-                  : prev,
-              )
-            }}
+            setCharacter={(mutator) => editCharacter('pf1e', mutator)}
             setStatus={setStatus}
             sidebarCollapsed={sidebarCollapsed}
-            setSidebarCollapsed={(value) => {
-              const next =
-                typeof value === 'function' ? value(sidebarCollapsed) : value
-              setSidebarOverride(next)
-            }}
+            setSidebarCollapsed={setSidebarCollapsed}
           />
         ) : (
           <SheetSession
             key="session-pf2e"
             module={pf2eModule}
             character={sheet.character}
-            setCharacter={(mutator) => {
-              setAutosave(true)
-              setSheet((prev) =>
-                prev.system === 'pf2e'
-                  ? { system: 'pf2e', character: mutator(prev.character) }
-                  : prev,
-              )
-            }}
+            setCharacter={(mutator) => editCharacter('pf2e', mutator)}
             setStatus={setStatus}
             sidebarCollapsed={sidebarCollapsed}
-            setSidebarCollapsed={(value) => {
-              const next =
-                typeof value === 'function' ? value(sidebarCollapsed) : value
-              setSidebarOverride(next)
-            }}
+            setSidebarCollapsed={setSidebarCollapsed}
           />
         )}
       </div>

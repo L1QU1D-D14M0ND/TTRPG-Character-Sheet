@@ -8,6 +8,12 @@ export type LoadedSheet =
   | { system: 'pf1e'; character: Pf1eDocument }
   | { system: 'pf2e'; character: Pf2eDocument }
 
+/** The document type a given system's slot holds, derived from `LoadedSheet`. */
+export type DocumentFor<S extends SystemId> = Extract<
+  LoadedSheet,
+  { system: S }
+>['character']
+
 export function peekSystemId(text: string): SystemId {
   const data = parseJsonObject(text)
   return resolveSystemId(isRecord(data) ? data.system : undefined)
