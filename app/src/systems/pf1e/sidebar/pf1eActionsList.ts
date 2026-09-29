@@ -259,12 +259,23 @@ export function buildPf1eActions(
   })
   moveItems.push({
     id: 'move-draw-weapon',
-    label: 'Draw / Sheathe Weapon',
+    label: 'Draw Weapon',
     kind: 'move',
     actionEconomyGroup: 'move',
     actionCost: 'Move',
     availability: evaluate('move', 'move').availability,
     reason: evaluate('move', 'move').reason,
+    detail: 'No AoO',
+  })
+  moveItems.push({
+    id: 'move-sheathe-weapon',
+    label: 'Sheathe Weapon',
+    kind: 'move',
+    actionEconomyGroup: 'move',
+    actionCost: 'Move',
+    availability: evaluate('move', 'move').availability,
+    reason: evaluate('move', 'move').reason,
+    detail: 'Provokes AoO',
   })
 
   // 3. Full-Round Actions
@@ -333,6 +344,16 @@ export function buildPf1eActions(
 
   // 5. Free Actions
   const freeItems: ActionRow[] = [
+    {
+      id: 'free-5-foot-step',
+      label: '5-Foot Step',
+      kind: 'move',
+      actionEconomyGroup: 'free',
+      actionCost: 'None',
+      availability: evaluate('move', 'free').availability,
+      reason: evaluate('move', 'free').reason,
+      detail: 'No AoO; only if no other movement taken',
+    },
     {
       id: 'free-drop-item',
       label: 'Drop Item',

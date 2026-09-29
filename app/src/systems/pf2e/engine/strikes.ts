@@ -25,6 +25,24 @@ function weaponRank(
   return character.proficiencies.weapons[category]
 }
 
+export function scaleDamageDice(
+  damageDice: string,
+  strikingRune?: 'none' | 'striking' | 'greaterStriking' | 'majorStriking',
+): string {
+  if (!strikingRune || strikingRune === 'none') return damageDice
+  const targetCount =
+    strikingRune === 'majorStriking' ? 4 :
+    strikingRune === 'greaterStriking' ? 3 : 2
+  const match = damageDice.match(/^(\d+)(d\d+.*)$/)
+  if (match) {
+    const currentCount = parseInt(match[1], 10)
+    if (currentCount < targetCount) {
+      return `${targetCount}${match[2]}`
+    }
+  }
+  return damageDice
+}
+
 export function strikeAttack(
   strike: StrikeEntry,
   character: Pick<CharacterDocument, 'identity' | 'proficiencies' | 'inventory'>,
@@ -34,18 +52,26 @@ export function strikeAttack(
   const attr = attributeModifiers[attrKey] ?? 0
   const rank = weaponRank(strike, character)
   const proficiency = proficiencyBonus(rank, character.identity.level)
-  const extras = stackBreakdown(strike.modifiers)
+  const linked = findItem(character.inventory.items, strike.itemId)
+  const potency = linked?.weapon?.potencyRune ?? 0
+  const extras = stackBreakdown(strike.modifiers, {
+    item: potency !== 0 ? [potency] : [],
+  })
   return attr + proficiency + extras
 }
 
 export function strikeDamage(
   strike: StrikeEntry,
   attributeModifiers: Record<AttributeKey, number>,
+  character?: Pick<CharacterDocument, 'inventory'>,
 ): string {
+  const linked = character ? findItem(character.inventory.items, strike.itemId) : undefined
+  const striking = linked?.weapon?.strikingRune
+  const effectiveDice = scaleDamageDice(strike.damageDice, striking)
   const attrKey = strike.damageAttribute
   const bonus = attrKey ? (attributeModifiers[attrKey] ?? 0) : 0
-  if (!attrKey || bonus === 0) return strike.damageDice
-  return `${strike.damageDice}${signed(bonus)}`
+  if (!attrKey || bonus === 0) return effectiveDice
+  return `${effectiveDice}${signed(bonus)}`
 }
 
 export function strikeDerived(
@@ -55,7 +81,7 @@ export function strikeDerived(
 ): StrikeDerived {
   return {
     attack: strikeAttack(strike, character, attributeModifiers),
-    damage: strikeDamage(strike, attributeModifiers),
+    damage: strikeDamage(strike, attributeModifiers, character),
   }
 }
 

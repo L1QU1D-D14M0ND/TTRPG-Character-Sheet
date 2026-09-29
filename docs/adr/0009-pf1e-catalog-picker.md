@@ -38,6 +38,8 @@ ADR 0004 forbids extracting a generic UI primitive without a second caller in th
 - `AGENTS.md` requires a browser walkthrough: this is a new sheet control.
 - Identity stays on `<select>` until slice 2. That is an accepted, temporary split.
 
+**Postscript (2026-09-24):** The dialog migrated onto the shared `ModalDialog` (`app/src/shared/ui/ModalDialog.tsx`) with accessible focus trapping and restore. For performance on large catalogs (622 spells, 177 feats), the initial rendered page is capped at `VISIBLE_ROW_LIMIT = 50` plus custom/all options with an overflow note; rows past the cap are reached by narrowing the search query. Panel tests drive the picker with the shared `src/test/pickCatalog` helper.
+
 ## References
 
 - [ADR 0004 — Shared kernel vs per-system modules](0004-shared-kernel.md)

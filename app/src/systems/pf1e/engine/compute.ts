@@ -1,7 +1,7 @@
 import type { CharacterDocument } from '../character/types'
 import { skillPointsPerLevelFor } from '../content'
-import { abilityModifiers, effectiveAbilityScore, sizeAcAttackModifier, sizeCmbModifier } from './abilities'
-import { armorClassValues } from './ac'
+import { abilityModifiers, cmbAbilityModifier, effectiveAbilityScore, sizeAcAttackModifier, sizeCmbModifier } from './abilities'
+import { armorClassValues, flatFootedDex } from './ac'
 import { effectiveLoadCategory, loadThresholds, weightUsed } from './encumbrance'
 import { applyOverrides } from './overrides'
 import {
@@ -63,6 +63,7 @@ export function compute(character: ComputeInput): DerivedView {
       classSkill: skill.classSkill,
       armorPenaltyApplies: skill.armorPenaltyApplies,
       armorCheckPenalty: character.armorClass.armorCheckPenalty,
+      acpMultiplier: skill.key === 'swim' ? 2 : 1,
       misc: skill.misc ?? 0,
     })
   }
@@ -105,7 +106,7 @@ export function compute(character: ComputeInput): DerivedView {
     ac: ac.ac,
     touchAc: ac.touchAc,
     flatFootedAc: ac.flatFootedAc,
-    cmb: bab + mods.str + sizeCmb + character.combat.cmbMisc,
+    cmb: bab + cmbAbilityModifier(size, mods) + sizeCmb + character.combat.cmbMisc,
     cmd:
       10 +
       bab +
@@ -113,6 +114,14 @@ export function compute(character: ComputeInput): DerivedView {
       mods.dex +
       sizeCmb +
       character.armorClass.dodge +
+      character.armorClass.deflection +
+      character.combat.cmdMisc,
+    flatFootedCmd:
+      10 +
+      bab +
+      mods.str +
+      flatFootedDex(mods.dex) +
+      sizeCmb +
       character.armorClass.deflection +
       character.combat.cmdMisc,
     initiative: mods.dex + character.combat.initiativeMisc,

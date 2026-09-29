@@ -109,3 +109,5 @@ Until content packs exist, mechanical lines come from user-entered `summary` / t
 | --- | --- |
 | 2026-08-17 | Named later tool: Attack Helper; table dice only |
 | 2026-08-17 | Cross-link Budget Calculator (shop/craft the weapon first) |
+| 2026-09-20 | Tool landed for both PF1e and PF2e (`shell.attack-helper`) under `app/src/shell/sidebar/tools/attackHelper/` |
+| 2026-09-22 | i18n parity and pre-release hygiene landed |

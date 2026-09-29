@@ -53,8 +53,46 @@ export function sizeCmbModifier(size: Size): number {
   return -sizeAcAttackModifier(size)
 }
 
-/** Carrying-capacity size multiplier vs a Medium creature (CRB). */
-export function sizeCarryMultiplier(size: Size): number {
+/** Tiny or smaller creatures use Dexterity in place of Strength for CMB (CRB). */
+export function cmbAbilityModifier(
+  size: Size,
+  mods: Record<AbilityKey, number>,
+): number {
+  if (size === 'tiny' || size === 'diminutive' || size === 'fine') {
+    return mods.dex
+  }
+  return mods.str
+}
+
+/** Carrying-capacity size multiplier for quadrupeds vs a Medium biped (CRB Table 7-5). */
+export function quadrupedCarryMultiplier(size: Size): number {
+  switch (size) {
+    case 'fine':
+      return 1 / 4
+    case 'diminutive':
+      return 1 / 2
+    case 'tiny':
+      return 3 / 4
+    case 'small':
+      return 1
+    case 'medium':
+      return 1.5
+    case 'large':
+      return 3
+    case 'huge':
+      return 6
+    case 'gargantuan':
+      return 12
+    case 'colossal':
+      return 24
+  }
+}
+
+/** Carrying-capacity size multiplier vs a Medium biped (CRB Table 7-5). */
+export function sizeCarryMultiplier(size: Size, isQuadruped = false): number {
+  if (isQuadruped) {
+    return quadrupedCarryMultiplier(size)
+  }
   switch (size) {
     case 'fine':
       return 1 / 8

@@ -39,7 +39,12 @@ export function casterLevelForEntry(
   if (entry.casterLevelOverride != null) return entry.casterLevelOverride
   if (entry.classRowId) {
     const row = classes.find((cls) => cls.id === entry.classRowId)
-    return row?.levels ?? 0
+    const levels = row?.levels ?? 0
+    const classId = row?.class?.id?.toLowerCase()
+    if (classId === 'class.paladin' || classId === 'class.ranger') {
+      return Math.max(0, levels - 3)
+    }
+    return levels
   }
   return 0
 }

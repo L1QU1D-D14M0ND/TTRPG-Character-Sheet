@@ -27,6 +27,7 @@ export interface DerivedView {
   bulkCapacity: number
   bulkMaximum: number
   investedCount: number
+  maxDying: number
   strikes: Record<string, StrikeDerived>
   spellcasting: Record<string, SpellcastingDerived>
   overriddenPaths: string[]
@@ -47,6 +48,7 @@ export function toDerivedCache(view: DerivedView): DerivedCache {
     bulkUsed: view.bulkUsed,
     bulkCapacity: view.bulkCapacity,
     investedCount: view.investedCount,
+    maxDying: view.maxDying,
     computedAt: new Date().toISOString(),
   }
 }
@@ -67,4 +69,5 @@ export type ComputeInput = Pick<
   | 'spellcasting'
   | 'inventory'
   | 'overrides'
->
+> &
+  Partial<Pick<CharacterDocument, 'feats' | 'conditions'>>

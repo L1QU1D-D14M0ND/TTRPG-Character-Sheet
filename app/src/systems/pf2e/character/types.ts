@@ -391,6 +391,7 @@ export interface DerivedCache {
   bulkUsed?: number
   bulkCapacity?: number
   investedCount?: number
+  maxDying?: number
   computedAt?: string
   [key: string]: unknown
 }

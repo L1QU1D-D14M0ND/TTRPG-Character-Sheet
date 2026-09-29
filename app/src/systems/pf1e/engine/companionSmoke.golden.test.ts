@@ -59,7 +59,7 @@ describe('golden PF1e Companion Smoke: Ranger 5 with Animal Companion and Famili
 
   it('computes WIS ranger spellcasting with 1st-level slots', () => {
     const casting = view.spellcasting['cast-ranger']
-    expect(casting.casterLevel).toBe(5)
+    expect(casting.casterLevel).toBe(2) // Ranger CL = level - 3 (CRB p. 66)
     expect(casting.abilityMod).toBe(2)
     expect(casting.slotMaxByLevel[1]).toBe(2) // 1 base + 1 bonus
     expect(character.spellcasting[0]?.slots).toEqual([

@@ -383,22 +383,22 @@ This section is the **PF2e system target**, not the app 0.9 bar (see [umbrella �
 
 ## Appendix A — Coverage checklist
 
-- [ ] Identity / level / XP / ancestry / heritage / background / class
-- [ ] Attributes + boost history
-- [ ] Perception, saves, class DC
-- [ ] AC + armor + shield
-- [ ] HP max/current/temp + dying track
-- [ ] Speeds, senses, languages, traits
-- [ ] All skills + lore + armor/weapon proficiencies
-- [ ] Strikes (melee/ranged/unarmed)
-- [ ] Feats by category + class features (+ optional `effects` stubs)
-- [ ] Inventory, bulk, investment, wealth
-- [ ] Spell tradition, slots, cantrips, repertoire/prepared, focus, innate, rituals
-- [ ] Companions nested records
-- [ ] Conditions, hero points, daily/encounter resources
-- [ ] Notes / roleplay free text
-- [ ] Overrides + schemaVersion + Save/Load
-- [ ] i18n message catalogs (`en` → `es`)
+- [x] Identity / level / XP / ancestry / heritage / background / class
+- [x] Attributes + boost history
+- [x] Perception, saves, class DC
+- [x] AC + armor + shield
+- [x] HP max/current/temp + dying track
+- [x] Speeds, senses, languages, traits
+- [x] All skills + lore + armor/weapon proficiencies
+- [x] Strikes (melee/ranged/unarmed)
+- [x] Feats by category + class features (+ optional `effects` stubs)
+- [x] Inventory, bulk, investment, wealth
+- [x] Spell tradition, slots, cantrips, repertoire/prepared, focus, innate, rituals
+- [ ] Companions nested records (schema + golden yes; UI editor deferred to later PF2e release)
+- [x] Conditions, hero points, daily/encounter resources
+- [x] Notes / roleplay free text
+- [x] Overrides + schemaVersion + Save/Load (calc engine + persistence yes; override UI editor deferred)
+- [ ] i18n message catalogs (`en` → `es` runtime exists; PF2e panel literals deferred to later PF2e release)
 
 ## Appendix B — Document history
 
@@ -419,3 +419,5 @@ This section is the **PF2e system target**, not the app 0.9 bar (see [umbrella �
 | 2026-08-19 | Ranger 5 golden (nested wolf companion + `computeCompanion`); remaining §12 is PC2 class |
 | 2026-08-19 | Remaining PF2e leftover waits for a later *release*; finish First Edition first |
 | 2026-09-03 | Chrome title is TTRPG Character Sheet; IndexedDB draft landed; PF2e panel i18n still later release |
+| 2026-09-22 | Named sidebar tools (Attack Helper, Actions List, Budget Calculator) landed supporting PF2e |
+| 2026-09-26 | Document audit: synchronize Appendix A coverage checklist with implemented engine and sheet domains |

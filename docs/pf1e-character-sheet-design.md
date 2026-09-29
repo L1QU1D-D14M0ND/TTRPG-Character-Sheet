@@ -250,3 +250,8 @@ PF2e Dual Class (campaign option) stays out of PF2e 0.9; it is **not** the same 
 | 2026-09-14 | Batches F3a–F3c landed (47 general feats; 164 CRB feats packed; general category complete); next is F4 |
 | 2026-09-14 | Batch F4 landed (13 item creation + metamagic feats; all 177 CRB feats packed); next is S1 |
 | 2026-09-14 | Batches S1–S5 landed (578 spells packed; all 622 CRB spells packed; CRB catalog complete); next is APG follow-through |
+| 2026-09-20 | APG follow-through landed (Summoner spellsPerDay table + 27 APG spells); synthesist-5 golden stamped |
+| 2026-09-21 | Architecture deepening: PF1e catalog picker (ADR 0009 slices 1 & 2) landed |
+| 2026-09-22 | Named sidebar tools (Attack Helper, Actions List, Budget Calculator) and pre-release hygiene landed |
+| 2026-09-23 | Reliability & a11y pass: shared ModalDialog with focus management, shell ErrorBoundary, and draftStore connection fix |
+| 2026-09-24 | Hygiene pass: HP breakdown dialog on ModalDialog, catalog picker capped first page, and override prototype pollution safety landed |

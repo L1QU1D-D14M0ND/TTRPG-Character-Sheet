@@ -6,7 +6,7 @@
 
 Closed lists for the remaining Core Rulebook **feat table** (Chapter 5) and **class spell lists** (Chapter 10: Bard, Cleric, Druid, Paladin, Ranger, Sorcerer/Wizard). Same job as [pack-design §7](pf1e-crb-pack-design.md#7-remaining-mundane-weapons-and-armor) did for weapons: every remaining id is named here before anyone types `feats.json` / `spells.json`.
 
-**Counts:** 176 CRB feats (171 remaining after Batch 12). 622 unique class-list spells (618 remaining after Batch 13).
+**Counts:** 177 CRB feats (172 remaining after Batch 12). 622 unique class-list spells (618 remaining after Batch 13).
 
 ## Shared locks
 

@@ -47,6 +47,9 @@ Use [`schemas/pf1e/character.schema.json`](../../schemas/pf1e/character.schema.j
 - [`../../fixtures/characters/golden/pf1e/fighter-2-wizard-3.json`](../../fixtures/characters/golden/pf1e/fighter-2-wizard-3.json)
 - [`../../fixtures/characters/golden/pf1e/synthesist-5.json`](../../fixtures/characters/golden/pf1e/synthesist-5.json)
 - [`../../fixtures/characters/golden/pf1e/wizard-transmutation-7.json`](../../fixtures/characters/golden/pf1e/wizard-transmutation-7.json)
+- [`../../fixtures/characters/golden/pf1e/cleric-5.json`](../../fixtures/characters/golden/pf1e/cleric-5.json)
+- [`../../fixtures/characters/golden/pf1e/fighter-5-duelist-2.json`](../../fixtures/characters/golden/pf1e/fighter-5-duelist-2.json)
+- [`../../fixtures/characters/golden/pf1e/ranger-5-companion.json`](../../fixtures/characters/golden/pf1e/ranger-5-companion.json)
 - [`../pf1e-schema-design-notes.md`](../pf1e-schema-design-notes.md)
 - [`../pf1e-character-sheet-design.md`](../pf1e-character-sheet-design.md)
 - [`0002-character-schema.md`](0002-character-schema.md) — PF2e documents only

@@ -56,6 +56,8 @@ export function companionAsComputeInput(sheet: CompanionSheet): ComputeInput {
     spellcasting: sheet.spellcasting ?? [],
     inventory: sheet.inventory,
     overrides: {},
+    feats: [],
+    conditions: [],
   }
 }
 

@@ -45,4 +45,29 @@ describe('pf2eAttackHelper', () => {
     expect(blessOutput?.attackBonusString).toBe('+8')
     expect(blessOutput?.iterativeBonusStrings).toEqual(['1st: +8', '2nd (-4 agile): +4', '3rd (-8 agile): +0'])
   })
+
+  it('detects agile from strike.traits even if weapon name is custom', () => {
+    const char = pf2eModule.createEmpty()
+    char.identity.level = 1
+    char.attributes.str.modifierOverride = 2
+    char.proficiencies.weapons.simple = 'trained'
+    char.strikes = [
+      {
+        id: 'strike-custom',
+        name: 'Razor Fan',
+        itemId: null,
+        weaponCategory: 'simple',
+        attackAttribute: 'str',
+        damageAttribute: 'str',
+        damageDice: '1d6',
+        traits: ['agile', 'deadly-d8'],
+        modifiers: [],
+      },
+    ]
+
+    const derived = pf2eModule.compute(char)
+    const output = computePf2eAttackHelper(char, derived, 'strike-custom', new Set())
+    expect(output?.iterativeBonusStrings).toEqual(['1st: +5', '2nd (-4 agile): +1', '3rd (-8 agile): -3'])
+    expect(output?.inflicts).toContain('Agile (reduced MAP: -4 / -8)')
+  })
 })

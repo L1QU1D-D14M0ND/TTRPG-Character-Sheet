@@ -1,4 +1,4 @@
-import type { ItemEntry } from '../character/types'
+import type { ItemEntry, Size } from '../character/types'
 
 /** Persist decimals; compute in integer tenths to avoid float noise. */
 export function bulkToTenths(bulk: number): number {
@@ -15,18 +15,41 @@ export function bulkUsedTenths(items: ItemEntry[]): number {
   }, 0)
 }
 
+/** Player Core p. 272 / CRB p. 272: bulk limit scaling by creature size. */
+export function sizeBulkMultiplier(size: Size = 'medium'): number {
+  switch (size) {
+    case 'tiny':
+      return 0.5
+    case 'small':
+    case 'medium':
+      return 1
+    case 'large':
+      return 2
+    case 'huge':
+      return 4
+    case 'gargantuan':
+      return 8
+    default:
+      return 1
+  }
+}
+
 export function bulkCapacityTenths(
   strModifier: number,
   bulkBonus: number,
+  size: Size = 'medium',
 ): number {
-  return (5 + strModifier + bulkBonus) * 10
+  const base = (5 + strModifier + bulkBonus) * 10
+  return Math.round(base * sizeBulkMultiplier(size))
 }
 
 export function bulkMaximumTenths(
   strModifier: number,
   bulkBonus: number,
+  size: Size = 'medium',
 ): number {
-  return (10 + strModifier + bulkBonus) * 10
+  const base = (10 + strModifier + bulkBonus) * 10
+  return Math.round(base * sizeBulkMultiplier(size))
 }
 
 export function investedCount(items: ItemEntry[]): number {

@@ -47,6 +47,9 @@ export const SCALARS: Record<
   investedCount: (view, value) => {
     view.investedCount = value
   },
+  maxDying: (view, value) => {
+    view.maxDying = value
+  },
 }
 
 /**

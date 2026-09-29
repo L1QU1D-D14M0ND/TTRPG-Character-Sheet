@@ -37,12 +37,25 @@ export function calculatePf2eBudget(
 
     const materialsPerUnit = Math.round((item.marketPrice / 2) * 100) / 100
     const craftMaterialsCost = materialsPerUnit * qty
-    const lineCraftDays = 4 * qty // 4 days downtime per batch
+    // Remaster Player Core p. 238: 2 days downtime (1 with formula; legacy CRB was 4)
+    const lineCraftDays = 2 * qty
     const craftDc = 15 // Standard Level 1-2 DC
 
     const reasons: string[] = []
     if (!isTrainedCrafting) {
       reasons.push('untrained in Crafting')
+    }
+
+    if (item.featRequired) {
+      const hasFeat = (character.feats ?? []).some((f) => {
+        const id = f.feat?.id?.toLowerCase() ?? ''
+        const name = f.feat?.name?.toLowerCase() ?? ''
+        const req = item.featRequired!.toLowerCase()
+        return id.includes(req) || name.includes(req)
+      })
+      if (!hasFeat) {
+        reasons.push(`missing required feat: ${item.featRequired}`)
+      }
     }
 
     craftAllTotal += craftMaterialsCost

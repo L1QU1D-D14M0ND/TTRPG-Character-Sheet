@@ -99,7 +99,7 @@ describe('CRB batch 4: skill totals', () => {
     expect(view.skillTotals.climb).toBe(7)
     expect(view.skillTotals.intimidate).toBe(7)
     expect(view.skillTotals.perception).toBe(6)
-    expect(view.skillTotals.swim).toBe(-1)
+    expect(view.skillTotals.swim).toBe(-6)
     expect(view.skillTotals.stealth).toBe(-3)
     expect(view.skillTotals.acrobatics).toBe(-3)
     expect(view.skillTotals.diplomacy).toBe(-1)

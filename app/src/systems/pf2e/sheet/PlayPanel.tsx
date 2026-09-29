@@ -75,7 +75,7 @@ export function PlayPanel({
               <input
                 type="number"
                 min={0}
-                max={4}
+                max={derived.maxDying}
                 value={character.vitals.dying}
                 onChange={(e) =>
                   update((c) => ({

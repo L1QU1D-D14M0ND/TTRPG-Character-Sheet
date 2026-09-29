@@ -892,6 +892,7 @@
         "flatFootedAc": { "type": "integer" },
         "cmb": { "type": "integer" },
         "cmd": { "type": "integer" },
+        "flatFootedCmd": { "type": "integer" },
         "initiative": { "type": "integer" },
         "fortitude": { "type": "integer" },
         "reflex": { "type": "integer" },

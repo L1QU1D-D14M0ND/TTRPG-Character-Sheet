@@ -35,10 +35,10 @@ Engine formulas (ability modifier, BAB tables, spell DC, bonus spells, heavy loa
 | --- | --- |
 | `content/pf1e/crb/classes.json` | 11 CRB class ids; HD / BAB / saves / skill points / class-skill keys; `source.book: CRB`. No Summoner. No flavor |
 | `races.json` | Seven CRB player race names + size; no Golarion PI |
-| `items.json` | Golden weapons/armor/spellbook plus Batches 16–19 simple, martial, and exotic weapons (and their ammo): pounds and documentary combat fields. W1–W7 add optional `weapon.properties` as N kebab-case tags (one or many; pack design §7.6). W7 also stamps optional `secondHead` numbers on double weapons. Batches 20–21 remaining armor, shields (`kind: shield`), and mundane extras. Magic items are not in this folder yet |
-| `feats.json` | 65 CRB feat ids (Batch 12 goldens + Wizard 7 playtest + Batches F1a–F1c combat feats); name + category |
+| `items.json` | Golden weapons/armor/spellbook plus Batches 16–21 mundane weapons, ammo, armor, shields (`kind: shield`), and mundane extras. W1–W7 add optional `weapon.properties` as N kebab-case tags (one or many; pack design §7.6). W7 also stamps optional `secondHead` numbers on double weapons. Magic weapons/armor overlay and CRB special abilities catalog landed |
+| `feats.json` | All 177 CRB feat ids (Batches F1–F4 complete: combat, general, item creation, metamagic); name + category |
 | `features.json` | Three CRB class feature ids (Arcane Bond, Physical Enhancement, Telekinetic Fist); name + source; no prose |
-| `spells.json` | 44 CRB spell ids (Batch 13 goldens + Wizard 7 playtest spells levels 0–4); name + spell level. No descriptions |
+| `spells.json` | All 622 CRB spell ids (Batches S1–S5 complete: levels 0–9); name + spell level. No descriptions |
 | `pack.json` | Batch notes are **our** review comments, not book text |
 | PF1e goldens | Feat/feature `summary` values are sheet honesty notes (“Not auto-applied”), not feat benefits |
 | PF2e golden Wizard | `identity.homeRegion` may be a Golarion place name. That is **character identity**, not pack content |
@@ -77,9 +77,9 @@ Do not scrape third-party SRD sites into `content/` even after that PR. Curate b
 ---
 
 ## 6. 1.0 APG pack
-
-Slice 2 landed: `content/pf1e/apg/` with documentary evolution **names** and a fused STR/DEX/CON overlay + costume HP. Synthesist golden landed. **Never** `class.summoner` inside `content/pf1e/crb/`.
-
+ 
+- Slice 2 landed: `content/pf1e/apg/` with documentary evolution **names** and a fused STR/DEX/CON overlay + costume HP. Synthesist golden landed. **Never** `class.summoner` inside `content/pf1e/crb/`.
+- Slice 4 landed: `classes.json` Summoner `spellsPerDay` progression table and `spells.json` 27 mechanics-only APG spells.
 - 1.0 landed. Spanish UI catalog landed. Apply does not auto-write fused scores or evolution math.
 - Evolution and eidolon **rules text** wait for the OGL increment in §4.
 - Magical Child / other APG classes stay out until a later pack slice.
@@ -105,4 +105,6 @@ No Remaster encyclopedia in this review. ORC import remains later (ADR 0003). PF
 | 2026-08-19 | CRB batch 14: remaining player race names + size; still no PI |
 | 2026-09-12 | Wizard 7 playtest features/feats/spells and Batches F1a–F1c combat feats added; verified mechanics-only by licenseGate |
 | 2026-09-14 | Document sync: update audited feat (65), spell (44), and class feature (3) inventory |
+| 2026-09-14 | Batches F2a–F4 (all 177 CRB feats packed), Batches S1–S5 (all 622 CRB spells packed), and magic weapons/armor overlay landed; verified mechanics-only |
 | 2026-09-17 | Record that catalog labels stay English in every UI locale; localized names are a later content slice, not UI-locale work |
+| 2026-09-20 | APG slice 4 landed: Summoner spellsPerDay table + 27 APG Summoner spells; verified mechanics-only by licenseGate |

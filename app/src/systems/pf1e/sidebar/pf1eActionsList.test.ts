@@ -80,4 +80,21 @@ describe('pf1eActionsList', () => {
       expect(item.availability).toBe('unavailable')
     }
   })
+
+  it('provides Draw Weapon, Sheathe Weapon (with AoO warning), and 5-Foot Step', () => {
+    const char = pf1eModule.createEmpty()
+    const derived = pf1eModule.compute(char)
+    const groups = buildPf1eActions(char, derived)
+
+    const move = groups.find((g) => g.id === 'move')
+    const draw = move?.items.find((i) => i.id === 'move-draw-weapon')
+    const sheathe = move?.items.find((i) => i.id === 'move-sheathe-weapon')
+    expect(draw?.detail).toBe('No AoO')
+    expect(sheathe?.detail).toBe('Provokes AoO')
+
+    const free = groups.find((g) => g.id === 'free')
+    const step = free?.items.find((i) => i.id === 'free-5-foot-step')
+    expect(step).toBeDefined()
+    expect(step?.detail).toContain('No AoO')
+  })
 })

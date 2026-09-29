@@ -24,6 +24,7 @@ export interface DerivedView {
   flatFootedAc: number
   cmb: number
   cmd: number
+  flatFootedCmd: number
   initiative: number
   fortitude: number
   reflex: number
@@ -57,6 +58,7 @@ export function toDerivedCache(view: DerivedView): DerivedCache {
     flatFootedAc: view.flatFootedAc,
     cmb: view.cmb,
     cmd: view.cmd,
+    flatFootedCmd: view.flatFootedCmd,
     initiative: view.initiative,
     fortitude: view.fortitude,
     reflex: view.reflex,

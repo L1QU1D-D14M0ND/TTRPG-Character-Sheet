@@ -141,3 +141,5 @@ Clicking an attack in Actions List **may** later deep-link into Attack Helper (`
 | --- | --- |
 | 2026-08-17 | Named later tool: Actions List; grey-out + short reason from conditions |
 | 2026-08-17 | Cross-link Budget Calculator (downtime craft vs this combat menu) |
+| 2026-09-20 | Tool landed for both PF1e and PF2e (`shell.actions-list`) under `app/src/shell/sidebar/tools/actionsList/` |
+| 2026-09-22 | i18n parity and pre-release hygiene landed |

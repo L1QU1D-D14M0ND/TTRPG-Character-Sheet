@@ -24,7 +24,8 @@ export function buildPf2eActions(
   const isDead = hasCond('dead')
   const isParalyzed = hasCond('paralyz') || hasCond('petrif')
   const isStunned = hasCond('stun')
-  const isGrabbed = hasCond('grab') || hasCond('restrain')
+  const isRestrained = hasCond('restrain')
+  const isGrabbed = hasCond('grab') || isRestrained
   const isImmobilized = hasCond('immobili') || isGrabbed
   const isProne = hasCond('prone')
   const isBlinded = hasCond('blind')
@@ -37,13 +38,19 @@ export function buildPf2eActions(
     if (isStunned) return { availability: 'unavailable', reason: 'stunned' }
 
     if (kind === 'move') {
-      if (isImmobilized) return { availability: 'unavailable', reason: isGrabbed ? 'grabbed' : 'immobilized' }
+      if (isImmobilized) return { availability: 'unavailable', reason: isRestrained ? 'restrained' : isGrabbed ? 'grabbed' : 'immobilized' }
       if (isProne) return { availability: 'unavailable', reason: 'prone (must Stand first)' }
     }
 
     if (kind === 'attack') {
+      if (isRestrained) return { availability: 'unavailable', reason: 'restrained (cannot attack)' }
       if (isProne) return { availability: 'hindered', reason: 'prone (-2 attack)' }
       if (isBlinded) return { availability: 'hindered', reason: 'blinded (DC 11 flat check)' }
+      if (isGrabbed) return { availability: 'hindered', reason: 'off-guard (grabbed)' }
+    }
+
+    if (kind === 'spell') {
+      if (isRestrained) return { availability: 'unavailable', reason: 'restrained (cannot manipulate)' }
       if (isGrabbed) return { availability: 'hindered', reason: 'grabbed (DC 5 flat check for manipulate)' }
     }
 
@@ -122,6 +129,25 @@ export function buildPf2eActions(
     actionCost: '1 Action',
     availability: evaluate('maneuver').availability,
     reason: evaluate('maneuver').reason,
+  })
+
+  singleActions.push({
+    id: 'interact-action',
+    label: 'Interact (Draw / Stow / Manipulate)',
+    kind: 'other',
+    actionEconomyGroup: 'actions',
+    actionCost: '1 Action',
+    availability: isRestrained
+      ? 'unavailable'
+      : isGrabbed
+        ? 'hindered'
+        : evaluate('other').availability,
+    reason: isRestrained
+      ? 'restrained (cannot manipulate)'
+      : isGrabbed
+        ? 'grabbed (DC 5 flat check for manipulate)'
+        : evaluate('other').reason,
+    detail: isGrabbed ? 'DC 5 flat check' : undefined,
   })
 
   // 2. Activities (2-Action / 3-Action)

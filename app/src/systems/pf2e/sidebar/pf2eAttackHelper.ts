@@ -22,6 +22,7 @@ export function isAgileStrike(strike: StrikeEntry, character: CharacterDocument)
   const itemNotes = (linkedItem?.notes ?? '').toLowerCase()
   const strikeName = strike.name.toLowerCase()
   return (
+    (strike.traits ?? []).some((t) => t.toLowerCase() === 'agile') ||
     itemNotes.includes('agile') ||
     (linkedItem?.traits ?? []).some((t) => t.toLowerCase() === 'agile') ||
     strikeName.includes('agile') ||

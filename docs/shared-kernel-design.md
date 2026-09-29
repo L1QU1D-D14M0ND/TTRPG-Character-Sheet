@@ -75,7 +75,7 @@ app/src/
 
 Folder names can shift; the **boundaries** are the lock.
 
-**Extracted today:** `envelope.ts`, `ids.ts`, `format.ts` (`signed`), `validate.ts`, `saveLoad.ts` (filename sanitize + `downloadJsonFile` / parse helpers — **not** `stripDerivedForSave`), `constants.ts`, `contentRef.ts`, `effects.ts`, `overrides.ts` (generic apply + per-system `applyOne`), `notes.ts`, `currency.ts`, `abilities.ts` (`AbilityKey`, `abilityModifierFromScore`), `i18n/` (`catalog.ts`, `context.tsx`, `index.ts`), `ui/DerivedCell.tsx`, `ui/NotesPanel.tsx`, `ui/rows.ts` (`replaceAt`, `patchAt`, `updateAt`, `removeAt`, `appendRow`), `ui/ModalDialog.tsx` (backdrop + `role="dialog"` card, Escape/backdrop dismissal, focus in/trap/restore).
+**Extracted today:** `envelope.ts`, `ids.ts`, `format.ts` (`signed`), `validate.ts`, `saveLoad.ts` (filename sanitize + `downloadJsonFile` / parse helpers — **not** `stripDerivedForSave`), `constants.ts`, `contentRef.ts`, `effects.ts`, `overrides.ts` (generic apply + per-system `applyOne`, with prototype-safety `ownEntry`/`isSafeKey` against `__proto__` pollution), `notes.ts`, `currency.ts`, `abilities.ts` (`AbilityKey`, `abilityModifierFromScore`), `i18n/` (`catalog.ts`, `context.tsx`, `index.ts`), `ui/DerivedCell.tsx`, `ui/NotesPanel.tsx`, `ui/rows.ts` (`replaceAt`, `patchAt`, `updateAt`, `removeAt`, `appendRow`), `ui/ModalDialog.tsx` (backdrop + `role="dialog"` card, Escape/backdrop dismissal, focus in/trap/restore for all 5 modal dialogs).
 
 **Not extracted (do not treat as missing files to add unless a second caller needs them):** shared `DailyResource` entity factories (`createRows.ts`), `test/golden.ts`, shared `stripDerivedForSave` (each system owns strip-derived because document shape differs).
 
@@ -161,7 +161,7 @@ Lift from today’s PF2e code; strip edition knowledge.
 | `suggestedSaveFilename` | `saveLoad.ts` | Sanitize `identity` name; `.json`. Name getter is injected (PF1e identity field may differ slightly) |
 | `downloadCharacterJson` / `readCharacterFile` | `saveLoad.ts` | Blob + FileReader; validate via module |
 | `formatAjvErrors` + compile | `validate.ts` | One Ajv instance helper; **schema argument** |
-| `applyOverrides` | `engine/overrides.ts` | Generic `derived.*` path apply. **Allow-list and Derived shape are module-owned** — kernel takes `setPath(view, parts, value): boolean` or an allow-list callback |
+| `applyOverrides` | `overrides.ts` | Generic `derived.*` path apply with prototype safety (`ownEntry`/`isSafeKey` against `__proto__` injection). **Allow-list and Derived shape are module-owned** |
 | `isOverridden` | `overrides.ts` | `overriddenPaths.includes` |
 | Empty-row “add line” | `createRows.ts` | Only truly generic factories (`DailyResource`). Feat/strike/spellcasting factories stay in the system |
 
@@ -366,4 +366,5 @@ Duplicating a 20-line skill total function is cheaper than a shared skill API wi
 | 2026-08-19 | Align `SystemModule` with `shell/types.ts`: `Workspace`, `displayNameKey`, no `schema`/`tabs` on the module |
 | 2026-09-03 | Record that golden.ts and shared stripDerivedForSave were never extracted; i18n.tsx not i18n.ts |
 | 2026-09-14 | Extract ui/rows.ts (replaceAt, patchAt, updateAt, removeAt, appendRow) adopted across panels; split shared/i18n for Fast Refresh |
-| 2026-09-23 | Extract ui/ModalDialog.tsx; all four dialogs (New sheet, Restore draft, About, PF1e CatalogPicker) use it and gain focus management |
+| 2026-09-23 | Extract ui/ModalDialog.tsx; all dialogs (New sheet, Restore draft, About, PF1e CatalogPicker) use it and gain focus management |
+| 2026-09-24 | Reliability & security pass: HP breakdown moved onto ModalDialog (all 5 dialogs unified); overrides.ts hardened with ownEntry/isSafeKey against prototype pollution |

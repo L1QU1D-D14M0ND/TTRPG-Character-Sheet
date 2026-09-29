@@ -41,9 +41,9 @@ Settled PF2e engineering (keep through the refactor): Vitest, Ajv 2020-12 reject
 | Layout | `app/src/shared`, `shell`, `systems/pf1e`, `systems/pf2e` |
 | Schema | PF2e `character.schema.json`; PF1e `schemas/pf1e/character.schema.json` |
 | Engine | PF1e martial + spell DC/bonus slots; PF2e under `systems/pf2e/engine` |
-| UI | PF1e + PF2e workspaces (PF1e Spells tab); empty Tools sidebar |
-| Goldens | PF2e `fighter-5.json`, `wizard-5.json`, `bard-5.json`, `cleric-5.json`, `ranger-5.json`; PF1e `golden/pf1e/fighter-5.json`, `wizard-5.json`, `fighter-2-wizard-3.json`, `synthesist-5.json`, `wizard-transmutation-7.json` |
-| Content | `content/pf1e/crb/` batches 1–21, W1–W7, and F1a–F1c (65 feats / 44 spells / 3 class features — golden, playtest, and combat-first-half rows). `content/pf1e/apg/` Synthesist + golden. Spanish UI catalog landed |
+| UI | PF1e + PF2e workspaces (spreadsheet tabs); collapsible Tools sidebar with all three named tools (Attack Helper, Actions List, Budget Calculator) |
+| Goldens | PF2e `fighter-5.json`, `wizard-5.json`, `bard-5.json`, `cleric-5.json`, `ranger-5.json`; PF1e `golden/pf1e/fighter-5.json`, `wizard-5.json`, `fighter-2-wizard-3.json`, `synthesist-5.json`, `wizard-transmutation-7.json`, `cleric-5.json`, `fighter-5-duelist-2.json`, `ranger-5-companion.json` |
+| Content | `content/pf1e/crb/` complete: batches 1–21, W1–W7, F1–F4 (all 177 feats), S1–S5 (all 622 spells), class features, magic weapons/armor overlay. `content/pf1e/apg/` Synthesist + golden, Summoner `spellsPerDay` + 27 spells. Spanish UI catalog landed |
 
 ---
 
@@ -87,8 +87,8 @@ Several of these have since landed or moved: Bard/Cleric/Ranger 5 goldens exist;
 - Named sidebar tools during M/Sb/1e/2e/3e/honesty/pack fill-out
 
 ### Recommendation
-
-**CRB catalog complete: all 177 feats and all 622 spells packed.** Magic overlay landed. → **APG follow-through next** (Summoner `spellsPerDay` + spell catalog) → then optional goldens / OGL-with-rules-text. **Attack Helper**, **Actions List**, and **Budget Calculator** are the **last character-sheet features** (not during schema, pack, or honesty work). M / 1e / 2e / 3e / 1.0 / honesty fixes already landed.
+ 
+**First Edition feature scope is complete:** all 177 CRB feats, all 622 CRB spells, magic overlay, APG follow-through (Summoner `spellsPerDay` + 27 spells), optional goldens, catalog picker (ADR 0009 slices 1 & 2), and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Next is pre-release / hygiene. Leftover PF2e work waits for a later release. M / 1e / 2e / 3e / 1.0 / honesty fixes already landed.
 
 ---
 
@@ -146,10 +146,10 @@ After goldens can be typed by hand. Review CRB character mechanics **two at a ti
 | 8 | Platform | IndexedDB draft; PWA install/offline proof |
 | 9 | 0.9 | English; PF1e bar; PF2e slice still works; sidebar host may be empty |
 | 10 | Phase 4 | `es` + playable APG Synthesist = 1.0 |
-| 11 | 1x | Finish First Edition (honesty/code fixes [landed], playtest priority [landed], CRB catalog [landed], magic overlay [landed], APG follow-through [next], optional goldens, OGL-with-rules-text, **then** sidebar tools as the last sheet feature) |
+| 11 | 1x | Finish First Edition (honesty/code fixes [landed], playtest priority [landed], CRB catalog [landed], magic overlay [landed], APG follow-through [landed], optional goldens [landed], catalog picker [landed], sidebar tools [landed]). Next: pre-release / hygiene |
 | 12 | Later release | Leftover PF2e goldens/content; encyclopedia / `effects[]` / more systems |
 
-Steps 2–10, Phase 1x honesty fixes, and CRB catalog fill-out (all 177 feats and all 622 spells) landed. The **next development increment** is APG follow-through (Summoner `spellsPerDay` + spell catalog).
+Steps 2–11, Phase 1x honesty fixes, CRB catalog fill-out (all 177 feats and all 622 spells), APG follow-through (Summoner `spellsPerDay` + 27 spells), catalog picker (ADR 0009), and all three named sidebar tools landed. The **next work** is pre-release / hygiene and release preparation.
 
 ---
 
@@ -355,3 +355,4 @@ Code/docs pass after Phases M–3e and 3c batches 1–2. **First pass:** Wizard 
 | 2026-09-20 | APG follow-through landed (Summoner spellsPerDay + 27 APG spells); synthesist-5 golden stamped |
 | 2026-09-21 | Architecture deepening: PF1e catalog picker (ADR 0009 slices 1 & 2) landed |
 | 2026-09-22 | Named sidebar tools (Attack Helper, Actions List, Budget Calculator) and pre-release hygiene landed |
+| 2026-09-24 | Reliability & hygiene pass: ModalDialog focus management, catalog picker capped first page, and override prototype pollution safety landed |

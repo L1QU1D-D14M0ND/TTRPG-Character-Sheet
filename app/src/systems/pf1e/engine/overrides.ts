@@ -44,6 +44,9 @@ export const SCALARS: Record<
   cmd: (view, value) => {
     view.cmd = value
   },
+  flatFootedCmd: (view, value) => {
+    view.flatFootedCmd = value
+  },
   initiative: (view, value) => {
     view.initiative = value
   },

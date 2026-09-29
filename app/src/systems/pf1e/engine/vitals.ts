@@ -171,6 +171,10 @@ export const UNTRAINED_UNUSABLE_SKILLS = new Set([
   'disable-device',
   'handle-animal',
   'use-magic-device',
+  'sleight-of-hand',
+  'spellcraft',
+  'linguistics',
+  'profession',
 ])
 
 export function hasFlySpeed(
@@ -187,7 +191,7 @@ export function skillUsableUntrained(
   speeds: Array<{ kind: string; feet: number }> | undefined,
 ): boolean {
   if (key === 'fly') return hasFlySpeed(speeds)
-  if (UNTRAINED_UNUSABLE_SKILLS.has(key)) return ranks >= 1
+  if (UNTRAINED_UNUSABLE_SKILLS.has(key) || key.startsWith('profession')) return ranks >= 1
   return true
 }
 
@@ -206,9 +210,13 @@ export function skillTotal(args: {
   armorPenaltyApplies: boolean
   armorCheckPenalty: number
   misc: number
+  acpMultiplier?: number
 }): number {
   const trained = args.ranks >= 1
-  const acp = args.armorPenaltyApplies ? args.armorCheckPenalty : 0
+  const multiplier = args.acpMultiplier ?? 1
+  const acp = args.armorPenaltyApplies
+    ? args.armorCheckPenalty * multiplier
+    : 0
   return (
     args.ranks +
     args.abilityMod +

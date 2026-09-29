@@ -129,7 +129,7 @@ Magic item creation (wondrous, arms/armor, potions, scrolls, wands), typical CRB
 | Feats | Craft Wondrous Item, Craft Magic Arms and Armor, Scribe Scroll, Brew Potion, Craft Wand, … |
 | Caster level | Item CL vs the PC’s caster level (or the CL they choose to create at, if the recipe allows) |
 | Spells | Required spells on the class list / prepared / known — pack lists them; tool checks the sheet’s spell list when present |
-| XP cost | CRB magic items often cost XP. **Show the XP number.** Whether the sheet stores XP is a later sheet field; until then, display XP as a requirement the user must track. |
+| XP cost | **No XP cost in PF1e** (CRB eliminated D&D 3.5e XP crafting costs; magic item creation costs only gp, time, feats, and Spellcraft/Craft checks). |
 
 Potion / scroll / wand: use the published creation costs and times from the pack (they differ from wondrous-item ½ price). Do not collapse every magic item into one formula in the UI.
 
@@ -236,3 +236,6 @@ Do not assert house-rule “craft overnight” or auto take 20.
 | Date | Change |
 | --- | --- |
 | 2026-08-17 | Named later tool: Budget Calculator; buy vs craft (cost, time, DC, requirements); no dice |
+| 2026-09-20 | Tool landed for both PF1e and PF2e (`shell.budget-calculator`) under `app/src/shell/sidebar/tools/budgetCalculator/` |
+| 2026-09-22 | i18n parity and pre-release hygiene landed |
+| 2026-09-26 | Docs correction: remove 3.5e XP crafting cost artifact (PF1e magic item creation has no XP cost) |

@@ -1043,6 +1043,7 @@
         "bulkUsed": { "type": "number" },
         "bulkCapacity": { "type": "number" },
         "investedCount": { "type": "integer" },
+        "maxDying": { "type": "integer" },
         "computedAt": { "$ref": "#/$defs/IsoDateTime" }
       }
     }

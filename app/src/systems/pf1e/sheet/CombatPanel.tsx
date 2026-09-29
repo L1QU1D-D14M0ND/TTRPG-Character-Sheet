@@ -123,10 +123,11 @@ export function CombatPanel({
             <th>{t('pf1e.combat.cmbCmd')}</th>
             <td>
               <DerivedCell
-                value={`${signed(derived.cmb)} / ${derived.cmd}`}
+                value={`${signed(derived.cmb)} / ${derived.cmd} (FF ${derived.flatFootedCmd})`}
                 overridden={
                   derived.overriddenPaths.includes('derived.cmb') ||
-                  derived.overriddenPaths.includes('derived.cmd')
+                  derived.overriddenPaths.includes('derived.cmd') ||
+                  derived.overriddenPaths.includes('derived.flatFootedCmd')
                 }
               />
             </td>

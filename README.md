@@ -23,6 +23,7 @@ npm run dev
 
 ## Docs
 
+- [User & Player Guide](docs/user-guide.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Security Policy](SECURITY.md)
@@ -71,6 +72,9 @@ npm run dev
 - [`fixtures/characters/golden/pf1e/fighter-2-wizard-3.json`](fixtures/characters/golden/pf1e/fighter-2-wizard-3.json) — PF1e Fighter 2 / Wizard 3
 - [`fixtures/characters/golden/pf1e/synthesist-5.json`](fixtures/characters/golden/pf1e/synthesist-5.json) — PF1e Summoner 5 Synthesist (Radiant Striker)
 - [`fixtures/characters/golden/pf1e/wizard-transmutation-7.json`](fixtures/characters/golden/pf1e/wizard-transmutation-7.json) — PF1e Wizard 7 (Transmutation specialist, Flare Nightingale)
+- [`fixtures/characters/golden/pf1e/cleric-5.json`](fixtures/characters/golden/pf1e/cleric-5.json) — PF1e Cleric 5
+- [`fixtures/characters/golden/pf1e/fighter-5-duelist-2.json`](fixtures/characters/golden/pf1e/fighter-5-duelist-2.json) — PF1e Fighter 5 / Duelist 2 (prestige)
+- [`fixtures/characters/golden/pf1e/ranger-5-companion.json`](fixtures/characters/golden/pf1e/ranger-5-companion.json) — PF1e Ranger 5 (animal companion)
 - [`content/pf1e/crb/`](content/pf1e/crb/) — PF1e CRB pack (batches 1–21, W1–W7, F1–F4, and S1–S5 complete; all 177 feats and all 622 spells packed; mechanics-only)
 - [`content/pf1e/apg/`](content/pf1e/apg/) — PF1e APG pack (Summoner class, Synthesist archetype, evolutions, and 27-spell catalog; mechanics-only)
 

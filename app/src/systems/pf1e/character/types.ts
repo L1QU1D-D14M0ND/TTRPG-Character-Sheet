@@ -331,6 +331,7 @@ export interface DerivedCache {
   flatFootedAc?: number
   cmb?: number
   cmd?: number
+  flatFootedCmd?: number
   initiative?: number
   fortitude?: number
   reflex?: number

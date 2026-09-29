@@ -17,8 +17,11 @@ export function mediumBipedHeavyLoad(strength: number): number {
 export function loadThresholds(
   strength: number,
   size: Size,
+  isQuadruped = false,
 ): { light: number; medium: number; heavy: number } {
-  const heavy = Math.floor(mediumBipedHeavyLoad(strength) * sizeCarryMultiplier(size))
+  const heavy = Math.floor(
+    mediumBipedHeavyLoad(strength) * sizeCarryMultiplier(size, isQuadruped),
+  )
   return {
     light: Math.floor(heavy / 3),
     medium: Math.floor((heavy * 2) / 3),

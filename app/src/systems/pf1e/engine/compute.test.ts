@@ -2,7 +2,11 @@ import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyAttack, createEmptyClass, createEmptySpellcasting } from '../character/createRows'
 import { compute } from './compute'
-import { abilityModifierFromScore } from './abilities'
+import {
+  abilityModifierFromScore,
+  quadrupedCarryMultiplier,
+  sizeCarryMultiplier,
+} from './abilities'
 import { loadThresholds, mediumBipedHeavyLoad } from './encumbrance'
 import {
   babFromProgression,
@@ -112,6 +116,7 @@ describe('compute empty sheet', () => {
     expect(view.flatFootedAc).toBe(10)
     expect(view.cmb).toBe(0)
     expect(view.cmd).toBe(10)
+    expect(view.flatFootedCmd).toBe(10)
     expect(view.fortitude).toBe(0)
     expect(view.skillTotals.athletics).toBeUndefined()
     expect(view.skillTotals.climb).toBe(0)
@@ -198,6 +203,9 @@ describe('compute empty sheet', () => {
     expect(view.skillTotals['disable-device']).toBeNull()
     expect(view.skillTotals['handle-animal']).toBeNull()
     expect(view.skillTotals['use-magic-device']).toBeNull()
+    expect(view.skillTotals['sleight-of-hand']).toBeNull()
+    expect(view.skillTotals.spellcraft).toBeNull()
+    expect(view.skillTotals.linguistics).toBeNull()
     expect(view.skillTotals.fly).toBeNull()
     expect(view.skillTotals.climb).toBe(0)
     expect(view.skillTotals['knowledge-arcana']).toBe(0)
@@ -284,5 +292,106 @@ describe('compute empty sheet', () => {
     fly!.ranks = 3
     const view = compute(character)
     expect(view.skillTotals.fly).toBeNull()
+  })
+
+  it('uses Dexterity modifier for CMB on Tiny or smaller creatures', () => {
+    const character = createEmptyCharacter()
+    character.identity.size = 'tiny'
+    character.abilities.str.score = 6 // mod -2
+    character.abilities.dex.score = 16 // mod +3
+    const cls = createEmptyClass()
+    cls.levels = 1
+    cls.babProgression = 'full'
+    character.classes = [cls]
+    const view = compute(character)
+    // BAB 1 + Dex (+3) + Tiny size (-2) = 2
+    expect(view.cmb).toBe(2)
+  })
+
+  it('calculates caster level as level - 3 for Paladins and Rangers', () => {
+    const character = createEmptyCharacter()
+    const paladin = createEmptyClass()
+    paladin.id = 'row-paladin'
+    paladin.class = { id: 'class.paladin', name: 'Paladin' }
+    paladin.levels = 4
+    character.classes = [paladin]
+    const entry = createEmptySpellcasting()
+    entry.id = 'cast-paladin'
+    entry.classRowId = 'row-paladin'
+    character.spellcasting = [entry]
+    const view = compute(character)
+    expect(view.spellcasting['cast-paladin'].casterLevel).toBe(1)
+
+    // At level 3, Paladin has CL 0
+    paladin.levels = 3
+    const view3 = compute(character)
+    expect(view3.spellcasting['cast-paladin'].casterLevel).toBe(0)
+
+    // Ranger at level 5 has CL 2
+    paladin.class = { id: 'class.ranger', name: 'Ranger' }
+    paladin.levels = 5
+    const viewRanger = compute(character)
+    expect(viewRanger.spellcasting['cast-paladin'].casterLevel).toBe(2)
+  })
+
+  it('calculates flat-footed CMD removing positive Dex and Dodge bonuses while preserving Dex penalties', () => {
+    const character = createEmptyCharacter()
+    const fighter = createEmptyClass()
+    fighter.id = 'row-fighter'
+    fighter.class = { id: 'class.fighter', name: 'Fighter' }
+    fighter.babProgression = 'full'
+    fighter.levels = 3 // BAB 3
+    character.classes = [fighter]
+    character.abilities.str.score = 14 // +2
+    character.abilities.dex.score = 16 // +3
+    character.armorClass.dodge = 1
+    character.armorClass.deflection = 2
+    character.combat.cmdMisc = 1
+
+    const view = compute(character)
+    // CMD = 10 + 3(bab) + 2(str) + 3(dex) + 1(dodge) + 2(defl) + 1(misc) = 22
+    expect(view.cmd).toBe(22)
+    // Flat-Footed CMD = 10 + 3(bab) + 2(str) + 0(dex loss) + 0(dodge loss) + 2(defl) + 1(misc) = 18
+    expect(view.flatFootedCmd).toBe(18)
+
+    // With negative Dex mod (-2)
+    character.abilities.dex.score = 6
+    const viewPenalized = compute(character)
+    // CMD = 10 + 3(bab) + 2(str) - 2(dex) + 1(dodge) + 2(defl) + 1(misc) = 17
+    expect(viewPenalized.cmd).toBe(17)
+    // Flat-Footed CMD = 10 + 3(bab) + 2(str) - 2(dex preserved) + 2(defl) + 1(misc) = 16
+    expect(viewPenalized.flatFootedCmd).toBe(16)
+  })
+
+  it('supports quadruped carrying capacity multipliers vs biped', () => {
+    // Str 10: medium biped heavy load is 100 lb
+    expect(mediumBipedHeavyLoad(10)).toBe(100)
+    // Medium quadruped gets 1.5x -> 150 lb heavy load
+    const bipedMed = loadThresholds(10, 'medium', false)
+    const quadMed = loadThresholds(10, 'medium', true)
+    expect(bipedMed.heavy).toBe(100)
+    expect(quadMed.heavy).toBe(150)
+
+    // Large quadruped gets 3x -> 300 lb heavy load (vs biped Large 2x -> 200 lb)
+    const bipedLarge = loadThresholds(10, 'large', false)
+    const quadLarge = loadThresholds(10, 'large', true)
+    expect(bipedLarge.heavy).toBe(200)
+    expect(quadLarge.heavy).toBe(300)
+
+    expect(quadrupedCarryMultiplier('tiny')).toBe(0.75)
+    expect(quadrupedCarryMultiplier('colossal')).toBe(24)
+    expect(sizeCarryMultiplier('large', true)).toBe(3)
+  })
+
+  it('applies double armor check penalty to Swim skill', () => {
+    const character = createEmptyCharacter()
+    character.abilities.str.score = 14 // +2
+    character.armorClass.armorCheckPenalty = -3
+
+    const view = compute(character)
+    // Normal skill with ACP (e.g., climb ranks 0): Str +2 - 3 = -1
+    expect(view.skillTotals.climb).toBe(-1)
+    // Swim has double ACP (-3 * 2 = -6): Str +2 - 6 = -4
+    expect(view.skillTotals.swim).toBe(-4)
   })
 })
