@@ -66,6 +66,12 @@ schema `$id`) move to match it.
   is unchanged until a later rename decision") is superseded by this ADR via
   a postscript on ADR 0003, not edited in place.
 
+**Postscript (2026-09-29, live GitHub slug):** The owner-admin rename has landed. GitHub's canonical repository name is `TTRPG-Character-Sheet`, not the lowercase slug in the decision table:
+
+`https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet`
+
+`https://github.com/L1QU1D-D14M0ND/Pathfinder-2E-Card` redirects there. `https://github.com/L1QU1D-D14M0ND/ttrpg-character-sheet` is the same repository (GitHub repo ids are case-insensitive; API `name` is `TTRPG-Character-Sheet`, id `1332950551`). The npm package name and the schema `$id` paths stay `ttrpg-character-sheet`, as decided above. `$id` URLs still resolve because of that case-insensitive alias.
+
 ## References
 
 - [ADR 0003 — Multi-system product direction](0003-multi-system-product-direction.md)

@@ -3,7 +3,7 @@
 **Status:** **System specification** for Pathfinder Second Edition (still valid). App-level product direction is [ADR 0003](adr/0003-multi-system-product-direction.md) / [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md): multi-system PWA, **finish PF1e this release**, this PF2e slice **preserved**. Remaining PF2e goldens/content wait for a **later release**.  
 **Implementation:** PF2e Phase 1–2 scaffold exists (S1 Fighter 5, T1 Wizard 5, leftover Bard 5 / Cleric 5 / Ranger 5 goldens, T3 form editors, S4 validation). Companion editor, remaining PC2 golden, content packs, and PF2e panel i18n catalogs wait for a later PF2e *release*.  
 **Sequencing:** [`next-increment-multi-system.md`](next-increment-multi-system.md) (current). Historical: [`next-increment-design.md`](next-increment-design.md), [`continuation-design.md`](continuation-design.md).  
-**Repo context:** `ttrpg-character-sheet` (renamed from `Pathfinder-2E-Card`, [ADR 0008](adr/0008-repo-package-rename.md))  
+**Repo context:** npm package `ttrpg-character-sheet`; GitHub [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet) (renamed from `Pathfinder-2E-Card`, [ADR 0008](adr/0008-repo-package-rename.md))  
 **Audience:** Product / engineering  
 **Ruleset target:** Pathfinder Second Edition — **Remaster-first**, legacy fallback when Remaster data is missing or errors
 

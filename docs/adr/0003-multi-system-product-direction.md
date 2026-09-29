@@ -62,7 +62,7 @@ PF2e proficiency ranks, typed item/status/circumstance stacking, single AC, MAP 
 
 **Postscript (2026-08-18, licensing):** Content licensing review is [ADR 0007](0007-content-licensing.md). The CRB pack stays mechanics-only (no OGL notice until rules text). 1.0 APG pack follows the same bar.
 
-**Postscript (2026-08-28, rename):** Stakeholder triggered the "Repo / npm package rename" override from the table below. Repo and npm package renamed to `ttrpg-character-sheet` — see [ADR 0008](0008-repo-package-rename.md). The Consequences line above about the repo name being unchanged is superseded by that ADR.
+**Postscript (2026-08-28, rename):** Stakeholder triggered the "Repo / npm package rename" override from the table below. Repo and npm package renamed to `ttrpg-character-sheet` — see [ADR 0008](0008-repo-package-rename.md). The Consequences line above about the repo name being unchanged is superseded by that ADR. **2026-09-29:** the live GitHub name is `TTRPG-Character-Sheet` ([ADR 0008 postscript](0008-repo-package-rename.md)).
 
 **Postscript (2026-08-19):** Stakeholder override: **finish First Edition** in this release. Remaining PF2e work (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) waits for a **later release**. The PF2e slice stays in the app and must not regress. See [`ROADMAP.md`](../ROADMAP.md) Phase 1x.
 

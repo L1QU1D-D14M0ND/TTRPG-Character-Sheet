@@ -1,5 +1,9 @@
 # Agent guidance
 
+## Repository
+
+Canonical GitHub URL: `https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet` (clone: `https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet.git`). `Pathfinder-2E-Card` redirects there. The npm package name stays `ttrpg-character-sheet`. See [ADR 0008](docs/adr/0008-repo-package-rename.md).
+
 ## Testing
 
 ### Honesty / code fixes (landed)

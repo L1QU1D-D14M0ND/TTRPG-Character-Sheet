@@ -4,7 +4,10 @@
 **Date:** 2026-08-28
 **Addendum (2026-08-28):** §4's repo/package-name gap is closed — the stakeholder
 triggered the rename to `ttrpg-character-sheet`; see [ADR 0008](adr/0008-repo-package-rename.md).
-The body below is left as the dated snapshot that motivated that decision.  
+The body below is left as the dated snapshot that motivated that decision.
+**Addendum (2026-09-29):** the live GitHub repository is
+[`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet).
+The npm package name remains `ttrpg-character-sheet`.  
 **Addendum (2026-09-22):** §4's non-affiliation disclaimer gap is closed (added to `README.md` and the in-app `AboutDialog.tsx`). §6's open-source hygiene files have landed (`CONTRIBUTING.md`, `NOTICE`, `SECURITY.md`).
 **Not legal advice.** This is an engineering-level inventory of where the
 project touches licensing, trademark, and privacy law, written to help a

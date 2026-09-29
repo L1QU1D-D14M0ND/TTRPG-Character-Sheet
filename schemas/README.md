@@ -1,6 +1,6 @@
 # Schemas
 
-JSON Schema definitions for TTRPG Character Sheet save formats (repo: ttrpg-character-sheet).
+JSON Schema definitions for TTRPG Character Sheet save formats (npm package `ttrpg-character-sheet`; GitHub [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet)).
 
 | File | Purpose |
 | --- | --- |

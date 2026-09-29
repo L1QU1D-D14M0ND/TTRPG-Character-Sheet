@@ -251,7 +251,7 @@ Steps 2–11, Phase 1x honesty fixes, CRB catalog fill-out (all 177 feats and al
 | P2 | 1E bonus-type rabbit hole | Explicit AC fields in 0.9 ([PF1e design §4.3](pf1e-character-sheet-design.md)) |
 | N3 | UI strings proliferate | T4′ before PF1e editor wave |
 | N2 | Content licensing | No scrape; ADR 0007 mechanics-only pack; OGL notice in the same PR as rules text |
-| S1 | Repo still named Pathfinder-2E-Card | **Historical.** npm/package/`$id` renamed ([ADR 0008](adr/0008-repo-package-rename.md)); GitHub slug is owner-admin |
+| S1 | Repo still named Pathfinder-2E-Card | **Historical.** npm/package/`$id` renamed ([ADR 0008](adr/0008-repo-package-rename.md)). Live GitHub slug (2026-09-29): [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet). The old slug redirects. |
 
 ---
 

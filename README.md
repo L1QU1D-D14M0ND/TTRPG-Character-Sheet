@@ -4,7 +4,7 @@
 
 **Current phase:** **First Edition complete; pre-release / hygiene.** 1.0 landed (Spanish + playable APG Synthesist). Wizard 7 playtest override and honesty/code fixes landed (2026-09-12). All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) landed, completing the entire CRB player catalog. APG follow-through (Summoner spells-per-day table + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2) and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. PF2e slice stays in the app and must not regress; remaining PF2e work waits for a **later release**. See [ADR 0003](docs/adr/0003-multi-system-product-direction.md), [APG pack](docs/pf1e-apg-pack-design.md), and [CRB pack](docs/pf1e-crb-pack-design.md).
 
-The repository and npm package were renamed from `Pathfinder-2E-Card` / `pathfinder-2e-character-sheet` to `ttrpg-character-sheet` — see [ADR 0008](docs/adr/0008-repo-package-rename.md).
+The npm package is `ttrpg-character-sheet`. The GitHub repository is [TTRPG-Character-Sheet](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet). Both were renamed from `Pathfinder-2E-Card` / `pathfinder-2e-character-sheet` — see [ADR 0008](docs/adr/0008-repo-package-rename.md). The old GitHub URL redirects to the new one.
 
 ## App
 
