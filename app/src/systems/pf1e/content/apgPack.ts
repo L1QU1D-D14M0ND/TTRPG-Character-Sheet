@@ -3,10 +3,13 @@ import type {
   EvolutionEntry,
   SpellListEntry,
 } from '../character/types'
-import { lookupById, seededClassSkills } from './catalogLookup'
+import { seededClassSkills } from './catalogLookup'
 import { loadCatalog } from './loadCatalog'
 import {
+  lookupArchetype,
+  lookupClassProgression,
   lookupEvolution,
+  lookupSpell,
   registerArchetypePack,
   registerClassPack,
   registerEvolutionPack,
@@ -71,29 +74,36 @@ registerArchetypePack(APG_ARCHETYPES)
 registerEvolutionPack(APG_EVOLUTIONS)
 registerSpellPack(APG_SPELLS)
 
+function apgRow<T extends { source?: { book?: string } }>(
+  row: T | null,
+): T | null {
+  if (!row || row.source?.book !== 'APG') return null
+  return row
+}
+
 /** Unknown or empty id → null. Never throws. CRB lookup stays on lookupCrbClass. */
 export function lookupApgClass(
   id: string | null | undefined,
 ): ClassProgression | null {
-  return lookupById(APG_CLASSES, id)
+  return apgRow(lookupClassProgression(id))
 }
 
 export function lookupApgArchetype(
   id: string | null | undefined,
 ): ArchetypeCatalogRow | null {
-  return lookupById(APG_ARCHETYPES, id)
+  return apgRow(lookupArchetype(id))
 }
 
 export function lookupApgEvolution(
   id: string | null | undefined,
 ): EvolutionCatalogRow | null {
-  return lookupEvolution(id)
+  return apgRow(lookupEvolution(id))
 }
 
 export function lookupApgSpell(
   id: string | null | undefined,
 ): SpellCatalogRow | null {
-  return lookupById(APG_SPELLS, id)
+  return apgRow(lookupSpell(id))
 }
 
 /**

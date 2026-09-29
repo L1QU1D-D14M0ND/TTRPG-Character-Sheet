@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createEmptyItem, type CharacterDocument } from '../character'
-import type { ItemLocation } from '../character/types'
+import type { ItemEntry, ItemLocation } from '../character/types'
 import {
   addItemProperty,
   removeItemProperty,
@@ -13,9 +13,26 @@ import type { DerivedView } from '../engine'
 import { formatLoadSummary } from '../engine/encumbrance'
 import { DerivedCell } from '../../../shared/ui/DerivedCell'
 import { useT } from '../../../shared/i18n'
-import { patchAt, replaceAt } from '../../../shared/ui/rows'
+import { patchAt, replaceAt, updateAt } from '../../../shared/ui/rows'
 import { CatalogPicker } from './CatalogPicker'
+import { MagicOverlayControls } from './MagicOverlayControls'
+import { magicBadge, type MagicOverlayFields } from './magicOverlay'
 import type { SheetUpdate } from './update'
+
+function placeSlot<T extends MagicOverlayFields>(
+  update: SheetUpdate,
+  index: number,
+  place: (item: ItemEntry, slot: T) => ItemEntry,
+  slot: T,
+) {
+  update((c) => ({
+    ...c,
+    inventory: {
+      ...c.inventory,
+      items: updateAt(c.inventory.items, index, (item) => place(item, slot)),
+    },
+  }))
+}
 
 const LOCATIONS: ItemLocation[] = ['equipped', 'carried', 'stowed', 'dropped']
 
@@ -162,19 +179,10 @@ export function InventoryPanel({
                       })
                     : null
 
-              const badge = item.weapon?.enhancementBonus
-                ? `+${item.weapon.enhancementBonus}`
-                : item.weapon?.masterwork
-                  ? 'MWK'
-                  : item.armor?.enhancementBonus
-                    ? `+${item.armor.enhancementBonus}`
-                    : item.armor?.masterwork
-                      ? 'MWK'
-                      : item.shield?.enhancementBonus
-                        ? `+${item.shield.enhancementBonus}`
-                        : item.shield?.masterwork
-                          ? 'MWK'
-                          : null
+              const badge =
+                magicBadge(item.weapon) ??
+                magicBadge(item.armor) ??
+                magicBadge(item.shield)
 
               return (
                 <tr key={item.id}>
@@ -198,73 +206,20 @@ export function InventoryPanel({
 
                     {item.weapon ? (
                       <div className="weapon-controls">
-                        <div className="magic-overlay-controls">
-                          <label>
-                            <input
-                              type="checkbox"
-                              aria-label={t('pf1e.inventory.masterwork')}
-                              checked={
-                                item.weapon.masterwork ??
-                                Boolean(item.weapon.enhancementBonus)
-                              }
-                              onChange={(e) =>
-                                update((c) => {
-                                  const items = [...c.inventory.items]
-                                  const current = items[index]
-                                  if (!current.weapon) return c
-                                  const weapon = { ...current.weapon }
-                                  if (e.target.checked || weapon.enhancementBonus) {
-                                    weapon.masterwork = true
-                                  } else {
-                                    delete weapon.masterwork
-                                  }
-                                  items[index] = { ...current, weapon }
-                                  return {
-                                    ...c,
-                                    inventory: { ...c.inventory, items },
-                                  }
-                                })
-                              }
-                            />
-                            {t('pf1e.inventory.masterwork')}
-                          </label>
-                          <label>
-                            {t('pf1e.inventory.enhancement')}:
-                            <select
-                              aria-label={t('pf1e.inventory.enhancement')}
-                              value={item.weapon.enhancementBonus ?? 0}
-                              onChange={(e) => {
-                                const val = Number(e.target.value) || 0
-                                update((c) => {
-                                  const items = [...c.inventory.items]
-                                  const current = items[index]
-                                  if (!current.weapon) return c
-                                  const weapon = { ...current.weapon }
-                                  if (val > 0) {
-                                    weapon.enhancementBonus = val
-                                    weapon.masterwork = true
-                                  } else {
-                                    delete weapon.enhancementBonus
-                                  }
-                                  items[index] = { ...current, weapon }
-                                  return {
-                                    ...c,
-                                    inventory: { ...c.inventory, items },
-                                  }
-                                })
-                              }}
-                            >
-                              <option value={0}>
-                                {t('pf1e.inventory.noEnhancement')}
-                              </option>
-                              {[1, 2, 3, 4, 5].map((bonus) => (
-                                <option key={bonus} value={bonus}>
-                                  +{bonus}
-                                </option>
-                              ))}
-                            </select>
-                          </label>
-                        </div>
+                        <MagicOverlayControls
+                          slot={item.weapon}
+                          onChange={(weapon) =>
+                            placeSlot(
+                              update,
+                              index,
+                              (current, slot) =>
+                                current.weapon
+                                  ? { ...current, weapon: slot }
+                                  : current,
+                              weapon,
+                            )
+                          }
+                        />
                         <ItemPropertiesEditor
                           tags={item.weapon.properties ?? []}
                           kind="weapon"
@@ -287,100 +242,32 @@ export function InventoryPanel({
                         {item.weapon.secondHead ? (
                           <div className="second-head-overlay">
                             <strong>{t('pf1e.inventory.secondHead')}</strong>
-                            <div className="magic-overlay-controls">
-                              <label>
-                                <input
-                                  type="checkbox"
-                                  aria-label={t(
-                                    'pf1e.inventory.secondHeadMasterwork',
-                                  )}
-                                  checked={
-                                    item.weapon.secondHead.masterwork ??
-                                    Boolean(
-                                      item.weapon.secondHead.enhancementBonus,
-                                    )
-                                  }
-                                  onChange={(e) =>
-                                    update((c) => {
-                                      const items = [...c.inventory.items]
-                                      const current = items[index]
-                                      if (!current.weapon?.secondHead) return c
-                                      const secondHead = {
-                                        ...current.weapon.secondHead,
-                                      }
-                                      if (
-                                        e.target.checked ||
-                                        secondHead.enhancementBonus
-                                      ) {
-                                        secondHead.masterwork = true
-                                      } else {
-                                        delete secondHead.masterwork
-                                      }
-                                      items[index] = {
-                                        ...current,
-                                        weapon: {
-                                          ...current.weapon,
-                                          secondHead,
-                                        },
-                                      }
-                                      return {
-                                        ...c,
-                                        inventory: { ...c.inventory, items },
-                                      }
-                                    })
-                                  }
-                                />
-                                {t('pf1e.inventory.masterwork')}
-                              </label>
-                              <label>
-                                {t('pf1e.inventory.enhancement')}:
-                                <select
-                                  aria-label={t(
-                                    'pf1e.inventory.secondHeadEnhancement',
-                                  )}
-                                  value={
-                                    item.weapon.secondHead.enhancementBonus ?? 0
-                                  }
-                                  onChange={(e) => {
-                                    const val = Number(e.target.value) || 0
-                                    update((c) => {
-                                      const items = [...c.inventory.items]
-                                      const current = items[index]
-                                      if (!current.weapon?.secondHead) return c
-                                      const secondHead = {
-                                        ...current.weapon.secondHead,
-                                      }
-                                      if (val > 0) {
-                                        secondHead.enhancementBonus = val
-                                        secondHead.masterwork = true
-                                      } else {
-                                        delete secondHead.enhancementBonus
-                                      }
-                                      items[index] = {
-                                        ...current,
-                                        weapon: {
-                                          ...current.weapon,
-                                          secondHead,
-                                        },
-                                      }
-                                      return {
-                                        ...c,
-                                        inventory: { ...c.inventory, items },
-                                      }
-                                    })
-                                  }}
-                                >
-                                  <option value={0}>
-                                    {t('pf1e.inventory.noEnhancement')}
-                                  </option>
-                                  {[1, 2, 3, 4, 5].map((bonus) => (
-                                    <option key={bonus} value={bonus}>
-                                      +{bonus}
-                                    </option>
-                                  ))}
-                                </select>
-                              </label>
-                            </div>
+                            <MagicOverlayControls
+                              slot={item.weapon.secondHead}
+                              masterworkAriaLabel={t(
+                                'pf1e.inventory.secondHeadMasterwork',
+                              )}
+                              enhancementAriaLabel={t(
+                                'pf1e.inventory.secondHeadEnhancement',
+                              )}
+                              onChange={(secondHead) =>
+                                placeSlot(
+                                  update,
+                                  index,
+                                  (current, slot) =>
+                                    current.weapon?.secondHead
+                                      ? {
+                                          ...current,
+                                          weapon: {
+                                            ...current.weapon,
+                                            secondHead: slot,
+                                          },
+                                        }
+                                      : current,
+                                  secondHead,
+                                )
+                              }
+                            />
                             <ItemPropertiesEditor
                               tags={item.weapon.secondHead.properties ?? []}
                               kind="weapon"
@@ -417,76 +304,20 @@ export function InventoryPanel({
 
                     {item.armor ? (
                       <div className="armor-controls">
-                        <div className="magic-overlay-controls">
-                          <label>
-                            <input
-                              type="checkbox"
-                              aria-label={t('pf1e.inventory.masterwork')}
-                              checked={
-                                item.armor.masterwork ??
-                                Boolean(item.armor.enhancementBonus)
-                              }
-                              onChange={(e) =>
-                                update((c) => {
-                                  const items = [...c.inventory.items]
-                                  const current = items[index]
-                                  if (!current.armor) return c
-                                  const armor = { ...current.armor }
-                                  if (
-                                    e.target.checked ||
-                                    armor.enhancementBonus
-                                  ) {
-                                    armor.masterwork = true
-                                  } else {
-                                    delete armor.masterwork
-                                  }
-                                  items[index] = { ...current, armor }
-                                  return {
-                                    ...c,
-                                    inventory: { ...c.inventory, items },
-                                  }
-                                })
-                              }
-                            />
-                            {t('pf1e.inventory.masterwork')}
-                          </label>
-                          <label>
-                            {t('pf1e.inventory.enhancement')}:
-                            <select
-                              aria-label={t('pf1e.inventory.enhancement')}
-                              value={item.armor.enhancementBonus ?? 0}
-                              onChange={(e) => {
-                                const val = Number(e.target.value) || 0
-                                update((c) => {
-                                  const items = [...c.inventory.items]
-                                  const current = items[index]
-                                  if (!current.armor) return c
-                                  const armor = { ...current.armor }
-                                  if (val > 0) {
-                                    armor.enhancementBonus = val
-                                    armor.masterwork = true
-                                  } else {
-                                    delete armor.enhancementBonus
-                                  }
-                                  items[index] = { ...current, armor }
-                                  return {
-                                    ...c,
-                                    inventory: { ...c.inventory, items },
-                                  }
-                                })
-                              }}
-                            >
-                              <option value={0}>
-                                {t('pf1e.inventory.noEnhancement')}
-                              </option>
-                              {[1, 2, 3, 4, 5].map((bonus) => (
-                                <option key={bonus} value={bonus}>
-                                  +{bonus}
-                                </option>
-                              ))}
-                            </select>
-                          </label>
-                        </div>
+                        <MagicOverlayControls
+                          slot={item.armor}
+                          onChange={(armor) =>
+                            placeSlot(
+                              update,
+                              index,
+                              (current, slot) =>
+                                current.armor
+                                  ? { ...current, armor: slot }
+                                  : current,
+                              armor,
+                            )
+                          }
+                        />
                         <ItemPropertiesEditor
                           tags={item.armor.properties ?? []}
                           kind="armor"
@@ -512,76 +343,20 @@ export function InventoryPanel({
 
                     {item.shield ? (
                       <div className="shield-controls">
-                        <div className="magic-overlay-controls">
-                          <label>
-                            <input
-                              type="checkbox"
-                              aria-label={t('pf1e.inventory.masterwork')}
-                              checked={
-                                item.shield.masterwork ??
-                                Boolean(item.shield.enhancementBonus)
-                              }
-                              onChange={(e) =>
-                                update((c) => {
-                                  const items = [...c.inventory.items]
-                                  const current = items[index]
-                                  if (!current.shield) return c
-                                  const shield = { ...current.shield }
-                                  if (
-                                    e.target.checked ||
-                                    shield.enhancementBonus
-                                  ) {
-                                    shield.masterwork = true
-                                  } else {
-                                    delete shield.masterwork
-                                  }
-                                  items[index] = { ...current, shield }
-                                  return {
-                                    ...c,
-                                    inventory: { ...c.inventory, items },
-                                  }
-                                })
-                              }
-                            />
-                            {t('pf1e.inventory.masterwork')}
-                          </label>
-                          <label>
-                            {t('pf1e.inventory.enhancement')}:
-                            <select
-                              aria-label={t('pf1e.inventory.enhancement')}
-                              value={item.shield.enhancementBonus ?? 0}
-                              onChange={(e) => {
-                                const val = Number(e.target.value) || 0
-                                update((c) => {
-                                  const items = [...c.inventory.items]
-                                  const current = items[index]
-                                  if (!current.shield) return c
-                                  const shield = { ...current.shield }
-                                  if (val > 0) {
-                                    shield.enhancementBonus = val
-                                    shield.masterwork = true
-                                  } else {
-                                    delete shield.enhancementBonus
-                                  }
-                                  items[index] = { ...current, shield }
-                                  return {
-                                    ...c,
-                                    inventory: { ...c.inventory, items },
-                                  }
-                                })
-                              }}
-                            >
-                              <option value={0}>
-                                {t('pf1e.inventory.noEnhancement')}
-                              </option>
-                              {[1, 2, 3, 4, 5].map((bonus) => (
-                                <option key={bonus} value={bonus}>
-                                  +{bonus}
-                                </option>
-                              ))}
-                            </select>
-                          </label>
-                        </div>
+                        <MagicOverlayControls
+                          slot={item.shield}
+                          onChange={(shield) =>
+                            placeSlot(
+                              update,
+                              index,
+                              (current, slot) =>
+                                current.shield
+                                  ? { ...current, shield: slot }
+                                  : current,
+                              shield,
+                            )
+                          }
+                        />
                         <ItemPropertiesEditor
                           tags={item.shield.properties ?? []}
                           kind="shield"

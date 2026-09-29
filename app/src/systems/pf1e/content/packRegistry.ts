@@ -132,6 +132,11 @@ class PackIndex<T extends { id: string }> {
     if (!id) return null
     return this.#byId.get(id) ?? null
   }
+
+  /** Registration order. A re-registered id keeps its original position. */
+  entries(): readonly T[] {
+    return [...this.#byId.values()]
+  }
 }
 
 const classIndex = new PackIndex<ClassProgression>('class')
@@ -227,4 +232,36 @@ export function lookupFeature(
   id: string | null | undefined,
 ): FeatureCatalogRow | null {
   return featureIndex.lookup(id)
+}
+
+export function listClassProgressions(): readonly ClassProgression[] {
+  return classIndex.entries()
+}
+
+export function listRaces(): readonly RaceCatalogRow[] {
+  return raceIndex.entries()
+}
+
+export function listItems(): readonly ItemCatalogRow[] {
+  return itemIndex.entries()
+}
+
+export function listFeats(): readonly FeatCatalogRow[] {
+  return featIndex.entries()
+}
+
+export function listSpells(): readonly SpellCatalogRow[] {
+  return spellIndex.entries()
+}
+
+export function listArchetypes(): readonly ArchetypeCatalogRow[] {
+  return archetypeIndex.entries()
+}
+
+export function listEvolutions(): readonly EvolutionCatalogRow[] {
+  return evolutionIndex.entries()
+}
+
+export function listFeatures(): readonly FeatureCatalogRow[] {
+  return featureIndex.entries()
 }

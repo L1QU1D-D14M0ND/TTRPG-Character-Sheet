@@ -5,9 +5,15 @@ import type {
   ItemEntry,
   SpellListEntry,
 } from '../character/types'
-import { lookupById, seededClassSkills } from './catalogLookup'
+import { seededClassSkills } from './catalogLookup'
 import { loadCatalog } from './loadCatalog'
 import {
+  lookupClassProgression,
+  lookupFeat,
+  lookupFeature,
+  lookupItem,
+  lookupRace,
+  lookupSpell,
   registerClassPack,
   registerFeatPack,
   registerFeaturePack,
@@ -101,41 +107,48 @@ registerFeatPack(CRB_FEATS)
 registerSpellPack(CRB_SPELLS)
 registerFeaturePack(CRB_FEATURES)
 
+function crbRow<T extends { source?: { book?: string } }>(
+  row: T | null,
+): T | null {
+  if (!row || row.source?.book !== 'CRB') return null
+  return row
+}
+
 /** Unknown or empty id → null. Never throws (isolate to the row). CRB only. */
 export function lookupCrbClass(
   id: string | null | undefined,
 ): ClassProgression | null {
-  return lookupById(CRB_CLASSES, id)
+  return crbRow(lookupClassProgression(id))
 }
 
 export function lookupCrbRace(
   id: string | null | undefined,
 ): RaceCatalogRow | null {
-  return lookupById(CRB_RACES, id)
+  return crbRow(lookupRace(id))
 }
 
 export function lookupCrbItem(
   id: string | null | undefined,
 ): ItemCatalogRow | null {
-  return lookupById(CRB_ITEMS, id)
+  return crbRow(lookupItem(id))
 }
 
 export function lookupCrbFeat(
   id: string | null | undefined,
 ): FeatCatalogRow | null {
-  return lookupById(CRB_FEATS, id)
+  return crbRow(lookupFeat(id))
 }
 
 export function lookupCrbSpell(
   id: string | null | undefined,
 ): SpellCatalogRow | null {
-  return lookupById(CRB_SPELLS, id)
+  return crbRow(lookupSpell(id))
 }
 
 export function lookupCrbFeature(
   id: string | null | undefined,
 ): FeatureCatalogRow | null {
-  return lookupById(CRB_FEATURES, id)
+  return crbRow(lookupFeature(id))
 }
 
 export { applyClassProgression as applyCrbClassProgression } from './classLookup'

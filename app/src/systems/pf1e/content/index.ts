@@ -52,4 +52,21 @@ export type {
   CrbSpell,
 } from './crbPack'
 export type { ClassProgression } from './packRegistry'
+export {
+  catalogId,
+  catalogName,
+  groups,
+  resolve,
+  setCatalogName,
+  stamp,
+} from './catalogIndex'
+export type {
+  CatalogGroup,
+  CatalogHostMap,
+  CatalogKind,
+  CatalogOption,
+  HostFor,
+  MechanicsFor,
+  MechanicsMap,
+} from './catalogIndex'
 export * from './crbMagicProperties'
