@@ -1,8 +1,8 @@
 # Pathfinder Second Edition — Dynamic Character Sheet Design
 
-**Status:** **System specification** for Pathfinder Second Edition (still valid). App-level product direction is [ADR 0003](adr/0003-multi-system-product-direction.md) / [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md): multi-system PWA, **finish PF1e this release**, this PF2e slice **preserved**. Remaining PF2e goldens/content wait for a **later release**.  
+**Status:** **System specification** for Pathfinder Second Edition (still valid). App-level product direction is [ADR 0003](adr/0003-multi-system-product-direction.md) / [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md): multi-system PWA, **PF1e sheet finished**, this PF2e slice **preserved**. Current app phase is [Phase 5](phase-5.md). Remaining PF2e goldens/content wait for a **later release**, which is not Phase 5.  
 **Implementation:** PF2e Phase 1–2 scaffold exists (S1 Fighter 5, T1 Wizard 5, leftover Bard 5 / Cleric 5 / Ranger 5 goldens, T3 form editors, S4 validation). Companion editor, remaining PC2 golden, content packs, and PF2e panel i18n catalogs wait for a later PF2e *release*.  
-**Sequencing:** [`next-increment-multi-system.md`](next-increment-multi-system.md) (current). Historical: [`next-increment-design.md`](next-increment-design.md), [`continuation-design.md`](continuation-design.md).  
+**Sequencing:** [`phase-5.md`](phase-5.md) (current). Executed record: [`next-increment-multi-system.md`](next-increment-multi-system.md). Historical: [`next-increment-design.md`](next-increment-design.md), [`continuation-design.md`](continuation-design.md).  
 **Repo context:** npm package `ttrpg-character-sheet`; GitHub [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet) (renamed from `Pathfinder-2E-Card`, [ADR 0008](adr/0008-repo-package-rename.md))  
 **Audience:** Product / engineering  
 **Ruleset target:** Pathfinder Second Edition — **Remaster-first**, legacy fallback when Remaster data is missing or errors
@@ -344,8 +344,10 @@ Live status checkboxes: [`ROADMAP.md`](ROADMAP.md). App-level phases (M, 1e, 2e,
 
 ### Phase 5 — Post-1.0
 
-- Reference encyclopedia as a **sidebar tool** (spells / afflictions / actions), once tools are specified.
-- Complex `effects[]` automation.
+App-level Phase 5 is current ([`phase-5.md`](phase-5.md)). For this system spec, that means:
+
+- Reference encyclopedia as a **sidebar tool** (`shell.encyclopedia`: spells / afflictions / actions), once the named tools have landed. They have. PF2e Remaster prose stays with the later PF2e release, not in slice 5.1.
+- Complex `effects[]` automation is slice 5.3. Unknown types stay ignored until then.
 
 ---
 
@@ -421,3 +423,4 @@ This section is the **PF2e system target**, not the app 0.9 bar (see [umbrella �
 | 2026-09-03 | Chrome title is TTRPG Character Sheet; IndexedDB draft landed; PF2e panel i18n still later release |
 | 2026-09-22 | Named sidebar tools (Attack Helper, Actions List, Budget Calculator) landed supporting PF2e |
 | 2026-09-26 | Document audit: synchronize Appendix A coverage checklist with implemented engine and sheet domains |
+| 2026-10-03 | PF1e sheet finish recorded. App phase is Phase 5; this spec's leftover goldens stay the later PF2e release |

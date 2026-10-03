@@ -1,6 +1,6 @@
 # Next increment — multi-system refactor, then PF1e
 
-**Status:** Active sequencing document (2026-09-22)  
+**Status:** Executed record (2026-10-03). Phases M through 1x and pre-release hygiene have landed. Do not use this file to schedule new work. Live sequence: [`phase-5.md`](phase-5.md) and [`ROADMAP.md`](ROADMAP.md).  
 **Depends on:** [ADR 0003](adr/0003-multi-system-product-direction.md), [ADR 0004](adr/0004-shared-kernel.md), [ADR 0005](adr/0005-sidebar-host.md), [ADR 0007](adr/0007-content-licensing.md), [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md), [`shared-kernel-design.md`](shared-kernel-design.md), [`sidebar-host-design.md`](sidebar-host-design.md), [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md)  
 **Historical PF2e increment (T1/T3 executed, leftover goldens deprioritized):** [`next-increment-design.md`](next-increment-design.md)
 
@@ -12,7 +12,7 @@ This document **does** change product sequencing: **finish First Edition** in th
 
 The repo is a working multi-system sheet: **PF1e** is the development priority; **PF2e** is a preserved slice (schema, `compute()`, Fighter 5 / Wizard 5 / Bard 5 / Cleric 5 / Ranger 5 goldens, spreadsheet editors).
 
-First Edition is **complete**: Feat batches F1–F4 (all 177 CRB feats) and spell batches S1–S5 (all 622 CRB spells) have landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2) and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Next is pre-release / hygiene. Remaining **PF2e** work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n). The PF2e slice stays in the app and must not regress. **1.0 landed:** Spanish (`es.json`) covers chrome + PF1e panels; PF2e panel literals remain. Batches 1–21, W1–W7, APG Synthesist, IndexedDB draft, and PWA dist check are in the repo.
+First Edition is **complete**: Feat batches F1–F4 (all 177 CRB feats) and spell batches S1–S5 (all 622 CRB spells) have landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2), all three named sidebar tools (Attack Helper, Actions List, Budget Calculator), and pre-release hygiene have landed. **Next work is Phase 5** ([`phase-5.md`](phase-5.md)), starting with the encyclopedia tool. Remaining **PF2e** work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) and is not Phase 5. The PF2e slice stays in the app and must not regress. **1.0 landed:** Spanish (`es.json`) covers chrome + PF1e panels; PF2e panel literals remain. Batches 1–21, W1–W7, APG Synthesist, IndexedDB draft, and PWA dist check are in the repo.
 
 ---
 
@@ -88,7 +88,7 @@ Several of these have since landed or moved: Bard/Cleric/Ranger 5 goldens exist;
 
 ### Recommendation
  
-**First Edition feature scope is complete:** all 177 CRB feats, all 622 CRB spells, magic overlay, APG follow-through (Summoner `spellsPerDay` + 27 spells), optional goldens, catalog picker (ADR 0009 slices 1 & 2), and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Next is pre-release / hygiene. Leftover PF2e work waits for a later release. M / 1e / 2e / 3e / 1.0 / honesty fixes already landed.
+**First Edition feature scope is complete:** all 177 CRB feats, all 622 CRB spells, magic overlay, APG follow-through (Summoner `spellsPerDay` + 27 spells), optional goldens, catalog picker (ADR 0009 slices 1 & 2), all three named sidebar tools (Attack Helper, Actions List, Budget Calculator), and pre-release hygiene have landed. Next work is Phase 5 ([`phase-5.md`](phase-5.md)). Leftover PF2e work waits for a later release. M / 1e / 2e / 3e / 1.0 / honesty fixes already landed.
 
 ---
 
@@ -146,10 +146,11 @@ After goldens can be typed by hand. Review CRB character mechanics **two at a ti
 | 8 | Platform | IndexedDB draft; PWA install/offline proof |
 | 9 | 0.9 | English; PF1e bar; PF2e slice still works; sidebar host may be empty |
 | 10 | Phase 4 | `es` + playable APG Synthesist = 1.0 |
-| 11 | 1x | Finish First Edition (honesty/code fixes [landed], playtest priority [landed], CRB catalog [landed], magic overlay [landed], APG follow-through [landed], optional goldens [landed], catalog picker [landed], sidebar tools [landed]). Next: pre-release / hygiene |
-| 12 | Later release | Leftover PF2e goldens/content; encyclopedia / `effects[]` / more systems |
+| 11 | 1x | Finish First Edition (honesty/code fixes [landed], playtest priority [landed], CRB catalog [landed], magic overlay [landed], APG follow-through [landed], optional goldens [landed], catalog picker [landed], sidebar tools [landed], hygiene [landed]) |
+| 12 | Phase 5 | Encyclopedia, localized catalog names, `effects[]`, optional card surfaces, additional systems — live sequence is [`phase-5.md`](phase-5.md) |
+| 13 | Later PF2e release | PC2 golden, companion editor, Remaster packs, PF2e panel i18n. Not Phase 5 |
 
-Steps 2–11, Phase 1x honesty fixes, CRB catalog fill-out (all 177 feats and all 622 spells), APG follow-through (Summoner `spellsPerDay` + 27 spells), catalog picker (ADR 0009), and all three named sidebar tools landed. The **next work** is pre-release / hygiene and release preparation.
+Steps 2–11 landed. The **next work** is Phase 5.1.
 
 ---
 
@@ -277,8 +278,8 @@ Code/docs pass after Phases M–3e and 3c batches 1–2. **First pass:** Wizard 
 | OGL notice + Section 15 | Same PR as first pack **rules text** |
 | App’s one typed switch to pick `pf1eModule` vs `pf2eModule` | TypeScript cannot erase the `LoadedSheet` union; tabs stay inside each Workspace |
 | Remaining PF2e panel literals | Later PF2e *release* (when those panels next change) |
-| Finish First Edition (honesty/code fixes, CRB fill-out, APG follow-through, catalog picker, sidebar tools) | Landed (CRB feats/spells complete, APG Summoner spells complete, catalog picker landed, sidebar tools landed). Pre-release / hygiene landed |
-| Leftover PF2e (PC2 golden, companion editor, Remaster packs) | Later *release* |
+| Finish First Edition (honesty/code fixes, CRB fill-out, APG follow-through, catalog picker, sidebar tools) | Landed, including pre-release hygiene. Live sequence is Phase 5 ([`phase-5.md`](phase-5.md)) |
+| Leftover PF2e (PC2 golden, companion editor, Remaster packs) | Later *release* — not Phase 5 |
 
 ---
 
@@ -356,3 +357,4 @@ Code/docs pass after Phases M–3e and 3c batches 1–2. **First pass:** Wizard 
 | 2026-09-21 | Architecture deepening: PF1e catalog picker (ADR 0009 slices 1 & 2) landed |
 | 2026-09-22 | Named sidebar tools (Attack Helper, Actions List, Budget Calculator) and pre-release hygiene landed |
 | 2026-09-24 | Reliability & hygiene pass: ModalDialog focus management, catalog picker capped first page, and override prototype pollution safety landed |
+| 2026-10-03 | Mark this file as the executed record. Live sequence is Phase 5 |

@@ -5,7 +5,7 @@
 **Supersedes:** [ADR 0001](0001-product-direction.md) (PF2e-only product lock)  
 **Context:** Stakeholder asked whether the project can pivot from a Pathfinder 2E-only sheet into a broader TTRPG tool, with Pathfinder First Edition added and **prioritized over 2E**. Feasibility review of the current schema, calc engine, and spreadsheet shell concluded: 1E is a second engine, not a PF2e variant; the existing layering makes a multi-system refactor tractable if the working PF2e slice is kept as a regression safety net.
 
-This ADR does **not** implement code. It replaces the product lock. Schema/engine/UI work follows the [roadmap](../ROADMAP.md) and [next increment](../next-increment-multi-system.md).
+This ADR does **not** implement code. It replaces the product lock. Schema/engine/UI work follows the [roadmap](../ROADMAP.md). [`next-increment-multi-system.md`](../next-increment-multi-system.md) is the executed record of Phases M–1x. Live work is [Phase 5](../phase-5.md).
 
 ## Decision
 

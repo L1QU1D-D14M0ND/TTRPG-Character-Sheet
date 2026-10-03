@@ -267,7 +267,7 @@ The identified discrepancies are categorized into:
 In both PF1e and PF2e:
 - Condition entries on the character (`character.conditions`) are displayed on the *Play* tab and inspected by the sidebar tools (Actions List & Attack Helper).
 - However, `compute.ts` does **not** apply condition-based numerical penalties (e.g., Sickened -2 to all checks, Frightened status penalty, Clumsy penalty to Dex checks/AC, Exhausted -3 to attack/damage) to the sheet's derived numbers.
-- **Status:** This is an intentional architectural boundary for the 0.9/1.0 release (avoiding complex temporary state recalculations without explicit player overrides). However, it should be clearly communicated in [`docs/user-guide.md`](file:///home/overlord/Desktop/dev/Pathfinder-2E-Card/docs/user-guide.md).
+- **Status:** Intentional for the finished 0.9/1.0 sheet. [`user-guide.md`](user-guide.md) states that conditions do not change derived numbers. Typed `effects[]` is Phase 5.3 ([`phase-5.md`](phase-5.md)).
 
 ---
 

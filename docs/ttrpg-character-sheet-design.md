@@ -1,7 +1,7 @@
 # TTRPG Character Sheet — Product design
 
 **Status:** Product direction lock (ADR 0003) — 2026-08-18  
-**Implementation:** PF1e **0.9 bar landed**. **1.0 landed** — Synthesist golden + Spanish UI catalog + stability. Wizard 7 playtest override and Phase 1x honesty/code fixes landed (2026-09-12). All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` table + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2) and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Next is pre-release / hygiene. Remaining PF2e work waits for a **later release**.  
+**Implementation:** PF1e **0.9 bar landed**. **1.0 landed** — Synthesist golden + Spanish UI catalog + stability. The First Edition finish has landed (CRB catalog, APG follow-through, catalog picker, named sidebar tools, pre-release hygiene). **Current phase is Phase 5** ([`phase-5.md`](phase-5.md)): encyclopedia first, with the OGL notice in that change. Remaining PF2e work waits for a **later release** and is not Phase 5.  
 **Next coding increment:** [`next-increment-multi-system.md`](next-increment-multi-system.md)  
 **Repo context:** npm package `ttrpg-character-sheet`; GitHub [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet) (renamed from `Pathfinder-2E-Card`, [ADR 0008](adr/0008-repo-package-rename.md))  
 **Audience:** Product / engineering  
@@ -77,17 +77,19 @@ See [ADR 0003](adr/0003-multi-system-product-direction.md).
 - **PF1e:** player can build and play an **APG Synthesist Summoner** (fused eidolon on the same sheet).
 - Still core calcs only.
 
-**After 1.0 (current release)**
- 
-- Finish First Edition past the 1.0 goldens: honesty/code fixes and Wizard 7 playtest override landed, CRB player catalog complete (all 177 CRB feats and all 622 CRB spells packed), APG follow-through landed (Summoner spells/day + 27-spell catalog), optional extra PF1e goldens landed (Cleric 5, Fighter 5/Duelist 2, Ranger 5 with companion), catalog picker landed, and all three named sidebar tools landed (Attack Helper, Actions List, Budget Calculator). Next is pre-release / hygiene. OGL notice when rules text prose ships.
+**After 1.0** — landed. Honesty/code fixes, Wizard 7 playtest override, CRB player catalog (all 177 feats and all 622 spells), APG follow-through, optional PF1e goldens (Cleric 5, Fighter 5/Duelist 2, Ranger 5 with companion), catalog picker, named sidebar tools, and pre-release hygiene have landed.
 
-**Later (design must not block)**
+**Phase 5 (current)** — [`phase-5.md`](phase-5.md).
 
-- Remaining PF2e goldens, companion editor, Remaster + legacy content packs, PF2e panel i18n — **later release**.
-- Encyclopedia (Spells / Afflictions / Actions **rules text**) is a candidate, distinct from Actions List. [ADR 0005](adr/0005-sidebar-host.md). **Attack Helper:** [`sidebar-tools-attack-helper.md`](sidebar-tools-attack-helper.md). **Actions List:** [`sidebar-tools-actions-list.md`](sidebar-tools-actions-list.md). **Budget Calculator:** [`sidebar-tools-budget-calculator.md`](sidebar-tools-budget-calculator.md).
+- Encyclopedia (Spells / Afflictions / Actions **rules text**) as sidebar tool `shell.encyclopedia`, distinct from Actions List. The OGL notice ships in that same change.
+- Localized catalog names (a second name per row; not UI-locale work).
 - Typed `effects[]` automation.
 - Optional card-oriented play surfaces.
 - Additional systems behind the same `system` discriminator.
+
+**Later PF2e release (not Phase 5)**
+
+- Remaining PF2e goldens, companion editor, Remaster + legacy content packs, PF2e panel i18n.
 
 ### Non-goals (0.9/1.0)
 
@@ -241,8 +243,8 @@ Live checkboxes: [`ROADMAP.md`](ROADMAP.md).
 | Sb | Sidebar host (registry, collapse, empty state); **not** blocking 1e |
 | 0.9 | English PWA; PF1e playable bar; PF2e slice non-regressed; sidebar host may be empty |
 | 4 | Spanish + playable APG Synthesist Summoner; stability (**1.0**) |
-| 1x | Finish First Edition (honesty/code fixes, CRB fill-out, APG follow-through, **then** sidebar tools as the last sheet feature); PF2e leftover waits |
-| 5 | Later PF2e *release*; encyclopedia / `effects[]` / more systems |
+| 1x | Finish First Edition — **done** (honesty/code fixes, CRB fill-out, APG follow-through, sidebar tools, hygiene) |
+| 5 | **Current.** Encyclopedia, localized names, `effects[]`, optional card surfaces, additional systems ([`phase-5.md`](phase-5.md)). Later PF2e release stays separate |
 
 ---
 
@@ -250,11 +252,11 @@ Live checkboxes: [`ROADMAP.md`](ROADMAP.md).
 
 - **Installable PWA**, spreadsheet UI, **TypeScript**, **MIT**.
 - **Multi-system** save files; **PF1e priority**, **PF2e preserved**.
-- **One character** loaded; **Save / Load**; **sidebar host** on the loaded sheet (tools later).
-- **Core calcs** for 0.9/1.0 with expansion hooks.
+- **One character** loaded; **Save / Load**; **sidebar host** with Attack Helper, Actions List, and Budget Calculator.
+- **Core calcs** for 0.9/1.0 with expansion hooks. Typed `effects[]` is Phase 5.3.
 - **No** campaign house-rule flags, dice, cloud, or VTT.
 - **English in 0.9**, **Spanish in 1.0**.
-- Later: honesty/code fixes then remaining First Edition catalog (current); leftover PF2e catalog/goldens wait for a later release; sidebar tools last; more systems.
+- **Phase 5** is current ([`phase-5.md`](phase-5.md)). Leftover PF2e catalog/goldens wait for a later release.
 
 ---
 
@@ -299,3 +301,4 @@ Live checkboxes: [`ROADMAP.md`](ROADMAP.md).
 | 2026-09-22 | Named sidebar tools (Attack Helper, Actions List, Budget Calculator) and pre-release hygiene landed |
 | 2026-09-23 | Reliability & a11y pass: shared ModalDialog with focus management, shell ErrorBoundary, and draftStore connection fix |
 | 2026-09-24 | Hygiene pass: HP breakdown dialog on ModalDialog, catalog picker capped first page, and override prototype pollution safety landed |
+| 2026-10-03 | Phase 5 is current. First Edition finish and hygiene marked done |

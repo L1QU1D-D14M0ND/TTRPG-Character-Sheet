@@ -31,7 +31,9 @@ When a character document is in memory (New or Load), the shell shows a **sideba
 
 **Postscript (2026-09-03):** Named tools (Attack Helper, Actions List, Budget Calculator) ship as the **last character-sheet feature** after Phase 1x honesty/code fixes, remaining catalog, APG follow-through, optional goldens, and OGL-with-rules-text (magic overlay landed). The “~90% done” gate is retired. Empty/collapsed host remains correct until then.
 
-**Postscript (2026-09-12):** Phase 1x honesty fixes wired `SidebarToolContext.focusTab` in `App.tsx` / `SheetSession` to `Workspace` tab switching and tested it, aligning the host implementation with the interface contract.
+**Postscript (2026-09-22):** Attack Helper, Actions List, and Budget Calculator have landed.
+
+**Postscript (2026-10-03):** The encyclopedia is Phase 5.1 (`shell.encyclopedia`), not a host redesign. See [`../phase-5.md`](../phase-5.md). Do not stub it before that slice. The OGL notice ships in the same change as its rules text.
 
 ## Defaults
 
@@ -52,6 +54,7 @@ When a character document is in memory (New or Load), the shell shows a **sideba
 - [`../ttrpg-character-sheet-design.md`](../ttrpg-character-sheet-design.md)
 - [`../shared-kernel-design.md`](../shared-kernel-design.md)
 - [`../ROADMAP.md`](../ROADMAP.md)
+- [`../phase-5.md`](../phase-5.md)
 - [`0001-product-direction.md`](0001-product-direction.md)
 - [`0003-multi-system-product-direction.md`](0003-multi-system-product-direction.md)
 - [`0004-shared-kernel.md`](0004-shared-kernel.md)

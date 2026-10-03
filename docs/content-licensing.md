@@ -108,3 +108,4 @@ No Remaster encyclopedia in this review. ORC import remains later (ADR 0003). PF
 | 2026-09-14 | Batches F2a–F4 (all 177 CRB feats packed), Batches S1–S5 (all 622 CRB spells packed), and magic weapons/armor overlay landed; verified mechanics-only |
 | 2026-09-17 | Record that catalog labels stay English in every UI locale; localized names are a later content slice, not UI-locale work |
 | 2026-09-20 | APG slice 4 landed: Summoner spellsPerDay table + 27 APG Summoner spells; verified mechanics-only by licenseGate |
+| 2026-10-03 | Phase 5.1 is the OGL increment: first rules-text prose and the Section 15 notice ship together. Localized names stay a separate mechanics-only slice (5.2) |

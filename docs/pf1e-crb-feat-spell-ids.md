@@ -1,6 +1,6 @@
 # PF1e CRB feat and spell id tables
 
-**Status:** Locked 2026-09-03. Do not pack JSON in the same change as this lock.  
+**Status:** Packed. F1–F4 and S1–S5 landed (all 177 CRB feats and all 622 CRB spells). This file remains the id lock. Do not add ids that are not listed here. Rules text for these rows is Phase 5.1 ([`phase-5.md`](phase-5.md)), not a new id batch.  
 **Parent:** [`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) §8  
 **Machine copy:** [`pf1e-crb-feat-spell-ids.json`](pf1e-crb-feat-spell-ids.json)
 

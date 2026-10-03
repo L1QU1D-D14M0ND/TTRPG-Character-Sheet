@@ -1,9 +1,9 @@
 # Pathfinder First Edition — Character sheet (system spec)
 
-**Status:** System specification locked (ADR 0003). PF1e **0.9 bar landed**. **1.0 landed** (Synthesist golden + Spanish UI catalog + stability). Wizard 7 playtest override and Phase 1x honesty/code fixes landed (2026-09-12). Feat batches F1–F4 (all 177 CRB feats) and spell batches S1–S5 (all 622 CRB spells) landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` table + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2) and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Next is pre-release / hygiene. Remaining PF2e work waits for a later release.  
+**Status:** System specification locked (ADR 0003). PF1e **0.9 bar landed**. **1.0 landed**. The First Edition finish has landed (CRB catalog, APG follow-through, catalog picker, named sidebar tools, pre-release hygiene). App sequencing is **Phase 5** ([`phase-5.md`](phase-5.md)). Remaining PF2e work waits for a later release and is not Phase 5.  
 **Parent:** [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md)  
 **Schema:** [ADR 0006](adr/0006-pf1e-character-schema.md), [`pf1e-schema-design-notes.md`](pf1e-schema-design-notes.md), [`../schemas/pf1e/character.schema.json`](../schemas/pf1e/character.schema.json)  
-**Priority:** **Finished** for this release (remaining PF2e work waits for a later release)
+**Priority:** **Finished** as a sheet. Further PF1e content prose is Phase 5.1, not more catalog-id batches. Remaining PF2e work waits for a later release.
 
 This is the PF1e analog of the PF2e design doc. It does not replace the umbrella product lock.
 
@@ -148,7 +148,7 @@ Fork or parameterize vs PF2e:
 - **Play:** current HP (can be negative); conditions; daily resources. No dying track.
 - **Inventory:** lb, not bulk/invested.
 
-Shared: Notes, generic feat/feature row tables, Save/Load, derived-cell look, **sidebar host** (PF1e may register edition tools later; none required for 0.9).
+Shared: Notes, generic feat/feature row tables, Save/Load, derived-cell look, **sidebar host** (Attack Helper, Actions List, and Budget Calculator have landed).
 
 ---
 
@@ -255,3 +255,4 @@ PF2e Dual Class (campaign option) stays out of PF2e 0.9; it is **not** the same 
 | 2026-09-22 | Named sidebar tools (Attack Helper, Actions List, Budget Calculator) and pre-release hygiene landed |
 | 2026-09-23 | Reliability & a11y pass: shared ModalDialog with focus management, shell ErrorBoundary, and draftStore connection fix |
 | 2026-09-24 | Hygiene pass: HP breakdown dialog on ModalDialog, catalog picker capped first page, and override prototype pollution safety landed |
+| 2026-10-03 | First Edition finish closed. Next app work is Phase 5 |

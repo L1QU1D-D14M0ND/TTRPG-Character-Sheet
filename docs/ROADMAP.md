@@ -1,9 +1,9 @@
 # Roadmap
 
-Operational tracker for **TTRPG Character Sheet** (working title). Product decisions live in [ADR 0003](adr/0003-multi-system-product-direction.md) and the [umbrella design](ttrpg-character-sheet-design.md). Reuse boundaries: [ADR 0004](adr/0004-shared-kernel.md), [`shared-kernel-design.md`](shared-kernel-design.md). Sidebar host: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md). Content licensing: [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md). PF1e system spec: [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md). PF2e system spec: [`pf2e-dynamic-character-sheet-design.md`](pf2e-dynamic-character-sheet-design.md) (ADR 0001 superseded; [ADR 0002](adr/0002-character-schema.md) still governs PF2e documents). Sequencing: [multi-system next increment](next-increment-multi-system.md). Historical PF2e sequencing: [continuation design](continuation-design.md) (S1/S4 executed), [next increment (PF2e)](next-increment-design.md) (T1/T3 executed; leftover goldens deprioritized).
+Operational tracker for **TTRPG Character Sheet** (working title). Product decisions live in [ADR 0003](adr/0003-multi-system-product-direction.md) and the [umbrella design](ttrpg-character-sheet-design.md). Reuse boundaries: [ADR 0004](adr/0004-shared-kernel.md), [`shared-kernel-design.md`](shared-kernel-design.md). Sidebar host: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md). Content licensing: [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md). PF1e system spec: [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md). PF2e system spec: [`pf2e-dynamic-character-sheet-design.md`](pf2e-dynamic-character-sheet-design.md) (ADR 0001 superseded; [ADR 0002](adr/0002-character-schema.md) still governs PF2e documents). Sequencing: [Phase 5](phase-5.md). The [multi-system next increment](next-increment-multi-system.md) is the executed record of Phases M–1x. Historical PF2e sequencing: [continuation design](continuation-design.md) (S1/S4 executed), [next increment (PF2e)](next-increment-design.md) (T1/T3 executed; leftover goldens deprioritized).
 
-**Status date:** 2026-09-24  
-**Current phase:** **First Edition complete; pre-release / hygiene.** Playtest priority override (CRB Wizard 7 Transmutation specialist) and honesty/code fixes landed (2026-09-12). 1.0 landed (Spanish + playable Synthesist). CRB batches 1–21 and W1–W7 landed (mundane weapons/armor/shields plus documentary `weapon.properties`). Feat batches F1–F4 (all 177 CRB feats) and spell batches S1–S5 (all 622 CRB spells) landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2) and all three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. The PF2e slice stays in the app and must not regress. Remaining PF2e work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n).  
+**Status date:** 2026-10-03  
+**Current phase:** **Phase 5.** Sequencing: [`phase-5.md`](phase-5.md). First Edition is complete (1.0, CRB batches 1–21 and W1–W7, all 177 CRB feats, all 622 CRB spells, APG Summoner `spellsPerDay` + 27 spells, catalog picker, Attack Helper, Actions List, Budget Calculator). Pre-release hygiene landed (disclaimer, NOTICE, About dialog, CONTRIBUTING, SECURITY). The PF2e slice stays in the app and must not regress. Remaining PF2e work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) and is **not** Phase 5.  
 
 **0.9 bar:** landed (English PWA, PF1e Fighter 5 / Wizard 5 / multiclass, PF2e slice, Save/Load, empty Tools sidebar). **1.0** is Spanish + playable APG Synthesist.
 
@@ -15,11 +15,11 @@ Operational tracker for **TTRPG Character Sheet** (working title). Product decis
 
 **1.0** — Spanish locale; same 0.9 bar, called stable; **PF1e player can build and play an APG Synthesist Summoner** (fused eidolon). Still core calcs; no in-app dice.
 
-**Finish First Edition (current release)** — take PF1e past the 1.0 goldens: honesty/code fixes, CRB pack fill-out (177 feats, 622 spells), APG follow-through (Summoner `spellsPerDay` + 27 spells), optional extra PF1e goldens (Cleric 5, Duelist, Ranger companion), catalog picker (ADR 0009 slices 1 & 2), and all three sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Pre-release hygiene (legal disclaimer, NOTICE, About modal, CONTRIBUTING, SECURITY) landed. OGL notice waits until rules text prose ships.
+**Finish First Edition** — landed. Honesty/code fixes, CRB pack fill-out (177 feats, 622 spells), APG follow-through (Summoner `spellsPerDay` + 27 spells), optional extra PF1e goldens (Cleric 5, Duelist, Ranger companion), catalog picker (ADR 0009 slices 1 & 2), and all three sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Pre-release hygiene (legal disclaimer, NOTICE, About modal, CONTRIBUTING, SECURITY) landed.
 
-**Later release — Second Edition** — leftover PF2e goldens (PC2 class), companion nested editor, Remaster/legacy packs, PF2e panel i18n. Do not start that work in this release.
+**Phase 5 (current)** — encyclopedia (rules text, with the OGL notice in that same change), then localized catalog names, then typed `effects[]`, then optional card surfaces, then additional systems. See [`phase-5.md`](phase-5.md).
 
-**Later still** — typed `effects[]`; optional card play surfaces; additional systems.
+**Later release — Second Edition** — leftover PF2e goldens (PC2 class), companion nested editor, Remaster/legacy packs, PF2e panel i18n. Do not start that work in Phase 5.
 
 ---
 
@@ -189,9 +189,9 @@ Not started (later PF2e release):
 
 ---
 
-## Phase 1x — Finish First Edition (current release)
+## Phase 1x — Finish First Edition
 
-**Status:** In progress. PF2e leftover waits for a later *release*.
+**Status:** Done (2026-09-24). PF2e leftover waits for a later *release*, not for Phase 5. The OGL notice moved to Phase 5.1, because it ships with the first rules-text prose.
 
 Bar: a player can build and play PF1e from catalog beyond the four goldens, still core calcs, still mechanics-only until rules text. Keep Summoner out of the CRB pack. Existing PF1e and PF2e goldens must stay green.
 
@@ -260,24 +260,24 @@ After the honesty fixes, in this order:
 - [x] **Optional PF1e goldens** (system spec §6) — Cleric 5 (domains/channel as daily resources); prestige smoke test; PF1e familiar/companion table fixture if the stub needs one
 - [x] **CRB magic weapons / armor** — overlay on mundane ids; no plus-N catalog rows. [`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) §7.5
 - [x] **PF1e catalog picker** — searchable dialog replacing per-panel `<select>` catalogs ([ADR 0009](adr/0009-pf1e-catalog-picker.md)). Slice 1 landed (feats, features, spells, evolutions, items). Slice 2 landed (Identity race / class / archetype).
-- [ ] **OGL notice + Section 15** — deferred until first pack **rules text** prose ships ([ADR 0007](adr/0007-content-licensing.md)); both packs currently remain `contentKind: "mechanics-only"` (`oglNoticeRequired: false`).
-- [x] **Sidebar tools** — **last character-sheet feature** in this release: Attack Helper, then Actions List, then Budget Calculator landed.
+- **OGL notice + Section 15** — not a Phase 1x checkbox. Both packs remain `contentKind: "mechanics-only"` (`oglNoticeRequired: false`). The notice ships in Phase 5.1 with the first rules-text prose ([ADR 0007](adr/0007-content-licensing.md)).
+- [x] **Sidebar tools** — **last character-sheet feature** in the First Edition finish: Attack Helper, then Actions List, then Budget Calculator landed.
 
 Do **not** start PF2e companion editor, PC2 golden, Remaster packs, or PF2e panel i18n in this phase.
 
 ---
 
-## Phase 5 — After the PF1e sheet (and later PF2e release)
+## Phase 5 — After the PF1e sheet
 
-**Status:** Deferred. Named sidebar tools ship as the **last Phase 1x character-sheet feature**, not here. Remaining PF2e leftovers wait for the later PF2e *release*.
+**Status:** Current (2026-10-03). Detail and slice order: [`phase-5.md`](phase-5.md). Named sidebar tools have landed. The later PF2e release stays frozen and is not part of this phase.
 
-- [ ] Spells / Afflictions / Actions **encyclopedia** (rules text, not the PC action menu) — candidate after the named tools
-- [ ] **Localized catalog names** — catalog labels are English pack content in every UI locale, so a Spanish player searches "Shield", not "escudo". A second name per row is a content slice with its own translation source, not UI-locale work ([`content-licensing.md`](content-licensing.md) §5)
-- [ ] Typed `effects[]` automation
-- [ ] Optional card-oriented play surfaces
-- [ ] Additional systems behind `system`
+- [ ] **5.1 Encyclopedia** — Spells / Afflictions / Actions rules text as sidebar tool `shell.encyclopedia` (not Actions List). The same change attaches OGL 1.0a + Section 15 ([ADR 0007](adr/0007-content-licensing.md))
+- [ ] **5.2 Localized catalog names** — a second name per row from a curated source, not `es.json` ([`content-licensing.md`](content-licensing.md) §5)
+- [ ] **5.3 Typed `effects[]` automation** — unknown types stay ignored; not a bonus-type stacker
+- [ ] **5.4 Optional card-oriented play surfaces** — no spec; do not start during 5.1–5.3
+- [ ] **5.5 Additional systems behind `system`** — no third engine in 5.1–5.4
 
-Out of scope for 0.9/1.0: dice roller, cloud, VTT interop, house-rule flags, GM-exclusive content, multi-character library, a third implemented game system.
+Out of scope for 0.9/1.0, and still out of Phase 5 unless a later ADR says otherwise: dice roller, cloud, VTT interop, house-rule flags, GM-exclusive content, multi-character library.
 
 ---
 
@@ -324,10 +324,12 @@ Out of scope for 0.9/1.0: dice roller, cloud, VTT interop, house-rule flags, GM-
 
 ## Recommended next work (in order)
 
-1. **OGL notice + Section 15** — deferred until first pack rules-text prose ships ([ADR 0007](adr/0007-content-licensing.md)); both CRB and APG packs currently carry `contentKind: "mechanics-only"` and `oglNoticeRequired: false`.
-2. **Later release** — leftover PF2e (PC2 golden, companion editor, Remaster packs, PF2e panel i18n). Encyclopedia / `effects[]` wait until after the sheet.
+1. **Phase 5.1 — encyclopedia + OGL notice** — one change. Sidebar tool `shell.encyclopedia` for packed PF1e spell and feat rules text. OGL 1.0a and Section 15 ship in that change ([`phase-5.md`](phase-5.md), [ADR 0007](adr/0007-content-licensing.md)). Both packs stay `mechanics-only` until then.
+2. **Phase 5.2 — localized catalog names.**
+3. **Phase 5.3 — typed `effects[]`.**
+4. **Later PF2e release** — PC2 golden, companion editor, Remaster packs, PF2e panel i18n. Not a Phase 5 slice.
 
-*Landed milestones (Phase 1x):* Wizard 7 playtest override, Phase 1x honesty/code fixes, PF1e catalog picker ([ADR 0009](adr/0009-pf1e-catalog-picker.md)) slice 1 & 2, APG follow-through (Summoner spellsPerDay + spell catalog), Optional PF1e goldens (Cleric 5, Fighter 5 / Duelist 2, Ranger 5 with companion/familiar), and Sidebar tools (Attack Helper, Actions List, Budget Calculator).
+*Landed milestones (Phase 1x):* Wizard 7 playtest override, Phase 1x honesty/code fixes, PF1e catalog picker ([ADR 0009](adr/0009-pf1e-catalog-picker.md)) slice 1 & 2, APG follow-through (Summoner spellsPerDay + spell catalog), Optional PF1e goldens (Cleric 5, Fighter 5 / Duelist 2, Ranger 5 with companion/familiar), Sidebar tools (Attack Helper, Actions List, Budget Calculator), and pre-release hygiene.
 
 Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-agent-env-2c8f` or `cursor/multi-system-docs-990b` (superseded / would regress).
 
@@ -428,3 +430,4 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-09-23 | Reliability/a11y pass: shared focus-managed ModalDialog, shell ErrorBoundary with autosave rescue, draftStore connection-leak fix, lint gate set to --max-warnings 0 |
 | 2026-09-24 | Hygiene pass: HP breakdown moved onto the shared ModalDialog (last raw `<dialog>`, 28% → 93% covered); catalog picker renders a capped first page with an overflow note (650 → 61 options, ~56ms → ~21ms open); shell workflow coverage for New/Load/Save/locale/draft (App.tsx 41% → 79%) with the twin `SheetSession` branches collapsed onto one `editCharacter` helper and a non-stale sidebar toggle |
 | 2026-09-24 | Reliability fix: override paths naming a record entry (`derived.attacks.__proto__.attack`) resolved through `Object.prototype` and crashed compute on load; record entries are now read by own key and unsafe keys refused, in the shared helper both systems use |
+| 2026-10-03 | Phase 5 opened ([`phase-5.md`](phase-5.md)). First Edition and hygiene marked done. Next code is slice 5.1 (encyclopedia + OGL notice in one change). Later PF2e release stays frozen |

@@ -4,6 +4,10 @@
 
 Canonical GitHub URL: `https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet` (clone: `https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet.git`). `Pathfinder-2E-Card` redirects there. The npm package name stays `ttrpg-character-sheet`. See [ADR 0008](docs/adr/0008-repo-package-rename.md).
 
+## Current phase
+
+**Phase 5** ([`docs/phase-5.md`](docs/phase-5.md), [`docs/ROADMAP.md`](docs/ROADMAP.md)). First Edition and pre-release hygiene have landed. Next code is slice 5.1: sidebar tool `shell.encyclopedia` for packed PF1e spell and feat rules text. That change also attaches OGL 1.0a and Section 15. Do not add `description` / `benefit` / `flavor` / `text` keys to pack JSON before that notice, and do not scrape an SRD. Do not start the later PF2e release (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) in a Phase 5 PR.
+
 ## Testing
 
 ### Honesty / code fixes (landed)

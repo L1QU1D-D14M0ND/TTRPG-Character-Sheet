@@ -1,7 +1,7 @@
 # Next increment design — options after S1 / S4
 
 **Status:** Archival. Historical (T1 + T3 executed 2026-08-14). **Not** the current coding sequence. Do not use this file to schedule new work.  
-**Current sequencing:** [`next-increment-multi-system.md`](next-increment-multi-system.md) (ADR 0003: PF1e-first multi-system). Leftover PF2e goldens, companion editor, and content packs in §8 are **deprioritized** until the PF1e 0.9 bar.  
+**Current sequencing:** [`phase-5.md`](phase-5.md) and [`ROADMAP.md`](ROADMAP.md). [`next-increment-multi-system.md`](next-increment-multi-system.md) is the executed multi-system record. Leftover PF2e goldens, companion editor, and content packs stay a later release, not Phase 5.  
 **Date:** 2026-08-14  
 **Audience:** Product / engineering  
 **Depends on:** [`pf2e-dynamic-character-sheet-design.md`](pf2e-dynamic-character-sheet-design.md) (PF2e system spec), [ADR 0001](adr/0001-product-direction.md) (superseded), [ADR 0002](adr/0002-character-schema.md), [`schema-design-notes.md`](schema-design-notes.md), [`continuation-design.md`](continuation-design.md) (S1/S4 path, now executed)

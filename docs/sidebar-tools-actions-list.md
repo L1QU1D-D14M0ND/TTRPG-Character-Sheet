@@ -61,7 +61,7 @@ Each row:
 
 - Prefer a **single condition or keyword**: `grappled`, `stunned`, `dazed`, `pinned`, `paralyzed`, `nauseated`, `entangled`, `immobilized`, `prone`, `blinded`.
 - If more than one thing applies, use a **short sentence**, not a paragraph: `stunned — no actions`, `grappled — no move`.
-- Do not write legal essays (“per CRB p. 562 you cannot…”). The sheet tabs and later encyclopedia tool hold rules text.
+- Do not write legal essays (“per CRB p. 562 you cannot…”). The sheet tabs and the Phase 5.1 encyclopedia tool hold rules text.
 
 **Grey-out:** `unavailable` rows are visually disabled (grey / reduced contrast). They stay on the list. `hindered` stays enabled with the reason beside the label.
 

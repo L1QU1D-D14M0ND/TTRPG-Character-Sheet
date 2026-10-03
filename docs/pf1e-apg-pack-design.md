@@ -12,7 +12,7 @@ This pack is **not** the CRB folder. **Never** add `class.summoner` to `content/
 
 ## License
 
-Mechanics-only until rules text ([ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md)).
+Mechanics-only until rules text ([ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md)). That prose is Phase 5.1, in the same change as the OGL notice ([`phase-5.md`](phase-5.md)).
 
 - Ids, names, HD / BAB / save tags, class-skill keys, skill points per level.
 - No class flavor, eidolon prose, evolution **text**, or spell descriptions.

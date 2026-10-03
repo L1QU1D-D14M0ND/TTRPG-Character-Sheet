@@ -1,6 +1,6 @@
 # PF1e Core Rulebook pack (Phase 3c)
 
-**Status:** Complete. Mechanic batches 1–21 and W1–W7 landed (Batch 15 is class spells-per-day + hybrid Max; W7 is double plus a documentary second head; Batch 20 is remaining light + medium armor; Batch 21 is heavy armor + shields). OGL / Product Identity review landed ([ADR 0007](adr/0007-content-licensing.md)). Stakeholder priority override (Wizard 7 playtest character) and Phase 1x honesty / code fixes landed (2026-09-12). APG Synthesist lives in a **separate** pack ([`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)). This CRB folder stays CRB-only. All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) have landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` + 27-spell catalog), catalog picker, and all three sidebar tools have landed.  
+**Status:** Complete. Mechanic batches 1–21 and W1–W7 landed (Batch 15 is class spells-per-day + hybrid Max; W7 is double plus a documentary second head; Batch 20 is remaining light + medium armor; Batch 21 is heavy armor + shields). OGL / Product Identity review landed ([ADR 0007](adr/0007-content-licensing.md)). Stakeholder priority override (Wizard 7 playtest character) and Phase 1x honesty / code fixes landed (2026-09-12). APG Synthesist lives in a **separate** pack ([`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)). This CRB folder stays CRB-only and mechanics-only until Phase 5.1. All 177 CRB feats (Batches F1–F4) and all 622 CRB spells (Batches S1–S5) have landed, completing the entire CRB player catalog. APG follow-through, catalog picker, and all three sidebar tools have landed. Rules text is Phase 5.1 ([`phase-5.md`](phase-5.md)), not another id batch.  
 
 **Parent:** [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md) §7, [ADR 0003](adr/0003-multi-system-product-direction.md)  
 **On disk:** [`../content/pf1e/crb/`](../content/pf1e/crb/)  
@@ -32,7 +32,7 @@ Resolver rule (locked): missing catalog id → treat as **custom**; isolate to t
 
 Order is CRB character-build order, not encyclopedia order. Sidebar tools stay out. **Two mechanics per PR** — do not start the following pair in the same change.
 
-**How to pick the next PR:** the 0.9 character-basics queue and mundane 16–21 / W1–W7 rows are **Done**. Honesty / code fixes and Wizard 7 playtest rows landed. Remaining feat/spell ids are **locked** ([§8](#8-remaining-crb-feats-and-spells)). Batches **F1a–F1c**, **F2a–F2c**, **F3a–F3c**, **F4**, and **S1–S5** landed (all 177 CRB feats and all 622 CRB spells packed, completing the entire CRB player catalog). APG follow-through, catalog picker, and sidebar tools (Attack Helper, Actions List, Budget Calculator) have all landed. Next is pre-release / hygiene.
+**How to pick the next PR:** the CRB pack is complete (batches 1–21, W1–W7, F1–F4, S1–S5). Do not open another CRB id batch. Next code is Phase 5.1 ([`phase-5.md`](phase-5.md)): encyclopedia prose, with the OGL notice in that change. Do not add that prose to this pack until that PR.
 
 | Batch | Mechanics | Why this pair | Kind | Status |
 | --- | --- | --- | --- | --- |
@@ -81,7 +81,7 @@ Order is CRB character-build order, not encyclopedia order. Sidebar tools stay o
 | **S4** | Remaining spells levels 6–7 | Finished in S1–S5 bulk landing (127 spells) | Catalog | Done |
 | **S5** | Remaining spells levels 8–9 | Finished in S1–S5 bulk landing (83 spells) | Catalog | Done |
 
-The 0.9 character-basics write-ups are in §4. Batches 14–15 are 1x fill-out. Batches 16–19 landed remaining simple, martial, and exotic weapon ids. **W1–W7** landed `reach`, `brace`, `trip`, `disarm`, `monk`, `nonlethal`, and `double` on a `weapon.properties` array of **N** tags (one is valid; many are valid). W7 also stamps a documentary `secondHead`. **Batches 20–21** landed remaining armor and shields. Honesty/code fixes landed (stale W7 test titles; golden inventory vs catalog `properties` / `secondHead`; honest `focusTab`). CRB feat and spell catalog work is complete (all 177 feats and all 622 spells packed). Magic properties use the same list. Mundane equipment fill-out is locked in [§7](#7-remaining-mundane-weapons-and-armor). APG follow-through, catalog picker, and sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Next is pre-release / hygiene.
+The 0.9 character-basics write-ups are in §4. The CRB catalog is complete (batches 14–21, W1–W7, F1–F4, S1–S5), including honesty/code fixes, the magic overlay, APG follow-through, the catalog picker, and the three sidebar tools. Next code is Phase 5 ([`phase-5.md`](phase-5.md)), not another CRB batch.
 
 ---
 
@@ -1292,9 +1292,9 @@ Those bonus slots are added to the class table’s spells per day. Batch 15 fill
 
 ## 6. Recommended upcoming work
 
-The 0.9 character-basics queue (batches 1–13) is done. Batches 14–15 landed remaining CRB player races and class spells-per-day. Batches 16–19 landed remaining simple, martial, and exotic weapon ids. W1–W7 landed reach, brace, trip, disarm, monk, nonlethal, and double (plus a documentary second head). Batches 20–21 landed remaining armor and shields. Do **not** start the next pair of CRB encyclopedia rows in the same change as a platform increment.
+The 0.9 character-basics queue (batches 1–13) is done. Batches 14–15 landed remaining CRB player races and class spells-per-day. Batches 16–19 landed remaining simple, martial, and exotic weapon ids. W1–W7 landed reach, brace, trip, disarm, monk, nonlethal, and double (plus a documentary second head). Batches 20–21 landed remaining armor and shields.
 
-**Status:** First Edition complete. Honesty/code fixes, playtest Wizard 7, remaining CRB feats/spells, APG follow-through (Summoner `spellsPerDay` + 27-spell catalog), catalog picker, magic overlay, and sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed. Next is pre-release / hygiene. Leftover PF2e waits for a later release. Do **not** add Summoner to this CRB folder.
+**Status:** First Edition complete. This CRB folder stays mechanics-only until Phase 5.1 attaches rules text and the OGL notice together. Leftover PF2e waits for a later release. Do **not** add Summoner to this CRB folder. Do **not** start another CRB id batch.
 
 ---
 

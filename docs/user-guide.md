@@ -26,6 +26,7 @@ This sheet does **not** roll virtual dice. It computes all necessary modifiers, 
 - **Build vs. Play:**
   - **Build Tabs (Identity, Abilities, Skills, Combat, Spells, Inventory, Feats):** Used between sessions or when leveling up to adjust scores, buy equipment, select feats/spells, and configure class progressions.
   - **Play Tab:** Used during live encounters to track temporary session state: **Current HP** (which can drop into negative numbers in PF1e), nonlethal damage, active **Conditions** (e.g., *shaken*, *grappled*, *fatigued*), and **Daily Resources** (e.g., Channel Energy, Rage rounds, Ki points).
+  - **Conditions do not change the numbers.** Adding *sickened*, *frightened*, *grappled*, or a similar condition updates the Play tab and the sidebar tools. It does not rewrite attack bonuses, AC, saves, or skills. Until Phase 5.3 types `effects[]`, enter a manual override when a condition should change a derived number. Encumbrance penalties are the same: the sheet shows the load category and does not auto-write those penalties.
 
 ---
 

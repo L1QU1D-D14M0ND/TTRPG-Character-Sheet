@@ -1,7 +1,7 @@
 # Continuation design — options to proceed from Phase 1
 
 **Status:** Archival. Executed (S1 vertical slice + S4 validation prelude landed 2026-08-14). Historical PF2e sequencing. Do not use this file to schedule new work.  
-**Current sequencing:** [`next-increment-multi-system.md`](next-increment-multi-system.md) (ADR 0003).  
+**Current sequencing:** [`phase-5.md`](phase-5.md) and [`ROADMAP.md`](ROADMAP.md). [`next-increment-multi-system.md`](next-increment-multi-system.md) is the executed record of the multi-system increment.  
 **Date:** 2026-08-14  
 **Audience:** Product / engineering  
 **Depends on:** [`pf2e-dynamic-character-sheet-design.md`](pf2e-dynamic-character-sheet-design.md) (PF2e system spec), [ADR 0001](adr/0001-product-direction.md) (superseded), [ADR 0002](adr/0002-character-schema.md), [`schema-design-notes.md`](schema-design-notes.md)  
@@ -15,7 +15,7 @@ Sections §3–§11 below are the **pre-S1 snapshot** and are intentionally not 
 
 ## 1. Purpose
 
-Phase 0 (design lock) is done. Phase 1 is **partially** done: schema v1, TypeScript types, empty-sheet factory, Save/Load `.json`, and a spreadsheet PWA chrome exist. The calc engine, JSON Schema validation, content packs, golden tests, row editors, and i18n catalogs are **not started**.
+Phase 0 (design lock) is done. **As of this document (2026-08-14),** Phase 1 was **partially** done: schema v1, TypeScript types, empty-sheet factory, Save/Load `.json`, and a spreadsheet PWA chrome existed. The calc engine, JSON Schema validation, content packs, golden tests, row editors, and i18n catalogs were **not started**. Those gaps were closed in later increments. Do not treat this section as the current repo.
 
 The question now is **how to sequence and implement** the remaining work, not **what product to build**.
 
