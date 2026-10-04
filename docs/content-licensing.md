@@ -60,6 +60,8 @@ That PR must:
 
 **Not required** for the current mechanics-only CRB folder, for engine math, or for player-typed summaries on a sheet.
 
+Phase 5.1 puts that prose in a separate pack, `content/pf1e/ogc/`, not on CRB or APG rows. The designated Open Game Content field is `body`. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
+
 Do not scrape third-party SRD sites into `content/` even after that PR. Curate by hand.
 
 ---
@@ -109,3 +111,4 @@ No Remaster encyclopedia in this review. ORC import remains later (ADR 0003). PF
 | 2026-09-17 | Record that catalog labels stay English in every UI locale; localized names are a later content slice, not UI-locale work |
 | 2026-09-20 | APG slice 4 landed: Summoner spellsPerDay table + 27 APG Summoner spells; verified mechanics-only by licenseGate |
 | 2026-10-03 | Phase 5.1 is the OGL increment: first rules-text prose and the Section 15 notice ship together. Localized names stay a separate mechanics-only slice (5.2) |
+| 2026-10-03 | Phase 5.1 prose locked in `content/pf1e/ogc/` (`body` only). CRB and APG stay mechanics-only |

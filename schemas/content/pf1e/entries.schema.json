@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ttrpg-sheet.local/schemas/content/pf1e/entries.schema.json",
+  "title": "PF1e Open Game Content encyclopedia entries",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "kind", "body"],
+    "properties": {
+      "id": { "type": "string", "minLength": 1 },
+      "kind": { "enum": ["spell", "feat", "feature"] },
+      "body": { "type": "string", "minLength": 1 }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+Section 15 — Open Game Content notice for content/pf1e/ogc/
+
+Designation. The field body on each object in entries.json is Open Game Content. No other field in this pack is Open Game Content. Product Identity is excluded, including setting gazetteer, unique characters, adventure titles, and publisher logos.
+
+Sources for the smoke set:
+
+Pathfinder Roleplaying Game Core Rulebook. Copyright 2009, Paizo Publishing, LLC; Author: Jason Bulmahn, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+
+Pathfinder Roleplaying Game Advanced Player's Guide. Copyright 2010, Paizo Publishing, LLC; Author: Jason Bulmahn.
+
+The body strings packed so far, including batches E-R, F1a, and F1b, are short mechanical summaries of those rules. They are not book excerpts. A later batch that copies a paragraph from a book adds that book's copyright notice here in the same change.

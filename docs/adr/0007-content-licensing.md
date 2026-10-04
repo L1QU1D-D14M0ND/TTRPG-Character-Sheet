@@ -29,6 +29,8 @@ The app is MIT. Phase 3c shipped a PF1e Core Rulebook **player catalog** of ids,
 - Vitest scans the CRB pack for forbidden prose keys and a short Product Identity word list.
 - Encyclopedia sidebar tools remain license-gated ([ADR 0005](0005-sidebar-host.md)).
 
+**Postscript (2026-10-03):** Phase 5.1 keeps this decision. The first prose pack is `content/pf1e/ogc/`, with `body` as the designated Open Game Content field. `content/pf1e/crb/` and `content/pf1e/apg/` stay mechanics-only. Spec: [`../sidebar-tools-encyclopedia.md`](../sidebar-tools-encyclopedia.md).
+
 ## References
 
 - [`../content-licensing.md`](../content-licensing.md)

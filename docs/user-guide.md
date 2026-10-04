@@ -78,3 +78,9 @@ A downtime purchasing and crafting planner:
   - **Magic Item Creation:** Calculates material cost (typically ½ market price), Spellcraft DC, required caster level, item creation feats, and required prerequisite spells.
 - **Take 10 Hints:** Shows whether your skill total can meet the crafting DC by taking 10 outside of combat without risk of failure.
 - **Purse Tracker:** Compares total project cost against your character's current carried gold.
+
+### 4. Encyclopedia (`shell.encyclopedia`)
+A read-only reference list on a Pathfinder First Edition sheet. It is not the Actions List.
+- **Packed entries:** Spells, feats, and features that have a rules paragraph in the encyclopedia pack. Search by the catalog's English name.
+- **Empty groups:** Afflictions and Actions stay visible when nothing is packed yet.
+- The paragraph does not change the sheet's numbers.

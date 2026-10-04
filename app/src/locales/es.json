@@ -41,6 +41,19 @@
     "toolAttackHelper": "Ayuda de ataque",
     "toolActionsList": "Lista de acciones",
     "toolBudgetCalculator": "Calculadora de presupuesto",
+    "toolEncyclopedia": "Enciclopedia",
+    "encyclopedia": {
+      "search": "Buscar",
+      "emptyGroup": "Aún no hay entradas.",
+      "overflow": "{count} coincidencias más. Sigue escribiendo para acotar la lista.",
+      "kind": {
+        "spell": "Conjuros",
+        "feat": "Dotes",
+        "feature": "Rasgos",
+        "affliction": "Aflicciones",
+        "action": "Acciones"
+      }
+    },
     "attackHelper": {
       "noAttacks": "No hay armas ni ataques configurados en esta hoja de personaje.",
       "selectWeapon": "Seleccionar arma / ataque",

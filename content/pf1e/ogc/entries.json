@@ -1,0 +1,212 @@
+[
+  {
+    "id": "spell.fireball",
+    "kind": "spell",
+    "body": "A burst of fire. Creatures in the area take fire damage. A successful Reflex save halves that damage."
+  },
+  {
+    "id": "feat.power-attack",
+    "kind": "feat",
+    "body": "Before you attack, you may take a penalty on melee attack rolls to gain a bonus on melee damage rolls. The trade depends on your base attack bonus."
+  },
+  {
+    "id": "feature.arcane-bond",
+    "kind": "feature",
+    "body": "A wizard bonds with an object or a familiar. Once per day, a bonded object lets the wizard cast a known spell they did not prepare."
+  },
+  {
+    "id": "spell.evolution-surge",
+    "kind": "spell",
+    "body": "The summoner grants their eidolon a temporary evolution."
+  },
+  {
+    "id": "feature.physical-enhancement",
+    "kind": "feature",
+    "body": "A transmuter chooses Strength, Dexterity, or Constitution and gains an enhancement bonus to that score. The choice can be changed when spells are prepared, and the bonus grows with wizard level."
+  },
+  {
+    "id": "feature.telekinetic-fist",
+    "kind": "feature",
+    "body": "A transmuter can make a short-range touch attack that deals bludgeoning damage. Uses per day depend on Intelligence."
+  },
+  {
+    "id": "feat.agile-maneuvers",
+    "kind": "feat",
+    "body": "You use Dexterity instead of Strength on combat maneuver checks."
+  },
+  {
+    "id": "feat.arcane-armor-mastery",
+    "kind": "feat",
+    "body": "The chance that your armor ruins an arcane spell drops further."
+  },
+  {
+    "id": "feat.arcane-armor-training",
+    "kind": "feat",
+    "body": "As a swift action, you lower the chance that the armor you wear ruins an arcane spell."
+  },
+  {
+    "id": "feat.arcane-strike",
+    "kind": "feat",
+    "body": "As a swift action, you charge your weapons with arcane energy so they deal extra damage until your next turn."
+  },
+  {
+    "id": "feat.armor-proficiency-heavy",
+    "kind": "feat",
+    "body": "You are proficient with heavy armor."
+  },
+  {
+    "id": "feat.armor-proficiency-light",
+    "kind": "feat",
+    "body": "You are proficient with light armor."
+  },
+  {
+    "id": "feat.armor-proficiency-medium",
+    "kind": "feat",
+    "body": "You are proficient with medium armor."
+  },
+  {
+    "id": "feat.bleeding-critical",
+    "kind": "feat",
+    "body": "A critical hit also causes the target to bleed."
+  },
+  {
+    "id": "feat.blind-fight",
+    "kind": "feat",
+    "body": "In melee, concealment is less likely to spoil your attack, and an unseen attacker gains less against you."
+  },
+  {
+    "id": "feat.blinding-critical",
+    "kind": "feat",
+    "body": "A critical hit can blind the target. A successful Fortitude save avoids it."
+  },
+  {
+    "id": "feat.catch-off-guard",
+    "kind": "feat",
+    "body": "You take no penalty for an improvised melee weapon, and an unarmed foe is flat-footed against those attacks."
+  },
+  {
+    "id": "feat.channel-smite",
+    "kind": "feat",
+    "body": "Before a melee attack, you may spend one use of channel energy to add that damage to the attack. A successful Will save halves the added damage."
+  },
+  {
+    "id": "feat.cleave",
+    "kind": "feat",
+    "body": "When a melee attack hits, you can strike a foe adjacent to the first. Your Armor Class takes a penalty until your next turn."
+  },
+  {
+    "id": "feat.combat-expertise",
+    "kind": "feat",
+    "body": "You may take a penalty on melee attacks to gain a dodge bonus to Armor Class. The trade depends on your base attack bonus."
+  },
+  {
+    "id": "feat.combat-reflexes",
+    "kind": "feat",
+    "body": "You can make additional attacks of opportunity equal to your Dexterity modifier, including while flat-footed."
+  },
+  {
+    "id": "feat.critical-focus",
+    "kind": "feat",
+    "body": "You gain a bonus on the attack roll to confirm a critical hit."
+  },
+  {
+    "id": "feat.critical-mastery",
+    "kind": "feat",
+    "body": "When you confirm a critical hit, you can apply the effects of two critical feats."
+  },
+  {
+    "id": "feat.dazzling-display",
+    "kind": "feat",
+    "body": "While wielding a weapon you have focused on, you can demoralize every foe that can see you."
+  },
+  {
+    "id": "feat.deadly-aim",
+    "kind": "feat",
+    "body": "Before you attack, you may take a penalty on ranged attack rolls to gain a bonus on ranged damage rolls. The trade depends on your base attack bonus."
+  },
+  {
+    "id": "feat.deadly-stroke",
+    "kind": "feat",
+    "body": "Against a stunned or flat-footed foe, one hit with a weapon you have greater focus in can become a coup de grace."
+  },
+  {
+    "id": "feat.deafening-critical",
+    "kind": "feat",
+    "body": "A critical hit can deafen the target. A successful Fortitude save avoids it."
+  },
+  {
+    "id": "feat.defensive-combat-training",
+    "kind": "feat",
+    "body": "Your Combat Maneuver Defense uses your Hit Dice instead of your base attack bonus."
+  },
+  {
+    "id": "feat.deflect-arrows",
+    "kind": "feat",
+    "body": "Once each round, you can knock aside one ranged attack that would hit you."
+  },
+  {
+    "id": "feat.disruptive",
+    "kind": "feat",
+    "body": "Enemies you threaten have a harder time casting a spell defensively."
+  },
+  {
+    "id": "feat.dodge",
+    "kind": "feat",
+    "body": "You gain a dodge bonus to Armor Class."
+  },
+  {
+    "id": "feat.double-slice",
+    "kind": "feat",
+    "body": "Your off-hand weapon adds your full Strength bonus to damage."
+  },
+  {
+    "id": "feat.exhausting-critical",
+    "kind": "feat",
+    "body": "A critical hit can exhaust the target. A successful Fortitude save leaves the target fatigued instead."
+  },
+  {
+    "id": "feat.exotic-weapon-proficiency",
+    "kind": "feat",
+    "body": "You are proficient with one exotic weapon."
+  },
+  {
+    "id": "feat.far-shot",
+    "kind": "feat",
+    "body": "You take a smaller penalty for each range increment."
+  },
+  {
+    "id": "feat.gorgons-fist",
+    "kind": "feat",
+    "body": "An unarmed strike against a foe slowed by your style can stagger that foe. A successful Fortitude save avoids the stagger."
+  },
+  {
+    "id": "feat.great-cleave",
+    "kind": "feat",
+    "body": "As long as each melee attack hits, you can keep striking a foe adjacent to the last. Your Armor Class takes a penalty until your next turn."
+  },
+  {
+    "id": "feat.greater-bull-rush",
+    "kind": "feat",
+    "body": "You are better at a bull rush, and a foe you push provokes attacks from your allies."
+  },
+  {
+    "id": "feat.greater-disarm",
+    "kind": "feat",
+    "body": "You are better at disarming a foe, and you choose where the weapon lands."
+  },
+  {
+    "id": "feat.greater-feint",
+    "kind": "feat",
+    "body": "A successful feint denies the foe their Dexterity bonus to Armor Class until your next turn."
+  },
+  {
+    "id": "feat.greater-grapple",
+    "kind": "feat",
+    "body": "You are better at grappling, and maintaining a grapple is a move action."
+  },
+  {
+    "id": "feat.greater-overrun",
+    "kind": "feat",
+    "body": "You are better at an overrun, and a foe you overrun provokes attacks from your allies."
+  }
+]

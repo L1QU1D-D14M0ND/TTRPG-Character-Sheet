@@ -1,0 +1,10 @@
+{
+  "id": "pf1e.ogc",
+  "system": "pf1e",
+  "title": "Pathfinder First Edition encyclopedia",
+  "schemaVersion": 1,
+  "status": "smoke-set",
+  "license": "Open Game Content in entries.json body only. Product Identity excluded. See OGL-1.0a.txt and SECTION-15.txt.",
+  "contentKind": "open-game-content",
+  "oglNoticeRequired": true
+}

@@ -28,36 +28,13 @@ Phase 5 is five slices, in this order:
 
 ---
 
-## 2. Slice 5.1 — encyclopedia (next code)
+## 2. Slice 5.1 — encyclopedia
 
-The named tools were the gate. They have landed, so this is the next PR.
+Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 
-The encyclopedia is a **sidebar tool**, not the host and not Actions List. Actions List is what this PC can do right now. The encyclopedia is reference text for spells, afflictions, and actions ([ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md)).
+The smoke set has landed. `shell.encyclopedia` is on the PF1e sidebar. Prose lives in `content/pf1e/ogc/`, joined to mechanic rows by catalog id. `content/pf1e/crb/` and `content/pf1e/apg/` stay mechanics-only. The designated Open Game Content field is `body`.
 
-Reserved id: `shell.encyclopedia`. Do not stub it in the registry until this slice. Register it the same way as the other `shell.*` tools. It reads the loaded sheet and must not add a second Save path, a dice roller, or a second character sheet.
-
-### First prose is the OGL increment
-
-Packs are mechanics-only today (`contentKind: "mechanics-only"`, `oglNoticeRequired: false`). [`licenseGate.test.ts`](../app/src/systems/pf1e/content/licenseGate.test.ts) rejects `description`, `summary`, `flavor`, `text`, and `benefit` in pack JSON.
-
-The PR that first adds Open Game Content prose (a spell description, a feat Benefit, a class-feature block, or the same kind of text in the encyclopedia) must, in that same change ([`content-licensing.md`](content-licensing.md) §4):
-
-1. Ship the OGL 1.0a text next to the content (do not rewrite the app MIT `LICENSE`).
-2. Ship a Section 15 that lists the Open Game Content sources actually used.
-3. Designate which fields are Open Game Content, and update the license gate so those fields are the allowed prose keys.
-4. Set `oglNoticeRequired` to match that pack. Leave every other pack mechanics-only.
-5. Still omit Product Identity (Golarion gazetteer, unique NPCs, adventure titles, Paizo logos, bestiary or adventure text).
-6. Curate by hand. Do not scrape third-party SRD sites.
-
-Player-typed summaries already on a sheet are not pack prose and do not trigger this.
-
-### How far 5.1 goes
-
-PF1e catalog rows that already exist (CRB feats and spells, APG Summoner spells, packed class features) are the rows this tool can show. Do not open a Remaster catalog, a Player Core 2 catalog, or a new book in this slice.
-
-Afflictions and generic action entries that are not packed yet may ship as an empty group in the tool. Filling those catalogs is a later 5.1 follow-through, still under the same OGL notice, not a reason to start the later PF2e release.
-
-Evolution and eidolon rules text, if added, use the same OGL increment. Do not put `class.summoner` in `content/pf1e/crb/`.
+Landed entries: the smoke set, batch E-R, and feat batches F1a and F1b (through Greater Overrun). Afflictions and Actions render as empty groups. The remaining rows are added one batch per change. Next is **F1c** (Greater Penetrating Strike–Improved Trip). Then F2a–F4, then CRB spells by level, then the APG spells. See [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 
 ---
 
@@ -89,11 +66,12 @@ Card-oriented play surfaces and a third `system` module stay listed so design do
 
 ### 5.1
 
-- [ ] `shell.encyclopedia` is a registered sidebar tool for the loaded sheet
-- [ ] It shows rules text for packed PF1e spells and feats, and is visibly not Actions List
-- [ ] The same change carries OGL 1.0a, Section 15, designated Open Game Content fields, and an updated license gate
-- [ ] Product Identity stays out. No SRD scrape
-- [ ] Existing PF1e and PF2e goldens still compute
+- [x] `content/pf1e/ogc/` holds the smoke set, OGL 1.0a, and Section 15; CRB and APG stay mechanics-only
+- [x] `shell.encyclopedia` is on the PF1e sidebar only, lists that smoke set, and does not write the sheet
+- [x] Afflictions and Actions groups are empty
+- [x] Product Identity stays out. No SRD scrape
+- [x] Existing PF1e and PF2e goldens still compute
+- [ ] Remaining packed feat, spell, and feature paragraphs in `entries.json`
 
 ### 5.2
 
@@ -114,3 +92,8 @@ Card-oriented play surfaces and a third `system` module stay listed so design do
 | Date | Change |
 | --- | --- |
 | 2026-10-03 | Phase 5 opened. First Edition and hygiene marked done. Next code is slice 5.1 (encyclopedia + OGL notice in one change) |
+| 2026-10-03 | Slice 5.1 prose locked in `content/pf1e/ogc/` ([`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md)). Mechanic packs stay mechanics-only |
+| 2026-10-04 | Encyclopedia smoke set landed (`shell.encyclopedia`, four `body` entries). Remaining catalog prose is follow-through |
+| 2026-10-04 | Batch E-R landed. Next encyclopedia batch is F1a |
+| 2026-10-04 | Batch F1a landed. Next encyclopedia batch is F1b |
+| 2026-10-04 | Batch F1b landed. Next encyclopedia batch is F1c |

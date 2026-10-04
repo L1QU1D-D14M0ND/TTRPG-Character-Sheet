@@ -969,3 +969,47 @@ button.hp-max-button.overridden {
   overflow-x: auto;
   white-space: pre-wrap;
 }
+
+.encyclopedia {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.encyclopedia-search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.encyclopedia-group h3,
+.encyclopedia-body h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.encyclopedia-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.encyclopedia-group button {
+  width: 100%;
+  text-align: left;
+}
+
+.encyclopedia-group button.active {
+  font-weight: 700;
+}
+
+.encyclopedia-body p {
+  margin: 0;
+  white-space: pre-wrap;
+}

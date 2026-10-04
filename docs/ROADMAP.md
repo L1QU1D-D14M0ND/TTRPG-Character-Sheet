@@ -271,7 +271,7 @@ Do **not** start PF2e companion editor, PC2 golden, Remaster packs, or PF2e pane
 
 **Status:** Current (2026-10-03). Detail and slice order: [`phase-5.md`](phase-5.md). Named sidebar tools have landed. The later PF2e release stays frozen and is not part of this phase.
 
-- [ ] **5.1 Encyclopedia** — Spells / Afflictions / Actions rules text as sidebar tool `shell.encyclopedia` (not Actions List). The same change attaches OGL 1.0a + Section 15 ([ADR 0007](adr/0007-content-licensing.md))
+- [x] **5.1 Encyclopedia** — smoke set landed: `shell.encyclopedia` on the PF1e sidebar and pack `content/pf1e/ogc/` (`body` joined by catalog id). CRB and APG stay mechanics-only. Filling the rest of the packed feats, spells, and features stays follow-through on `entries.json`. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md)
 - [ ] **5.2 Localized catalog names** — a second name per row from a curated source, not `es.json` ([`content-licensing.md`](content-licensing.md) §5)
 - [ ] **5.3 Typed `effects[]` automation** — unknown types stay ignored; not a bonus-type stacker
 - [ ] **5.4 Optional card-oriented play surfaces** — no spec; do not start during 5.1–5.3
@@ -324,7 +324,7 @@ Out of scope for 0.9/1.0, and still out of Phase 5 unless a later ADR says other
 
 ## Recommended next work (in order)
 
-1. **Phase 5.1 — encyclopedia + OGL notice** — one change. Sidebar tool `shell.encyclopedia` for packed PF1e spell and feat rules text. OGL 1.0a and Section 15 ship in that change ([`phase-5.md`](phase-5.md), [ADR 0007](adr/0007-content-licensing.md)). Both packs stay `mechanics-only` until then.
+1. **Phase 5.1 follow-through, one batch per change** — E-R, F1a, and F1b have landed. Next is **F1c** (Greater Penetrating Strike–Improved Trip). Then F2a–F4, then CRB spells by level, then the APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 2. **Phase 5.2 — localized catalog names.**
 3. **Phase 5.3 — typed `effects[]`.**
 4. **Later PF2e release** — PC2 golden, companion editor, Remaster packs, PF2e panel i18n. Not a Phase 5 slice.
@@ -431,3 +431,8 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-09-24 | Hygiene pass: HP breakdown moved onto the shared ModalDialog (last raw `<dialog>`, 28% → 93% covered); catalog picker renders a capped first page with an overflow note (650 → 61 options, ~56ms → ~21ms open); shell workflow coverage for New/Load/Save/locale/draft (App.tsx 41% → 79%) with the twin `SheetSession` branches collapsed onto one `editCharacter` helper and a non-stale sidebar toggle |
 | 2026-09-24 | Reliability fix: override paths naming a record entry (`derived.attacks.__proto__.attack`) resolved through `Object.prototype` and crashed compute on load; record entries are now read by own key and unsafe keys refused, in the shared helper both systems use |
 | 2026-10-03 | Phase 5 opened ([`phase-5.md`](phase-5.md)). First Edition and hygiene marked done. Next code is slice 5.1 (encyclopedia + OGL notice in one change). Later PF2e release stays frozen |
+| 2026-10-03 | Slice 5.1 prose locked in `content/pf1e/ogc/` ([`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md)) |
+| 2026-10-04 | Encyclopedia smoke set landed. Next content work is the rest of the packed feat, spell, and feature paragraphs |
+| 2026-10-04 | Encyclopedia batch E-R landed (Physical Enhancement, Telekinetic Fist). Next batch is F1a |
+| 2026-10-04 | Encyclopedia batch F1a landed (18 combat feats). Next batch is F1b |
+| 2026-10-04 | Encyclopedia batch F1b landed (18 combat feats). Next batch is F1c |

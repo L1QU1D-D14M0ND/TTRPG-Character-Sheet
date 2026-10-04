@@ -18,7 +18,9 @@
     "schemaVersion": { "const": 1 },
     "status": { "type": "string" },
     "license": { "type": "string" },
-    "contentKind": { "const": "mechanics-only" },
+    "contentKind": {
+      "enum": ["mechanics-only", "open-game-content"]
+    },
     "oglNoticeRequired": { "type": "boolean" }
   }
 }

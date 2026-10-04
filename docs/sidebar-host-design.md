@@ -95,8 +95,7 @@ Do not stub these in the registry until their increment. Reserved ids:
 | `shell.attack-helper` | **Attack Helper** | [`sidebar-tools-attack-helper.md`](sidebar-tools-attack-helper.md) — pick a weapon + applicable feats; show mechanical triggers/inflicts and to-hit/damage **expressions**. **No dice roller** (physical dice at the table). |
 | `shell.actions-list` | **Actions List** | [`sidebar-tools-actions-list.md`](sidebar-tools-actions-list.md) — what this PC can do now (attacks, maneuvers, movement, skills, aptitudes). Unavailable rows are **greyed out** with a one-word or short-sentence reason (`grappled`, `dazed`, `immobilized`, …). |
 | `shell.budget-calculator` | **Budget Calculator** | [`sidebar-tools-budget-calculator.md`](sidebar-tools-budget-calculator.md) — shopping list of priced gear/magic items; compare **buy** vs **craft** (some or all lines). Show craft **cost**, **time**, **DC**, and **requirements**; unmet reqs as short reasons. **No dice roller**. |
-
-The old “reference sidebar” (Spells / Afflictions / Actions) is Phase 5.1: sidebar tool `shell.encyclopedia`, catalog-fed, license-gated ([`phase-5.md`](phase-5.md)). Do not stub it until that slice. It is not the host and it is not Actions List (the PC’s current menu).
+| `shell.encyclopedia` | **Encyclopedia** | [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md) — Phase 5.1, landed on the PF1e sidebar. Read-only rules text from `content/pf1e/ogc/`. PF1e only. Not Actions List. |
 
 ---
 
@@ -118,7 +117,7 @@ The old “reference sidebar” (Spells / Afflictions / Actions) is Phase 5.1: s
 | **M** | Done — empty collapsed `<aside>` in the shell |
 | **Sb** | Done (thin host: collapse, registry, empty state, context wired) |
 | **Tools** | **Landed** for both PF1e and PF2e: **Attack Helper**, **Actions List**, and **Budget Calculator** with active session switching, complete formulas, table-dice reminders, and i18n parity |
-| **Phase 5.1** | Encyclopedia (`shell.encyclopedia`) — not stubbed yet. See [`phase-5.md`](phase-5.md) |
+| **Phase 5.1** | Encyclopedia (`shell.encyclopedia`) landed on the PF1e sidebar. See [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md) |
 | 0.9 | PF1e bar does **not** wait on tools. Empty/collapsed host is fine |
 | 1.0 | Same; Spanish includes `shell.tools*` if the host shipped |
 
@@ -156,3 +155,4 @@ Import rule unchanged: PF1e tools must not import PF2e modules.
 | 2026-09-03 | Named tools are the last character-sheet feature; ~90% gate retired |
 | 2026-09-22 | Named sidebar tools landed: Attack Helper, Actions List, Budget Calculator |
 | 2026-10-03 | Encyclopedia reserved as Phase 5.1 (`shell.encyclopedia`); do not stub until that slice |
+| 2026-10-03 | Encyclopedia spec locks prose in `content/pf1e/ogc/` |

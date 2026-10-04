@@ -26,6 +26,7 @@ npm run dev
 - [User & Player Guide](docs/user-guide.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Phase 5](docs/phase-5.md)
+- [Encyclopedia (Phase 5.1 spec)](docs/sidebar-tools-encyclopedia.md)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Security Policy](SECURITY.md)
 - [ADR 0003 — Multi-system product direction](docs/adr/0003-multi-system-product-direction.md) (current lock)

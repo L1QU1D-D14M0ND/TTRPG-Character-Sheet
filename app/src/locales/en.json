@@ -41,6 +41,19 @@
     "toolAttackHelper": "Attack Helper",
     "toolActionsList": "Actions List",
     "toolBudgetCalculator": "Budget Calculator",
+    "toolEncyclopedia": "Encyclopedia",
+    "encyclopedia": {
+      "search": "Search",
+      "emptyGroup": "No entries packed yet.",
+      "overflow": "{count} more matches. Keep typing to narrow the list.",
+      "kind": {
+        "spell": "Spells",
+        "feat": "Feats",
+        "feature": "Features",
+        "affliction": "Afflictions",
+        "action": "Actions"
+      }
+    },
     "attackHelper": {
       "noAttacks": "No weapons or attacks configured on this character sheet.",
       "selectWeapon": "Select Weapon / Attack",
