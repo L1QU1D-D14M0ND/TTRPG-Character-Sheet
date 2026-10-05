@@ -324,7 +324,7 @@ Out of scope for 0.9/1.0, and still out of Phase 5 unless a later ADR says other
 
 ## Recommended next work (in order)
 
-1. **Phase 5.1 follow-through, one batch per change** — E-R, F1a, and F1b have landed. Next is **F1c** (Greater Penetrating Strike–Improved Trip). Then F2a–F4, then CRB spells by level, then the APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
+1. **Phase 5.1 follow-through, one batch per change** — E-R and F1a–F2c have landed. Next is **F3a** (Acrobatic–Extra Ki). Then F3b–F4, then F0, then CRB spells by level, then the APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 2. **Phase 5.2 — localized catalog names.**
 3. **Phase 5.3 — typed `effects[]`.**
 4. **Later PF2e release** — PC2 golden, companion editor, Remaster packs, PF2e panel i18n. Not a Phase 5 slice.
@@ -436,3 +436,7 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-10-04 | Encyclopedia batch E-R landed (Physical Enhancement, Telekinetic Fist). Next batch is F1a |
 | 2026-10-04 | Encyclopedia batch F1a landed (18 combat feats). Next batch is F1b |
 | 2026-10-04 | Encyclopedia batch F1b landed (18 combat feats). Next batch is F1c |
+| 2026-10-04 | Encyclopedia batch F1c landed (18 combat feats). Next batch is F2a |
+| 2026-10-05 | Encyclopedia batch F2a landed (17 combat feats). Next batch is F2b |
+| 2026-10-05 | Encyclopedia batch F2b landed (17 combat feats). Next batch is F2c |
+| 2026-10-05 | Encyclopedia batch F2c landed (18 combat feats). Next batch is F3a |

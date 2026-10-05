@@ -1,6 +1,6 @@
 # Encyclopedia (sidebar tool) and OGC pack
 
-**Status:** Smoke set and batches E-R, F1a, and F1b landed. Next batch is F1c (Greater Penetrating Strike–Improved Trip).  
+**Status:** Smoke set and batches E-R and F1a through F2c landed. Next batch is F3a (Acrobatic–Extra Ki).  
 **Id:** `shell.encyclopedia` (PF1e module only).  
 **Host lock:** [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
 **License lock:** [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md).  
@@ -93,13 +93,18 @@ Do not add the remaining catalog in one change. Each change appends one batch to
 | **E-R** | Remaining CRB features: Physical Enhancement, Telekinetic Fist. *Landed.* | 0 |
 | **F1a** | Combat feats Agile Maneuvers–Dazzling Display. *Landed.* | 0 |
 | **F1b** | Combat feats Deadly Aim–Greater Overrun. *Landed.* | 0 |
-| **F1c** | Combat feats Greater Penetrating Strike–Improved Trip. **Next.** | 18 |
-| **F2a–F4** | Remaining feat ranges from [`pf1e-crb-feat-spell-ids.md`](pf1e-crb-feat-spell-ids.md). Skip `feat.power-attack`. | 122 |
+| **F1c** | Combat feats Greater Penetrating Strike–Improved Trip. *Landed.* | 0 |
+| **F2a** | Combat feats Improved Two-Weapon Fighting–Quick Draw. *Landed.* | 0 |
+| **F2b** | Combat feats Rapid Reload–Staggering Critical. *Landed.* | 0 |
+| **F2c** | Combat feats Stand Still–Wind Stance. *Landed.* | 0 |
+| **F3a** | General feats Acrobatic–Extra Ki. **Next.** | 16 |
+| **F3b–F4** | Remaining feat ranges from [`pf1e-crb-feat-spell-ids.md`](pf1e-crb-feat-spell-ids.md). | 44 |
+| **F0** | Feats packed before the F ranges: Improved Initiative, Weapon Focus, Point-Blank Shot, Spell Focus, Eschew Materials, Scribe Scroll, Craft Wondrous Item, Craft Magic Arms and Armor, Craft Construct, Heighten Spell. After F4. `feat.power-attack` is already in the smoke set. | 10 |
 | **L0** | CRB spell level 0 | 28 |
 | **L1–L9** | One CRB spell level per change. A level with more than 40 spells is split alphabetically into parts of at most 20 (`L1a`, `L1b`, …). Skip `spell.fireball`. | 621 |
 | **A1** | APG Summoner spells. Skip `spell.evolution-surge`. | 26 |
 
-Order is E-R, then F1a through F4, then L0 through L9, then A1. Afflictions and Actions stay empty until those batches have landed.
+Order is E-R, then F1a through F4, then F0, then L0 through L9, then A1. Afflictions and Actions stay empty until those batches have landed.
 
 ---
 
@@ -160,3 +165,7 @@ Chrome strings (`shell.toolEncyclopedia`, group labels, empty-group sentence, ov
 | 2026-10-04 | Batch E-R landed (Physical Enhancement, Telekinetic Fist). Next batch is F1a |
 | 2026-10-04 | Batch F1a landed (18 combat feats, Agile Maneuvers–Dazzling Display). Next batch is F1b |
 | 2026-10-04 | Batch F1b landed (18 combat feats, Deadly Aim–Greater Overrun). Next batch is F1c |
+| 2026-10-04 | Batch F1c landed (18 combat feats, Greater Penetrating Strike–Improved Trip). Next batch is F2a. Feats packed before the F ranges are batch F0, after F4 |
+| 2026-10-05 | Batch F2a landed (17 combat feats, Improved Two-Weapon Fighting–Quick Draw). Next batch is F2b |
+| 2026-10-05 | Batch F2b landed (17 combat feats, Rapid Reload–Staggering Critical). Next batch is F2c |
+| 2026-10-05 | Batch F2c landed (18 combat feats, Stand Still–Wind Stance). Combat feats in the F ranges are complete. Next batch is F3a |

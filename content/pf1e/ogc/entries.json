@@ -208,5 +208,355 @@
     "id": "feat.greater-overrun",
     "kind": "feat",
     "body": "You are better at an overrun, and a foe you overrun provokes attacks from your allies."
+  },
+  {
+    "id": "feat.greater-penetrating-strike",
+    "kind": "feat",
+    "body": "Your piercing attacks ignore more of an object's hardness."
+  },
+  {
+    "id": "feat.greater-shield-focus",
+    "kind": "feat",
+    "body": "The shield bonus to your Armor Class increases further."
+  },
+  {
+    "id": "feat.greater-sunder",
+    "kind": "feat",
+    "body": "You are better at sundering, and damage past what it takes to break the item hits its wielder."
+  },
+  {
+    "id": "feat.greater-trip",
+    "kind": "feat",
+    "body": "You are better at a trip, and a foe you trip provokes attacks from your allies."
+  },
+  {
+    "id": "feat.greater-two-weapon-fighting",
+    "kind": "feat",
+    "body": "You gain a third attack with your off-hand weapon."
+  },
+  {
+    "id": "feat.greater-vital-strike",
+    "kind": "feat",
+    "body": "When you take the attack action, one attack rolls four times as many weapon damage dice."
+  },
+  {
+    "id": "feat.greater-weapon-focus",
+    "kind": "feat",
+    "body": "You gain a further bonus on attack rolls with a weapon you have focused on."
+  },
+  {
+    "id": "feat.greater-weapon-specialization",
+    "kind": "feat",
+    "body": "You gain a further bonus on damage rolls with a weapon you have specialized in."
+  },
+  {
+    "id": "feat.improved-bull-rush",
+    "kind": "feat",
+    "body": "You do not provoke an attack when you bull rush, and you are better at the attempt."
+  },
+  {
+    "id": "feat.improved-critical",
+    "kind": "feat",
+    "body": "The threat range of one chosen weapon doubles."
+  },
+  {
+    "id": "feat.improved-disarm",
+    "kind": "feat",
+    "body": "You do not provoke an attack when you disarm, and you are better at the attempt."
+  },
+  {
+    "id": "feat.improved-feint",
+    "kind": "feat",
+    "body": "You can feint as a move action."
+  },
+  {
+    "id": "feat.improved-grapple",
+    "kind": "feat",
+    "body": "You do not provoke an attack when you grapple, and you are better at the attempt."
+  },
+  {
+    "id": "feat.improved-overrun",
+    "kind": "feat",
+    "body": "You do not provoke an attack when you overrun, the foe cannot step aside, and you are better at the attempt."
+  },
+  {
+    "id": "feat.improved-precise-shot",
+    "kind": "feat",
+    "body": "Your ranged attacks ignore partial cover and partial concealment."
+  },
+  {
+    "id": "feat.improved-shield-bash",
+    "kind": "feat",
+    "body": "You can bash with a shield and still keep its bonus to Armor Class."
+  },
+  {
+    "id": "feat.improved-sunder",
+    "kind": "feat",
+    "body": "You do not provoke an attack when you sunder, and you are better at the attempt."
+  },
+  {
+    "id": "feat.improved-trip",
+    "kind": "feat",
+    "body": "You do not provoke an attack when you trip, and you are better at the attempt."
+  },
+  {
+    "id": "feat.improved-two-weapon-fighting",
+    "kind": "feat",
+    "body": "You gain a second attack with your off-hand weapon."
+  },
+  {
+    "id": "feat.improved-unarmed-strike",
+    "kind": "feat",
+    "body": "Your unarmed strikes count as armed attacks, and you choose whether they deal lethal or nonlethal damage."
+  },
+  {
+    "id": "feat.improved-vital-strike",
+    "kind": "feat",
+    "body": "When you take the attack action, one attack rolls three times as many weapon damage dice."
+  },
+  {
+    "id": "feat.improvised-weapon-mastery",
+    "kind": "feat",
+    "body": "You take no penalty for an improvised weapon, and it deals damage one step higher."
+  },
+  {
+    "id": "feat.intimidating-prowess",
+    "kind": "feat",
+    "body": "You add your Strength modifier to Intimidate checks."
+  },
+  {
+    "id": "feat.lightning-stance",
+    "kind": "feat",
+    "body": "While you are using Wind Stance, moving grants greater concealment against ranged attacks."
+  },
+  {
+    "id": "feat.lunge",
+    "kind": "feat",
+    "body": "You can extend your reach by 5 feet until the end of your turn. Your Armor Class takes a penalty until your next turn."
+  },
+  {
+    "id": "feat.manyshot",
+    "kind": "feat",
+    "body": "As a standard action, you can fire two arrows at one foe with a single attack roll."
+  },
+  {
+    "id": "feat.martial-weapon-proficiency",
+    "kind": "feat",
+    "body": "You are proficient with one martial weapon."
+  },
+  {
+    "id": "feat.medusas-wrath",
+    "kind": "feat",
+    "body": "During a full attack, you can make two extra unarmed strikes against a foe that cannot defend itself fully."
+  },
+  {
+    "id": "feat.mobility",
+    "kind": "feat",
+    "body": "You gain a dodge bonus to Armor Class against attacks of opportunity provoked by moving."
+  },
+  {
+    "id": "feat.mounted-archery",
+    "kind": "feat",
+    "body": "The penalty for shooting while your mount takes a double move or runs is halved."
+  },
+  {
+    "id": "feat.mounted-combat",
+    "kind": "feat",
+    "body": "Once each round, a Ride check can negate a hit against your mount."
+  },
+  {
+    "id": "feat.penetrating-strike",
+    "kind": "feat",
+    "body": "Your piercing attacks ignore some of an object's hardness."
+  },
+  {
+    "id": "feat.pinpoint-targeting",
+    "kind": "feat",
+    "body": "As a standard action, one ranged attack ignores the target's armor bonuses. You lose your Dexterity bonus to Armor Class until your next turn."
+  },
+  {
+    "id": "feat.precise-shot",
+    "kind": "feat",
+    "body": "You take no penalty for shooting or throwing into melee."
+  },
+  {
+    "id": "feat.quick-draw",
+    "kind": "feat",
+    "body": "You can draw a weapon as a free action."
+  },
+  {
+    "id": "feat.rapid-reload",
+    "kind": "feat",
+    "body": "Reloading one chosen crossbow takes less time."
+  },
+  {
+    "id": "feat.rapid-shot",
+    "kind": "feat",
+    "body": "During a full attack, you can fire one extra ranged attack. Every attack that round takes a penalty."
+  },
+  {
+    "id": "feat.ride-by-attack",
+    "kind": "feat",
+    "body": "While mounted, you can attack in the middle of a charge and keep moving."
+  },
+  {
+    "id": "feat.scorpion-style",
+    "kind": "feat",
+    "body": "An unarmed strike can slow the foe until your next turn. A successful Fortitude save avoids the slow."
+  },
+  {
+    "id": "feat.shatter-defenses",
+    "kind": "feat",
+    "body": "A shaken foe you hit is flat-footed against your attacks until your next turn."
+  },
+  {
+    "id": "feat.shield-focus",
+    "kind": "feat",
+    "body": "The shield bonus to your Armor Class increases."
+  },
+  {
+    "id": "feat.shield-master",
+    "kind": "feat",
+    "body": "A shield bash takes no two-weapon penalty, and the shield's enhancement bonus applies to the bash."
+  },
+  {
+    "id": "feat.shield-proficiency",
+    "kind": "feat",
+    "body": "You are proficient with shields other than tower shields."
+  },
+  {
+    "id": "feat.shield-slam",
+    "kind": "feat",
+    "body": "A shield bash also pushes the foe back."
+  },
+  {
+    "id": "feat.shot-on-the-run",
+    "kind": "feat",
+    "body": "You can move, fire one ranged attack, and keep moving."
+  },
+  {
+    "id": "feat.sickening-critical",
+    "kind": "feat",
+    "body": "A critical hit can sicken the target. A successful Fortitude save avoids it."
+  },
+  {
+    "id": "feat.simple-weapon-proficiency",
+    "kind": "feat",
+    "body": "You are proficient with simple weapons."
+  },
+  {
+    "id": "feat.snatch-arrows",
+    "kind": "feat",
+    "body": "When you deflect a ranged weapon, you can catch it instead."
+  },
+  {
+    "id": "feat.spellbreaker",
+    "kind": "feat",
+    "body": "A foe you threaten who fails to cast defensively provokes an attack from you."
+  },
+  {
+    "id": "feat.spirited-charge",
+    "kind": "feat",
+    "body": "A mounted charge deals extra damage."
+  },
+  {
+    "id": "feat.spring-attack",
+    "kind": "feat",
+    "body": "You can move both before and after a melee attack."
+  },
+  {
+    "id": "feat.staggering-critical",
+    "kind": "feat",
+    "body": "A critical hit can stagger the target. A successful Fortitude save avoids it."
+  },
+  {
+    "id": "feat.stand-still",
+    "kind": "feat",
+    "body": "When a foe tries to move away, your attack of opportunity can stop that movement."
+  },
+  {
+    "id": "feat.step-up",
+    "kind": "feat",
+    "body": "When an adjacent foe takes a 5-foot step, you can step with them."
+  },
+  {
+    "id": "feat.strike-back",
+    "kind": "feat",
+    "body": "You can strike a foe that attacks you in melee even when that foe's reach is longer than yours."
+  },
+  {
+    "id": "feat.stunning-critical",
+    "kind": "feat",
+    "body": "A critical hit can stun the target. A successful Fortitude save shortens the effect."
+  },
+  {
+    "id": "feat.stunning-fist",
+    "kind": "feat",
+    "body": "You can declare an unarmed strike a stunning attack. A successful Fortitude save avoids the stun. The number of uses each day equals your level."
+  },
+  {
+    "id": "feat.throw-anything",
+    "kind": "feat",
+    "body": "You take no penalty for throwing an improvised weapon."
+  },
+  {
+    "id": "feat.tiring-critical",
+    "kind": "feat",
+    "body": "A critical hit can fatigue the target. A successful Fortitude save avoids it."
+  },
+  {
+    "id": "feat.tower-shield-proficiency",
+    "kind": "feat",
+    "body": "You are proficient with tower shields."
+  },
+  {
+    "id": "feat.trample",
+    "kind": "feat",
+    "body": "A mounted overrun knocks the foe down, and your mount can attack that foe."
+  },
+  {
+    "id": "feat.two-weapon-defense",
+    "kind": "feat",
+    "body": "While fighting with two weapons, you gain a shield bonus to Armor Class."
+  },
+  {
+    "id": "feat.two-weapon-fighting",
+    "kind": "feat",
+    "body": "The penalties for fighting with two weapons are smaller."
+  },
+  {
+    "id": "feat.two-weapon-rend",
+    "kind": "feat",
+    "body": "When both weapons hit, you deal extra damage."
+  },
+  {
+    "id": "feat.unseat",
+    "kind": "feat",
+    "body": "A mounted charge with a lance can also push the foe back."
+  },
+  {
+    "id": "feat.vital-strike",
+    "kind": "feat",
+    "body": "When you take the attack action, one attack rolls twice as many weapon damage dice."
+  },
+  {
+    "id": "feat.weapon-finesse",
+    "kind": "feat",
+    "body": "You use Dexterity instead of Strength on attack rolls with light melee weapons."
+  },
+  {
+    "id": "feat.weapon-specialization",
+    "kind": "feat",
+    "body": "You gain a bonus on damage rolls with a weapon you have focused on."
+  },
+  {
+    "id": "feat.whirlwind-attack",
+    "kind": "feat",
+    "body": "As a full-round action, you make one melee attack against every foe you can reach."
+  },
+  {
+    "id": "feat.wind-stance",
+    "kind": "feat",
+    "body": "If you move more than 5 feet, you gain concealment against ranged attacks until your next turn."
   }
 ]

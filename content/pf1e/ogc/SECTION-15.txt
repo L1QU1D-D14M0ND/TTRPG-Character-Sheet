@@ -8,4 +8,4 @@ Pathfinder Roleplaying Game Core Rulebook. Copyright 2009, Paizo Publishing, LLC
 
 Pathfinder Roleplaying Game Advanced Player's Guide. Copyright 2010, Paizo Publishing, LLC; Author: Jason Bulmahn.
 
-The body strings packed so far, including batches E-R, F1a, and F1b, are short mechanical summaries of those rules. They are not book excerpts. A later batch that copies a paragraph from a book adds that book's copyright notice here in the same change.
+The body strings packed so far, including batches E-R and F1a through F2c, are short mechanical summaries of those rules. They are not book excerpts. A later batch that copies a paragraph from a book adds that book's copyright notice here in the same change.
