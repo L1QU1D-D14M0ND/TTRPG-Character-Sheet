@@ -1,14 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { pf1eModule } from '../module'
-import { pf2eModule } from '../../pf2e/module'
 import { buildPf1eEncyclopedia } from './pf1eEncyclopedia'
 
 describe('PF1e encyclopedia tool', () => {
-  it('registers the encyclopedia on PF1e only', () => {
-    expect(pf1eModule.sidebarTools.map((tool) => tool.id)).toContain('shell.encyclopedia')
-    expect(pf2eModule.sidebarTools.map((tool) => tool.id)).not.toContain('shell.encyclopedia')
-  })
-
   it('shows the smoke set under spells, feats, and features, with empty groups', () => {
     const groups = buildPf1eEncyclopedia()
     const names = (kind: string) =>

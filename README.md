@@ -57,6 +57,7 @@ npm run dev
 - [Legal review report](docs/legal-review-report.md)
 - [PF2e schema design notes](docs/schema-design-notes.md)
 - [PF1e schema design notes](docs/pf1e-schema-design-notes.md)
+- [Archive — finished rules audit and remediation plan](docs/archive/README.md)
 
 ## Schema
 
