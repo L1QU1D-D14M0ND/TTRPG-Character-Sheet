@@ -71,7 +71,7 @@ Content packs are plain JSON (classes/races/items/feats/spells/archetypes/evolut
 
 `fixtures/characters/golden/**/*.json` are full example characters used both as documentation and as regression tests. `app/src/shell/goldens.stability.test.ts` loads every golden through `parseLoadedSheet` and asserts it computes without error — this is the fastest way to sanity-check that a schema/engine change didn't break existing saves. Each system also has its own per-character golden tests (e.g. `app/src/systems/pf1e/engine/fighter5.golden.test.ts`, `synthesist5.golden.test.ts`) that assert specific derived numbers. **When changing engine math, run the golden tests for the system you touched and keep both systems' goldens green** — PF2e goldens are a regression net, not dead code to prune.
 
-CRB "batch" test files (`crbBatch1.test.ts` … `crbBatchW6.test.ts`, `crbBatchF1a.test.ts` … `crbBatchF1c.test.ts`) are incremental content-pack coverage added batch-by-batch per [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md); new CRB content generally gets its own batch test rather than being folded into an existing one.
+CRB "batch" test files (`crbBatch1.test.ts` … `crbBatch21.test.ts`, `crbBatchW1.test.ts` … `crbBatchW7.test.ts`, `crbBatchF1a.test.ts` … `crbBatchF4.test.ts`, `crbBatchS1.test.ts` … `crbBatchS5.test.ts`) are incremental content-pack coverage added batch-by-batch per [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md); new CRB content generally gets its own batch test rather than being folded into an existing one.
 
 ### i18n
 
