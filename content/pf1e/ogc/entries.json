@@ -1763,5 +1763,105 @@
     "id": "spell.scare",
     "kind": "spell",
     "body": "Weaker creatures in the area become frightened unless they save."
+  },
+  {
+    "id": "spell.scorching-ray",
+    "kind": "spell",
+    "body": "A ray of fire strikes as a ranged touch attack, adding rays at higher levels."
+  },
+  {
+    "id": "spell.see-invisibility",
+    "kind": "spell",
+    "body": "You can see invisible creatures and objects for minutes."
+  },
+  {
+    "id": "spell.shatter",
+    "kind": "spell",
+    "body": "Sonic energy breaks a brittle object or damages crystalline creatures."
+  },
+  {
+    "id": "spell.shield-other",
+    "kind": "spell",
+    "body": "One creature takes less damage, and you take the rest."
+  },
+  {
+    "id": "spell.silence",
+    "kind": "spell",
+    "body": "An area or object is silenced, blocking sound and verbal spellcasting."
+  },
+  {
+    "id": "spell.snare",
+    "kind": "spell",
+    "body": "You make a cord or vine into a magical trap that holds a creature."
+  },
+  {
+    "id": "spell.soften-earth-and-stone",
+    "kind": "spell",
+    "body": "Earth or stone in the area turns to mud, sand, or clay."
+  },
+  {
+    "id": "spell.sound-burst",
+    "kind": "spell",
+    "body": "A burst of sound damages and may stun creatures in the area."
+  },
+  {
+    "id": "spell.speak-with-plants",
+    "kind": "spell",
+    "body": "You can converse with plants and plant creatures."
+  },
+  {
+    "id": "spell.spectral-hand",
+    "kind": "spell",
+    "body": "A ghostly hand delivers your touch spells at a distance."
+  },
+  {
+    "id": "spell.spider-climb",
+    "kind": "spell",
+    "body": "One creature can climb walls and ceilings with its hands free."
+  },
+  {
+    "id": "spell.spike-growth",
+    "kind": "spell",
+    "body": "Growths in the area damage and slow creatures crossing it."
+  },
+  {
+    "id": "spell.spiritual-weapon",
+    "kind": "spell",
+    "body": "A weapon of force attacks a foe you choose on its own."
+  },
+  {
+    "id": "spell.status",
+    "kind": "spell",
+    "body": "You monitor the position and condition of allies you touched."
+  },
+  {
+    "id": "spell.summon-monster-ii",
+    "kind": "spell",
+    "body": "You summon creatures from the second summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-ii",
+    "kind": "spell",
+    "body": "You summon nature allies from the second list to fight for you."
+  },
+  {
+    "id": "spell.summon-swarm",
+    "kind": "spell",
+    "body": "A swarm of small vermin arrives and attacks creatures in the area."
+  },
+  {
+    "id": "spell.touch-of-idiocy",
+    "kind": "spell",
+    "body": "Your touch saps one creature's Intelligence, Wisdom, and Charisma."
+  },
+  {
+    "id": "spell.tree-shape",
+    "kind": "spell",
+    "body": "You take the form of a tree or shrub."
+  },
+  {
+    "id": "spell.warp-wood",
+    "kind": "spell",
+    "body": "You bend and twist wooden objects out of shape."
   }
 ]
