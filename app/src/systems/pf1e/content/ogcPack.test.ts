@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { lookupOgcName, OGC_ENTRIES } from './ogcPack'
+import { groups } from './catalogIndex'
 
 const SMOKE_SET = [
   { id: 'spell.fireball', kind: 'spell', name: 'Fireball' },
@@ -208,6 +209,26 @@ describe('PF1e OGC encyclopedia pack', () => {
         (entry) => entry.body.trim().length === 0 || entry.body !== entry.body.trim(),
       )
       expect(malformed.map((entry) => entry.id)).toEqual([])
+    })
+
+    /**
+     * `sidebar-tools-encyclopedia.md` publishes a per-batch "rows still to
+     * add" column. That arithmetic was wrong once: it listed the whole CRB
+     * spell count against the L1-L9 row, double-counting L0. Pin the totals
+     * so the doc and the packs have to agree.
+     */
+    it('leaves exactly the documented number of rows still to pack', () => {
+      const packed = new Set(OGC_ENTRIES.map((entry) => entry.id))
+      const remaining = (kind: 'feat' | 'spell') =>
+        groups(kind)
+          .flatMap((group) => group.rows)
+          .filter((row) => !packed.has(row.id)).length
+
+      // F3b + F3c-F4 + F0
+      expect(remaining('feat')).toBe(16 + 28 + 10)
+      // L0 + L1-L9 + A1
+      expect(remaining('spell')).toBe(28 + 593 + 26)
+      expect(remaining('feat') + remaining('spell')).toBe(701)
     })
   })
 })

@@ -102,8 +102,10 @@ Do not add the remaining catalog in one change. Each change appends one batch to
 | **F3c–F4** | Remaining feat ranges from [`pf1e-crb-feat-spell-ids.md`](pf1e-crb-feat-spell-ids.md). | 28 |
 | **F0** | Feats packed before the F ranges: Improved Initiative, Weapon Focus, Point-Blank Shot, Spell Focus, Eschew Materials, Scribe Scroll, Craft Wondrous Item, Craft Magic Arms and Armor, Craft Construct, Heighten Spell. After F4. `feat.power-attack` is already in the smoke set. | 10 |
 | **L0** | CRB spell level 0 | 28 |
-| **L1–L9** | One CRB spell level per change. A level with more than 40 spells is split alphabetically into parts of at most 20 (`L1a`, `L1b`, …). Skip `spell.fireball`. | 621 |
+| **L1–L9** | One CRB spell level per change. A level with more than 40 spells is split alphabetically into parts of at most 20 (`L1a`, `L1b`, …). Skip `spell.fireball`. | 593 |
 | **A1** | APG Summoner spells. Skip `spell.evolution-surge`. | 26 |
+
+The rows-still-to-add column totals 701, which is every CRB feat, CRB spell, and APG Summoner spell not yet in `entries.json`. `ogcPack.test.ts` asserts that total, so the table cannot drift from the packs unnoticed.
 
 Order is E-R, then F1a through F4, then F0, then L0 through L9, then A1. Afflictions and Actions stay empty until those batches have landed.
 
