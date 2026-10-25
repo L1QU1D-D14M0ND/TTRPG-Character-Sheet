@@ -2718,5 +2718,105 @@
     "id": "spell.dream",
     "kind": "spell",
     "body": "You deliver a message to a sleeping creature through its dreams."
+  },
+  {
+    "id": "spell.elemental-body-ii",
+    "kind": "spell",
+    "body": "You take the form of a Medium elemental of a type you choose."
+  },
+  {
+    "id": "spell.fabricate",
+    "kind": "spell",
+    "body": "You convert raw material into finished items of the same substance."
+  },
+  {
+    "id": "spell.false-vision",
+    "kind": "spell",
+    "body": "Scrying on the area shows an illusion you choose instead."
+  },
+  {
+    "id": "spell.feeblemind",
+    "kind": "spell",
+    "body": "One creature's Intelligence and Charisma drop to almost nothing."
+  },
+  {
+    "id": "spell.greater-command",
+    "kind": "spell",
+    "body": "Several creatures each obey a one-word command for several rounds."
+  },
+  {
+    "id": "spell.hallow",
+    "kind": "spell",
+    "body": "A site is blessed, warding it and fixing a chosen spell effect in place."
+  },
+  {
+    "id": "spell.hold-monster",
+    "kind": "spell",
+    "body": "One creature of any kind is paralyzed unless it saves each round."
+  },
+  {
+    "id": "spell.insect-plague",
+    "kind": "spell",
+    "body": "Swarms of insects arrive and attack creatures in the area."
+  },
+  {
+    "id": "spell.interposing-hand",
+    "kind": "spell",
+    "body": "A large hand of force blocks one opponent's approach."
+  },
+  {
+    "id": "spell.lesser-planar-binding",
+    "kind": "spell",
+    "body": "You trap a small outsider and bargain for a service."
+  },
+  {
+    "id": "spell.mages-faithful-hound",
+    "kind": "spell",
+    "body": "An invisible guard dog warns of intruders and attacks them."
+  },
+  {
+    "id": "spell.mages-private-sanctum",
+    "kind": "spell",
+    "body": "An area is hidden from sight, sound, and divination for a day."
+  },
+  {
+    "id": "spell.magic-jar",
+    "kind": "spell",
+    "body": "Your soul moves into a gem and can take over nearby bodies."
+  },
+  {
+    "id": "spell.major-creation",
+    "kind": "spell",
+    "body": "You create an object of plant, mineral, or metal matter."
+  },
+  {
+    "id": "spell.mass-cure-light-wounds",
+    "kind": "spell",
+    "body": "Several creatures each heal a modest amount of damage."
+  },
+  {
+    "id": "spell.mass-inflict-light-wounds",
+    "kind": "spell",
+    "body": "Several creatures each take modest negative energy damage."
+  },
+  {
+    "id": "spell.mind-fog",
+    "kind": "spell",
+    "body": "Creatures in the fog take a large penalty on Wisdom checks and Will saves."
+  },
+  {
+    "id": "spell.mirage-arcana",
+    "kind": "spell",
+    "body": "You disguise terrain and structures over a wide area."
+  },
+  {
+    "id": "spell.nightmare",
+    "kind": "spell",
+    "body": "A sleeping creature suffers a terrible dream, taking damage and fatigue."
+  },
+  {
+    "id": "spell.overland-flight",
+    "kind": "spell",
+    "body": "You fly at a good speed for hours, long enough to travel."
   }
 ]
