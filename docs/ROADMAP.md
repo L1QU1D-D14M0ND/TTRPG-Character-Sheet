@@ -324,7 +324,7 @@ Out of scope for 0.9/1.0, and still out of Phase 5 unless a later ADR says other
 
 ## Recommended next work (in order)
 
-1. **Phase 5.1 follow-through, one batch per change** — E-R and F1a–F3b have landed. Next is **F3c** (Lightning Reflexes–Turn Undead). Then F4, then F0, then CRB spells by level, then the APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
+1. **Phase 5.1 follow-through, one batch per change** — E-R and F1a–F3c have landed. Next is **F4** (Brew Potion–Widen Spell). Then then F0, then CRB spells by level, then the APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 2. **Phase 5.2 — localized catalog names.**
 3. **Phase 5.3 — typed `effects[]`.**
 4. **Later PF2e release** — PC2 golden, companion editor, Remaster packs, PF2e panel i18n. Not a Phase 5 slice.
@@ -442,3 +442,4 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-10-05 | Encyclopedia batch F2c landed (18 combat feats). Next batch is F3a |
 | 2026-10-25 | Encyclopedia batch F3a landed (16 general feats). Next batch is F3b |
 | 2026-10-25 | Encyclopedia batch F3b landed (16 general feats). Next batch is F3c |
+| 2026-10-25 | Encyclopedia batch F3c landed (15 general feats). Next batch is F4 |

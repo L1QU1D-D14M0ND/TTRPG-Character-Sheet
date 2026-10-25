@@ -176,6 +176,24 @@ const BATCH_F3B = [
   { id: 'feat.leadership', kind: 'feat', name: 'Leadership' },
 ] as const
 
+const BATCH_F3C = [
+  { id: 'feat.lightning-reflexes', kind: 'feat', name: 'Lightning Reflexes' },
+  { id: 'feat.magical-aptitude', kind: 'feat', name: 'Magical Aptitude' },
+  { id: 'feat.master-craftsman', kind: 'feat', name: 'Master Craftsman' },
+  { id: 'feat.natural-spell', kind: 'feat', name: 'Natural Spell' },
+  { id: 'feat.nimble-moves', kind: 'feat', name: 'Nimble Moves' },
+  { id: 'feat.persuasive', kind: 'feat', name: 'Persuasive' },
+  { id: 'feat.run', kind: 'feat', name: 'Run' },
+  { id: 'feat.selective-channeling', kind: 'feat', name: 'Selective Channeling' },
+  { id: 'feat.self-sufficient', kind: 'feat', name: 'Self-Sufficient' },
+  { id: 'feat.skill-focus', kind: 'feat', name: 'Skill Focus' },
+  { id: 'feat.spell-mastery', kind: 'feat', name: 'Spell Mastery' },
+  { id: 'feat.spell-penetration', kind: 'feat', name: 'Spell Penetration' },
+  { id: 'feat.stealthy', kind: 'feat', name: 'Stealthy' },
+  { id: 'feat.toughness', kind: 'feat', name: 'Toughness' },
+  { id: 'feat.turn-undead', kind: 'feat', name: 'Turn Undead' },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -187,10 +205,11 @@ const PACKED = [
   ...BATCH_F2C,
   ...BATCH_F3A,
   ...BATCH_F3B,
+  ...BATCH_F3C,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
-  it('ships the smoke set plus batches E-R, F1a through F3b and nothing else', () => {
+  it('ships the smoke set plus batches E-R, F1a through F3c and nothing else', () => {
     expect(OGC_ENTRIES.map((entry) => entry.id)).toEqual(PACKED.map((entry) => entry.id))
   })
 
@@ -244,11 +263,11 @@ describe('PF1e OGC encyclopedia pack', () => {
           .flatMap((group) => group.rows)
           .filter((row) => !packed.has(row.id)).length
 
-      // F3c-F4 + F0
-      expect(remaining('feat')).toBe(28 + 10)
+      // F4 + F0
+      expect(remaining('feat')).toBe(13 + 10)
       // L0 + L1-L9 + A1
       expect(remaining('spell')).toBe(28 + 593 + 26)
-      expect(remaining('feat') + remaining('spell')).toBe(685)
+      expect(remaining('feat') + remaining('spell')).toBe(670)
     })
   })
 })

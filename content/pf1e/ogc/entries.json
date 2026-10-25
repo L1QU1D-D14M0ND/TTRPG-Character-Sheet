@@ -718,5 +718,80 @@
     "id": "feat.leadership",
     "kind": "feat",
     "body": "You attract a loyal cohort and a number of followers, set by your leadership score."
+  },
+  {
+    "id": "feat.lightning-reflexes",
+    "kind": "feat",
+    "body": "You gain a bonus on Reflex saves."
+  },
+  {
+    "id": "feat.magical-aptitude",
+    "kind": "feat",
+    "body": "You gain a bonus on Spellcraft and Use Magic Device checks."
+  },
+  {
+    "id": "feat.master-craftsman",
+    "kind": "feat",
+    "body": "Your skill with one Craft or Profession lets you qualify for item creation feats and craft magic items."
+  },
+  {
+    "id": "feat.natural-spell",
+    "kind": "feat",
+    "body": "You can cast spells while in a wild shape form."
+  },
+  {
+    "id": "feat.nimble-moves",
+    "kind": "feat",
+    "body": "You can move through a small amount of difficult terrain each round as if it were normal."
+  },
+  {
+    "id": "feat.persuasive",
+    "kind": "feat",
+    "body": "You gain a bonus on Diplomacy and Intimidate checks."
+  },
+  {
+    "id": "feat.run",
+    "kind": "feat",
+    "body": "You run faster, keep your Dexterity bonus to AC while running, and jump farther with a running start."
+  },
+  {
+    "id": "feat.selective-channeling",
+    "kind": "feat",
+    "body": "You can exclude creatures from the area when you channel energy."
+  },
+  {
+    "id": "feat.self-sufficient",
+    "kind": "feat",
+    "body": "You gain a bonus on Heal and Survival checks."
+  },
+  {
+    "id": "feat.skill-focus",
+    "kind": "feat",
+    "body": "You gain a bonus on checks with one chosen skill, and a larger bonus at higher ranks."
+  },
+  {
+    "id": "feat.spell-mastery",
+    "kind": "feat",
+    "body": "You can prepare a number of chosen spells without consulting your spellbook."
+  },
+  {
+    "id": "feat.spell-penetration",
+    "kind": "feat",
+    "body": "You gain a bonus on caster level checks to overcome spell resistance."
+  },
+  {
+    "id": "feat.stealthy",
+    "kind": "feat",
+    "body": "You gain a bonus on Escape Artist and Stealth checks."
+  },
+  {
+    "id": "feat.toughness",
+    "kind": "feat",
+    "body": "You gain extra hit points, and more as your level rises."
+  },
+  {
+    "id": "feat.turn-undead",
+    "kind": "feat",
+    "body": "You can channel energy to make undead in the area flee instead of taking damage."
   }
 ]
