@@ -1,143 +1,62 @@
 import { describe, expect, it } from 'vitest'
 import { buildPf1eEncyclopedia } from './pf1eEncyclopedia'
+import { lookupOgcName, OGC_ENTRIES } from '../content/ogcPack'
 
+/**
+ * The packed roster itself is owned by `content/ogcPack.test.ts`. Restating
+ * every name here would mean each new content batch had to edit two long
+ * lists, so these tests check what the builder does to the pack instead.
+ */
 describe('PF1e encyclopedia tool', () => {
-  it('shows the smoke set under spells, feats, and features, with empty groups', () => {
+  it('groups every packed entry under its own kind', () => {
+    const groups = buildPf1eEncyclopedia()
+    for (const kind of ['spell', 'feat', 'feature'] as const) {
+      const expected = OGC_ENTRIES.filter((entry) => entry.kind === kind)
+      const group = groups.find((candidate) => candidate.kind === kind)
+      expect(group?.entries.map((entry) => entry.id).sort()).toEqual(
+        expected.map((entry) => entry.id).sort(),
+      )
+    }
+  })
+
+  it('keeps the spell, feat, and feature groups non-empty and the rest empty', () => {
+    const groups = buildPf1eEncyclopedia()
+    const size = (kind: string) =>
+      groups.find((group) => group.kind === kind)?.entries.length
+    expect(size('spell')).toBeGreaterThan(0)
+    expect(size('feat')).toBeGreaterThan(0)
+    expect(size('feature')).toBeGreaterThan(0)
+    // Afflictions and Actions have no packed batches yet, but still render.
+    expect(size('affliction')).toBe(0)
+    expect(size('action')).toBe(0)
+  })
+
+  it('exposes all five groups in a stable order', () => {
+    expect(buildPf1eEncyclopedia().map((group) => group.kind)).toEqual([
+      'spell',
+      'feat',
+      'feature',
+      'affliction',
+      'action',
+    ])
+  })
+
+  it('carries the catalog name and body through to every entry', () => {
+    for (const group of buildPf1eEncyclopedia()) {
+      for (const entry of group.entries) {
+        const packed = OGC_ENTRIES.find((row) => row.id === entry.id)
+        expect(entry.name).toBe(lookupOgcName(packed!))
+        expect(entry.body).toBe(packed!.body)
+      }
+    }
+  })
+
+  it('still carries the smoke set, so the join is really wired up', () => {
     const groups = buildPf1eEncyclopedia()
     const names = (kind: string) =>
       groups.find((group) => group.kind === kind)?.entries.map((entry) => entry.name)
-    expect(names('spell')).toEqual(['Fireball', 'Evolution Surge'])
-    expect(names('feat')).toEqual([
-      'Power Attack',
-      'Agile Maneuvers',
-      'Arcane Armor Mastery',
-      'Arcane Armor Training',
-      'Arcane Strike',
-      'Armor Proficiency, Heavy',
-      'Armor Proficiency, Light',
-      'Armor Proficiency, Medium',
-      'Bleeding Critical',
-      'Blind-Fight',
-      'Blinding Critical',
-      'Catch Off-Guard',
-      'Channel Smite',
-      'Cleave',
-      'Combat Expertise',
-      'Combat Reflexes',
-      'Critical Focus',
-      'Critical Mastery',
-      'Dazzling Display',
-      'Deadly Aim',
-      'Deadly Stroke',
-      'Deafening Critical',
-      'Defensive Combat Training',
-      'Deflect Arrows',
-      'Disruptive',
-      'Dodge',
-      'Double Slice',
-      'Exhausting Critical',
-      'Exotic Weapon Proficiency',
-      'Far Shot',
-      "Gorgon's Fist",
-      'Great Cleave',
-      'Greater Bull Rush',
-      'Greater Disarm',
-      'Greater Feint',
-      'Greater Grapple',
-      'Greater Overrun',
-      'Greater Penetrating Strike',
-      'Greater Shield Focus',
-      'Greater Sunder',
-      'Greater Trip',
-      'Greater Two-Weapon Fighting',
-      'Greater Vital Strike',
-      'Greater Weapon Focus',
-      'Greater Weapon Specialization',
-      'Improved Bull Rush',
-      'Improved Critical',
-      'Improved Disarm',
-      'Improved Feint',
-      'Improved Grapple',
-      'Improved Overrun',
-      'Improved Precise Shot',
-      'Improved Shield Bash',
-      'Improved Sunder',
-      'Improved Trip',
-      'Improved Two-Weapon Fighting',
-      'Improved Unarmed Strike',
-      'Improved Vital Strike',
-      'Improvised Weapon Mastery',
-      'Intimidating Prowess',
-      'Lightning Stance',
-      'Lunge',
-      'Manyshot',
-      'Martial Weapon Proficiency',
-      "Medusa's Wrath",
-      'Mobility',
-      'Mounted Archery',
-      'Mounted Combat',
-      'Penetrating Strike',
-      'Pinpoint Targeting',
-      'Precise Shot',
-      'Quick Draw',
-      'Rapid Reload',
-      'Rapid Shot',
-      'Ride-By Attack',
-      'Scorpion Style',
-      'Shatter Defenses',
-      'Shield Focus',
-      'Shield Master',
-      'Shield Proficiency',
-      'Shield Slam',
-      'Shot on the Run',
-      'Sickening Critical',
-      'Simple Weapon Proficiency',
-      'Snatch Arrows',
-      'Spellbreaker',
-      'Spirited Charge',
-      'Spring Attack',
-      'Staggering Critical',
-      'Stand Still',
-      'Step Up',
-      'Strike Back',
-      'Stunning Critical',
-      'Stunning Fist',
-      'Throw Anything',
-      'Tiring Critical',
-      'Tower Shield Proficiency',
-      'Trample',
-      'Two-Weapon Defense',
-      'Two-Weapon Fighting',
-      'Two-Weapon Rend',
-      'Unseat',
-      'Vital Strike',
-      'Weapon Finesse',
-      'Weapon Specialization',
-      'Whirlwind Attack',
-      'Wind Stance',
-      'Acrobatic',
-      'Acrobatic Steps',
-      'Alertness',
-      'Alignment Channel',
-      'Animal Affinity',
-      'Athletic',
-      'Augment Summoning',
-      'Combat Casting',
-      'Command Undead',
-      'Deceitful',
-      'Deft Hands',
-      'Diehard',
-      'Elemental Channel',
-      'Endurance',
-      'Extra Channel',
-      'Extra Ki',
-    ])
-    expect(names('feature')).toEqual([
-      'Arcane Bond',
-      'Physical Enhancement',
-      'Telekinetic Fist',
-    ])
-    expect(names('affliction')).toEqual([])
-    expect(names('action')).toEqual([])
+    expect(names('spell')).toContain('Fireball')
+    expect(names('feat')).toContain('Power Attack')
+    expect(names('feature')).toContain('Arcane Bond')
   })
 })
