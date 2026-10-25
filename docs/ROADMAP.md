@@ -324,7 +324,7 @@ Out of scope for 0.9/1.0, and still out of Phase 5 unless a later ADR says other
 
 ## Recommended next work (in order)
 
-1. **Phase 5.1 follow-through, one batch per change** — E-R and every feat batch (F1a–F4 and F0) have landed; all 177 CRB feats have a summary. Next is **L4b** (CRB spell level 4, second part). Then the remaining CRB spell levels, then the APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
+1. **Phase 5.1 follow-through, one batch per change** — E-R and every feat batch (F1a–F4 and F0) have landed; all 177 CRB feats have a summary. Next is **L4c** (CRB spell level 4, third part). Then the remaining CRB spell levels, then the APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 2. **Phase 5.2 — localized catalog names.**
 3. **Phase 5.3 — typed `effects[]`.**
 4. **Later PF2e release** — PC2 golden, companion editor, Remaster packs, PF2e panel i18n. Not a Phase 5 slice.
@@ -461,3 +461,4 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-10-25 | Encyclopedia batch L3c landed (20 level 3 spells). Next batch is L3d |
 | 2026-10-25 | Encyclopedia batch L3d landed. Spell levels 0-3 complete. Next batch is L4a |
 | 2026-10-25 | Encyclopedia batch L4a landed (20 level 4 spells). Next batch is L4b |
+| 2026-10-25 | Encyclopedia batch L4b landed (20 level 4 spells). Next batch is L4c |

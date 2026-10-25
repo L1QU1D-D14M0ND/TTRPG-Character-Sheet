@@ -2358,5 +2358,105 @@
     "id": "spell.dispel-evil",
     "kind": "spell",
     "body": "You end evil spells or drive off an evil summoned creature."
+  },
+  {
+    "id": "spell.divination",
+    "kind": "spell",
+    "body": "You receive useful advice about a course of action in the near future."
+  },
+  {
+    "id": "spell.divine-power",
+    "kind": "spell",
+    "body": "You gain a bonus to attack and damage, temporary hit points, and an extra attack."
+  },
+  {
+    "id": "spell.elemental-body-i",
+    "kind": "spell",
+    "body": "You take the form of a Small elemental of a type you choose."
+  },
+  {
+    "id": "spell.enervation",
+    "kind": "spell",
+    "body": "A ray gives one living creature temporary negative levels."
+  },
+  {
+    "id": "spell.fear",
+    "kind": "spell",
+    "body": "Creatures in the cone flee in panic unless they save."
+  },
+  {
+    "id": "spell.fire-shield",
+    "kind": "spell",
+    "body": "Flames around you harm attackers and protect you from heat or cold."
+  },
+  {
+    "id": "spell.fire-trap",
+    "kind": "spell",
+    "body": "An object is warded and explodes in fire when opened."
+  },
+  {
+    "id": "spell.flame-strike",
+    "kind": "spell",
+    "body": "A column of divine fire deals heavy damage, half of it untyped."
+  },
+  {
+    "id": "spell.freedom-of-movement",
+    "kind": "spell",
+    "body": "One creature moves and attacks normally despite grappling or restraint."
+  },
+  {
+    "id": "spell.giant-vermin",
+    "kind": "spell",
+    "body": "Several vermin grow to giant size and serve you."
+  },
+  {
+    "id": "spell.greater-invisibility",
+    "kind": "spell",
+    "body": "One creature stays invisible even while attacking."
+  },
+  {
+    "id": "spell.hallucinatory-terrain",
+    "kind": "spell",
+    "body": "You disguise the terrain in a wide area as another kind."
+  },
+  {
+    "id": "spell.holy-smite",
+    "kind": "spell",
+    "body": "Evil creatures in the area are damaged and blinded."
+  },
+  {
+    "id": "spell.holy-sword",
+    "kind": "spell",
+    "body": "A weapon becomes a holy weapon with a large enhancement bonus."
+  },
+  {
+    "id": "spell.ice-storm",
+    "kind": "spell",
+    "body": "Hail pounds the area, dealing bludgeoning and cold damage."
+  },
+  {
+    "id": "spell.illusory-wall",
+    "kind": "spell",
+    "body": "An illusion hides a wall, floor, or ceiling opening."
+  },
+  {
+    "id": "spell.imbue-with-spell-ability",
+    "kind": "spell",
+    "body": "You grant a creature the ability to cast some of your prepared spells."
+  },
+  {
+    "id": "spell.inflict-critical-wounds",
+    "kind": "spell",
+    "body": "Your touch deals heavy negative energy damage, or heals an undead creature."
+  },
+  {
+    "id": "spell.lesser-geas",
+    "kind": "spell",
+    "body": "One creature of moderate level must carry out your command."
+  },
+  {
+    "id": "spell.lesser-globe-of-invulnerability",
+    "kind": "spell",
+    "body": "A sphere around you blocks spells of the lowest few levels."
   }
 ]

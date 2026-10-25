@@ -561,6 +561,29 @@ const BATCH_L4A = [
   { id: 'spell.dispel-evil', kind: 'spell', name: "Dispel Evil" },
 ] as const
 
+const BATCH_L4B = [
+  { id: 'spell.divination', kind: 'spell', name: "Divination" },
+  { id: 'spell.divine-power', kind: 'spell', name: "Divine Power" },
+  { id: 'spell.elemental-body-i', kind: 'spell', name: "Elemental Body I" },
+  { id: 'spell.enervation', kind: 'spell', name: "Enervation" },
+  { id: 'spell.fear', kind: 'spell', name: "Fear" },
+  { id: 'spell.fire-shield', kind: 'spell', name: "Fire Shield" },
+  { id: 'spell.fire-trap', kind: 'spell', name: "Fire Trap" },
+  { id: 'spell.flame-strike', kind: 'spell', name: "Flame Strike" },
+  { id: 'spell.freedom-of-movement', kind: 'spell', name: "Freedom of Movement" },
+  { id: 'spell.giant-vermin', kind: 'spell', name: "Giant Vermin" },
+  { id: 'spell.greater-invisibility', kind: 'spell', name: "Greater Invisibility" },
+  { id: 'spell.hallucinatory-terrain', kind: 'spell', name: "Hallucinatory Terrain" },
+  { id: 'spell.holy-smite', kind: 'spell', name: "Holy Smite" },
+  { id: 'spell.holy-sword', kind: 'spell', name: "Holy Sword" },
+  { id: 'spell.ice-storm', kind: 'spell', name: "Ice Storm" },
+  { id: 'spell.illusory-wall', kind: 'spell', name: "Illusory Wall" },
+  { id: 'spell.imbue-with-spell-ability', kind: 'spell', name: "Imbue with Spell Ability" },
+  { id: 'spell.inflict-critical-wounds', kind: 'spell', name: "Inflict Critical Wounds" },
+  { id: 'spell.lesser-geas', kind: 'spell', name: "Lesser Geas" },
+  { id: 'spell.lesser-globe-of-invulnerability', kind: 'spell', name: "Lesser Globe of Invulnerability" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -591,6 +614,7 @@ const PACKED = [
   ...BATCH_L3C,
   ...BATCH_L3D,
   ...BATCH_L4A,
+  ...BATCH_L4B,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -651,8 +675,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(357)
-      expect(remaining('feat') + remaining('spell')).toBe(357)
+      expect(remaining('spell')).toBe(337)
+      expect(remaining('feat') + remaining('spell')).toBe(337)
     })
   })
 })
