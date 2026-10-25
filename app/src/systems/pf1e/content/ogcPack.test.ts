@@ -194,6 +194,22 @@ const BATCH_F3C = [
   { id: 'feat.turn-undead', kind: 'feat', name: 'Turn Undead' },
 ] as const
 
+const BATCH_F4 = [
+  { id: 'feat.brew-potion', kind: 'feat', name: 'Brew Potion' },
+  { id: 'feat.craft-rod', kind: 'feat', name: 'Craft Rod' },
+  { id: 'feat.craft-staff', kind: 'feat', name: 'Craft Staff' },
+  { id: 'feat.craft-wand', kind: 'feat', name: 'Craft Wand' },
+  { id: 'feat.forge-ring', kind: 'feat', name: 'Forge Ring' },
+  { id: 'feat.empower-spell', kind: 'feat', name: 'Empower Spell' },
+  { id: 'feat.enlarge-spell', kind: 'feat', name: 'Enlarge Spell' },
+  { id: 'feat.extend-spell', kind: 'feat', name: 'Extend Spell' },
+  { id: 'feat.maximize-spell', kind: 'feat', name: 'Maximize Spell' },
+  { id: 'feat.quicken-spell', kind: 'feat', name: 'Quicken Spell' },
+  { id: 'feat.silent-spell', kind: 'feat', name: 'Silent Spell' },
+  { id: 'feat.still-spell', kind: 'feat', name: 'Still Spell' },
+  { id: 'feat.widen-spell', kind: 'feat', name: 'Widen Spell' },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -206,10 +222,11 @@ const PACKED = [
   ...BATCH_F3A,
   ...BATCH_F3B,
   ...BATCH_F3C,
+  ...BATCH_F4,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
-  it('ships the smoke set plus batches E-R, F1a through F3c and nothing else', () => {
+  it('ships the smoke set plus batches E-R, F1a through F4 and nothing else', () => {
     expect(OGC_ENTRIES.map((entry) => entry.id)).toEqual(PACKED.map((entry) => entry.id))
   })
 
@@ -263,11 +280,11 @@ describe('PF1e OGC encyclopedia pack', () => {
           .flatMap((group) => group.rows)
           .filter((row) => !packed.has(row.id)).length
 
-      // F4 + F0
-      expect(remaining('feat')).toBe(13 + 10)
+      // F0 only; F1a-F4 are complete
+      expect(remaining('feat')).toBe(10)
       // L0 + L1-L9 + A1
       expect(remaining('spell')).toBe(28 + 593 + 26)
-      expect(remaining('feat') + remaining('spell')).toBe(670)
+      expect(remaining('feat') + remaining('spell')).toBe(657)
     })
   })
 })

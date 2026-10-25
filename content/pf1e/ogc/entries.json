@@ -793,5 +793,70 @@
     "id": "feat.turn-undead",
     "kind": "feat",
     "body": "You can channel energy to make undead in the area flee instead of taking damage."
+  },
+  {
+    "id": "feat.brew-potion",
+    "kind": "feat",
+    "body": "You can create potions that reproduce a spell you know of third level or lower."
+  },
+  {
+    "id": "feat.craft-rod",
+    "kind": "feat",
+    "body": "You can create magic rods."
+  },
+  {
+    "id": "feat.craft-staff",
+    "kind": "feat",
+    "body": "You can create magic staves."
+  },
+  {
+    "id": "feat.craft-wand",
+    "kind": "feat",
+    "body": "You can create wands holding a spell of fourth level or lower."
+  },
+  {
+    "id": "feat.forge-ring",
+    "kind": "feat",
+    "body": "You can create magic rings."
+  },
+  {
+    "id": "feat.empower-spell",
+    "kind": "feat",
+    "body": "A spell's variable numeric effects increase by half, and it uses a slot one level higher."
+  },
+  {
+    "id": "feat.enlarge-spell",
+    "kind": "feat",
+    "body": "A spell's range doubles, and it uses a slot one level higher."
+  },
+  {
+    "id": "feat.extend-spell",
+    "kind": "feat",
+    "body": "A spell's duration doubles, and it uses a slot one level higher."
+  },
+  {
+    "id": "feat.maximize-spell",
+    "kind": "feat",
+    "body": "A spell's variable numeric effects are at maximum, and it uses a slot three levels higher."
+  },
+  {
+    "id": "feat.quicken-spell",
+    "kind": "feat",
+    "body": "You can cast a spell as a swift action, and it uses a slot four levels higher."
+  },
+  {
+    "id": "feat.silent-spell",
+    "kind": "feat",
+    "body": "You can cast a spell without its verbal component, and it uses a slot one level higher."
+  },
+  {
+    "id": "feat.still-spell",
+    "kind": "feat",
+    "body": "You can cast a spell without its somatic component, and it uses a slot one level higher."
+  },
+  {
+    "id": "feat.widen-spell",
+    "kind": "feat",
+    "body": "A spell's area increases by half, and it uses a slot three levels higher."
   }
 ]
