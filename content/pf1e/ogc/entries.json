@@ -1348,5 +1348,105 @@
     "id": "spell.obscuring-mist",
     "kind": "spell",
     "body": "A bank of fog grants concealment to creatures within it."
+  },
+  {
+    "id": "spell.pass-without-trace",
+    "kind": "spell",
+    "body": "Your party leaves no tracks or scent behind."
+  },
+  {
+    "id": "spell.produce-flame",
+    "kind": "spell",
+    "body": "Flame in your palm can be thrown as a ranged touch attack or used in melee."
+  },
+  {
+    "id": "spell.protection-from-chaos",
+    "kind": "spell",
+    "body": "One creature gains bonuses against chaotic foes and resists mental control."
+  },
+  {
+    "id": "spell.protection-from-evil",
+    "kind": "spell",
+    "body": "One creature gains bonuses against evil foes and resists mental control."
+  },
+  {
+    "id": "spell.protection-from-good",
+    "kind": "spell",
+    "body": "One creature gains bonuses against good foes and resists mental control."
+  },
+  {
+    "id": "spell.protection-from-law",
+    "kind": "spell",
+    "body": "One creature gains bonuses against lawful foes and resists mental control."
+  },
+  {
+    "id": "spell.ray-of-enfeeblement",
+    "kind": "spell",
+    "body": "A ray saps one creature's Strength for a time."
+  },
+  {
+    "id": "spell.reduce-person",
+    "kind": "spell",
+    "body": "One humanoid shrinks a size category, gaining Dexterity and losing Strength."
+  },
+  {
+    "id": "spell.remove-fear",
+    "kind": "spell",
+    "body": "Allies gain a bonus against fear, and an existing fear effect is suppressed."
+  },
+  {
+    "id": "spell.sanctuary",
+    "kind": "spell",
+    "body": "Creatures must save to attack the warded creature at all."
+  },
+  {
+    "id": "spell.shield",
+    "kind": "spell",
+    "body": "An invisible shield grants a shield bonus to AC and blocks magic missile."
+  },
+  {
+    "id": "spell.shield-of-faith",
+    "kind": "spell",
+    "body": "One creature gains a deflection bonus to AC, scaling with caster level."
+  },
+  {
+    "id": "spell.shillelagh",
+    "kind": "spell",
+    "body": "Your club or quarterstaff strikes as a larger weapon and gains a bonus."
+  },
+  {
+    "id": "spell.shocking-grasp",
+    "kind": "spell",
+    "body": "Your touch deals electricity damage, with a bonus to hit metal-armored targets."
+  },
+  {
+    "id": "spell.silent-image",
+    "kind": "spell",
+    "body": "You create a silent illusion of your design that you can move by concentrating."
+  },
+  {
+    "id": "spell.sleep",
+    "kind": "spell",
+    "body": "Weaker creatures in the area fall asleep unless they save."
+  },
+  {
+    "id": "spell.speak-with-animals",
+    "kind": "spell",
+    "body": "You can converse with animals for a short time."
+  },
+  {
+    "id": "spell.summon-monster-i",
+    "kind": "spell",
+    "body": "You summon one creature from the first summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-i",
+    "kind": "spell",
+    "body": "You summon one nature ally from the first list to fight for you."
+  },
+  {
+    "id": "spell.true-strike",
+    "kind": "spell",
+    "body": "You gain a large bonus on your next attack roll and ignore most concealment."
   }
 ]
