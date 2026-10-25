@@ -1148,5 +1148,105 @@
     "id": "spell.delay-poison",
     "kind": "spell",
     "body": "One creature is immune to poison's ongoing effects for hours."
+  },
+  {
+    "id": "spell.detect-animals-or-plants",
+    "kind": "spell",
+    "body": "You sense a specific kind of animal or plant within range."
+  },
+  {
+    "id": "spell.detect-chaos",
+    "kind": "spell",
+    "body": "You sense chaotic auras, learning strength and location."
+  },
+  {
+    "id": "spell.detect-evil",
+    "kind": "spell",
+    "body": "You sense evil auras, learning strength and location."
+  },
+  {
+    "id": "spell.detect-good",
+    "kind": "spell",
+    "body": "You sense good auras, learning strength and location."
+  },
+  {
+    "id": "spell.detect-law",
+    "kind": "spell",
+    "body": "You sense lawful auras, learning strength and location."
+  },
+  {
+    "id": "spell.detect-secret-doors",
+    "kind": "spell",
+    "body": "You sense hidden doors and compartments in the area."
+  },
+  {
+    "id": "spell.detect-snares-and-pits",
+    "kind": "spell",
+    "body": "You sense simple traps, pits, and deadfalls nearby."
+  },
+  {
+    "id": "spell.detect-undead",
+    "kind": "spell",
+    "body": "You sense undead auras, learning strength and location."
+  },
+  {
+    "id": "spell.disguise-self",
+    "kind": "spell",
+    "body": "You alter your appearance, though the illusion does not change how you feel to the touch."
+  },
+  {
+    "id": "spell.divine-favor",
+    "kind": "spell",
+    "body": "You gain a bonus on attack and damage rolls, scaling with caster level."
+  },
+  {
+    "id": "spell.doom",
+    "kind": "spell",
+    "body": "One creature becomes shaken unless it saves."
+  },
+  {
+    "id": "spell.endure-elements",
+    "kind": "spell",
+    "body": "One creature is unharmed by hot or cold environments within a wide band."
+  },
+  {
+    "id": "spell.enlarge-person",
+    "kind": "spell",
+    "body": "One humanoid grows a size category, gaining Strength and losing Dexterity."
+  },
+  {
+    "id": "spell.entangle",
+    "kind": "spell",
+    "body": "Plants in the area grab and hold creatures, hampering movement."
+  },
+  {
+    "id": "spell.entropic-shield",
+    "kind": "spell",
+    "body": "Ranged attacks against you have a chance to miss outright."
+  },
+  {
+    "id": "spell.erase",
+    "kind": "spell",
+    "body": "You remove writing, mundane or magical, from one object."
+  },
+  {
+    "id": "spell.expeditious-retreat",
+    "kind": "spell",
+    "body": "Your base speed increases substantially for a short time."
+  },
+  {
+    "id": "spell.faerie-fire",
+    "kind": "spell",
+    "body": "Outlined creatures and objects glow, denying them concealment from invisibility."
+  },
+  {
+    "id": "spell.feather-fall",
+    "kind": "spell",
+    "body": "Falling creatures or objects drift down slowly and take no damage."
+  },
+  {
+    "id": "spell.floating-disk",
+    "kind": "spell",
+    "body": "A disk of force follows you and carries a load for you."
   }
 ]

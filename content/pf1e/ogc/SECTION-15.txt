@@ -8,4 +8,4 @@ Pathfinder Roleplaying Game Core Rulebook. Copyright 2009, Paizo Publishing, LLC
 
 Pathfinder Roleplaying Game Advanced Player's Guide. Copyright 2010, Paizo Publishing, LLC; Author: Jason Bulmahn.
 
-The body strings packed so far, including batch E-R every feat batch (F1a through F4 and F0), and spell batches L0 and L1a, are short mechanical summaries of those rules. They are not book excerpts. A later batch that copies a paragraph from a book adds that book's copyright notice here in the same change.
+The body strings packed so far, including batch E-R every feat batch (F1a through F4 and F0), and spell batches L0, L1a, and L1b, are short mechanical summaries of those rules. They are not book excerpts. A later batch that copies a paragraph from a book adds that book's copyright notice here in the same change.
