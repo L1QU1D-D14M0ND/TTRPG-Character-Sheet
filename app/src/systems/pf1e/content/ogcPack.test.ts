@@ -726,6 +726,29 @@ const BATCH_L6A = [
   { id: 'spell.forceful-hand', kind: 'spell', name: "Forceful Hand" },
 ] as const
 
+const BATCH_L6B = [
+  { id: 'spell.form-of-the-dragon-i', kind: 'spell', name: "Form of the Dragon I" },
+  { id: 'spell.freezing-sphere', kind: 'spell', name: "Freezing Sphere" },
+  { id: 'spell.geas-quest', kind: 'spell', name: "Geas/Quest" },
+  { id: 'spell.globe-of-invulnerability', kind: 'spell', name: "Globe of Invulnerability" },
+  { id: 'spell.greater-dispel-magic', kind: 'spell', name: "Greater Dispel Magic" },
+  { id: 'spell.greater-glyph-of-warding', kind: 'spell', name: "Greater Glyph of Warding" },
+  { id: 'spell.greater-heroism', kind: 'spell', name: "Greater Heroism" },
+  { id: 'spell.guards-and-wards', kind: 'spell', name: "Guards and Wards" },
+  { id: 'spell.harm', kind: 'spell', name: "Harm" },
+  { id: 'spell.heal', kind: 'spell', name: "Heal" },
+  { id: 'spell.heroes-feast', kind: 'spell', name: "Heroes' Feast" },
+  { id: 'spell.ironwood', kind: 'spell', name: "Ironwood" },
+  { id: 'spell.legend-lore', kind: 'spell', name: "Legend Lore" },
+  { id: 'spell.liveoak', kind: 'spell', name: "Liveoak" },
+  { id: 'spell.mages-lucubration', kind: 'spell', name: "Mage's Lucubration" },
+  { id: 'spell.mass-bears-endurance', kind: 'spell', name: "Mass Bear's Endurance" },
+  { id: 'spell.mass-bulls-strength', kind: 'spell', name: "Mass Bull's Strength" },
+  { id: 'spell.mass-cats-grace', kind: 'spell', name: "Mass Cat's Grace" },
+  { id: 'spell.mass-cure-moderate-wounds', kind: 'spell', name: "Mass Cure Moderate Wounds" },
+  { id: 'spell.mass-eagles-splendor', kind: 'spell', name: "Mass Eagle's Splendor" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -764,6 +787,7 @@ const PACKED = [
   ...BATCH_L5C,
   ...BATCH_L5D,
   ...BATCH_L6A,
+  ...BATCH_L6B,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -824,8 +848,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(216)
-      expect(remaining('feat') + remaining('spell')).toBe(216)
+      expect(remaining('spell')).toBe(196)
+      expect(remaining('feat') + remaining('spell')).toBe(196)
     })
   })
 })

@@ -3063,5 +3063,105 @@
     "id": "spell.forceful-hand",
     "kind": "spell",
     "body": "A large hand of force shoves one opponent away from you."
+  },
+  {
+    "id": "spell.form-of-the-dragon-i",
+    "kind": "spell",
+    "body": "You take the form of a Medium dragon with a breath weapon."
+  },
+  {
+    "id": "spell.freezing-sphere",
+    "kind": "spell",
+    "body": "A ball of cold damages an area, or freezes the surface of water."
+  },
+  {
+    "id": "spell.geas-quest",
+    "kind": "spell",
+    "body": "One creature must carry out a task you set or suffer for refusing."
+  },
+  {
+    "id": "spell.globe-of-invulnerability",
+    "kind": "spell",
+    "body": "A sphere around you blocks spells of the lower few levels."
+  },
+  {
+    "id": "spell.greater-dispel-magic",
+    "kind": "spell",
+    "body": "You end several spells in an area, or one stubborn effect."
+  },
+  {
+    "id": "spell.greater-glyph-of-warding",
+    "kind": "spell",
+    "body": "A stronger ward harms violators or casts a higher-level spell."
+  },
+  {
+    "id": "spell.greater-heroism",
+    "kind": "spell",
+    "body": "One creature gains large bonuses on attacks, saves, and checks, plus immunity to fear."
+  },
+  {
+    "id": "spell.guards-and-wards",
+    "kind": "spell",
+    "body": "A structure gains several defensive effects for hours."
+  },
+  {
+    "id": "spell.harm",
+    "kind": "spell",
+    "body": "Your touch deals heavy negative energy damage, or heals an undead creature."
+  },
+  {
+    "id": "spell.heal",
+    "kind": "spell",
+    "body": "Your touch heals a very large amount of damage and several conditions."
+  },
+  {
+    "id": "spell.heroes-feast",
+    "kind": "spell",
+    "body": "A meal feeds and fortifies your party against fear and disease."
+  },
+  {
+    "id": "spell.ironwood",
+    "kind": "spell",
+    "body": "Wood becomes as strong as steel while staying workable."
+  },
+  {
+    "id": "spell.legend-lore",
+    "kind": "spell",
+    "body": "You learn legends about a person, place, or thing you name."
+  },
+  {
+    "id": "spell.liveoak",
+    "kind": "spell",
+    "body": "An oak becomes a treant guardian that obeys you."
+  },
+  {
+    "id": "spell.mages-lucubration",
+    "kind": "spell",
+    "body": "You recall a lower-level spell you cast earlier that day."
+  },
+  {
+    "id": "spell.mass-bears-endurance",
+    "kind": "spell",
+    "body": "Several creatures each gain a bonus to Constitution."
+  },
+  {
+    "id": "spell.mass-bulls-strength",
+    "kind": "spell",
+    "body": "Several creatures each gain a bonus to Strength."
+  },
+  {
+    "id": "spell.mass-cats-grace",
+    "kind": "spell",
+    "body": "Several creatures each gain a bonus to Dexterity."
+  },
+  {
+    "id": "spell.mass-cure-moderate-wounds",
+    "kind": "spell",
+    "body": "Several creatures each heal a moderate amount of damage."
+  },
+  {
+    "id": "spell.mass-eagles-splendor",
+    "kind": "spell",
+    "body": "Several creatures each gain a bonus to Charisma."
   }
 ]
