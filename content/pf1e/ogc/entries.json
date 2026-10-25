@@ -1883,5 +1883,105 @@
     "id": "spell.zone-of-truth",
     "kind": "spell",
     "body": "Creatures in the area cannot speak deliberate lies unless they save."
+  },
+  {
+    "id": "spell.arcane-sight",
+    "kind": "spell",
+    "body": "You see magical auras automatically and can identify spells in effect."
+  },
+  {
+    "id": "spell.beast-shape-i",
+    "kind": "spell",
+    "body": "You take the form of a Small or Medium animal."
+  },
+  {
+    "id": "spell.blink",
+    "kind": "spell",
+    "body": "You flicker between planes, gaining concealment and partial incorporeality."
+  },
+  {
+    "id": "spell.call-lightning",
+    "kind": "spell",
+    "body": "Bolts of lightning strike targets you choose, one per round."
+  },
+  {
+    "id": "spell.clairaudience-clairvoyance",
+    "kind": "spell",
+    "body": "You see or hear a distant location you are familiar with."
+  },
+  {
+    "id": "spell.command-plants",
+    "kind": "spell",
+    "body": "Plant creatures obey your commands unless they save."
+  },
+  {
+    "id": "spell.create-food-and-water",
+    "kind": "spell",
+    "body": "You create a day's food and drink for several people."
+  },
+  {
+    "id": "spell.cure-serious-wounds",
+    "kind": "spell",
+    "body": "Your touch heals a serious amount of damage, scaling with caster level."
+  },
+  {
+    "id": "spell.daylight",
+    "kind": "spell",
+    "body": "An object sheds bright light in a wide radius for hours."
+  },
+  {
+    "id": "spell.deep-slumber",
+    "kind": "spell",
+    "body": "Creatures totalling a moderate number of levels fall asleep."
+  },
+  {
+    "id": "spell.deeper-darkness",
+    "kind": "spell",
+    "body": "An object radiates deep gloom, lowering light more than darkness does."
+  },
+  {
+    "id": "spell.diminish-plants",
+    "kind": "spell",
+    "body": "You stunt or prune plant growth over a wide area."
+  },
+  {
+    "id": "spell.discern-lies",
+    "kind": "spell",
+    "body": "You know when a creature you watch speaks a deliberate lie."
+  },
+  {
+    "id": "spell.dispel-magic",
+    "kind": "spell",
+    "body": "You end one spell or suppress a magic item with a caster level check."
+  },
+  {
+    "id": "spell.displacement",
+    "kind": "spell",
+    "body": "Your apparent position is wrong, so attacks against you may miss."
+  },
+  {
+    "id": "spell.dominate-animal",
+    "kind": "spell",
+    "body": "One animal obeys your mental commands."
+  },
+  {
+    "id": "spell.explosive-runes",
+    "kind": "spell",
+    "body": "Runes you inscribe explode when read, harming the reader and those nearby."
+  },
+  {
+    "id": "spell.flame-arrow",
+    "kind": "spell",
+    "body": "Ammunition you treat deals extra fire damage on a hit."
+  },
+  {
+    "id": "spell.fly",
+    "kind": "spell",
+    "body": "One creature flies at a good speed with average manoeuvrability."
+  },
+  {
+    "id": "spell.gaseous-form",
+    "kind": "spell",
+    "body": "One creature becomes gaseous, gaining damage reduction but losing most actions."
   }
 ]

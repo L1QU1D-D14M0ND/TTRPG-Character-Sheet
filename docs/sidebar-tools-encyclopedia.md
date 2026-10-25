@@ -1,6 +1,6 @@
 # Encyclopedia (sidebar tool) and OGC pack
 
-**Status:** Smoke set, batch E-R, and every feat batch (F1a through F4 and F0) landed: all 177 CRB feats have a summary. Next batch is L3a (CRB spell level 3, first part).  
+**Status:** Smoke set, batch E-R, and every feat batch (F1a through F4 and F0) landed: all 177 CRB feats have a summary. Next batch is L3b (CRB spell level 3, second part).  
 **Id:** `shell.encyclopedia` (PF1e module only).  
 **Host lock:** [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
 **License lock:** [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md).  
@@ -103,10 +103,10 @@ Do not add the remaining catalog in one change. Each change appends one batch to
 | **F4** | Item creation and metamagic feats not named in F0: Brew Potion, Craft Rod, Craft Staff, Craft Wand, Forge Ring, and the eight metamagic feats from Empower Spell to Widen Spell. *Landed.* | 0 |
 | **F0** | Feats packed before the F ranges: Improved Initiative, Weapon Focus, Point-Blank Shot, Spell Focus, Eschew Materials, Scribe Scroll, Craft Wondrous Item, Craft Magic Arms and Armor, Craft Construct, Heighten Spell. After F4. *Landed.* `feat.power-attack` was already in the smoke set. | 0 |
 | **L0** | CRB spell level 0. *Landed.* | 0 |
-| **L1–L9** | One CRB spell level per change. A level with more than 40 spells is split alphabetically into parts of at most 20 (`L1a`, `L1b`, …). Skip `spell.fireball`. **Levels 0-2 complete (111 + 84 rows). L3a is next.** Remaining per level: L3 75, L4 72, L5 69, L6 70, L7 57, L8 51, L9 32. | 426 |
+| **L1–L9** | One CRB spell level per change. A level with more than 40 spells is split alphabetically into parts of at most 20 (`L1a`, `L1b`, …). Skip `spell.fireball`. **Levels 0-2 complete. L3a landed (Arcane Sight–Gaseous Form); L3b is next.** Remaining per level: L3 55, L4 72, L5 69, L6 70, L7 57, L8 51, L9 32. | 406 |
 | **A1** | APG Summoner spells. Skip `spell.evolution-surge`. | 26 |
 
-The rows-still-to-add column totals 452, which is every CRB feat, CRB spell, and APG Summoner spell not yet in `entries.json`. `ogcPack.test.ts` asserts that total, so the table cannot drift from the packs unnoticed.
+The rows-still-to-add column totals 432, which is every CRB feat, CRB spell, and APG Summoner spell not yet in `entries.json`. `ogcPack.test.ts` asserts that total, so the table cannot drift from the packs unnoticed.
 
 Order is E-R, then F1a through F4, then F0, then L0 through L9, then A1. Afflictions and Actions stay empty until those batches have landed.
 
@@ -191,3 +191,4 @@ Chrome strings (`shell.toolEncyclopedia`, group labels, empty-group sentence, no
 | 2026-10-25 | Batch L2c landed (20 level 2 CRB spells, Inflict Moderate Wounds–Scare). Next batch is L2d |
 | 2026-10-25 | Batch L2d landed (20 level 2 CRB spells, Scorching Ray–Warp Wood). Next batch is L2e |
 | 2026-10-25 | Batch L2e landed (last 4 level 2 CRB spells). Spell levels 0 through 2 are complete. Next batch is L3a |
+| 2026-10-25 | Batch L3a landed (20 level 3 CRB spells, Arcane Sight–Gaseous Form). Next batch is L3b |
