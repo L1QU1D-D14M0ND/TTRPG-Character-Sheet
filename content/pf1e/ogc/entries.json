@@ -2558,5 +2558,65 @@
     "id": "spell.shout",
     "kind": "spell",
     "body": "A cone of sound deals damage and deafens creatures in it."
+  },
+  {
+    "id": "spell.solid-fog",
+    "kind": "spell",
+    "body": "Thick fog blocks sight and slows creatures moving through it."
+  },
+  {
+    "id": "spell.spell-immunity",
+    "kind": "spell",
+    "body": "One creature is immune to a few spells you name."
+  },
+  {
+    "id": "spell.spike-stones",
+    "kind": "spell",
+    "body": "Stone spikes damage and slow creatures crossing the area."
+  },
+  {
+    "id": "spell.stone-shape",
+    "kind": "spell",
+    "body": "You reshape a block of stone as you like."
+  },
+  {
+    "id": "spell.stoneskin",
+    "kind": "spell",
+    "body": "One creature gains damage reduction against physical attacks, up to a limit."
+  },
+  {
+    "id": "spell.summon-monster-iv",
+    "kind": "spell",
+    "body": "You summon creatures from the fourth summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-iv",
+    "kind": "spell",
+    "body": "You summon nature allies from the fourth list to fight for you."
+  },
+  {
+    "id": "spell.tree-stride",
+    "kind": "spell",
+    "body": "You step into trees and travel between them over long distances."
+  },
+  {
+    "id": "spell.unholy-blight",
+    "kind": "spell",
+    "body": "Good creatures in the area are damaged and sickened."
+  },
+  {
+    "id": "spell.wall-of-fire",
+    "kind": "spell",
+    "body": "A sheet of flame damages creatures passing through or standing near it."
+  },
+  {
+    "id": "spell.wall-of-ice",
+    "kind": "spell",
+    "body": "A wall of ice blocks passage and must be broken through."
+  },
+  {
+    "id": "spell.zone-of-silence",
+    "kind": "spell",
+    "body": "Sounds you make cannot be heard outside the area around you."
   }
 ]

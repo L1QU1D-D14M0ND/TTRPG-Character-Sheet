@@ -607,6 +607,21 @@ const BATCH_L4C = [
   { id: 'spell.shout', kind: 'spell', name: "Shout" },
 ] as const
 
+const BATCH_L4D = [
+  { id: 'spell.solid-fog', kind: 'spell', name: "Solid Fog" },
+  { id: 'spell.spell-immunity', kind: 'spell', name: "Spell Immunity" },
+  { id: 'spell.spike-stones', kind: 'spell', name: "Spike Stones" },
+  { id: 'spell.stone-shape', kind: 'spell', name: "Stone Shape" },
+  { id: 'spell.stoneskin', kind: 'spell', name: "Stoneskin" },
+  { id: 'spell.summon-monster-iv', kind: 'spell', name: "Summon Monster IV" },
+  { id: 'spell.summon-natures-ally-iv', kind: 'spell', name: "Summon Nature's Ally IV" },
+  { id: 'spell.tree-stride', kind: 'spell', name: "Tree Stride" },
+  { id: 'spell.unholy-blight', kind: 'spell', name: "Unholy Blight" },
+  { id: 'spell.wall-of-fire', kind: 'spell', name: "Wall of Fire" },
+  { id: 'spell.wall-of-ice', kind: 'spell', name: "Wall of Ice" },
+  { id: 'spell.zone-of-silence', kind: 'spell', name: "Zone of Silence" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -639,6 +654,7 @@ const PACKED = [
   ...BATCH_L4A,
   ...BATCH_L4B,
   ...BATCH_L4C,
+  ...BATCH_L4D,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -699,8 +715,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(317)
-      expect(remaining('feat') + remaining('spell')).toBe(317)
+      expect(remaining('spell')).toBe(305)
+      expect(remaining('feat') + remaining('spell')).toBe(305)
     })
   })
 })
