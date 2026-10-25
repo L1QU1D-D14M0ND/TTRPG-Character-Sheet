@@ -2183,5 +2183,80 @@
     "id": "spell.secret-page",
     "kind": "spell",
     "body": "You disguise one page's content so only a trigger reveals the real text."
+  },
+  {
+    "id": "spell.sepia-snake-sigil",
+    "kind": "spell",
+    "body": "A sigil in text immobilizes the reader in amber for a long time."
+  },
+  {
+    "id": "spell.shrink-item",
+    "kind": "spell",
+    "body": "One object shrinks to a fraction of its size and can become cloth-like."
+  },
+  {
+    "id": "spell.sleet-storm",
+    "kind": "spell",
+    "body": "Sleet blocks vision and makes the ground slippery in the area."
+  },
+  {
+    "id": "spell.slow",
+    "kind": "spell",
+    "body": "Affected creatures act less often and take penalties to AC and attacks."
+  },
+  {
+    "id": "spell.speak-with-dead",
+    "kind": "spell",
+    "body": "A corpse answers a few questions you put to it."
+  },
+  {
+    "id": "spell.stinking-cloud",
+    "kind": "spell",
+    "body": "A cloud of nauseating vapour leaves creatures retching and unable to act."
+  },
+  {
+    "id": "spell.suggestion",
+    "kind": "spell",
+    "body": "One creature follows a reasonable-sounding course of action you suggest."
+  },
+  {
+    "id": "spell.summon-monster-iii",
+    "kind": "spell",
+    "body": "You summon creatures from the third summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-iii",
+    "kind": "spell",
+    "body": "You summon nature allies from the third list to fight for you."
+  },
+  {
+    "id": "spell.tiny-hut",
+    "kind": "spell",
+    "body": "A dome of force shelters several creatures from weather and sight."
+  },
+  {
+    "id": "spell.tongues",
+    "kind": "spell",
+    "body": "One creature can speak and understand any language."
+  },
+  {
+    "id": "spell.vampiric-touch",
+    "kind": "spell",
+    "body": "Your touch deals damage and you gain it back as temporary hit points."
+  },
+  {
+    "id": "spell.water-breathing",
+    "kind": "spell",
+    "body": "Creatures you touch can breathe underwater for hours."
+  },
+  {
+    "id": "spell.water-walk",
+    "kind": "spell",
+    "body": "Creatures you touch can walk on liquid surfaces."
+  },
+  {
+    "id": "spell.wind-wall",
+    "kind": "spell",
+    "body": "A wall of strong wind deflects arrows, small creatures, and gases."
   }
 ]

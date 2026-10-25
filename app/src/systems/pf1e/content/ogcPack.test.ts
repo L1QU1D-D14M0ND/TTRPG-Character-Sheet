@@ -520,6 +520,24 @@ const BATCH_L3C = [
   { id: 'spell.secret-page', kind: 'spell', name: "Secret Page" },
 ] as const
 
+const BATCH_L3D = [
+  { id: 'spell.sepia-snake-sigil', kind: 'spell', name: "Sepia Snake Sigil" },
+  { id: 'spell.shrink-item', kind: 'spell', name: "Shrink Item" },
+  { id: 'spell.sleet-storm', kind: 'spell', name: "Sleet Storm" },
+  { id: 'spell.slow', kind: 'spell', name: "Slow" },
+  { id: 'spell.speak-with-dead', kind: 'spell', name: "Speak with Dead" },
+  { id: 'spell.stinking-cloud', kind: 'spell', name: "Stinking Cloud" },
+  { id: 'spell.suggestion', kind: 'spell', name: "Suggestion" },
+  { id: 'spell.summon-monster-iii', kind: 'spell', name: "Summon Monster III" },
+  { id: 'spell.summon-natures-ally-iii', kind: 'spell', name: "Summon Nature's Ally III" },
+  { id: 'spell.tiny-hut', kind: 'spell', name: "Tiny Hut" },
+  { id: 'spell.tongues', kind: 'spell', name: "Tongues" },
+  { id: 'spell.vampiric-touch', kind: 'spell', name: "Vampiric Touch" },
+  { id: 'spell.water-breathing', kind: 'spell', name: "Water Breathing" },
+  { id: 'spell.water-walk', kind: 'spell', name: "Water Walk" },
+  { id: 'spell.wind-wall', kind: 'spell', name: "Wind Wall" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -548,6 +566,7 @@ const PACKED = [
   ...BATCH_L3A,
   ...BATCH_L3B,
   ...BATCH_L3C,
+  ...BATCH_L3D,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -608,8 +627,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(392)
-      expect(remaining('feat') + remaining('spell')).toBe(392)
+      expect(remaining('spell')).toBe(377)
+      expect(remaining('feat') + remaining('spell')).toBe(377)
     })
   })
 })
