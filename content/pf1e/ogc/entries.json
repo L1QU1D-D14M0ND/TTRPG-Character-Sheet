@@ -2963,5 +2963,105 @@
     "id": "spell.waves-of-fatigue",
     "kind": "spell",
     "body": "Creatures in the cone become fatigued with no save."
+  },
+  {
+    "id": "spell.acid-fog",
+    "kind": "spell",
+    "body": "Thick fog slows creatures and deals acid damage each round."
+  },
+  {
+    "id": "spell.analyze-dweomer",
+    "kind": "spell",
+    "body": "You learn all magical properties of several items or creatures."
+  },
+  {
+    "id": "spell.animate-objects",
+    "kind": "spell",
+    "body": "Objects you choose come alive and fight for you."
+  },
+  {
+    "id": "spell.antilife-shell",
+    "kind": "spell",
+    "body": "A shell around you keeps living creatures from entering."
+  },
+  {
+    "id": "spell.antimagic-field",
+    "kind": "spell",
+    "body": "Magic is suppressed in the area around you."
+  },
+  {
+    "id": "spell.beast-shape-iv",
+    "kind": "spell",
+    "body": "You take the form of a wide range of animals or magical beasts."
+  },
+  {
+    "id": "spell.blade-barrier",
+    "kind": "spell",
+    "body": "A wall of spinning blades damages creatures passing through it."
+  },
+  {
+    "id": "spell.chain-lightning",
+    "kind": "spell",
+    "body": "Lightning strikes one target and arcs to several others for less damage."
+  },
+  {
+    "id": "spell.circle-of-death",
+    "kind": "spell",
+    "body": "Weaker living creatures in the area die unless they save."
+  },
+  {
+    "id": "spell.contingency",
+    "kind": "spell",
+    "body": "A spell you prepare triggers automatically on a condition you set."
+  },
+  {
+    "id": "spell.control-water",
+    "kind": "spell",
+    "body": "You raise or lower water over a wide area."
+  },
+  {
+    "id": "spell.create-undead",
+    "kind": "spell",
+    "body": "You create more powerful undead from a corpse."
+  },
+  {
+    "id": "spell.disintegrate",
+    "kind": "spell",
+    "body": "A ray reduces a creature or object to dust, or deals heavy damage."
+  },
+  {
+    "id": "spell.elemental-body-iii",
+    "kind": "spell",
+    "body": "You take the form of a Large elemental of a type you choose."
+  },
+  {
+    "id": "spell.eyebite",
+    "kind": "spell",
+    "body": "Your gaze sickens, panics, or renders creatures comatose."
+  },
+  {
+    "id": "spell.find-the-path",
+    "kind": "spell",
+    "body": "You know the shortest route to a place you name."
+  },
+  {
+    "id": "spell.fire-seeds",
+    "kind": "spell",
+    "body": "Acorns and berries become thrown bombs and timed fire charges."
+  },
+  {
+    "id": "spell.flesh-to-stone",
+    "kind": "spell",
+    "body": "One creature turns to stone unless it saves."
+  },
+  {
+    "id": "spell.forbiddance",
+    "kind": "spell",
+    "body": "An area is sealed against planar travel and harms creatures of other alignments."
+  },
+  {
+    "id": "spell.forceful-hand",
+    "kind": "spell",
+    "body": "A large hand of force shoves one opponent away from you."
   }
 ]
