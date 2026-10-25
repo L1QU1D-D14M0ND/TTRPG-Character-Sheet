@@ -3163,5 +3163,105 @@
     "id": "spell.mass-eagles-splendor",
     "kind": "spell",
     "body": "Several creatures each gain a bonus to Charisma."
+  },
+  {
+    "id": "spell.mass-foxs-cunning",
+    "kind": "spell",
+    "body": "Several creatures each gain a bonus to Intelligence."
+  },
+  {
+    "id": "spell.mass-inflict-moderate-wounds",
+    "kind": "spell",
+    "body": "Several creatures each take moderate negative energy damage."
+  },
+  {
+    "id": "spell.mass-owls-wisdom",
+    "kind": "spell",
+    "body": "Several creatures each gain a bonus to Wisdom."
+  },
+  {
+    "id": "spell.mass-suggestion",
+    "kind": "spell",
+    "body": "Several creatures each follow a reasonable-sounding suggestion."
+  },
+  {
+    "id": "spell.mislead",
+    "kind": "spell",
+    "body": "You turn invisible and leave an illusory double in your place."
+  },
+  {
+    "id": "spell.move-earth",
+    "kind": "spell",
+    "body": "You reshape hills and dirt over a wide area, slowly."
+  },
+  {
+    "id": "spell.permanent-image",
+    "kind": "spell",
+    "body": "You create a lasting illusion with sight, sound, and smell."
+  },
+  {
+    "id": "spell.planar-ally",
+    "kind": "spell",
+    "body": "You bargain with an outsider to perform a task for payment."
+  },
+  {
+    "id": "spell.planar-binding",
+    "kind": "spell",
+    "body": "You trap an outsider and bargain for a service."
+  },
+  {
+    "id": "spell.plant-shape-ii",
+    "kind": "spell",
+    "body": "You take the form of a Large plant creature."
+  },
+  {
+    "id": "spell.programmed-image",
+    "kind": "spell",
+    "body": "An illusion appears when a condition you set is met."
+  },
+  {
+    "id": "spell.repel-wood",
+    "kind": "spell",
+    "body": "A wave of force pushes wooden objects away from you."
+  },
+  {
+    "id": "spell.repulsion",
+    "kind": "spell",
+    "body": "Creatures cannot approach you while the spell lasts."
+  },
+  {
+    "id": "spell.shadow-walk",
+    "kind": "spell",
+    "body": "You travel quickly through the Shadow Plane with companions."
+  },
+  {
+    "id": "spell.spellstaff",
+    "kind": "spell",
+    "body": "You store one prepared spell in a wooden staff for later."
+  },
+  {
+    "id": "spell.stone-tell",
+    "kind": "spell",
+    "body": "You converse with stone about what has passed nearby."
+  },
+  {
+    "id": "spell.stone-to-flesh",
+    "kind": "spell",
+    "body": "Stone becomes flesh, restoring a petrified creature."
+  },
+  {
+    "id": "spell.summon-monster-vi",
+    "kind": "spell",
+    "body": "You summon creatures from the sixth summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-vi",
+    "kind": "spell",
+    "body": "You summon nature allies from the sixth list to fight for you."
+  },
+  {
+    "id": "spell.symbol-of-fear",
+    "kind": "spell",
+    "body": "A triggered symbol panics creatures that see it."
   }
 ]
