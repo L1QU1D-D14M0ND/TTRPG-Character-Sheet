@@ -440,4 +440,4 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-10-05 | Encyclopedia batch F2a landed (17 combat feats). Next batch is F2b |
 | 2026-10-05 | Encyclopedia batch F2b landed (17 combat feats). Next batch is F2c |
 | 2026-10-05 | Encyclopedia batch F2c landed (18 combat feats). Next batch is F3a |
-| 2026-10-05 | Encyclopedia batch F3a landed (16 general feats). Next batch is F3b |
+| 2026-10-25 | Encyclopedia batch F3a landed (16 general feats). Next batch is F3b |

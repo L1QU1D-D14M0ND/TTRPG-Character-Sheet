@@ -186,4 +186,28 @@ describe('PF1e OGC encyclopedia pack', () => {
     const ids = OGC_ENTRIES.map((entry) => entry.id)
     expect(new Set(ids).size).toBe(ids.length)
   })
+
+  // These guards do not depend on the batch roster above, so a typo in a
+  // future batch fails here even if the roster is updated to match it. An
+  // unjoinable id is otherwise silent: the encyclopedia just drops the row.
+  describe('entries.json integrity', () => {
+    it('joins every packed id to a mechanic catalog row', () => {
+      const orphans = OGC_ENTRIES.filter((entry) => lookupOgcName(entry) === null)
+      expect(orphans.map((entry) => entry.id)).toEqual([])
+    })
+
+    it('prefixes every id with its kind', () => {
+      const mismatched = OGC_ENTRIES.filter(
+        (entry) => !entry.id.startsWith(`${entry.kind}.`),
+      )
+      expect(mismatched.map((entry) => entry.id)).toEqual([])
+    })
+
+    it('keeps every body a trimmed, non-empty summary', () => {
+      const malformed = OGC_ENTRIES.filter(
+        (entry) => entry.body.trim().length === 0 || entry.body !== entry.body.trim(),
+      )
+      expect(malformed.map((entry) => entry.id)).toEqual([])
+    })
+  })
 })

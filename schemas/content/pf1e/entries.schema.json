@@ -6,11 +6,95 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["id", "kind", "body"],
+    "required": [
+      "id",
+      "kind",
+      "body"
+    ],
     "properties": {
-      "id": { "type": "string", "minLength": 1 },
-      "kind": { "enum": ["spell", "feat", "feature"] },
-      "body": { "type": "string", "minLength": 1 }
-    }
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "enum": [
+          "spell",
+          "feat",
+          "feature"
+        ]
+      },
+      "body": {
+        "type": "string",
+        "minLength": 1,
+        "$comment": "A short mechanical summary, with no padding whitespace.",
+        "pattern": "^\\S([\\s\\S]*\\S)?$"
+      }
+    },
+    "$comment": "An id is addressed within its catalog kind, so it carries that kind as its prefix. A mismatch would load but never join to a catalog row, so reject it here.",
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "spell"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "then": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^spell\\."
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "feat"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "then": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^feat\\."
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "feature"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "then": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^feature\\."
+            }
+          }
+        }
+      }
+    ]
   }
 }

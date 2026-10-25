@@ -45,7 +45,9 @@
     "encyclopedia": {
       "search": "Search",
       "emptyGroup": "No entries packed yet.",
+      "noMatches": "No entries match your search.",
       "overflow": "{count} more matches. Keep typing to narrow the list.",
+      "groupOverflow": "{count} more in this group. Keep typing to narrow the list.",
       "kind": {
         "spell": "Spells",
         "feat": "Feats",

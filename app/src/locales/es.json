@@ -45,7 +45,9 @@
     "encyclopedia": {
       "search": "Buscar",
       "emptyGroup": "Aún no hay entradas.",
+      "noMatches": "Ninguna entrada coincide con tu búsqueda.",
       "overflow": "{count} coincidencias más. Sigue escribiendo para acotar la lista.",
+      "groupOverflow": "{count} más en este grupo. Sigue escribiendo para acotar la lista.",
       "kind": {
         "spell": "Conjuros",
         "feat": "Dotes",

@@ -125,11 +125,13 @@ The list is the OGC entries, not the whole mechanic catalog. A spell or feat wit
 | Afflictions | Empty |
 | Actions | Empty |
 
-Empty groups stay visible, with a short chrome sentence that no entries are packed yet. That sentence is a locale string. `body` is not.
+Empty groups stay visible, with a short chrome sentence that no entries are packed yet. That sentence is a locale string. `body` is not. A group that ships entries but matches nothing gets a different sentence (`noMatches`), so "nothing is packed" never describes a packed group.
 
-Search matches the mechanic catalog name, case-insensitive substring, same rule as the catalog picker. Render at most 60 matches and show how many matches are held back. Selecting an entry shows its catalog name, kind, and `body`.
+Entries render sorted by catalog name, not in the order batches were appended to `entries.json`.
 
-Chrome strings (`shell.toolEncyclopedia`, group labels, empty-group sentence, overflow note) go in `en.json` and `es.json`. Do not put `body` in the locale catalogs.
+Search matches the mechanic catalog name, case-insensitive substring, same rule as the catalog picker. Render at most 60 matches and show how many matches are held back. The 60-row cap is shared across groups round-robin rather than spent in group order, so a large Spells group cannot starve a smaller Feats group of every row. Each truncated group also notes how many of its own rows are held back. Selecting an entry shows its catalog name, kind, and `body`.
+
+Chrome strings (`shell.toolEncyclopedia`, group labels, empty-group sentence, no-match sentence, per-group and total overflow notes) go in `en.json` and `es.json`. Do not put `body` in the locale catalogs.
 
 ---
 
@@ -170,4 +172,4 @@ Chrome strings (`shell.toolEncyclopedia`, group labels, empty-group sentence, ov
 | 2026-10-05 | Batch F2a landed (17 combat feats, Improved Two-Weapon Fighting–Quick Draw). Next batch is F2b |
 | 2026-10-05 | Batch F2b landed (17 combat feats, Rapid Reload–Staggering Critical). Next batch is F2c |
 | 2026-10-05 | Batch F2c landed (18 combat feats, Stand Still–Wind Stance). Combat feats in the F ranges are complete. Next batch is F3a |
-| 2026-10-05 | Batch F3a landed (16 general feats, Acrobatic–Extra Ki). Next batch is F3b |
+| 2026-10-25 | Batch F3a landed (16 general feats, Acrobatic–Extra Ki). Next batch is F3b |

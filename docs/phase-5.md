@@ -101,4 +101,4 @@ Card-oriented play surfaces and a third `system` module stay listed so design do
 | 2026-10-05 | Batch F2a landed. Next encyclopedia batch is F2b |
 | 2026-10-05 | Batch F2b landed. Next encyclopedia batch is F2c |
 | 2026-10-05 | Batch F2c landed. Next encyclopedia batch is F3a |
-| 2026-10-05 | Batch F3a landed. Next encyclopedia batch is F3b |
+| 2026-10-25 | Batch F3a landed. Next encyclopedia batch is F3b |
