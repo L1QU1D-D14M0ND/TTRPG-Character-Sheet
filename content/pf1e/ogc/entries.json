@@ -1983,5 +1983,105 @@
     "id": "spell.gaseous-form",
     "kind": "spell",
     "body": "One creature becomes gaseous, gaining damage reduction but losing most actions."
+  },
+  {
+    "id": "spell.gentle-repose",
+    "kind": "spell",
+    "body": "A corpse is preserved and does not decay, extending the window for raising it."
+  },
+  {
+    "id": "spell.glibness",
+    "kind": "spell",
+    "body": "You gain a large bonus on Bluff checks and resist magical lie detection."
+  },
+  {
+    "id": "spell.glyph-of-warding",
+    "kind": "spell",
+    "body": "You inscribe a ward that harms or casts a spell on whoever violates it."
+  },
+  {
+    "id": "spell.good-hope",
+    "kind": "spell",
+    "body": "Allies gain bonuses on saves, attack and damage rolls, and skill checks."
+  },
+  {
+    "id": "spell.greater-magic-fang",
+    "kind": "spell",
+    "body": "A natural weapon gains an enhancement bonus that scales with caster level."
+  },
+  {
+    "id": "spell.greater-magic-weapon",
+    "kind": "spell",
+    "body": "A weapon gains an enhancement bonus that scales with caster level."
+  },
+  {
+    "id": "spell.halt-undead",
+    "kind": "spell",
+    "body": "Several undead creatures are held motionless unless they save."
+  },
+  {
+    "id": "spell.haste",
+    "kind": "spell",
+    "body": "Allies gain an extra attack, more speed, and bonuses to AC and Reflex saves."
+  },
+  {
+    "id": "spell.heal-mount",
+    "kind": "spell",
+    "body": "Your mount is healed substantially, as a cure spell."
+  },
+  {
+    "id": "spell.helping-hand",
+    "kind": "spell",
+    "body": "A spectral hand leads a creature you describe to your location."
+  },
+  {
+    "id": "spell.heroism",
+    "kind": "spell",
+    "body": "One creature gains a bonus on attack rolls, saves, and skill checks."
+  },
+  {
+    "id": "spell.hold-person",
+    "kind": "spell",
+    "body": "One humanoid is paralyzed unless it saves each round."
+  },
+  {
+    "id": "spell.illusory-script",
+    "kind": "spell",
+    "body": "Only readers you choose understand your writing; others may be confused."
+  },
+  {
+    "id": "spell.inflict-serious-wounds",
+    "kind": "spell",
+    "body": "Your touch deals serious negative energy damage, or heals an undead creature."
+  },
+  {
+    "id": "spell.invisibility-purge",
+    "kind": "spell",
+    "body": "Invisible creatures near you become visible."
+  },
+  {
+    "id": "spell.invisibility-sphere",
+    "kind": "spell",
+    "body": "Creatures inside a moving sphere around you become invisible."
+  },
+  {
+    "id": "spell.keen-edge",
+    "kind": "spell",
+    "body": "A slashing weapon's critical threat range doubles."
+  },
+  {
+    "id": "spell.lightning-bolt",
+    "kind": "spell",
+    "body": "A bolt of lightning damages everything in a line, with a save for half."
+  },
+  {
+    "id": "spell.magic-circle-against-chaos",
+    "kind": "spell",
+    "body": "An area wards creatures inside against chaotic foes and summoned creatures."
+  },
+  {
+    "id": "spell.magic-circle-against-evil",
+    "kind": "spell",
+    "body": "An area wards creatures inside against evil foes and summoned creatures."
   }
 ]
