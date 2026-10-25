@@ -3263,5 +3263,55 @@
     "id": "spell.symbol-of-fear",
     "kind": "spell",
     "body": "A triggered symbol panics creatures that see it."
+  },
+  {
+    "id": "spell.symbol-of-persuasion",
+    "kind": "spell",
+    "body": "A triggered symbol charms creatures that see it."
+  },
+  {
+    "id": "spell.sympathetic-vibration",
+    "kind": "spell",
+    "body": "You shake a standing structure, damaging it each round."
+  },
+  {
+    "id": "spell.transformation",
+    "kind": "spell",
+    "body": "You trade spellcasting for fighting ability, gaining combat bonuses."
+  },
+  {
+    "id": "spell.transport-via-plants",
+    "kind": "spell",
+    "body": "You step into one plant and emerge from another far away."
+  },
+  {
+    "id": "spell.true-seeing",
+    "kind": "spell",
+    "body": "You see through illusions, invisibility, and disguises."
+  },
+  {
+    "id": "spell.undeath-to-death",
+    "kind": "spell",
+    "body": "Weaker undead in the area are destroyed."
+  },
+  {
+    "id": "spell.veil",
+    "kind": "spell",
+    "body": "Several creatures appear as other kinds of creatures."
+  },
+  {
+    "id": "spell.wall-of-iron",
+    "kind": "spell",
+    "body": "A sheet of iron appears and can be toppled onto foes."
+  },
+  {
+    "id": "spell.wind-walk",
+    "kind": "spell",
+    "body": "You and companions become vaporous and travel swiftly on the wind."
+  },
+  {
+    "id": "spell.word-of-recall",
+    "kind": "spell",
+    "body": "You and companions return instantly to a sanctuary you prepared."
   }
 ]

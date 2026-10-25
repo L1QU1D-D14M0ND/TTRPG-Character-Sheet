@@ -772,6 +772,19 @@ const BATCH_L6C = [
   { id: 'spell.symbol-of-fear', kind: 'spell', name: "Symbol of Fear" },
 ] as const
 
+const BATCH_L6D = [
+  { id: 'spell.symbol-of-persuasion', kind: 'spell', name: "Symbol of Persuasion" },
+  { id: 'spell.sympathetic-vibration', kind: 'spell', name: "Sympathetic Vibration" },
+  { id: 'spell.transformation', kind: 'spell', name: "Transformation" },
+  { id: 'spell.transport-via-plants', kind: 'spell', name: "Transport via Plants" },
+  { id: 'spell.true-seeing', kind: 'spell', name: "True Seeing" },
+  { id: 'spell.undeath-to-death', kind: 'spell', name: "Undeath to Death" },
+  { id: 'spell.veil', kind: 'spell', name: "Veil" },
+  { id: 'spell.wall-of-iron', kind: 'spell', name: "Wall of Iron" },
+  { id: 'spell.wind-walk', kind: 'spell', name: "Wind Walk" },
+  { id: 'spell.word-of-recall', kind: 'spell', name: "Word of Recall" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -812,6 +825,7 @@ const PACKED = [
   ...BATCH_L6A,
   ...BATCH_L6B,
   ...BATCH_L6C,
+  ...BATCH_L6D,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -872,8 +886,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(176)
-      expect(remaining('feat') + remaining('spell')).toBe(176)
+      expect(remaining('spell')).toBe(166)
+      expect(remaining('feat') + remaining('spell')).toBe(166)
     })
   })
 })

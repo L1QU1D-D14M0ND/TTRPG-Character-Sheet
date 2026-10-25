@@ -1,6 +1,6 @@
 # Encyclopedia (sidebar tool) and OGC pack
 
-**Status:** Smoke set, batch E-R, and every feat batch (F1a through F4 and F0) landed: all 177 CRB feats have a summary. Next batch is L6d (CRB spell level 6, final part).  
+**Status:** Smoke set, batch E-R, and every feat batch (F1a through F4 and F0) landed: all 177 CRB feats have a summary. Next batch is L7a (CRB spell level 7, first part).  
 **Id:** `shell.encyclopedia` (PF1e module only).  
 **Host lock:** [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
 **License lock:** [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md).  
@@ -103,10 +103,10 @@ Do not add the remaining catalog in one change. Each change appends one batch to
 | **F4** | Item creation and metamagic feats not named in F0: Brew Potion, Craft Rod, Craft Staff, Craft Wand, Forge Ring, and the eight metamagic feats from Empower Spell to Widen Spell. *Landed.* | 0 |
 | **F0** | Feats packed before the F ranges: Improved Initiative, Weapon Focus, Point-Blank Shot, Spell Focus, Eschew Materials, Scribe Scroll, Craft Wondrous Item, Craft Magic Arms and Armor, Craft Construct, Heighten Spell. After F4. *Landed.* `feat.power-attack` was already in the smoke set. | 0 |
 | **L0** | CRB spell level 0. *Landed.* | 0 |
-| **L1–L9** | One CRB spell level per change. A level with more than 40 spells is split alphabetically into parts of at most 20 (`L1a`, `L1b`, …). Skip `spell.fireball`. **Levels 0-5 complete. L6a–L6c landed (Acid Fog–Symbol of Fear); L6d is next, the last 10 level 6 spells.** Remaining per level: L6 10, L7 57, L8 51, L9 32. | 150 |
+| **L1–L9** | One CRB spell level per change. A level with more than 40 spells is split alphabetically into parts of at most 20 (`L1a`, `L1b`, …). Skip `spell.fireball`. **Levels 0-6 complete (482 rows). L7a is next.** Remaining per level: L7 57, L8 51, L9 32. | 140 |
 | **A1** | APG Summoner spells. Skip `spell.evolution-surge`. | 26 |
 
-The rows-still-to-add column totals 176, which is every CRB feat, CRB spell, and APG Summoner spell not yet in `entries.json`. `ogcPack.test.ts` asserts that total, so the table cannot drift from the packs unnoticed.
+The rows-still-to-add column totals 166, which is every CRB feat, CRB spell, and APG Summoner spell not yet in `entries.json`. `ogcPack.test.ts` asserts that total, so the table cannot drift from the packs unnoticed.
 
 **Catalog name artifact.** `spell.atonement-fm` is named "Atonement FM" in the mechanic pack: the CRB spell list marks that spell's focus and material components with an F/M suffix, and the suffix was carried into the name when the id was locked. The encyclopedia shows catalog names verbatim, so it renders that way. The id is in the lock file ([`pf1e-crb-feat-spell-ids.md`](pf1e-crb-feat-spell-ids.md)), so renaming it is its own change, not an encyclopedia batch.
 
@@ -208,3 +208,4 @@ Chrome strings (`shell.toolEncyclopedia`, group labels, empty-group sentence, no
 | 2026-10-25 | Batch L6a landed (20 level 6 CRB spells, Acid Fog–Forceful Hand). Next batch is L6b |
 | 2026-10-25 | Batch L6b landed (20 level 6 CRB spells, Form of the Dragon I–Mass Eagle's Splendor). Next batch is L6c |
 | 2026-10-25 | Batch L6c landed (20 level 6 CRB spells, Mass Fox's Cunning–Symbol of Fear). Next batch is L6d |
+| 2026-10-25 | Batch L6d landed (last 10 level 6 CRB spells). Spell levels 0 through 6 are complete. Next batch is L7a |
