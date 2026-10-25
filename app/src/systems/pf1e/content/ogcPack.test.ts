@@ -444,6 +444,13 @@ const BATCH_L2D = [
   { id: 'spell.warp-wood', kind: 'spell', name: "Warp Wood" },
 ] as const
 
+const BATCH_L2E = [
+  { id: 'spell.web', kind: 'spell', name: "Web" },
+  { id: 'spell.whispering-wind', kind: 'spell', name: "Whispering Wind" },
+  { id: 'spell.wood-shape', kind: 'spell', name: "Wood Shape" },
+  { id: 'spell.zone-of-truth', kind: 'spell', name: "Zone of Truth" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -468,6 +475,7 @@ const PACKED = [
   ...BATCH_L2B,
   ...BATCH_L2C,
   ...BATCH_L2D,
+  ...BATCH_L2E,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -528,8 +536,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(456)
-      expect(remaining('feat') + remaining('spell')).toBe(456)
+      expect(remaining('spell')).toBe(452)
+      expect(remaining('feat') + remaining('spell')).toBe(452)
     })
   })
 })

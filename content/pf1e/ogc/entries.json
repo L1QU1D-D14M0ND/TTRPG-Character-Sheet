@@ -1863,5 +1863,25 @@
     "id": "spell.warp-wood",
     "kind": "spell",
     "body": "You bend and twist wooden objects out of shape."
+  },
+  {
+    "id": "spell.web",
+    "kind": "spell",
+    "body": "Sticky strands fill the area, entangling creatures caught in them."
+  },
+  {
+    "id": "spell.whispering-wind",
+    "kind": "spell",
+    "body": "You send a short spoken message to a place you know."
+  },
+  {
+    "id": "spell.wood-shape",
+    "kind": "spell",
+    "body": "You reshape one wooden object as you like."
+  },
+  {
+    "id": "spell.zone-of-truth",
+    "kind": "spell",
+    "body": "Creatures in the area cannot speak deliberate lies unless they save."
   }
 ]
