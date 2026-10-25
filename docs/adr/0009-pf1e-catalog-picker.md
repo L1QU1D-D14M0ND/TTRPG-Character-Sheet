@@ -38,7 +38,9 @@ ADR 0004 forbids extracting a generic UI primitive without a second caller in th
 - `AGENTS.md` requires a browser walkthrough: this is a new sheet control.
 - Identity stays on `<select>` until slice 2. That is an accepted, temporary split.
 
-**Postscript (2026-09-24):** The dialog migrated onto the shared `ModalDialog` (`app/src/shared/ui/ModalDialog.tsx`) with accessible focus trapping and restore. For performance on large catalogs (622 spells, 177 feats), the initial rendered page is capped at `VISIBLE_ROW_LIMIT = 50` plus custom/all options with an overflow note; rows past the cap are reached by narrowing the search query. Panel tests drive the picker with the shared `src/test/pickCatalog` helper.
+**Postscript (2026-09-24):** The dialog migrated onto the shared `ModalDialog` (`app/src/shared/ui/ModalDialog.tsx`) with accessible focus trapping and restore. For performance on large catalogs (622 spells, 177 feats), the initial rendered page is capped at `VISIBLE_ROW_LIMIT` plus custom/all options with an overflow note; rows past the cap are reached by narrowing the search query. Panel tests drive the picker with the shared `src/test/pickCatalog` helper.
+
+**Postscript (2026-10-25):** The cap is shared across the optgroups round-robin instead of spent in group order. Spells split by book and the Core Rulebook alone fills the cap, so every Advanced Player's Guide spell was absent from the first page until the player typed a narrowing query. A group with rows now always gets some of them.
 
 ## References
 

@@ -165,12 +165,32 @@ describe('catalog picker kinds', () => {
     expect(visible.empty).toBe(false)
   })
 
+  it('shows every book group on open, not just the first', () => {
+    // Spells split into CRB (622 rows) and APG (27). Spending the cap in
+    // group order rendered zero APG rows until the player typed a query.
+    const source = groupsFor('spell')
+    expect(source.length).toBeGreaterThan(1)
+    const visible = visibleCatalog(source, '', null)
+    expect(visible.groups.map((group) => group.labelKey)).toEqual(
+      source.map((group) => group.labelKey),
+    )
+    for (const group of visible.groups) {
+      expect(group.rows.length).toBeGreaterThan(0)
+    }
+  })
+
   it('keeps the selected row visible even when it sorts past the cap', () => {
     const groups = groupsFor('spell')
-    // An APG spell lives in the second group, far beyond the first page.
-    const visible = visibleCatalog(groups, '', 'spell.summon-eidolon')
-    const ids = visible.groups.flatMap((g) => g.rows.map((r) => r.id))
-    expect(ids).toContain('spell.summon-eidolon')
+    // A CRB spell late in the alphabet sorts well past that group's share of
+    // the cap, so it is only present because the selection pins it.
+    const selected = 'spell.zone-of-truth'
+    const firstPage = visibleCatalog(groups, '', null)
+      .groups.flatMap((group) => group.rows.map((row) => row.id))
+    expect(firstPage).not.toContain(selected)
+
+    const visible = visibleCatalog(groups, '', selected)
+    const ids = visible.groups.flatMap((group) => group.rows.map((row) => row.id))
+    expect(ids).toContain(selected)
     // The pinned row is extra, so the cap still governs the rest.
     expect(ids.length).toBe(VISIBLE_ROW_LIMIT + 1)
   })

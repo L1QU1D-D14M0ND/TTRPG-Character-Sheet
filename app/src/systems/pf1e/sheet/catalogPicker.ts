@@ -56,7 +56,10 @@ export interface VisibleCatalog {
 }
 
 /**
- * Filter by name, then keep at most `limit` rows across all groups in order.
+ * Filter by name, then keep at most `limit` rows, shared across the groups
+ * rather than spent in group order. Spells are split by book and the Core
+ * Rulebook alone is 622 rows, so spending the cap in order hid every
+ * Advanced Player's Guide spell until the player typed a narrowing query.
  * The currently selected row is always kept, so a picked row never disappears
  * from its own list just because it sorts past the cap.
  */
@@ -72,10 +75,14 @@ export function visibleCatalog(
   }))
   const total = matched.reduce((sum, group) => sum + group.rows.length, 0)
 
-  let budget = limit
+  const allowed = shareLimit(
+    matched.map((group) => group.rows.length),
+    limit,
+  )
   const capped: CatalogGroup[] = []
   let shown = 0
-  for (const group of matched) {
+  matched.forEach((group, index) => {
+    let budget = allowed[index]
     const rows: CatalogOption[] = []
     for (const row of group.rows) {
       if (budget > 0 || row.id === selectedId) {
@@ -85,13 +92,36 @@ export function visibleCatalog(
       }
     }
     if (rows.length > 0) capped.push({ ...group, rows })
-  }
+  })
 
   return {
     groups: capped,
     hidden: Math.max(0, total - shown),
     empty: total === 0,
   }
+}
+
+/**
+ * Hand out `limit` rows one at a time across the groups that still have rows,
+ * so no group is starved by a larger one earlier in the list.
+ */
+function shareLimit(counts: number[], limit: number): number[] {
+  const allowed = counts.map(() => 0)
+  let remaining = Math.min(
+    Math.max(limit, 0),
+    counts.reduce((sum, count) => sum + count, 0),
+  )
+  while (remaining > 0) {
+    let progressed = false
+    for (let i = 0; i < counts.length && remaining > 0; i += 1) {
+      if (allowed[i] >= counts[i]) continue
+      allowed[i] += 1
+      remaining -= 1
+      progressed = true
+    }
+    if (!progressed) break
+  }
+  return allowed
 }
 
 export function groupsFor(kind: CatalogKind): CatalogGroup[] {
