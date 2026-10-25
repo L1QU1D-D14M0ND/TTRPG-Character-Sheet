@@ -2818,5 +2818,105 @@
     "id": "spell.overland-flight",
     "kind": "spell",
     "body": "You fly at a good speed for hours, long enough to travel."
+  },
+  {
+    "id": "spell.passwall",
+    "kind": "spell",
+    "body": "You open a passage through a wall of wood, plaster, or stone."
+  },
+  {
+    "id": "spell.permanency",
+    "kind": "spell",
+    "body": "You make certain ongoing spells permanent, at a cost in experience."
+  },
+  {
+    "id": "spell.persistent-image",
+    "kind": "spell",
+    "body": "An illusion with sound and smell continues without your attention."
+  },
+  {
+    "id": "spell.plant-shape-i",
+    "kind": "spell",
+    "body": "You take the form of a Small or Medium plant creature."
+  },
+  {
+    "id": "spell.polymorph",
+    "kind": "spell",
+    "body": "One willing creature takes the form of another creature you choose."
+  },
+  {
+    "id": "spell.prying-eyes",
+    "kind": "spell",
+    "body": "Several floating eyes scout an area and report back to you."
+  },
+  {
+    "id": "spell.raise-dead",
+    "kind": "spell",
+    "body": "A creature dead for a short time returns to life, weakened."
+  },
+  {
+    "id": "spell.righteous-might",
+    "kind": "spell",
+    "body": "You grow a size category and gain damage reduction and bonuses."
+  },
+  {
+    "id": "spell.secret-chest",
+    "kind": "spell",
+    "body": "A chest is hidden on another plane and recalled when you wish."
+  },
+  {
+    "id": "spell.seeming",
+    "kind": "spell",
+    "body": "Several creatures appear as other people of similar build."
+  },
+  {
+    "id": "spell.sending",
+    "kind": "spell",
+    "body": "You send a short message to a creature anywhere and may get a reply."
+  },
+  {
+    "id": "spell.shadow-evocation",
+    "kind": "spell",
+    "body": "You mimic a lower-level evocation with partly real shadow stuff."
+  },
+  {
+    "id": "spell.slay-living",
+    "kind": "spell",
+    "body": "Your touch may kill a living creature outright, or deal heavy damage."
+  },
+  {
+    "id": "spell.song-of-discord",
+    "kind": "spell",
+    "body": "Creatures in the area turn on each other for several rounds."
+  },
+  {
+    "id": "spell.spell-resistance",
+    "kind": "spell",
+    "body": "One creature gains spell resistance that scales with caster level."
+  },
+  {
+    "id": "spell.summon-monster-v",
+    "kind": "spell",
+    "body": "You summon creatures from the fifth summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-v",
+    "kind": "spell",
+    "body": "You summon nature allies from the fifth list to fight for you."
+  },
+  {
+    "id": "spell.symbol-of-pain",
+    "kind": "spell",
+    "body": "A triggered symbol wracks nearby creatures with pain."
+  },
+  {
+    "id": "spell.symbol-of-sleep",
+    "kind": "spell",
+    "body": "A triggered symbol puts nearby creatures into a deep sleep."
+  },
+  {
+    "id": "spell.telekinesis",
+    "kind": "spell",
+    "body": "You move or hurl objects, or make combat maneuvers, at a distance."
   }
 ]
