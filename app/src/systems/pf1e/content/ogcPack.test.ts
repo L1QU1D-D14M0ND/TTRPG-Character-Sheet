@@ -300,6 +300,29 @@ const BATCH_L1B = [
   { id: 'spell.floating-disk', kind: 'spell', name: "Floating Disk" },
 ] as const
 
+const BATCH_L1C = [
+  { id: 'spell.goodberry', kind: 'spell', name: "Goodberry" },
+  { id: 'spell.grease', kind: 'spell', name: "Grease" },
+  { id: 'spell.hide-from-animals', kind: 'spell', name: "Hide from Animals" },
+  { id: 'spell.hide-from-undead', kind: 'spell', name: "Hide from Undead" },
+  { id: 'spell.hold-portal', kind: 'spell', name: "Hold Portal" },
+  { id: 'spell.hypnotism', kind: 'spell', name: "Hypnotism" },
+  { id: 'spell.identify', kind: 'spell', name: "Identify" },
+  { id: 'spell.inflict-light-wounds', kind: 'spell', name: "Inflict Light Wounds" },
+  { id: 'spell.jump', kind: 'spell', name: "Jump" },
+  { id: 'spell.lesser-confusion', kind: 'spell', name: "Lesser Confusion" },
+  { id: 'spell.lesser-restoration', kind: 'spell', name: "Lesser Restoration" },
+  { id: 'spell.longstrider', kind: 'spell', name: "Longstrider" },
+  { id: 'spell.mage-armor', kind: 'spell', name: "Mage Armor" },
+  { id: 'spell.magic-aura', kind: 'spell', name: "Magic Aura" },
+  { id: 'spell.magic-fang', kind: 'spell', name: "Magic Fang" },
+  { id: 'spell.magic-missile', kind: 'spell', name: "Magic Missile" },
+  { id: 'spell.magic-stone', kind: 'spell', name: "Magic Stone" },
+  { id: 'spell.magic-weapon', kind: 'spell', name: "Magic Weapon" },
+  { id: 'spell.mount', kind: 'spell', name: "Mount" },
+  { id: 'spell.obscuring-mist', kind: 'spell', name: "Obscuring Mist" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -317,6 +340,7 @@ const PACKED = [
   ...BATCH_L0,
   ...BATCH_L1A,
   ...BATCH_L1B,
+  ...BATCH_L1C,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -377,8 +401,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(579)
-      expect(remaining('feat') + remaining('spell')).toBe(579)
+      expect(remaining('spell')).toBe(559)
+      expect(remaining('feat') + remaining('spell')).toBe(559)
     })
   })
 })

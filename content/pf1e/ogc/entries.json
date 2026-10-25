@@ -1248,5 +1248,105 @@
     "id": "spell.floating-disk",
     "kind": "spell",
     "body": "A disk of force follows you and carries a load for you."
+  },
+  {
+    "id": "spell.goodberry",
+    "kind": "spell",
+    "body": "Fresh berries become nourishing and cure a small amount of damage each."
+  },
+  {
+    "id": "spell.grease",
+    "kind": "spell",
+    "body": "A slippery coating covers an object or the ground, risking dropped items and falls."
+  },
+  {
+    "id": "spell.hide-from-animals",
+    "kind": "spell",
+    "body": "Animals cannot perceive the warded creatures."
+  },
+  {
+    "id": "spell.hide-from-undead",
+    "kind": "spell",
+    "body": "Undead cannot perceive the warded creatures."
+  },
+  {
+    "id": "spell.hold-portal",
+    "kind": "spell",
+    "body": "One door, gate, or window is held shut as if locked."
+  },
+  {
+    "id": "spell.hypnotism",
+    "kind": "spell",
+    "body": "Nearby creatures become fascinated and more receptive to your suggestions."
+  },
+  {
+    "id": "spell.identify",
+    "kind": "spell",
+    "body": "You learn the properties of one magic item or study auras in detail."
+  },
+  {
+    "id": "spell.inflict-light-wounds",
+    "kind": "spell",
+    "body": "Your touch deals negative energy damage, or heals an undead creature."
+  },
+  {
+    "id": "spell.jump",
+    "kind": "spell",
+    "body": "One creature gains a bonus on Acrobatics checks made to jump."
+  },
+  {
+    "id": "spell.lesser-confusion",
+    "kind": "spell",
+    "body": "One creature behaves randomly for one round."
+  },
+  {
+    "id": "spell.lesser-restoration",
+    "kind": "spell",
+    "body": "You remove magical ability damage, or one point of temporary penalty."
+  },
+  {
+    "id": "spell.longstrider",
+    "kind": "spell",
+    "body": "Your base speed increases for hours."
+  },
+  {
+    "id": "spell.mage-armor",
+    "kind": "spell",
+    "body": "An invisible force grants an armor bonus that stacks with your Dexterity."
+  },
+  {
+    "id": "spell.magic-aura",
+    "kind": "spell",
+    "body": "You mask or fake one object's magical aura against detection."
+  },
+  {
+    "id": "spell.magic-fang",
+    "kind": "spell",
+    "body": "One natural weapon of an animal or creature gains an enhancement bonus."
+  },
+  {
+    "id": "spell.magic-missile",
+    "kind": "spell",
+    "body": "Darts of force strike unerringly, adding a dart at higher caster levels."
+  },
+  {
+    "id": "spell.magic-stone",
+    "kind": "spell",
+    "body": "Up to three stones become magical sling or thrown ammunition."
+  },
+  {
+    "id": "spell.magic-weapon",
+    "kind": "spell",
+    "body": "One weapon gains an enhancement bonus on attack and damage."
+  },
+  {
+    "id": "spell.mount",
+    "kind": "spell",
+    "body": "A riding horse appears, saddled and bridled, for hours."
+  },
+  {
+    "id": "spell.obscuring-mist",
+    "kind": "spell",
+    "body": "A bank of fog grants concealment to creatures within it."
   }
 ]
