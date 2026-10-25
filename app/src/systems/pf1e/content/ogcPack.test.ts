@@ -691,6 +691,18 @@ const BATCH_L5C = [
   { id: 'spell.telekinesis', kind: 'spell', name: "Telekinesis" },
 ] as const
 
+const BATCH_L5D = [
+  { id: 'spell.telepathic-bond', kind: 'spell', name: "Telepathic Bond" },
+  { id: 'spell.teleport', kind: 'spell', name: "Teleport" },
+  { id: 'spell.transmute-mud-to-rock', kind: 'spell', name: "Transmute Mud to Rock" },
+  { id: 'spell.transmute-rock-to-mud', kind: 'spell', name: "Transmute Rock to Mud" },
+  { id: 'spell.unhallow', kind: 'spell', name: "Unhallow" },
+  { id: 'spell.wall-of-force', kind: 'spell', name: "Wall of Force" },
+  { id: 'spell.wall-of-stone', kind: 'spell', name: "Wall of Stone" },
+  { id: 'spell.wall-of-thorns', kind: 'spell', name: "Wall of Thorns" },
+  { id: 'spell.waves-of-fatigue', kind: 'spell', name: "Waves of Fatigue" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -727,6 +739,7 @@ const PACKED = [
   ...BATCH_L5A,
   ...BATCH_L5B,
   ...BATCH_L5C,
+  ...BATCH_L5D,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -787,8 +800,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(245)
-      expect(remaining('feat') + remaining('spell')).toBe(245)
+      expect(remaining('spell')).toBe(236)
+      expect(remaining('feat') + remaining('spell')).toBe(236)
     })
   })
 })

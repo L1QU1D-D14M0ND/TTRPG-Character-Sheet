@@ -2918,5 +2918,50 @@
     "id": "spell.telekinesis",
     "kind": "spell",
     "body": "You move or hurl objects, or make combat maneuvers, at a distance."
+  },
+  {
+    "id": "spell.telepathic-bond",
+    "kind": "spell",
+    "body": "You link minds with allies so they can communicate silently at a distance."
+  },
+  {
+    "id": "spell.teleport",
+    "kind": "spell",
+    "body": "You and a few others travel instantly to a place you know."
+  },
+  {
+    "id": "spell.transmute-mud-to-rock",
+    "kind": "spell",
+    "body": "Mud in the area hardens into stone."
+  },
+  {
+    "id": "spell.transmute-rock-to-mud",
+    "kind": "spell",
+    "body": "Stone in the area softens into deep mud."
+  },
+  {
+    "id": "spell.unhallow",
+    "kind": "spell",
+    "body": "A site is cursed, warding it and fixing a chosen spell effect in place."
+  },
+  {
+    "id": "spell.wall-of-force",
+    "kind": "spell",
+    "body": "An invisible wall blocks movement and resists most attacks."
+  },
+  {
+    "id": "spell.wall-of-stone",
+    "kind": "spell",
+    "body": "A solid stone wall appears where you choose."
+  },
+  {
+    "id": "spell.wall-of-thorns",
+    "kind": "spell",
+    "body": "A barrier of thorny brush damages creatures forcing through it."
+  },
+  {
+    "id": "spell.waves-of-fatigue",
+    "kind": "spell",
+    "body": "Creatures in the cone become fatigued with no save."
   }
 ]
