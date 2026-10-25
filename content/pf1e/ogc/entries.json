@@ -638,5 +638,85 @@
     "id": "feat.extra-ki",
     "kind": "feat",
     "body": "Your ki pool holds two more points."
+  },
+  {
+    "id": "feat.extra-lay-on-hands",
+    "kind": "feat",
+    "body": "You can use lay on hands two more times each day."
+  },
+  {
+    "id": "feat.extra-mercy",
+    "kind": "feat",
+    "body": "Your lay on hands also removes one additional mercy condition you know."
+  },
+  {
+    "id": "feat.extra-performance",
+    "kind": "feat",
+    "body": "You can use bardic performance for six more rounds each day."
+  },
+  {
+    "id": "feat.extra-rage",
+    "kind": "feat",
+    "body": "You can rage for six more rounds each day."
+  },
+  {
+    "id": "feat.fleet",
+    "kind": "feat",
+    "body": "Your base speed increases by 5 feet when you carry no more than a light load and wear no heavier than light armor."
+  },
+  {
+    "id": "feat.great-fortitude",
+    "kind": "feat",
+    "body": "You gain a bonus on Fortitude saves."
+  },
+  {
+    "id": "feat.greater-spell-focus",
+    "kind": "feat",
+    "body": "Spells from your chosen school gain a further increase to their save DC."
+  },
+  {
+    "id": "feat.greater-spell-penetration",
+    "kind": "feat",
+    "body": "You gain a further bonus on caster level checks to overcome spell resistance."
+  },
+  {
+    "id": "feat.improved-channel",
+    "kind": "feat",
+    "body": "Your channel energy ability is harder to resist, raising its save DC."
+  },
+  {
+    "id": "feat.improved-counterspell",
+    "kind": "feat",
+    "body": "You can counter a spell with any spell of the same school that is of an equal or higher level."
+  },
+  {
+    "id": "feat.improved-familiar",
+    "kind": "feat",
+    "body": "You can choose your familiar from a wider list of more powerful creatures."
+  },
+  {
+    "id": "feat.improved-great-fortitude",
+    "kind": "feat",
+    "body": "Once per day you can reroll a Fortitude save, and you must take the second result."
+  },
+  {
+    "id": "feat.improved-iron-will",
+    "kind": "feat",
+    "body": "Once per day you can reroll a Will save, and you must take the second result."
+  },
+  {
+    "id": "feat.improved-lightning-reflexes",
+    "kind": "feat",
+    "body": "Once per day you can reroll a Reflex save, and you must take the second result."
+  },
+  {
+    "id": "feat.iron-will",
+    "kind": "feat",
+    "body": "You gain a bonus on Will saves."
+  },
+  {
+    "id": "feat.leadership",
+    "kind": "feat",
+    "body": "You attract a loyal cohort and a number of followers, set by your leadership score."
   }
 ]

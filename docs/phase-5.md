@@ -34,7 +34,7 @@ Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 
 The smoke set has landed. `shell.encyclopedia` is on the PF1e sidebar. Prose lives in `content/pf1e/ogc/`, joined to mechanic rows by catalog id. `content/pf1e/crb/` and `content/pf1e/apg/` stay mechanics-only. The designated Open Game Content field is `body`.
 
-Landed entries: the smoke set, batch E-R, and feat batches F1a through F3a (through Extra Ki). Afflictions and Actions render as empty groups. The remaining rows are added one batch per change. Next is **F3b** (Extra Lay On Hands–Leadership). Then F3c–F4, then F0 (feats packed before those ranges), then CRB spells by level, then the APG spells. See [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
+Landed entries: the smoke set, batch E-R, and feat batches F1a through F3b (through Leadership). Afflictions and Actions render as empty groups. The remaining rows are added one batch per change. Next is **F3c** (Lightning Reflexes–Turn Undead). Then F4, then F0 (feats packed before those ranges), then CRB spells by level, then the APG spells. See [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 
 ---
 
@@ -102,3 +102,4 @@ Card-oriented play surfaces and a third `system` module stay listed so design do
 | 2026-10-05 | Batch F2b landed. Next encyclopedia batch is F2c |
 | 2026-10-05 | Batch F2c landed. Next encyclopedia batch is F3a |
 | 2026-10-25 | Batch F3a landed. Next encyclopedia batch is F3b |
+| 2026-10-25 | Batch F3b landed. Next encyclopedia batch is F3c |

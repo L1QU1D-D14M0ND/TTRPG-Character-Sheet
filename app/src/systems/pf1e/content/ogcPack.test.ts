@@ -157,6 +157,25 @@ const BATCH_F3A = [
   { id: 'feat.extra-ki', kind: 'feat', name: 'Extra Ki' },
 ] as const
 
+const BATCH_F3B = [
+  { id: 'feat.extra-lay-on-hands', kind: 'feat', name: 'Extra Lay On Hands' },
+  { id: 'feat.extra-mercy', kind: 'feat', name: 'Extra Mercy' },
+  { id: 'feat.extra-performance', kind: 'feat', name: 'Extra Performance' },
+  { id: 'feat.extra-rage', kind: 'feat', name: 'Extra Rage' },
+  { id: 'feat.fleet', kind: 'feat', name: 'Fleet' },
+  { id: 'feat.great-fortitude', kind: 'feat', name: 'Great Fortitude' },
+  { id: 'feat.greater-spell-focus', kind: 'feat', name: 'Greater Spell Focus' },
+  { id: 'feat.greater-spell-penetration', kind: 'feat', name: 'Greater Spell Penetration' },
+  { id: 'feat.improved-channel', kind: 'feat', name: 'Improved Channel' },
+  { id: 'feat.improved-counterspell', kind: 'feat', name: 'Improved Counterspell' },
+  { id: 'feat.improved-familiar', kind: 'feat', name: 'Improved Familiar' },
+  { id: 'feat.improved-great-fortitude', kind: 'feat', name: 'Improved Great Fortitude' },
+  { id: 'feat.improved-iron-will', kind: 'feat', name: 'Improved Iron Will' },
+  { id: 'feat.improved-lightning-reflexes', kind: 'feat', name: 'Improved Lightning Reflexes' },
+  { id: 'feat.iron-will', kind: 'feat', name: 'Iron Will' },
+  { id: 'feat.leadership', kind: 'feat', name: 'Leadership' },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -167,10 +186,11 @@ const PACKED = [
   ...BATCH_F2B,
   ...BATCH_F2C,
   ...BATCH_F3A,
+  ...BATCH_F3B,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
-  it('ships the smoke set plus batches E-R, F1a through F3a and nothing else', () => {
+  it('ships the smoke set plus batches E-R, F1a through F3b and nothing else', () => {
     expect(OGC_ENTRIES.map((entry) => entry.id)).toEqual(PACKED.map((entry) => entry.id))
   })
 
@@ -224,11 +244,11 @@ describe('PF1e OGC encyclopedia pack', () => {
           .flatMap((group) => group.rows)
           .filter((row) => !packed.has(row.id)).length
 
-      // F3b + F3c-F4 + F0
-      expect(remaining('feat')).toBe(16 + 28 + 10)
+      // F3c-F4 + F0
+      expect(remaining('feat')).toBe(28 + 10)
       // L0 + L1-L9 + A1
       expect(remaining('spell')).toBe(28 + 593 + 26)
-      expect(remaining('feat') + remaining('spell')).toBe(701)
+      expect(remaining('feat') + remaining('spell')).toBe(685)
     })
   })
 })
