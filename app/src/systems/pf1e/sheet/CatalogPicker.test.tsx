@@ -57,6 +57,26 @@ describe('CatalogPicker', () => {
     expect(name.value).toBe('PA')
   })
 
+  it('offers an APG spell on open, without the player typing a query', async () => {
+    // Acceptance check for the shared row cap: the Core Rulebook group alone
+    // is 622 rows, and spending the cap in group order left the Advanced
+    // Player's Guide heading and all 27 of its spells out of the open dialog.
+    render(
+      <I18nProvider>
+        <SpellHarness />
+      </I18nProvider>,
+    )
+    fireEvent.click(screen.getByLabelText('CRB spell'))
+    const dialog = screen.getByRole('dialog')
+    expect(within(dialog).getByText("Advanced Player's Guide")).toBeInTheDocument()
+
+    const apgOption = within(dialog).getByRole('option', { name: /Summon Eidolon/ })
+    await userEvent.click(apgOption)
+    expect((screen.getByLabelText('Spell name') as HTMLInputElement).value).toBe(
+      'Summon Eidolon',
+    )
+  })
+
   it('Custom clears the catalog id', () => {
     render(
       <I18nProvider>
