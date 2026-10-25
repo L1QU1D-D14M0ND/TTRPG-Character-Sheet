@@ -1563,5 +1563,105 @@
     "id": "spell.darkness",
     "kind": "spell",
     "body": "An object radiates gloom, lowering the light level around it."
+  },
+  {
+    "id": "spell.darkvision",
+    "kind": "spell",
+    "body": "One creature can see in the dark for hours."
+  },
+  {
+    "id": "spell.daze-monster",
+    "kind": "spell",
+    "body": "One living creature of moderate level loses its next action unless it saves."
+  },
+  {
+    "id": "spell.death-knell",
+    "kind": "spell",
+    "body": "Your touch kills a dying creature, and you gain temporary hit points and a bonus."
+  },
+  {
+    "id": "spell.desecrate",
+    "kind": "spell",
+    "body": "The area is befouled, strengthening undead and hampering positive energy."
+  },
+  {
+    "id": "spell.detect-thoughts",
+    "kind": "spell",
+    "body": "You read the surface thoughts of creatures nearby."
+  },
+  {
+    "id": "spell.eagles-splendor",
+    "kind": "spell",
+    "body": "One creature gains a bonus to Charisma for minutes."
+  },
+  {
+    "id": "spell.enthrall",
+    "kind": "spell",
+    "body": "Listeners are captivated by your speech while you keep talking."
+  },
+  {
+    "id": "spell.false-life",
+    "kind": "spell",
+    "body": "You gain temporary hit points for hours."
+  },
+  {
+    "id": "spell.find-traps",
+    "kind": "spell",
+    "body": "You gain a bonus to notice traps and can search as a rogue briefly."
+  },
+  {
+    "id": "spell.flame-blade",
+    "kind": "spell",
+    "body": "A blade of fire in your hand deals fire damage on a touch attack."
+  },
+  {
+    "id": "spell.flaming-sphere",
+    "kind": "spell",
+    "body": "A rolling ball of fire you direct burns creatures it touches."
+  },
+  {
+    "id": "spell.fog-cloud",
+    "kind": "spell",
+    "body": "A bank of fog obscures vision in the area."
+  },
+  {
+    "id": "spell.foxs-cunning",
+    "kind": "spell",
+    "body": "One creature gains a bonus to Intelligence for minutes."
+  },
+  {
+    "id": "spell.ghoul-touch",
+    "kind": "spell",
+    "body": "Your touch paralyzes one living creature and it gives off a sickening stench."
+  },
+  {
+    "id": "spell.glitterdust",
+    "kind": "spell",
+    "body": "Dust outlines creatures in the area and may blind them."
+  },
+  {
+    "id": "spell.gust-of-wind",
+    "kind": "spell",
+    "body": "A strong blast of wind knocks back or checks creatures in a line."
+  },
+  {
+    "id": "spell.heat-metal",
+    "kind": "spell",
+    "body": "Metal on or around creatures grows searing hot and deals damage."
+  },
+  {
+    "id": "spell.hideous-laughter",
+    "kind": "spell",
+    "body": "One creature falls prone with laughter and can take no actions."
+  },
+  {
+    "id": "spell.hold-animal",
+    "kind": "spell",
+    "body": "One animal is paralyzed unless it saves."
+  },
+  {
+    "id": "spell.hypnotic-pattern",
+    "kind": "spell",
+    "body": "A twisting pattern of colour fascinates creatures that see it."
   }
 ]
