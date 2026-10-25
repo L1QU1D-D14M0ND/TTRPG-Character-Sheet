@@ -1448,5 +1448,20 @@
     "id": "spell.true-strike",
     "kind": "spell",
     "body": "You gain a large bonus on your next attack roll and ignore most concealment."
+  },
+  {
+    "id": "spell.undetectable-alignment",
+    "kind": "spell",
+    "body": "One creature or object's alignment cannot be detected for a day."
+  },
+  {
+    "id": "spell.unseen-servant",
+    "kind": "spell",
+    "body": "An invisible, mindless force performs simple tasks at your command."
+  },
+  {
+    "id": "spell.ventriloquism",
+    "kind": "spell",
+    "body": "You make your voice seem to come from somewhere else."
   }
 ]

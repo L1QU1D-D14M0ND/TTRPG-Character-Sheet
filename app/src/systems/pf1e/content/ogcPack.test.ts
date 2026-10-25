@@ -346,6 +346,12 @@ const BATCH_L1D = [
   { id: 'spell.true-strike', kind: 'spell', name: "True Strike" },
 ] as const
 
+const BATCH_L1E = [
+  { id: 'spell.undetectable-alignment', kind: 'spell', name: "Undetectable Alignment" },
+  { id: 'spell.unseen-servant', kind: 'spell', name: "Unseen Servant" },
+  { id: 'spell.ventriloquism', kind: 'spell', name: "Ventriloquism" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -365,6 +371,7 @@ const PACKED = [
   ...BATCH_L1B,
   ...BATCH_L1C,
   ...BATCH_L1D,
+  ...BATCH_L1E,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -425,8 +432,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(539)
-      expect(remaining('feat') + remaining('spell')).toBe(539)
+      expect(remaining('spell')).toBe(536)
+      expect(remaining('feat') + remaining('spell')).toBe(536)
     })
   })
 })
