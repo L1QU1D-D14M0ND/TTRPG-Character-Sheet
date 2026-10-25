@@ -1463,5 +1463,105 @@
     "id": "spell.ventriloquism",
     "kind": "spell",
     "body": "You make your voice seem to come from somewhere else."
+  },
+  {
+    "id": "spell.acid-arrow",
+    "kind": "spell",
+    "body": "An arrow of acid hits a target and keeps dealing damage for several rounds."
+  },
+  {
+    "id": "spell.aid",
+    "kind": "spell",
+    "body": "One creature gains a bonus on attack rolls, saves against fear, and temporary hit points."
+  },
+  {
+    "id": "spell.align-weapon",
+    "kind": "spell",
+    "body": "One weapon becomes good, evil, lawful, or chaotic for overcoming damage reduction."
+  },
+  {
+    "id": "spell.alter-self",
+    "kind": "spell",
+    "body": "You assume the form of a Small or Medium humanoid."
+  },
+  {
+    "id": "spell.animal-trance",
+    "kind": "spell",
+    "body": "You fascinate several animals or magical beasts with low intelligence."
+  },
+  {
+    "id": "spell.arcane-lock",
+    "kind": "spell",
+    "body": "One door, chest, or portal is magically locked and harder to force."
+  },
+  {
+    "id": "spell.augury",
+    "kind": "spell",
+    "body": "You learn whether a course of action over the next few minutes will be good or bad."
+  },
+  {
+    "id": "spell.barkskin",
+    "kind": "spell",
+    "body": "One creature gains a natural armor bonus that improves with caster level."
+  },
+  {
+    "id": "spell.bears-endurance",
+    "kind": "spell",
+    "body": "One creature gains a bonus to Constitution for minutes."
+  },
+  {
+    "id": "spell.blindness-deafness",
+    "kind": "spell",
+    "body": "One creature is permanently blinded or deafened unless it saves."
+  },
+  {
+    "id": "spell.blur",
+    "kind": "spell",
+    "body": "Your outline wavers, granting attackers a chance to miss."
+  },
+  {
+    "id": "spell.bulls-strength",
+    "kind": "spell",
+    "body": "One creature gains a bonus to Strength for minutes."
+  },
+  {
+    "id": "spell.calm-emotions",
+    "kind": "spell",
+    "body": "You suppress strong emotions in the area, ending rage and fear effects."
+  },
+  {
+    "id": "spell.cats-grace",
+    "kind": "spell",
+    "body": "One creature gains a bonus to Dexterity for minutes."
+  },
+  {
+    "id": "spell.chill-metal",
+    "kind": "spell",
+    "body": "Metal on or around creatures grows freezing cold and deals damage."
+  },
+  {
+    "id": "spell.command-undead",
+    "kind": "spell",
+    "body": "One undead creature obeys your commands unless it saves."
+  },
+  {
+    "id": "spell.consecrate",
+    "kind": "spell",
+    "body": "The area is blessed, weakening undead and aiding positive energy."
+  },
+  {
+    "id": "spell.continual-flame",
+    "kind": "spell",
+    "body": "An object sheds light like a torch permanently, without heat."
+  },
+  {
+    "id": "spell.cure-moderate-wounds",
+    "kind": "spell",
+    "body": "Your touch heals a moderate amount of damage, scaling with caster level."
+  },
+  {
+    "id": "spell.darkness",
+    "kind": "spell",
+    "body": "An object radiates gloom, lowering the light level around it."
   }
 ]

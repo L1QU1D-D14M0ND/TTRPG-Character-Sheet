@@ -352,6 +352,29 @@ const BATCH_L1E = [
   { id: 'spell.ventriloquism', kind: 'spell', name: "Ventriloquism" },
 ] as const
 
+const BATCH_L2A = [
+  { id: 'spell.acid-arrow', kind: 'spell', name: "Acid Arrow" },
+  { id: 'spell.aid', kind: 'spell', name: "Aid" },
+  { id: 'spell.align-weapon', kind: 'spell', name: "Align Weapon" },
+  { id: 'spell.alter-self', kind: 'spell', name: "Alter Self" },
+  { id: 'spell.animal-trance', kind: 'spell', name: "Animal Trance" },
+  { id: 'spell.arcane-lock', kind: 'spell', name: "Arcane Lock" },
+  { id: 'spell.augury', kind: 'spell', name: "Augury" },
+  { id: 'spell.barkskin', kind: 'spell', name: "Barkskin" },
+  { id: 'spell.bears-endurance', kind: 'spell', name: "Bear's Endurance" },
+  { id: 'spell.blindness-deafness', kind: 'spell', name: "Blindness/Deafness" },
+  { id: 'spell.blur', kind: 'spell', name: "Blur" },
+  { id: 'spell.bulls-strength', kind: 'spell', name: "Bull's Strength" },
+  { id: 'spell.calm-emotions', kind: 'spell', name: "Calm Emotions" },
+  { id: 'spell.cats-grace', kind: 'spell', name: "Cat's Grace" },
+  { id: 'spell.chill-metal', kind: 'spell', name: "Chill Metal" },
+  { id: 'spell.command-undead', kind: 'spell', name: "Command Undead" },
+  { id: 'spell.consecrate', kind: 'spell', name: "Consecrate" },
+  { id: 'spell.continual-flame', kind: 'spell', name: "Continual Flame" },
+  { id: 'spell.cure-moderate-wounds', kind: 'spell', name: "Cure Moderate Wounds" },
+  { id: 'spell.darkness', kind: 'spell', name: "Darkness" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -372,6 +395,7 @@ const PACKED = [
   ...BATCH_L1C,
   ...BATCH_L1D,
   ...BATCH_L1E,
+  ...BATCH_L2A,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -432,8 +456,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(536)
-      expect(remaining('feat') + remaining('spell')).toBe(536)
+      expect(remaining('spell')).toBe(516)
+      expect(remaining('feat') + remaining('spell')).toBe(516)
     })
   })
 })
