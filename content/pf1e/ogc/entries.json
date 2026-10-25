@@ -858,5 +858,55 @@
     "id": "feat.widen-spell",
     "kind": "feat",
     "body": "A spell's area increases by half, and it uses a slot three levels higher."
+  },
+  {
+    "id": "feat.improved-initiative",
+    "kind": "feat",
+    "body": "You gain a bonus on initiative checks."
+  },
+  {
+    "id": "feat.scribe-scroll",
+    "kind": "feat",
+    "body": "You can create scrolls holding a spell you know."
+  },
+  {
+    "id": "feat.spell-focus",
+    "kind": "feat",
+    "body": "Spells from one chosen school gain an increase to their save DC."
+  },
+  {
+    "id": "feat.weapon-focus",
+    "kind": "feat",
+    "body": "You gain a bonus on attack rolls with one chosen weapon."
+  },
+  {
+    "id": "feat.eschew-materials",
+    "kind": "feat",
+    "body": "You can cast spells without their inexpensive material components."
+  },
+  {
+    "id": "feat.heighten-spell",
+    "kind": "feat",
+    "body": "You can cast a spell at a higher effective level, raising its save DC, using a slot of that level."
+  },
+  {
+    "id": "feat.craft-wondrous-item",
+    "kind": "feat",
+    "body": "You can create wondrous items."
+  },
+  {
+    "id": "feat.craft-magic-arms-and-armor",
+    "kind": "feat",
+    "body": "You can create magic weapons, armor, and shields, and you can mend the ones that are damaged."
+  },
+  {
+    "id": "feat.craft-construct",
+    "kind": "feat",
+    "body": "You can create constructs."
+  },
+  {
+    "id": "feat.point-blank-shot",
+    "kind": "feat",
+    "body": "You gain a bonus on attack and damage rolls with ranged weapons at close range."
   }
 ]

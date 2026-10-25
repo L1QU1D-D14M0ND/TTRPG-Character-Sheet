@@ -1,6 +1,6 @@
 # Encyclopedia (sidebar tool) and OGC pack
 
-**Status:** Smoke set and batches E-R and F1a through F4 landed. Next batch is F0 (the ten feats packed before the F ranges).  
+**Status:** Smoke set, batch E-R, and every feat batch (F1a through F4 and F0) landed: all 177 CRB feats have a summary. Next batch is L0 (CRB spell level 0).  
 **Id:** `shell.encyclopedia` (PF1e module only).  
 **Host lock:** [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
 **License lock:** [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md).  
@@ -101,12 +101,12 @@ Do not add the remaining catalog in one change. Each change appends one batch to
 | **F3b** | General feats Extra Lay On Hands–Leadership. *Landed.* | 0 |
 | **F3c** | General feats Lightning Reflexes–Turn Undead. *Landed.* | 0 |
 | **F4** | Item creation and metamagic feats not named in F0: Brew Potion, Craft Rod, Craft Staff, Craft Wand, Forge Ring, and the eight metamagic feats from Empower Spell to Widen Spell. *Landed.* | 0 |
-| **F0** | Feats packed before the F ranges: Improved Initiative, Weapon Focus, Point-Blank Shot, Spell Focus, Eschew Materials, Scribe Scroll, Craft Wondrous Item, Craft Magic Arms and Armor, Craft Construct, Heighten Spell. After F4. **Next.** `feat.power-attack` is already in the smoke set. | 10 |
-| **L0** | CRB spell level 0 | 28 |
+| **F0** | Feats packed before the F ranges: Improved Initiative, Weapon Focus, Point-Blank Shot, Spell Focus, Eschew Materials, Scribe Scroll, Craft Wondrous Item, Craft Magic Arms and Armor, Craft Construct, Heighten Spell. After F4. *Landed.* `feat.power-attack` was already in the smoke set. | 0 |
+| **L0** | CRB spell level 0. **Next.** | 28 |
 | **L1–L9** | One CRB spell level per change. A level with more than 40 spells is split alphabetically into parts of at most 20 (`L1a`, `L1b`, …). Skip `spell.fireball`. | 593 |
 | **A1** | APG Summoner spells. Skip `spell.evolution-surge`. | 26 |
 
-The rows-still-to-add column totals 657, which is every CRB feat, CRB spell, and APG Summoner spell not yet in `entries.json`. `ogcPack.test.ts` asserts that total, so the table cannot drift from the packs unnoticed.
+The rows-still-to-add column totals 647, which is every CRB feat, CRB spell, and APG Summoner spell not yet in `entries.json`. `ogcPack.test.ts` asserts that total, so the table cannot drift from the packs unnoticed.
 
 Order is E-R, then F1a through F4, then F0, then L0 through L9, then A1. Afflictions and Actions stay empty until those batches have landed.
 
@@ -179,3 +179,4 @@ Chrome strings (`shell.toolEncyclopedia`, group labels, empty-group sentence, no
 | 2026-10-25 | Batch F3b landed (16 general feats, Extra Lay On Hands–Leadership). Next batch is F3c |
 | 2026-10-25 | Batch F3c landed (15 general feats, Lightning Reflexes–Turn Undead). General feats in the F ranges are complete. Next batch is F4 |
 | 2026-10-25 | Batch F4 landed (13 item creation and metamagic feats, Brew Potion–Widen Spell). Next batch is F0 |
+| 2026-10-25 | Batch F0 landed (10 feats packed before the F ranges). All 177 CRB feats now have a summary. Next batch is L0 |

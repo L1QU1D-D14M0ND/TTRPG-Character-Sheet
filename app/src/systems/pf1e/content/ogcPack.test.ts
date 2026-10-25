@@ -210,6 +210,19 @@ const BATCH_F4 = [
   { id: 'feat.widen-spell', kind: 'feat', name: 'Widen Spell' },
 ] as const
 
+const BATCH_F0 = [
+  { id: 'feat.improved-initiative', kind: 'feat', name: 'Improved Initiative' },
+  { id: 'feat.scribe-scroll', kind: 'feat', name: 'Scribe Scroll' },
+  { id: 'feat.spell-focus', kind: 'feat', name: 'Spell Focus' },
+  { id: 'feat.weapon-focus', kind: 'feat', name: 'Weapon Focus' },
+  { id: 'feat.eschew-materials', kind: 'feat', name: 'Eschew Materials' },
+  { id: 'feat.heighten-spell', kind: 'feat', name: 'Heighten Spell' },
+  { id: 'feat.craft-wondrous-item', kind: 'feat', name: 'Craft Wondrous Item' },
+  { id: 'feat.craft-magic-arms-and-armor', kind: 'feat', name: 'Craft Magic Arms and Armor' },
+  { id: 'feat.craft-construct', kind: 'feat', name: 'Craft Construct' },
+  { id: 'feat.point-blank-shot', kind: 'feat', name: 'Point-Blank Shot' },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -223,10 +236,11 @@ const PACKED = [
   ...BATCH_F3B,
   ...BATCH_F3C,
   ...BATCH_F4,
+  ...BATCH_F0,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
-  it('ships the smoke set plus batches E-R, F1a through F4 and nothing else', () => {
+  it('ships the smoke set plus batches E-R, F1a through F4 and F0, and nothing else', () => {
     expect(OGC_ENTRIES.map((entry) => entry.id)).toEqual(PACKED.map((entry) => entry.id))
   })
 
@@ -280,11 +294,11 @@ describe('PF1e OGC encyclopedia pack', () => {
           .flatMap((group) => group.rows)
           .filter((row) => !packed.has(row.id)).length
 
-      // F0 only; F1a-F4 are complete
-      expect(remaining('feat')).toBe(10)
+      // Every CRB feat now has a summary.
+      expect(remaining('feat')).toBe(0)
       // L0 + L1-L9 + A1
       expect(remaining('spell')).toBe(28 + 593 + 26)
-      expect(remaining('feat') + remaining('spell')).toBe(657)
+      expect(remaining('feat') + remaining('spell')).toBe(647)
     })
   })
 })
