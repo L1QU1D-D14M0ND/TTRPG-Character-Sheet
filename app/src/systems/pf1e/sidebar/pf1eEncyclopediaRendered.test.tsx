@@ -29,18 +29,30 @@ describe('PF1e encyclopedia, as rendered', () => {
     expect(unpacked).toHaveLength(2)
   })
 
-  it('shows the small spell and feature groups despite 123 feats between them', () => {
+  it('shows the small feature group despite far larger groups around it', () => {
     renderTool()
-    // Feats are the overwhelming majority of the pack and sort between the
-    // other two groups. Spending the cap in group order starved Features
-    // entirely; every one of its rows must survive.
-    expect(screen.getByRole('button', { name: 'Fireball' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Evolution Surge' })).toBeInTheDocument()
+    // Features is a 3-row group sitting after 50 spells and 177 feats.
+    // Spending the cap in group order starved it entirely.
     expect(screen.getByRole('button', { name: 'Arcane Bond' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Physical Enhancement' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Telekinetic Fist' })).toBeInTheDocument()
-    // And feats are represented too, from the top of the alphabet.
+    // Spells and feats are represented too, from the top of each alphabet.
+    expect(screen.getByRole('button', { name: 'Acid Splash' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Acrobatic' })).toBeInTheDocument()
+  })
+
+  it('gives each non-empty group a fair share of the row cap', () => {
+    renderTool()
+    const groups = buildPf1eEncyclopedia()
+    const shown = new Set(
+      screen.getAllByRole('button').map((button) => button.textContent ?? ''),
+    )
+    // No group may be starved: each one that ships rows must render some.
+    for (const kind of ['spell', 'feat', 'feature'] as const) {
+      const group = groups.find((candidate) => candidate.kind === kind)
+      const rendered = group!.entries.filter((entry) => shown.has(entry.name)).length
+      expect(rendered).toBeGreaterThan(0)
+    }
   })
 
   it('lists the visible feats in alphabetical order', () => {

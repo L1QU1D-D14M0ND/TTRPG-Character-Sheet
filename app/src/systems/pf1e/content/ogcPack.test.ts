@@ -254,6 +254,29 @@ const BATCH_L0 = [
   { id: 'spell.virtue', kind: 'spell', name: "Virtue" },
 ] as const
 
+const BATCH_L1A = [
+  { id: 'spell.alarm', kind: 'spell', name: "Alarm" },
+  { id: 'spell.animal-messenger', kind: 'spell', name: "Animal Messenger" },
+  { id: 'spell.animate-rope', kind: 'spell', name: "Animate Rope" },
+  { id: 'spell.bane', kind: 'spell', name: "Bane" },
+  { id: 'spell.bless', kind: 'spell', name: "Bless" },
+  { id: 'spell.bless-water', kind: 'spell', name: "Bless Water" },
+  { id: 'spell.bless-weapon', kind: 'spell', name: "Bless Weapon" },
+  { id: 'spell.burning-hands', kind: 'spell', name: "Burning Hands" },
+  { id: 'spell.calm-animals', kind: 'spell', name: "Calm Animals" },
+  { id: 'spell.cause-fear', kind: 'spell', name: "Cause Fear" },
+  { id: 'spell.charm-animal', kind: 'spell', name: "Charm Animal" },
+  { id: 'spell.charm-person', kind: 'spell', name: "Charm Person" },
+  { id: 'spell.chill-touch', kind: 'spell', name: "Chill Touch" },
+  { id: 'spell.color-spray', kind: 'spell', name: "Color Spray" },
+  { id: 'spell.command', kind: 'spell', name: "Command" },
+  { id: 'spell.comprehend-languages', kind: 'spell', name: "Comprehend Languages" },
+  { id: 'spell.cure-light-wounds', kind: 'spell', name: "Cure Light Wounds" },
+  { id: 'spell.curse-water', kind: 'spell', name: "Curse Water" },
+  { id: 'spell.deathwatch', kind: 'spell', name: "Deathwatch" },
+  { id: 'spell.delay-poison', kind: 'spell', name: "Delay Poison" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -269,10 +292,11 @@ const PACKED = [
   ...BATCH_F4,
   ...BATCH_F0,
   ...BATCH_L0,
+  ...BATCH_L1A,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
-  it('ships the smoke set plus batches E-R, F1a through F4, F0, and L0, and nothing else', () => {
+  it('ships the smoke set plus batches E-R, F1a through F4, F0, L0, and L1a, and nothing else', () => {
     expect(OGC_ENTRIES.map((entry) => entry.id)).toEqual(PACKED.map((entry) => entry.id))
   })
 
@@ -328,9 +352,9 @@ describe('PF1e OGC encyclopedia pack', () => {
 
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
-      // L1-L9 + A1
-      expect(remaining('spell')).toBe(593 + 26)
-      expect(remaining('feat') + remaining('spell')).toBe(619)
+      // L1b-L9 + A1
+      expect(remaining('spell')).toBe(573 + 26)
+      expect(remaining('feat') + remaining('spell')).toBe(599)
     })
   })
 })

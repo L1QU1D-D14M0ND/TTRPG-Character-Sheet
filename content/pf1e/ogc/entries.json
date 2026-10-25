@@ -1048,5 +1048,105 @@
     "id": "spell.virtue",
     "kind": "spell",
     "body": "One creature gains a single temporary hit point."
+  },
+  {
+    "id": "spell.alarm",
+    "kind": "spell",
+    "body": "You ward an area and are alerted, mentally or by sound, when a creature enters it."
+  },
+  {
+    "id": "spell.animal-messenger",
+    "kind": "spell",
+    "body": "You send a Tiny animal to a destination you designate, carrying a small note or object."
+  },
+  {
+    "id": "spell.animate-rope",
+    "kind": "spell",
+    "body": "You command a rope to coil, knot, or tie itself as you direct."
+  },
+  {
+    "id": "spell.bane",
+    "kind": "spell",
+    "body": "Enemies in the area take a penalty on attack rolls and saves against fear."
+  },
+  {
+    "id": "spell.bless",
+    "kind": "spell",
+    "body": "Allies in the area gain a small bonus on attack rolls and saves against fear."
+  },
+  {
+    "id": "spell.bless-water",
+    "kind": "spell",
+    "body": "You make a flask of water into holy water."
+  },
+  {
+    "id": "spell.bless-weapon",
+    "kind": "spell",
+    "body": "One weapon strikes true against evil foes and counts as good-aligned for damage reduction."
+  },
+  {
+    "id": "spell.burning-hands",
+    "kind": "spell",
+    "body": "A cone of flame damages creatures in front of you, with a save for half."
+  },
+  {
+    "id": "spell.calm-animals",
+    "kind": "spell",
+    "body": "You calm several animals so they do not act unless provoked."
+  },
+  {
+    "id": "spell.cause-fear",
+    "kind": "spell",
+    "body": "One creature becomes frightened, or shaken if it saves."
+  },
+  {
+    "id": "spell.charm-animal",
+    "kind": "spell",
+    "body": "One animal regards you as a trusted friend."
+  },
+  {
+    "id": "spell.charm-person",
+    "kind": "spell",
+    "body": "One humanoid regards you as a trusted friend."
+  },
+  {
+    "id": "spell.chill-touch",
+    "kind": "spell",
+    "body": "Your touch deals negative energy damage and may cause a temporary Strength penalty."
+  },
+  {
+    "id": "spell.color-spray",
+    "kind": "spell",
+    "body": "A burst of colour stuns, blinds, or knocks out nearby creatures by their level."
+  },
+  {
+    "id": "spell.command",
+    "kind": "spell",
+    "body": "One creature obeys a single-word command for one round unless it saves."
+  },
+  {
+    "id": "spell.comprehend-languages",
+    "kind": "spell",
+    "body": "You understand all spoken and written languages you encounter."
+  },
+  {
+    "id": "spell.cure-light-wounds",
+    "kind": "spell",
+    "body": "Your touch heals a modest amount of damage, scaling with caster level."
+  },
+  {
+    "id": "spell.curse-water",
+    "kind": "spell",
+    "body": "You make a flask of water into unholy water."
+  },
+  {
+    "id": "spell.deathwatch",
+    "kind": "spell",
+    "body": "You see how near death the creatures around you are."
+  },
+  {
+    "id": "spell.delay-poison",
+    "kind": "spell",
+    "body": "One creature is immune to poison's ongoing effects for hours."
   }
 ]
