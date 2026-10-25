@@ -908,5 +908,145 @@
     "id": "feat.point-blank-shot",
     "kind": "feat",
     "body": "You gain a bonus on attack and damage rolls with ranged weapons at close range."
+  },
+  {
+    "id": "spell.acid-splash",
+    "kind": "spell",
+    "body": "A ranged touch attack deals a small amount of acid damage."
+  },
+  {
+    "id": "spell.arcane-mark",
+    "kind": "spell",
+    "body": "You inscribe a personal rune, visible or invisible, on a creature or object."
+  },
+  {
+    "id": "spell.bleed",
+    "kind": "spell",
+    "body": "A stabilized dying creature begins to lose hit points again."
+  },
+  {
+    "id": "spell.create-water",
+    "kind": "spell",
+    "body": "You create drinkable water, scaling with your caster level."
+  },
+  {
+    "id": "spell.dancing-lights",
+    "kind": "spell",
+    "body": "You create several dim, moving lights that last a short time."
+  },
+  {
+    "id": "spell.daze",
+    "kind": "spell",
+    "body": "One humanoid of low level loses its next action unless it saves."
+  },
+  {
+    "id": "spell.detect-magic",
+    "kind": "spell",
+    "body": "You sense magical auras nearby and can study them to learn school and strength."
+  },
+  {
+    "id": "spell.detect-poison",
+    "kind": "spell",
+    "body": "You determine whether a creature, object, or area is poisoned or poisonous."
+  },
+  {
+    "id": "spell.disrupt-undead",
+    "kind": "spell",
+    "body": "A ranged touch attack deals a small amount of damage to one undead creature."
+  },
+  {
+    "id": "spell.flare",
+    "kind": "spell",
+    "body": "One creature is dazzled briefly unless it saves."
+  },
+  {
+    "id": "spell.ghost-sound",
+    "kind": "spell",
+    "body": "You create illusory sound, with volume scaling by caster level."
+  },
+  {
+    "id": "spell.guidance",
+    "kind": "spell",
+    "body": "One creature gains a small bonus on a single attack, save, or skill check."
+  },
+  {
+    "id": "spell.know-direction",
+    "kind": "spell",
+    "body": "You instantly learn which way is north."
+  },
+  {
+    "id": "spell.light",
+    "kind": "spell",
+    "body": "An object glows like a torch for a duration based on caster level."
+  },
+  {
+    "id": "spell.lullaby",
+    "kind": "spell",
+    "body": "Creatures in the area take a penalty on Perception checks and saves against sleep."
+  },
+  {
+    "id": "spell.mage-hand",
+    "kind": "spell",
+    "body": "You move a small unattended object a short distance by concentrating."
+  },
+  {
+    "id": "spell.mending",
+    "kind": "spell",
+    "body": "You repair minor damage to one object."
+  },
+  {
+    "id": "spell.message",
+    "kind": "spell",
+    "body": "You hold whispered conversation at a distance with creatures you point at."
+  },
+  {
+    "id": "spell.open-close",
+    "kind": "spell",
+    "body": "You open or close a small or light unlocked object at range."
+  },
+  {
+    "id": "spell.prestidigitation",
+    "kind": "spell",
+    "body": "You perform minor tricks: soil or clean an item, chill or warm food, colour or tidy things."
+  },
+  {
+    "id": "spell.purify-food-and-drink",
+    "kind": "spell",
+    "body": "You make spoiled food and water safe to consume."
+  },
+  {
+    "id": "spell.ray-of-frost",
+    "kind": "spell",
+    "body": "A ranged touch attack deals a small amount of cold damage."
+  },
+  {
+    "id": "spell.read-magic",
+    "kind": "spell",
+    "body": "You can read scrolls and magical writing you could not otherwise understand."
+  },
+  {
+    "id": "spell.resistance",
+    "kind": "spell",
+    "body": "One creature gains a small bonus on saving throws for a short time."
+  },
+  {
+    "id": "spell.stabilize",
+    "kind": "spell",
+    "body": "A dying creature is stabilized and stops losing hit points."
+  },
+  {
+    "id": "spell.summon-instrument",
+    "kind": "spell",
+    "body": "A musical instrument of your choice appears for the duration."
+  },
+  {
+    "id": "spell.touch-of-fatigue",
+    "kind": "spell",
+    "body": "Your touch attack makes one creature fatigued unless it saves."
+  },
+  {
+    "id": "spell.virtue",
+    "kind": "spell",
+    "body": "One creature gains a single temporary hit point."
   }
 ]

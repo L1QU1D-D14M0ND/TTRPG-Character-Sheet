@@ -223,6 +223,37 @@ const BATCH_F0 = [
   { id: 'feat.point-blank-shot', kind: 'feat', name: 'Point-Blank Shot' },
 ] as const
 
+const BATCH_L0 = [
+  { id: 'spell.acid-splash', kind: 'spell', name: "Acid Splash" },
+  { id: 'spell.arcane-mark', kind: 'spell', name: "Arcane Mark" },
+  { id: 'spell.bleed', kind: 'spell', name: "Bleed" },
+  { id: 'spell.create-water', kind: 'spell', name: "Create Water" },
+  { id: 'spell.dancing-lights', kind: 'spell', name: "Dancing Lights" },
+  { id: 'spell.daze', kind: 'spell', name: "Daze" },
+  { id: 'spell.detect-magic', kind: 'spell', name: "Detect Magic" },
+  { id: 'spell.detect-poison', kind: 'spell', name: "Detect Poison" },
+  { id: 'spell.disrupt-undead', kind: 'spell', name: "Disrupt Undead" },
+  { id: 'spell.flare', kind: 'spell', name: "Flare" },
+  { id: 'spell.ghost-sound', kind: 'spell', name: "Ghost Sound" },
+  { id: 'spell.guidance', kind: 'spell', name: "Guidance" },
+  { id: 'spell.know-direction', kind: 'spell', name: "Know Direction" },
+  { id: 'spell.light', kind: 'spell', name: "Light" },
+  { id: 'spell.lullaby', kind: 'spell', name: "Lullaby" },
+  { id: 'spell.mage-hand', kind: 'spell', name: "Mage Hand" },
+  { id: 'spell.mending', kind: 'spell', name: "Mending" },
+  { id: 'spell.message', kind: 'spell', name: "Message" },
+  { id: 'spell.open-close', kind: 'spell', name: "Open/Close" },
+  { id: 'spell.prestidigitation', kind: 'spell', name: "Prestidigitation" },
+  { id: 'spell.purify-food-and-drink', kind: 'spell', name: "Purify Food and Drink" },
+  { id: 'spell.ray-of-frost', kind: 'spell', name: "Ray of Frost" },
+  { id: 'spell.read-magic', kind: 'spell', name: "Read Magic" },
+  { id: 'spell.resistance', kind: 'spell', name: "Resistance" },
+  { id: 'spell.stabilize', kind: 'spell', name: "Stabilize" },
+  { id: 'spell.summon-instrument', kind: 'spell', name: "Summon Instrument" },
+  { id: 'spell.touch-of-fatigue', kind: 'spell', name: "Touch of Fatigue" },
+  { id: 'spell.virtue', kind: 'spell', name: "Virtue" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -237,10 +268,11 @@ const PACKED = [
   ...BATCH_F3C,
   ...BATCH_F4,
   ...BATCH_F0,
+  ...BATCH_L0,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
-  it('ships the smoke set plus batches E-R, F1a through F4 and F0, and nothing else', () => {
+  it('ships the smoke set plus batches E-R, F1a through F4, F0, and L0, and nothing else', () => {
     expect(OGC_ENTRIES.map((entry) => entry.id)).toEqual(PACKED.map((entry) => entry.id))
   })
 
@@ -296,9 +328,9 @@ describe('PF1e OGC encyclopedia pack', () => {
 
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
-      // L0 + L1-L9 + A1
-      expect(remaining('spell')).toBe(28 + 593 + 26)
-      expect(remaining('feat') + remaining('spell')).toBe(647)
+      // L1-L9 + A1
+      expect(remaining('spell')).toBe(593 + 26)
+      expect(remaining('feat') + remaining('spell')).toBe(619)
     })
   })
 })
