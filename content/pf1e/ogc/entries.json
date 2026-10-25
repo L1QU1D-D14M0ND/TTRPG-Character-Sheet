@@ -2458,5 +2458,105 @@
     "id": "spell.lesser-globe-of-invulnerability",
     "kind": "spell",
     "body": "A sphere around you blocks spells of the lowest few levels."
+  },
+  {
+    "id": "spell.lesser-planar-ally",
+    "kind": "spell",
+    "body": "You bargain with a small outsider to perform a task for payment."
+  },
+  {
+    "id": "spell.locate-creature",
+    "kind": "spell",
+    "body": "You sense the direction of a creature or kind of creature you know."
+  },
+  {
+    "id": "spell.mark-of-justice",
+    "kind": "spell",
+    "body": "You set a permanent curse that triggers on a condition you name."
+  },
+  {
+    "id": "spell.mass-enlarge-person",
+    "kind": "spell",
+    "body": "Several humanoids each grow a size category."
+  },
+  {
+    "id": "spell.mass-reduce-person",
+    "kind": "spell",
+    "body": "Several humanoids each shrink a size category."
+  },
+  {
+    "id": "spell.minor-creation",
+    "kind": "spell",
+    "body": "You create an object of plant or vegetable matter."
+  },
+  {
+    "id": "spell.mnemonic-enhancer",
+    "kind": "spell",
+    "body": "You prepare additional spells or recall one you have cast."
+  },
+  {
+    "id": "spell.modify-memory",
+    "kind": "spell",
+    "body": "You change up to five minutes of one creature's memories."
+  },
+  {
+    "id": "spell.orders-wrath",
+    "kind": "spell",
+    "body": "Chaotic creatures in the area are damaged and dazed."
+  },
+  {
+    "id": "spell.phantasmal-killer",
+    "kind": "spell",
+    "body": "A phantom only the target sees may frighten it to death."
+  },
+  {
+    "id": "spell.rainbow-pattern",
+    "kind": "spell",
+    "body": "Lights fascinate creatures and can lead them away."
+  },
+  {
+    "id": "spell.reincarnate",
+    "kind": "spell",
+    "body": "A dead creature returns in a new body, possibly of another race."
+  },
+  {
+    "id": "spell.remove-curse",
+    "kind": "spell",
+    "body": "You end most curses on a creature or object."
+  },
+  {
+    "id": "spell.resilient-sphere",
+    "kind": "spell",
+    "body": "A sphere of force traps one creature and blocks anything crossing it."
+  },
+  {
+    "id": "spell.restoration",
+    "kind": "spell",
+    "body": "You remove ability damage, fatigue, and one negative level."
+  },
+  {
+    "id": "spell.rusting-grasp",
+    "kind": "spell",
+    "body": "Your touch corrodes metal objects and damages iron creatures."
+  },
+  {
+    "id": "spell.scrying",
+    "kind": "spell",
+    "body": "You observe a creature you know at a distance."
+  },
+  {
+    "id": "spell.secure-shelter",
+    "kind": "spell",
+    "body": "A sturdy cottage appears and lasts for hours."
+  },
+  {
+    "id": "spell.shadow-conjuration",
+    "kind": "spell",
+    "body": "You mimic a lower-level conjuration with partly real shadow stuff."
+  },
+  {
+    "id": "spell.shout",
+    "kind": "spell",
+    "body": "A cone of sound deals damage and deafens creatures in it."
   }
 ]
