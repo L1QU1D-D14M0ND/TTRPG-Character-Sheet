@@ -127,7 +127,7 @@
   {
     "id": "feat.deadly-stroke",
     "kind": "feat",
-    "body": "Against a stunned or flat-footed foe, one hit with a weapon you have greater focus in can become a coup de grace."
+    "body": "Against a stunned or flat-footed foe, one hit with a weapon you have greater focus in deals extra damage and causes Constitution bleed."
   },
   {
     "id": "feat.deafening-critical",
@@ -487,7 +487,7 @@
   {
     "id": "feat.stunning-critical",
     "kind": "feat",
-    "body": "A critical hit can stun the target. A successful Fortitude save shortens the effect."
+    "body": "A critical hit can stun the target. A successful Fortitude save leaves the target staggered instead."
   },
   {
     "id": "feat.stunning-fist",
@@ -558,5 +558,85 @@
     "id": "feat.wind-stance",
     "kind": "feat",
     "body": "If you move more than 5 feet, you gain concealment against ranged attacks until your next turn."
+  },
+  {
+    "id": "feat.acrobatic",
+    "kind": "feat",
+    "body": "You gain a bonus on Acrobatics and Fly checks."
+  },
+  {
+    "id": "feat.acrobatic-steps",
+    "kind": "feat",
+    "body": "Each time you move, you can treat 5 feet of difficult terrain as normal terrain. That includes a 5-foot step."
+  },
+  {
+    "id": "feat.alertness",
+    "kind": "feat",
+    "body": "You gain a bonus on Perception and Sense Motive checks."
+  },
+  {
+    "id": "feat.alignment-channel",
+    "kind": "feat",
+    "body": "You can channel energy to heal or harm outsiders of one chosen alignment."
+  },
+  {
+    "id": "feat.animal-affinity",
+    "kind": "feat",
+    "body": "You gain a bonus on Handle Animal and Ride checks."
+  },
+  {
+    "id": "feat.athletic",
+    "kind": "feat",
+    "body": "You gain a bonus on Climb and Swim checks."
+  },
+  {
+    "id": "feat.augment-summoning",
+    "kind": "feat",
+    "body": "Creatures you summon gain extra Strength and Constitution."
+  },
+  {
+    "id": "feat.combat-casting",
+    "kind": "feat",
+    "body": "You have an easier time casting a spell while threatened."
+  },
+  {
+    "id": "feat.command-undead",
+    "kind": "feat",
+    "body": "You can spend a use of channel energy to take control of nearby undead. A successful Will save resists it."
+  },
+  {
+    "id": "feat.deceitful",
+    "kind": "feat",
+    "body": "You gain a bonus on Bluff and Disguise checks."
+  },
+  {
+    "id": "feat.deft-hands",
+    "kind": "feat",
+    "body": "You gain a bonus on Disable Device and Sleight of Hand checks."
+  },
+  {
+    "id": "feat.diehard",
+    "kind": "feat",
+    "body": "You stay conscious below 0 hit points and can still take a standard action. You stabilize on your own."
+  },
+  {
+    "id": "feat.elemental-channel",
+    "kind": "feat",
+    "body": "You can channel energy to heal or harm elementals of one chosen type."
+  },
+  {
+    "id": "feat.endurance",
+    "kind": "feat",
+    "body": "You are better at enduring forced marches, hunger, harsh weather, and holding your breath."
+  },
+  {
+    "id": "feat.extra-channel",
+    "kind": "feat",
+    "body": "You can channel energy two more times each day."
+  },
+  {
+    "id": "feat.extra-ki",
+    "kind": "feat",
+    "body": "Your ki pool holds two more points."
   }
 ]

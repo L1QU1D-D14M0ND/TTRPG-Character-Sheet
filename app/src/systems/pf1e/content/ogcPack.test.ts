@@ -137,6 +137,25 @@ const BATCH_F2C = [
   { id: 'feat.wind-stance', kind: 'feat', name: 'Wind Stance' },
 ] as const
 
+const BATCH_F3A = [
+  { id: 'feat.acrobatic', kind: 'feat', name: 'Acrobatic' },
+  { id: 'feat.acrobatic-steps', kind: 'feat', name: 'Acrobatic Steps' },
+  { id: 'feat.alertness', kind: 'feat', name: 'Alertness' },
+  { id: 'feat.alignment-channel', kind: 'feat', name: 'Alignment Channel' },
+  { id: 'feat.animal-affinity', kind: 'feat', name: 'Animal Affinity' },
+  { id: 'feat.athletic', kind: 'feat', name: 'Athletic' },
+  { id: 'feat.augment-summoning', kind: 'feat', name: 'Augment Summoning' },
+  { id: 'feat.combat-casting', kind: 'feat', name: 'Combat Casting' },
+  { id: 'feat.command-undead', kind: 'feat', name: 'Command Undead' },
+  { id: 'feat.deceitful', kind: 'feat', name: 'Deceitful' },
+  { id: 'feat.deft-hands', kind: 'feat', name: 'Deft Hands' },
+  { id: 'feat.diehard', kind: 'feat', name: 'Diehard' },
+  { id: 'feat.elemental-channel', kind: 'feat', name: 'Elemental Channel' },
+  { id: 'feat.endurance', kind: 'feat', name: 'Endurance' },
+  { id: 'feat.extra-channel', kind: 'feat', name: 'Extra Channel' },
+  { id: 'feat.extra-ki', kind: 'feat', name: 'Extra Ki' },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -146,10 +165,11 @@ const PACKED = [
   ...BATCH_F2A,
   ...BATCH_F2B,
   ...BATCH_F2C,
+  ...BATCH_F3A,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
-  it('ships the smoke set plus batches E-R, F1a through F2c and nothing else', () => {
+  it('ships the smoke set plus batches E-R, F1a through F3a and nothing else', () => {
     expect(OGC_ENTRIES.map((entry) => entry.id)).toEqual(PACKED.map((entry) => entry.id))
   })
 
