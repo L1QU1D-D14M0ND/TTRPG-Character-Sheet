@@ -2258,5 +2258,105 @@
     "id": "spell.wind-wall",
     "kind": "spell",
     "body": "A wall of strong wind deflects arrows, small creatures, and gases."
+  },
+  {
+    "id": "spell.air-walk",
+    "kind": "spell",
+    "body": "One creature walks on air as though it were solid ground."
+  },
+  {
+    "id": "spell.animate-dead",
+    "kind": "spell",
+    "body": "You raise corpses as skeletons or zombies that obey you."
+  },
+  {
+    "id": "spell.antiplant-shell",
+    "kind": "spell",
+    "body": "A shell around you keeps plant creatures from entering."
+  },
+  {
+    "id": "spell.arcane-eye",
+    "kind": "spell",
+    "body": "An invisible sensor you control flies ahead and reports what it sees."
+  },
+  {
+    "id": "spell.beast-shape-ii",
+    "kind": "spell",
+    "body": "You take the form of a Tiny or Large animal."
+  },
+  {
+    "id": "spell.bestow-curse",
+    "kind": "spell",
+    "body": "One creature suffers a lasting penalty, lost actions, or weakened abilities."
+  },
+  {
+    "id": "spell.black-tentacles",
+    "kind": "spell",
+    "body": "Tentacles erupt from the ground and grapple creatures in the area."
+  },
+  {
+    "id": "spell.chaos-hammer",
+    "kind": "spell",
+    "body": "Lawful creatures in the area are damaged and slowed."
+  },
+  {
+    "id": "spell.charm-monster",
+    "kind": "spell",
+    "body": "One creature of any kind regards you as a trusted friend."
+  },
+  {
+    "id": "spell.commune-with-nature",
+    "kind": "spell",
+    "body": "You learn the terrain and features of the natural area around you."
+  },
+  {
+    "id": "spell.confusion",
+    "kind": "spell",
+    "body": "Creatures in the area act randomly for several rounds."
+  },
+  {
+    "id": "spell.contagion",
+    "kind": "spell",
+    "body": "Your touch infects one creature with a disease you choose."
+  },
+  {
+    "id": "spell.crushing-despair",
+    "kind": "spell",
+    "body": "Creatures in the cone take penalties on attacks, saves, and checks."
+  },
+  {
+    "id": "spell.cure-critical-wounds",
+    "kind": "spell",
+    "body": "Your touch heals a large amount of damage, scaling with caster level."
+  },
+  {
+    "id": "spell.death-ward",
+    "kind": "spell",
+    "body": "One creature resists death effects, negative energy, and negative levels."
+  },
+  {
+    "id": "spell.detect-scrying",
+    "kind": "spell",
+    "body": "You know when someone scries on you and may see the scryer."
+  },
+  {
+    "id": "spell.dimension-door",
+    "kind": "spell",
+    "body": "You teleport a short distance to a place you can picture."
+  },
+  {
+    "id": "spell.dimensional-anchor",
+    "kind": "spell",
+    "body": "A ray blocks one creature's extradimensional travel."
+  },
+  {
+    "id": "spell.dispel-chaos",
+    "kind": "spell",
+    "body": "You end chaotic spells or drive off a chaotic summoned creature."
+  },
+  {
+    "id": "spell.dispel-evil",
+    "kind": "spell",
+    "body": "You end evil spells or drive off an evil summoned creature."
   }
 ]

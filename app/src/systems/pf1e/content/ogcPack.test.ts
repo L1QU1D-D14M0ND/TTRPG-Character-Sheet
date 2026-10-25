@@ -538,6 +538,29 @@ const BATCH_L3D = [
   { id: 'spell.wind-wall', kind: 'spell', name: "Wind Wall" },
 ] as const
 
+const BATCH_L4A = [
+  { id: 'spell.air-walk', kind: 'spell', name: "Air Walk" },
+  { id: 'spell.animate-dead', kind: 'spell', name: "Animate Dead" },
+  { id: 'spell.antiplant-shell', kind: 'spell', name: "Antiplant Shell" },
+  { id: 'spell.arcane-eye', kind: 'spell', name: "Arcane Eye" },
+  { id: 'spell.beast-shape-ii', kind: 'spell', name: "Beast Shape II" },
+  { id: 'spell.bestow-curse', kind: 'spell', name: "Bestow Curse" },
+  { id: 'spell.black-tentacles', kind: 'spell', name: "Black Tentacles" },
+  { id: 'spell.chaos-hammer', kind: 'spell', name: "Chaos Hammer" },
+  { id: 'spell.charm-monster', kind: 'spell', name: "Charm Monster" },
+  { id: 'spell.commune-with-nature', kind: 'spell', name: "Commune with Nature" },
+  { id: 'spell.confusion', kind: 'spell', name: "Confusion" },
+  { id: 'spell.contagion', kind: 'spell', name: "Contagion" },
+  { id: 'spell.crushing-despair', kind: 'spell', name: "Crushing Despair" },
+  { id: 'spell.cure-critical-wounds', kind: 'spell', name: "Cure Critical Wounds" },
+  { id: 'spell.death-ward', kind: 'spell', name: "Death Ward" },
+  { id: 'spell.detect-scrying', kind: 'spell', name: "Detect Scrying" },
+  { id: 'spell.dimension-door', kind: 'spell', name: "Dimension Door" },
+  { id: 'spell.dimensional-anchor', kind: 'spell', name: "Dimensional Anchor" },
+  { id: 'spell.dispel-chaos', kind: 'spell', name: "Dispel Chaos" },
+  { id: 'spell.dispel-evil', kind: 'spell', name: "Dispel Evil" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -567,6 +590,7 @@ const PACKED = [
   ...BATCH_L3B,
   ...BATCH_L3C,
   ...BATCH_L3D,
+  ...BATCH_L4A,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -627,8 +651,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(377)
-      expect(remaining('feat') + remaining('spell')).toBe(377)
+      expect(remaining('spell')).toBe(357)
+      expect(remaining('feat') + remaining('spell')).toBe(357)
     })
   })
 })
