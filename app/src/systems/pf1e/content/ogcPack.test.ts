@@ -497,6 +497,29 @@ const BATCH_L3B = [
   { id: 'spell.magic-circle-against-evil', kind: 'spell', name: "Magic Circle against Evil" },
 ] as const
 
+const BATCH_L3C = [
+  { id: 'spell.magic-circle-against-good', kind: 'spell', name: "Magic Circle against Good" },
+  { id: 'spell.magic-circle-against-law', kind: 'spell', name: "Magic Circle against Law" },
+  { id: 'spell.magic-vestment', kind: 'spell', name: "Magic Vestment" },
+  { id: 'spell.major-image', kind: 'spell', name: "Major Image" },
+  { id: 'spell.meld-into-stone', kind: 'spell', name: "Meld into Stone" },
+  { id: 'spell.neutralize-poison', kind: 'spell', name: "Neutralize Poison" },
+  { id: 'spell.nondetection', kind: 'spell', name: "Nondetection" },
+  { id: 'spell.phantom-steed', kind: 'spell', name: "Phantom Steed" },
+  { id: 'spell.plant-growth', kind: 'spell', name: "Plant Growth" },
+  { id: 'spell.poison', kind: 'spell', name: "Poison" },
+  { id: 'spell.prayer', kind: 'spell', name: "Prayer" },
+  { id: 'spell.protection-from-energy', kind: 'spell', name: "Protection from Energy" },
+  { id: 'spell.quench', kind: 'spell', name: "Quench" },
+  { id: 'spell.ray-of-exhaustion', kind: 'spell', name: "Ray of Exhaustion" },
+  { id: 'spell.remove-blindness-deafness', kind: 'spell', name: "Remove Blindness/Deafness" },
+  { id: 'spell.remove-disease', kind: 'spell', name: "Remove Disease" },
+  { id: 'spell.repel-vermin', kind: 'spell', name: "Repel Vermin" },
+  { id: 'spell.sculpt-sound', kind: 'spell', name: "Sculpt Sound" },
+  { id: 'spell.searing-light', kind: 'spell', name: "Searing Light" },
+  { id: 'spell.secret-page', kind: 'spell', name: "Secret Page" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -524,6 +547,7 @@ const PACKED = [
   ...BATCH_L2E,
   ...BATCH_L3A,
   ...BATCH_L3B,
+  ...BATCH_L3C,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -584,8 +608,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(412)
-      expect(remaining('feat') + remaining('spell')).toBe(412)
+      expect(remaining('spell')).toBe(392)
+      expect(remaining('feat') + remaining('spell')).toBe(392)
     })
   })
 })

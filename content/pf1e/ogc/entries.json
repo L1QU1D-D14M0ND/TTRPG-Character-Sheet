@@ -2083,5 +2083,105 @@
     "id": "spell.magic-circle-against-evil",
     "kind": "spell",
     "body": "An area wards creatures inside against evil foes and summoned creatures."
+  },
+  {
+    "id": "spell.magic-circle-against-good",
+    "kind": "spell",
+    "body": "An area wards creatures inside against good foes and summoned creatures."
+  },
+  {
+    "id": "spell.magic-circle-against-law",
+    "kind": "spell",
+    "body": "An area wards creatures inside against lawful foes and summoned creatures."
+  },
+  {
+    "id": "spell.magic-vestment",
+    "kind": "spell",
+    "body": "Armor, a shield, or clothing gains an enhancement bonus that scales with level."
+  },
+  {
+    "id": "spell.major-image",
+    "kind": "spell",
+    "body": "You create an illusion with sound, smell, and thermal detail."
+  },
+  {
+    "id": "spell.meld-into-stone",
+    "kind": "spell",
+    "body": "You step into a block of stone and remain hidden inside it."
+  },
+  {
+    "id": "spell.neutralize-poison",
+    "kind": "spell",
+    "body": "You cure poison in a creature, or make a substance harmless."
+  },
+  {
+    "id": "spell.nondetection",
+    "kind": "spell",
+    "body": "One creature or object resists divination and scrying."
+  },
+  {
+    "id": "spell.phantom-steed",
+    "kind": "spell",
+    "body": "A magical mount appears and travels quickly for hours."
+  },
+  {
+    "id": "spell.plant-growth",
+    "kind": "spell",
+    "body": "You enrich crops over a wide area, or make undergrowth difficult to cross."
+  },
+  {
+    "id": "spell.poison",
+    "kind": "spell",
+    "body": "Your touch poisons a creature, damaging its Constitution over time."
+  },
+  {
+    "id": "spell.prayer",
+    "kind": "spell",
+    "body": "Allies gain small bonuses and enemies take small penalties nearby."
+  },
+  {
+    "id": "spell.protection-from-energy",
+    "kind": "spell",
+    "body": "One creature ignores a substantial amount of one energy type's damage."
+  },
+  {
+    "id": "spell.quench",
+    "kind": "spell",
+    "body": "You put out fires in the area and may damage fire creatures."
+  },
+  {
+    "id": "spell.ray-of-exhaustion",
+    "kind": "spell",
+    "body": "A ray leaves one creature exhausted, or fatigued if it saves."
+  },
+  {
+    "id": "spell.remove-blindness-deafness",
+    "kind": "spell",
+    "body": "You cure one creature's blindness or deafness."
+  },
+  {
+    "id": "spell.remove-disease",
+    "kind": "spell",
+    "body": "You cure all diseases affecting one creature."
+  },
+  {
+    "id": "spell.repel-vermin",
+    "kind": "spell",
+    "body": "Vermin below a certain strength cannot enter the area around you."
+  },
+  {
+    "id": "spell.sculpt-sound",
+    "kind": "spell",
+    "body": "You change how sounds from creatures or objects are heard."
+  },
+  {
+    "id": "spell.searing-light",
+    "kind": "spell",
+    "body": "A ray of light damages a creature, with extra effect on undead."
+  },
+  {
+    "id": "spell.secret-page",
+    "kind": "spell",
+    "body": "You disguise one page's content so only a trigger reveals the real text."
   }
 ]

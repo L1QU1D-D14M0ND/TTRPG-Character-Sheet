@@ -6,7 +6,7 @@ Canonical GitHub URL: `https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet` 
 
 ## Current phase
 
-**Phase 5** ([`docs/phase-5.md`](docs/phase-5.md), [`docs/ROADMAP.md`](docs/ROADMAP.md)). The encyclopedia smoke set has landed (`content/pf1e/ogc/`, `shell.encyclopedia`, PF1e only). Further `entries.json` rows are one batch per change. Batches E-R and every feat batch (F1a–F4 and F0) have landed; all 177 CRB feats have a summary. Next batch is **L3c** (CRB spell level 3, third part), then the remaining CRB spell levels, then the APG spells ([`docs/sidebar-tools-encyclopedia.md`](docs/sidebar-tools-encyclopedia.md)). CRB and APG stay mechanics-only. Do not scrape an SRD. Do not start the later PF2e release (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) in a Phase 5 PR.
+**Phase 5** ([`docs/phase-5.md`](docs/phase-5.md), [`docs/ROADMAP.md`](docs/ROADMAP.md)). The encyclopedia smoke set has landed (`content/pf1e/ogc/`, `shell.encyclopedia`, PF1e only). Further `entries.json` rows are one batch per change. Batches E-R and every feat batch (F1a–F4 and F0) have landed; all 177 CRB feats have a summary. Next batch is **L3d** (CRB spell level 3, final part), then the remaining CRB spell levels, then the APG spells ([`docs/sidebar-tools-encyclopedia.md`](docs/sidebar-tools-encyclopedia.md)). CRB and APG stay mechanics-only. Do not scrape an SRD. Do not start the later PF2e release (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) in a Phase 5 PR.
 
 ## Testing
 
