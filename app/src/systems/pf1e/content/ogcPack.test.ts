@@ -622,6 +622,29 @@ const BATCH_L4D = [
   { id: 'spell.zone-of-silence', kind: 'spell', name: "Zone of Silence" },
 ] as const
 
+const BATCH_L5A = [
+  { id: 'spell.animal-growth', kind: 'spell', name: "Animal Growth" },
+  { id: 'spell.atonement-fm', kind: 'spell', name: "Atonement FM" },
+  { id: 'spell.awaken', kind: 'spell', name: "Awaken" },
+  { id: 'spell.baleful-polymorph', kind: 'spell', name: "Baleful Polymorph" },
+  { id: 'spell.beast-shape-iii', kind: 'spell', name: "Beast Shape III" },
+  { id: 'spell.blight', kind: 'spell', name: "Blight" },
+  { id: 'spell.break-enchantment', kind: 'spell', name: "Break Enchantment" },
+  { id: 'spell.breath-of-life', kind: 'spell', name: "Breath of Life" },
+  { id: 'spell.call-lightning-storm', kind: 'spell', name: "Call Lightning Storm" },
+  { id: 'spell.cloudkill', kind: 'spell', name: "Cloudkill" },
+  { id: 'spell.commune', kind: 'spell', name: "Commune" },
+  { id: 'spell.cone-of-cold', kind: 'spell', name: "Cone of Cold" },
+  { id: 'spell.contact-other-plane', kind: 'spell', name: "Contact Other Plane" },
+  { id: 'spell.control-winds', kind: 'spell', name: "Control Winds" },
+  { id: 'spell.dismissal', kind: 'spell', name: "Dismissal" },
+  { id: 'spell.dispel-good', kind: 'spell', name: "Dispel Good" },
+  { id: 'spell.dispel-law', kind: 'spell', name: "Dispel Law" },
+  { id: 'spell.disrupting-weapon', kind: 'spell', name: "Disrupting Weapon" },
+  { id: 'spell.dominate-person', kind: 'spell', name: "Dominate Person" },
+  { id: 'spell.dream', kind: 'spell', name: "Dream" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -655,6 +678,7 @@ const PACKED = [
   ...BATCH_L4B,
   ...BATCH_L4C,
   ...BATCH_L4D,
+  ...BATCH_L5A,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -715,8 +739,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(305)
-      expect(remaining('feat') + remaining('spell')).toBe(305)
+      expect(remaining('spell')).toBe(285)
+      expect(remaining('feat') + remaining('spell')).toBe(285)
     })
   })
 })

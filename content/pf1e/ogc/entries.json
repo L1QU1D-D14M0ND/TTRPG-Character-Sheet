@@ -2618,5 +2618,105 @@
     "id": "spell.zone-of-silence",
     "kind": "spell",
     "body": "Sounds you make cannot be heard outside the area around you."
+  },
+  {
+    "id": "spell.animal-growth",
+    "kind": "spell",
+    "body": "Several animals double in size, gaining Strength and natural armor."
+  },
+  {
+    "id": "spell.atonement-fm",
+    "kind": "spell",
+    "body": "You remove the burden of misdeeds from a creature and restore its standing."
+  },
+  {
+    "id": "spell.awaken",
+    "kind": "spell",
+    "body": "An animal or tree gains human-like intelligence and can speak."
+  },
+  {
+    "id": "spell.baleful-polymorph",
+    "kind": "spell",
+    "body": "One creature becomes a small harmless animal and may lose its mind."
+  },
+  {
+    "id": "spell.beast-shape-iii",
+    "kind": "spell",
+    "body": "You take the form of a Diminutive or Huge animal, or a magical beast."
+  },
+  {
+    "id": "spell.blight",
+    "kind": "spell",
+    "body": "A plant or plant creature withers and takes heavy damage."
+  },
+  {
+    "id": "spell.break-enchantment",
+    "kind": "spell",
+    "body": "You free creatures from curses, transmutations, and compulsions."
+  },
+  {
+    "id": "spell.breath-of-life",
+    "kind": "spell",
+    "body": "You heal a creature and can restore one that died this round."
+  },
+  {
+    "id": "spell.call-lightning-storm",
+    "kind": "spell",
+    "body": "Stronger bolts of lightning strike targets you choose."
+  },
+  {
+    "id": "spell.cloudkill",
+    "kind": "spell",
+    "body": "A cloud of poison kills weak creatures and damages the rest."
+  },
+  {
+    "id": "spell.commune",
+    "kind": "spell",
+    "body": "Your deity answers a series of yes-or-no questions."
+  },
+  {
+    "id": "spell.cone-of-cold",
+    "kind": "spell",
+    "body": "A cone of freezing air deals heavy cold damage, with a save for half."
+  },
+  {
+    "id": "spell.contact-other-plane",
+    "kind": "spell",
+    "body": "You question a distant intelligence, at some risk to your own mind."
+  },
+  {
+    "id": "spell.control-winds",
+    "kind": "spell",
+    "body": "You change wind direction and speed over a wide area."
+  },
+  {
+    "id": "spell.dismissal",
+    "kind": "spell",
+    "body": "One summoned creature is forced back to its own plane."
+  },
+  {
+    "id": "spell.dispel-good",
+    "kind": "spell",
+    "body": "You end good spells or drive off a good summoned creature."
+  },
+  {
+    "id": "spell.dispel-law",
+    "kind": "spell",
+    "body": "You end lawful spells or drive off a lawful summoned creature."
+  },
+  {
+    "id": "spell.disrupting-weapon",
+    "kind": "spell",
+    "body": "A weapon destroys undead it strikes unless they save."
+  },
+  {
+    "id": "spell.dominate-person",
+    "kind": "spell",
+    "body": "One humanoid obeys your mental commands over a long duration."
+  },
+  {
+    "id": "spell.dream",
+    "kind": "spell",
+    "body": "You deliver a message to a sleeping creature through its dreams."
   }
 ]
