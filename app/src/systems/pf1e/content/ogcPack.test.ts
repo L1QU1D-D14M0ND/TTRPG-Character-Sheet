@@ -398,6 +398,29 @@ const BATCH_L2B = [
   { id: 'spell.hypnotic-pattern', kind: 'spell', name: "Hypnotic Pattern" },
 ] as const
 
+const BATCH_L2C = [
+  { id: 'spell.inflict-moderate-wounds', kind: 'spell', name: "Inflict Moderate Wounds" },
+  { id: 'spell.invisibility', kind: 'spell', name: "Invisibility" },
+  { id: 'spell.knock', kind: 'spell', name: "Knock" },
+  { id: 'spell.levitate', kind: 'spell', name: "Levitate" },
+  { id: 'spell.locate-object', kind: 'spell', name: "Locate Object" },
+  { id: 'spell.magic-mouth', kind: 'spell', name: "Magic Mouth" },
+  { id: 'spell.make-whole', kind: 'spell', name: "Make Whole" },
+  { id: 'spell.minor-image', kind: 'spell', name: "Minor Image" },
+  { id: 'spell.mirror-image', kind: 'spell', name: "Mirror Image" },
+  { id: 'spell.misdirection', kind: 'spell', name: "Misdirection" },
+  { id: 'spell.obscure-object', kind: 'spell', name: "Obscure Object" },
+  { id: 'spell.owls-wisdom', kind: 'spell', name: "Owl's Wisdom" },
+  { id: 'spell.phantom-trap', kind: 'spell', name: "Phantom Trap" },
+  { id: 'spell.protection-from-arrows', kind: 'spell', name: "Protection from Arrows" },
+  { id: 'spell.pyrotechnics', kind: 'spell', name: "Pyrotechnics" },
+  { id: 'spell.reduce-animal', kind: 'spell', name: "Reduce Animal" },
+  { id: 'spell.remove-paralysis', kind: 'spell', name: "Remove Paralysis" },
+  { id: 'spell.resist-energy', kind: 'spell', name: "Resist Energy" },
+  { id: 'spell.rope-trick', kind: 'spell', name: "Rope Trick" },
+  { id: 'spell.scare', kind: 'spell', name: "Scare" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -420,6 +443,7 @@ const PACKED = [
   ...BATCH_L1E,
   ...BATCH_L2A,
   ...BATCH_L2B,
+  ...BATCH_L2C,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -480,8 +504,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(496)
-      expect(remaining('feat') + remaining('spell')).toBe(496)
+      expect(remaining('spell')).toBe(476)
+      expect(remaining('feat') + remaining('spell')).toBe(476)
     })
   })
 })

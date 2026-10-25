@@ -1663,5 +1663,105 @@
     "id": "spell.hypnotic-pattern",
     "kind": "spell",
     "body": "A twisting pattern of colour fascinates creatures that see it."
+  },
+  {
+    "id": "spell.inflict-moderate-wounds",
+    "kind": "spell",
+    "body": "Your touch deals moderate negative energy damage, or heals an undead creature."
+  },
+  {
+    "id": "spell.invisibility",
+    "kind": "spell",
+    "body": "One creature or object becomes invisible until it attacks."
+  },
+  {
+    "id": "spell.knock",
+    "kind": "spell",
+    "body": "You open a locked, stuck, or barred door or container."
+  },
+  {
+    "id": "spell.levitate",
+    "kind": "spell",
+    "body": "One creature or object moves up and down but not sideways."
+  },
+  {
+    "id": "spell.locate-object",
+    "kind": "spell",
+    "body": "You sense the direction of a known or described object."
+  },
+  {
+    "id": "spell.magic-mouth",
+    "kind": "spell",
+    "body": "An object speaks a message once when a condition you set is met."
+  },
+  {
+    "id": "spell.make-whole",
+    "kind": "spell",
+    "body": "You repair a damaged object, restoring a good share of its hit points."
+  },
+  {
+    "id": "spell.minor-image",
+    "kind": "spell",
+    "body": "You create an illusion that includes minor sounds."
+  },
+  {
+    "id": "spell.mirror-image",
+    "kind": "spell",
+    "body": "Several duplicates of you confuse attackers, absorbing attacks."
+  },
+  {
+    "id": "spell.misdirection",
+    "kind": "spell",
+    "body": "Divinations about one creature or object read another instead."
+  },
+  {
+    "id": "spell.obscure-object",
+    "kind": "spell",
+    "body": "One object is hidden from scrying and divination for hours."
+  },
+  {
+    "id": "spell.owls-wisdom",
+    "kind": "spell",
+    "body": "One creature gains a bonus to Wisdom for minutes."
+  },
+  {
+    "id": "spell.phantom-trap",
+    "kind": "spell",
+    "body": "An object seems to hold a trap when magically examined."
+  },
+  {
+    "id": "spell.protection-from-arrows",
+    "kind": "spell",
+    "body": "One creature gains damage reduction against ranged weapons."
+  },
+  {
+    "id": "spell.pyrotechnics",
+    "kind": "spell",
+    "body": "You turn a fire into blinding fireworks or choking smoke."
+  },
+  {
+    "id": "spell.reduce-animal",
+    "kind": "spell",
+    "body": "One willing animal shrinks a size category."
+  },
+  {
+    "id": "spell.remove-paralysis",
+    "kind": "spell",
+    "body": "You free creatures from paralysis, hold, or slow effects."
+  },
+  {
+    "id": "spell.resist-energy",
+    "kind": "spell",
+    "body": "One creature ignores some damage from one chosen energy type."
+  },
+  {
+    "id": "spell.rope-trick",
+    "kind": "spell",
+    "body": "A rope leads to an extradimensional space that holds several creatures."
+  },
+  {
+    "id": "spell.scare",
+    "kind": "spell",
+    "body": "Weaker creatures in the area become frightened unless they save."
   }
 ]
