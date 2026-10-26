@@ -1517,7 +1517,7 @@
   {
     "id": "spell.blur",
     "kind": "spell",
-    "body": "Your outline wavers, granting attackers a chance to miss."
+    "body": "The subject's outline wavers, giving attackers a chance to miss outright."
   },
   {
     "id": "spell.bulls-strength",
@@ -1597,7 +1597,7 @@
   {
     "id": "spell.enthrall",
     "kind": "spell",
-    "body": "Listeners are captivated by your speech while you keep talking."
+    "body": "Listeners are captivated while you keep speaking, unless they save."
   },
   {
     "id": "spell.false-life",
@@ -1632,7 +1632,7 @@
   {
     "id": "spell.ghoul-touch",
     "kind": "spell",
-    "body": "Your touch paralyzes one living creature and it gives off a sickening stench."
+    "body": "Your touch paralyzes one living creature unless it saves, and it gives off a sickening stench."
   },
   {
     "id": "spell.glitterdust",
@@ -1652,12 +1652,12 @@
   {
     "id": "spell.hideous-laughter",
     "kind": "spell",
-    "body": "One creature falls prone with laughter and can take no actions."
+    "body": "One creature falls prone with laughter and can take no actions, unless it saves."
   },
   {
     "id": "spell.hold-animal",
     "kind": "spell",
-    "body": "One animal is paralyzed unless it saves."
+    "body": "One animal is paralyzed unless it saves, with a new save each round."
   },
   {
     "id": "spell.hypnotic-pattern",
@@ -1672,7 +1672,7 @@
   {
     "id": "spell.invisibility",
     "kind": "spell",
-    "body": "One creature or object becomes invisible until it attacks."
+    "body": "One creature or object becomes invisible until the subject attacks."
   },
   {
     "id": "spell.knock",
@@ -1817,7 +1817,7 @@
   {
     "id": "spell.spider-climb",
     "kind": "spell",
-    "body": "One creature can climb walls and ceilings with its hands free."
+    "body": "One creature can walk on walls and ceilings, though it needs its hands free to do so."
   },
   {
     "id": "spell.spike-growth",
