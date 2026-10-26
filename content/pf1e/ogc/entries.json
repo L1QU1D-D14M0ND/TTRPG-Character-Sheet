@@ -97,7 +97,7 @@
   {
     "id": "feat.combat-expertise",
     "kind": "feat",
-    "body": "You may take a penalty on melee attacks to gain a dodge bonus to Armor Class. The trade depends on your base attack bonus."
+    "body": "You may take a penalty on melee attacks to gain a dodge bonus to Armor Class. The trade grows with your Intelligence."
   },
   {
     "id": "feat.combat-reflexes",
@@ -212,7 +212,7 @@
   {
     "id": "feat.greater-penetrating-strike",
     "kind": "feat",
-    "body": "Your piercing attacks ignore more of an object's hardness."
+    "body": "Attacks with weapons you are trained in ignore more of a creature's damage reduction."
   },
   {
     "id": "feat.greater-shield-focus",
@@ -327,7 +327,7 @@
   {
     "id": "feat.lightning-stance",
     "kind": "feat",
-    "body": "While you are using Wind Stance, moving grants greater concealment against ranged attacks."
+    "body": "If you take two move actions or run, you gain greater concealment against ranged attacks until your next turn."
   },
   {
     "id": "feat.lunge",
@@ -367,7 +367,7 @@
   {
     "id": "feat.penetrating-strike",
     "kind": "feat",
-    "body": "Your piercing attacks ignore some of an object's hardness."
+    "body": "Attacks with weapons you are trained in ignore some of a creature's damage reduction."
   },
   {
     "id": "feat.pinpoint-targeting",
@@ -617,7 +617,7 @@
   {
     "id": "feat.diehard",
     "kind": "feat",
-    "body": "You stay conscious below 0 hit points and can still take a standard action. You stabilize on your own."
+    "body": "You stay conscious and staggered below 0 hit points instead of dying, though acting costs you hit points."
   },
   {
     "id": "feat.elemental-channel",
