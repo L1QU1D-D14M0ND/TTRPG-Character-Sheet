@@ -2637,7 +2637,7 @@
   {
     "id": "spell.baleful-polymorph",
     "kind": "spell",
-    "body": "One creature becomes a small harmless animal and may lose its mind."
+    "body": "One creature becomes a small harmless animal unless it saves, and may lose its mind."
   },
   {
     "id": "spell.beast-shape-iii",
@@ -2647,7 +2647,7 @@
   {
     "id": "spell.blight",
     "kind": "spell",
-    "body": "A plant or plant creature withers and takes heavy damage."
+    "body": "A plant or plant creature withers and takes heavy damage, with a save for half."
   },
   {
     "id": "spell.break-enchantment",
@@ -2692,7 +2692,7 @@
   {
     "id": "spell.dismissal",
     "kind": "spell",
-    "body": "One summoned creature is forced back to its own plane."
+    "body": "One summoned creature is forced back to its own plane unless it saves."
   },
   {
     "id": "spell.dispel-good",
@@ -2742,7 +2742,7 @@
   {
     "id": "spell.greater-command",
     "kind": "spell",
-    "body": "Several creatures each obey a one-word command for several rounds."
+    "body": "Several creatures each obey a one-word command for several rounds, unless they save."
   },
   {
     "id": "spell.hallow",
@@ -2757,7 +2757,7 @@
   {
     "id": "spell.insect-plague",
     "kind": "spell",
-    "body": "Swarms of insects arrive and attack creatures in the area."
+    "body": "Swarms of insects arrive and attack creatures in the area, with no save."
   },
   {
     "id": "spell.interposing-hand",
@@ -2782,7 +2782,7 @@
   {
     "id": "spell.magic-jar",
     "kind": "spell",
-    "body": "Your soul moves into a gem and can take over nearby bodies."
+    "body": "Your soul moves into a gem and can try to take over nearby bodies, each allowing a save."
   },
   {
     "id": "spell.major-creation",
@@ -2802,7 +2802,7 @@
   {
     "id": "spell.mind-fog",
     "kind": "spell",
-    "body": "Creatures in the fog take a large penalty on Wisdom checks and Will saves."
+    "body": "Creatures in the fog take a large penalty on Wisdom checks and Will saves, unless they save."
   },
   {
     "id": "spell.mirage-arcana",
@@ -2887,7 +2887,7 @@
   {
     "id": "spell.song-of-discord",
     "kind": "spell",
-    "body": "Creatures in the area turn on each other for several rounds."
+    "body": "Creatures in the area turn on each other for several rounds, unless they save."
   },
   {
     "id": "spell.spell-resistance",
@@ -2907,17 +2907,17 @@
   {
     "id": "spell.symbol-of-pain",
     "kind": "spell",
-    "body": "A triggered symbol wracks nearby creatures with pain."
+    "body": "A triggered symbol wracks nearby creatures with pain unless they save."
   },
   {
     "id": "spell.symbol-of-sleep",
     "kind": "spell",
-    "body": "A triggered symbol puts nearby creatures into a deep sleep."
+    "body": "A triggered symbol puts nearby creatures into a deep sleep unless they save."
   },
   {
     "id": "spell.telekinesis",
     "kind": "spell",
-    "body": "You move or hurl objects, or make combat maneuvers, at a distance."
+    "body": "You move or hurl objects, or make combat maneuvers, at a distance; targets may save."
   },
   {
     "id": "spell.telepathic-bond",
@@ -2927,7 +2927,7 @@
   {
     "id": "spell.teleport",
     "kind": "spell",
-    "body": "You and a few others travel instantly to a place you know."
+    "body": "You and a few others travel instantly to a place you know, with some risk of arriving off-target."
   },
   {
     "id": "spell.transmute-mud-to-rock",
