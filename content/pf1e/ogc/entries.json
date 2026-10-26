@@ -3313,5 +3313,105 @@
     "id": "spell.word-of-recall",
     "kind": "spell",
     "body": "You and companions return instantly to a sanctuary you prepared."
+  },
+  {
+    "id": "spell.animate-plants",
+    "kind": "spell",
+    "body": "Plants come alive and fight for you, or entangle an area."
+  },
+  {
+    "id": "spell.banishment",
+    "kind": "spell",
+    "body": "Several extraplanar creatures are forced back to their home planes."
+  },
+  {
+    "id": "spell.blasphemy",
+    "kind": "spell",
+    "body": "Nonevil creatures hearing you are killed, paralyzed, weakened, or dazed."
+  },
+  {
+    "id": "spell.changestaff",
+    "kind": "spell",
+    "body": "A staff becomes a treant-like creature that fights for you."
+  },
+  {
+    "id": "spell.control-undead",
+    "kind": "spell",
+    "body": "Several undead creatures obey your commands for a time."
+  },
+  {
+    "id": "spell.control-weather",
+    "kind": "spell",
+    "body": "You change the weather over a wide area."
+  },
+  {
+    "id": "spell.creeping-doom",
+    "kind": "spell",
+    "body": "Swarms of biting insects appear and move at your command."
+  },
+  {
+    "id": "spell.delayed-blast-fireball",
+    "kind": "spell",
+    "body": "A fireball you can delay several rounds deals heavy fire damage."
+  },
+  {
+    "id": "spell.destruction",
+    "kind": "spell",
+    "body": "One creature is slain and its remains consumed unless it saves."
+  },
+  {
+    "id": "spell.dictum",
+    "kind": "spell",
+    "body": "Nonlawful creatures hearing you are killed, paralyzed, slowed, or deafened."
+  },
+  {
+    "id": "spell.elemental-body-iv",
+    "kind": "spell",
+    "body": "You take the form of a Huge elemental and gain elemental traits."
+  },
+  {
+    "id": "spell.ethereal-jaunt",
+    "kind": "spell",
+    "body": "You become ethereal and can pass through solid objects."
+  },
+  {
+    "id": "spell.finger-of-death",
+    "kind": "spell",
+    "body": "One living creature dies, or takes heavy damage if it saves."
+  },
+  {
+    "id": "spell.fire-storm",
+    "kind": "spell",
+    "body": "Flames fill an area you shape and deal heavy fire damage."
+  },
+  {
+    "id": "spell.forcecage",
+    "kind": "spell",
+    "body": "A cage or box of force traps creatures inside."
+  },
+  {
+    "id": "spell.form-of-the-dragon-ii",
+    "kind": "spell",
+    "body": "You take the form of a Large dragon with a stronger breath weapon."
+  },
+  {
+    "id": "spell.giant-form-i",
+    "kind": "spell",
+    "body": "You take the form of a Large giant and gain its attacks."
+  },
+  {
+    "id": "spell.grasping-hand",
+    "kind": "spell",
+    "body": "A large hand of force grapples one opponent for you."
+  },
+  {
+    "id": "spell.greater-arcane-sight",
+    "kind": "spell",
+    "body": "You see magical auras and identify spells without concentrating."
+  },
+  {
+    "id": "spell.greater-polymorph",
+    "kind": "spell",
+    "body": "One willing creature takes a wider range of forms and keeps them longer."
   }
 ]
