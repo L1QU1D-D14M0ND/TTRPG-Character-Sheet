@@ -3698,5 +3698,105 @@
     "id": "spell.greater-spell-immunity",
     "kind": "spell",
     "body": "One creature is immune to a few higher-level spells you name."
+  },
+  {
+    "id": "spell.holy-aura",
+    "kind": "spell",
+    "body": "Allies gain bonuses against evil foes, and attackers may be blinded."
+  },
+  {
+    "id": "spell.horrid-wilting",
+    "kind": "spell",
+    "body": "Moisture is drawn from living creatures in the area, dealing heavy damage."
+  },
+  {
+    "id": "spell.incendiary-cloud",
+    "kind": "spell",
+    "body": "A burning cloud deals fire damage and drifts away from you."
+  },
+  {
+    "id": "spell.iron-body",
+    "kind": "spell",
+    "body": "Your body becomes living iron, gaining damage reduction but slowing you."
+  },
+  {
+    "id": "spell.irresistible-dance",
+    "kind": "spell",
+    "body": "One creature dances helplessly and cannot defend itself."
+  },
+  {
+    "id": "spell.mass-charm-monster",
+    "kind": "spell",
+    "body": "Several creatures each regard you as a trusted friend."
+  },
+  {
+    "id": "spell.mass-cure-critical-wounds",
+    "kind": "spell",
+    "body": "Several creatures each heal a large amount of damage."
+  },
+  {
+    "id": "spell.mass-inflict-critical-wounds",
+    "kind": "spell",
+    "body": "Several creatures each take heavy negative energy damage."
+  },
+  {
+    "id": "spell.maze",
+    "kind": "spell",
+    "body": "One creature is trapped in an extradimensional maze."
+  },
+  {
+    "id": "spell.mind-blank",
+    "kind": "spell",
+    "body": "One creature is immune to all mind-reading and divination."
+  },
+  {
+    "id": "spell.moment-of-prescience",
+    "kind": "spell",
+    "body": "You gain a large one-time bonus on any single roll you choose."
+  },
+  {
+    "id": "spell.polar-ray",
+    "kind": "spell",
+    "body": "A ray deals heavy cold damage and saps Dexterity."
+  },
+  {
+    "id": "spell.polymorph-any-object",
+    "kind": "spell",
+    "body": "You change one creature or object into almost anything else."
+  },
+  {
+    "id": "spell.power-word-stun",
+    "kind": "spell",
+    "body": "One creature is stunned with no save, by its remaining hit points."
+  },
+  {
+    "id": "spell.prismatic-wall",
+    "kind": "spell",
+    "body": "A wall of coloured layers blocks passage, each layer with its own effect."
+  },
+  {
+    "id": "spell.protection-from-spells",
+    "kind": "spell",
+    "body": "Creatures you touch gain a bonus on saves against spells."
+  },
+  {
+    "id": "spell.repel-metal-or-stone",
+    "kind": "spell",
+    "body": "A wave of force pushes metal and stone away from you."
+  },
+  {
+    "id": "spell.scintillating-pattern",
+    "kind": "spell",
+    "body": "Shifting colours confuse, stun, or knock out creatures that see them."
+  },
+  {
+    "id": "spell.screen",
+    "kind": "spell",
+    "body": "An area is hidden from vision and divination by an illusion you set."
+  },
+  {
+    "id": "spell.shield-of-law",
+    "kind": "spell",
+    "body": "Allies gain bonuses against chaotic foes and resist mental control."
   }
 ]
