@@ -2287,12 +2287,12 @@
   {
     "id": "spell.bestow-curse",
     "kind": "spell",
-    "body": "One creature suffers a lasting penalty, lost actions, or weakened abilities."
+    "body": "One creature suffers a lasting penalty, lost actions, or weakened abilities, unless it saves."
   },
   {
     "id": "spell.black-tentacles",
     "kind": "spell",
-    "body": "Tentacles erupt from the ground and grapple creatures in the area."
+    "body": "Tentacles erupt from the ground and grapple creatures in the area, with no save."
   },
   {
     "id": "spell.chaos-hammer",
@@ -2302,7 +2302,7 @@
   {
     "id": "spell.charm-monster",
     "kind": "spell",
-    "body": "One creature of any kind regards you as a trusted friend."
+    "body": "One creature of any kind regards you as a trusted friend, unless it saves."
   },
   {
     "id": "spell.commune-with-nature",
@@ -2312,17 +2312,17 @@
   {
     "id": "spell.confusion",
     "kind": "spell",
-    "body": "Creatures in the area act randomly for several rounds."
+    "body": "Creatures in the area act randomly for several rounds, unless they save."
   },
   {
     "id": "spell.contagion",
     "kind": "spell",
-    "body": "Your touch infects one creature with a disease you choose."
+    "body": "Your touch infects one creature with a disease you choose, unless it saves."
   },
   {
     "id": "spell.crushing-despair",
     "kind": "spell",
-    "body": "Creatures in the cone take penalties on attacks, saves, and checks."
+    "body": "Creatures in the cone take penalties on attacks, saves, and checks, unless they save."
   },
   {
     "id": "spell.cure-critical-wounds",
@@ -2342,7 +2342,7 @@
   {
     "id": "spell.dimension-door",
     "kind": "spell",
-    "body": "You teleport a short distance to a place you can picture."
+    "body": "You teleport a short distance to a place you can picture, and can act no further that turn."
   },
   {
     "id": "spell.dimensional-anchor",
@@ -2377,7 +2377,7 @@
   {
     "id": "spell.enervation",
     "kind": "spell",
-    "body": "A ray gives one living creature temporary negative levels."
+    "body": "A ray gives one living creature temporary negative levels, with no save."
   },
   {
     "id": "spell.fear",
@@ -2432,7 +2432,7 @@
   {
     "id": "spell.ice-storm",
     "kind": "spell",
-    "body": "Hail pounds the area, dealing bludgeoning and cold damage."
+    "body": "Hail pounds the area, dealing bludgeoning and cold damage with no save."
   },
   {
     "id": "spell.illusory-wall",
@@ -2452,7 +2452,7 @@
   {
     "id": "spell.lesser-geas",
     "kind": "spell",
-    "body": "One creature of moderate level must carry out your command."
+    "body": "One creature of moderate Hit Dice must carry out your command, unless it saves."
   },
   {
     "id": "spell.lesser-globe-of-invulnerability",
@@ -2497,7 +2497,7 @@
   {
     "id": "spell.modify-memory",
     "kind": "spell",
-    "body": "You change up to five minutes of one creature's memories."
+    "body": "You change up to five minutes of one creature's memories, unless it saves."
   },
   {
     "id": "spell.orders-wrath",
@@ -2512,7 +2512,7 @@
   {
     "id": "spell.rainbow-pattern",
     "kind": "spell",
-    "body": "Lights fascinate creatures and can lead them away."
+    "body": "Lights fascinate creatures unless they save, and can lead them away."
   },
   {
     "id": "spell.reincarnate",
