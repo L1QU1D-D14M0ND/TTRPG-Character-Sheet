@@ -2997,12 +2997,12 @@
   {
     "id": "spell.blade-barrier",
     "kind": "spell",
-    "body": "A wall of spinning blades damages creatures passing through it."
+    "body": "A wall of spinning blades damages creatures passing through it, with a save for half."
   },
   {
     "id": "spell.chain-lightning",
     "kind": "spell",
-    "body": "Lightning strikes one target and arcs to several others for less damage."
+    "body": "Lightning strikes one target and arcs to several others for less damage, with saves for half."
   },
   {
     "id": "spell.circle-of-death",
@@ -3027,7 +3027,7 @@
   {
     "id": "spell.disintegrate",
     "kind": "spell",
-    "body": "A ray reduces a creature or object to dust, or deals heavy damage."
+    "body": "A ray reduces a creature or object to dust, or deals heavy damage on a successful save."
   },
   {
     "id": "spell.elemental-body-iii",
@@ -3062,7 +3062,7 @@
   {
     "id": "spell.forceful-hand",
     "kind": "spell",
-    "body": "A large hand of force shoves one opponent away from you."
+    "body": "A large hand of force shoves one opponent away from you, with no save."
   },
   {
     "id": "spell.form-of-the-dragon-i",
@@ -3072,12 +3072,12 @@
   {
     "id": "spell.freezing-sphere",
     "kind": "spell",
-    "body": "A ball of cold damages an area, or freezes the surface of water."
+    "body": "A ball of cold damages an area with a save for half, or freezes the surface of water."
   },
   {
     "id": "spell.geas-quest",
     "kind": "spell",
-    "body": "One creature must carry out a task you set or suffer for refusing."
+    "body": "One creature must carry out a task you set or sicken for refusing, with no save."
   },
   {
     "id": "spell.globe-of-invulnerability",
@@ -3182,7 +3182,7 @@
   {
     "id": "spell.mass-suggestion",
     "kind": "spell",
-    "body": "Several creatures each follow a reasonable-sounding suggestion."
+    "body": "Several creatures each follow a reasonable-sounding suggestion, unless they save."
   },
   {
     "id": "spell.mislead",
@@ -3227,7 +3227,7 @@
   {
     "id": "spell.repulsion",
     "kind": "spell",
-    "body": "Creatures cannot approach you while the spell lasts."
+    "body": "Creatures cannot approach you while the spell lasts, unless they save."
   },
   {
     "id": "spell.shadow-walk",
@@ -3272,7 +3272,7 @@
   {
     "id": "spell.sympathetic-vibration",
     "kind": "spell",
-    "body": "You shake a standing structure, damaging it each round."
+    "body": "You shake a standing structure, damaging it each round. It affects structures, not creatures."
   },
   {
     "id": "spell.transformation",
