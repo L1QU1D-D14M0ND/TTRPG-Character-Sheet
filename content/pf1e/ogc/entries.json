@@ -1117,7 +1117,7 @@
   {
     "id": "spell.color-spray",
     "kind": "spell",
-    "body": "A burst of colour stuns, blinds, or knocks out nearby creatures by their level."
+    "body": "A burst of colour stuns, blinds, or knocks out nearby creatures by Hit Dice, unless they save."
   },
   {
     "id": "spell.command",
@@ -1637,7 +1637,7 @@
   {
     "id": "spell.glitterdust",
     "kind": "spell",
-    "body": "Dust outlines creatures in the area and may blind them."
+    "body": "Dust outlines creatures in the area, and blinds those that fail a save."
   },
   {
     "id": "spell.gust-of-wind",
@@ -1802,7 +1802,7 @@
   {
     "id": "spell.sound-burst",
     "kind": "spell",
-    "body": "A burst of sound damages and may stun creatures in the area."
+    "body": "A burst of sound damages creatures in the area and stuns those that fail a save."
   },
   {
     "id": "spell.speak-with-plants",
@@ -1822,7 +1822,7 @@
   {
     "id": "spell.spike-growth",
     "kind": "spell",
-    "body": "Growths in the area damage and slow creatures crossing it."
+    "body": "Growths in the area damage creatures crossing it, and slow those that fail a save."
   },
   {
     "id": "spell.spiritual-weapon",
@@ -1867,7 +1867,7 @@
   {
     "id": "spell.web",
     "kind": "spell",
-    "body": "Sticky strands fill the area, entangling creatures caught in them."
+    "body": "Sticky strands fill the area, entangling creatures that fail a save."
   },
   {
     "id": "spell.whispering-wind",
@@ -2297,7 +2297,7 @@
   {
     "id": "spell.chaos-hammer",
     "kind": "spell",
-    "body": "Lawful creatures in the area are damaged and slowed."
+    "body": "Lawful creatures in the area are damaged and slowed, with a save for half and no slow."
   },
   {
     "id": "spell.charm-monster",
@@ -2422,7 +2422,7 @@
   {
     "id": "spell.holy-smite",
     "kind": "spell",
-    "body": "Evil creatures in the area are damaged and blinded."
+    "body": "Evil creatures in the area are damaged and blinded, with a save for half and no blindness."
   },
   {
     "id": "spell.holy-sword",
@@ -2472,7 +2472,7 @@
   {
     "id": "spell.mark-of-justice",
     "kind": "spell",
-    "body": "You set a permanent curse that triggers on a condition you name."
+    "body": "You set a permanent curse on a creature that triggers on a condition you name."
   },
   {
     "id": "spell.mass-enlarge-person",
@@ -2502,12 +2502,12 @@
   {
     "id": "spell.orders-wrath",
     "kind": "spell",
-    "body": "Chaotic creatures in the area are damaged and dazed."
+    "body": "Chaotic creatures in the area are damaged and dazed, with a save for half and no daze."
   },
   {
     "id": "spell.phantasmal-killer",
     "kind": "spell",
-    "body": "A phantom only the target sees may frighten it to death."
+    "body": "A phantom only the target sees may frighten it to death; two saves can avoid it."
   },
   {
     "id": "spell.rainbow-pattern",
@@ -2557,12 +2557,12 @@
   {
     "id": "spell.shout",
     "kind": "spell",
-    "body": "A cone of sound deals damage and deafens creatures in it."
+    "body": "A cone of sound deals damage and deafens creatures in it, with a save for half and no deafness."
   },
   {
     "id": "spell.solid-fog",
     "kind": "spell",
-    "body": "Thick fog blocks sight and slows creatures moving through it."
+    "body": "Thick fog blocks sight and slows creatures moving through it, with no save."
   },
   {
     "id": "spell.spell-immunity",
@@ -2572,7 +2572,7 @@
   {
     "id": "spell.spike-stones",
     "kind": "spell",
-    "body": "Stone spikes damage and slow creatures crossing the area."
+    "body": "Stone spikes damage creatures crossing the area, and slow those that fail a save."
   },
   {
     "id": "spell.stone-shape",
@@ -2602,7 +2602,7 @@
   {
     "id": "spell.unholy-blight",
     "kind": "spell",
-    "body": "Good creatures in the area are damaged and sickened."
+    "body": "Good creatures in the area are damaged and sickened, with a save for half and no sickening."
   },
   {
     "id": "spell.wall-of-fire",
@@ -2812,7 +2812,7 @@
   {
     "id": "spell.nightmare",
     "kind": "spell",
-    "body": "A sleeping creature suffers a terrible dream, taking damage and fatigue."
+    "body": "A sleeping creature suffers a terrible dream, taking damage and fatigue unless it saves."
   },
   {
     "id": "spell.overland-flight",
@@ -2967,7 +2967,7 @@
   {
     "id": "spell.acid-fog",
     "kind": "spell",
-    "body": "Thick fog slows creatures and deals acid damage each round."
+    "body": "Thick fog slows creatures and deals acid damage each round, with no save against the damage."
   },
   {
     "id": "spell.analyze-dweomer",
@@ -3037,7 +3037,7 @@
   {
     "id": "spell.eyebite",
     "kind": "spell",
-    "body": "Your gaze sickens, panics, or renders creatures comatose."
+    "body": "Your gaze sickens, panics, or renders creatures comatose by Hit Dice, unless they save."
   },
   {
     "id": "spell.find-the-path",
@@ -3262,12 +3262,12 @@
   {
     "id": "spell.symbol-of-fear",
     "kind": "spell",
-    "body": "A triggered symbol panics creatures that see it."
+    "body": "A triggered symbol panics creatures that see it, unless they save."
   },
   {
     "id": "spell.symbol-of-persuasion",
     "kind": "spell",
-    "body": "A triggered symbol charms creatures that see it."
+    "body": "A triggered symbol charms creatures that see it, unless they save."
   },
   {
     "id": "spell.sympathetic-vibration",
@@ -3292,7 +3292,7 @@
   {
     "id": "spell.undeath-to-death",
     "kind": "spell",
-    "body": "Weaker undead in the area are destroyed."
+    "body": "Undead in the area totalling a limited number of Hit Dice are destroyed unless they save."
   },
   {
     "id": "spell.veil",
@@ -3562,12 +3562,12 @@
   {
     "id": "spell.sunbeam",
     "kind": "spell",
-    "body": "Beams of light blind creatures and burn undead."
+    "body": "Beams of light blind creatures unless they save, and burn undead."
   },
   {
     "id": "spell.symbol-of-stunning",
     "kind": "spell",
-    "body": "A triggered symbol stuns creatures that see it."
+    "body": "A triggered symbol stuns creatures that see it, unless they save."
   },
   {
     "id": "spell.symbol-of-weakness",
@@ -3607,7 +3607,7 @@
   {
     "id": "spell.antipathy",
     "kind": "spell",
-    "body": "Creatures of a kind you name feel compelled to avoid a place or object."
+    "body": "Creatures of a kind you name are compelled to avoid a place or object, unless they save."
   },
   {
     "id": "spell.binding",
@@ -3617,7 +3617,7 @@
   {
     "id": "spell.clenched-fist",
     "kind": "spell",
-    "body": "A large hand of force batters and may stun one opponent."
+    "body": "A large hand of force batters one opponent and may stun it, unless it saves."
   },
   {
     "id": "spell.cloak-of-chaos",
@@ -3692,7 +3692,7 @@
   {
     "id": "spell.greater-shout",
     "kind": "spell",
-    "body": "A cone of sound deals heavy damage, deafens, and stuns."
+    "body": "A cone of sound deals heavy damage, deafens, and stuns, with a save to reduce the effect."
   },
   {
     "id": "spell.greater-spell-immunity",
@@ -3722,7 +3722,7 @@
   {
     "id": "spell.irresistible-dance",
     "kind": "spell",
-    "body": "One creature dances helplessly and cannot defend itself."
+    "body": "One creature dances helplessly and cannot defend itself, with a save to shorten it."
   },
   {
     "id": "spell.mass-charm-monster",
@@ -3787,7 +3787,7 @@
   {
     "id": "spell.scintillating-pattern",
     "kind": "spell",
-    "body": "Shifting colours confuse, stun, or knock out creatures that see them."
+    "body": "Shifting colours confuse, stun, or knock out creatures by Hit Dice, with no save."
   },
   {
     "id": "spell.screen",
@@ -3812,7 +3812,7 @@
   {
     "id": "spell.sunburst",
     "kind": "spell",
-    "body": "A burst of light blinds creatures and destroys undead."
+    "body": "A burst of light blinds creatures unless they save, and destroys or damages undead."
   },
   {
     "id": "spell.symbol-of-death",
@@ -3827,7 +3827,7 @@
   {
     "id": "spell.sympathy",
     "kind": "spell",
-    "body": "Creatures of a kind you name feel compelled to approach a place or object."
+    "body": "Creatures of a kind you name are compelled to approach a place or object, unless they save."
   },
   {
     "id": "spell.telekinetic-sphere",
