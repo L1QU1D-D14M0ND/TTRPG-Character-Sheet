@@ -3853,5 +3853,105 @@
     "id": "spell.whirlwind",
     "kind": "spell",
     "body": "A cyclone you direct picks up and batters creatures in its path."
+  },
+  {
+    "id": "spell.astral-projection",
+    "kind": "spell",
+    "body": "You and companions travel the planes in astral form while your bodies remain behind."
+  },
+  {
+    "id": "spell.crushing-hand",
+    "kind": "spell",
+    "body": "A large hand of force grapples and crushes one opponent."
+  },
+  {
+    "id": "spell.dominate-monster",
+    "kind": "spell",
+    "body": "One creature of any kind obeys your mental commands."
+  },
+  {
+    "id": "spell.elemental-swarm",
+    "kind": "spell",
+    "body": "You summon a succession of elementals that serve you for a long time."
+  },
+  {
+    "id": "spell.energy-drain",
+    "kind": "spell",
+    "body": "A ray gives one creature several permanent negative levels."
+  },
+  {
+    "id": "spell.etherealness",
+    "kind": "spell",
+    "body": "You and companions become ethereal and can pass through solid objects."
+  },
+  {
+    "id": "spell.foresight",
+    "kind": "spell",
+    "body": "You receive warnings of danger to yourself or a creature you choose."
+  },
+  {
+    "id": "spell.freedom",
+    "kind": "spell",
+    "body": "You free one creature from imprisonment, paralysis, or similar bonds."
+  },
+  {
+    "id": "spell.gate",
+    "kind": "spell",
+    "body": "You open a portal between planes and can call a powerful creature through it."
+  },
+  {
+    "id": "spell.implosion",
+    "kind": "spell",
+    "body": "Creatures you focus on are crushed from within, one each round."
+  },
+  {
+    "id": "spell.imprisonment",
+    "kind": "spell",
+    "body": "One creature is entombed far underground unless it saves."
+  },
+  {
+    "id": "spell.mages-disjunction",
+    "kind": "spell",
+    "body": "Magic in the area is dispelled and magic items may be destroyed."
+  },
+  {
+    "id": "spell.mass-heal",
+    "kind": "spell",
+    "body": "Several creatures each heal a very large amount of damage and several conditions."
+  },
+  {
+    "id": "spell.mass-hold-monster",
+    "kind": "spell",
+    "body": "Several creatures of any kind are each paralyzed unless they save."
+  },
+  {
+    "id": "spell.meteor-swarm",
+    "kind": "spell",
+    "body": "Four spheres of fire explode where you aim, dealing heavy damage."
+  },
+  {
+    "id": "spell.miracle",
+    "kind": "spell",
+    "body": "Your deity acts on your request, within the limits of its power."
+  },
+  {
+    "id": "spell.power-word-kill",
+    "kind": "spell",
+    "body": "One creature dies with no save, by its remaining hit points."
+  },
+  {
+    "id": "spell.prismatic-sphere",
+    "kind": "spell",
+    "body": "A sphere of coloured layers surrounds and protects you."
+  },
+  {
+    "id": "spell.refuge",
+    "kind": "spell",
+    "body": "An object you prepare teleports its user to your sanctuary."
+  },
+  {
+    "id": "spell.shades",
+    "kind": "spell",
+    "body": "You mimic a higher-level conjuration with partly real shadow stuff."
   }
 ]

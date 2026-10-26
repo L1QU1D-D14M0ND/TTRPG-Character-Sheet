@@ -911,6 +911,29 @@ const BATCH_L8C = [
   { id: 'spell.whirlwind', kind: 'spell', name: "Whirlwind" },
 ] as const
 
+const BATCH_L9A = [
+  { id: 'spell.astral-projection', kind: 'spell', name: "Astral Projection" },
+  { id: 'spell.crushing-hand', kind: 'spell', name: "Crushing Hand" },
+  { id: 'spell.dominate-monster', kind: 'spell', name: "Dominate Monster" },
+  { id: 'spell.elemental-swarm', kind: 'spell', name: "Elemental Swarm" },
+  { id: 'spell.energy-drain', kind: 'spell', name: "Energy Drain" },
+  { id: 'spell.etherealness', kind: 'spell', name: "Etherealness" },
+  { id: 'spell.foresight', kind: 'spell', name: "Foresight" },
+  { id: 'spell.freedom', kind: 'spell', name: "Freedom" },
+  { id: 'spell.gate', kind: 'spell', name: "Gate" },
+  { id: 'spell.implosion', kind: 'spell', name: "Implosion" },
+  { id: 'spell.imprisonment', kind: 'spell', name: "Imprisonment" },
+  { id: 'spell.mages-disjunction', kind: 'spell', name: "Mage's Disjunction" },
+  { id: 'spell.mass-heal', kind: 'spell', name: "Mass Heal" },
+  { id: 'spell.mass-hold-monster', kind: 'spell', name: "Mass Hold Monster" },
+  { id: 'spell.meteor-swarm', kind: 'spell', name: "Meteor Swarm" },
+  { id: 'spell.miracle', kind: 'spell', name: "Miracle" },
+  { id: 'spell.power-word-kill', kind: 'spell', name: "Power Word Kill" },
+  { id: 'spell.prismatic-sphere', kind: 'spell', name: "Prismatic Sphere" },
+  { id: 'spell.refuge', kind: 'spell', name: "Refuge" },
+  { id: 'spell.shades', kind: 'spell', name: "Shades" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -958,6 +981,7 @@ const PACKED = [
   ...BATCH_L8A,
   ...BATCH_L8B,
   ...BATCH_L8C,
+  ...BATCH_L9A,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -1018,8 +1042,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(58)
-      expect(remaining('feat') + remaining('spell')).toBe(58)
+      expect(remaining('spell')).toBe(38)
+      expect(remaining('feat') + remaining('spell')).toBe(38)
     })
   })
 })
