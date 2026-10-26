@@ -808,6 +808,29 @@ const BATCH_L7A = [
   { id: 'spell.greater-polymorph', kind: 'spell', name: "Greater Polymorph" },
 ] as const
 
+const BATCH_L7B = [
+  { id: 'spell.greater-restoration', kind: 'spell', name: "Greater Restoration" },
+  { id: 'spell.greater-scrying', kind: 'spell', name: "Greater Scrying" },
+  { id: 'spell.greater-shadow-conjuration', kind: 'spell', name: "Greater Shadow Conjuration" },
+  { id: 'spell.greater-teleport', kind: 'spell', name: "Greater Teleport" },
+  { id: 'spell.holy-word', kind: 'spell', name: "Holy Word" },
+  { id: 'spell.insanity', kind: 'spell', name: "Insanity" },
+  { id: 'spell.instant-summons', kind: 'spell', name: "Instant Summons" },
+  { id: 'spell.limited-wish', kind: 'spell', name: "Limited Wish" },
+  { id: 'spell.mages-magnificent-mansion', kind: 'spell', name: "Mage's Magnificent Mansion" },
+  { id: 'spell.mages-sword', kind: 'spell', name: "Mage's Sword" },
+  { id: 'spell.mass-cure-serious-wounds', kind: 'spell', name: "Mass Cure Serious Wounds" },
+  { id: 'spell.mass-hold-person', kind: 'spell', name: "Mass Hold Person" },
+  { id: 'spell.mass-inflict-serious-wounds', kind: 'spell', name: "Mass Inflict Serious Wounds" },
+  { id: 'spell.mass-invisibility', kind: 'spell', name: "Mass Invisibility" },
+  { id: 'spell.phase-door', kind: 'spell', name: "Phase Door" },
+  { id: 'spell.plane-shift', kind: 'spell', name: "Plane Shift" },
+  { id: 'spell.plant-shape-iii', kind: 'spell', name: "Plant Shape III" },
+  { id: 'spell.power-word-blind', kind: 'spell', name: "Power Word Blind" },
+  { id: 'spell.prismatic-spray', kind: 'spell', name: "Prismatic Spray" },
+  { id: 'spell.project-image', kind: 'spell', name: "Project Image" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -850,6 +873,7 @@ const PACKED = [
   ...BATCH_L6C,
   ...BATCH_L6D,
   ...BATCH_L7A,
+  ...BATCH_L7B,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -910,8 +934,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(146)
-      expect(remaining('feat') + remaining('spell')).toBe(146)
+      expect(remaining('spell')).toBe(126)
+      expect(remaining('feat') + remaining('spell')).toBe(126)
     })
   })
 })

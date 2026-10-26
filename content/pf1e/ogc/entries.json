@@ -3413,5 +3413,105 @@
     "id": "spell.greater-polymorph",
     "kind": "spell",
     "body": "One willing creature takes a wider range of forms and keeps them longer."
+  },
+  {
+    "id": "spell.greater-restoration",
+    "kind": "spell",
+    "body": "You restore lost levels, ability damage, and most lasting afflictions."
+  },
+  {
+    "id": "spell.greater-scrying",
+    "kind": "spell",
+    "body": "You observe a creature you know at a distance, with better clarity and duration."
+  },
+  {
+    "id": "spell.greater-shadow-conjuration",
+    "kind": "spell",
+    "body": "You mimic a mid-level conjuration with partly real shadow stuff."
+  },
+  {
+    "id": "spell.greater-teleport",
+    "kind": "spell",
+    "body": "You and companions travel instantly to anywhere you know, without error."
+  },
+  {
+    "id": "spell.holy-word",
+    "kind": "spell",
+    "body": "Nongood creatures hearing you are killed, paralyzed, blinded, or deafened."
+  },
+  {
+    "id": "spell.insanity",
+    "kind": "spell",
+    "body": "One creature behaves randomly and permanently as if confused."
+  },
+  {
+    "id": "spell.instant-summons",
+    "kind": "spell",
+    "body": "An object you prepared comes to your hand from any distance."
+  },
+  {
+    "id": "spell.limited-wish",
+    "kind": "spell",
+    "body": "You alter reality within limits, duplicating many lower-level spells."
+  },
+  {
+    "id": "spell.mages-magnificent-mansion",
+    "kind": "spell",
+    "body": "A doorway opens into a comfortable extradimensional dwelling with servants."
+  },
+  {
+    "id": "spell.mages-sword",
+    "kind": "spell",
+    "body": "A blade of force attacks a foe you choose as a strong fighter."
+  },
+  {
+    "id": "spell.mass-cure-serious-wounds",
+    "kind": "spell",
+    "body": "Several creatures each heal a serious amount of damage."
+  },
+  {
+    "id": "spell.mass-hold-person",
+    "kind": "spell",
+    "body": "Several humanoids are each paralyzed unless they save."
+  },
+  {
+    "id": "spell.mass-inflict-serious-wounds",
+    "kind": "spell",
+    "body": "Several creatures each take serious negative energy damage."
+  },
+  {
+    "id": "spell.mass-invisibility",
+    "kind": "spell",
+    "body": "Several creatures become invisible, even far apart."
+  },
+  {
+    "id": "spell.phase-door",
+    "kind": "spell",
+    "body": "You create an invisible passage through wood, plaster, or stone."
+  },
+  {
+    "id": "spell.plane-shift",
+    "kind": "spell",
+    "body": "You and a few others travel to another plane of existence."
+  },
+  {
+    "id": "spell.plant-shape-iii",
+    "kind": "spell",
+    "body": "You take the form of a Huge plant creature."
+  },
+  {
+    "id": "spell.power-word-blind",
+    "kind": "spell",
+    "body": "One creature is blinded with no save, by its remaining hit points."
+  },
+  {
+    "id": "spell.prismatic-spray",
+    "kind": "spell",
+    "body": "Rays of many colours strike foes with varied harmful effects."
+  },
+  {
+    "id": "spell.project-image",
+    "kind": "spell",
+    "body": "An illusory double of you appears at a distance and you can speak through it."
   }
 ]
