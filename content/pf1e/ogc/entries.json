@@ -3322,7 +3322,7 @@
   {
     "id": "spell.banishment",
     "kind": "spell",
-    "body": "Several extraplanar creatures are forced back to their home planes."
+    "body": "Several extraplanar creatures are forced back to their home planes unless they save."
   },
   {
     "id": "spell.blasphemy",
@@ -3337,7 +3337,7 @@
   {
     "id": "spell.control-undead",
     "kind": "spell",
-    "body": "Several undead creatures obey your commands for a time."
+    "body": "Several undead creatures obey your commands for a time, unless they save."
   },
   {
     "id": "spell.control-weather",
@@ -3352,7 +3352,7 @@
   {
     "id": "spell.delayed-blast-fireball",
     "kind": "spell",
-    "body": "A fireball you can delay several rounds deals heavy fire damage."
+    "body": "A fireball you can delay several rounds deals heavy fire damage, with a save for half."
   },
   {
     "id": "spell.destruction",
@@ -3382,12 +3382,12 @@
   {
     "id": "spell.fire-storm",
     "kind": "spell",
-    "body": "Flames fill an area you shape and deal heavy fire damage."
+    "body": "Flames fill an area you shape and deal heavy fire damage, with a save for half."
   },
   {
     "id": "spell.forcecage",
     "kind": "spell",
-    "body": "A cage or box of force traps creatures inside."
+    "body": "A cage or box of force traps creatures inside, with no save."
   },
   {
     "id": "spell.form-of-the-dragon-ii",
@@ -3507,7 +3507,7 @@
   {
     "id": "spell.prismatic-spray",
     "kind": "spell",
-    "body": "Rays of many colours strike foes with varied harmful effects."
+    "body": "Rays of many colours strike foes with varied harmful effects, each allowing its own save."
   },
   {
     "id": "spell.project-image",
@@ -3527,7 +3527,7 @@
   {
     "id": "spell.reverse-gravity",
     "kind": "spell",
-    "body": "Objects and creatures in the area fall upward."
+    "body": "Objects and creatures in the area fall upward, with a save only to catch hold of something."
   },
   {
     "id": "spell.sequester",
@@ -3572,7 +3572,7 @@
   {
     "id": "spell.symbol-of-weakness",
     "kind": "spell",
-    "body": "A triggered symbol saps the Strength of creatures that see it."
+    "body": "A triggered symbol saps the Strength of creatures that see it, unless they save."
   },
   {
     "id": "spell.teleport-object",
@@ -3582,7 +3582,7 @@
   {
     "id": "spell.transmute-metal-to-wood",
     "kind": "spell",
-    "body": "Metal objects in the area become wood and lose effectiveness."
+    "body": "Metal objects in the area become wood and lose effectiveness, with a save for carried items."
   },
   {
     "id": "spell.vision",
@@ -3612,7 +3612,7 @@
   {
     "id": "spell.binding",
     "kind": "spell",
-    "body": "You imprison a creature by one of several methods you choose."
+    "body": "You imprison a creature by one of several methods you choose, usually allowing a save."
   },
   {
     "id": "spell.clenched-fist",
@@ -3632,7 +3632,7 @@
   {
     "id": "spell.control-plants",
     "kind": "spell",
-    "body": "Plant creatures obey your commands for a time."
+    "body": "Plant creatures obey your commands for a time, unless they save."
   },
   {
     "id": "spell.create-greater-undead",
@@ -3642,7 +3642,7 @@
   {
     "id": "spell.demand",
     "kind": "spell",
-    "body": "You send a message with a compulsion the recipient must obey."
+    "body": "You send a message with a compulsion the recipient must obey, unless it saves."
   },
   {
     "id": "spell.dimensional-lock",
@@ -3657,7 +3657,7 @@
   {
     "id": "spell.earthquake",
     "kind": "spell",
-    "body": "The ground shakes violently, collapsing structures and opening fissures."
+    "body": "The ground shakes violently, collapsing structures and opening fissures, with no save against the shaking."
   },
   {
     "id": "spell.form-of-the-dragon-iii",
@@ -3707,12 +3707,12 @@
   {
     "id": "spell.horrid-wilting",
     "kind": "spell",
-    "body": "Moisture is drawn from living creatures in the area, dealing heavy damage."
+    "body": "Moisture is drawn from living creatures in the area, dealing heavy damage with a save for half."
   },
   {
     "id": "spell.incendiary-cloud",
     "kind": "spell",
-    "body": "A burning cloud deals fire damage and drifts away from you."
+    "body": "A burning cloud deals fire damage and drifts away from you, with a save for half."
   },
   {
     "id": "spell.iron-body",
@@ -3727,7 +3727,7 @@
   {
     "id": "spell.mass-charm-monster",
     "kind": "spell",
-    "body": "Several creatures each regard you as a trusted friend."
+    "body": "Several creatures each regard you as a trusted friend, unless they save."
   },
   {
     "id": "spell.mass-cure-critical-wounds",
@@ -3757,7 +3757,7 @@
   {
     "id": "spell.polar-ray",
     "kind": "spell",
-    "body": "A ray deals heavy cold damage and saps Dexterity."
+    "body": "A ray deals heavy cold damage and saps Dexterity, with no save."
   },
   {
     "id": "spell.polymorph-any-object",
@@ -3817,12 +3817,12 @@
   {
     "id": "spell.symbol-of-death",
     "kind": "spell",
-    "body": "A triggered symbol may kill creatures that see it."
+    "body": "A triggered symbol may kill creatures that see it, unless they save."
   },
   {
     "id": "spell.symbol-of-insanity",
     "kind": "spell",
-    "body": "A triggered symbol permanently maddens creatures that see it."
+    "body": "A triggered symbol permanently maddens creatures that see it, unless they save."
   },
   {
     "id": "spell.sympathy",
@@ -3837,12 +3837,12 @@
   {
     "id": "spell.temporal-stasis",
     "kind": "spell",
-    "body": "One creature is placed in suspended time indefinitely."
+    "body": "One creature is placed in suspended time indefinitely, unless it saves."
   },
   {
     "id": "spell.trap-the-soul",
     "kind": "spell",
-    "body": "A creature's life force and body are imprisoned in a gem."
+    "body": "A creature's life force and body are imprisoned in a gem, unless it saves."
   },
   {
     "id": "spell.unholy-aura",
@@ -3852,7 +3852,7 @@
   {
     "id": "spell.whirlwind",
     "kind": "spell",
-    "body": "A cyclone you direct picks up and batters creatures in its path."
+    "body": "A cyclone you direct picks up and batters creatures in its path, unless they save."
   },
   {
     "id": "spell.astral-projection",
@@ -3862,7 +3862,7 @@
   {
     "id": "spell.crushing-hand",
     "kind": "spell",
-    "body": "A large hand of force grapples and crushes one opponent."
+    "body": "A large hand of force grapples and crushes one opponent, with no save."
   },
   {
     "id": "spell.dominate-monster",
@@ -3877,7 +3877,7 @@
   {
     "id": "spell.energy-drain",
     "kind": "spell",
-    "body": "A ray gives one creature several permanent negative levels."
+    "body": "A ray gives one creature several permanent negative levels, with a save to halve them."
   },
   {
     "id": "spell.etherealness",
@@ -3902,7 +3902,7 @@
   {
     "id": "spell.implosion",
     "kind": "spell",
-    "body": "Creatures you focus on are crushed from within, one each round."
+    "body": "Creatures you focus on are crushed from within, one each round, unless they save."
   },
   {
     "id": "spell.imprisonment",
@@ -3912,7 +3912,7 @@
   {
     "id": "spell.mages-disjunction",
     "kind": "spell",
-    "body": "Magic in the area is dispelled and magic items may be destroyed."
+    "body": "Magic in the area is dispelled and magic items may be destroyed, each allowing a save."
   },
   {
     "id": "spell.mass-heal",
@@ -3927,7 +3927,7 @@
   {
     "id": "spell.meteor-swarm",
     "kind": "spell",
-    "body": "Four spheres of fire explode where you aim, dealing heavy damage."
+    "body": "Four spheres of fire explode where you aim, dealing heavy damage with a save for half."
   },
   {
     "id": "spell.miracle",
@@ -3967,12 +3967,12 @@
   {
     "id": "spell.soul-bind",
     "kind": "spell",
-    "body": "A newly dead creature's soul is bound into a gem, preventing its return."
+    "body": "A newly dead creature's soul is bound into a gem, preventing its return, unless it saves."
   },
   {
     "id": "spell.storm-of-vengeance",
     "kind": "spell",
-    "body": "A towering storm brings acid rain, lightning, hail, and wind over rounds."
+    "body": "A towering storm brings acid rain, lightning, hail, and wind over successive rounds."
   },
   {
     "id": "spell.summon-monster-ix",
