@@ -3317,7 +3317,7 @@
   {
     "id": "spell.animate-plants",
     "kind": "spell",
-    "body": "Plants come alive and fight for you, or entangle an area."
+    "body": "Plants come alive and fight for you, or entangle an area with a save to resist."
   },
   {
     "id": "spell.banishment",
@@ -3327,7 +3327,7 @@
   {
     "id": "spell.blasphemy",
     "kind": "spell",
-    "body": "Nonevil creatures hearing you are killed, paralyzed, weakened, or dazed."
+    "body": "Nonevil creatures hearing you are killed, paralyzed, weakened, or dazed by Hit Dice, with a save to reduce it."
   },
   {
     "id": "spell.changestaff",
@@ -3362,7 +3362,7 @@
   {
     "id": "spell.dictum",
     "kind": "spell",
-    "body": "Nonlawful creatures hearing you are killed, paralyzed, slowed, or deafened."
+    "body": "Nonlawful creatures hearing you are killed, paralyzed, slowed, or deafened by Hit Dice, with a save to reduce it."
   },
   {
     "id": "spell.elemental-body-iv",
@@ -3437,7 +3437,7 @@
   {
     "id": "spell.holy-word",
     "kind": "spell",
-    "body": "Nongood creatures hearing you are killed, paralyzed, blinded, or deafened."
+    "body": "Nongood creatures hearing you are killed, paralyzed, blinded, or deafened by Hit Dice, with a save to reduce it."
   },
   {
     "id": "spell.insanity",
@@ -3597,7 +3597,7 @@
   {
     "id": "spell.word-of-chaos",
     "kind": "spell",
-    "body": "Nonchaotic creatures hearing you are killed, confused, stunned, or deafened."
+    "body": "Nonchaotic creatures hearing you are killed, confused, stunned, or deafened by Hit Dice, with a save to reduce it."
   },
   {
     "id": "spell.animal-shapes",
@@ -3702,7 +3702,7 @@
   {
     "id": "spell.holy-aura",
     "kind": "spell",
-    "body": "Allies gain bonuses against evil foes, and attackers may be blinded."
+    "body": "Allies gain bonuses against evil foes, and attackers are blinded unless they save."
   },
   {
     "id": "spell.horrid-wilting",
@@ -3847,7 +3847,7 @@
   {
     "id": "spell.unholy-aura",
     "kind": "spell",
-    "body": "Allies gain bonuses against good foes, and attackers may be weakened."
+    "body": "Allies gain bonuses against good foes, and attackers are weakened unless they save."
   },
   {
     "id": "spell.whirlwind",
@@ -4047,7 +4047,7 @@
   {
     "id": "spell.dust-of-twilight",
     "kind": "spell",
-    "body": "A burst of dust puts out small lights and fatigues creatures."
+    "body": "A burst of dust puts out small lights and fatigues creatures unless they save."
   },
   {
     "id": "spell.evolution-surge-greater",
@@ -4122,7 +4122,7 @@
   {
     "id": "spell.tar-pool",
     "kind": "spell",
-    "body": "A pool of tar entangles and slows creatures that enter it."
+    "body": "A pool of tar entangles creatures that enter it, and may make them fall, with a save to resist."
   },
   {
     "id": "spell.transmogrify",
