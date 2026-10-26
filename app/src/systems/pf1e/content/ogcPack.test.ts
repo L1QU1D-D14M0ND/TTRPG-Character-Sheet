@@ -110,4 +110,41 @@ describe('PF1e OGC encyclopedia pack', () => {
       expect(rows.every((row) => packed.has(row.id))).toBe(true)
     }
   })
+
+  /**
+   * Quality checks on the summaries themselves. These cannot judge whether a
+   * rule is described correctly -- that needs a reader who knows the system --
+   * but they do catch the mistakes that bulk authoring actually makes.
+   */
+  describe('summary quality', () => {
+    it('gives every entry its own wording', () => {
+      // Two spells sharing a body means one was copy-pasted over a real
+      // difference. Harm and Inflict Critical Wounds hit this: both read as
+      // "heavy" damage though Harm is two spell levels higher.
+      const byBody = new Map<string, string[]>()
+      for (const entry of OGC_ENTRIES) {
+        byBody.set(entry.body, [...(byBody.get(entry.body) ?? []), entry.id])
+      }
+      const shared = [...byBody.entries()].filter(([, ids]) => ids.length > 1)
+      expect(shared.map(([, ids]) => ids)).toEqual([])
+    })
+
+    it('does not merely restate the catalog name', () => {
+      const echoes = OGC_ENTRIES.filter((entry) => {
+        const name = lookupOgcName(entry) ?? ''
+        const core = name.toLowerCase().replace(/[^a-z ]/g, '').trim()
+        return core.length > 0
+          && entry.body.toLowerCase().includes(core)
+          && entry.body.length < name.length + 30
+      })
+      expect(echoes.map((entry) => entry.id)).toEqual([])
+    })
+
+    it('writes a sentence, not a fragment', () => {
+      const malformed = OGC_ENTRIES.filter(
+        (entry) => !/^[A-Z]/.test(entry.body) || !/[.!?]$/.test(entry.body),
+      )
+      expect(malformed.map((entry) => entry.id)).toEqual([])
+    })
+  })
 })

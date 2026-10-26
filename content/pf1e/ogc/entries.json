@@ -3107,7 +3107,7 @@
   {
     "id": "spell.harm",
     "kind": "spell",
-    "body": "Your touch deals heavy negative energy damage, or heals an undead creature."
+    "body": "Your touch deals a very large amount of negative energy damage, or heals an undead creature by as much."
   },
   {
     "id": "spell.heal",
