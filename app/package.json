@@ -11,7 +11,9 @@
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
     "preview": "vite preview",
-    "verify:pwa": "node scripts/verify-pwa.mjs"
+    "verify:pwa": "node scripts/verify-pwa.mjs",
+    "walkthrough:encyclopedia": "node scripts/walkthrough-encyclopedia.mjs",
+    "walkthrough:picker": "node scripts/walkthrough-catalog-picker.mjs"
   },
   "dependencies": {
     "ajv": "^8.20.0",

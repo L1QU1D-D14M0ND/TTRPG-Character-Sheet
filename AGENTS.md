@@ -29,6 +29,18 @@ See [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md) §8.
 
 Record a browser walkthrough when the sheet **control**, **layout**, or **Combat math** actually changes (new editor, restyle, derived AC/CMB/attack behavior, and similar).
 
+Two scripted walkthroughs exist and assert their own results, so they can be re-run instead of re-done by hand:
+
+```
+google-chrome-stable --headless=new --remote-debugging-port=9222 \
+  --no-first-run --user-data-dir=/tmp/cdp-profile about:blank &
+npm run dev
+npm run walkthrough:encyclopedia   # 10 checks
+npm run walkthrough:picker         # 4 checks
+```
+
+They drive Chrome over the DevTools protocol with Node's built-in `WebSocket`, adding no dependency. The bundled browser bridge only speaks Firefox, which is not installed in this environment; if that changes, prefer the bridge.
+
 ### Sidebar tools (landed)
 
 All three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed for both PF1e and PF2e with active session switching, complete formulas, and table-dice reminders. Empty/collapsed host default and `focusTab` contracts preserved.
