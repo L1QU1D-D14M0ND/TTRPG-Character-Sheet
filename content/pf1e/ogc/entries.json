@@ -3513,5 +3513,90 @@
     "id": "spell.project-image",
     "kind": "spell",
     "body": "An illusory double of you appears at a distance and you can speak through it."
+  },
+  {
+    "id": "spell.regenerate",
+    "kind": "spell",
+    "body": "Severed limbs reattach and the creature heals rapidly for several rounds."
+  },
+  {
+    "id": "spell.resurrection",
+    "kind": "spell",
+    "body": "A creature dead for a long time is fully restored from any remains."
+  },
+  {
+    "id": "spell.reverse-gravity",
+    "kind": "spell",
+    "body": "Objects and creatures in the area fall upward."
+  },
+  {
+    "id": "spell.sequester",
+    "kind": "spell",
+    "body": "One creature or object becomes invisible and hidden from divination."
+  },
+  {
+    "id": "spell.simulacrum",
+    "kind": "spell",
+    "body": "You create a weaker duplicate of a creature from ice and snow."
+  },
+  {
+    "id": "spell.spell-turning",
+    "kind": "spell",
+    "body": "Spells targeting you are reflected back at their caster."
+  },
+  {
+    "id": "spell.statue",
+    "kind": "spell",
+    "body": "You can become a statue at will, taking little harm while stone."
+  },
+  {
+    "id": "spell.summon-monster-vii",
+    "kind": "spell",
+    "body": "You summon creatures from the seventh summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-vii",
+    "kind": "spell",
+    "body": "You summon nature allies from the seventh list to fight for you."
+  },
+  {
+    "id": "spell.sunbeam",
+    "kind": "spell",
+    "body": "Beams of light blind creatures and burn undead."
+  },
+  {
+    "id": "spell.symbol-of-stunning",
+    "kind": "spell",
+    "body": "A triggered symbol stuns creatures that see it."
+  },
+  {
+    "id": "spell.symbol-of-weakness",
+    "kind": "spell",
+    "body": "A triggered symbol saps the Strength of creatures that see it."
+  },
+  {
+    "id": "spell.teleport-object",
+    "kind": "spell",
+    "body": "You send a touched object to a destination you know."
+  },
+  {
+    "id": "spell.transmute-metal-to-wood",
+    "kind": "spell",
+    "body": "Metal objects in the area become wood and lose effectiveness."
+  },
+  {
+    "id": "spell.vision",
+    "kind": "spell",
+    "body": "You learn legends about a subject quickly, at a cost to yourself."
+  },
+  {
+    "id": "spell.waves-of-exhaustion",
+    "kind": "spell",
+    "body": "Creatures in the cone become exhausted with no save."
+  },
+  {
+    "id": "spell.word-of-chaos",
+    "kind": "spell",
+    "body": "Nonchaotic creatures hearing you are killed, confused, stunned, or deafened."
   }
 ]

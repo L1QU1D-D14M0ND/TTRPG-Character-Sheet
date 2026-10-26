@@ -831,6 +831,26 @@ const BATCH_L7B = [
   { id: 'spell.project-image', kind: 'spell', name: "Project Image" },
 ] as const
 
+const BATCH_L7C = [
+  { id: 'spell.regenerate', kind: 'spell', name: "Regenerate" },
+  { id: 'spell.resurrection', kind: 'spell', name: "Resurrection" },
+  { id: 'spell.reverse-gravity', kind: 'spell', name: "Reverse Gravity" },
+  { id: 'spell.sequester', kind: 'spell', name: "Sequester" },
+  { id: 'spell.simulacrum', kind: 'spell', name: "Simulacrum" },
+  { id: 'spell.spell-turning', kind: 'spell', name: "Spell Turning" },
+  { id: 'spell.statue', kind: 'spell', name: "Statue" },
+  { id: 'spell.summon-monster-vii', kind: 'spell', name: "Summon Monster VII" },
+  { id: 'spell.summon-natures-ally-vii', kind: 'spell', name: "Summon Nature's Ally VII" },
+  { id: 'spell.sunbeam', kind: 'spell', name: "Sunbeam" },
+  { id: 'spell.symbol-of-stunning', kind: 'spell', name: "Symbol of Stunning" },
+  { id: 'spell.symbol-of-weakness', kind: 'spell', name: "Symbol of Weakness" },
+  { id: 'spell.teleport-object', kind: 'spell', name: "Teleport Object" },
+  { id: 'spell.transmute-metal-to-wood', kind: 'spell', name: "Transmute Metal to Wood" },
+  { id: 'spell.vision', kind: 'spell', name: "Vision" },
+  { id: 'spell.waves-of-exhaustion', kind: 'spell', name: "Waves of Exhaustion" },
+  { id: 'spell.word-of-chaos', kind: 'spell', name: "Word of Chaos" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -874,6 +894,7 @@ const PACKED = [
   ...BATCH_L6D,
   ...BATCH_L7A,
   ...BATCH_L7B,
+  ...BATCH_L7C,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -934,8 +955,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(126)
-      expect(remaining('feat') + remaining('spell')).toBe(126)
+      expect(remaining('spell')).toBe(109)
+      expect(remaining('feat') + remaining('spell')).toBe(109)
     })
   })
 })
