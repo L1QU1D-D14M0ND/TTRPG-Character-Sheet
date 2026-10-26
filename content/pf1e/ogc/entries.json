@@ -162,7 +162,7 @@
   {
     "id": "feat.exhausting-critical",
     "kind": "feat",
-    "body": "A critical hit can exhaust the target. A successful Fortitude save leaves the target fatigued instead."
+    "body": "A critical hit leaves the target exhausted, with no save. Requires Tiring Critical."
   },
   {
     "id": "feat.exotic-weapon-proficiency",
@@ -192,7 +192,7 @@
   {
     "id": "feat.greater-disarm",
     "kind": "feat",
-    "body": "You are better at disarming a foe, and you choose where the weapon lands."
+    "body": "You are better at disarming a foe, and the weapon is knocked well away rather than dropped at their feet."
   },
   {
     "id": "feat.greater-feint",
@@ -502,7 +502,7 @@
   {
     "id": "feat.tiring-critical",
     "kind": "feat",
-    "body": "A critical hit can fatigue the target. A successful Fortitude save avoids it."
+    "body": "A critical hit leaves the target fatigued, with no save."
   },
   {
     "id": "feat.tower-shield-proficiency",
