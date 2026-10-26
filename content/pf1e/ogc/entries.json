@@ -3798,5 +3798,60 @@
     "id": "spell.shield-of-law",
     "kind": "spell",
     "body": "Allies gain bonuses against chaotic foes and resist mental control."
+  },
+  {
+    "id": "spell.summon-monster-viii",
+    "kind": "spell",
+    "body": "You summon creatures from the eighth summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-viii",
+    "kind": "spell",
+    "body": "You summon nature allies from the eighth list to fight for you."
+  },
+  {
+    "id": "spell.sunburst",
+    "kind": "spell",
+    "body": "A burst of light blinds creatures and destroys undead."
+  },
+  {
+    "id": "spell.symbol-of-death",
+    "kind": "spell",
+    "body": "A triggered symbol may kill creatures that see it."
+  },
+  {
+    "id": "spell.symbol-of-insanity",
+    "kind": "spell",
+    "body": "A triggered symbol permanently maddens creatures that see it."
+  },
+  {
+    "id": "spell.sympathy",
+    "kind": "spell",
+    "body": "Creatures of a kind you name feel compelled to approach a place or object."
+  },
+  {
+    "id": "spell.telekinetic-sphere",
+    "kind": "spell",
+    "body": "A sphere of force holds creatures and you move it at will."
+  },
+  {
+    "id": "spell.temporal-stasis",
+    "kind": "spell",
+    "body": "One creature is placed in suspended time indefinitely."
+  },
+  {
+    "id": "spell.trap-the-soul",
+    "kind": "spell",
+    "body": "A creature's life force and body are imprisoned in a gem."
+  },
+  {
+    "id": "spell.unholy-aura",
+    "kind": "spell",
+    "body": "Allies gain bonuses against good foes, and attackers may be weakened."
+  },
+  {
+    "id": "spell.whirlwind",
+    "kind": "spell",
+    "body": "A cyclone you direct picks up and batters creatures in its path."
   }
 ]
