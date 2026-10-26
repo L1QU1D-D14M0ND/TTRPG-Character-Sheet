@@ -3598,5 +3598,105 @@
     "id": "spell.word-of-chaos",
     "kind": "spell",
     "body": "Nonchaotic creatures hearing you are killed, confused, stunned, or deafened."
+  },
+  {
+    "id": "spell.animal-shapes",
+    "kind": "spell",
+    "body": "Several willing creatures each take an animal form you choose."
+  },
+  {
+    "id": "spell.antipathy",
+    "kind": "spell",
+    "body": "Creatures of a kind you name feel compelled to avoid a place or object."
+  },
+  {
+    "id": "spell.binding",
+    "kind": "spell",
+    "body": "You imprison a creature by one of several methods you choose."
+  },
+  {
+    "id": "spell.clenched-fist",
+    "kind": "spell",
+    "body": "A large hand of force batters and may stun one opponent."
+  },
+  {
+    "id": "spell.cloak-of-chaos",
+    "kind": "spell",
+    "body": "Allies gain bonuses against lawful foes and resist mental control."
+  },
+  {
+    "id": "spell.clone",
+    "kind": "spell",
+    "body": "A duplicate body is grown that a dead creature's soul can occupy."
+  },
+  {
+    "id": "spell.control-plants",
+    "kind": "spell",
+    "body": "Plant creatures obey your commands for a time."
+  },
+  {
+    "id": "spell.create-greater-undead",
+    "kind": "spell",
+    "body": "You create powerful undead such as shadows or spectres."
+  },
+  {
+    "id": "spell.demand",
+    "kind": "spell",
+    "body": "You send a message with a compulsion the recipient must obey."
+  },
+  {
+    "id": "spell.dimensional-lock",
+    "kind": "spell",
+    "body": "An area blocks all extradimensional travel for days."
+  },
+  {
+    "id": "spell.discern-location",
+    "kind": "spell",
+    "body": "You learn exactly where a creature or object is."
+  },
+  {
+    "id": "spell.earthquake",
+    "kind": "spell",
+    "body": "The ground shakes violently, collapsing structures and opening fissures."
+  },
+  {
+    "id": "spell.form-of-the-dragon-iii",
+    "kind": "spell",
+    "body": "You take the form of a Huge dragon with its strongest breath weapon."
+  },
+  {
+    "id": "spell.giant-form-ii",
+    "kind": "spell",
+    "body": "You take the form of a Huge giant with strong natural defences."
+  },
+  {
+    "id": "spell.greater-planar-ally",
+    "kind": "spell",
+    "body": "You bargain with a powerful outsider to perform a task for payment."
+  },
+  {
+    "id": "spell.greater-planar-binding",
+    "kind": "spell",
+    "body": "You trap a powerful outsider and bargain for a service."
+  },
+  {
+    "id": "spell.greater-prying-eyes",
+    "kind": "spell",
+    "body": "Floating eyes scout for you and can see through illusions."
+  },
+  {
+    "id": "spell.greater-shadow-evocation",
+    "kind": "spell",
+    "body": "You mimic a higher-level evocation with partly real shadow stuff."
+  },
+  {
+    "id": "spell.greater-shout",
+    "kind": "spell",
+    "body": "A cone of sound deals heavy damage, deafens, and stuns."
+  },
+  {
+    "id": "spell.greater-spell-immunity",
+    "kind": "spell",
+    "body": "One creature is immune to a few higher-level spells you name."
   }
 ]

@@ -851,6 +851,29 @@ const BATCH_L7C = [
   { id: 'spell.word-of-chaos', kind: 'spell', name: "Word of Chaos" },
 ] as const
 
+const BATCH_L8A = [
+  { id: 'spell.animal-shapes', kind: 'spell', name: "Animal Shapes" },
+  { id: 'spell.antipathy', kind: 'spell', name: "Antipathy" },
+  { id: 'spell.binding', kind: 'spell', name: "Binding" },
+  { id: 'spell.clenched-fist', kind: 'spell', name: "Clenched Fist" },
+  { id: 'spell.cloak-of-chaos', kind: 'spell', name: "Cloak of Chaos" },
+  { id: 'spell.clone', kind: 'spell', name: "Clone" },
+  { id: 'spell.control-plants', kind: 'spell', name: "Control Plants" },
+  { id: 'spell.create-greater-undead', kind: 'spell', name: "Create Greater Undead" },
+  { id: 'spell.demand', kind: 'spell', name: "Demand" },
+  { id: 'spell.dimensional-lock', kind: 'spell', name: "Dimensional Lock" },
+  { id: 'spell.discern-location', kind: 'spell', name: "Discern Location" },
+  { id: 'spell.earthquake', kind: 'spell', name: "Earthquake" },
+  { id: 'spell.form-of-the-dragon-iii', kind: 'spell', name: "Form of the Dragon III" },
+  { id: 'spell.giant-form-ii', kind: 'spell', name: "Giant Form II" },
+  { id: 'spell.greater-planar-ally', kind: 'spell', name: "Greater Planar Ally" },
+  { id: 'spell.greater-planar-binding', kind: 'spell', name: "Greater Planar Binding" },
+  { id: 'spell.greater-prying-eyes', kind: 'spell', name: "Greater Prying Eyes" },
+  { id: 'spell.greater-shadow-evocation', kind: 'spell', name: "Greater Shadow Evocation" },
+  { id: 'spell.greater-shout', kind: 'spell', name: "Greater Shout" },
+  { id: 'spell.greater-spell-immunity', kind: 'spell', name: "Greater Spell Immunity" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -895,6 +918,7 @@ const PACKED = [
   ...BATCH_L7A,
   ...BATCH_L7B,
   ...BATCH_L7C,
+  ...BATCH_L8A,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -955,8 +979,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(109)
-      expect(remaining('feat') + remaining('spell')).toBe(109)
+      expect(remaining('spell')).toBe(89)
+      expect(remaining('feat') + remaining('spell')).toBe(89)
     })
   })
 })
