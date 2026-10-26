@@ -92,4 +92,22 @@ describe('PF1e OGC encyclopedia pack', () => {
       expect(entry!.body.length).toBeGreaterThan(0)
     }
   })
+
+  /**
+   * Why the coverage assertion above is worth having: a mechanic row with no
+   * summary is not a visible error. The sheet still offers it, the
+   * encyclopedia simply omits it, and search finds nothing. Nobody notices
+   * until a player goes looking for a rule that is missing, so the check has
+   * to live in CI rather than rely on someone spotting a shorter list.
+   */
+  it('builds the encyclopedia from the summaries, not from the catalog', () => {
+    const packed = new Set(OGC_ENTRIES.map((entry) => entry.id))
+    for (const kind of KINDS) {
+      const rows = groups(kind).flatMap((group) => group.rows)
+      expect(rows.length).toBeGreaterThan(0)
+      // Today these coincide. The encyclopedia is driven by the summaries, so
+      // if they ever diverge the omission is silent in the UI.
+      expect(rows.every((row) => packed.has(row.id))).toBe(true)
+    }
+  })
 })
