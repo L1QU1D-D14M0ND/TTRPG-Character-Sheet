@@ -1427,7 +1427,7 @@
   {
     "id": "spell.sleep",
     "kind": "spell",
-    "body": "Weaker creatures in the area fall asleep unless they save."
+    "body": "Creatures totalling a few Hit Dice fall asleep unless they save, weakest first."
   },
   {
     "id": "spell.speak-with-animals",
@@ -1932,7 +1932,7 @@
   {
     "id": "spell.deep-slumber",
     "kind": "spell",
-    "body": "Creatures totalling a moderate number of levels fall asleep."
+    "body": "Creatures totalling a moderate number of Hit Dice fall asleep unless they save."
   },
   {
     "id": "spell.deeper-darkness",
@@ -2712,7 +2712,7 @@
   {
     "id": "spell.dominate-person",
     "kind": "spell",
-    "body": "One humanoid obeys your mental commands over a long duration."
+    "body": "One humanoid obeys your mental commands unless it saves, for a long duration."
   },
   {
     "id": "spell.dream",
@@ -2737,7 +2737,7 @@
   {
     "id": "spell.feeblemind",
     "kind": "spell",
-    "body": "One creature's Intelligence and Charisma drop to almost nothing."
+    "body": "One creature's Intelligence and Charisma drop to almost nothing unless it saves."
   },
   {
     "id": "spell.greater-command",
@@ -3442,7 +3442,7 @@
   {
     "id": "spell.insanity",
     "kind": "spell",
-    "body": "One creature behaves randomly and permanently as if confused."
+    "body": "One creature behaves randomly and permanently as if confused, unless it saves."
   },
   {
     "id": "spell.instant-summons",
@@ -3742,7 +3742,7 @@
   {
     "id": "spell.maze",
     "kind": "spell",
-    "body": "One creature is trapped in an extradimensional maze."
+    "body": "One creature is trapped in an extradimensional maze, with no save."
   },
   {
     "id": "spell.mind-blank",
@@ -3867,7 +3867,7 @@
   {
     "id": "spell.dominate-monster",
     "kind": "spell",
-    "body": "One creature of any kind obeys your mental commands."
+    "body": "One creature of any kind obeys your mental commands unless it saves."
   },
   {
     "id": "spell.elemental-swarm",
