@@ -80,13 +80,16 @@ The first change ships the pack scaffold, the notice files, the license-gate spl
 
 Section 15 for that change lists the Core Rulebook and the Advanced Player's Guide, because those are the books the smoke set copies from. A later batch that adds prose from another book adds that book to Section 15 in the same change.
 
-Filling the remaining CRB feats and spells, APG spells, or packed class features is follow-through on this pack. It is not a new pack and not a change to the mechanic catalogs.
+Filling the CRB feats and spells, APG spells, and packed class features was follow-through on this pack, not a new pack and not a change to the mechanic catalogs. That fill is now complete.
 
-### Later fill is one batch per change
+### How the fill ran, and what applies to the next pack
 
-Do not add the remaining catalog in one change. Each change appends one batch to `entries.json`, skips ids already present, and keeps every `body` a short mechanical summary. A batch that copies a book paragraph updates `SECTION-15.txt` in that same change.
+The rows landed **one batch per change**: each change appended one batch to `entries.json`, skipped ids already present, and kept every `body` a short mechanical summary. The batch table below is the record of that sequence. A helper script regenerated the test's expectations from the mechanic packs after each append; it was removed along with the roster it maintained, because the structural assertions that replaced the roster need no per-batch upkeep.
 
-`ogcPack.test.ts` expects the smoke set plus every landed batch. The next batch updates that test in the same change.
+Two rules outlast the fill and still bind any change that adds prose:
+
+- Every `body` stays a short mechanical summary written for this pack. A change that instead copies a paragraph from a book adds that book's copyright notice to `SECTION-15.txt` in the same change ([ADR 0007](adr/0007-content-licensing.md)).
+- `ogcPack.test.ts` no longer lists the packed rows. It asserts the pack equals the catalog: no unjoinable id, no mechanic row without a summary, no duplicates, and the per-kind totals. So a content pack that registers new feats or spells must ship their summaries, or CI fails. The earlier per-batch roster, ~1030 lines restating ids the mechanic packs already own, was removed once the sequence finished.
 
 | Batch | What | Rows still to add |
 | --- | --- | ---: |
