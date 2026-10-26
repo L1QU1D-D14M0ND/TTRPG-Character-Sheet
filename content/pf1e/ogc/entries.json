@@ -3953,5 +3953,65 @@
     "id": "spell.shades",
     "kind": "spell",
     "body": "You mimic a higher-level conjuration with partly real shadow stuff."
+  },
+  {
+    "id": "spell.shambler",
+    "kind": "spell",
+    "body": "You create several shambling mound creatures that serve you."
+  },
+  {
+    "id": "spell.shapechange",
+    "kind": "spell",
+    "body": "You can take almost any creature's form and change it at will."
+  },
+  {
+    "id": "spell.soul-bind",
+    "kind": "spell",
+    "body": "A newly dead creature's soul is bound into a gem, preventing its return."
+  },
+  {
+    "id": "spell.storm-of-vengeance",
+    "kind": "spell",
+    "body": "A towering storm brings acid rain, lightning, hail, and wind over rounds."
+  },
+  {
+    "id": "spell.summon-monster-ix",
+    "kind": "spell",
+    "body": "You summon creatures from the ninth summoning list to fight for you."
+  },
+  {
+    "id": "spell.summon-natures-ally-ix",
+    "kind": "spell",
+    "body": "You summon nature allies from the ninth list to fight for you."
+  },
+  {
+    "id": "spell.teleportation-circle",
+    "kind": "spell",
+    "body": "A circle teleports anyone standing in it to a destination you set."
+  },
+  {
+    "id": "spell.time-stop",
+    "kind": "spell",
+    "body": "You act freely for several rounds while everything else is frozen."
+  },
+  {
+    "id": "spell.true-resurrection",
+    "kind": "spell",
+    "body": "A creature long dead is fully restored, even without remains."
+  },
+  {
+    "id": "spell.wail-of-the-banshee",
+    "kind": "spell",
+    "body": "Living creatures near you die unless they save."
+  },
+  {
+    "id": "spell.weird",
+    "kind": "spell",
+    "body": "Creatures face their worst fears and may die of fright."
+  },
+  {
+    "id": "spell.wish",
+    "kind": "spell",
+    "body": "You alter reality, duplicating many spells or granting lasting benefits."
   }
 ]

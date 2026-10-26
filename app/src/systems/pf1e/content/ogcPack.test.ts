@@ -934,6 +934,21 @@ const BATCH_L9A = [
   { id: 'spell.shades', kind: 'spell', name: "Shades" },
 ] as const
 
+const BATCH_L9B = [
+  { id: 'spell.shambler', kind: 'spell', name: "Shambler" },
+  { id: 'spell.shapechange', kind: 'spell', name: "Shapechange" },
+  { id: 'spell.soul-bind', kind: 'spell', name: "Soul Bind" },
+  { id: 'spell.storm-of-vengeance', kind: 'spell', name: "Storm of Vengeance" },
+  { id: 'spell.summon-monster-ix', kind: 'spell', name: "Summon Monster IX" },
+  { id: 'spell.summon-natures-ally-ix', kind: 'spell', name: "Summon Nature's Ally IX" },
+  { id: 'spell.teleportation-circle', kind: 'spell', name: "Teleportation Circle" },
+  { id: 'spell.time-stop', kind: 'spell', name: "Time Stop" },
+  { id: 'spell.true-resurrection', kind: 'spell', name: "True Resurrection" },
+  { id: 'spell.wail-of-the-banshee', kind: 'spell', name: "Wail of the Banshee" },
+  { id: 'spell.weird', kind: 'spell', name: "Weird" },
+  { id: 'spell.wish', kind: 'spell', name: "Wish" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -982,6 +997,7 @@ const PACKED = [
   ...BATCH_L8B,
   ...BATCH_L8C,
   ...BATCH_L9A,
+  ...BATCH_L9B,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
@@ -1042,8 +1058,8 @@ describe('PF1e OGC encyclopedia pack', () => {
       // Every CRB feat now has a summary.
       expect(remaining('feat')).toBe(0)
       // L1b-L9 + A1
-      expect(remaining('spell')).toBe(38)
-      expect(remaining('feat') + remaining('spell')).toBe(38)
+      expect(remaining('spell')).toBe(26)
+      expect(remaining('feat') + remaining('spell')).toBe(26)
     })
   })
 })
