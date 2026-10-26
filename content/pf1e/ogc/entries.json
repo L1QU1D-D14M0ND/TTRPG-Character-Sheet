@@ -1962,7 +1962,7 @@
   {
     "id": "spell.dominate-animal",
     "kind": "spell",
-    "body": "One animal obeys your mental commands."
+    "body": "One animal obeys your mental commands unless it saves."
   },
   {
     "id": "spell.explosive-runes",
@@ -1982,7 +1982,7 @@
   {
     "id": "spell.gaseous-form",
     "kind": "spell",
-    "body": "One creature becomes gaseous, gaining damage reduction but losing most actions."
+    "body": "One creature becomes gaseous, gaining damage reduction and flight but unable to attack or cast most spells."
   },
   {
     "id": "spell.gentle-repose",
@@ -2132,7 +2132,7 @@
   {
     "id": "spell.poison",
     "kind": "spell",
-    "body": "Your touch poisons a creature, damaging its Constitution over time."
+    "body": "Your touch poisons a creature unless it saves, damaging its Constitution over time."
   },
   {
     "id": "spell.prayer",
@@ -2202,7 +2202,7 @@
   {
     "id": "spell.slow",
     "kind": "spell",
-    "body": "Affected creatures act less often and take penalties to AC and attacks."
+    "body": "Affected creatures act less often and take penalties to AC and attacks, unless they save."
   },
   {
     "id": "spell.speak-with-dead",
@@ -2212,12 +2212,12 @@
   {
     "id": "spell.stinking-cloud",
     "kind": "spell",
-    "body": "A cloud of nauseating vapour leaves creatures retching and unable to act."
+    "body": "A cloud of nauseating vapour leaves creatures retching and unable to act, with a save each round."
   },
   {
     "id": "spell.suggestion",
     "kind": "spell",
-    "body": "One creature follows a reasonable-sounding course of action you suggest."
+    "body": "One creature follows a reasonable-sounding course of action unless it saves."
   },
   {
     "id": "spell.summon-monster-iii",
@@ -2232,7 +2232,7 @@
   {
     "id": "spell.tiny-hut",
     "kind": "spell",
-    "body": "A dome of force shelters several creatures from weather and sight."
+    "body": "A dome of force shelters several creatures from weather, and you choose whether it is opaque."
   },
   {
     "id": "spell.tongues",
