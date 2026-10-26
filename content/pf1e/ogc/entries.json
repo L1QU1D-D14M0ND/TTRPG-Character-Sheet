@@ -1112,7 +1112,7 @@
   {
     "id": "spell.chill-touch",
     "kind": "spell",
-    "body": "Your touch deals negative energy damage and may cause a temporary Strength penalty."
+    "body": "Your touch deals negative energy damage and saps Strength, with one touch per caster level."
   },
   {
     "id": "spell.color-spray",
@@ -1237,7 +1237,7 @@
   {
     "id": "spell.faerie-fire",
     "kind": "spell",
-    "body": "Outlined creatures and objects glow, denying them concealment from invisibility."
+    "body": "Outlined creatures glow and lose the benefit of concealment, including invisibility."
   },
   {
     "id": "spell.feather-fall",
@@ -1277,7 +1277,7 @@
   {
     "id": "spell.hypnotism",
     "kind": "spell",
-    "body": "Nearby creatures become fascinated and more receptive to your suggestions."
+    "body": "A few nearby creatures become fascinated unless they save, and more receptive to a request."
   },
   {
     "id": "spell.identify",
@@ -1302,7 +1302,7 @@
   {
     "id": "spell.lesser-restoration",
     "kind": "spell",
-    "body": "You remove magical ability damage, or one point of temporary penalty."
+    "body": "You dispel a magical ability penalty, or heal a small amount of ability damage."
   },
   {
     "id": "spell.longstrider",
@@ -1312,7 +1312,7 @@
   {
     "id": "spell.mage-armor",
     "kind": "spell",
-    "body": "An invisible force grants an armor bonus that stacks with your Dexterity."
+    "body": "An invisible force grants an armor bonus, with no armor check penalty or spell failure."
   },
   {
     "id": "spell.magic-aura",
@@ -1397,7 +1397,7 @@
   {
     "id": "spell.sanctuary",
     "kind": "spell",
-    "body": "Creatures must save to attack the warded creature at all."
+    "body": "Foes must save to attack the warded creature, and the ward ends if that creature attacks."
   },
   {
     "id": "spell.shield",
