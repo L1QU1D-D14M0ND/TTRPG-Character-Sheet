@@ -949,6 +949,35 @@ const BATCH_L9B = [
   { id: 'spell.wish', kind: 'spell', name: "Wish" },
 ] as const
 
+const BATCH_A1 = [
+  { id: 'spell.acid-pit', kind: 'spell', name: "Acid Pit" },
+  { id: 'spell.ant-haul', kind: 'spell', name: "Ant Haul" },
+  { id: 'spell.aqueous-orb', kind: 'spell', name: "Aqueous Orb" },
+  { id: 'spell.create-pit', kind: 'spell', name: "Create Pit" },
+  { id: 'spell.cushioning-bands', kind: 'spell', name: "Cushioning Bands" },
+  { id: 'spell.devolution', kind: 'spell', name: "Devolution" },
+  { id: 'spell.dust-of-twilight', kind: 'spell', name: "Dust of Twilight" },
+  { id: 'spell.evolution-surge-greater', kind: 'spell', name: "Evolution Surge, Greater" },
+  { id: 'spell.evolution-surge-lesser', kind: 'spell', name: "Evolution Surge, Lesser" },
+  { id: 'spell.glide', kind: 'spell', name: "Glide" },
+  { id: 'spell.hungry-pit', kind: 'spell', name: "Hungry Pit" },
+  { id: 'spell.pelagic-storm', kind: 'spell', name: "Pelagic Storm" },
+  { id: 'spell.planar-adaptation', kind: 'spell', name: "Planar Adaptation" },
+  { id: 'spell.purified-calling', kind: 'spell', name: "Purified Calling" },
+  { id: 'spell.rejuvenate-eidolon', kind: 'spell', name: "Rejuvenate Eidolon" },
+  { id: 'spell.rejuvenate-eidolon-greater', kind: 'spell', name: "Rejuvenate Eidolon, Greater" },
+  { id: 'spell.rejuvenate-eidolon-lesser', kind: 'spell', name: "Rejuvenate Eidolon, Lesser" },
+  { id: 'spell.seek-thoughts', kind: 'spell', name: "Seek Thoughts" },
+  { id: 'spell.share-senses', kind: 'spell', name: "Share Senses" },
+  { id: 'spell.spiked-pit', kind: 'spell', name: "Spiked Pit" },
+  { id: 'spell.summon-eidolon', kind: 'spell', name: "Summon Eidolon" },
+  { id: 'spell.tar-pool', kind: 'spell', name: "Tar Pool" },
+  { id: 'spell.transmogrify', kind: 'spell', name: "Transmogrify" },
+  { id: 'spell.unfetter', kind: 'spell', name: "Unfetter" },
+  { id: 'spell.vitriolic-mist', kind: 'spell', name: "Vitriolic Mist" },
+  { id: 'spell.walk-through-space', kind: 'spell', name: "Walk through Space" },
+] as const
+
 const PACKED = [
   ...SMOKE_SET,
   ...BATCH_ER,
@@ -998,10 +1027,11 @@ const PACKED = [
   ...BATCH_L8C,
   ...BATCH_L9A,
   ...BATCH_L9B,
+  ...BATCH_A1,
 ]
 
 describe('PF1e OGC encyclopedia pack', () => {
-  it('ships the smoke set plus batches E-R, F1a through F4, F0, L0, and L1a, and nothing else', () => {
+  it('ships the smoke set plus every landed batch, and nothing else', () => {
     expect(OGC_ENTRIES.map((entry) => entry.id)).toEqual(PACKED.map((entry) => entry.id))
   })
 
@@ -1043,23 +1073,28 @@ describe('PF1e OGC encyclopedia pack', () => {
     })
 
     /**
-     * `sidebar-tools-encyclopedia.md` publishes a per-batch "rows still to
-     * add" column. That arithmetic was wrong once: it listed the whole CRB
-     * spell count against the L1-L9 row, double-counting L0. Pin the totals
-     * so the doc and the packs have to agree.
+     * The pack is complete: every mechanic row a content pack registers has a
+     * summary. Assert that directly rather than pinning a remainder count, so
+     * a later pack that adds feats or spells without prose fails here instead
+     * of quietly rendering a shorter encyclopedia.
      */
-    it('leaves exactly the documented number of rows still to pack', () => {
+    it('leaves no mechanic row without a summary', () => {
       const packed = new Set(OGC_ENTRIES.map((entry) => entry.id))
-      const remaining = (kind: 'feat' | 'spell') =>
-        groups(kind)
+      for (const kind of ['feat', 'spell', 'feature'] as const) {
+        const missing = groups(kind)
           .flatMap((group) => group.rows)
-          .filter((row) => !packed.has(row.id)).length
+          .filter((row) => !packed.has(row.id))
+          .map((row) => row.name)
+        expect(missing).toEqual([])
+      }
+    })
 
-      // Every CRB feat now has a summary.
-      expect(remaining('feat')).toBe(0)
-      // L1b-L9 + A1
-      expect(remaining('spell')).toBe(26)
-      expect(remaining('feat') + remaining('spell')).toBe(26)
+    it('covers the whole CRB and APG player catalog', () => {
+      expect(OGC_ENTRIES.filter((entry) => entry.kind === 'feat')).toHaveLength(177)
+      expect(OGC_ENTRIES.filter((entry) => entry.kind === 'feature')).toHaveLength(3)
+      // 622 CRB spells plus 27 APG spells.
+      expect(OGC_ENTRIES.filter((entry) => entry.kind === 'spell')).toHaveLength(649)
+      expect(OGC_ENTRIES).toHaveLength(829)
     })
   })
 })

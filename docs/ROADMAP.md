@@ -324,7 +324,7 @@ Out of scope for 0.9/1.0, and still out of Phase 5 unless a later ADR says other
 
 ## Recommended next work (in order)
 
-1. **Phase 5.1 follow-through, one batch per change** — E-R and every feat batch (F1a–F4 and F0) have landed; all 177 CRB feats have a summary. Next is **A1** (the 26 APG Summoner spells, the last batch). Then the remaining CRB spell levels, then the APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
+1. **Phase 5.1 — complete.** Every batch has landed: 829 encyclopedia rows covering all 177 CRB feats, 3 CRB features, 622 CRB spells, and 27 APG spells. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md). Next product work is Phase 5.2.
 2. **Phase 5.2 — localized catalog names.**
 3. **Phase 5.3 — typed `effects[]`.**
 4. **Later PF2e release** — PC2 golden, companion editor, Remaster packs, PF2e panel i18n. Not a Phase 5 slice.
@@ -480,3 +480,4 @@ Housekeeping (not a product increment): do **not** merge `cursor/setup-cloud-age
 | 2026-10-26 | Encyclopedia batch L8c landed. Spell levels 0-8 complete. Next batch is L9a |
 | 2026-10-26 | Encyclopedia batch L9a landed (20 level 9 spells). Next batch is L9b |
 | 2026-10-26 | Encyclopedia batch L9b landed. All CRB feats and spells have summaries. Next batch is A1, the last one |
+| 2026-10-26 | Encyclopedia batch A1 landed. Phase 5.1 content complete at 829 rows. Next product work is Phase 5.2 |

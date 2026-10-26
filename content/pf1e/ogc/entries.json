@@ -4013,5 +4013,135 @@
     "id": "spell.wish",
     "kind": "spell",
     "body": "You alter reality, duplicating many spells or granting lasting benefits."
+  },
+  {
+    "id": "spell.acid-pit",
+    "kind": "spell",
+    "body": "You open a pit with acid at the bottom that burns those who fall in."
+  },
+  {
+    "id": "spell.ant-haul",
+    "kind": "spell",
+    "body": "One creature can carry three times as much before being encumbered."
+  },
+  {
+    "id": "spell.aqueous-orb",
+    "kind": "spell",
+    "body": "A rolling sphere of water engulfs creatures and puts out fires."
+  },
+  {
+    "id": "spell.create-pit",
+    "kind": "spell",
+    "body": "You open an extradimensional pit in the ground beneath creatures."
+  },
+  {
+    "id": "spell.cushioning-bands",
+    "kind": "spell",
+    "body": "Bands absorb falling damage and protect against crushing attacks."
+  },
+  {
+    "id": "spell.devolution",
+    "kind": "spell",
+    "body": "You remove evolutions from an eidolon for a time."
+  },
+  {
+    "id": "spell.dust-of-twilight",
+    "kind": "spell",
+    "body": "A burst of dust puts out small lights and fatigues creatures."
+  },
+  {
+    "id": "spell.evolution-surge-greater",
+    "kind": "spell",
+    "body": "Your eidolon gains a larger or wider set of temporary evolutions."
+  },
+  {
+    "id": "spell.evolution-surge-lesser",
+    "kind": "spell",
+    "body": "Your eidolon gains one small temporary evolution."
+  },
+  {
+    "id": "spell.glide",
+    "kind": "spell",
+    "body": "You fall slowly and glide forward as you descend."
+  },
+  {
+    "id": "spell.hungry-pit",
+    "kind": "spell",
+    "body": "A pit crushes and holds the creatures that fall into it."
+  },
+  {
+    "id": "spell.pelagic-storm",
+    "kind": "spell",
+    "body": "A storm of wind and water lashes creatures in the area."
+  },
+  {
+    "id": "spell.planar-adaptation",
+    "kind": "spell",
+    "body": "You are protected from one plane's harmful environment."
+  },
+  {
+    "id": "spell.purified-calling",
+    "kind": "spell",
+    "body": "Your summoned eidolon arrives without the usual flaws or mishaps."
+  },
+  {
+    "id": "spell.rejuvenate-eidolon",
+    "kind": "spell",
+    "body": "Your eidolon regains a good share of its lost hit points."
+  },
+  {
+    "id": "spell.rejuvenate-eidolon-greater",
+    "kind": "spell",
+    "body": "Your eidolon regains a large share of its lost hit points."
+  },
+  {
+    "id": "spell.rejuvenate-eidolon-lesser",
+    "kind": "spell",
+    "body": "Your eidolon regains a small share of its lost hit points."
+  },
+  {
+    "id": "spell.seek-thoughts",
+    "kind": "spell",
+    "body": "You skim the surface thoughts of creatures nearby for a subject you choose."
+  },
+  {
+    "id": "spell.share-senses",
+    "kind": "spell",
+    "body": "You see and hear through your familiar or eidolon at a distance."
+  },
+  {
+    "id": "spell.spiked-pit",
+    "kind": "spell",
+    "body": "You open a pit lined with spikes on its walls and floor."
+  },
+  {
+    "id": "spell.summon-eidolon",
+    "kind": "spell",
+    "body": "Your eidolon is called to your side for a short time."
+  },
+  {
+    "id": "spell.tar-pool",
+    "kind": "spell",
+    "body": "A pool of tar entangles and slows creatures that enter it."
+  },
+  {
+    "id": "spell.transmogrify",
+    "kind": "spell",
+    "body": "You rebuild your eidolon's form, changing its evolutions."
+  },
+  {
+    "id": "spell.unfetter",
+    "kind": "spell",
+    "body": "Your eidolon can travel far from you without penalty."
+  },
+  {
+    "id": "spell.vitriolic-mist",
+    "kind": "spell",
+    "body": "A mist of acid protects you and burns those who strike you."
+  },
+  {
+    "id": "spell.walk-through-space",
+    "kind": "spell",
+    "body": "You can step short distances instantly as you move."
   }
 ]
