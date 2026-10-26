@@ -337,7 +337,7 @@
   {
     "id": "feat.manyshot",
     "kind": "feat",
-    "body": "As a standard action, you can fire two arrows at one foe with a single attack roll."
+    "body": "When you make a full attack with a bow, your first attack fires two arrows. Only the first adds precision damage."
   },
   {
     "id": "feat.martial-weapon-proficiency",
@@ -372,7 +372,7 @@
   {
     "id": "feat.pinpoint-targeting",
     "kind": "feat",
-    "body": "As a standard action, one ranged attack ignores the target's armor bonuses. You lose your Dexterity bonus to Armor Class until your next turn."
+    "body": "As a standard action, you make one ranged attack that ignores the target's armor, shield, and natural armor bonuses."
   },
   {
     "id": "feat.precise-shot",
@@ -567,7 +567,7 @@
   {
     "id": "feat.acrobatic-steps",
     "kind": "feat",
-    "body": "Each time you move, you can treat 5 feet of difficult terrain as normal terrain. That includes a 5-foot step."
+    "body": "You can move through up to 20 feet of difficult terrain each round as if it were normal terrain."
   },
   {
     "id": "feat.alertness",
@@ -742,7 +742,7 @@
   {
     "id": "feat.nimble-moves",
     "kind": "feat",
-    "body": "You can move through a small amount of difficult terrain each round as if it were normal."
+    "body": "You can move through up to 5 feet of difficult terrain each round as if it were normal terrain."
   },
   {
     "id": "feat.persuasive",
@@ -822,7 +822,7 @@
   {
     "id": "feat.empower-spell",
     "kind": "feat",
-    "body": "A spell's variable numeric effects increase by half, and it uses a slot one level higher."
+    "body": "A spell's variable numeric effects increase by half, and it uses a slot two levels higher."
   },
   {
     "id": "feat.enlarge-spell",
