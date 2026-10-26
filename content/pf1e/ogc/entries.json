@@ -447,7 +447,7 @@
   {
     "id": "feat.snatch-arrows",
     "kind": "feat",
-    "body": "When you deflect a ranged weapon, you can catch it instead."
+    "body": "When you would deflect a ranged weapon, you can catch it instead, and may throw it back as a free action."
   },
   {
     "id": "feat.spellbreaker",
@@ -492,7 +492,7 @@
   {
     "id": "feat.stunning-fist",
     "kind": "feat",
-    "body": "You can declare an unarmed strike a stunning attack. A successful Fortitude save avoids the stun. The number of uses each day equals your level."
+    "body": "You can declare an unarmed strike a stunning attack. A successful Fortitude save avoids the stun. You get a few uses each day, rising with your level."
   },
   {
     "id": "feat.throw-anything",
@@ -532,7 +532,7 @@
   {
     "id": "feat.unseat",
     "kind": "feat",
-    "body": "A mounted charge with a lance can also push the foe back."
+    "body": "When you hit with a lance while mounted, you can try to knock the foe out of their saddle."
   },
   {
     "id": "feat.vital-strike",
