@@ -6,7 +6,7 @@
 
 This file sequences Phase 5. It does not reopen the PF1e sheet, the three named sidebar tools, or the later PF2e release.
 
-The multi-system increment plan ([`next-increment-multi-system.md`](next-increment-multi-system.md)) is the executed record of Phases M through 1x. Do not use it to pick the next PR.
+The multi-system increment plan ([`next-increment-multi-system.md`](archive/next-increment-multi-system.md)) is the executed record of Phases M through 1x. Do not use it to pick the next PR.
 
 ---
 

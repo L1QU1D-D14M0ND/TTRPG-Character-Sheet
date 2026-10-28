@@ -128,9 +128,9 @@ PF2e leftover editors/goldens/content wait for a **later PF2e release** ([roadma
 7. PF2e panel literals remain English (later PF2e *release*). Chrome + PF1e catalogs use `en.json` / `es.json`.  
 8. IndexedDB one-key draft **landed** (app-level; not a character library).
 
-S1/S4 record: [`continuation-design.md`](continuation-design.md).  
-Historical PF2e increment: [`next-increment-design.md`](next-increment-design.md).  
-Current sequencing: [`next-increment-multi-system.md`](next-increment-multi-system.md).
+S1/S4 record: [`continuation-design.md`](archive/continuation-design.md).  
+Historical PF2e increment: [`next-increment-design.md`](archive/next-increment-design.md).  
+Current sequencing: [`next-increment-multi-system.md`](archive/next-increment-multi-system.md).
 
 ---
 

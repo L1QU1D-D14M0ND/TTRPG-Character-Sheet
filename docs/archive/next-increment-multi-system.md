@@ -1,7 +1,7 @@
 # Next increment — multi-system refactor, then PF1e
 
-**Status:** Executed record (2026-10-03). Phases M through 1x and pre-release hygiene have landed. Do not use this file to schedule new work. Live sequence: [`phase-5.md`](phase-5.md) and [`ROADMAP.md`](ROADMAP.md).  
-**Depends on:** [ADR 0003](adr/0003-multi-system-product-direction.md), [ADR 0004](adr/0004-shared-kernel.md), [ADR 0005](adr/0005-sidebar-host.md), [ADR 0007](adr/0007-content-licensing.md), [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md), [`shared-kernel-design.md`](shared-kernel-design.md), [`sidebar-host-design.md`](sidebar-host-design.md), [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md)  
+**Status:** Executed record (2026-10-03). Phases M through 1x and pre-release hygiene have landed. Do not use this file to schedule new work. Live sequence: [`phase-5.md`](../phase-5.md) and [`ROADMAP.md`](../ROADMAP.md).  
+**Depends on:** [ADR 0003](../adr/0003-multi-system-product-direction.md), [ADR 0004](../adr/0004-shared-kernel.md), [ADR 0005](../adr/0005-sidebar-host.md), [ADR 0007](../adr/0007-content-licensing.md), [`ttrpg-character-sheet-design.md`](../ttrpg-character-sheet-design.md), [`shared-kernel-design.md`](../shared-kernel-design.md), [`sidebar-host-design.md`](../sidebar-host-design.md), [`pf1e-character-sheet-design.md`](../pf1e-character-sheet-design.md)  
 **Historical PF2e increment (T1/T3 executed, leftover goldens deprioritized):** [`next-increment-design.md`](next-increment-design.md)
 
 This document **does** change product sequencing: **finish First Edition** in this release; remaining PF2e work waits for a later *release*. It does **not** reopen PF2e schema math (ADR 0002) or authorize deleting the PF2e slice.
@@ -12,7 +12,7 @@ This document **does** change product sequencing: **finish First Edition** in th
 
 The repo is a working multi-system sheet: **PF1e** is the development priority; **PF2e** is a preserved slice (schema, `compute()`, Fighter 5 / Wizard 5 / Bard 5 / Cleric 5 / Ranger 5 goldens, spreadsheet editors).
 
-First Edition is **complete**: Feat batches F1–F4 (all 177 CRB feats) and spell batches S1–S5 (all 622 CRB spells) have landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2), all three named sidebar tools (Attack Helper, Actions List, Budget Calculator), and pre-release hygiene have landed. **Next work is Phase 5** ([`phase-5.md`](phase-5.md)), starting with the encyclopedia tool. Remaining **PF2e** work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) and is not Phase 5. The PF2e slice stays in the app and must not regress. **1.0 landed:** Spanish (`es.json`) covers chrome + PF1e panels; PF2e panel literals remain. Batches 1–21, W1–W7, APG Synthesist, IndexedDB draft, and PWA dist check are in the repo.
+First Edition is **complete**: Feat batches F1–F4 (all 177 CRB feats) and spell batches S1–S5 (all 622 CRB spells) have landed, completing the entire CRB player catalog. APG follow-through (Summoner `spellsPerDay` + 27-spell catalog) landed. Catalog picker (ADR 0009 slices 1 & 2), all three named sidebar tools (Attack Helper, Actions List, Budget Calculator), and pre-release hygiene have landed. **Next work is Phase 5** ([`phase-5.md`](../phase-5.md)), starting with the encyclopedia tool. Remaining **PF2e** work waits for a **later release** (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) and is not Phase 5. The PF2e slice stays in the app and must not regress. **1.0 landed:** Spanish (`es.json`) covers chrome + PF1e panels; PF2e panel literals remain. Batches 1–21, W1–W7, APG Synthesist, IndexedDB draft, and PWA dist check are in the repo.
 
 ---
 
@@ -88,7 +88,7 @@ Several of these have since landed or moved: Bard/Cleric/Ranger 5 goldens exist;
 
 ### Recommendation
  
-**First Edition feature scope is complete:** all 177 CRB feats, all 622 CRB spells, magic overlay, APG follow-through (Summoner `spellsPerDay` + 27 spells), optional goldens, catalog picker (ADR 0009 slices 1 & 2), all three named sidebar tools (Attack Helper, Actions List, Budget Calculator), and pre-release hygiene have landed. Next work is Phase 5 ([`phase-5.md`](phase-5.md)). Leftover PF2e work waits for a later release. M / 1e / 2e / 3e / 1.0 / honesty fixes already landed.
+**First Edition feature scope is complete:** all 177 CRB feats, all 622 CRB spells, magic overlay, APG follow-through (Summoner `spellsPerDay` + 27 spells), optional goldens, catalog picker (ADR 0009 slices 1 & 2), all three named sidebar tools (Attack Helper, Actions List, Budget Calculator), and pre-release hygiene have landed. Next work is Phase 5 ([`phase-5.md`](../phase-5.md)). Leftover PF2e work waits for a later release. M / 1e / 2e / 3e / 1.0 / honesty fixes already landed.
 
 ---
 
@@ -98,7 +98,7 @@ Several of these have since landed or moved: Bard/Cleric/Ranger 5 goldens exist;
 
 | Option | Notes |
 | --- | --- |
-| **M1. Kernel + folder move + `system` field** (recommended) | `app/src/shared`, `app/src/shell`, `app/src/systems/pf2e`. Lift IDs, signed, Ajv helper, strip-derived, file IO. Schema: add optional `system` enum to PF2e schema (`pf2e` only); Save writes `system`. Register PF2e as the only `SystemModule`. See [shared kernel §12](shared-kernel-design.md). |
+| **M1. Kernel + folder move + `system` field** (recommended) | `app/src/shared`, `app/src/shell`, `app/src/systems/pf2e`. Lift IDs, signed, Ajv helper, strip-derived, file IO. Schema: add optional `system` enum to PF2e schema (`pf2e` only); Save writes `system`. Register PF2e as the only `SystemModule`. See [shared kernel §12](../shared-kernel-design.md). |
 | M2. Wrapper envelope `{ system, character }` | Breaks every fixture; do not |
 | M3. Parallel app / route | Two PWAs; rejects the product |
 | M4. Shared `CharacterDocument` with optional 1E fields | Forbidden by ADR 0004 |
@@ -107,7 +107,7 @@ Several of these have since landed or moved: Bard/Cleric/Ranger 5 goldens exist;
 
 ### WP-Sb — Sidebar host
 
-Collapsible `<aside>`, tool registry, empty state, context `{ character, derived, update }`. No named tools. See [`sidebar-host-design.md`](sidebar-host-design.md).
+Collapsible `<aside>`, tool registry, empty state, context `{ character, derived, update }`. No named tools. See [`sidebar-host-design.md`](../sidebar-host-design.md).
 
 ### WP-1e — PF1e martial slice
 
@@ -127,7 +127,7 @@ Second class row; stacked progressions; multiclass golden.
 
 ### WP-3c — PF1e CRB pack
 
-After goldens can be typed by hand. Review CRB character mechanics **two at a time** ([`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) §2 and §6). Batches 1–21 and W1–W7 landed (including Batch 7). Draft buffer + PWA proof landed. OGL/PI review landed ([ADR 0007](adr/0007-content-licensing.md)). APG slice 3 + Synthesist golden landed ([`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md)). Spanish UI catalog landed. 1.0 stability landed. Honesty fixes and Wizard 7 playtest override landed. CRB catalog fill-out complete (all 177 feats and 622 spells packed). APG follow-through (Summoner `spellsPerDay` + 27 spells) landed. All three sidebar tools (Attack Helper, Actions List, Budget Calculator) landed. Resolver: miss → custom; do not fail Load.
+After goldens can be typed by hand. Review CRB character mechanics **two at a time** ([`pf1e-crb-pack-design.md`](../pf1e-crb-pack-design.md) §2 and §6). Batches 1–21 and W1–W7 landed (including Batch 7). Draft buffer + PWA proof landed. OGL/PI review landed ([ADR 0007](../adr/0007-content-licensing.md)). APG slice 3 + Synthesist golden landed ([`pf1e-apg-pack-design.md`](../pf1e-apg-pack-design.md)). Spanish UI catalog landed. 1.0 stability landed. Honesty fixes and Wizard 7 playtest override landed. CRB catalog fill-out complete (all 177 feats and 622 spells packed). APG follow-through (Summoner `spellsPerDay` + 27 spells) landed. All three sidebar tools (Attack Helper, Actions List, Budget Calculator) landed. Resolver: miss → custom; do not fail Load.
 
 ---
 
@@ -147,7 +147,7 @@ After goldens can be typed by hand. Review CRB character mechanics **two at a ti
 | 9 | 0.9 | English; PF1e bar; PF2e slice still works; sidebar host may be empty |
 | 10 | Phase 4 | `es` + playable APG Synthesist = 1.0 |
 | 11 | 1x | Finish First Edition (honesty/code fixes [landed], playtest priority [landed], CRB catalog [landed], magic overlay [landed], APG follow-through [landed], optional goldens [landed], catalog picker [landed], sidebar tools [landed], hygiene [landed]) |
-| 12 | Phase 5 | Encyclopedia, localized catalog names, `effects[]`, optional card surfaces, additional systems — live sequence is [`phase-5.md`](phase-5.md) |
+| 12 | Phase 5 | Encyclopedia, localized catalog names, `effects[]`, optional card surfaces, additional systems — live sequence is [`phase-5.md`](../phase-5.md) |
 | 13 | Later PF2e release | PC2 golden, companion editor, Remaster packs, PF2e panel i18n. Not Phase 5 |
 
 Steps 2–11 landed. The **next work** is Phase 5.1.
@@ -162,8 +162,8 @@ Steps 2–11 landed. The **next work** is Phase 5.1.
 - [x] Umbrella + PF1e system spec + PF1e schema notes
 - [x] Roadmap tracks PF1e-first phases
 - [x] PF2e design/schema docs labeled as system specs, not the app 0.9 bar
-- [x] Shared-kernel inventory ([ADR 0004](adr/0004-shared-kernel.md), [`shared-kernel-design.md`](shared-kernel-design.md))
-- [x] Sidebar host lock ([ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md))
+- [x] Shared-kernel inventory ([ADR 0004](../adr/0004-shared-kernel.md), [`shared-kernel-design.md`](../shared-kernel-design.md))
+- [x] Sidebar host lock ([ADR 0005](../adr/0005-sidebar-host.md), [`sidebar-host-design.md`](../sidebar-host-design.md))
 
 ### Phase M
 
@@ -219,11 +219,11 @@ Steps 2–11 landed. The **next work** is Phase 5.1.
 - [x] **Batch 14:** remaining CRB player races + size stamp
 - [x] **Batch 15:** class spells-per-day tables + hybrid Max
 - [x] IndexedDB one-key draft + PWA build verify
-- [x] OGL / Product Identity review (mechanics-only pack; [ADR 0007](adr/0007-content-licensing.md))
+- [x] OGL / Product Identity review (mechanics-only pack; [ADR 0007](../adr/0007-content-licensing.md))
 
 ### Phase 4 (1.0 landed)
 
-- [x] APG slice 1: Summoner catalog + Synthesist name ([`pf1e-apg-pack-design.md`](pf1e-apg-pack-design.md))
+- [x] APG slice 1: Summoner catalog + Synthesist name ([`pf1e-apg-pack-design.md`](../pf1e-apg-pack-design.md))
 - [x] Documentary evolution names + fused overlay
 - [x] Synthesist golden (Half-Elf Radiant Striker)
 - [x] Spanish (`es`) catalog
@@ -247,12 +247,12 @@ Steps 2–11 landed. The **next work** is Phase 5.1.
 | ID | Risk | Mitigation |
 | --- | --- | --- |
 | M1 | Refactor breaks PF2e goldens | Move first, no math changes; keep tests green |
-| M2 | One shared `CharacterDocument` type grows `#ifdef` fields | Separate types; union at the shell ([ADR 0004](adr/0004-shared-kernel.md)) |
+| M2 | One shared `CharacterDocument` type grows `#ifdef` fields | Separate types; union at the shell ([ADR 0004](../adr/0004-shared-kernel.md)) |
 | M4 | Over-extracting SheetTable / bonus stacker in Phase M | Kernel §12: only extract what PF2e already needs; second caller in 1e |
-| P2 | 1E bonus-type rabbit hole | Explicit AC fields in 0.9 ([PF1e design §4.3](pf1e-character-sheet-design.md)) |
+| P2 | 1E bonus-type rabbit hole | Explicit AC fields in 0.9 ([PF1e design §4.3](../pf1e-character-sheet-design.md)) |
 | N3 | UI strings proliferate | T4′ before PF1e editor wave |
 | N2 | Content licensing | No scrape; ADR 0007 mechanics-only pack; OGL notice in the same PR as rules text |
-| S1 | Repo still named Pathfinder-2E-Card | **Historical.** npm/package/`$id` renamed ([ADR 0008](adr/0008-repo-package-rename.md)). Live GitHub slug (2026-09-29): [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet). The old slug redirects. |
+| S1 | Repo still named Pathfinder-2E-Card | **Historical.** npm/package/`$id` renamed ([ADR 0008](../adr/0008-repo-package-rename.md)). Live GitHub slug (2026-09-29): [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet). The old slug redirects. |
 
 ---
 
@@ -278,7 +278,7 @@ Code/docs pass after Phases M–3e and 3c batches 1–2. **First pass:** Wizard 
 | OGL notice + Section 15 | Same PR as first pack **rules text** |
 | App’s one typed switch to pick `pf1eModule` vs `pf2eModule` | TypeScript cannot erase the `LoadedSheet` union; tabs stay inside each Workspace |
 | Remaining PF2e panel literals | Later PF2e *release* (when those panels next change) |
-| Finish First Edition (honesty/code fixes, CRB fill-out, APG follow-through, catalog picker, sidebar tools) | Landed, including pre-release hygiene. Live sequence is Phase 5 ([`phase-5.md`](phase-5.md)) |
+| Finish First Edition (honesty/code fixes, CRB fill-out, APG follow-through, catalog picker, sidebar tools) | Landed, including pre-release hygiene. Live sequence is Phase 5 ([`phase-5.md`](../phase-5.md)) |
 | Leftover PF2e (PC2 golden, companion editor, Remaster packs) | Later *release* — not Phase 5 |
 
 ---

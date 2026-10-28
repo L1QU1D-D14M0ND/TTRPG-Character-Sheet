@@ -32,6 +32,6 @@ The loaded-sheet **sidebar host** is shell chrome ([ADR 0005](0005-sidebar-host.
 
 - [`../shared-kernel-design.md`](../shared-kernel-design.md)
 - [`../ttrpg-character-sheet-design.md`](../ttrpg-character-sheet-design.md)
-- [`../next-increment-multi-system.md`](../next-increment-multi-system.md)
+- [`../next-increment-multi-system.md`](../archive/next-increment-multi-system.md)
 - [`0003-multi-system-product-direction.md`](0003-multi-system-product-direction.md)
 - [`0005-sidebar-host.md`](0005-sidebar-host.md)

@@ -39,6 +39,6 @@ Use `schemas/character.schema.json` as **schemaVersion 1** for a single PC sheet
 - [`../schema-design-notes.md`](../schema-design-notes.md)
 - [`0001-product-direction.md`](0001-product-direction.md) — superseded product lock
 - [`0003-multi-system-product-direction.md`](0003-multi-system-product-direction.md) — current product lock
-- [`../continuation-design.md`](../continuation-design.md) — S1/S4 implementation options (executed)
-- [`../next-increment-design.md`](../next-increment-design.md) — historical PF2e options after S1/S4
-- [`../next-increment-multi-system.md`](../next-increment-multi-system.md) — current sequencing
+- [`../continuation-design.md`](../archive/continuation-design.md) — S1/S4 implementation options (executed)
+- [`../next-increment-design.md`](../archive/next-increment-design.md) — historical PF2e options after S1/S4
+- [`../next-increment-multi-system.md`](../archive/next-increment-multi-system.md) — current sequencing

@@ -5,7 +5,7 @@
 **Supersedes:** [ADR 0001](0001-product-direction.md) (PF2e-only product lock)  
 **Context:** Stakeholder asked whether the project can pivot from a Pathfinder 2E-only sheet into a broader TTRPG tool, with Pathfinder First Edition added and **prioritized over 2E**. Feasibility review of the current schema, calc engine, and spreadsheet shell concluded: 1E is a second engine, not a PF2e variant; the existing layering makes a multi-system refactor tractable if the working PF2e slice is kept as a regression safety net.
 
-This ADR does **not** implement code. It replaces the product lock. Schema/engine/UI work follows the [roadmap](../ROADMAP.md). [`next-increment-multi-system.md`](../next-increment-multi-system.md) is the executed record of Phases M–1x. Live work is [Phase 5](../phase-5.md).
+This ADR does **not** implement code. It replaces the product lock. Schema/engine/UI work follows the [roadmap](../ROADMAP.md). [`next-increment-multi-system.md`](../archive/next-increment-multi-system.md) is the executed record of Phases M–1x. Live work is [Phase 5](../phase-5.md).
 
 ## Decision
 
@@ -103,7 +103,7 @@ These are **locked for sequencing** unless the stakeholder overrides them. See a
 - [`../pf1e-character-sheet-design.md`](../pf1e-character-sheet-design.md) — PF1e system spec
 - [`../pf2e-dynamic-character-sheet-design.md`](../pf2e-dynamic-character-sheet-design.md) — PF2e system spec (still valid)
 - [`../ROADMAP.md`](../ROADMAP.md)
-- [`../next-increment-multi-system.md`](../next-increment-multi-system.md)
+- [`../next-increment-multi-system.md`](../archive/next-increment-multi-system.md)
 - [`0001-product-direction.md`](0001-product-direction.md) — superseded
 - [`0002-character-schema.md`](0002-character-schema.md) — PF2e schema, still accepted
 - [`0004-shared-kernel.md`](0004-shared-kernel.md) — reuse boundaries
