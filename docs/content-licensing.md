@@ -1,6 +1,6 @@
 # Content licensing review (2026-08-18)
 
-**Status:** Landed. Product lock: [ADR 0007](adr/0007-content-licensing.md).  
+**Status:** Locked. Inventory and rules behind [ADR 0007](adr/0007-content-licensing.md).  
 **Not legal advice.**
 
 This is the OGL / Product Identity review that Phase 3c deferred until before **rules text**. It does not add text to the pack. It does not start Synthesist.
@@ -13,7 +13,7 @@ The **ship pack today is mechanics-only** (ids, names, numbers). It does not cop
 
 **Product Identity is not in `content/pf1e/crb/`.** Keep it that way.
 
-**1.0 APG Synthesist** may add a **separate** pack under `content/pf1e/apg/` with the same mechanics-only shape. Class flavor and evolution/spell text still wait for the OGL notice.
+**1.0 APG Synthesist** may add a **separate** pack under `content/pf1e/apg/` with the same mechanics-only shape. Rules prose never goes in that pack; it goes in `content/pf1e/ogc/` under the OGL notice (§4).
 
 ---
 
@@ -43,7 +43,7 @@ Engine formulas (ability modifier, BAB tables, spell DC, bonus spells, heavy loa
 | PF1e goldens | Feat/feature `summary` values are sheet honesty notes (“Not auto-applied”), not feat benefits |
 | PF2e golden Wizard | `identity.homeRegion` may be a Golarion place name. That is **character identity**, not pack content |
 
-Forbidden in pack JSON until an OGL increment: `description`, `summary`, `flavor`, `text`, `benefit`, spell bodies, class feature paragraphs. Enforced by [`app/src/systems/pf1e/content/licenseGate.test.ts`](../app/src/systems/pf1e/content/licenseGate.test.ts).
+Forbidden in CRB and APG pack JSON (prose lives only in the `content/pf1e/ogc/` `body` field): `description`, `summary`, `flavor`, `text`, `benefit`, spell bodies, class feature paragraphs. Enforced by [`app/src/systems/pf1e/content/licenseGate.test.ts`](../app/src/systems/pf1e/content/licenseGate.test.ts).
 
 ---
 
@@ -60,7 +60,7 @@ That PR must:
 
 **Not required** for the current mechanics-only CRB folder, for engine math, or for player-typed summaries on a sheet.
 
-Phase 5.1 puts that prose in a separate pack, `content/pf1e/ogc/`, not on CRB or APG rows. The designated Open Game Content field is `body`. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
+Phase 5.1 shipped that notice with a separate pack, `content/pf1e/ogc/`, not on CRB or APG rows. Its `body` strings are short summaries written for the pack, not book excerpts; the notice ships anyway as the cautious choice (ADR 0007 postscript, 2026-10-28). The designated Open Game Content field is `body`. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 
 Do not scrape third-party SRD sites into `content/` even after that PR. Curate by hand.
 
@@ -83,7 +83,7 @@ Do not scrape third-party SRD sites into `content/` even after that PR. Curate b
 - Slice 2 landed: `content/pf1e/apg/` with documentary evolution **names** and a fused STR/DEX/CON overlay + costume HP. Synthesist golden landed. **Never** `class.summoner` inside `content/pf1e/crb/`.
 - Slice 4 landed: `classes.json` Summoner `spellsPerDay` progression table and `spells.json` 27 mechanics-only APG spells.
 - 1.0 landed. Spanish UI catalog landed. Apply does not auto-write fused scores or evolution math.
-- Evolution and eidolon **rules text** wait for the OGL increment in §4.
+- Evolution and eidolon **rules text**, if added, goes in `content/pf1e/ogc/` under the notice in §4, not in this pack.
 - Magical Child / other APG classes stay out until a later pack slice.
 
 ---

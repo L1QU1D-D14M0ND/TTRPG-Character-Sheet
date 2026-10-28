@@ -31,6 +31,8 @@ The app is MIT. Phase 3c shipped a PF1e Core Rulebook **player catalog** of ids,
 
 **Postscript (2026-10-03):** Phase 5.1 keeps this decision. The first prose pack is `content/pf1e/ogc/`, with `body` as the designated Open Game Content field. `content/pf1e/crb/` and `content/pf1e/apg/` stay mechanics-only. Spec: [`../sidebar-tools-encyclopedia.md`](../sidebar-tools-encyclopedia.md).
 
+**Postscript (2026-10-28):** Decision (3) ties the OGL notice to the first row that *copies* Open Game Content rules text. What shipped in `content/pf1e/ogc/` is different: every `body` is a short mechanical summary written for this pack, not a book excerpt, and `SECTION-15.txt` says so. The pack still carries OGL 1.0a, a Section 15 naming the Core Rulebook and the Advanced Player's Guide, and the `body` designation. That is deliberate: the summaries restate rules from those books, and attaching the notice costs nothing while removing the question of whether a summary is close enough to count as derived Open Game Content. A later change that copies a book paragraph verbatim adds that book's notice to `SECTION-15.txt` in the same change, as before.
+
 ## References
 
 - [`../content-licensing.md`](../content-licensing.md)
