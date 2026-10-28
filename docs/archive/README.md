@@ -10,6 +10,10 @@ Links inside these files point at where things were when each was written. Secti
 - [Next increment — PF2e T1/T3](next-increment-design.md) (executed 2026-08-14)
 - [Continuation design — PF2e S1/S4](continuation-design.md) (executed 2026-08-14)
 
+## Batch logs
+
+- [PF1e CRB pack — batch reviews](pf1e-crb-pack-batch-reviews.md) (batches 1–21, W1–W7, F1–F4, S1–S5; the full 1,683-line design log)
+
 ## Finished reports
 
 - [Domain and rules discrepancy report](domain-and-rules-discrepancies.md) (2026-09-27 audit)

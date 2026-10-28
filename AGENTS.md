@@ -23,7 +23,7 @@ All 177 CRB feats (110 combat, 49 general, 9 item creation, 9 metamagic) and all
 - Do **not** invent ids outside the lock file.
 - The catalog picker renders a capped first page (`VISIBLE_ROW_LIMIT`), so a row past the cap is reachable only by searching. Drive it from panel tests with the shared `src/test/pickCatalog` helper, which narrows by name for you.
 
-See [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md) §8.
+See [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md) §5–6.
 
 ### When to record a browser walkthrough
 
