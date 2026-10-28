@@ -50,7 +50,7 @@ Two groups per PR, same as mundane equipment. Honesty / code fixes and the Wizar
 | **S4** | Remaining spell levels 6 and 7 — *Packed* | 0 (127 packed) |
 | **S5** | Remaining spell levels 8 and 9 — *Packed* | 0 (83 packed) |
 
-Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7.5](pf1e-crb-pack-design.md#75-reserved-magic-weapons-and-armor)). APG Summoner spells stay in the APG pack.
+Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7.5](pf1e-crb-pack-design.md#75-magic-weapons-and-armor)). APG Summoner spells stay in the APG pack.
 
 ## Packed already (Batch 12 / 13 + Wizard 7 playtest + Batches F1a–F1c + Batches F2a–F2c + Batches F3a–F3c + Batch F4 + Batches S1–S5 — all 177 CRB feats and all 622 CRB spells packed)
 | Id | Name | Category |

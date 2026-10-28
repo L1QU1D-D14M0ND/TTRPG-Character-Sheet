@@ -1317,7 +1317,7 @@ Locked fill-out after batch 15. Same rules as batch 10: documentary stamp of id,
 | Shield bash / spiked armor | **Not** weapon-table ids in 16–19. They wait with shields / extras in batch 21 |
 | Ammo | Pack with the ranged mechanic that uses it (`item.*`, `kind: item`) |
 | Masterwork | Same overlay pattern as magic. **No** separate masterwork catalog rows |
-| Magic | **Do not pack** in 16–21. See [§7.5](#75-reserved-magic-weapons-and-armor) |
+| Magic | **Do not pack** in 16–21. See [§7.5](#75-magic-weapons-and-armor) |
 | Special properties | **Do not pack** in 16–19. After all weapon ids, one CRB Special type per PR. See [§7.6](#76-weapon-properties-after-all-weapon-ids) |
 | Cost | Optional `costGp` may land with a later priced-treasure slice. Not required to add a weapon/armor row |
 | Tests | New ids resolve; goldens still resolve; apply still leaves AC 10 on an empty sheet |
@@ -1522,7 +1522,7 @@ Shield-bash damage may live as an optional `weapon` subobject on the shield row 
 | Armor | 12 (2 goldens + 3 light + 3 medium + 4 heavy) | 0 | Magic armor |
 | Shields | 6 | 0 | Magic shields |
 | Ammo / extras | spellbook + 5 ammo + armor spikes + shield spikes | 0 | Priced treasure as a later slice |
-| Magic weapons / armor | overlay landed | 0 | Sheet overlay + named items; see [§7.5](#75-reserved-magic-weapons-and-armor) |
+| Magic weapons / armor | overlay landed | 0 | Sheet overlay + named items; see [§7.5](#75-magic-weapons-and-armor) |
 
 ### 7.5 Magic weapons and armor
 
