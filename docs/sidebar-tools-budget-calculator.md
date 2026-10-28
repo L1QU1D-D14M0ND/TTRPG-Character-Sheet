@@ -1,8 +1,7 @@
 # Sidebar tool: Budget Calculator
 
-> **Status:** **Landed** (2026-09-20). Implemented under `app/src/shell/sidebar/tools/budgetCalculator/`. Id: `shell.budget-calculator`.
-> **When:** Shipped as the last character-sheet feature of Phase 1x (alongside Attack Helper and Actions List).
-> **Host:** `docs/sidebar-host-design.md`. **Access:** `docs/adr/0005-sidebar-host.md`.
+**Status:** Landed (2026-09-20). Implemented under `app/src/shell/sidebar/tools/budgetCalculator/`. Id: `shell.budget-calculator`.  
+**Host lock:** [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).
 
 A shopping and crafting planner. The user lists gear, magic items, and other priced purchases, then compares **buying at market** versus **crafting some or all** of those lines. Crafting must show **material cost**, **time**, **DC**, and **requirements**, and must flag unmet requirements as short reasons (same spirit as Actions List).
 

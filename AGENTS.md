@@ -6,24 +6,21 @@ Canonical GitHub URL: `https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet` 
 
 ## Current phase
 
-**Phase 5** ([`docs/phase-5.md`](docs/phase-5.md), [`docs/ROADMAP.md`](docs/ROADMAP.md)). The encyclopedia smoke set has landed (`content/pf1e/ogc/`, `shell.encyclopedia`, PF1e only). The encyclopedia pack is **complete**: all 829 rows (177 CRB feats, 3 CRB features, 622 CRB spells, 27 APG spells) have a mechanical summary, and `ogcPack.test.ts` asserts zero rows remain ([`docs/sidebar-tools-encyclopedia.md`](docs/sidebar-tools-encyclopedia.md)). Afflictions and Actions stay empty: no such catalog exists yet. CRB and APG stay mechanics-only. Do not scrape an SRD. Do not start the later PF2e release (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) in a Phase 5 PR.
+Status, current phase, and next work: [`docs/ROADMAP.md`](docs/ROADMAP.md). Docs index: [`docs/README.md`](docs/README.md).
+
+Rules that hold in every Phase 5 change:
+
+- CRB and APG packs stay mechanics-only. Rules prose goes only in `content/pf1e/ogc/` as `body` ([ADR 0007](docs/adr/0007-content-licensing.md), [`docs/sidebar-tools-encyclopedia.md`](docs/sidebar-tools-encyclopedia.md)).
+- Do not scrape an SRD.
+- Do not start the later PF2e release (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) in a Phase 5 PR. The PF2e slice must keep computing.
 
 ## Testing
 
-### Honesty / code fixes (landed)
-
-Phase 1x honesty / code fixes landed (2026-09-12): leftover W7 test titles renamed, golden `weapon.properties` / `secondHead` stamped vs catalog, honest `focusTab` wired. See [`docs/ROADMAP.md`](docs/ROADMAP.md) Phase 1x honesty / code fixes.
-
-### CRB catalog fill-out & APG follow-through (completed)
-
-All 177 CRB feats (110 combat, 49 general, 9 item creation, 9 metamagic) and all 622 CRB spells (Batches S1–S5) have landed under [ADR 0007](docs/adr/0007-content-licensing.md) (names + category/level only, mechanics-only). APG follow-through (Summoner `spellsPerDay` + 27-spell catalog) landed. Architecture deepening: PF1e catalog picker ([ADR 0009](docs/adr/0009-pf1e-catalog-picker.md)) — slice 1 and slice 2 (Identity race / class / archetype) landed.
-
-- From `app/`, run `npx vitest run src/systems/pf1e`.
-- Do **not** record a demo video or upload Inventory screenshots unless the Inventory UI itself changed.
-- Do **not** invent ids outside the lock file.
+- From `app/`, run `npx vitest run src/systems/pf1e` for PF1e work, and the full `npm test` before pushing.
+- Do **not** invent catalog ids outside the lock file ([`docs/pf1e-crb-feat-spell-ids.md`](docs/pf1e-crb-feat-spell-ids.md)). Pack rules: [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md).
 - The catalog picker renders a capped first page (`VISIBLE_ROW_LIMIT`), so a row past the cap is reachable only by searching. Drive it from panel tests with the shared `src/test/pickCatalog` helper, which narrows by name for you.
-
-See [`docs/pf1e-crb-pack-design.md`](docs/pf1e-crb-pack-design.md) §8.
+- Do **not** record a demo video or upload Inventory screenshots unless the Inventory UI itself changed.
+- Docs: relative links and `#anchors` are checked by `src/test/docsLinks.test.ts`. Project status goes in `docs/ROADMAP.md` only.
 
 ### When to record a browser walkthrough
 
@@ -40,7 +37,3 @@ npm run walkthrough:picker         # 4 checks
 ```
 
 They drive Chrome over the DevTools protocol with Node's built-in `WebSocket`, adding no dependency. The bundled browser bridge only speaks Firefox, which is not installed in this environment; if that changes, prefer the bridge.
-
-### Sidebar tools (landed)
-
-All three named sidebar tools (Attack Helper, Actions List, Budget Calculator) have landed for both PF1e and PF2e with active session switching, complete formulas, and table-dice reminders. Empty/collapsed host default and `focusTab` contracts preserved.

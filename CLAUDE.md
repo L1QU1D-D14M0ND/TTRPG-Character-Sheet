@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A local-first, installable PWA **player** character sheet for tabletop systems, built spreadsheet-style (Build + Play, no dice roller, no VTT). Working title: **TTRPG Character Sheet**. The npm package is `ttrpg-character-sheet`. The GitHub repository is [L1QU1D-D14M0ND/TTRPG-Character-Sheet](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet) (`https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet.git`). Both were renamed from the earlier PF2e-only-phase name `Pathfinder-2E-Card` / `pathfinder-2e-character-sheet` (see [ADR 0008](docs/adr/0008-repo-package-rename.md)); the name is not indicative of current scope beyond that. The old GitHub slug redirects to this URL. Lowercase `ttrpg-character-sheet` resolves to the same repository; the canonical GitHub name is `TTRPG-Character-Sheet`.
 
-**Current product priority (read before making scope calls):** **Phase 5** ([`docs/phase-5.md`](docs/phase-5.md), [`docs/sidebar-tools-encyclopedia.md`](docs/sidebar-tools-encyclopedia.md)). The encyclopedia smoke set has landed. The encyclopedia pack in `content/pf1e/ogc/entries.json` is **complete**: 829 rows covering every CRB feat, CRB feature, CRB spell, and APG spell. CRB and APG stay mechanics-only. Pathfinder **Second Edition (PF2e)** must not regress and is deferred to a later release — that release is not Phase 5. If a task looks like "add a PF2e feature," check [`docs/ROADMAP.md`](docs/ROADMAP.md) and [ADR 0003](docs/adr/0003-multi-system-product-direction.md) first.
+**Current product priority (read before making scope calls):** [`docs/ROADMAP.md`](docs/ROADMAP.md) is the single source for the current phase and next work; read it rather than relying on a status summary here. Standing rules: CRB and APG packs stay mechanics-only (prose only in `content/pf1e/ogc/`). Pathfinder **Second Edition (PF2e)** must not regress and its remaining work is deferred to a later release, not the current phase. If a task looks like "add a PF2e feature," check the roadmap and [ADR 0003](docs/adr/0003-multi-system-product-direction.md) first.
 
 Everything here is governed by a stack of ADRs in `docs/adr/`. When a change touches product scope, schema shape, or shared-vs-per-system code, check the relevant ADR before assuming; a lot of scope decisions in this repo are deliberately locked, not open design space.
 
@@ -87,8 +87,9 @@ CRB "batch" test files (`crbBatch1.test.ts` … `crbBatch21.test.ts`, `crbBatchW
 
 ## Conventions worth knowing before editing
 
-- Prefer reading the linked ADR/design doc before changing behavior it locks — this repo tracks a lot of "decided, not open" scope in `docs/adr/*.md` and `docs/*.md`, and the README's "Docs" section indexes all of them.
-- `docs/ROADMAP.md` states the current phase and status date at the top — check it for what's actually in scope right now versus deferred.
+- Prefer reading the linked ADR/design doc before changing behavior it locks — this repo tracks a lot of "decided, not open" scope in `docs/adr/*.md` and `docs/*.md`, and [`docs/README.md`](docs/README.md) indexes all of them.
+- `docs/ROADMAP.md` states the current phase and status date at the top — check it for what's actually in scope right now versus deferred. [`docs/README.md`](docs/README.md) indexes every doc; finished plans and batch logs live in `docs/archive/` and are not current guidance.
+- Docs hygiene: project status goes in `docs/ROADMAP.md` only (other docs link to it). Relative links and `#anchors` in Markdown are checked by `app/src/test/docsLinks.test.ts`, so moving a doc means re-pointing its links.
 - Lint is `oxlint` (`app/.oxlintrc.json`), not ESLint; rules currently enforced: `react/rules-of-hooks` (error) and `react/only-export-components` (warn).
 - Tests are Vitest, `environment: 'node'` (not jsdom) per `app/vite.config.ts`, except where a test explicitly needs DOM (`@testing-library/react` + `jsdom` are devDependencies for that case).
 - Repo-relative file reads in tests go through `readRepoFile`/`readRepoJson` (`app/src/test/readRepoFile.ts`), which resolves paths relative to the repo root, not `app/`.

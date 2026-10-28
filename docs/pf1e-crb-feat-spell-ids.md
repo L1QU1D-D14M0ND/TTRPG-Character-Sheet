@@ -1,10 +1,10 @@
 # PF1e CRB feat and spell id tables
 
-**Status:** Packed. F1–F4 and S1–S5 landed (all 177 CRB feats and all 622 CRB spells). This file remains the id lock. Do not add ids that are not listed here. Rules text for these rows is Phase 5.1 ([`phase-5.md`](phase-5.md)), not a new id batch.  
-**Parent:** [`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) §8  
+**Status:** Locked. The closed id list for CRB feats and spells; every listed id is packed. Do not add ids that are not listed here.  
+**Parent:** [`pf1e-crb-pack-design.md`](pf1e-crb-pack-design.md) §5  
 **Machine copy:** [`pf1e-crb-feat-spell-ids.json`](pf1e-crb-feat-spell-ids.json)
 
-Closed lists for the remaining Core Rulebook **feat table** (Chapter 5) and **class spell lists** (Chapter 10: Bard, Cleric, Druid, Paladin, Ranger, Sorcerer/Wizard). Same job as [pack-design §7](pf1e-crb-pack-design.md#7-remaining-mundane-weapons-and-armor) did for weapons: every remaining id is named here before anyone types `feats.json` / `spells.json`.
+Closed lists for the remaining Core Rulebook **feat table** (Chapter 5) and **class spell lists** (Chapter 10: Bard, Cleric, Druid, Paladin, Ranger, Sorcerer/Wizard). Same job as [pack-design §7](archive/pf1e-crb-pack-batch-reviews.md#7-remaining-mundane-weapons-and-armor) did for weapons: every remaining id is named here before anyone types `feats.json` / `spells.json`.
 
 **Counts:** 177 CRB feats (172 remaining after Batch 12). 622 unique class-list spells (618 remaining after Batch 13).
 
@@ -50,7 +50,7 @@ Two groups per PR, same as mundane equipment. Honesty / code fixes and the Wizar
 | **S4** | Remaining spell levels 6 and 7 — *Packed* | 0 (127 packed) |
 | **S5** | Remaining spell levels 8 and 9 — *Packed* | 0 (83 packed) |
 
-Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §7.5](pf1e-crb-pack-design.md#75-reserved-magic-weapons-and-armor)). APG Summoner spells stay in the APG pack.
+Skip packed ids in every batch. Magic weapons/armor stay later ([pack-design §5](pf1e-crb-pack-design.md#weapons-armor-and-shields)). APG Summoner spells stay in the APG pack.
 
 ## Packed already (Batch 12 / 13 + Wizard 7 playtest + Batches F1a–F1c + Batches F2a–F2c + Batches F3a–F3c + Batch F4 + Batches S1–S5 — all 177 CRB feats and all 622 CRB spells packed)
 | Id | Name | Category |

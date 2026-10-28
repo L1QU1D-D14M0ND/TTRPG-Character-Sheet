@@ -1,5 +1,7 @@
 # User & Player Guide — TTRPG Character Sheet
 
+**Status:** Current. Describes the app as shipped; update it when player-visible behavior changes.
+
 A guide for players using **TTRPG Character Sheet** at the physical gaming table or in online sessions.
 
 ---

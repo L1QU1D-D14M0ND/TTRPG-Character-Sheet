@@ -1,8 +1,8 @@
 # TTRPG Character Sheet — Product design
 
-**Status:** Product direction lock (ADR 0003) — 2026-08-18  
-**Implementation:** PF1e **0.9 bar landed**. **1.0 landed** — Synthesist golden + Spanish UI catalog + stability. The First Edition finish has landed (CRB catalog, APG follow-through, catalog picker, named sidebar tools, pre-release hygiene). **Current phase is Phase 5** ([`phase-5.md`](phase-5.md)): encyclopedia first, with the OGL notice in that change. Remaining PF2e work waits for a **later release** and is not Phase 5.  
-**Next coding increment:** [`next-increment-multi-system.md`](next-increment-multi-system.md)  
+**Status:** Locked. Product direction for [ADR 0003](adr/0003-multi-system-product-direction.md) (2026-08-18). Project status: [`ROADMAP.md`](ROADMAP.md).  
+**Implementation:** PF1e 0.9 and 1.0 have landed, and so has the First Edition finish. Project status: [`ROADMAP.md`](ROADMAP.md).  
+**Next coding increment:** [`next-increment-multi-system.md`](archive/next-increment-multi-system.md)  
 **Repo context:** npm package `ttrpg-character-sheet`; GitHub [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet) (renamed from `Pathfinder-2E-Card`, [ADR 0008](adr/0008-repo-package-rename.md))  
 **Audience:** Product / engineering  
 **Working display name:** TTRPG Character Sheet

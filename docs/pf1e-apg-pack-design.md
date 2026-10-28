@@ -1,6 +1,6 @@
 # PF1e Advanced Player’s Guide pack (1.0 Synthesist)
 
-**Status:** Synthesist golden landed (Half-Elf Radiant Striker). Slice 4 landed (Summoner spellsPerDay + 27 APG spells). Spanish UI catalog landed (`es.json`). **1.0 landed.**  
+**Status:** Landed. Governs `content/pf1e/apg/` (Summoner class, Synthesist archetype, evolutions, 27 Summoner spells) and the playable Synthesist (1.0).  
 **Parent:** [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md) decisions 16 and 20, [ADR 0007](adr/0007-content-licensing.md)  
 **On disk:** [`../content/pf1e/apg/`](../content/pf1e/apg/)  
 **Code:** `app/src/systems/pf1e/content/apgPack.ts` (apply reuses the CRB class path)  
@@ -12,7 +12,7 @@ This pack is **not** the CRB folder. **Never** add `class.summoner` to `content/
 
 ## License
 
-Mechanics-only until rules text ([ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md)). That prose is Phase 5.1, in the same change as the OGL notice ([`phase-5.md`](phase-5.md)).
+Mechanics-only ([ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md)). Rules summaries for the APG spells live in the encyclopedia pack, `content/pf1e/ogc/`, under the OGL notice ([`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md)).
 
 - Ids, names, HD / BAB / save tags, class-skill keys, skill points per level.
 - No class flavor, eidolon prose, evolution **text**, or spell descriptions.

@@ -49,7 +49,7 @@ schema `$id`) move to match it.
   `docs/pf2e-dynamic-character-sheet-design.md`, `.cursor/environment.json`)
   is updated to the new name in the same change as this ADR. Dated
   historical records (e.g. the risk log in
-  [`next-increment-multi-system.md`](../next-increment-multi-system.md))
+  [`next-increment-multi-system.md`](../archive/next-increment-multi-system.md))
   are left as-is — they describe a past state, not current fact.
 - `app/package-lock.json` is regenerated (`npm install`), not hand-edited.
 - The GitHub repository rename itself (Settings → repository name, or the

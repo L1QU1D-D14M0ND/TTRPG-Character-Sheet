@@ -1,6 +1,6 @@
 # Shared kernel — reuse between Pathfinder 1E and 2E
 
-**Status:** Engineering lock (ADR 0004) — 2026-08-17  
+**Status:** Locked. Engineering detail for [ADR 0004](adr/0004-shared-kernel.md) (2026-08-17).  
 **Parent:** [ADR 0003](adr/0003-multi-system-product-direction.md), [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md)  
 **Code:** Phase M extracted `app/src/shared`, `app/src/shell`, `app/src/systems/pf2e` (2026-08-17).
 

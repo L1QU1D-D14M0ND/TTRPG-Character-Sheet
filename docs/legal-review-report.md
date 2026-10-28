@@ -1,14 +1,8 @@
 # Legal review report
 
-**Status:** Informational report, not an ADR.
+**Status:** Reference. Informational report, not an ADR.
 **Date:** 2026-08-28
-**Addendum (2026-08-28):** §4's repo/package-name gap is closed — the stakeholder
-triggered the rename to `ttrpg-character-sheet`; see [ADR 0008](adr/0008-repo-package-rename.md).
-The body below is left as the dated snapshot that motivated that decision.
-**Addendum (2026-09-29):** the live GitHub repository is
-[`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet).
-The npm package name remains `ttrpg-character-sheet`.  
-**Addendum (2026-10-03):** Phase 5 is the current app phase ([`phase-5.md`](phase-5.md)). The first rules-text change is still the OGL trigger in §3 / ADR 0007. Trademark and hygiene gaps in the body below are closed: the repo and npm package are renamed, the non-affiliation disclaimer is in the README and About dialog, and `CONTRIBUTING.md`, `NOTICE`, and `SECURITY.md` exist. Section 7 is the current summary. Sections 4 and 6 remain the 2026-08-28 snapshot.
+**Current as of 2026-10-28:** Section 7 is the current summary. Sections 1–6 remain the 2026-08-28 snapshot; the gaps they describe are closed. The repo and npm package are renamed ([ADR 0008](adr/0008-repo-package-rename.md); the live repository is [`TTRPG-Character-Sheet`](https://github.com/L1QU1D-D14M0ND/TTRPG-Character-Sheet), the npm package `ttrpg-character-sheet`). The non-affiliation disclaimer is in the README and About dialog. `CONTRIBUTING.md`, `NOTICE`, and `SECURITY.md` exist. The OGL 1.0a notice and Section 15 shipped with the encyclopedia pack in `content/pf1e/ogc/` (Phase 5.1).  
 **Not legal advice.** This is an engineering-level inventory of where the
 project touches licensing, trademark, and privacy law, written to help a
 maintainer or an actual lawyer decide what (if anything) needs review before
@@ -184,9 +178,9 @@ omission rather than an accidental one; not a recommendation to add them now.
 | Area | Risk today | Action needed now? |
 | --- | --- | --- |
 | App code license (MIT) + dependencies | Low | No |
-| Content licensing (OGL / Product Identity) | Low, actively gated by ADR 0007 + CI test | No empty notice. Revisit in the Phase 5.1 PR that first adds rules-text prose |
+| Content licensing (OGL / Product Identity) | Low, actively gated by ADR 0007 + CI test | No. OGL 1.0a + Section 15 shipped with the `content/pf1e/ogc/` pack; CRB and APG packs stay mechanics-only |
 | Trademark ("Pathfinder" naming) | Low — disclaimer is in the README and About dialog; repo and npm package renamed ([ADR 0008](adr/0008-repo-package-rename.md)) | No |
 | Privacy / data handling | Low — local-first, no telemetry | No — revisit only if a networked feature is proposed |
 | OSS project hygiene | Closed — `CONTRIBUTING.md`, `NOTICE`, and `SECURITY.md` exist | No |
 
-The actionable gap that remains is the one ADR 0007 already tracks: **do not add rules-text prose without OGL 1.0a and Section 15 in that same change.** That change is Phase 5.1, not a hygiene follow-up. The §4 disclaimer and §6 hygiene files described as missing in the body have landed; those sections are the 2026-08-28 snapshot.
+The rule ADR 0007 tracks still holds for future changes: **rules-text prose ships only with OGL 1.0a and a Section 15 that lists its sources, in the same change.** The encyclopedia pack met that bar in Phase 5.1. The §4 disclaimer and §6 hygiene files described as missing in the body have landed; those sections are the 2026-08-28 snapshot.

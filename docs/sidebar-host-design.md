@@ -1,6 +1,6 @@
 # Sidebar host — tools and extra information
 
-**Status:** Host and named tools landed (Attack Helper, Actions List, Budget Calculator) — 2026-09-22  
+**Status:** Landed. Host contract for [ADR 0005](adr/0005-sidebar-host.md); all four named tools have landed (2026-09-22; the encyclopedia, PF1e only, 2026-10-04).  
 **Parent:** [ADR 0005](adr/0005-sidebar-host.md), [`ttrpg-character-sheet-design.md`](ttrpg-character-sheet-design.md), [`shared-kernel-design.md`](shared-kernel-design.md)  
 **Code:** `app/src/shell/sidebar/SidebarHost.tsx`. Types (`SidebarTool`, `SidebarToolContext`) live in `app/src/shell/types.ts`. Named tools implemented in `app/src/shell/sidebar/tools/` (`AttackHelperTool.tsx`, `ActionsListTool.tsx`, `BudgetCalculatorTool.tsx`).
 

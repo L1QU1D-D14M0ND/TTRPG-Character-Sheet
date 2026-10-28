@@ -3,7 +3,7 @@
 **Schema:** [`../schemas/character.schema.json`](../schemas/character.schema.json)  
 **Example:** [`../fixtures/characters/minimal.example.json`](../fixtures/characters/minimal.example.json)  
 **schemaVersion:** `1`  
-**Status:** Schema decisions locked for **PF2e** documents (v1.1 amendments; still `schemaVersion: 1` — not yet released). Product direction is [ADR 0003](adr/0003-multi-system-product-direction.md). PF1e gets a separate schema; see [`pf1e-schema-design-notes.md`](pf1e-schema-design-notes.md). Phase M may add an optional `system: "pf2e"` field without bumping `schemaVersion`. **Done:** optional `system`; Load without it is PF2e; Save writes `pf2e`.
+**Status:** Locked. Schema decisions for **PF2e** documents (v1.1 amendments; still `schemaVersion: 1`). PF1e has its own schema ([`pf1e-schema-design-notes.md`](pf1e-schema-design-notes.md)). Optional `system: "pf2e"` landed: Load without it is PF2e; Save writes `pf2e`.
 
 ---
 
@@ -128,9 +128,9 @@ PF2e leftover editors/goldens/content wait for a **later PF2e release** ([roadma
 7. PF2e panel literals remain English (later PF2e *release*). Chrome + PF1e catalogs use `en.json` / `es.json`.  
 8. IndexedDB one-key draft **landed** (app-level; not a character library).
 
-S1/S4 record: [`continuation-design.md`](continuation-design.md).  
-Historical PF2e increment: [`next-increment-design.md`](next-increment-design.md).  
-Current sequencing: [`next-increment-multi-system.md`](next-increment-multi-system.md).
+S1/S4 record: [`continuation-design.md`](archive/continuation-design.md).  
+Historical PF2e increment: [`next-increment-design.md`](archive/next-increment-design.md).  
+Current sequencing: [`next-increment-multi-system.md`](archive/next-increment-multi-system.md).
 
 ---
 

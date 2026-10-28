@@ -1,10 +1,10 @@
 # Continuation design — options to proceed from Phase 1
 
 **Status:** Archival. Executed (S1 vertical slice + S4 validation prelude landed 2026-08-14). Historical PF2e sequencing. Do not use this file to schedule new work.  
-**Current sequencing:** [`phase-5.md`](phase-5.md) and [`ROADMAP.md`](ROADMAP.md). [`next-increment-multi-system.md`](next-increment-multi-system.md) is the executed record of the multi-system increment.  
+**Current sequencing:** [`phase-5.md`](../phase-5.md) and [`ROADMAP.md`](../ROADMAP.md). [`next-increment-multi-system.md`](next-increment-multi-system.md) is the executed record of the multi-system increment.  
 **Date:** 2026-08-14  
 **Audience:** Product / engineering  
-**Depends on:** [`pf2e-dynamic-character-sheet-design.md`](pf2e-dynamic-character-sheet-design.md) (PF2e system spec), [ADR 0001](adr/0001-product-direction.md) (superseded), [ADR 0002](adr/0002-character-schema.md), [`schema-design-notes.md`](schema-design-notes.md)  
+**Depends on:** [`pf2e-dynamic-character-sheet-design.md`](../pf2e-dynamic-character-sheet-design.md) (PF2e system spec), [ADR 0001](../adr/0001-product-direction.md) (superseded), [ADR 0002](../adr/0002-character-schema.md), [`schema-design-notes.md`](../schema-design-notes.md)  
 **Remaining work (historical PF2e increment):** [`next-increment-design.md`](next-increment-design.md)
 
 This document does **not** reopen locked PF2e schema/math decisions. It mapped the pre-S1 scaffold to remaining PF2e 0.9/1.0 work and recommended S1 + S4. Treat it as the record of those choices. **Do not use §11 as the next coding slice.** App 0.9 is now PF1e-first.

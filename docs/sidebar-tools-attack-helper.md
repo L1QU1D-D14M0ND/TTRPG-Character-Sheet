@@ -1,6 +1,6 @@
 # Attack Helper (sidebar tool)
 
-**Status:** **Landed** (2026-09-20). Implemented under `app/src/shell/sidebar/tools/attackHelper/`. Host lock: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
+**Status:** Landed (2026-09-20). Implemented under `app/src/shell/sidebar/tools/attackHelper/`. Host lock: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
 **Id:** `shell.attack-helper` (shared entry; per-system math behind it).  
 **Sequencing:** Shipped as the last character-sheet feature of Phase 1x (alongside [Actions List](sidebar-tools-actions-list.md) and [Budget Calculator](sidebar-tools-budget-calculator.md)). Both PF1e and PF2e supported. No in-app dice.
 
