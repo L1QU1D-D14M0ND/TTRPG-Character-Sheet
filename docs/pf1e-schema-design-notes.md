@@ -1,6 +1,6 @@
 # PF1e character JSON schema — design notes
 
-**Status:** Implemented. Contract: [ADR 0006](adr/0006-pf1e-character-schema.md), [`schemas/pf1e/character.schema.json`](../schemas/pf1e/character.schema.json).  
+**Status:** Landed. Contract: [ADR 0006](adr/0006-pf1e-character-schema.md), [`schemas/pf1e/character.schema.json`](../schemas/pf1e/character.schema.json).  
 **Parent lock:** [ADR 0003](adr/0003-multi-system-product-direction.md), [`pf1e-character-sheet-design.md`](pf1e-character-sheet-design.md)  
 **Shared envelope / refs:** [`shared-kernel-design.md`](shared-kernel-design.md)  
 **PF2e schema (unchanged):** [`character.schema.json`](../schemas/character.schema.json), [ADR 0002](adr/0002-character-schema.md)

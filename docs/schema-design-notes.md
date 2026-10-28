@@ -3,7 +3,7 @@
 **Schema:** [`../schemas/character.schema.json`](../schemas/character.schema.json)  
 **Example:** [`../fixtures/characters/minimal.example.json`](../fixtures/characters/minimal.example.json)  
 **schemaVersion:** `1`  
-**Status:** Schema decisions locked for **PF2e** documents (v1.1 amendments; still `schemaVersion: 1` — not yet released). Product direction is [ADR 0003](adr/0003-multi-system-product-direction.md). PF1e gets a separate schema; see [`pf1e-schema-design-notes.md`](pf1e-schema-design-notes.md). Phase M may add an optional `system: "pf2e"` field without bumping `schemaVersion`. **Done:** optional `system`; Load without it is PF2e; Save writes `pf2e`.
+**Status:** Locked. Schema decisions for **PF2e** documents (v1.1 amendments; still `schemaVersion: 1`). PF1e has its own schema ([`pf1e-schema-design-notes.md`](pf1e-schema-design-notes.md)). Optional `system: "pf2e"` landed: Load without it is PF2e; Save writes `pf2e`.
 
 ---
 

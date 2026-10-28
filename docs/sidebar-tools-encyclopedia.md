@@ -1,6 +1,6 @@
 # Encyclopedia (sidebar tool) and OGC pack
 
-**Status:** Complete. Every batch has landed: 829 rows covering all 177 CRB feats, 3 CRB features, 622 CRB spells, and 27 APG spells. `ogcPack.test.ts` asserts that no mechanic row is left without a summary.  
+**Status:** Landed. The pack is complete at 829 rows (all 177 CRB feats, 3 CRB features, 622 CRB spells, and 27 APG spells); `ogcPack.test.ts` asserts that no mechanic row is left without a summary.  
 **Id:** `shell.encyclopedia` (PF1e module only).  
 **Host lock:** [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
 **License lock:** [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md).  

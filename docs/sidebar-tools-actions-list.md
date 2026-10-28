@@ -1,6 +1,6 @@
 # Actions List (sidebar tool)
 
-**Status:** **Landed** (2026-09-20). Implemented under `app/src/shell/sidebar/tools/actionsList/`. Host lock: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
+**Status:** Landed (2026-09-20). Implemented under `app/src/shell/sidebar/tools/actionsList/`. Host lock: [ADR 0005](adr/0005-sidebar-host.md), [`sidebar-host-design.md`](sidebar-host-design.md).  
 **Id:** `shell.actions-list` (shared chrome; per-system action catalog and restriction table).  
 **Sequencing:** Shipped as the last character-sheet feature of Phase 1x (alongside [Attack Helper](sidebar-tools-attack-helper.md) and [Budget Calculator](sidebar-tools-budget-calculator.md)). Both PF1e and PF2e supported.
 

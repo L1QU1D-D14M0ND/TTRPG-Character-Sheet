@@ -1,6 +1,6 @@
 # PF1e playtest reference — Flare Nightingale
 
-**Status:** Reference only. Source for the [ROADMAP.md](ROADMAP.md) Phase 1x "priority override: playtest character" slice and the [ADR 0003](adr/0003-multi-system-product-direction.md) 2026-09-12 postscript. This is **not** a schema/design doc and does not lock anything; it exists so the priority-override checklist has a concrete target without re-opening the source spreadsheet.
+**Status:** Reference. Source for the Phase 1x "priority override: playtest character" slice ([`archive/roadmap-history.md`](archive/roadmap-history.md)) and the [ADR 0003](adr/0003-multi-system-product-direction.md) 2026-09-12 postscript. This is **not** a schema/design doc and does not lock anything; it gives that override a concrete target without re-opening the source spreadsheet.
 
 **Source:** a player-provided Excel character sheet (`Ficha_Flare_Nightingale.xlsx`, 7 tabs: Estadísticas base, Habilidades, Dotes, Armas, Armadura e inventario, Libro, Extra), read in-session on 2026-09-12. The file itself is not checked into the repo — this doc is a distilled transcription for engineering reference. Mechanical values are transcribed as-is; standard CRB rules text (feats/spells the sheet copied in full) is **not** reproduced here — only names and a one-line paraphrase, consistent with this repo's mechanics-only content stance ([ADR 0007](adr/0007-content-licensing.md)). Homebrew items are the player's own content and are summarized more fully since no third-party text is involved.
 
