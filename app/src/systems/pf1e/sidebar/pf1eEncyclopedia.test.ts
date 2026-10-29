@@ -91,11 +91,43 @@ describe('PF1e encyclopedia in a localized UI (Phase 5.2)', () => {
     }
   })
 
-  it('translates every entry it ships', () => {
-    const untranslated = buildPf1eEncyclopedia('es')
-      .flatMap((group) => group.entries)
-      .filter((entry) => entry.altName === undefined)
-      .map((entry) => entry.id)
-    expect(untranslated).toEqual([])
+  it('translates every entry it ships, and keeps each one joinable', () => {
+    // Exhaustive rather than one pinned entry: every row must be relabelled,
+    // keep the exact English catalog name as its altName, and actually
+    // differ from it, or the "translated" list is partly a copy.
+    const english = new Map(
+      buildPf1eEncyclopedia('en')
+        .flatMap((group) => group.entries)
+        .map((entry) => [entry.id, entry.name]),
+    )
+    const spanish = buildPf1eEncyclopedia('es').flatMap((group) => group.entries)
+    expect(spanish.length).toBe(OGC_ENTRIES.length)
+
+    const problems: string[] = []
+    for (const entry of spanish) {
+      const englishName = english.get(entry.id)
+      if (entry.altName !== englishName) {
+        problems.push(`${entry.id}: altName ${entry.altName} != ${englishName}`)
+      }
+      if (entry.name === englishName) {
+        problems.push(`${entry.id}: not translated`)
+      }
+    }
+    expect(problems).toEqual([])
+  })
+
+  it('leaves the English build exactly as it was before the slice', () => {
+    // The English reader must see no trace of the localization: same three
+    // fields, no altName, same prose.
+    for (const group of buildPf1eEncyclopedia('en')) {
+      for (const entry of group.entries) {
+        const packed = OGC_ENTRIES.find((row) => row.id === entry.id)!
+        expect(entry).toEqual({
+          id: packed.id,
+          name: entry.name,
+          body: packed.body,
+        })
+      }
+    }
   })
 })

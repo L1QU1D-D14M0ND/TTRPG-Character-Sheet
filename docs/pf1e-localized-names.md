@@ -88,6 +88,6 @@ Hand-written in `scripts/names_part1.py` and `scripts/names_spells.py`; no scrap
 
 ## 9. Verification
 
-- `npx vitest run` — 878 tests, including `namesPack.test.ts` (10), `catalogNames.test.ts` (5), `CatalogPickerLocale.test.tsx` (7), `pf1eEncyclopediaLocale.test.tsx` (4), and four added encyclopedia-builder cases.
+- `npx vitest run` — 880 tests, including `namesPack.test.ts` (11), `catalogNames.test.ts` (5), `CatalogPickerLocale.test.tsx` (7), `pf1eEncyclopediaLocale.test.tsx` (4), and five added encyclopedia-builder cases.
 - `npm run walkthrough:names` — 12 checks in real Chrome, driving the actual language switcher.
 - `npm run walkthrough:encyclopedia` (10) and `npm run walkthrough:picker` (4) still pass unchanged.

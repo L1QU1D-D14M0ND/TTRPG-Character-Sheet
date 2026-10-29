@@ -32,6 +32,22 @@ function allCatalogRows(): { id: string; name: string }[] {
   ]
 }
 
+/**
+ * Loanwords Spanish uses unchanged, so an identical name here is correct
+ * rather than an untranslated placeholder. Asserted to be exactly the set of
+ * identical rows, so it cannot rot into a blanket exemption.
+ */
+const SAME_IN_BOTH = new Set([
+  'weapon.bolas',
+  'weapon.kama',
+  'weapon.kukri',
+  'weapon.nunchaku',
+  'weapon.ranseur',
+  'weapon.sai',
+  'weapon.shuriken',
+  'weapon.siangham',
+])
+
 describe('localized catalog names (Phase 5.2)', () => {
   it('covers every registered catalog row', () => {
     // The point of the slice: a Spanish player must not meet a half-English
@@ -44,20 +60,8 @@ describe('localized catalog names (Phase 5.2)', () => {
 
   it('translates every row to something other than its English name', () => {
     // A row copied verbatim is almost always an untranslated placeholder.
-    // Proper nouns that are genuinely the same in both languages are listed
-    // here so the check stays meaningful rather than being switched off.
-    const SAME_IN_BOTH = new Set([
-      'weapon.kukri',
-      'weapon.kama',
-      'weapon.nunchaku',
-      'weapon.sai',
-      'weapon.siangham',
-      'weapon.shuriken',
-      'weapon.bolas',
-      'weapon.ranseur',
-      'spell.geas-quest',
-      'spell.lesser-geas',
-    ])
+    // These eight are loanwords Spanish uses unchanged, so the check stays
+    // meaningful rather than being switched off.
     const copied = allCatalogRows()
       .filter(
         (row) =>
@@ -65,6 +69,15 @@ describe('localized catalog names (Phase 5.2)', () => {
       )
       .map((row) => row.id)
     expect(copied).toEqual([])
+  })
+
+  it('keeps the loanword list exact, so it cannot quietly cover a new row', () => {
+    // An entry that no longer matches its English name is a stale exemption,
+    // and a stale list is how an untranslated row later slips through.
+    const actuallySame = allCatalogRows()
+      .filter((row) => localizedName(row.id, 'es') === row.name)
+      .map((row) => row.id)
+    expect([...SAME_IN_BOTH].sort()).toEqual(actuallySame.sort())
   })
 
   it('does not translate ids of rows that no catalog ships', () => {
