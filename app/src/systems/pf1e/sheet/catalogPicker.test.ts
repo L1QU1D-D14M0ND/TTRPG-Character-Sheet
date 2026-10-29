@@ -28,6 +28,47 @@ describe('catalog picker kinds', () => {
     expect(matchesName('Fireball', '')).toBe(true)
   })
 
+  it('ignores accents in both the name and the query', () => {
+    // A localized catalog is full of accents, and a player on a keyboard
+    // without dead keys must still be able to find a row.
+    expect(matchesName('Bola de fuego', 'bola')).toBe(true)
+    expect(matchesName('Puntería mortal', 'punteria')).toBe(true)
+    expect(matchesName('Punteria mortal', 'puntería')).toBe(true)
+    expect(matchesName('Bárbaro', 'BARBARO')).toBe(true)
+    expect(matchesName('Bárbaro', 'bardo')).toBe(false)
+  })
+
+  it('matches the other name a row is known by', () => {
+    expect(matchesName('Espada larga', 'longsword', 'Longsword')).toBe(true)
+    expect(matchesName('Espada larga', 'espada', 'Longsword')).toBe(true)
+    expect(matchesName('Espada larga', 'mace', 'Longsword')).toBe(false)
+    // No alt name means only the displayed name is searched.
+    expect(matchesName('Espada larga', 'longsword')).toBe(false)
+  })
+
+  it('labels rows in the requested locale and keeps the English name', () => {
+    const spanish = groupsFor('feat', 'es')
+      .flatMap((group) => group.rows)
+      .find((row) => row.id === 'feat.power-attack')!
+    expect(spanish.name).toBe('Ataque poderoso')
+    expect(spanish.altName).toBe('Power Attack')
+
+    const english = groupsFor('feat', 'en')
+      .flatMap((group) => group.rows)
+      .find((row) => row.id === 'feat.power-attack')!
+    expect(english.name).toBe('Power Attack')
+    expect(english.altName).toBeUndefined()
+  })
+
+  it('keeps the same rows in the same order in either locale', () => {
+    // Translating labels must not reshuffle or drop a catalog.
+    const ids = (locale: 'en' | 'es') =>
+      groupsFor('spell', locale).flatMap((group) =>
+        group.rows.map((row) => row.id),
+      )
+    expect(ids('es')).toEqual(ids('en'))
+  })
+
   it('shows search only for kinds larger than the threshold', () => {
     expect(SEARCH_ROW_THRESHOLD).toBe(12)
     expect(showsSearch('feature')).toBe(false)

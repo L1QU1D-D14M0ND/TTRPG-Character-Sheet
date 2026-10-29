@@ -1,9 +1,10 @@
 import { useCallback, useId, useMemo, useState } from 'react'
-import { useT, type TranslateFn } from '../../../shared/i18n'
+import { useI18n, type TranslateFn } from '../../../shared/i18n'
 import { ModalDialog } from '../../../shared/ui/ModalDialog'
 import {
   catalogId,
   catalogName,
+  displayName,
   groupsFor,
   setCatalogName,
   showsSearch,
@@ -28,14 +29,14 @@ export function CatalogPicker<K extends CatalogKind>({
   customLabel?: string
   onPick: (next: HostFor<K>) => void
 }) {
-  const t = useT()
+  const { locale, t } = useI18n()
   const titleId = useId()
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const selectedId = catalogId(kind, value)
   const selectedName = catalogName(kind, value)
   const withSearch = showsSearch(kind)
-  const groups = useMemo(() => groupsFor(kind), [kind])
+  const groups = useMemo(() => groupsFor(kind, locale), [kind, locale])
   const emptyLabel = customLabel ?? t('pf1e.common.custom')
 
   const close = useCallback(() => {
@@ -48,8 +49,14 @@ export function CatalogPicker<K extends CatalogKind>({
     close()
   }
 
+  /**
+   * The trigger shows the localized name, but the editable name field below
+   * keeps the document's own value: the sheet stores what the player will
+   * read back on another machine, in another locale, so translating it
+   * silently would change the saved character rather than its presentation.
+   */
   const triggerText = selectedId
-    ? selectedName || emptyLabel
+    ? displayName(selectedId, selectedName, locale) || emptyLabel
     : emptyLabel
 
   return (
@@ -144,6 +151,7 @@ function CatalogOptions({
               key={row.id}
               selected={selectedId === row.id}
               label={row.name}
+              altName={row.altName}
               detail={row.detail}
               onClick={() => onPick(row.id)}
             />
@@ -162,11 +170,13 @@ function CatalogOptions({
 function OptionButton({
   selected,
   label,
+  altName,
   detail,
   onClick,
 }: {
   selected: boolean
   label: string
+  altName?: string
   detail?: string
   onClick: () => void
 }) {
@@ -178,6 +188,11 @@ function OptionButton({
       onClick={onClick}
     >
       <span>{label}</span>
+      {altName ? (
+        <span className="muted catalog-picker-alt" aria-hidden="true">
+          {altName}
+        </span>
+      ) : null}
       {detail ? (
         <span className="muted" aria-hidden="true">
           {detail}

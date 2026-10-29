@@ -20,6 +20,7 @@ npm run dev
 - PF1e martial + spell calc (Fighter 5, Wizard 5, Fighter 2 / Wizard 3, Synthesist 5, Wizard 7, Cleric 5, Duelist 7, and Ranger 5 goldens) and PF2e core calc engine (Fighter 5, Wizard 5, Bard 5, Cleric 5, and Ranger 5 goldens)
 - Spreadsheet editors per system (PF1e: identity/classes, abilities, skills, combat, spells, inventory, play)
 - **Sidebar tools:** **Attack Helper**, **Actions List**, **Budget Calculator**, and the PF1e **Encyclopedia** (no in-app dice; physical table dice only)
+- **Spanish:** the chrome and the PF1e panels are translated, and the catalog itself is too: rows show their Spanish name with the English one beside them, searchable either way. Your saved sheet keeps the English name.
 
 ## Docs
 
@@ -52,6 +53,7 @@ Start with the [docs index](docs/README.md). The most-used entries:
 - [`content/pf1e/crb/`](content/pf1e/crb/) — PF1e CRB pack (complete: all 177 feats and all 622 spells; mechanics-only)
 - [`content/pf1e/apg/`](content/pf1e/apg/) — PF1e APG pack (Summoner class, Synthesist archetype, evolutions, and 27-spell catalog; mechanics-only)
 - [`content/pf1e/ogc/`](content/pf1e/ogc/) — PF1e encyclopedia pack (829 rules summaries joined by catalog id; OGL 1.0a + Section 15)
+- [`content/pf1e/names/`](content/pf1e/names/) — PF1e localized catalog names (curated Spanish name for all 980 catalog rows; mechanics-only)
 
 ## Trademark & Non-Affiliation Disclaimer
 

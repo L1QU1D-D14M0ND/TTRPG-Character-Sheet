@@ -72,7 +72,7 @@ Do not scrape third-party SRD sites into `content/` even after that PR. Curate b
 
 **Allowed as catalog labels** (already on goldens): generic mechanical names such as Fighter, Wizard, Human, Longsword, Fireball, Power Attack.
 
-**Catalog labels stay English in every UI locale.** They are pack content, not UI strings, so `es.json` does not carry them and should not. A Spanish player picking from a catalog searches English names — "Shield", not "escudo". Translating them would stay inside the mechanics-only bar (a name is not prose, so §4 is not triggered), but it adds a second name per row and needs a curated translation source, so it is its own content slice and never part of UI-locale work.
+**Catalog labels stay English in the document, and are translated for display.** They are pack content, not UI strings, so `es.json` does not carry them and must not. Phase 5.2 added a curated second name per row in `content/pf1e/names/`, keyed by catalog id: the picker and encyclopedia show it in a Spanish UI while the saved character keeps the English name. That stays inside the mechanics-only bar (a name is not prose, so §4 is not triggered), and it is its own content slice, never part of UI-locale work. Spec: [`pf1e-localized-names.md`](pf1e-localized-names.md).
 
 **Chrome:** system picker may say Pathfinder First Edition / Second Edition. Working app title is **TTRPG Character Sheet**. No “Paizo compatible” logo in 0.9/1.0 unless a later ADR adds Community Use artwork and its attribution.
 
@@ -112,3 +112,4 @@ No Remaster encyclopedia in this review. ORC import remains later (ADR 0003). PF
 | 2026-09-20 | APG slice 4 landed: Summoner spellsPerDay table + 27 APG Summoner spells; verified mechanics-only by licenseGate |
 | 2026-10-03 | Phase 5.1 is the OGL increment: first rules-text prose and the Section 15 notice ship together. Localized names stay a separate mechanics-only slice (5.2) |
 | 2026-10-03 | Phase 5.1 prose locked in `content/pf1e/ogc/` (`body` only). CRB and APG stay mechanics-only |
+| 2026-10-29 | Phase 5.2 landed: `content/pf1e/names/` carries a curated Spanish name for all 980 catalog rows. Mechanics-only, no OGL notice: a name is not prose. UI catalogs stay free of catalog names, asserted by `catalogNames.test.ts` |

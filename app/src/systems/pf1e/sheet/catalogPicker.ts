@@ -11,6 +11,7 @@ import {
   type CatalogKind,
   type CatalogOption,
 } from '../content/catalogIndex'
+import { DEFAULT_LOCALE, type Locale } from '../../../shared/i18n'
 
 export type {
   CatalogGroup,
@@ -27,6 +28,7 @@ export {
   setCatalogName,
   stamp,
 } from '../content/catalogIndex'
+export { displayName, localizedName } from '../content/namesPack'
 
 /** Search field appears only when a kind has more rows than this. */
 export const SEARCH_ROW_THRESHOLD = 12
@@ -41,10 +43,33 @@ export const SEARCH_ROW_THRESHOLD = 12
  */
 export const VISIBLE_ROW_LIMIT = 60
 
-export function matchesName(name: string, query: string): boolean {
-  const needle = query.trim().toLowerCase()
+/**
+ * Fold case and accents. A Spanish catalog is full of accented names, and a
+ * player typing on a keyboard without dead keys searches "bola de fuego",
+ * not "Bola de fuego"; folding both sides means the accent is a rendering
+ * detail rather than a thing you must reproduce to find a row.
+ */
+function fold(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+}
+
+/**
+ * Match the row's displayed name or the other name it is known by, so a
+ * player who learned the game in English still finds "Longsword" with the
+ * Spanish UI on.
+ */
+export function matchesName(
+  name: string,
+  query: string,
+  altName?: string,
+): boolean {
+  const needle = fold(query.trim())
   if (!needle) return true
-  return name.toLowerCase().includes(needle)
+  if (fold(name).includes(needle)) return true
+  return altName !== undefined && fold(altName).includes(needle)
 }
 
 export interface VisibleCatalog {
@@ -71,7 +96,7 @@ export function visibleCatalog(
 ): VisibleCatalog {
   const matched = source.map((group) => ({
     ...group,
-    rows: group.rows.filter((row) => matchesName(row.name, query)),
+    rows: group.rows.filter((row) => matchesName(row.name, query, row.altName)),
   }))
   const total = matched.reduce((sum, group) => sum + group.rows.length, 0)
 
@@ -124,8 +149,11 @@ function shareLimit(counts: number[], limit: number): number[] {
   return allowed
 }
 
-export function groupsFor(kind: CatalogKind): CatalogGroup[] {
-  return groups(kind)
+export function groupsFor(
+  kind: CatalogKind,
+  locale: Locale = DEFAULT_LOCALE,
+): CatalogGroup[] {
+  return groups(kind, locale)
 }
 
 export function rowCount(kind: CatalogKind): number {

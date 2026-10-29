@@ -11,3 +11,7 @@ app/dev-dist/
 coverage/
 app/coverage/
 *.tsbuildinfo
+
+# Python bytecode from the content build scripts
+__pycache__/
+*.pyc

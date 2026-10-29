@@ -55,6 +55,7 @@ Decisions are locked in ADRs; design docs explain how a locked decision is built
 | [PF1e CRB pack](pf1e-crb-pack-design.md) | Standing rules for the Core Rulebook mechanics pack |
 | [CRB feat and spell ids](pf1e-crb-feat-spell-ids.md) | Closed id lists ([JSON](pf1e-crb-feat-spell-ids.json) is read by Vitest) |
 | [PF1e APG pack](pf1e-apg-pack-design.md) | Summoner / Synthesist pack |
+| [PF1e localized names](pf1e-localized-names.md) | Phase 5.2: the curated second name per catalog row |
 
 ## Sidebar tools
 

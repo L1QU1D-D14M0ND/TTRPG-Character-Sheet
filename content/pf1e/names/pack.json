@@ -1,0 +1,10 @@
+{
+  "id": "pf1e.names",
+  "system": "pf1e",
+  "title": "Pathfinder First Edition localized catalog names",
+  "schemaVersion": 1,
+  "status": "es-complete",
+  "license": "Curated translations of mechanic names only. A name is not prose, so this pack stays mechanics-only and carries no OGL notice. No Product Identity.",
+  "contentKind": "mechanics-only",
+  "oglNoticeRequired": false
+}

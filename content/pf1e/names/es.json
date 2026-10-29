@@ -1,0 +1,5882 @@
+[
+  {
+    "id": "archetype.synthesist",
+    "names": {
+      "es": "Sintetista"
+    }
+  },
+  {
+    "id": "armor.banded-mail",
+    "names": {
+      "es": "Armadura de bandas"
+    }
+  },
+  {
+    "id": "armor.breastplate",
+    "names": {
+      "es": "Coraza"
+    }
+  },
+  {
+    "id": "armor.breastplate-of-command",
+    "names": {
+      "es": "Coraza del mando"
+    }
+  },
+  {
+    "id": "armor.celestial-armor",
+    "names": {
+      "es": "Armadura celestial"
+    }
+  },
+  {
+    "id": "armor.chain-shirt",
+    "names": {
+      "es": "Camisote de mallas"
+    }
+  },
+  {
+    "id": "armor.chainmail",
+    "names": {
+      "es": "Cota de mallas"
+    }
+  },
+  {
+    "id": "armor.dragonhide-plate",
+    "names": {
+      "es": "Placas de piel de dragón"
+    }
+  },
+  {
+    "id": "armor.elven-chain",
+    "names": {
+      "es": "Malla élfica"
+    }
+  },
+  {
+    "id": "armor.full-plate",
+    "names": {
+      "es": "Placas completas"
+    }
+  },
+  {
+    "id": "armor.half-plate",
+    "names": {
+      "es": "Media placa"
+    }
+  },
+  {
+    "id": "armor.hide",
+    "names": {
+      "es": "Pieles"
+    }
+  },
+  {
+    "id": "armor.leather",
+    "names": {
+      "es": "Cuero"
+    }
+  },
+  {
+    "id": "armor.mithral-shirt",
+    "names": {
+      "es": "Camisote de mithral"
+    }
+  },
+  {
+    "id": "armor.padded",
+    "names": {
+      "es": "Acolchada"
+    }
+  },
+  {
+    "id": "armor.plate-armor-of-the-deep",
+    "names": {
+      "es": "Armadura de placas de las profundidades"
+    }
+  },
+  {
+    "id": "armor.rhino-hide",
+    "names": {
+      "es": "Piel de rinoceronte"
+    }
+  },
+  {
+    "id": "armor.scale-mail",
+    "names": {
+      "es": "Cota de escamas"
+    }
+  },
+  {
+    "id": "armor.splint-mail",
+    "names": {
+      "es": "Cota de bandas"
+    }
+  },
+  {
+    "id": "armor.studded-leather",
+    "names": {
+      "es": "Cuero tachonado"
+    }
+  },
+  {
+    "id": "class.barbarian",
+    "names": {
+      "es": "Bárbaro"
+    }
+  },
+  {
+    "id": "class.bard",
+    "names": {
+      "es": "Bardo"
+    }
+  },
+  {
+    "id": "class.cleric",
+    "names": {
+      "es": "Clérigo"
+    }
+  },
+  {
+    "id": "class.druid",
+    "names": {
+      "es": "Druida"
+    }
+  },
+  {
+    "id": "class.fighter",
+    "names": {
+      "es": "Guerrero"
+    }
+  },
+  {
+    "id": "class.monk",
+    "names": {
+      "es": "Monje"
+    }
+  },
+  {
+    "id": "class.paladin",
+    "names": {
+      "es": "Paladín"
+    }
+  },
+  {
+    "id": "class.ranger",
+    "names": {
+      "es": "Explorador"
+    }
+  },
+  {
+    "id": "class.rogue",
+    "names": {
+      "es": "Pícaro"
+    }
+  },
+  {
+    "id": "class.sorcerer",
+    "names": {
+      "es": "Hechicero"
+    }
+  },
+  {
+    "id": "class.summoner",
+    "names": {
+      "es": "Conjurador"
+    }
+  },
+  {
+    "id": "class.wizard",
+    "names": {
+      "es": "Mago"
+    }
+  },
+  {
+    "id": "evolution.ability-increase",
+    "names": {
+      "es": "Aumento de característica"
+    }
+  },
+  {
+    "id": "evolution.bite",
+    "names": {
+      "es": "Mordisco"
+    }
+  },
+  {
+    "id": "evolution.claws",
+    "names": {
+      "es": "Garras"
+    }
+  },
+  {
+    "id": "evolution.flight",
+    "names": {
+      "es": "Vuelo"
+    }
+  },
+  {
+    "id": "evolution.improved-damage",
+    "names": {
+      "es": "Daño mejorado"
+    }
+  },
+  {
+    "id": "evolution.improved-natural-armor",
+    "names": {
+      "es": "Armadura natural mejorada"
+    }
+  },
+  {
+    "id": "evolution.limbs-arms",
+    "names": {
+      "es": "Extremidades (brazos)"
+    }
+  },
+  {
+    "id": "evolution.weapon-training",
+    "names": {
+      "es": "Entrenamiento con armas"
+    }
+  },
+  {
+    "id": "feat.acrobatic",
+    "names": {
+      "es": "Acrobático"
+    }
+  },
+  {
+    "id": "feat.acrobatic-steps",
+    "names": {
+      "es": "Pasos acrobaticos"
+    }
+  },
+  {
+    "id": "feat.agile-maneuvers",
+    "names": {
+      "es": "Maniobras ágiles"
+    }
+  },
+  {
+    "id": "feat.alertness",
+    "names": {
+      "es": "Alerta"
+    }
+  },
+  {
+    "id": "feat.alignment-channel",
+    "names": {
+      "es": "Canalizar alineamiento"
+    }
+  },
+  {
+    "id": "feat.animal-affinity",
+    "names": {
+      "es": "Afinidad animal"
+    }
+  },
+  {
+    "id": "feat.arcane-armor-mastery",
+    "names": {
+      "es": "Maestría en armadura arcana"
+    }
+  },
+  {
+    "id": "feat.arcane-armor-training",
+    "names": {
+      "es": "Entrenamiento en armadura arcana"
+    }
+  },
+  {
+    "id": "feat.arcane-strike",
+    "names": {
+      "es": "Golpe arcano"
+    }
+  },
+  {
+    "id": "feat.armor-proficiency-heavy",
+    "names": {
+      "es": "Competencia con armadura pesada"
+    }
+  },
+  {
+    "id": "feat.armor-proficiency-light",
+    "names": {
+      "es": "Competencia con armadura ligera"
+    }
+  },
+  {
+    "id": "feat.armor-proficiency-medium",
+    "names": {
+      "es": "Competencia con armadura media"
+    }
+  },
+  {
+    "id": "feat.athletic",
+    "names": {
+      "es": "Atlético"
+    }
+  },
+  {
+    "id": "feat.augment-summoning",
+    "names": {
+      "es": "Aumentar conjuración"
+    }
+  },
+  {
+    "id": "feat.bleeding-critical",
+    "names": {
+      "es": "Crítico sangrante"
+    }
+  },
+  {
+    "id": "feat.blind-fight",
+    "names": {
+      "es": "Combatir a ciegas"
+    }
+  },
+  {
+    "id": "feat.blinding-critical",
+    "names": {
+      "es": "Crítico cegador"
+    }
+  },
+  {
+    "id": "feat.brew-potion",
+    "names": {
+      "es": "Preparar poción"
+    }
+  },
+  {
+    "id": "feat.catch-off-guard",
+    "names": {
+      "es": "Pillar desprevenido"
+    }
+  },
+  {
+    "id": "feat.channel-smite",
+    "names": {
+      "es": "Castigo canalizado"
+    }
+  },
+  {
+    "id": "feat.cleave",
+    "names": {
+      "es": "Hendedura"
+    }
+  },
+  {
+    "id": "feat.combat-casting",
+    "names": {
+      "es": "Lanzamiento en combate"
+    }
+  },
+  {
+    "id": "feat.combat-expertise",
+    "names": {
+      "es": "Pericia de combate"
+    }
+  },
+  {
+    "id": "feat.combat-reflexes",
+    "names": {
+      "es": "Reflejos de combate"
+    }
+  },
+  {
+    "id": "feat.command-undead",
+    "names": {
+      "es": "Dominar muertos vivientes"
+    }
+  },
+  {
+    "id": "feat.craft-construct",
+    "names": {
+      "es": "Crear constructo"
+    }
+  },
+  {
+    "id": "feat.craft-magic-arms-and-armor",
+    "names": {
+      "es": "Crear armas y armaduras mágicas"
+    }
+  },
+  {
+    "id": "feat.craft-rod",
+    "names": {
+      "es": "Crear vara"
+    }
+  },
+  {
+    "id": "feat.craft-staff",
+    "names": {
+      "es": "Crear bastón"
+    }
+  },
+  {
+    "id": "feat.craft-wand",
+    "names": {
+      "es": "Crear varita"
+    }
+  },
+  {
+    "id": "feat.craft-wondrous-item",
+    "names": {
+      "es": "Crear objeto maravilloso"
+    }
+  },
+  {
+    "id": "feat.critical-focus",
+    "names": {
+      "es": "Foco crítico"
+    }
+  },
+  {
+    "id": "feat.critical-mastery",
+    "names": {
+      "es": "Maestría crítica"
+    }
+  },
+  {
+    "id": "feat.dazzling-display",
+    "names": {
+      "es": "Exhibición deslumbrante"
+    }
+  },
+  {
+    "id": "feat.deadly-aim",
+    "names": {
+      "es": "Puntería mortal"
+    }
+  },
+  {
+    "id": "feat.deadly-stroke",
+    "names": {
+      "es": "Golpe mortal"
+    }
+  },
+  {
+    "id": "feat.deafening-critical",
+    "names": {
+      "es": "Crítico ensordecedor"
+    }
+  },
+  {
+    "id": "feat.deceitful",
+    "names": {
+      "es": "Engañoso"
+    }
+  },
+  {
+    "id": "feat.defensive-combat-training",
+    "names": {
+      "es": "Entrenamiento de combate defensivo"
+    }
+  },
+  {
+    "id": "feat.deflect-arrows",
+    "names": {
+      "es": "Desviar flechas"
+    }
+  },
+  {
+    "id": "feat.deft-hands",
+    "names": {
+      "es": "Manos hábiles"
+    }
+  },
+  {
+    "id": "feat.diehard",
+    "names": {
+      "es": "Resistir la muerte"
+    }
+  },
+  {
+    "id": "feat.disruptive",
+    "names": {
+      "es": "Perturbador"
+    }
+  },
+  {
+    "id": "feat.dodge",
+    "names": {
+      "es": "Esquiva"
+    }
+  },
+  {
+    "id": "feat.double-slice",
+    "names": {
+      "es": "Tajo doble"
+    }
+  },
+  {
+    "id": "feat.elemental-channel",
+    "names": {
+      "es": "Canalizar elemental"
+    }
+  },
+  {
+    "id": "feat.empower-spell",
+    "names": {
+      "es": "Potenciar conjuro"
+    }
+  },
+  {
+    "id": "feat.endurance",
+    "names": {
+      "es": "Aguante"
+    }
+  },
+  {
+    "id": "feat.enlarge-spell",
+    "names": {
+      "es": "Agrandar conjuro"
+    }
+  },
+  {
+    "id": "feat.eschew-materials",
+    "names": {
+      "es": "Prescindir de materiales"
+    }
+  },
+  {
+    "id": "feat.exhausting-critical",
+    "names": {
+      "es": "Crítico agotador"
+    }
+  },
+  {
+    "id": "feat.exotic-weapon-proficiency",
+    "names": {
+      "es": "Competencia con armas exóticas"
+    }
+  },
+  {
+    "id": "feat.extend-spell",
+    "names": {
+      "es": "Extender conjuro"
+    }
+  },
+  {
+    "id": "feat.extra-channel",
+    "names": {
+      "es": "Canalización adicional"
+    }
+  },
+  {
+    "id": "feat.extra-ki",
+    "names": {
+      "es": "Ki adicional"
+    }
+  },
+  {
+    "id": "feat.extra-lay-on-hands",
+    "names": {
+      "es": "Imposición de manos adicional"
+    }
+  },
+  {
+    "id": "feat.extra-mercy",
+    "names": {
+      "es": "Clemencia adicional"
+    }
+  },
+  {
+    "id": "feat.extra-performance",
+    "names": {
+      "es": "Actuación adicional"
+    }
+  },
+  {
+    "id": "feat.extra-rage",
+    "names": {
+      "es": "Furia adicional"
+    }
+  },
+  {
+    "id": "feat.far-shot",
+    "names": {
+      "es": "Disparo lejano"
+    }
+  },
+  {
+    "id": "feat.fleet",
+    "names": {
+      "es": "Veloz"
+    }
+  },
+  {
+    "id": "feat.forge-ring",
+    "names": {
+      "es": "Forjar anillo"
+    }
+  },
+  {
+    "id": "feat.gorgons-fist",
+    "names": {
+      "es": "Puño de la gorgona"
+    }
+  },
+  {
+    "id": "feat.great-cleave",
+    "names": {
+      "es": "Gran hendedura"
+    }
+  },
+  {
+    "id": "feat.great-fortitude",
+    "names": {
+      "es": "Gran fortaleza"
+    }
+  },
+  {
+    "id": "feat.greater-bull-rush",
+    "names": {
+      "es": "Carga arrolladora mayor"
+    }
+  },
+  {
+    "id": "feat.greater-disarm",
+    "names": {
+      "es": "Desarmar mayor"
+    }
+  },
+  {
+    "id": "feat.greater-feint",
+    "names": {
+      "es": "Finta mayor"
+    }
+  },
+  {
+    "id": "feat.greater-grapple",
+    "names": {
+      "es": "Presa mayor"
+    }
+  },
+  {
+    "id": "feat.greater-overrun",
+    "names": {
+      "es": "Arrollar mayor"
+    }
+  },
+  {
+    "id": "feat.greater-penetrating-strike",
+    "names": {
+      "es": "Golpe penetrante mayor"
+    }
+  },
+  {
+    "id": "feat.greater-shield-focus",
+    "names": {
+      "es": "Foco con escudo mayor"
+    }
+  },
+  {
+    "id": "feat.greater-spell-focus",
+    "names": {
+      "es": "Foco de conjuro mayor"
+    }
+  },
+  {
+    "id": "feat.greater-spell-penetration",
+    "names": {
+      "es": "Penetración de conjuros mayor"
+    }
+  },
+  {
+    "id": "feat.greater-sunder",
+    "names": {
+      "es": "Destrozar mayor"
+    }
+  },
+  {
+    "id": "feat.greater-trip",
+    "names": {
+      "es": "Derribo mayor"
+    }
+  },
+  {
+    "id": "feat.greater-two-weapon-fighting",
+    "names": {
+      "es": "Combatir con dos armas mayor"
+    }
+  },
+  {
+    "id": "feat.greater-vital-strike",
+    "names": {
+      "es": "Golpe vital mayor"
+    }
+  },
+  {
+    "id": "feat.greater-weapon-focus",
+    "names": {
+      "es": "Foco con un arma mayor"
+    }
+  },
+  {
+    "id": "feat.greater-weapon-specialization",
+    "names": {
+      "es": "Especialización con un arma mayor"
+    }
+  },
+  {
+    "id": "feat.heighten-spell",
+    "names": {
+      "es": "Elevar conjuro"
+    }
+  },
+  {
+    "id": "feat.improved-bull-rush",
+    "names": {
+      "es": "Carga arrolladora mejorada"
+    }
+  },
+  {
+    "id": "feat.improved-channel",
+    "names": {
+      "es": "Canalización mejorada"
+    }
+  },
+  {
+    "id": "feat.improved-counterspell",
+    "names": {
+      "es": "Contraconjuro mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-critical",
+    "names": {
+      "es": "Crítico mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-disarm",
+    "names": {
+      "es": "Desarmar mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-familiar",
+    "names": {
+      "es": "Familiar mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-feint",
+    "names": {
+      "es": "Finta mejorada"
+    }
+  },
+  {
+    "id": "feat.improved-grapple",
+    "names": {
+      "es": "Presa mejorada"
+    }
+  },
+  {
+    "id": "feat.improved-great-fortitude",
+    "names": {
+      "es": "Gran fortaleza mejorada"
+    }
+  },
+  {
+    "id": "feat.improved-initiative",
+    "names": {
+      "es": "Iniciativa mejorada"
+    }
+  },
+  {
+    "id": "feat.improved-iron-will",
+    "names": {
+      "es": "Voluntad de hierro mejorada"
+    }
+  },
+  {
+    "id": "feat.improved-lightning-reflexes",
+    "names": {
+      "es": "Reflejos rápidos mejorados"
+    }
+  },
+  {
+    "id": "feat.improved-overrun",
+    "names": {
+      "es": "Arrollar mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-precise-shot",
+    "names": {
+      "es": "Disparo preciso mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-shield-bash",
+    "names": {
+      "es": "Golpe de escudo mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-sunder",
+    "names": {
+      "es": "Destrozar mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-trip",
+    "names": {
+      "es": "Derribo mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-two-weapon-fighting",
+    "names": {
+      "es": "Combatir con dos armas mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-unarmed-strike",
+    "names": {
+      "es": "Golpe sin armas mejorado"
+    }
+  },
+  {
+    "id": "feat.improved-vital-strike",
+    "names": {
+      "es": "Golpe vital mejorado"
+    }
+  },
+  {
+    "id": "feat.improvised-weapon-mastery",
+    "names": {
+      "es": "Maestría con armas improvisadas"
+    }
+  },
+  {
+    "id": "feat.intimidating-prowess",
+    "names": {
+      "es": "Destreza intimidante"
+    }
+  },
+  {
+    "id": "feat.iron-will",
+    "names": {
+      "es": "Voluntad de hierro"
+    }
+  },
+  {
+    "id": "feat.leadership",
+    "names": {
+      "es": "Liderazgo"
+    }
+  },
+  {
+    "id": "feat.lightning-reflexes",
+    "names": {
+      "es": "Reflejos rápidos"
+    }
+  },
+  {
+    "id": "feat.lightning-stance",
+    "names": {
+      "es": "Postura del relámpago"
+    }
+  },
+  {
+    "id": "feat.lunge",
+    "names": {
+      "es": "Estocada"
+    }
+  },
+  {
+    "id": "feat.magical-aptitude",
+    "names": {
+      "es": "Aptitud mágica"
+    }
+  },
+  {
+    "id": "feat.manyshot",
+    "names": {
+      "es": "Disparo múltiple"
+    }
+  },
+  {
+    "id": "feat.martial-weapon-proficiency",
+    "names": {
+      "es": "Competencia con armas marciales"
+    }
+  },
+  {
+    "id": "feat.master-craftsman",
+    "names": {
+      "es": "Artesano maestro"
+    }
+  },
+  {
+    "id": "feat.maximize-spell",
+    "names": {
+      "es": "Maximizar conjuro"
+    }
+  },
+  {
+    "id": "feat.medusas-wrath",
+    "names": {
+      "es": "Ira de la medusa"
+    }
+  },
+  {
+    "id": "feat.mobility",
+    "names": {
+      "es": "Movilidad"
+    }
+  },
+  {
+    "id": "feat.mounted-archery",
+    "names": {
+      "es": "Arquería montada"
+    }
+  },
+  {
+    "id": "feat.mounted-combat",
+    "names": {
+      "es": "Combate montado"
+    }
+  },
+  {
+    "id": "feat.natural-spell",
+    "names": {
+      "es": "Conjuro natural"
+    }
+  },
+  {
+    "id": "feat.nimble-moves",
+    "names": {
+      "es": "Movimientos ágiles"
+    }
+  },
+  {
+    "id": "feat.penetrating-strike",
+    "names": {
+      "es": "Golpe penetrante"
+    }
+  },
+  {
+    "id": "feat.persuasive",
+    "names": {
+      "es": "Persuasivo"
+    }
+  },
+  {
+    "id": "feat.pinpoint-targeting",
+    "names": {
+      "es": "Puntería de precisión"
+    }
+  },
+  {
+    "id": "feat.point-blank-shot",
+    "names": {
+      "es": "Disparo a bocajarro"
+    }
+  },
+  {
+    "id": "feat.power-attack",
+    "names": {
+      "es": "Ataque poderoso"
+    }
+  },
+  {
+    "id": "feat.precise-shot",
+    "names": {
+      "es": "Disparo preciso"
+    }
+  },
+  {
+    "id": "feat.quick-draw",
+    "names": {
+      "es": "Desenfundar rápido"
+    }
+  },
+  {
+    "id": "feat.quicken-spell",
+    "names": {
+      "es": "Acelerar conjuro"
+    }
+  },
+  {
+    "id": "feat.rapid-reload",
+    "names": {
+      "es": "Recarga rápida"
+    }
+  },
+  {
+    "id": "feat.rapid-shot",
+    "names": {
+      "es": "Disparo rápido"
+    }
+  },
+  {
+    "id": "feat.ride-by-attack",
+    "names": {
+      "es": "Ataque al galope"
+    }
+  },
+  {
+    "id": "feat.run",
+    "names": {
+      "es": "Correr"
+    }
+  },
+  {
+    "id": "feat.scorpion-style",
+    "names": {
+      "es": "Estilo del escorpión"
+    }
+  },
+  {
+    "id": "feat.scribe-scroll",
+    "names": {
+      "es": "Escribir pergamino"
+    }
+  },
+  {
+    "id": "feat.selective-channeling",
+    "names": {
+      "es": "Canalización selectiva"
+    }
+  },
+  {
+    "id": "feat.self-sufficient",
+    "names": {
+      "es": "Autosuficiente"
+    }
+  },
+  {
+    "id": "feat.shatter-defenses",
+    "names": {
+      "es": "Quebrar defensas"
+    }
+  },
+  {
+    "id": "feat.shield-focus",
+    "names": {
+      "es": "Foco con escudo"
+    }
+  },
+  {
+    "id": "feat.shield-master",
+    "names": {
+      "es": "Maestro del escudo"
+    }
+  },
+  {
+    "id": "feat.shield-proficiency",
+    "names": {
+      "es": "Competencia con escudos"
+    }
+  },
+  {
+    "id": "feat.shield-slam",
+    "names": {
+      "es": "Embestida de escudo"
+    }
+  },
+  {
+    "id": "feat.shot-on-the-run",
+    "names": {
+      "es": "Disparo en movimiento"
+    }
+  },
+  {
+    "id": "feat.sickening-critical",
+    "names": {
+      "es": "Crítico nauseabundo"
+    }
+  },
+  {
+    "id": "feat.silent-spell",
+    "names": {
+      "es": "Conjuro silencioso"
+    }
+  },
+  {
+    "id": "feat.simple-weapon-proficiency",
+    "names": {
+      "es": "Competencia con armas sencillas"
+    }
+  },
+  {
+    "id": "feat.skill-focus",
+    "names": {
+      "es": "Foco de habilidad"
+    }
+  },
+  {
+    "id": "feat.snatch-arrows",
+    "names": {
+      "es": "Atrapar flechas"
+    }
+  },
+  {
+    "id": "feat.spell-focus",
+    "names": {
+      "es": "Foco de conjuro"
+    }
+  },
+  {
+    "id": "feat.spell-mastery",
+    "names": {
+      "es": "Maestría de conjuros"
+    }
+  },
+  {
+    "id": "feat.spell-penetration",
+    "names": {
+      "es": "Penetración de conjuros"
+    }
+  },
+  {
+    "id": "feat.spellbreaker",
+    "names": {
+      "es": "Rompeconjuros"
+    }
+  },
+  {
+    "id": "feat.spirited-charge",
+    "names": {
+      "es": "Carga brava"
+    }
+  },
+  {
+    "id": "feat.spring-attack",
+    "names": {
+      "es": "Ataque en salto"
+    }
+  },
+  {
+    "id": "feat.staggering-critical",
+    "names": {
+      "es": "Crítico tambaleante"
+    }
+  },
+  {
+    "id": "feat.stand-still",
+    "names": {
+      "es": "Mantenerse firme"
+    }
+  },
+  {
+    "id": "feat.stealthy",
+    "names": {
+      "es": "Sigiloso"
+    }
+  },
+  {
+    "id": "feat.step-up",
+    "names": {
+      "es": "Dar un paso al frente"
+    }
+  },
+  {
+    "id": "feat.still-spell",
+    "names": {
+      "es": "Conjuro inmóvil"
+    }
+  },
+  {
+    "id": "feat.strike-back",
+    "names": {
+      "es": "Devolver el golpe"
+    }
+  },
+  {
+    "id": "feat.stunning-critical",
+    "names": {
+      "es": "Crítico aturdidor"
+    }
+  },
+  {
+    "id": "feat.stunning-fist",
+    "names": {
+      "es": "Puño aturdidor"
+    }
+  },
+  {
+    "id": "feat.throw-anything",
+    "names": {
+      "es": "Arrojar cualquier cosa"
+    }
+  },
+  {
+    "id": "feat.tiring-critical",
+    "names": {
+      "es": "Crítico fatigante"
+    }
+  },
+  {
+    "id": "feat.toughness",
+    "names": {
+      "es": "Dureza"
+    }
+  },
+  {
+    "id": "feat.tower-shield-proficiency",
+    "names": {
+      "es": "Competencia con escudo pavesa"
+    }
+  },
+  {
+    "id": "feat.trample",
+    "names": {
+      "es": "Pisotear"
+    }
+  },
+  {
+    "id": "feat.turn-undead",
+    "names": {
+      "es": "Expulsar muertos vivientes"
+    }
+  },
+  {
+    "id": "feat.two-weapon-defense",
+    "names": {
+      "es": "Defensa con dos armas"
+    }
+  },
+  {
+    "id": "feat.two-weapon-fighting",
+    "names": {
+      "es": "Combatir con dos armas"
+    }
+  },
+  {
+    "id": "feat.two-weapon-rend",
+    "names": {
+      "es": "Desgarro con dos armas"
+    }
+  },
+  {
+    "id": "feat.unseat",
+    "names": {
+      "es": "Desmontar"
+    }
+  },
+  {
+    "id": "feat.vital-strike",
+    "names": {
+      "es": "Golpe vital"
+    }
+  },
+  {
+    "id": "feat.weapon-finesse",
+    "names": {
+      "es": "Soltura con un arma"
+    }
+  },
+  {
+    "id": "feat.weapon-focus",
+    "names": {
+      "es": "Foco con un arma"
+    }
+  },
+  {
+    "id": "feat.weapon-specialization",
+    "names": {
+      "es": "Especialización con un arma"
+    }
+  },
+  {
+    "id": "feat.whirlwind-attack",
+    "names": {
+      "es": "Ataque torbellino"
+    }
+  },
+  {
+    "id": "feat.widen-spell",
+    "names": {
+      "es": "Ampliar conjuro"
+    }
+  },
+  {
+    "id": "feat.wind-stance",
+    "names": {
+      "es": "Postura del viento"
+    }
+  },
+  {
+    "id": "feature.arcane-bond",
+    "names": {
+      "es": "Vínculo arcano"
+    }
+  },
+  {
+    "id": "feature.physical-enhancement",
+    "names": {
+      "es": "Mejora física"
+    }
+  },
+  {
+    "id": "feature.telekinetic-fist",
+    "names": {
+      "es": "Puño telequinético"
+    }
+  },
+  {
+    "id": "item.armor-spikes",
+    "names": {
+      "es": "Pinchos de armadura"
+    }
+  },
+  {
+    "id": "item.arrows",
+    "names": {
+      "es": "Flechas"
+    }
+  },
+  {
+    "id": "item.blowgun-darts",
+    "names": {
+      "es": "Dardos de cerbatana"
+    }
+  },
+  {
+    "id": "item.crossbow-bolts",
+    "names": {
+      "es": "Virotes de ballesta"
+    }
+  },
+  {
+    "id": "item.repeating-crossbow-bolts",
+    "names": {
+      "es": "Virotes de ballesta de repetición"
+    }
+  },
+  {
+    "id": "item.shield-spikes",
+    "names": {
+      "es": "Pinchos de escudo"
+    }
+  },
+  {
+    "id": "item.sling-bullets",
+    "names": {
+      "es": "Balas de honda"
+    }
+  },
+  {
+    "id": "item.spellbook",
+    "names": {
+      "es": "Libro de conjuros"
+    }
+  },
+  {
+    "id": "race.dwarf",
+    "names": {
+      "es": "Enano"
+    }
+  },
+  {
+    "id": "race.elf",
+    "names": {
+      "es": "Elfo"
+    }
+  },
+  {
+    "id": "race.gnome",
+    "names": {
+      "es": "Gnomo"
+    }
+  },
+  {
+    "id": "race.half-elf",
+    "names": {
+      "es": "Semielfo"
+    }
+  },
+  {
+    "id": "race.half-orc",
+    "names": {
+      "es": "Semiorco"
+    }
+  },
+  {
+    "id": "race.halfling",
+    "names": {
+      "es": "Mediano"
+    }
+  },
+  {
+    "id": "race.human",
+    "names": {
+      "es": "Humano"
+    }
+  },
+  {
+    "id": "shield.absorbing-shield",
+    "names": {
+      "es": "Escudo absorbente"
+    }
+  },
+  {
+    "id": "shield.buckler",
+    "names": {
+      "es": "Rodela"
+    }
+  },
+  {
+    "id": "shield.caster-shield",
+    "names": {
+      "es": "Escudo del lanzador"
+    }
+  },
+  {
+    "id": "shield.heavy-steel",
+    "names": {
+      "es": "Escudo pesado de acero"
+    }
+  },
+  {
+    "id": "shield.heavy-wooden",
+    "names": {
+      "es": "Escudo pesado de madera"
+    }
+  },
+  {
+    "id": "shield.light-steel",
+    "names": {
+      "es": "Escudo ligero de acero"
+    }
+  },
+  {
+    "id": "shield.light-wooden",
+    "names": {
+      "es": "Escudo ligero de madera"
+    }
+  },
+  {
+    "id": "shield.lions-shield",
+    "names": {
+      "es": "Escudo del león"
+    }
+  },
+  {
+    "id": "shield.spined-shield",
+    "names": {
+      "es": "Escudo de espinas"
+    }
+  },
+  {
+    "id": "shield.tower",
+    "names": {
+      "es": "Escudo pavesa"
+    }
+  },
+  {
+    "id": "shield.winged-shield",
+    "names": {
+      "es": "Escudo alado"
+    }
+  },
+  {
+    "id": "spell.acid-arrow",
+    "names": {
+      "es": "Flecha ácida"
+    }
+  },
+  {
+    "id": "spell.acid-fog",
+    "names": {
+      "es": "Niebla ácida"
+    }
+  },
+  {
+    "id": "spell.acid-pit",
+    "names": {
+      "es": "Foso de ácido"
+    }
+  },
+  {
+    "id": "spell.acid-splash",
+    "names": {
+      "es": "Salpicadura ácida"
+    }
+  },
+  {
+    "id": "spell.aid",
+    "names": {
+      "es": "Ayuda"
+    }
+  },
+  {
+    "id": "spell.air-walk",
+    "names": {
+      "es": "Caminar sobre el aire"
+    }
+  },
+  {
+    "id": "spell.alarm",
+    "names": {
+      "es": "Alarma"
+    }
+  },
+  {
+    "id": "spell.align-weapon",
+    "names": {
+      "es": "Alinear arma"
+    }
+  },
+  {
+    "id": "spell.alter-self",
+    "names": {
+      "es": "Alterarse a uno mismo"
+    }
+  },
+  {
+    "id": "spell.analyze-dweomer",
+    "names": {
+      "es": "Analizar dweomer"
+    }
+  },
+  {
+    "id": "spell.animal-growth",
+    "names": {
+      "es": "Crecimiento animal"
+    }
+  },
+  {
+    "id": "spell.animal-messenger",
+    "names": {
+      "es": "Mensajero animal"
+    }
+  },
+  {
+    "id": "spell.animal-shapes",
+    "names": {
+      "es": "Formas animales"
+    }
+  },
+  {
+    "id": "spell.animal-trance",
+    "names": {
+      "es": "Trance animal"
+    }
+  },
+  {
+    "id": "spell.animate-dead",
+    "names": {
+      "es": "Animar a los muertos"
+    }
+  },
+  {
+    "id": "spell.animate-objects",
+    "names": {
+      "es": "Animar objetos"
+    }
+  },
+  {
+    "id": "spell.animate-plants",
+    "names": {
+      "es": "Animar plantas"
+    }
+  },
+  {
+    "id": "spell.animate-rope",
+    "names": {
+      "es": "Animar cuerda"
+    }
+  },
+  {
+    "id": "spell.ant-haul",
+    "names": {
+      "es": "Carga de hormiga"
+    }
+  },
+  {
+    "id": "spell.antilife-shell",
+    "names": {
+      "es": "Caparazón antivida"
+    }
+  },
+  {
+    "id": "spell.antimagic-field",
+    "names": {
+      "es": "Campo antimagia"
+    }
+  },
+  {
+    "id": "spell.antipathy",
+    "names": {
+      "es": "Antipatía"
+    }
+  },
+  {
+    "id": "spell.antiplant-shell",
+    "names": {
+      "es": "Caparazón antiplantas"
+    }
+  },
+  {
+    "id": "spell.aqueous-orb",
+    "names": {
+      "es": "Orbe acuoso"
+    }
+  },
+  {
+    "id": "spell.arcane-eye",
+    "names": {
+      "es": "Ojo arcano"
+    }
+  },
+  {
+    "id": "spell.arcane-lock",
+    "names": {
+      "es": "Cerradura arcana"
+    }
+  },
+  {
+    "id": "spell.arcane-mark",
+    "names": {
+      "es": "Marca arcana"
+    }
+  },
+  {
+    "id": "spell.arcane-sight",
+    "names": {
+      "es": "Visión arcana"
+    }
+  },
+  {
+    "id": "spell.astral-projection",
+    "names": {
+      "es": "Proyección astral"
+    }
+  },
+  {
+    "id": "spell.atonement-fm",
+    "names": {
+      "es": "Expiación FM"
+    }
+  },
+  {
+    "id": "spell.augury",
+    "names": {
+      "es": "Augurio"
+    }
+  },
+  {
+    "id": "spell.awaken",
+    "names": {
+      "es": "Despertar"
+    }
+  },
+  {
+    "id": "spell.baleful-polymorph",
+    "names": {
+      "es": "Metamorfosis funesta"
+    }
+  },
+  {
+    "id": "spell.bane",
+    "names": {
+      "es": "Perdición"
+    }
+  },
+  {
+    "id": "spell.banishment",
+    "names": {
+      "es": "Destierro"
+    }
+  },
+  {
+    "id": "spell.barkskin",
+    "names": {
+      "es": "Piel de corteza"
+    }
+  },
+  {
+    "id": "spell.bears-endurance",
+    "names": {
+      "es": "Aguante del oso"
+    }
+  },
+  {
+    "id": "spell.beast-shape-i",
+    "names": {
+      "es": "Forma de bestia I"
+    }
+  },
+  {
+    "id": "spell.beast-shape-ii",
+    "names": {
+      "es": "Forma de bestia II"
+    }
+  },
+  {
+    "id": "spell.beast-shape-iii",
+    "names": {
+      "es": "Forma de bestia III"
+    }
+  },
+  {
+    "id": "spell.beast-shape-iv",
+    "names": {
+      "es": "Forma de bestia IV"
+    }
+  },
+  {
+    "id": "spell.bestow-curse",
+    "names": {
+      "es": "Infligir maldición"
+    }
+  },
+  {
+    "id": "spell.binding",
+    "names": {
+      "es": "Atadura"
+    }
+  },
+  {
+    "id": "spell.black-tentacles",
+    "names": {
+      "es": "Tentáculos negros"
+    }
+  },
+  {
+    "id": "spell.blade-barrier",
+    "names": {
+      "es": "Barrera de hojas"
+    }
+  },
+  {
+    "id": "spell.blasphemy",
+    "names": {
+      "es": "Blasfemia"
+    }
+  },
+  {
+    "id": "spell.bleed",
+    "names": {
+      "es": "Sangrar"
+    }
+  },
+  {
+    "id": "spell.bless",
+    "names": {
+      "es": "Bendecir"
+    }
+  },
+  {
+    "id": "spell.bless-water",
+    "names": {
+      "es": "Bendecir agua"
+    }
+  },
+  {
+    "id": "spell.bless-weapon",
+    "names": {
+      "es": "Bendecir arma"
+    }
+  },
+  {
+    "id": "spell.blight",
+    "names": {
+      "es": "Plaga"
+    }
+  },
+  {
+    "id": "spell.blindness-deafness",
+    "names": {
+      "es": "Ceguera/sordera"
+    }
+  },
+  {
+    "id": "spell.blink",
+    "names": {
+      "es": "Parpadeo"
+    }
+  },
+  {
+    "id": "spell.blur",
+    "names": {
+      "es": "Difuminar"
+    }
+  },
+  {
+    "id": "spell.break-enchantment",
+    "names": {
+      "es": "Romper encantamiento"
+    }
+  },
+  {
+    "id": "spell.breath-of-life",
+    "names": {
+      "es": "Aliento de vida"
+    }
+  },
+  {
+    "id": "spell.bulls-strength",
+    "names": {
+      "es": "Fuerza del toro"
+    }
+  },
+  {
+    "id": "spell.burning-hands",
+    "names": {
+      "es": "Manos ardientes"
+    }
+  },
+  {
+    "id": "spell.call-lightning",
+    "names": {
+      "es": "Invocar relámpago"
+    }
+  },
+  {
+    "id": "spell.call-lightning-storm",
+    "names": {
+      "es": "Invocar tormenta de relámpagos"
+    }
+  },
+  {
+    "id": "spell.calm-animals",
+    "names": {
+      "es": "Calmar animales"
+    }
+  },
+  {
+    "id": "spell.calm-emotions",
+    "names": {
+      "es": "Calmar emociones"
+    }
+  },
+  {
+    "id": "spell.cats-grace",
+    "names": {
+      "es": "Gracia felina"
+    }
+  },
+  {
+    "id": "spell.cause-fear",
+    "names": {
+      "es": "Causar miedo"
+    }
+  },
+  {
+    "id": "spell.chain-lightning",
+    "names": {
+      "es": "Relámpago en cadena"
+    }
+  },
+  {
+    "id": "spell.changestaff",
+    "names": {
+      "es": "Bastón cambiante"
+    }
+  },
+  {
+    "id": "spell.chaos-hammer",
+    "names": {
+      "es": "Martillo del caos"
+    }
+  },
+  {
+    "id": "spell.charm-animal",
+    "names": {
+      "es": "Hechizar animal"
+    }
+  },
+  {
+    "id": "spell.charm-monster",
+    "names": {
+      "es": "Hechizar monstruo"
+    }
+  },
+  {
+    "id": "spell.charm-person",
+    "names": {
+      "es": "Hechizar persona"
+    }
+  },
+  {
+    "id": "spell.chill-metal",
+    "names": {
+      "es": "Enfriar metal"
+    }
+  },
+  {
+    "id": "spell.chill-touch",
+    "names": {
+      "es": "Toque gélido"
+    }
+  },
+  {
+    "id": "spell.circle-of-death",
+    "names": {
+      "es": "Círculo de la muerte"
+    }
+  },
+  {
+    "id": "spell.clairaudience-clairvoyance",
+    "names": {
+      "es": "Clariaudiencia/clarividencia"
+    }
+  },
+  {
+    "id": "spell.clenched-fist",
+    "names": {
+      "es": "Puño cerrado"
+    }
+  },
+  {
+    "id": "spell.cloak-of-chaos",
+    "names": {
+      "es": "Manto del caos"
+    }
+  },
+  {
+    "id": "spell.clone",
+    "names": {
+      "es": "Clon"
+    }
+  },
+  {
+    "id": "spell.cloudkill",
+    "names": {
+      "es": "Nube mortal"
+    }
+  },
+  {
+    "id": "spell.color-spray",
+    "names": {
+      "es": "Rociada de color"
+    }
+  },
+  {
+    "id": "spell.command",
+    "names": {
+      "es": "Orden imperiosa"
+    }
+  },
+  {
+    "id": "spell.command-plants",
+    "names": {
+      "es": "Dominar plantas"
+    }
+  },
+  {
+    "id": "spell.command-undead",
+    "names": {
+      "es": "Dominar muertos vivientes"
+    }
+  },
+  {
+    "id": "spell.commune",
+    "names": {
+      "es": "Comulgar"
+    }
+  },
+  {
+    "id": "spell.commune-with-nature",
+    "names": {
+      "es": "Comulgar con la naturaleza"
+    }
+  },
+  {
+    "id": "spell.comprehend-languages",
+    "names": {
+      "es": "Comprender idiomas"
+    }
+  },
+  {
+    "id": "spell.cone-of-cold",
+    "names": {
+      "es": "Cono de frío"
+    }
+  },
+  {
+    "id": "spell.confusion",
+    "names": {
+      "es": "Confusión"
+    }
+  },
+  {
+    "id": "spell.consecrate",
+    "names": {
+      "es": "Consagrar"
+    }
+  },
+  {
+    "id": "spell.contact-other-plane",
+    "names": {
+      "es": "Contactar con otro plano"
+    }
+  },
+  {
+    "id": "spell.contagion",
+    "names": {
+      "es": "Contagio"
+    }
+  },
+  {
+    "id": "spell.contingency",
+    "names": {
+      "es": "Contingencia"
+    }
+  },
+  {
+    "id": "spell.continual-flame",
+    "names": {
+      "es": "Llama continua"
+    }
+  },
+  {
+    "id": "spell.control-plants",
+    "names": {
+      "es": "Controlar plantas"
+    }
+  },
+  {
+    "id": "spell.control-undead",
+    "names": {
+      "es": "Controlar muertos vivientes"
+    }
+  },
+  {
+    "id": "spell.control-water",
+    "names": {
+      "es": "Controlar el agua"
+    }
+  },
+  {
+    "id": "spell.control-weather",
+    "names": {
+      "es": "Controlar el clima"
+    }
+  },
+  {
+    "id": "spell.control-winds",
+    "names": {
+      "es": "Controlar los vientos"
+    }
+  },
+  {
+    "id": "spell.create-food-and-water",
+    "names": {
+      "es": "Crear comida y agua"
+    }
+  },
+  {
+    "id": "spell.create-greater-undead",
+    "names": {
+      "es": "Crear muerto viviente mayor"
+    }
+  },
+  {
+    "id": "spell.create-pit",
+    "names": {
+      "es": "Crear foso"
+    }
+  },
+  {
+    "id": "spell.create-undead",
+    "names": {
+      "es": "Crear muerto viviente"
+    }
+  },
+  {
+    "id": "spell.create-water",
+    "names": {
+      "es": "Crear agua"
+    }
+  },
+  {
+    "id": "spell.creeping-doom",
+    "names": {
+      "es": "Fatalidad reptante"
+    }
+  },
+  {
+    "id": "spell.crushing-despair",
+    "names": {
+      "es": "Desesperación opresiva"
+    }
+  },
+  {
+    "id": "spell.crushing-hand",
+    "names": {
+      "es": "Mano trituradora"
+    }
+  },
+  {
+    "id": "spell.cure-critical-wounds",
+    "names": {
+      "es": "Curar heridas críticas"
+    }
+  },
+  {
+    "id": "spell.cure-light-wounds",
+    "names": {
+      "es": "Curar heridas leves"
+    }
+  },
+  {
+    "id": "spell.cure-moderate-wounds",
+    "names": {
+      "es": "Curar heridas moderadas"
+    }
+  },
+  {
+    "id": "spell.cure-serious-wounds",
+    "names": {
+      "es": "Curar heridas graves"
+    }
+  },
+  {
+    "id": "spell.curse-water",
+    "names": {
+      "es": "Maldecir agua"
+    }
+  },
+  {
+    "id": "spell.cushioning-bands",
+    "names": {
+      "es": "Bandas amortiguadoras"
+    }
+  },
+  {
+    "id": "spell.dancing-lights",
+    "names": {
+      "es": "Luces danzantes"
+    }
+  },
+  {
+    "id": "spell.darkness",
+    "names": {
+      "es": "Oscuridad"
+    }
+  },
+  {
+    "id": "spell.darkvision",
+    "names": {
+      "es": "Visión en la oscuridad"
+    }
+  },
+  {
+    "id": "spell.daylight",
+    "names": {
+      "es": "Luz del día"
+    }
+  },
+  {
+    "id": "spell.daze",
+    "names": {
+      "es": "Aturdir"
+    }
+  },
+  {
+    "id": "spell.daze-monster",
+    "names": {
+      "es": "Aturdir monstruo"
+    }
+  },
+  {
+    "id": "spell.death-knell",
+    "names": {
+      "es": "Tañido fúnebre"
+    }
+  },
+  {
+    "id": "spell.death-ward",
+    "names": {
+      "es": "Guarda contra la muerte"
+    }
+  },
+  {
+    "id": "spell.deathwatch",
+    "names": {
+      "es": "Vigilia de la muerte"
+    }
+  },
+  {
+    "id": "spell.deep-slumber",
+    "names": {
+      "es": "Sueño profundo"
+    }
+  },
+  {
+    "id": "spell.deeper-darkness",
+    "names": {
+      "es": "Oscuridad profunda"
+    }
+  },
+  {
+    "id": "spell.delay-poison",
+    "names": {
+      "es": "Retardar veneno"
+    }
+  },
+  {
+    "id": "spell.delayed-blast-fireball",
+    "names": {
+      "es": "Bola de fuego de explosión retardada"
+    }
+  },
+  {
+    "id": "spell.demand",
+    "names": {
+      "es": "Exigencia"
+    }
+  },
+  {
+    "id": "spell.desecrate",
+    "names": {
+      "es": "Profanar"
+    }
+  },
+  {
+    "id": "spell.destruction",
+    "names": {
+      "es": "Destrucción"
+    }
+  },
+  {
+    "id": "spell.detect-animals-or-plants",
+    "names": {
+      "es": "Detectar animales o plantas"
+    }
+  },
+  {
+    "id": "spell.detect-chaos",
+    "names": {
+      "es": "Detectar caos"
+    }
+  },
+  {
+    "id": "spell.detect-evil",
+    "names": {
+      "es": "Detectar mal"
+    }
+  },
+  {
+    "id": "spell.detect-good",
+    "names": {
+      "es": "Detectar bien"
+    }
+  },
+  {
+    "id": "spell.detect-law",
+    "names": {
+      "es": "Detectar ley"
+    }
+  },
+  {
+    "id": "spell.detect-magic",
+    "names": {
+      "es": "Detectar magia"
+    }
+  },
+  {
+    "id": "spell.detect-poison",
+    "names": {
+      "es": "Detectar veneno"
+    }
+  },
+  {
+    "id": "spell.detect-scrying",
+    "names": {
+      "es": "Detectar escrutinio"
+    }
+  },
+  {
+    "id": "spell.detect-secret-doors",
+    "names": {
+      "es": "Detectar puertas secretas"
+    }
+  },
+  {
+    "id": "spell.detect-snares-and-pits",
+    "names": {
+      "es": "Detectar trampas y fosos"
+    }
+  },
+  {
+    "id": "spell.detect-thoughts",
+    "names": {
+      "es": "Detectar pensamientos"
+    }
+  },
+  {
+    "id": "spell.detect-undead",
+    "names": {
+      "es": "Detectar muertos vivientes"
+    }
+  },
+  {
+    "id": "spell.devolution",
+    "names": {
+      "es": "Devolución"
+    }
+  },
+  {
+    "id": "spell.dictum",
+    "names": {
+      "es": "Dictamen"
+    }
+  },
+  {
+    "id": "spell.dimension-door",
+    "names": {
+      "es": "Puerta dimensional"
+    }
+  },
+  {
+    "id": "spell.dimensional-anchor",
+    "names": {
+      "es": "Ancla dimensional"
+    }
+  },
+  {
+    "id": "spell.dimensional-lock",
+    "names": {
+      "es": "Cerrojo dimensional"
+    }
+  },
+  {
+    "id": "spell.diminish-plants",
+    "names": {
+      "es": "Menguar plantas"
+    }
+  },
+  {
+    "id": "spell.discern-lies",
+    "names": {
+      "es": "Discernir mentiras"
+    }
+  },
+  {
+    "id": "spell.discern-location",
+    "names": {
+      "es": "Discernir ubicación"
+    }
+  },
+  {
+    "id": "spell.disguise-self",
+    "names": {
+      "es": "Disfrazarse"
+    }
+  },
+  {
+    "id": "spell.disintegrate",
+    "names": {
+      "es": "Desintegrar"
+    }
+  },
+  {
+    "id": "spell.dismissal",
+    "names": {
+      "es": "Despedida"
+    }
+  },
+  {
+    "id": "spell.dispel-chaos",
+    "names": {
+      "es": "Disipar caos"
+    }
+  },
+  {
+    "id": "spell.dispel-evil",
+    "names": {
+      "es": "Disipar el mal"
+    }
+  },
+  {
+    "id": "spell.dispel-good",
+    "names": {
+      "es": "Disipar el bien"
+    }
+  },
+  {
+    "id": "spell.dispel-law",
+    "names": {
+      "es": "Disipar ley"
+    }
+  },
+  {
+    "id": "spell.dispel-magic",
+    "names": {
+      "es": "Disipar magia"
+    }
+  },
+  {
+    "id": "spell.displacement",
+    "names": {
+      "es": "Desplazamiento"
+    }
+  },
+  {
+    "id": "spell.disrupt-undead",
+    "names": {
+      "es": "Perturbar muertos vivientes"
+    }
+  },
+  {
+    "id": "spell.disrupting-weapon",
+    "names": {
+      "es": "Arma perturbadora"
+    }
+  },
+  {
+    "id": "spell.divination",
+    "names": {
+      "es": "Adivinación"
+    }
+  },
+  {
+    "id": "spell.divine-favor",
+    "names": {
+      "es": "Favor divino"
+    }
+  },
+  {
+    "id": "spell.divine-power",
+    "names": {
+      "es": "Poder divino"
+    }
+  },
+  {
+    "id": "spell.dominate-animal",
+    "names": {
+      "es": "Dominar animal"
+    }
+  },
+  {
+    "id": "spell.dominate-monster",
+    "names": {
+      "es": "Dominar monstruo"
+    }
+  },
+  {
+    "id": "spell.dominate-person",
+    "names": {
+      "es": "Dominar persona"
+    }
+  },
+  {
+    "id": "spell.doom",
+    "names": {
+      "es": "Fatalidad"
+    }
+  },
+  {
+    "id": "spell.dream",
+    "names": {
+      "es": "Ensueño"
+    }
+  },
+  {
+    "id": "spell.dust-of-twilight",
+    "names": {
+      "es": "Polvo del crepúsculo"
+    }
+  },
+  {
+    "id": "spell.eagles-splendor",
+    "names": {
+      "es": "Esplendor del águila"
+    }
+  },
+  {
+    "id": "spell.earthquake",
+    "names": {
+      "es": "Terremoto"
+    }
+  },
+  {
+    "id": "spell.elemental-body-i",
+    "names": {
+      "es": "Cuerpo elemental I"
+    }
+  },
+  {
+    "id": "spell.elemental-body-ii",
+    "names": {
+      "es": "Cuerpo elemental II"
+    }
+  },
+  {
+    "id": "spell.elemental-body-iii",
+    "names": {
+      "es": "Cuerpo elemental III"
+    }
+  },
+  {
+    "id": "spell.elemental-body-iv",
+    "names": {
+      "es": "Cuerpo elemental IV"
+    }
+  },
+  {
+    "id": "spell.elemental-swarm",
+    "names": {
+      "es": "Enjambre elemental"
+    }
+  },
+  {
+    "id": "spell.endure-elements",
+    "names": {
+      "es": "Soportar elementos"
+    }
+  },
+  {
+    "id": "spell.energy-drain",
+    "names": {
+      "es": "Drenaje de energía"
+    }
+  },
+  {
+    "id": "spell.enervation",
+    "names": {
+      "es": "Enervación"
+    }
+  },
+  {
+    "id": "spell.enlarge-person",
+    "names": {
+      "es": "Agrandar persona"
+    }
+  },
+  {
+    "id": "spell.entangle",
+    "names": {
+      "es": "Enmarañar"
+    }
+  },
+  {
+    "id": "spell.enthrall",
+    "names": {
+      "es": "Cautivar"
+    }
+  },
+  {
+    "id": "spell.entropic-shield",
+    "names": {
+      "es": "Escudo entrópico"
+    }
+  },
+  {
+    "id": "spell.erase",
+    "names": {
+      "es": "Borrar"
+    }
+  },
+  {
+    "id": "spell.ethereal-jaunt",
+    "names": {
+      "es": "Excursión etérea"
+    }
+  },
+  {
+    "id": "spell.etherealness",
+    "names": {
+      "es": "Eterealidad"
+    }
+  },
+  {
+    "id": "spell.evolution-surge",
+    "names": {
+      "es": "Oleada de evolución"
+    }
+  },
+  {
+    "id": "spell.evolution-surge-greater",
+    "names": {
+      "es": "Oleada de evolución mayor"
+    }
+  },
+  {
+    "id": "spell.evolution-surge-lesser",
+    "names": {
+      "es": "Oleada de evolución menor"
+    }
+  },
+  {
+    "id": "spell.expeditious-retreat",
+    "names": {
+      "es": "Retirada expeditiva"
+    }
+  },
+  {
+    "id": "spell.explosive-runes",
+    "names": {
+      "es": "Runas explosivas"
+    }
+  },
+  {
+    "id": "spell.eyebite",
+    "names": {
+      "es": "Mordedura ocular"
+    }
+  },
+  {
+    "id": "spell.fabricate",
+    "names": {
+      "es": "Fabricar"
+    }
+  },
+  {
+    "id": "spell.faerie-fire",
+    "names": {
+      "es": "Fuego feérico"
+    }
+  },
+  {
+    "id": "spell.false-life",
+    "names": {
+      "es": "Vida falsa"
+    }
+  },
+  {
+    "id": "spell.false-vision",
+    "names": {
+      "es": "Visión falsa"
+    }
+  },
+  {
+    "id": "spell.fear",
+    "names": {
+      "es": "Miedo"
+    }
+  },
+  {
+    "id": "spell.feather-fall",
+    "names": {
+      "es": "Caída de pluma"
+    }
+  },
+  {
+    "id": "spell.feeblemind",
+    "names": {
+      "es": "Mente débil"
+    }
+  },
+  {
+    "id": "spell.find-the-path",
+    "names": {
+      "es": "Hallar el camino"
+    }
+  },
+  {
+    "id": "spell.find-traps",
+    "names": {
+      "es": "Hallar trampas"
+    }
+  },
+  {
+    "id": "spell.finger-of-death",
+    "names": {
+      "es": "Dedo de la muerte"
+    }
+  },
+  {
+    "id": "spell.fire-seeds",
+    "names": {
+      "es": "Semillas de fuego"
+    }
+  },
+  {
+    "id": "spell.fire-shield",
+    "names": {
+      "es": "Escudo de fuego"
+    }
+  },
+  {
+    "id": "spell.fire-storm",
+    "names": {
+      "es": "Tormenta de fuego"
+    }
+  },
+  {
+    "id": "spell.fire-trap",
+    "names": {
+      "es": "Trampa de fuego"
+    }
+  },
+  {
+    "id": "spell.fireball",
+    "names": {
+      "es": "Bola de fuego"
+    }
+  },
+  {
+    "id": "spell.flame-arrow",
+    "names": {
+      "es": "Flecha llameante"
+    }
+  },
+  {
+    "id": "spell.flame-blade",
+    "names": {
+      "es": "Hoja llameante"
+    }
+  },
+  {
+    "id": "spell.flame-strike",
+    "names": {
+      "es": "Columna de fuego"
+    }
+  },
+  {
+    "id": "spell.flaming-sphere",
+    "names": {
+      "es": "Esfera llameante"
+    }
+  },
+  {
+    "id": "spell.flare",
+    "names": {
+      "es": "Fogonazo"
+    }
+  },
+  {
+    "id": "spell.flesh-to-stone",
+    "names": {
+      "es": "Carne a piedra"
+    }
+  },
+  {
+    "id": "spell.floating-disk",
+    "names": {
+      "es": "Disco flotante"
+    }
+  },
+  {
+    "id": "spell.fly",
+    "names": {
+      "es": "Volar"
+    }
+  },
+  {
+    "id": "spell.fog-cloud",
+    "names": {
+      "es": "Nube de niebla"
+    }
+  },
+  {
+    "id": "spell.forbiddance",
+    "names": {
+      "es": "Prohibición"
+    }
+  },
+  {
+    "id": "spell.forcecage",
+    "names": {
+      "es": "Jaula de fuerza"
+    }
+  },
+  {
+    "id": "spell.forceful-hand",
+    "names": {
+      "es": "Mano contundente"
+    }
+  },
+  {
+    "id": "spell.foresight",
+    "names": {
+      "es": "Presciencia"
+    }
+  },
+  {
+    "id": "spell.form-of-the-dragon-i",
+    "names": {
+      "es": "Forma del dragón I"
+    }
+  },
+  {
+    "id": "spell.form-of-the-dragon-ii",
+    "names": {
+      "es": "Forma del dragón II"
+    }
+  },
+  {
+    "id": "spell.form-of-the-dragon-iii",
+    "names": {
+      "es": "Forma del dragón III"
+    }
+  },
+  {
+    "id": "spell.foxs-cunning",
+    "names": {
+      "es": "Astucia del zorro"
+    }
+  },
+  {
+    "id": "spell.freedom",
+    "names": {
+      "es": "Libertad"
+    }
+  },
+  {
+    "id": "spell.freedom-of-movement",
+    "names": {
+      "es": "Libertad de movimiento"
+    }
+  },
+  {
+    "id": "spell.freezing-sphere",
+    "names": {
+      "es": "Esfera congelante"
+    }
+  },
+  {
+    "id": "spell.gaseous-form",
+    "names": {
+      "es": "Forma gaseosa"
+    }
+  },
+  {
+    "id": "spell.gate",
+    "names": {
+      "es": "Portal"
+    }
+  },
+  {
+    "id": "spell.geas-quest",
+    "names": {
+      "es": "Geas/misión"
+    }
+  },
+  {
+    "id": "spell.gentle-repose",
+    "names": {
+      "es": "Reposo apacible"
+    }
+  },
+  {
+    "id": "spell.ghost-sound",
+    "names": {
+      "es": "Sonido fantasma"
+    }
+  },
+  {
+    "id": "spell.ghoul-touch",
+    "names": {
+      "es": "Toque de necrófago"
+    }
+  },
+  {
+    "id": "spell.giant-form-i",
+    "names": {
+      "es": "Forma de gigante I"
+    }
+  },
+  {
+    "id": "spell.giant-form-ii",
+    "names": {
+      "es": "Forma de gigante II"
+    }
+  },
+  {
+    "id": "spell.giant-vermin",
+    "names": {
+      "es": "Alimaña gigante"
+    }
+  },
+  {
+    "id": "spell.glibness",
+    "names": {
+      "es": "Labia"
+    }
+  },
+  {
+    "id": "spell.glide",
+    "names": {
+      "es": "Planear"
+    }
+  },
+  {
+    "id": "spell.glitterdust",
+    "names": {
+      "es": "Polvo brillante"
+    }
+  },
+  {
+    "id": "spell.globe-of-invulnerability",
+    "names": {
+      "es": "Globo de invulnerabilidad"
+    }
+  },
+  {
+    "id": "spell.glyph-of-warding",
+    "names": {
+      "es": "Glifo custodio"
+    }
+  },
+  {
+    "id": "spell.good-hope",
+    "names": {
+      "es": "Buena esperanza"
+    }
+  },
+  {
+    "id": "spell.goodberry",
+    "names": {
+      "es": "Baya nutritiva"
+    }
+  },
+  {
+    "id": "spell.grasping-hand",
+    "names": {
+      "es": "Mano aferradora"
+    }
+  },
+  {
+    "id": "spell.grease",
+    "names": {
+      "es": "Grasa"
+    }
+  },
+  {
+    "id": "spell.greater-arcane-sight",
+    "names": {
+      "es": "Visión arcana mayor"
+    }
+  },
+  {
+    "id": "spell.greater-command",
+    "names": {
+      "es": "Orden imperiosa mayor"
+    }
+  },
+  {
+    "id": "spell.greater-dispel-magic",
+    "names": {
+      "es": "Disipar magia mayor"
+    }
+  },
+  {
+    "id": "spell.greater-glyph-of-warding",
+    "names": {
+      "es": "Glifo custodio mayor"
+    }
+  },
+  {
+    "id": "spell.greater-heroism",
+    "names": {
+      "es": "Heroísmo mayor"
+    }
+  },
+  {
+    "id": "spell.greater-invisibility",
+    "names": {
+      "es": "Invisibilidad mayor"
+    }
+  },
+  {
+    "id": "spell.greater-magic-fang",
+    "names": {
+      "es": "Colmillo mágico mayor"
+    }
+  },
+  {
+    "id": "spell.greater-magic-weapon",
+    "names": {
+      "es": "Arma mágica mayor"
+    }
+  },
+  {
+    "id": "spell.greater-planar-ally",
+    "names": {
+      "es": "Aliado planar mayor"
+    }
+  },
+  {
+    "id": "spell.greater-planar-binding",
+    "names": {
+      "es": "Atadura planar mayor"
+    }
+  },
+  {
+    "id": "spell.greater-polymorph",
+    "names": {
+      "es": "Metamorfosis mayor"
+    }
+  },
+  {
+    "id": "spell.greater-prying-eyes",
+    "names": {
+      "es": "Ojos fisgones mayor"
+    }
+  },
+  {
+    "id": "spell.greater-restoration",
+    "names": {
+      "es": "Restauración mayor"
+    }
+  },
+  {
+    "id": "spell.greater-scrying",
+    "names": {
+      "es": "Escrutinio mayor"
+    }
+  },
+  {
+    "id": "spell.greater-shadow-conjuration",
+    "names": {
+      "es": "Conjuración de sombras mayor"
+    }
+  },
+  {
+    "id": "spell.greater-shadow-evocation",
+    "names": {
+      "es": "Evocación de sombras mayor"
+    }
+  },
+  {
+    "id": "spell.greater-shout",
+    "names": {
+      "es": "Grito mayor"
+    }
+  },
+  {
+    "id": "spell.greater-spell-immunity",
+    "names": {
+      "es": "Inmunidad a conjuros mayor"
+    }
+  },
+  {
+    "id": "spell.greater-teleport",
+    "names": {
+      "es": "Teletransporte mayor"
+    }
+  },
+  {
+    "id": "spell.guards-and-wards",
+    "names": {
+      "es": "Guardias y guardas"
+    }
+  },
+  {
+    "id": "spell.guidance",
+    "names": {
+      "es": "Orientación"
+    }
+  },
+  {
+    "id": "spell.gust-of-wind",
+    "names": {
+      "es": "Ráfaga de viento"
+    }
+  },
+  {
+    "id": "spell.hallow",
+    "names": {
+      "es": "Santificar"
+    }
+  },
+  {
+    "id": "spell.hallucinatory-terrain",
+    "names": {
+      "es": "Terreno alucinatorio"
+    }
+  },
+  {
+    "id": "spell.halt-undead",
+    "names": {
+      "es": "Detener muertos vivientes"
+    }
+  },
+  {
+    "id": "spell.harm",
+    "names": {
+      "es": "Dañar"
+    }
+  },
+  {
+    "id": "spell.haste",
+    "names": {
+      "es": "Prisa"
+    }
+  },
+  {
+    "id": "spell.heal",
+    "names": {
+      "es": "Sanar"
+    }
+  },
+  {
+    "id": "spell.heal-mount",
+    "names": {
+      "es": "Sanar montura"
+    }
+  },
+  {
+    "id": "spell.heat-metal",
+    "names": {
+      "es": "Calentar metal"
+    }
+  },
+  {
+    "id": "spell.helping-hand",
+    "names": {
+      "es": "Mano servicial"
+    }
+  },
+  {
+    "id": "spell.heroes-feast",
+    "names": {
+      "es": "Festín de héroes"
+    }
+  },
+  {
+    "id": "spell.heroism",
+    "names": {
+      "es": "Heroísmo"
+    }
+  },
+  {
+    "id": "spell.hide-from-animals",
+    "names": {
+      "es": "Ocultarse de los animales"
+    }
+  },
+  {
+    "id": "spell.hide-from-undead",
+    "names": {
+      "es": "Ocultarse de los muertos vivientes"
+    }
+  },
+  {
+    "id": "spell.hideous-laughter",
+    "names": {
+      "es": "Risa horrible"
+    }
+  },
+  {
+    "id": "spell.hold-animal",
+    "names": {
+      "es": "Inmovilizar animal"
+    }
+  },
+  {
+    "id": "spell.hold-monster",
+    "names": {
+      "es": "Inmovilizar monstruo"
+    }
+  },
+  {
+    "id": "spell.hold-person",
+    "names": {
+      "es": "Inmovilizar persona"
+    }
+  },
+  {
+    "id": "spell.hold-portal",
+    "names": {
+      "es": "Trabar portal"
+    }
+  },
+  {
+    "id": "spell.holy-aura",
+    "names": {
+      "es": "Aura sagrada"
+    }
+  },
+  {
+    "id": "spell.holy-smite",
+    "names": {
+      "es": "Castigo sagrado"
+    }
+  },
+  {
+    "id": "spell.holy-sword",
+    "names": {
+      "es": "Espada sagrada"
+    }
+  },
+  {
+    "id": "spell.holy-word",
+    "names": {
+      "es": "Palabra sagrada"
+    }
+  },
+  {
+    "id": "spell.horrid-wilting",
+    "names": {
+      "es": "Marchitamiento horrendo"
+    }
+  },
+  {
+    "id": "spell.hungry-pit",
+    "names": {
+      "es": "Foso hambriento"
+    }
+  },
+  {
+    "id": "spell.hypnotic-pattern",
+    "names": {
+      "es": "Patrón hipnótico"
+    }
+  },
+  {
+    "id": "spell.hypnotism",
+    "names": {
+      "es": "Hipnotismo"
+    }
+  },
+  {
+    "id": "spell.ice-storm",
+    "names": {
+      "es": "Tormenta de hielo"
+    }
+  },
+  {
+    "id": "spell.identify",
+    "names": {
+      "es": "Identificar"
+    }
+  },
+  {
+    "id": "spell.illusory-script",
+    "names": {
+      "es": "Escritura ilusoria"
+    }
+  },
+  {
+    "id": "spell.illusory-wall",
+    "names": {
+      "es": "Muro ilusorio"
+    }
+  },
+  {
+    "id": "spell.imbue-with-spell-ability",
+    "names": {
+      "es": "Imbuir aptitud de lanzar conjuros"
+    }
+  },
+  {
+    "id": "spell.implosion",
+    "names": {
+      "es": "Implosión"
+    }
+  },
+  {
+    "id": "spell.imprisonment",
+    "names": {
+      "es": "Encarcelamiento"
+    }
+  },
+  {
+    "id": "spell.incendiary-cloud",
+    "names": {
+      "es": "Nube incendiaria"
+    }
+  },
+  {
+    "id": "spell.inflict-critical-wounds",
+    "names": {
+      "es": "Infligir heridas críticas"
+    }
+  },
+  {
+    "id": "spell.inflict-light-wounds",
+    "names": {
+      "es": "Infligir heridas leves"
+    }
+  },
+  {
+    "id": "spell.inflict-moderate-wounds",
+    "names": {
+      "es": "Infligir heridas moderadas"
+    }
+  },
+  {
+    "id": "spell.inflict-serious-wounds",
+    "names": {
+      "es": "Infligir heridas graves"
+    }
+  },
+  {
+    "id": "spell.insanity",
+    "names": {
+      "es": "Locura"
+    }
+  },
+  {
+    "id": "spell.insect-plague",
+    "names": {
+      "es": "Plaga de insectos"
+    }
+  },
+  {
+    "id": "spell.instant-summons",
+    "names": {
+      "es": "Convocación instantánea"
+    }
+  },
+  {
+    "id": "spell.interposing-hand",
+    "names": {
+      "es": "Mano interpuesta"
+    }
+  },
+  {
+    "id": "spell.invisibility",
+    "names": {
+      "es": "Invisibilidad"
+    }
+  },
+  {
+    "id": "spell.invisibility-purge",
+    "names": {
+      "es": "Purgar invisibilidad"
+    }
+  },
+  {
+    "id": "spell.invisibility-sphere",
+    "names": {
+      "es": "Esfera de invisibilidad"
+    }
+  },
+  {
+    "id": "spell.iron-body",
+    "names": {
+      "es": "Cuerpo de hierro"
+    }
+  },
+  {
+    "id": "spell.ironwood",
+    "names": {
+      "es": "Madera de hierro"
+    }
+  },
+  {
+    "id": "spell.irresistible-dance",
+    "names": {
+      "es": "Danza irresistible"
+    }
+  },
+  {
+    "id": "spell.jump",
+    "names": {
+      "es": "Salto"
+    }
+  },
+  {
+    "id": "spell.keen-edge",
+    "names": {
+      "es": "Filo afilado"
+    }
+  },
+  {
+    "id": "spell.knock",
+    "names": {
+      "es": "Abrir"
+    }
+  },
+  {
+    "id": "spell.know-direction",
+    "names": {
+      "es": "Conocer la dirección"
+    }
+  },
+  {
+    "id": "spell.legend-lore",
+    "names": {
+      "es": "Saber legendario"
+    }
+  },
+  {
+    "id": "spell.lesser-confusion",
+    "names": {
+      "es": "Confusión menor"
+    }
+  },
+  {
+    "id": "spell.lesser-geas",
+    "names": {
+      "es": "Geas menor"
+    }
+  },
+  {
+    "id": "spell.lesser-globe-of-invulnerability",
+    "names": {
+      "es": "Globo de invulnerabilidad menor"
+    }
+  },
+  {
+    "id": "spell.lesser-planar-ally",
+    "names": {
+      "es": "Aliado planar menor"
+    }
+  },
+  {
+    "id": "spell.lesser-planar-binding",
+    "names": {
+      "es": "Atadura planar menor"
+    }
+  },
+  {
+    "id": "spell.lesser-restoration",
+    "names": {
+      "es": "Restauración menor"
+    }
+  },
+  {
+    "id": "spell.levitate",
+    "names": {
+      "es": "Levitar"
+    }
+  },
+  {
+    "id": "spell.light",
+    "names": {
+      "es": "Luz"
+    }
+  },
+  {
+    "id": "spell.lightning-bolt",
+    "names": {
+      "es": "Rayo relampagueante"
+    }
+  },
+  {
+    "id": "spell.limited-wish",
+    "names": {
+      "es": "Deseo limitado"
+    }
+  },
+  {
+    "id": "spell.liveoak",
+    "names": {
+      "es": "Roble vivo"
+    }
+  },
+  {
+    "id": "spell.locate-creature",
+    "names": {
+      "es": "Localizar criatura"
+    }
+  },
+  {
+    "id": "spell.locate-object",
+    "names": {
+      "es": "Localizar objeto"
+    }
+  },
+  {
+    "id": "spell.longstrider",
+    "names": {
+      "es": "Zancada larga"
+    }
+  },
+  {
+    "id": "spell.lullaby",
+    "names": {
+      "es": "Nana"
+    }
+  },
+  {
+    "id": "spell.mage-armor",
+    "names": {
+      "es": "Armadura de mago"
+    }
+  },
+  {
+    "id": "spell.mage-hand",
+    "names": {
+      "es": "Mano de mago"
+    }
+  },
+  {
+    "id": "spell.mages-disjunction",
+    "names": {
+      "es": "Disyunción del mago"
+    }
+  },
+  {
+    "id": "spell.mages-faithful-hound",
+    "names": {
+      "es": "Sabueso fiel del mago"
+    }
+  },
+  {
+    "id": "spell.mages-lucubration",
+    "names": {
+      "es": "Lucubración del mago"
+    }
+  },
+  {
+    "id": "spell.mages-magnificent-mansion",
+    "names": {
+      "es": "Mansión magnífica del mago"
+    }
+  },
+  {
+    "id": "spell.mages-private-sanctum",
+    "names": {
+      "es": "Santuario privado del mago"
+    }
+  },
+  {
+    "id": "spell.mages-sword",
+    "names": {
+      "es": "Espada del mago"
+    }
+  },
+  {
+    "id": "spell.magic-aura",
+    "names": {
+      "es": "Aura mágica"
+    }
+  },
+  {
+    "id": "spell.magic-circle-against-chaos",
+    "names": {
+      "es": "Círculo mágico contra caos"
+    }
+  },
+  {
+    "id": "spell.magic-circle-against-evil",
+    "names": {
+      "es": "Círculo mágico contra mal"
+    }
+  },
+  {
+    "id": "spell.magic-circle-against-good",
+    "names": {
+      "es": "Círculo mágico contra bien"
+    }
+  },
+  {
+    "id": "spell.magic-circle-against-law",
+    "names": {
+      "es": "Círculo mágico contra ley"
+    }
+  },
+  {
+    "id": "spell.magic-fang",
+    "names": {
+      "es": "Colmillo mágico"
+    }
+  },
+  {
+    "id": "spell.magic-jar",
+    "names": {
+      "es": "Tarro mágico"
+    }
+  },
+  {
+    "id": "spell.magic-missile",
+    "names": {
+      "es": "Proyectil mágico"
+    }
+  },
+  {
+    "id": "spell.magic-mouth",
+    "names": {
+      "es": "Boca mágica"
+    }
+  },
+  {
+    "id": "spell.magic-stone",
+    "names": {
+      "es": "Piedra mágica"
+    }
+  },
+  {
+    "id": "spell.magic-vestment",
+    "names": {
+      "es": "Vestidura mágica"
+    }
+  },
+  {
+    "id": "spell.magic-weapon",
+    "names": {
+      "es": "Arma mágica"
+    }
+  },
+  {
+    "id": "spell.major-creation",
+    "names": {
+      "es": "Creación mayor"
+    }
+  },
+  {
+    "id": "spell.major-image",
+    "names": {
+      "es": "Imagen mayor"
+    }
+  },
+  {
+    "id": "spell.make-whole",
+    "names": {
+      "es": "Reparar por completo"
+    }
+  },
+  {
+    "id": "spell.mark-of-justice",
+    "names": {
+      "es": "Marca de la justicia"
+    }
+  },
+  {
+    "id": "spell.mass-bears-endurance",
+    "names": {
+      "es": "Aguante del oso en masa"
+    }
+  },
+  {
+    "id": "spell.mass-bulls-strength",
+    "names": {
+      "es": "Fuerza del toro en masa"
+    }
+  },
+  {
+    "id": "spell.mass-cats-grace",
+    "names": {
+      "es": "Gracia felina en masa"
+    }
+  },
+  {
+    "id": "spell.mass-charm-monster",
+    "names": {
+      "es": "Hechizar monstruo en masa"
+    }
+  },
+  {
+    "id": "spell.mass-cure-critical-wounds",
+    "names": {
+      "es": "Curar heridas críticas en masa"
+    }
+  },
+  {
+    "id": "spell.mass-cure-light-wounds",
+    "names": {
+      "es": "Curar heridas leves en masa"
+    }
+  },
+  {
+    "id": "spell.mass-cure-moderate-wounds",
+    "names": {
+      "es": "Curar heridas moderadas en masa"
+    }
+  },
+  {
+    "id": "spell.mass-cure-serious-wounds",
+    "names": {
+      "es": "Curar heridas graves en masa"
+    }
+  },
+  {
+    "id": "spell.mass-eagles-splendor",
+    "names": {
+      "es": "Esplendor del águila en masa"
+    }
+  },
+  {
+    "id": "spell.mass-enlarge-person",
+    "names": {
+      "es": "Agrandar persona en masa"
+    }
+  },
+  {
+    "id": "spell.mass-foxs-cunning",
+    "names": {
+      "es": "Astucia del zorro en masa"
+    }
+  },
+  {
+    "id": "spell.mass-heal",
+    "names": {
+      "es": "Sanar en masa"
+    }
+  },
+  {
+    "id": "spell.mass-hold-monster",
+    "names": {
+      "es": "Inmovilizar monstruo en masa"
+    }
+  },
+  {
+    "id": "spell.mass-hold-person",
+    "names": {
+      "es": "Inmovilizar persona en masa"
+    }
+  },
+  {
+    "id": "spell.mass-inflict-critical-wounds",
+    "names": {
+      "es": "Infligir heridas críticas en masa"
+    }
+  },
+  {
+    "id": "spell.mass-inflict-light-wounds",
+    "names": {
+      "es": "Infligir heridas leves en masa"
+    }
+  },
+  {
+    "id": "spell.mass-inflict-moderate-wounds",
+    "names": {
+      "es": "Infligir heridas moderadas en masa"
+    }
+  },
+  {
+    "id": "spell.mass-inflict-serious-wounds",
+    "names": {
+      "es": "Infligir heridas graves en masa"
+    }
+  },
+  {
+    "id": "spell.mass-invisibility",
+    "names": {
+      "es": "Invisibilidad en masa"
+    }
+  },
+  {
+    "id": "spell.mass-owls-wisdom",
+    "names": {
+      "es": "Sabiduría del búho en masa"
+    }
+  },
+  {
+    "id": "spell.mass-reduce-person",
+    "names": {
+      "es": "Reducir persona en masa"
+    }
+  },
+  {
+    "id": "spell.mass-suggestion",
+    "names": {
+      "es": "Sugestión en masa"
+    }
+  },
+  {
+    "id": "spell.maze",
+    "names": {
+      "es": "Laberinto"
+    }
+  },
+  {
+    "id": "spell.meld-into-stone",
+    "names": {
+      "es": "Fundirse con la piedra"
+    }
+  },
+  {
+    "id": "spell.mending",
+    "names": {
+      "es": "Remendar"
+    }
+  },
+  {
+    "id": "spell.message",
+    "names": {
+      "es": "Mensaje"
+    }
+  },
+  {
+    "id": "spell.meteor-swarm",
+    "names": {
+      "es": "Enjambre de meteoros"
+    }
+  },
+  {
+    "id": "spell.mind-blank",
+    "names": {
+      "es": "Mente en blanco"
+    }
+  },
+  {
+    "id": "spell.mind-fog",
+    "names": {
+      "es": "Niebla mental"
+    }
+  },
+  {
+    "id": "spell.minor-creation",
+    "names": {
+      "es": "Creación menor"
+    }
+  },
+  {
+    "id": "spell.minor-image",
+    "names": {
+      "es": "Imagen menor"
+    }
+  },
+  {
+    "id": "spell.miracle",
+    "names": {
+      "es": "Milagro"
+    }
+  },
+  {
+    "id": "spell.mirage-arcana",
+    "names": {
+      "es": "Espejismo arcano"
+    }
+  },
+  {
+    "id": "spell.mirror-image",
+    "names": {
+      "es": "Imagen múltiple"
+    }
+  },
+  {
+    "id": "spell.misdirection",
+    "names": {
+      "es": "Desorientación"
+    }
+  },
+  {
+    "id": "spell.mislead",
+    "names": {
+      "es": "Despistar"
+    }
+  },
+  {
+    "id": "spell.mnemonic-enhancer",
+    "names": {
+      "es": "Potenciador mnemónico"
+    }
+  },
+  {
+    "id": "spell.modify-memory",
+    "names": {
+      "es": "Modificar memoria"
+    }
+  },
+  {
+    "id": "spell.moment-of-prescience",
+    "names": {
+      "es": "Momento de presciencia"
+    }
+  },
+  {
+    "id": "spell.mount",
+    "names": {
+      "es": "Montura"
+    }
+  },
+  {
+    "id": "spell.move-earth",
+    "names": {
+      "es": "Mover tierra"
+    }
+  },
+  {
+    "id": "spell.neutralize-poison",
+    "names": {
+      "es": "Neutralizar veneno"
+    }
+  },
+  {
+    "id": "spell.nightmare",
+    "names": {
+      "es": "Pesadilla"
+    }
+  },
+  {
+    "id": "spell.nondetection",
+    "names": {
+      "es": "Indetectabilidad"
+    }
+  },
+  {
+    "id": "spell.obscure-object",
+    "names": {
+      "es": "Ocultar objeto"
+    }
+  },
+  {
+    "id": "spell.obscuring-mist",
+    "names": {
+      "es": "Bruma ocultadora"
+    }
+  },
+  {
+    "id": "spell.open-close",
+    "names": {
+      "es": "Abrir/cerrar"
+    }
+  },
+  {
+    "id": "spell.orders-wrath",
+    "names": {
+      "es": "Ira de la ley"
+    }
+  },
+  {
+    "id": "spell.overland-flight",
+    "names": {
+      "es": "Vuelo a distancia"
+    }
+  },
+  {
+    "id": "spell.owls-wisdom",
+    "names": {
+      "es": "Sabiduría del búho"
+    }
+  },
+  {
+    "id": "spell.pass-without-trace",
+    "names": {
+      "es": "Pasar sin dejar rastro"
+    }
+  },
+  {
+    "id": "spell.passwall",
+    "names": {
+      "es": "Atravesar muros"
+    }
+  },
+  {
+    "id": "spell.pelagic-storm",
+    "names": {
+      "es": "Tormenta pelágica"
+    }
+  },
+  {
+    "id": "spell.permanency",
+    "names": {
+      "es": "Permanencia"
+    }
+  },
+  {
+    "id": "spell.permanent-image",
+    "names": {
+      "es": "Imagen permanente"
+    }
+  },
+  {
+    "id": "spell.persistent-image",
+    "names": {
+      "es": "Imagen persistente"
+    }
+  },
+  {
+    "id": "spell.phantasmal-killer",
+    "names": {
+      "es": "Asesino fantasmal"
+    }
+  },
+  {
+    "id": "spell.phantom-steed",
+    "names": {
+      "es": "Corcel fantasma"
+    }
+  },
+  {
+    "id": "spell.phantom-trap",
+    "names": {
+      "es": "Trampa fantasma"
+    }
+  },
+  {
+    "id": "spell.phase-door",
+    "names": {
+      "es": "Puerta de fase"
+    }
+  },
+  {
+    "id": "spell.planar-adaptation",
+    "names": {
+      "es": "Adaptación planar"
+    }
+  },
+  {
+    "id": "spell.planar-ally",
+    "names": {
+      "es": "Aliado planar"
+    }
+  },
+  {
+    "id": "spell.planar-binding",
+    "names": {
+      "es": "Atadura planar"
+    }
+  },
+  {
+    "id": "spell.plane-shift",
+    "names": {
+      "es": "Cambio de plano"
+    }
+  },
+  {
+    "id": "spell.plant-growth",
+    "names": {
+      "es": "Crecimiento vegetal"
+    }
+  },
+  {
+    "id": "spell.plant-shape-i",
+    "names": {
+      "es": "Forma de planta I"
+    }
+  },
+  {
+    "id": "spell.plant-shape-ii",
+    "names": {
+      "es": "Forma de planta II"
+    }
+  },
+  {
+    "id": "spell.plant-shape-iii",
+    "names": {
+      "es": "Forma de planta III"
+    }
+  },
+  {
+    "id": "spell.poison",
+    "names": {
+      "es": "Veneno"
+    }
+  },
+  {
+    "id": "spell.polar-ray",
+    "names": {
+      "es": "Rayo polar"
+    }
+  },
+  {
+    "id": "spell.polymorph",
+    "names": {
+      "es": "Metamorfosis"
+    }
+  },
+  {
+    "id": "spell.polymorph-any-object",
+    "names": {
+      "es": "Metamorfosear cualquier objeto"
+    }
+  },
+  {
+    "id": "spell.power-word-blind",
+    "names": {
+      "es": "Palabra de poder: cegar"
+    }
+  },
+  {
+    "id": "spell.power-word-kill",
+    "names": {
+      "es": "Palabra de poder: matar"
+    }
+  },
+  {
+    "id": "spell.power-word-stun",
+    "names": {
+      "es": "Palabra de poder: aturdir"
+    }
+  },
+  {
+    "id": "spell.prayer",
+    "names": {
+      "es": "Plegaria"
+    }
+  },
+  {
+    "id": "spell.prestidigitation",
+    "names": {
+      "es": "Prestidigitación"
+    }
+  },
+  {
+    "id": "spell.prismatic-sphere",
+    "names": {
+      "es": "Esfera prismática"
+    }
+  },
+  {
+    "id": "spell.prismatic-spray",
+    "names": {
+      "es": "Rociada prismática"
+    }
+  },
+  {
+    "id": "spell.prismatic-wall",
+    "names": {
+      "es": "Muro prismático"
+    }
+  },
+  {
+    "id": "spell.produce-flame",
+    "names": {
+      "es": "Producir llama"
+    }
+  },
+  {
+    "id": "spell.programmed-image",
+    "names": {
+      "es": "Imagen programada"
+    }
+  },
+  {
+    "id": "spell.project-image",
+    "names": {
+      "es": "Proyectar imagen"
+    }
+  },
+  {
+    "id": "spell.protection-from-arrows",
+    "names": {
+      "es": "Protección contra flechas"
+    }
+  },
+  {
+    "id": "spell.protection-from-chaos",
+    "names": {
+      "es": "Protección contra caos"
+    }
+  },
+  {
+    "id": "spell.protection-from-energy",
+    "names": {
+      "es": "Protección contra energía"
+    }
+  },
+  {
+    "id": "spell.protection-from-evil",
+    "names": {
+      "es": "Protección contra mal"
+    }
+  },
+  {
+    "id": "spell.protection-from-good",
+    "names": {
+      "es": "Protección contra bien"
+    }
+  },
+  {
+    "id": "spell.protection-from-law",
+    "names": {
+      "es": "Protección contra ley"
+    }
+  },
+  {
+    "id": "spell.protection-from-spells",
+    "names": {
+      "es": "Protección contra conjuros"
+    }
+  },
+  {
+    "id": "spell.prying-eyes",
+    "names": {
+      "es": "Ojos fisgones"
+    }
+  },
+  {
+    "id": "spell.purified-calling",
+    "names": {
+      "es": "Llamada purificada"
+    }
+  },
+  {
+    "id": "spell.purify-food-and-drink",
+    "names": {
+      "es": "Purificar comida y bebida"
+    }
+  },
+  {
+    "id": "spell.pyrotechnics",
+    "names": {
+      "es": "Pirotecnia"
+    }
+  },
+  {
+    "id": "spell.quench",
+    "names": {
+      "es": "Apagar"
+    }
+  },
+  {
+    "id": "spell.rainbow-pattern",
+    "names": {
+      "es": "Patrón de arcoíris"
+    }
+  },
+  {
+    "id": "spell.raise-dead",
+    "names": {
+      "es": "Levantar a los muertos"
+    }
+  },
+  {
+    "id": "spell.ray-of-enfeeblement",
+    "names": {
+      "es": "Rayo de debilitamiento"
+    }
+  },
+  {
+    "id": "spell.ray-of-exhaustion",
+    "names": {
+      "es": "Rayo de agotamiento"
+    }
+  },
+  {
+    "id": "spell.ray-of-frost",
+    "names": {
+      "es": "Rayo de escarcha"
+    }
+  },
+  {
+    "id": "spell.read-magic",
+    "names": {
+      "es": "Leer magia"
+    }
+  },
+  {
+    "id": "spell.reduce-animal",
+    "names": {
+      "es": "Reducir animal"
+    }
+  },
+  {
+    "id": "spell.reduce-person",
+    "names": {
+      "es": "Reducir persona"
+    }
+  },
+  {
+    "id": "spell.refuge",
+    "names": {
+      "es": "Refugio"
+    }
+  },
+  {
+    "id": "spell.regenerate",
+    "names": {
+      "es": "Regenerar"
+    }
+  },
+  {
+    "id": "spell.reincarnate",
+    "names": {
+      "es": "Reencarnar"
+    }
+  },
+  {
+    "id": "spell.rejuvenate-eidolon",
+    "names": {
+      "es": "Rejuvenecer eidolón"
+    }
+  },
+  {
+    "id": "spell.rejuvenate-eidolon-greater",
+    "names": {
+      "es": "Rejuvenecer eidolón mayor"
+    }
+  },
+  {
+    "id": "spell.rejuvenate-eidolon-lesser",
+    "names": {
+      "es": "Rejuvenecer eidolón menor"
+    }
+  },
+  {
+    "id": "spell.remove-blindness-deafness",
+    "names": {
+      "es": "Eliminar ceguera/sordera"
+    }
+  },
+  {
+    "id": "spell.remove-curse",
+    "names": {
+      "es": "Eliminar maldición"
+    }
+  },
+  {
+    "id": "spell.remove-disease",
+    "names": {
+      "es": "Eliminar enfermedad"
+    }
+  },
+  {
+    "id": "spell.remove-fear",
+    "names": {
+      "es": "Eliminar miedo"
+    }
+  },
+  {
+    "id": "spell.remove-paralysis",
+    "names": {
+      "es": "Eliminar parálisis"
+    }
+  },
+  {
+    "id": "spell.repel-metal-or-stone",
+    "names": {
+      "es": "Repeler metal o piedra"
+    }
+  },
+  {
+    "id": "spell.repel-vermin",
+    "names": {
+      "es": "Repeler alimañas"
+    }
+  },
+  {
+    "id": "spell.repel-wood",
+    "names": {
+      "es": "Repeler madera"
+    }
+  },
+  {
+    "id": "spell.repulsion",
+    "names": {
+      "es": "Repulsión"
+    }
+  },
+  {
+    "id": "spell.resilient-sphere",
+    "names": {
+      "es": "Esfera resistente"
+    }
+  },
+  {
+    "id": "spell.resist-energy",
+    "names": {
+      "es": "Resistir energía"
+    }
+  },
+  {
+    "id": "spell.resistance",
+    "names": {
+      "es": "Resistencia"
+    }
+  },
+  {
+    "id": "spell.restoration",
+    "names": {
+      "es": "Restauración"
+    }
+  },
+  {
+    "id": "spell.resurrection",
+    "names": {
+      "es": "Resurrección"
+    }
+  },
+  {
+    "id": "spell.reverse-gravity",
+    "names": {
+      "es": "Invertir la gravedad"
+    }
+  },
+  {
+    "id": "spell.righteous-might",
+    "names": {
+      "es": "Poderío virtuoso"
+    }
+  },
+  {
+    "id": "spell.rope-trick",
+    "names": {
+      "es": "Truco de la cuerda"
+    }
+  },
+  {
+    "id": "spell.rusting-grasp",
+    "names": {
+      "es": "Apretón oxidante"
+    }
+  },
+  {
+    "id": "spell.sanctuary",
+    "names": {
+      "es": "Santuario"
+    }
+  },
+  {
+    "id": "spell.scare",
+    "names": {
+      "es": "Espantar"
+    }
+  },
+  {
+    "id": "spell.scintillating-pattern",
+    "names": {
+      "es": "Patrón centelleante"
+    }
+  },
+  {
+    "id": "spell.scorching-ray",
+    "names": {
+      "es": "Rayo abrasador"
+    }
+  },
+  {
+    "id": "spell.screen",
+    "names": {
+      "es": "Pantalla"
+    }
+  },
+  {
+    "id": "spell.scrying",
+    "names": {
+      "es": "Escrutinio"
+    }
+  },
+  {
+    "id": "spell.sculpt-sound",
+    "names": {
+      "es": "Esculpir sonido"
+    }
+  },
+  {
+    "id": "spell.searing-light",
+    "names": {
+      "es": "Luz abrasadora"
+    }
+  },
+  {
+    "id": "spell.secret-chest",
+    "names": {
+      "es": "Cofre secreto"
+    }
+  },
+  {
+    "id": "spell.secret-page",
+    "names": {
+      "es": "Página secreta"
+    }
+  },
+  {
+    "id": "spell.secure-shelter",
+    "names": {
+      "es": "Refugio seguro"
+    }
+  },
+  {
+    "id": "spell.see-invisibility",
+    "names": {
+      "es": "Ver invisibilidad"
+    }
+  },
+  {
+    "id": "spell.seek-thoughts",
+    "names": {
+      "es": "Buscar pensamientos"
+    }
+  },
+  {
+    "id": "spell.seeming",
+    "names": {
+      "es": "Apariencia"
+    }
+  },
+  {
+    "id": "spell.sending",
+    "names": {
+      "es": "Enviar"
+    }
+  },
+  {
+    "id": "spell.sepia-snake-sigil",
+    "names": {
+      "es": "Sigilo de la serpiente sepia"
+    }
+  },
+  {
+    "id": "spell.sequester",
+    "names": {
+      "es": "Secuestrar"
+    }
+  },
+  {
+    "id": "spell.shades",
+    "names": {
+      "es": "Sombras"
+    }
+  },
+  {
+    "id": "spell.shadow-conjuration",
+    "names": {
+      "es": "Conjuración de sombras"
+    }
+  },
+  {
+    "id": "spell.shadow-evocation",
+    "names": {
+      "es": "Evocación de sombras"
+    }
+  },
+  {
+    "id": "spell.shadow-walk",
+    "names": {
+      "es": "Caminar entre sombras"
+    }
+  },
+  {
+    "id": "spell.shambler",
+    "names": {
+      "es": "Trastabillador"
+    }
+  },
+  {
+    "id": "spell.shapechange",
+    "names": {
+      "es": "Cambiar de forma"
+    }
+  },
+  {
+    "id": "spell.share-senses",
+    "names": {
+      "es": "Compartir sentidos"
+    }
+  },
+  {
+    "id": "spell.shatter",
+    "names": {
+      "es": "Hacer añicos"
+    }
+  },
+  {
+    "id": "spell.shield",
+    "names": {
+      "es": "Escudo"
+    }
+  },
+  {
+    "id": "spell.shield-of-faith",
+    "names": {
+      "es": "Escudo de fe"
+    }
+  },
+  {
+    "id": "spell.shield-of-law",
+    "names": {
+      "es": "Escudo de la ley"
+    }
+  },
+  {
+    "id": "spell.shield-other",
+    "names": {
+      "es": "Escudar a otro"
+    }
+  },
+  {
+    "id": "spell.shillelagh",
+    "names": {
+      "es": "Cachiporra mágica"
+    }
+  },
+  {
+    "id": "spell.shocking-grasp",
+    "names": {
+      "es": "Apretón electrizante"
+    }
+  },
+  {
+    "id": "spell.shout",
+    "names": {
+      "es": "Grito"
+    }
+  },
+  {
+    "id": "spell.shrink-item",
+    "names": {
+      "es": "Encoger objeto"
+    }
+  },
+  {
+    "id": "spell.silence",
+    "names": {
+      "es": "Silencio"
+    }
+  },
+  {
+    "id": "spell.silent-image",
+    "names": {
+      "es": "Imagen silenciosa"
+    }
+  },
+  {
+    "id": "spell.simulacrum",
+    "names": {
+      "es": "Simulacro"
+    }
+  },
+  {
+    "id": "spell.slay-living",
+    "names": {
+      "es": "Matar a los vivos"
+    }
+  },
+  {
+    "id": "spell.sleep",
+    "names": {
+      "es": "Sueño"
+    }
+  },
+  {
+    "id": "spell.sleet-storm",
+    "names": {
+      "es": "Tormenta de aguanieve"
+    }
+  },
+  {
+    "id": "spell.slow",
+    "names": {
+      "es": "Lentitud"
+    }
+  },
+  {
+    "id": "spell.snare",
+    "names": {
+      "es": "Lazo"
+    }
+  },
+  {
+    "id": "spell.soften-earth-and-stone",
+    "names": {
+      "es": "Ablandar tierra y piedra"
+    }
+  },
+  {
+    "id": "spell.solid-fog",
+    "names": {
+      "es": "Niebla sólida"
+    }
+  },
+  {
+    "id": "spell.song-of-discord",
+    "names": {
+      "es": "Canción de la discordia"
+    }
+  },
+  {
+    "id": "spell.soul-bind",
+    "names": {
+      "es": "Atar el alma"
+    }
+  },
+  {
+    "id": "spell.sound-burst",
+    "names": {
+      "es": "Estallido sónico"
+    }
+  },
+  {
+    "id": "spell.speak-with-animals",
+    "names": {
+      "es": "Hablar con los animales"
+    }
+  },
+  {
+    "id": "spell.speak-with-dead",
+    "names": {
+      "es": "Hablar con los muertos"
+    }
+  },
+  {
+    "id": "spell.speak-with-plants",
+    "names": {
+      "es": "Hablar con las plantas"
+    }
+  },
+  {
+    "id": "spell.spectral-hand",
+    "names": {
+      "es": "Mano espectral"
+    }
+  },
+  {
+    "id": "spell.spell-immunity",
+    "names": {
+      "es": "Inmunidad a conjuros"
+    }
+  },
+  {
+    "id": "spell.spell-resistance",
+    "names": {
+      "es": "Resistencia a conjuros"
+    }
+  },
+  {
+    "id": "spell.spell-turning",
+    "names": {
+      "es": "Desviar conjuros"
+    }
+  },
+  {
+    "id": "spell.spellstaff",
+    "names": {
+      "es": "Bastón de conjuros"
+    }
+  },
+  {
+    "id": "spell.spider-climb",
+    "names": {
+      "es": "Trepar como una araña"
+    }
+  },
+  {
+    "id": "spell.spike-growth",
+    "names": {
+      "es": "Crecimiento de púas"
+    }
+  },
+  {
+    "id": "spell.spike-stones",
+    "names": {
+      "es": "Piedras con púas"
+    }
+  },
+  {
+    "id": "spell.spiked-pit",
+    "names": {
+      "es": "Foso con púas"
+    }
+  },
+  {
+    "id": "spell.spiritual-weapon",
+    "names": {
+      "es": "Arma espiritual"
+    }
+  },
+  {
+    "id": "spell.stabilize",
+    "names": {
+      "es": "Estabilizar"
+    }
+  },
+  {
+    "id": "spell.statue",
+    "names": {
+      "es": "Estatua"
+    }
+  },
+  {
+    "id": "spell.status",
+    "names": {
+      "es": "Estado"
+    }
+  },
+  {
+    "id": "spell.stinking-cloud",
+    "names": {
+      "es": "Nube apestosa"
+    }
+  },
+  {
+    "id": "spell.stone-shape",
+    "names": {
+      "es": "Moldear piedra"
+    }
+  },
+  {
+    "id": "spell.stone-tell",
+    "names": {
+      "es": "Piedra reveladora"
+    }
+  },
+  {
+    "id": "spell.stone-to-flesh",
+    "names": {
+      "es": "Piedra a carne"
+    }
+  },
+  {
+    "id": "spell.stoneskin",
+    "names": {
+      "es": "Piel de piedra"
+    }
+  },
+  {
+    "id": "spell.storm-of-vengeance",
+    "names": {
+      "es": "Tormenta de venganza"
+    }
+  },
+  {
+    "id": "spell.suggestion",
+    "names": {
+      "es": "Sugestión"
+    }
+  },
+  {
+    "id": "spell.summon-eidolon",
+    "names": {
+      "es": "Convocar eidolón"
+    }
+  },
+  {
+    "id": "spell.summon-instrument",
+    "names": {
+      "es": "Convocar instrumento"
+    }
+  },
+  {
+    "id": "spell.summon-monster-i",
+    "names": {
+      "es": "Convocar monstruo I"
+    }
+  },
+  {
+    "id": "spell.summon-monster-ii",
+    "names": {
+      "es": "Convocar monstruo II"
+    }
+  },
+  {
+    "id": "spell.summon-monster-iii",
+    "names": {
+      "es": "Convocar monstruo III"
+    }
+  },
+  {
+    "id": "spell.summon-monster-iv",
+    "names": {
+      "es": "Convocar monstruo IV"
+    }
+  },
+  {
+    "id": "spell.summon-monster-ix",
+    "names": {
+      "es": "Convocar monstruo IX"
+    }
+  },
+  {
+    "id": "spell.summon-monster-v",
+    "names": {
+      "es": "Convocar monstruo V"
+    }
+  },
+  {
+    "id": "spell.summon-monster-vi",
+    "names": {
+      "es": "Convocar monstruo VI"
+    }
+  },
+  {
+    "id": "spell.summon-monster-vii",
+    "names": {
+      "es": "Convocar monstruo VII"
+    }
+  },
+  {
+    "id": "spell.summon-monster-viii",
+    "names": {
+      "es": "Convocar monstruo VIII"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-i",
+    "names": {
+      "es": "Convocar aliado natural I"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-ii",
+    "names": {
+      "es": "Convocar aliado natural II"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-iii",
+    "names": {
+      "es": "Convocar aliado natural III"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-iv",
+    "names": {
+      "es": "Convocar aliado natural IV"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-ix",
+    "names": {
+      "es": "Convocar aliado natural IX"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-v",
+    "names": {
+      "es": "Convocar aliado natural V"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-vi",
+    "names": {
+      "es": "Convocar aliado natural VI"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-vii",
+    "names": {
+      "es": "Convocar aliado natural VII"
+    }
+  },
+  {
+    "id": "spell.summon-natures-ally-viii",
+    "names": {
+      "es": "Convocar aliado natural VIII"
+    }
+  },
+  {
+    "id": "spell.summon-swarm",
+    "names": {
+      "es": "Convocar enjambre"
+    }
+  },
+  {
+    "id": "spell.sunbeam",
+    "names": {
+      "es": "Rayo de sol"
+    }
+  },
+  {
+    "id": "spell.sunburst",
+    "names": {
+      "es": "Estallido solar"
+    }
+  },
+  {
+    "id": "spell.symbol-of-death",
+    "names": {
+      "es": "Símbolo de muerte"
+    }
+  },
+  {
+    "id": "spell.symbol-of-fear",
+    "names": {
+      "es": "Símbolo de miedo"
+    }
+  },
+  {
+    "id": "spell.symbol-of-insanity",
+    "names": {
+      "es": "Símbolo de locura"
+    }
+  },
+  {
+    "id": "spell.symbol-of-pain",
+    "names": {
+      "es": "Símbolo de dolor"
+    }
+  },
+  {
+    "id": "spell.symbol-of-persuasion",
+    "names": {
+      "es": "Símbolo de persuasión"
+    }
+  },
+  {
+    "id": "spell.symbol-of-sleep",
+    "names": {
+      "es": "Símbolo de sueño"
+    }
+  },
+  {
+    "id": "spell.symbol-of-stunning",
+    "names": {
+      "es": "Símbolo de aturdimiento"
+    }
+  },
+  {
+    "id": "spell.symbol-of-weakness",
+    "names": {
+      "es": "Símbolo de debilidad"
+    }
+  },
+  {
+    "id": "spell.sympathetic-vibration",
+    "names": {
+      "es": "Vibración simpática"
+    }
+  },
+  {
+    "id": "spell.sympathy",
+    "names": {
+      "es": "Simpatía"
+    }
+  },
+  {
+    "id": "spell.tar-pool",
+    "names": {
+      "es": "Charca de alquitrán"
+    }
+  },
+  {
+    "id": "spell.telekinesis",
+    "names": {
+      "es": "Telequinesia"
+    }
+  },
+  {
+    "id": "spell.telekinetic-sphere",
+    "names": {
+      "es": "Esfera telequinética"
+    }
+  },
+  {
+    "id": "spell.telepathic-bond",
+    "names": {
+      "es": "Vínculo telepático"
+    }
+  },
+  {
+    "id": "spell.teleport",
+    "names": {
+      "es": "Teletransporte"
+    }
+  },
+  {
+    "id": "spell.teleport-object",
+    "names": {
+      "es": "Teletransportar objeto"
+    }
+  },
+  {
+    "id": "spell.teleportation-circle",
+    "names": {
+      "es": "Círculo de teletransporte"
+    }
+  },
+  {
+    "id": "spell.temporal-stasis",
+    "names": {
+      "es": "Estasis temporal"
+    }
+  },
+  {
+    "id": "spell.time-stop",
+    "names": {
+      "es": "Detener el tiempo"
+    }
+  },
+  {
+    "id": "spell.tiny-hut",
+    "names": {
+      "es": "Choza diminuta"
+    }
+  },
+  {
+    "id": "spell.tongues",
+    "names": {
+      "es": "Lenguas"
+    }
+  },
+  {
+    "id": "spell.touch-of-fatigue",
+    "names": {
+      "es": "Toque de fatiga"
+    }
+  },
+  {
+    "id": "spell.touch-of-idiocy",
+    "names": {
+      "es": "Toque de idiotez"
+    }
+  },
+  {
+    "id": "spell.transformation",
+    "names": {
+      "es": "Transformación"
+    }
+  },
+  {
+    "id": "spell.transmogrify",
+    "names": {
+      "es": "Transmogrificar"
+    }
+  },
+  {
+    "id": "spell.transmute-metal-to-wood",
+    "names": {
+      "es": "Transmutar metal en madera"
+    }
+  },
+  {
+    "id": "spell.transmute-mud-to-rock",
+    "names": {
+      "es": "Transmutar lodo en roca"
+    }
+  },
+  {
+    "id": "spell.transmute-rock-to-mud",
+    "names": {
+      "es": "Transmutar roca en lodo"
+    }
+  },
+  {
+    "id": "spell.transport-via-plants",
+    "names": {
+      "es": "Transporte vegetal"
+    }
+  },
+  {
+    "id": "spell.trap-the-soul",
+    "names": {
+      "es": "Atrapar el alma"
+    }
+  },
+  {
+    "id": "spell.tree-shape",
+    "names": {
+      "es": "Forma de árbol"
+    }
+  },
+  {
+    "id": "spell.tree-stride",
+    "names": {
+      "es": "Zancada arbórea"
+    }
+  },
+  {
+    "id": "spell.true-resurrection",
+    "names": {
+      "es": "Resurrección verdadera"
+    }
+  },
+  {
+    "id": "spell.true-seeing",
+    "names": {
+      "es": "Visión verdadera"
+    }
+  },
+  {
+    "id": "spell.true-strike",
+    "names": {
+      "es": "Golpe certero"
+    }
+  },
+  {
+    "id": "spell.undeath-to-death",
+    "names": {
+      "es": "De la no muerte a la muerte"
+    }
+  },
+  {
+    "id": "spell.undetectable-alignment",
+    "names": {
+      "es": "Alineamiento indetectable"
+    }
+  },
+  {
+    "id": "spell.unfetter",
+    "names": {
+      "es": "Desatar"
+    }
+  },
+  {
+    "id": "spell.unhallow",
+    "names": {
+      "es": "Profanar santidad"
+    }
+  },
+  {
+    "id": "spell.unholy-aura",
+    "names": {
+      "es": "Aura profana"
+    }
+  },
+  {
+    "id": "spell.unholy-blight",
+    "names": {
+      "es": "Plaga profana"
+    }
+  },
+  {
+    "id": "spell.unseen-servant",
+    "names": {
+      "es": "Sirviente invisible"
+    }
+  },
+  {
+    "id": "spell.vampiric-touch",
+    "names": {
+      "es": "Toque vampírico"
+    }
+  },
+  {
+    "id": "spell.veil",
+    "names": {
+      "es": "Velo"
+    }
+  },
+  {
+    "id": "spell.ventriloquism",
+    "names": {
+      "es": "Ventriloquia"
+    }
+  },
+  {
+    "id": "spell.virtue",
+    "names": {
+      "es": "Virtud"
+    }
+  },
+  {
+    "id": "spell.vision",
+    "names": {
+      "es": "Visión"
+    }
+  },
+  {
+    "id": "spell.vitriolic-mist",
+    "names": {
+      "es": "Bruma vitriólica"
+    }
+  },
+  {
+    "id": "spell.wail-of-the-banshee",
+    "names": {
+      "es": "Lamento de la banshee"
+    }
+  },
+  {
+    "id": "spell.walk-through-space",
+    "names": {
+      "es": "Caminar por el espacio"
+    }
+  },
+  {
+    "id": "spell.wall-of-fire",
+    "names": {
+      "es": "Muro de fuego"
+    }
+  },
+  {
+    "id": "spell.wall-of-force",
+    "names": {
+      "es": "Muro de fuerza"
+    }
+  },
+  {
+    "id": "spell.wall-of-ice",
+    "names": {
+      "es": "Muro de hielo"
+    }
+  },
+  {
+    "id": "spell.wall-of-iron",
+    "names": {
+      "es": "Muro de hierro"
+    }
+  },
+  {
+    "id": "spell.wall-of-stone",
+    "names": {
+      "es": "Muro de piedra"
+    }
+  },
+  {
+    "id": "spell.wall-of-thorns",
+    "names": {
+      "es": "Muro de espinas"
+    }
+  },
+  {
+    "id": "spell.warp-wood",
+    "names": {
+      "es": "Combar madera"
+    }
+  },
+  {
+    "id": "spell.water-breathing",
+    "names": {
+      "es": "Respirar bajo el agua"
+    }
+  },
+  {
+    "id": "spell.water-walk",
+    "names": {
+      "es": "Caminar sobre el agua"
+    }
+  },
+  {
+    "id": "spell.waves-of-exhaustion",
+    "names": {
+      "es": "Olas de agotamiento"
+    }
+  },
+  {
+    "id": "spell.waves-of-fatigue",
+    "names": {
+      "es": "Olas de fatiga"
+    }
+  },
+  {
+    "id": "spell.web",
+    "names": {
+      "es": "Telaraña"
+    }
+  },
+  {
+    "id": "spell.weird",
+    "names": {
+      "es": "Fatalidad fantasmal"
+    }
+  },
+  {
+    "id": "spell.whirlwind",
+    "names": {
+      "es": "Torbellino"
+    }
+  },
+  {
+    "id": "spell.whispering-wind",
+    "names": {
+      "es": "Viento susurrante"
+    }
+  },
+  {
+    "id": "spell.wind-walk",
+    "names": {
+      "es": "Caminar en el viento"
+    }
+  },
+  {
+    "id": "spell.wind-wall",
+    "names": {
+      "es": "Muro de viento"
+    }
+  },
+  {
+    "id": "spell.wish",
+    "names": {
+      "es": "Deseo"
+    }
+  },
+  {
+    "id": "spell.wood-shape",
+    "names": {
+      "es": "Moldear madera"
+    }
+  },
+  {
+    "id": "spell.word-of-chaos",
+    "names": {
+      "es": "Palabra del caos"
+    }
+  },
+  {
+    "id": "spell.word-of-recall",
+    "names": {
+      "es": "Palabra de retorno"
+    }
+  },
+  {
+    "id": "spell.zone-of-silence",
+    "names": {
+      "es": "Zona de silencio"
+    }
+  },
+  {
+    "id": "spell.zone-of-truth",
+    "names": {
+      "es": "Zona de verdad"
+    }
+  },
+  {
+    "id": "weapon.adamantine-dagger",
+    "names": {
+      "es": "Daga de adamantina"
+    }
+  },
+  {
+    "id": "weapon.bastard-sword",
+    "names": {
+      "es": "Espada bastarda"
+    }
+  },
+  {
+    "id": "weapon.battleaxe",
+    "names": {
+      "es": "Hacha de batalla"
+    }
+  },
+  {
+    "id": "weapon.blowgun",
+    "names": {
+      "es": "Cerbatana"
+    }
+  },
+  {
+    "id": "weapon.bolas",
+    "names": {
+      "es": "Bolas"
+    }
+  },
+  {
+    "id": "weapon.club",
+    "names": {
+      "es": "Garrote"
+    }
+  },
+  {
+    "id": "weapon.cold-iron-longsword",
+    "names": {
+      "es": "Espada larga de hierro frío"
+    }
+  },
+  {
+    "id": "weapon.composite-longbow",
+    "names": {
+      "es": "Arco largo compuesto"
+    }
+  },
+  {
+    "id": "weapon.composite-shortbow",
+    "names": {
+      "es": "Arco corto compuesto"
+    }
+  },
+  {
+    "id": "weapon.dagger",
+    "names": {
+      "es": "Daga"
+    }
+  },
+  {
+    "id": "weapon.dagger-of-venom",
+    "names": {
+      "es": "Daga de veneno"
+    }
+  },
+  {
+    "id": "weapon.dart",
+    "names": {
+      "es": "Dardo"
+    }
+  },
+  {
+    "id": "weapon.dire-flail",
+    "names": {
+      "es": "Mangual doble"
+    }
+  },
+  {
+    "id": "weapon.dwarven-thrower",
+    "names": {
+      "es": "Lanzadora enana"
+    }
+  },
+  {
+    "id": "weapon.dwarven-urgrosh",
+    "names": {
+      "es": "Urgrosh enano"
+    }
+  },
+  {
+    "id": "weapon.dwarven-waraxe",
+    "names": {
+      "es": "Hacha de guerra enana"
+    }
+  },
+  {
+    "id": "weapon.elven-curve-blade",
+    "names": {
+      "es": "Hoja curva élfica"
+    }
+  },
+  {
+    "id": "weapon.falchion",
+    "names": {
+      "es": "Alfanje"
+    }
+  },
+  {
+    "id": "weapon.flail",
+    "names": {
+      "es": "Mangual"
+    }
+  },
+  {
+    "id": "weapon.flame-tongue",
+    "names": {
+      "es": "Lengua de fuego"
+    }
+  },
+  {
+    "id": "weapon.frost-brand",
+    "names": {
+      "es": "Tizona de escarcha"
+    }
+  },
+  {
+    "id": "weapon.gauntlet",
+    "names": {
+      "es": "Guantelete"
+    }
+  },
+  {
+    "id": "weapon.glaive",
+    "names": {
+      "es": "Guja"
+    }
+  },
+  {
+    "id": "weapon.gnome-hooked-hammer",
+    "names": {
+      "es": "Martillo con gancho gnomo"
+    }
+  },
+  {
+    "id": "weapon.greataxe",
+    "names": {
+      "es": "Hacha a dos manos"
+    }
+  },
+  {
+    "id": "weapon.greatclub",
+    "names": {
+      "es": "Garrote a dos manos"
+    }
+  },
+  {
+    "id": "weapon.greatsword",
+    "names": {
+      "es": "Espadón"
+    }
+  },
+  {
+    "id": "weapon.guisarme",
+    "names": {
+      "es": "Guisarma"
+    }
+  },
+  {
+    "id": "weapon.halberd",
+    "names": {
+      "es": "Alabarda"
+    }
+  },
+  {
+    "id": "weapon.halfling-sling-staff",
+    "names": {
+      "es": "Honda-bastón mediana"
+    }
+  },
+  {
+    "id": "weapon.hand-crossbow",
+    "names": {
+      "es": "Ballesta de mano"
+    }
+  },
+  {
+    "id": "weapon.handaxe",
+    "names": {
+      "es": "Hacha de mano"
+    }
+  },
+  {
+    "id": "weapon.heavy-crossbow",
+    "names": {
+      "es": "Ballesta pesada"
+    }
+  },
+  {
+    "id": "weapon.heavy-flail",
+    "names": {
+      "es": "Mangual pesado"
+    }
+  },
+  {
+    "id": "weapon.heavy-mace",
+    "names": {
+      "es": "Maza pesada"
+    }
+  },
+  {
+    "id": "weapon.heavy-pick",
+    "names": {
+      "es": "Pico pesado"
+    }
+  },
+  {
+    "id": "weapon.holy-avenger",
+    "names": {
+      "es": "Vengador sagrado"
+    }
+  },
+  {
+    "id": "weapon.javelin",
+    "names": {
+      "es": "Jabalina"
+    }
+  },
+  {
+    "id": "weapon.kama",
+    "names": {
+      "es": "Kama"
+    }
+  },
+  {
+    "id": "weapon.kukri",
+    "names": {
+      "es": "Kukri"
+    }
+  },
+  {
+    "id": "weapon.lance",
+    "names": {
+      "es": "Lanza de caballería"
+    }
+  },
+  {
+    "id": "weapon.light-crossbow",
+    "names": {
+      "es": "Ballesta ligera"
+    }
+  },
+  {
+    "id": "weapon.light-hammer",
+    "names": {
+      "es": "Martillo ligero"
+    }
+  },
+  {
+    "id": "weapon.light-mace",
+    "names": {
+      "es": "Maza ligera"
+    }
+  },
+  {
+    "id": "weapon.light-pick",
+    "names": {
+      "es": "Pico ligero"
+    }
+  },
+  {
+    "id": "weapon.locked-gauntlet",
+    "names": {
+      "es": "Guantelete cerrado"
+    }
+  },
+  {
+    "id": "weapon.longbow",
+    "names": {
+      "es": "Arco largo"
+    }
+  },
+  {
+    "id": "weapon.longspear",
+    "names": {
+      "es": "Lanza larga"
+    }
+  },
+  {
+    "id": "weapon.longsword",
+    "names": {
+      "es": "Espada larga"
+    }
+  },
+  {
+    "id": "weapon.luck-blade",
+    "names": {
+      "es": "Hoja de la suerte"
+    }
+  },
+  {
+    "id": "weapon.mace-of-smiting",
+    "names": {
+      "es": "Maza de castigo"
+    }
+  },
+  {
+    "id": "weapon.morningstar",
+    "names": {
+      "es": "Lucero del alba"
+    }
+  },
+  {
+    "id": "weapon.net",
+    "names": {
+      "es": "Red"
+    }
+  },
+  {
+    "id": "weapon.nine-lives-stealer",
+    "names": {
+      "es": "Ladrona de nueve vidas"
+    }
+  },
+  {
+    "id": "weapon.nunchaku",
+    "names": {
+      "es": "Nunchaku"
+    }
+  },
+  {
+    "id": "weapon.orc-double-axe",
+    "names": {
+      "es": "Hacha doble orca"
+    }
+  },
+  {
+    "id": "weapon.punching-dagger",
+    "names": {
+      "es": "Daga de puño"
+    }
+  },
+  {
+    "id": "weapon.quarterstaff",
+    "names": {
+      "es": "Bastón"
+    }
+  },
+  {
+    "id": "weapon.ranseur",
+    "names": {
+      "es": "Ranseur"
+    }
+  },
+  {
+    "id": "weapon.rapier",
+    "names": {
+      "es": "Estoque"
+    }
+  },
+  {
+    "id": "weapon.repeating-heavy-crossbow",
+    "names": {
+      "es": "Ballesta pesada de repetición"
+    }
+  },
+  {
+    "id": "weapon.repeating-light-crossbow",
+    "names": {
+      "es": "Ballesta ligera de repetición"
+    }
+  },
+  {
+    "id": "weapon.sai",
+    "names": {
+      "es": "Sai"
+    }
+  },
+  {
+    "id": "weapon.sap",
+    "names": {
+      "es": "Cachiporra"
+    }
+  },
+  {
+    "id": "weapon.scimitar",
+    "names": {
+      "es": "Cimitarra"
+    }
+  },
+  {
+    "id": "weapon.scythe",
+    "names": {
+      "es": "Guadaña"
+    }
+  },
+  {
+    "id": "weapon.short-sword",
+    "names": {
+      "es": "Espada corta"
+    }
+  },
+  {
+    "id": "weapon.shortbow",
+    "names": {
+      "es": "Arco corto"
+    }
+  },
+  {
+    "id": "weapon.shortspear",
+    "names": {
+      "es": "Lanza corta"
+    }
+  },
+  {
+    "id": "weapon.shuriken",
+    "names": {
+      "es": "Shuriken"
+    }
+  },
+  {
+    "id": "weapon.siangham",
+    "names": {
+      "es": "Siangham"
+    }
+  },
+  {
+    "id": "weapon.sickle",
+    "names": {
+      "es": "Hoz"
+    }
+  },
+  {
+    "id": "weapon.silver-dagger",
+    "names": {
+      "es": "Daga de plata"
+    }
+  },
+  {
+    "id": "weapon.sling",
+    "names": {
+      "es": "Honda"
+    }
+  },
+  {
+    "id": "weapon.spear",
+    "names": {
+      "es": "Lanza"
+    }
+  },
+  {
+    "id": "weapon.spiked-gauntlet",
+    "names": {
+      "es": "Guantelete con pinchos"
+    }
+  },
+  {
+    "id": "weapon.starknife",
+    "names": {
+      "es": "Cuchillo estrella"
+    }
+  },
+  {
+    "id": "weapon.sun-blade",
+    "names": {
+      "es": "Hoja del sol"
+    }
+  },
+  {
+    "id": "weapon.sword-of-subtlety",
+    "names": {
+      "es": "Espada de la sutileza"
+    }
+  },
+  {
+    "id": "weapon.sword-of-the-planes",
+    "names": {
+      "es": "Espada de los planos"
+    }
+  },
+  {
+    "id": "weapon.throwing-axe",
+    "names": {
+      "es": "Hacha arrojadiza"
+    }
+  },
+  {
+    "id": "weapon.trident",
+    "names": {
+      "es": "Tridente"
+    }
+  },
+  {
+    "id": "weapon.two-bladed-sword",
+    "names": {
+      "es": "Espada de dos hojas"
+    }
+  },
+  {
+    "id": "weapon.warhammer",
+    "names": {
+      "es": "Martillo de guerra"
+    }
+  },
+  {
+    "id": "weapon.whip",
+    "names": {
+      "es": "Látigo"
+    }
+  }
+]

@@ -65,7 +65,12 @@ export function Encyclopedia({ groups }: EncyclopediaProps) {
       ) : null}
       {selected ? (
         <article className="encyclopedia-body">
-          <h3>{selected.name}</h3>
+          <h3>
+            {selected.name}
+            {selected.altName ? (
+              <span className="muted"> ({selected.altName})</span>
+            ) : null}
+          </h3>
           <p>{selected.body}</p>
         </article>
       ) : null}
@@ -105,16 +110,34 @@ function allocate(counts: number[], limit: number): number[] {
   return allowed
 }
 
+/**
+ * Fold case and accents so a localized catalog is searchable from a keyboard
+ * without dead keys: "bola de fuego" finds "Bola de fuego".
+ */
+function fold(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+}
+
 function filterGroups(
   groups: EncyclopediaGroup[],
   query: string,
   selectedId: string | null,
 ): { visible: VisibleGroup[]; hidden: number; selected: EncyclopediaEntry | null } {
-  const needle = query.trim().toLowerCase()
+  const needle = fold(query.trim())
   const matched = groups.map((group) => ({
     ...group,
     entries: group.entries
-      .filter((entry) => needle.length === 0 || entry.name.toLowerCase().includes(needle))
+      // Match the other name too, so a player who learned the game in
+      // English still finds an entry with a translated catalog.
+      .filter(
+        (entry) =>
+          needle.length === 0 ||
+          fold(entry.name).includes(needle) ||
+          (entry.altName !== undefined && fold(entry.altName).includes(needle)),
+      )
       // Entries arrive in content-batch order; players expect them by name.
       .slice()
       .sort((a, b) => a.name.localeCompare(b.name)),

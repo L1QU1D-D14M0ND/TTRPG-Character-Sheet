@@ -13,7 +13,8 @@
     "preview": "vite preview",
     "verify:pwa": "node scripts/verify-pwa.mjs",
     "walkthrough:encyclopedia": "node scripts/walkthrough-encyclopedia.mjs",
-    "walkthrough:picker": "node scripts/walkthrough-catalog-picker.mjs"
+    "walkthrough:picker": "node scripts/walkthrough-catalog-picker.mjs",
+    "walkthrough:names": "node scripts/walkthrough-localized-names.mjs"
   },
   "dependencies": {
     "ajv": "^8.20.0",

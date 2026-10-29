@@ -4,9 +4,9 @@
 
 Product decisions live in [ADR 0003](adr/0003-multi-system-product-direction.md) and the [umbrella design](ttrpg-character-sheet-design.md). All docs are indexed in [`README.md`](README.md). Finished phases, merged-branch notes, and the dated change log are in [`archive/roadmap-history.md`](archive/roadmap-history.md).
 
-**Status date:** 2026-10-28  
+**Status date:** 2026-10-29  
 **Current phase:** **Phase 5** ([`phase-5.md`](phase-5.md)).  
-**Next work:** **Phase 5.2 — localized catalog names.**
+**Next work:** **Phase 5.3 — typed `effects[]` automation.**
 
 ---
 
@@ -15,7 +15,7 @@ Product decisions live in [ADR 0003](adr/0003-multi-system-product-direction.md)
 Slice order and done-when criteria: [`phase-5.md`](phase-5.md).
 
 - [x] **5.1 Encyclopedia** — `shell.encyclopedia` on the PF1e sidebar; `content/pf1e/ogc/` is complete at 829 rows (177 CRB feats, 3 CRB features, 622 CRB spells, 27 APG spells) with the OGL 1.0a notice and Section 15. CRB and APG packs stay mechanics-only. Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md)
-- [ ] **5.2 Localized catalog names** — a second name per row from a curated source, not `es.json` ([`content-licensing.md`](content-licensing.md) §5)
+- [x] **5.2 Localized catalog names** — `content/pf1e/names/es.json` gives all 980 catalog rows a curated Spanish name; the picker and encyclopedia relabel per locale and search both names accent-insensitively; the document keeps the English name. UI catalogs stay free of catalog names ([`content-licensing.md`](content-licensing.md) §5). Spec: [`pf1e-localized-names.md`](pf1e-localized-names.md)
 - [ ] **5.3 Typed `effects[]` automation** — unknown types stay ignored; not a bonus-type stacker
 - [ ] **5.4 Optional card-oriented play surfaces** — no spec; do not start during 5.1–5.3
 - [ ] **5.5 Additional systems behind `system`** — no third engine in 5.1–5.4
@@ -63,6 +63,7 @@ PF2e content (not started):
 | **Finish First Edition** | 2026-09-24 | Whole CRB player catalog (classes, races, mundane gear, 177 feats, 622 spells), APG follow-through, catalog picker (ADR 0009), Attack Helper, Actions List, Budget Calculator, extra PF1e goldens |
 | **Pre-release hygiene** | 2026-10-03 | Non-affiliation disclaimer, NOTICE, About dialog, CONTRIBUTING, SECURITY |
 | **Phase 5.1** | 2026-10-26 | Encyclopedia and OGC pack complete |
+| **Phase 5.2** | 2026-10-29 | Localized catalog names: 980 curated Spanish rows, locale-aware picker and encyclopedia |
 
 Per-phase checklists (Phases 0, 0b, M, 1e, 2e, 3e, 3c, Sb, 4, and 1x): [`archive/roadmap-history.md`](archive/roadmap-history.md).
 
@@ -116,3 +117,4 @@ Entries up to 2026-10-26 are in [`archive/roadmap-history.md`](archive/roadmap-h
 | Date | Change |
 | --- | --- |
 | 2026-10-28 | Docs cleanup: this file is the single status source. Finished phases and the change log moved to the archive. Next work is Phase 5.2 |
+| 2026-10-29 | Phase 5.2 landed: localized catalog names. Next work is Phase 5.3 |

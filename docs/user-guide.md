@@ -30,6 +30,11 @@ This sheet does **not** roll virtual dice. It computes all necessary modifiers, 
   - **Play Tab:** Used during live encounters to track temporary session state: **Current HP** (which can drop into negative numbers in PF1e), nonlethal damage, active **Conditions** (e.g., *shaken*, *grappled*, *fatigued*), and **Daily Resources** (e.g., Channel Energy, Rage rounds, Ki points).
   - **Conditions do not change the numbers.** Adding *sickened*, *frightened*, *grappled*, or a similar condition updates the Play tab and the sidebar tools. It does not rewrite attack bonuses, AC, saves, or skills. Until Phase 5.3 types `effects[]`, enter a manual override when a condition should change a derived number. Encumbrance penalties are the same: the sheet shows the load category and does not auto-write those penalties.
 
+### Picking from a Catalog
+- **The picker:** Fields such as race, class, archetype, feat, spell, and item open a searchable catalog. Long catalogs show a first page and tell you how many rows are held back, so type to narrow rather than scroll.
+- **Language:** With the app set to Spanish, rows are listed under their Spanish name with the English name beside them. You can search either name, and accents are optional: typing `punteria` finds *Puntería mortal*.
+- **Your sheet keeps the English name.** Picking *Espada larga* writes `Longsword` into the row's name field, so a saved character reads the same for a group member whose app is set to English. The name field stays editable if you want something else.
+
 ---
 
 ## 3. Core Mechanics & Nuances (Pathfinder 1E)
@@ -83,6 +88,7 @@ A downtime purchasing and crafting planner:
 
 ### 4. Encyclopedia (`shell.encyclopedia`)
 A read-only reference list on a Pathfinder First Edition sheet. It is not the Actions List.
-- **Packed entries:** Spells, feats, and features that have a rules paragraph in the encyclopedia pack. Search by the catalog's English name.
+- **Packed entries:** Spells, feats, and features that have a rules paragraph in the encyclopedia pack.
+- **Language:** With the app set to Spanish, entries are listed under their Spanish name with the English name beside them, and search finds either. Accents are optional when you type. The rules paragraph itself stays in English.
 - **Empty groups:** Afflictions and Actions stay visible when nothing is packed yet.
 - The paragraph does not change the sheet's numbers.

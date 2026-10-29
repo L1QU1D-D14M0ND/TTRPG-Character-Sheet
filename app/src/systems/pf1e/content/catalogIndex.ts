@@ -18,6 +18,8 @@ import type {
 import { applyCrbFeat, applyCrbFeature, applyCrbItem, applyCrbRace } from './crbPack'
 import { applyApgArchetype, applyApgEvolution } from './apgPack'
 import { applyClassProgression } from './classLookup'
+import { DEFAULT_LOCALE, type Locale } from '../../../shared/i18n'
+import { localizedName } from './namesPack'
 import {
   listArchetypes,
   listClassProgressions,
@@ -85,6 +87,13 @@ export type MechanicsFor<K extends CatalogKind> = MechanicsMap[K]
 export type CatalogOption = {
   id: string
   name: string
+  /**
+   * The other name this row is known by: the English pack name when `name`
+   * is a curated translation. Undefined when the two are the same. The
+   * picker searches it as well, so a player who knows a row by its English
+   * name still finds it with the Spanish UI on, and vice versa.
+   */
+  altName?: string
   detail?: string
 }
 
@@ -138,25 +147,38 @@ function detailFor(kind: CatalogKind, row: ListedRow): string | undefined {
   return undefined
 }
 
-function project(kind: CatalogKind, row: ListedRow): CatalogOption {
+function project(
+  kind: CatalogKind,
+  row: ListedRow,
+  locale: Locale,
+): CatalogOption {
   const detail = detailFor(kind, row)
-  return detail === undefined
-    ? { id: row.id, name: row.name }
-    : { id: row.id, name: row.name, detail }
+  const localized = localizedName(row.id, locale)
+  const option: CatalogOption = { id: row.id, name: localized ?? row.name }
+  if (localized) option.altName = row.name
+  if (detail !== undefined) option.detail = detail
+  return option
 }
 
-/** Ordered picker rows. Spell and class split by pack in registration order. */
-export function groups(kind: CatalogKind): CatalogGroup[] {
+/**
+ * Ordered picker rows. Spell and class split by pack in registration order.
+ * Rows are labelled in `locale`, falling back to the English pack name per
+ * row; ordering stays the pack's own so a translated list does not reshuffle.
+ */
+export function groups(
+  kind: CatalogKind,
+  locale: Locale = DEFAULT_LOCALE,
+): CatalogGroup[] {
   const rows = listRows(kind)
   if (!GROUPED_KINDS.has(kind)) {
-    return [{ rows: rows.map((row) => project(kind, row)) }]
+    return [{ rows: rows.map((row) => project(kind, row, locale)) }]
   }
 
   const buckets = new Map<string, CatalogOption[]>()
   for (const row of rows) {
     const book = row.source?.book ?? ''
     const bucket = buckets.get(book)
-    const option = project(kind, row)
+    const option = project(kind, row, locale)
     if (bucket) bucket.push(option)
     else buckets.set(book, [option])
   }

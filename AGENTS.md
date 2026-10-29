@@ -11,6 +11,7 @@ Status, current phase, and next work: [`docs/ROADMAP.md`](docs/ROADMAP.md). Docs
 Rules that hold in every Phase 5 change:
 
 - CRB and APG packs stay mechanics-only. Rules prose goes only in `content/pf1e/ogc/` as `body` ([ADR 0007](docs/adr/0007-content-licensing.md), [`docs/sidebar-tools-encyclopedia.md`](docs/sidebar-tools-encyclopedia.md)).
+- Catalog **names** are pack content, keyed by catalog id. A translated name goes in `content/pf1e/names/`, never in `app/src/locales/*.json` ([`docs/pf1e-localized-names.md`](docs/pf1e-localized-names.md)). A new mechanic row must arrive with its Spanish name: regenerate with `python3 scripts/build_names.py`, which fails on an uncovered row.
 - Do not scrape an SRD.
 - Do not start the later PF2e release (PC2 golden, companion editor, Remaster packs, PF2e panel i18n) in a Phase 5 PR. The PF2e slice must keep computing.
 
@@ -26,14 +27,15 @@ Rules that hold in every Phase 5 change:
 
 Record a browser walkthrough when the sheet **control**, **layout**, or **Combat math** actually changes (new editor, restyle, derived AC/CMB/attack behavior, and similar).
 
-Two scripted walkthroughs exist and assert their own results, so they can be re-run instead of re-done by hand:
+Three scripted walkthroughs exist and assert their own results, so they can be re-run instead of re-done by hand:
 
 ```
 google-chrome-stable --headless=new --remote-debugging-port=9222 \
   --no-first-run --user-data-dir=/tmp/cdp-profile about:blank &
 npm run dev
 npm run walkthrough:encyclopedia   # 10 checks
-npm run walkthrough:picker         # 4 checks
+npm run walkthrough:picker         #  4 checks
+npm run walkthrough:names          # 12 checks
 ```
 
 They drive Chrome over the DevTools protocol with Node's built-in `WebSocket`, adding no dependency. The bundled browser bridge only speaks Firefox, which is not installed in this environment; if that changes, prefer the bridge.

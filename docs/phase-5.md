@@ -1,6 +1,6 @@
 # Phase 5 — after the First Edition sheet
 
-**Status:** Current phase. Slice 5.1 is complete; **next is 5.2**. Live status: [`ROADMAP.md`](ROADMAP.md).  
+**Status:** Current phase. Slices 5.1 and 5.2 are complete; **next is 5.3**. Live status: [`ROADMAP.md`](ROADMAP.md).  
 **Depends on:** [ADR 0003](adr/0003-multi-system-product-direction.md), [ADR 0005](adr/0005-sidebar-host.md), [ADR 0007](adr/0007-content-licensing.md), [`content-licensing.md`](content-licensing.md), [`sidebar-host-design.md`](sidebar-host-design.md).
 
 This file sequences Phase 5. It does not reopen the PF1e sheet, the three named sidebar tools, or the later PF2e release.
@@ -37,9 +37,11 @@ Spec: [`sidebar-tools-encyclopedia.md`](sidebar-tools-encyclopedia.md).
 
 ## 3. Slice 5.2 — localized catalog names
 
-Catalog labels are English pack content in every UI locale. A Spanish player searches "Shield", not "escudo". `es.json` must not absorb those names.
+Spec: [`pf1e-localized-names.md`](pf1e-localized-names.md).
 
-This slice adds a second name per catalog row from a curated translation source. It does not attach the OGL notice. It does not wait on 5.1 for licensing reasons. With 5.1 complete, it is the next slice.
+**Complete.** Catalog labels are English pack content in every UI locale, and `es.json` must not absorb them: a row's label is keyed by catalog id and travels with the row through the pack registry, not through the locale runtime.
+
+`content/pf1e/names/es.json` is a mechanics-only sidecar giving all 980 registered rows a curated Spanish name. The picker and the encyclopedia label rows in the active locale, keep the English name alongside as `altName`, and search both after folding case and accents. The **document is unchanged**: picking a row in a Spanish UI still writes the English `name`, so a saved character reads identically in either locale. The encyclopedia's `body` prose stays English, since that is an Open Game Content question rather than a name one.
 
 ---
 
@@ -57,6 +59,8 @@ Do not build a general PF1e bonus-type stacker here. Feats, weapon Special tags,
 
 Card-oriented play surfaces and a third `system` module stay listed so design does not block them. Neither has a spec. Do not start either until 5.1–5.3 have landed, and do not pull in dice, cloud, VTT, a character library, or house-rule flags (ADR 0003 non-goals).
 
+With 5.1 and 5.2 landed, **5.3 is the only remaining blocker** before either may be specced.
+
 ---
 
 ## 6. Done when
@@ -72,9 +76,9 @@ Card-oriented play surfaces and a third `system` module stay listed so design do
 
 ### 5.2
 
-- [ ] A catalog row can carry a second, locale-specific name from a curated source
-- [ ] UI catalogs (`en.json` / `es.json`) do not contain those names
-- [ ] Packs that did not add prose stay `mechanics-only`
+- [x] A catalog row can carry a second, locale-specific name from a curated source
+- [x] UI catalogs (`en.json` / `es.json`) do not contain those names
+- [x] Packs that did not add prose stay `mechanics-only`
 
 ### 5.3
 

@@ -60,3 +60,42 @@ describe('PF1e encyclopedia tool', () => {
     expect(names('feature')).toContain('Arcane Bond')
   })
 })
+
+describe('PF1e encyclopedia in a localized UI (Phase 5.2)', () => {
+  it('labels entries with the curated name and keeps the English one', () => {
+    const groups = buildPf1eEncyclopedia('es')
+    const spells = groups.find((group) => group.kind === 'spell')!
+    const fireball = spells.entries.find(
+      (entry) => entry.id === 'spell.fireball',
+    )!
+    expect(fireball.name).toBe('Bola de fuego')
+    expect(fireball.altName).toBe('Fireball')
+  })
+
+  it('leaves the prose body in English', () => {
+    // `body` is Open Game Content under the notice in content/pf1e/ogc/.
+    // Translating prose is a different slice with a different licence bar.
+    for (const group of buildPf1eEncyclopedia('es')) {
+      for (const entry of group.entries) {
+        const packed = OGC_ENTRIES.find((row) => row.id === entry.id)!
+        expect(entry.body).toBe(packed.body)
+      }
+    }
+  })
+
+  it('carries no altName when the UI is English', () => {
+    for (const group of buildPf1eEncyclopedia('en')) {
+      for (const entry of group.entries) {
+        expect(entry.altName).toBeUndefined()
+      }
+    }
+  })
+
+  it('translates every entry it ships', () => {
+    const untranslated = buildPf1eEncyclopedia('es')
+      .flatMap((group) => group.entries)
+      .filter((entry) => entry.altName === undefined)
+      .map((entry) => entry.id)
+    expect(untranslated).toEqual([])
+  })
+})

@@ -11,6 +11,7 @@ import archetypesSchema from '../../../../../schemas/content/pf1e/archetypes.sch
 import evolutionsSchema from '../../../../../schemas/content/pf1e/evolutions.schema.json'
 import featuresSchema from '../../../../../schemas/content/pf1e/features.schema.json'
 import entriesSchema from '../../../../../schemas/content/pf1e/entries.schema.json'
+import namesSchema from '../../../../../schemas/content/pf1e/names.schema.json'
 
 // Schema per file *name*, so globbing picks up new packs automatically.
 const SCHEMA_BY_BASENAME: Record<string, object> = {
@@ -24,6 +25,7 @@ const SCHEMA_BY_BASENAME: Record<string, object> = {
   'evolutions.json': evolutionsSchema,
   'features.json': featuresSchema,
   'entries.json': entriesSchema,
+  'es.json': namesSchema,
 }
 
 const FILES = listRepoFiles('content/pf1e')

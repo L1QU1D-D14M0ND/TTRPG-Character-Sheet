@@ -69,4 +69,11 @@ export type {
   MechanicsFor,
   MechanicsMap,
 } from './catalogIndex'
+export {
+  displayName,
+  localizedIds,
+  localizedName,
+  LOCALIZED_NAME_ROWS,
+} from './namesPack'
+export type { LocalizedNameRow } from './namesPack'
 export * from './crbMagicProperties'

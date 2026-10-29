@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ttrpg-sheet.local/schemas/content/pf1e/names.schema.json",
+  "title": "PF1e localized catalog names",
+  "description": "A second, locale-specific name per catalog row. Names only: never prose, so this pack stays mechanics-only (ADR 0007).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "names"],
+    "properties": {
+      "id": { "type": "string", "minLength": 1 },
+      "names": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 1,
+        "properties": {
+          "es": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
