@@ -5,7 +5,7 @@ import {
   createEmptySpellcasting,
 } from '../character/createRows'
 import { parseCharacterJson } from '../character/saveLoad'
-import { applyCrbSpell } from '../content'
+import { stamp } from '../content'
 import { compute } from './compute'
 import { readRepoFile } from '../../../test/readRepoFile'
 
@@ -14,7 +14,7 @@ describe('CRB batch 13: catalog spells do not fill slots or DCs', () => {
     const character = createEmptyCharacter()
     const entry = createEmptySpellcasting()
     const beforeSlots = structuredClone(entry.slots)
-    entry.spells = [applyCrbSpell(createEmptySpellListEntry(), 'spell.fireball')]
+    entry.spells = [stamp('spell', createEmptySpellListEntry(), 'spell.fireball')]
     character.spellcasting = [entry]
     const view = compute(character)
     expect(entry.slots).toEqual(beforeSlots)

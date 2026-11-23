@@ -77,13 +77,52 @@ export interface FeatureCatalogRow {
   source?: ContentRef['source']
 }
 
+export type CatalogKind =
+  | 'feat'
+  | 'feature'
+  | 'spell'
+  | 'item'
+  | 'evolution'
+  | 'race'
+  | 'class'
+  | 'archetype'
+
+export const CATALOG_KINDS: readonly CatalogKind[] = [
+  'feat',
+  'feature',
+  'spell',
+  'item',
+  'evolution',
+  'race',
+  'class',
+  'archetype',
+]
+
+export interface MechanicsMap {
+  feat: FeatCatalogRow
+  feature: FeatureCatalogRow
+  spell: SpellCatalogRow
+  item: ItemCatalogRow
+  evolution: EvolutionCatalogRow
+  race: RaceCatalogRow
+  class: ClassProgression
+  archetype: ArchetypeCatalogRow
+}
+
+export type MechanicsFor<K extends CatalogKind> = MechanicsMap[K]
+
+/** One content pack's rows, by catalog kind. A pack ships only the kinds it has. */
+export type PackRows = { readonly [K in CatalogKind]?: readonly MechanicsMap[K][] }
+
 /**
- * One id space per entity kind, shared across packs.
+ * One id space per catalog kind, shared across packs.
  *
  * Lookup used to scan packs in registration order and return the first hit, so
  * a later pack reusing an id (say APG shipping `class.wizard`) was silently
  * shadowed by CRB rather than reported. Ids are now unique per kind and a
  * collision throws at registration, which surfaces in CI via the pack tests.
+ *
+ * Internal to `content/`: callers outside it go through the catalog index.
  */
 function deepEqual(a: unknown, b: unknown): boolean {
   if (a === b) return true
@@ -100,168 +139,56 @@ function deepEqual(a: unknown, b: unknown): boolean {
   )
 }
 
-class PackIndex<T extends { id: string }> {
-  readonly #byId = new Map<string, T>()
+type AnyRow = MechanicsMap[CatalogKind]
 
-  readonly #kind: string
+const byKind = new Map<CatalogKind, Map<string, AnyRow>>(
+  CATALOG_KINDS.map((kind) => [kind, new Map<string, AnyRow>()]),
+)
 
-  constructor(kind: string) {
-    this.#kind = kind
-  }
+function indexFor(kind: CatalogKind): Map<string, AnyRow> {
+  return byKind.get(kind)!
+}
 
-  /**
-   * Re-registering an identical row is a no-op, because a module re-evaluated
-   * under HMR rebuilds its rows into *new* objects that are equal but not
-   * identical. Only a row that genuinely disagrees with the registered one is
-   * a real collision worth failing on.
-   */
-  register(rows: readonly T[]): void {
-    for (const row of rows) {
-      const existing = this.#byId.get(row.id)
+/**
+ * Register every row of one pack. All kinds are checked before any row is
+ * written, so a collision leaves the registry unchanged.
+ *
+ * Re-registering an identical row is a no-op, because a module re-evaluated
+ * under HMR rebuilds its rows into *new* objects that are equal but not
+ * identical. Only a row that genuinely disagrees with the registered one is
+ * a real collision worth failing on.
+ */
+export function registerPack(pack: PackRows): void {
+  for (const kind of CATALOG_KINDS) {
+    const index = indexFor(kind)
+    for (const row of pack[kind] ?? []) {
+      const existing = index.get(row.id)
       if (existing && !deepEqual(existing, row)) {
         throw new Error(
-          `Duplicate ${this.#kind} id '${row.id}' across PF1e content packs. ` +
+          `Duplicate ${kind} id '${row.id}' across PF1e content packs. ` +
             'Ids are one shared namespace per kind; rename the new row.',
         )
       }
     }
-    for (const row of rows) this.#byId.set(row.id, row)
   }
-
-  lookup(id: string | null | undefined): T | null {
-    if (!id) return null
-    return this.#byId.get(id) ?? null
-  }
-
-  /** Registration order. A re-registered id keeps its original position. */
-  entries(): readonly T[] {
-    return [...this.#byId.values()]
+  for (const kind of CATALOG_KINDS) {
+    const index = indexFor(kind)
+    for (const row of pack[kind] ?? []) index.set(row.id, row)
   }
 }
 
-const classIndex = new PackIndex<ClassProgression>('class')
-const raceIndex = new PackIndex<RaceCatalogRow>('race')
-const itemIndex = new PackIndex<ItemCatalogRow>('item')
-const featIndex = new PackIndex<FeatCatalogRow>('feat')
-const spellIndex = new PackIndex<SpellCatalogRow>('spell')
-const archetypeIndex = new PackIndex<ArchetypeCatalogRow>('archetype')
-const evolutionIndex = new PackIndex<EvolutionCatalogRow>('evolution')
-const featureIndex = new PackIndex<FeatureCatalogRow>('feature')
-
-export function registerClassPack(rows: readonly ClassProgression[]): void {
-  classIndex.register(rows)
-}
-
-export function registerRacePack(rows: readonly RaceCatalogRow[]): void {
-  raceIndex.register(rows)
-}
-
-export function registerItemPack(rows: readonly ItemCatalogRow[]): void {
-  itemIndex.register(rows)
-}
-
-export function registerFeatPack(rows: readonly FeatCatalogRow[]): void {
-  featIndex.register(rows)
-}
-
-export function registerSpellPack(rows: readonly SpellCatalogRow[]): void {
-  spellIndex.register(rows)
-}
-
-export function registerArchetypePack(
-  rows: readonly ArchetypeCatalogRow[],
-): void {
-  archetypeIndex.register(rows)
-}
-
-export function registerEvolutionPack(
-  rows: readonly EvolutionCatalogRow[],
-): void {
-  evolutionIndex.register(rows)
-}
-
-export function registerFeaturePack(
-  rows: readonly FeatureCatalogRow[],
-): void {
-  featureIndex.register(rows)
-}
-
-export function lookupClassProgression(
+/** Unknown or empty id → null. Never throws. Any registered pack. */
+export function lookupRow<K extends CatalogKind>(
+  kind: K,
   id: string | null | undefined,
-): ClassProgression | null {
-  return classIndex.lookup(id)
+): MechanicsMap[K] | null {
+  if (!id) return null
+  return (indexFor(kind).get(id) as MechanicsMap[K] | undefined) ?? null
 }
 
-export function lookupRace(
-  id: string | null | undefined,
-): RaceCatalogRow | null {
-  return raceIndex.lookup(id)
-}
-
-export function lookupItem(
-  id: string | null | undefined,
-): ItemCatalogRow | null {
-  return itemIndex.lookup(id)
-}
-
-export function lookupFeat(
-  id: string | null | undefined,
-): FeatCatalogRow | null {
-  return featIndex.lookup(id)
-}
-
-export function lookupSpell(
-  id: string | null | undefined,
-): SpellCatalogRow | null {
-  return spellIndex.lookup(id)
-}
-
-export function lookupArchetype(
-  id: string | null | undefined,
-): ArchetypeCatalogRow | null {
-  return archetypeIndex.lookup(id)
-}
-
-export function lookupEvolution(
-  id: string | null | undefined,
-): EvolutionCatalogRow | null {
-  return evolutionIndex.lookup(id)
-}
-
-export function lookupFeature(
-  id: string | null | undefined,
-): FeatureCatalogRow | null {
-  return featureIndex.lookup(id)
-}
-
-export function listClassProgressions(): readonly ClassProgression[] {
-  return classIndex.entries()
-}
-
-export function listRaces(): readonly RaceCatalogRow[] {
-  return raceIndex.entries()
-}
-
-export function listItems(): readonly ItemCatalogRow[] {
-  return itemIndex.entries()
-}
-
-export function listFeats(): readonly FeatCatalogRow[] {
-  return featIndex.entries()
-}
-
-export function listSpells(): readonly SpellCatalogRow[] {
-  return spellIndex.entries()
-}
-
-export function listArchetypes(): readonly ArchetypeCatalogRow[] {
-  return archetypeIndex.entries()
-}
-
-export function listEvolutions(): readonly EvolutionCatalogRow[] {
-  return evolutionIndex.entries()
-}
-
-export function listFeatures(): readonly FeatureCatalogRow[] {
-  return featureIndex.entries()
+/** Registration order. A re-registered id keeps its original position. */
+export function listRows<K extends CatalogKind>(
+  kind: K,
+): readonly MechanicsMap[K][] {
+  return [...indexFor(kind).values()] as MechanicsMap[K][]
 }

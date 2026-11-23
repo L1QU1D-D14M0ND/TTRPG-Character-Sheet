@@ -136,4 +136,71 @@ describe('pf1eAttackHelper', () => {
     expect(modOutput?.attackBonusString).toBe('+6')
     expect(modOutput?.damageExpression).toBe('1d8+5')
   })
+
+  describe('reads damage and feats from the engine', () => {
+    function fighterWith(damageDice: string) {
+      const char = pf1eModule.createEmpty()
+      char.classes = [
+        {
+          id: 'c1',
+          class: { id: 'class.fighter', name: 'Fighter' },
+          levels: 5,
+          babProgression: 'full',
+          saves: { fort: 'good', ref: 'poor', will: 'poor' },
+        },
+      ]
+      char.abilities.str.score = 16 // mod +3
+      char.attacks = [
+        {
+          id: 'atk',
+          name: 'Flaming Longsword',
+          attackType: 'melee',
+          itemId: null,
+          damageDice,
+          damageType: 'slashing',
+        },
+      ]
+      return char
+    }
+
+    it('keeps multi-dice damage whole and adds toggles to the modifier', () => {
+      const char = fighterWith('1d8+1d6')
+      const derived = pf1eModule.compute(char)
+      expect(derived.attacks.atk?.damage).toBe('1d8+1d6+3')
+
+      const base = computePf1eAttackHelper(char, derived, 'atk', new Set())
+      expect(base?.damageExpression).toBe('1d8+1d6+3')
+
+      // Two-handed: +1 more Str (floor(3 × 1.5) − 3), from the engine's damage ability.
+      const twoHanded = computePf1eAttackHelper(char, derived, 'atk', new Set(['two_handed']))
+      expect(twoHanded?.damageExpression).toBe('1d8+1d6+4')
+    })
+
+    it('skips the two-handed Str bonus when no ability adds to damage', () => {
+      const char = fighterWith('1d8')
+      char.attacks[0]!.damageAbility = null
+      const derived = pf1eModule.compute(char)
+      const twoHanded = computePf1eAttackHelper(char, derived, 'atk', new Set(['two_handed']))
+      expect(twoHanded?.damageExpression).toBe('1d8')
+    })
+
+    it('marks a feat available by catalog id or exact Custom name only', () => {
+      const char = fighterWith('1d8')
+      const powerAttack = () =>
+        getPf1eAvailableToggles(char, 'atk').find((t) => t.id === 'power_attack')
+
+      char.feats = [
+        { id: 'f1', category: 'combat', feat: { id: null, name: 'Improved Power Attack Drill' } },
+      ]
+      expect(powerAttack()?.description).toBe('Situational')
+
+      char.feats = [{ id: 'f1', category: 'combat', feat: { id: null, name: 'power  attack' } }]
+      expect(powerAttack()?.description).toBe('Feat available')
+
+      char.feats = [
+        { id: 'f1', category: 'combat', feat: { id: 'feat.power-attack', name: 'Ataque poderoso' } },
+      ]
+      expect(powerAttack()?.description).toBe('Feat available')
+    })
+  })
 })

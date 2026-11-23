@@ -1,9 +1,15 @@
 /**
  * PF1e catalog index.
  *
- * One kind table for listing, resolving, and stamping a host. Content packs
- * register into packRegistry at load; this module is the seam callers use.
- * Document writes and document-wide side effects stay in the panel (ADR 0009).
+ * The one module callers use to list, resolve, and stamp catalog rows. It owns
+ * pack registration: importing it registers every bundled content pack, in a
+ * fixed order, before anything can look a row up. Each catalog kind is one
+ * descriptor in `KINDS`; adding a kind is one entry there plus its row type.
+ *
+ * Stamping is pack-agnostic: a row from any registered pack stamps the same
+ * way, and the row's own `source.book` records where it came from.
+ * Document writes and document-wide side effects (class skills, the eidolon
+ * companion) stay with the caller (ADR 0009).
  */
 
 import type {
@@ -15,48 +21,24 @@ import type {
   ItemEntry,
   SpellListEntry,
 } from '../character/types'
-import { applyCrbFeat, applyCrbFeature, applyCrbItem, applyCrbRace } from './crbPack'
-import { applyApgArchetype, applyApgEvolution } from './apgPack'
-import { applyClassProgression } from './classLookup'
 import { DEFAULT_LOCALE, type Locale } from '../../../shared/i18n'
+import { APG_PACK } from './apgPack'
+import { CRB_PACK } from './crbPack'
 import { localizedName } from './namesPack'
 import {
-  listArchetypes,
-  listClassProgressions,
-  listEvolutions,
-  listFeats,
-  listFeatures,
-  listItems,
-  listRaces,
-  listSpells,
-  lookupArchetype,
-  lookupClassProgression,
-  lookupEvolution,
-  lookupFeat,
-  lookupFeature,
-  lookupItem,
-  lookupRace,
-  lookupSpell,
-  type ArchetypeCatalogRow,
-  type ClassProgression,
-  type EvolutionCatalogRow,
-  type FeatCatalogRow,
-  type FeatureCatalogRow,
-  type ItemCatalogRow,
-  type RaceCatalogRow,
-  type SpellCatalogRow,
+  listRows,
+  lookupRow,
+  registerPack,
+  type CatalogKind,
+  type MechanicsFor,
+  type MechanicsMap,
 } from './packRegistry'
-import { applySpell } from './spellLookup'
+import { stampItem } from './stampItem'
 
-export type CatalogKind =
-  | 'feat'
-  | 'feature'
-  | 'spell'
-  | 'item'
-  | 'evolution'
-  | 'race'
-  | 'class'
-  | 'archetype'
+export type { CatalogKind, MechanicsFor, MechanicsMap } from './packRegistry'
+
+registerPack(CRB_PACK)
+registerPack(APG_PACK)
 
 export interface CatalogHostMap {
   feat: FeatEntry
@@ -70,19 +52,6 @@ export interface CatalogHostMap {
 }
 
 export type HostFor<K extends CatalogKind> = CatalogHostMap[K]
-
-export interface MechanicsMap {
-  feat: FeatCatalogRow
-  feature: FeatureCatalogRow
-  spell: SpellCatalogRow
-  item: ItemCatalogRow
-  evolution: EvolutionCatalogRow
-  race: RaceCatalogRow
-  class: ClassProgression
-  archetype: ArchetypeCatalogRow
-}
-
-export type MechanicsFor<K extends CatalogKind> = MechanicsMap[K]
 
 export type CatalogOption = {
   id: string
@@ -102,57 +71,162 @@ export type CatalogGroup = {
   rows: CatalogOption[]
 }
 
+/** Everything the index knows about one catalog kind. */
+interface KindDescriptor<K extends CatalogKind> {
+  /** Picker splits rows into one group per pack (by `source.book`). */
+  grouped?: boolean
+  detail?: (row: MechanicsMap[K]) => string | undefined
+  id: (host: HostFor<K>) => string | null
+  name: (host: HostFor<K>) => string
+  withName: (host: HostFor<K>, name: string) => HostFor<K>
+  /** `found` is null for an unknown or cleared id. */
+  stamp: (host: HostFor<K>, found: MechanicsMap[K] | null) => HostFor<K>
+}
+
+type KindTable = { [K in CatalogKind]: KindDescriptor<K> }
+
+const KINDS: KindTable = {
+  feat: {
+    detail: (row) => row.category,
+    id: (host) => host.feat.id,
+    name: (host) => host.feat.name,
+    withName: (host, name) => ({ ...host, feat: { ...host.feat, name } }),
+    // Does not rewrite level gained, summary, combat math, or effects.
+    stamp: (host, found) =>
+      found
+        ? {
+            ...host,
+            feat: { id: found.id, name: found.name, source: found.source },
+            category: found.category,
+          }
+        : { ...host, feat: { ...host.feat, id: null } },
+  },
+  feature: {
+    id: (host) => host.feature.id,
+    name: (host) => host.feature.name,
+    withName: (host, name) => ({ ...host, feature: { ...host.feature, name } }),
+    // Does not rewrite levelGained, summary, or notes.
+    stamp: (host, found) =>
+      found
+        ? {
+            ...host,
+            feature: { id: found.id, name: found.name, source: found.source },
+          }
+        : { ...host, feature: { ...host.feature, id: null } },
+  },
+  spell: {
+    grouped: true,
+    detail: (row) => String(row.spellLevel),
+    id: (host) => host.spell.id,
+    name: (host) => host.spell.name,
+    withName: (host, name) => ({ ...host, spell: { ...host.spell, name } }),
+    // Does not rewrite prepared flags, summaries, slots, or DCs.
+    stamp: (host, found) =>
+      found
+        ? {
+            ...host,
+            spell: { id: found.id, name: found.name, source: found.source },
+            spellLevel: found.spellLevel,
+          }
+        : { ...host, spell: { ...host.spell, id: null } },
+  },
+  item: {
+    detail: (row) => row.kind,
+    id: (host) => host.item.id,
+    name: (host) => host.item.name,
+    withName: (host, name) => ({ ...host, item: { ...host.item, name } }),
+    stamp: stampItem,
+  },
+  evolution: {
+    id: (host) => host.evolution.id,
+    name: (host) => host.evolution.name,
+    withName: (host, name) => ({
+      ...host,
+      evolution: { ...host.evolution, name },
+    }),
+    // Does not rewrite fused scores, costume HP, notes, or effects.
+    stamp: (host, found) =>
+      found
+        ? {
+            ...host,
+            evolution: { id: found.id, name: found.name, source: found.source },
+          }
+        : { ...host, evolution: { ...host.evolution, id: null } },
+  },
+  race: {
+    id: (host) => host.race.id,
+    name: (host) => host.race.name,
+    withName: (host, name) => ({ ...host, race: { ...host.race, name } }),
+    // Stamps size too. Does not rewrite languages or ability scores. An
+    // unknown id keeps the typed name and size.
+    stamp: (host, found) =>
+      found
+        ? {
+            ...host,
+            size: found.size ?? host.size,
+            race: { id: found.id, name: found.name, source: found.source },
+          }
+        : { ...host, race: { ...host.race, id: null } },
+  },
+  class: {
+    grouped: true,
+    id: (host) => host.class.id,
+    name: (host) => host.class.name,
+    withName: (host, name) => ({ ...host, class: { ...host.class, name } }),
+    // Stamps HD / BAB / saves / skill points; leaves levels and favored-class
+    // totals. Leaving Summoner (or an unknown id) clears a stamped archetype.
+    stamp: (host, found) =>
+      found
+        ? {
+            ...host,
+            class: { id: found.id, name: found.name, source: found.source },
+            hitDie: found.hitDie,
+            babProgression: found.babProgression,
+            saves: { ...found.saves },
+            skillPointsPerLevel: found.skillPointsPerLevel,
+            archetype:
+              found.id === 'class.summoner' ? host.archetype : undefined,
+          }
+        : { ...host, class: { ...host.class, id: null }, archetype: undefined },
+  },
+  archetype: {
+    id: (host) => host.archetype?.id ?? null,
+    name: (host) => host.archetype?.name ?? '',
+    withName: (host, name) => ({
+      ...host,
+      archetype: {
+        id: host.archetype?.id ?? null,
+        name,
+        source: host.archetype?.source,
+      },
+    }),
+    // Does not rewrite HD / BAB / saves, ability scores, HP, or evolutions.
+    // Unknown or empty id clears the archetype.
+    stamp: (host, found) =>
+      found
+        ? {
+            ...host,
+            archetype: { id: found.id, name: found.name, source: found.source },
+          }
+        : { ...host, archetype: undefined },
+  },
+}
+
+function descriptor<K extends CatalogKind>(kind: K): KindDescriptor<K> {
+  return KINDS[kind] as KindDescriptor<K>
+}
+
 const PACK_LABEL: Record<string, string> = {
   CRB: 'pf1e.identity.optgroupCrb',
   APG: 'pf1e.identity.optgroupApg',
 }
 
-const GROUPED_KINDS = new Set<CatalogKind>(['spell', 'class'])
-
-type ListedRow = {
-  id: string
-  name: string
-  source?: { book?: string }
-}
-
-function listRows(kind: CatalogKind): readonly ListedRow[] {
-  switch (kind) {
-    case 'feat':
-      return listFeats()
-    case 'feature':
-      return listFeatures()
-    case 'spell':
-      return listSpells()
-    case 'item':
-      return listItems()
-    case 'evolution':
-      return listEvolutions()
-    case 'race':
-      return listRaces()
-    case 'class':
-      return listClassProgressions()
-    case 'archetype':
-      return listArchetypes()
-    default: {
-      const _never: never = kind
-      return _never
-    }
-  }
-}
-
-function detailFor(kind: CatalogKind, row: ListedRow): string | undefined {
-  if (kind === 'feat') return (row as FeatCatalogRow).category
-  if (kind === 'spell') return String((row as SpellCatalogRow).spellLevel)
-  if (kind === 'item') return (row as ItemCatalogRow).kind
-  return undefined
-}
-
-function project(
-  kind: CatalogKind,
-  row: ListedRow,
+function project<K extends CatalogKind>(
+  kind: K,
+  row: MechanicsMap[K],
   locale: Locale,
 ): CatalogOption {
-  const detail = detailFor(kind, row)
+  const detail = descriptor(kind).detail?.(row)
   const localized = localizedName(row.id, locale)
   const option: CatalogOption = { id: row.id, name: localized ?? row.name }
   if (localized) option.altName = row.name
@@ -161,16 +235,17 @@ function project(
 }
 
 /**
- * Ordered picker rows. Spell and class split by pack in registration order.
- * Rows are labelled in `locale`, falling back to the English pack name per
- * row; ordering stays the pack's own so a translated list does not reshuffle.
+ * Ordered picker rows from every registered pack. Grouped kinds (spell, class)
+ * split by pack in registration order. Rows are labelled in `locale`, falling
+ * back to the English pack name per row; ordering stays the pack's own so a
+ * translated list does not reshuffle.
  */
 export function groups(
   kind: CatalogKind,
   locale: Locale = DEFAULT_LOCALE,
 ): CatalogGroup[] {
   const rows = listRows(kind)
-  if (!GROUPED_KINDS.has(kind)) {
+  if (!descriptor(kind).grouped) {
     return [{ rows: rows.map((row) => project(kind, row, locale)) }]
   }
 
@@ -194,41 +269,12 @@ export function resolve<K extends CatalogKind>(
   kind: K,
   id: string | null | undefined,
 ): MechanicsFor<K> | undefined {
-  const found = lookupRow(kind, id)
-  return found === null ? undefined : (found as MechanicsFor<K>)
-}
-
-function lookupRow(
-  kind: CatalogKind,
-  id: string | null | undefined,
-): MechanicsFor<CatalogKind> | null {
-  switch (kind) {
-    case 'feat':
-      return lookupFeat(id)
-    case 'feature':
-      return lookupFeature(id)
-    case 'spell':
-      return lookupSpell(id)
-    case 'item':
-      return lookupItem(id)
-    case 'evolution':
-      return lookupEvolution(id)
-    case 'race':
-      return lookupRace(id)
-    case 'class':
-      return lookupClassProgression(id)
-    case 'archetype':
-      return lookupArchetype(id)
-    default: {
-      const _never: never = kind
-      return _never
-    }
-  }
+  return lookupRow(kind, id) ?? undefined
 }
 
 /**
- * Stamp a catalog id onto a host. `null` clears the catalog id.
- * An unknown id clears it too, matching the existing apply functions.
+ * Stamp a catalog id onto a host. `null` clears the catalog id; an unknown id
+ * clears it too. Any row `groups` lists stamps.
  * Does not run stampClassSkills or ensureEidolonCompanion.
  */
 export function stamp<K extends CatalogKind>(
@@ -236,84 +282,21 @@ export function stamp<K extends CatalogKind>(
   host: HostFor<K>,
   id: string | null,
 ): HostFor<K> {
-  switch (kind) {
-    case 'feat':
-      return applyCrbFeat(host as FeatEntry, id) as HostFor<K>
-    case 'feature':
-      return applyCrbFeature(host as FeatureEntry, id) as HostFor<K>
-    case 'spell':
-      return applySpell(host as SpellListEntry, id) as HostFor<K>
-    case 'item':
-      return applyCrbItem(host as ItemEntry, id) as HostFor<K>
-    case 'evolution':
-      return applyApgEvolution(host as EvolutionEntry, id) as HostFor<K>
-    case 'race':
-      return applyCrbRace(host as Identity, id) as HostFor<K>
-    case 'class':
-      return applyClassProgression(host as ClassEntry, id) as HostFor<K>
-    case 'archetype':
-      return applyApgArchetype(host as ClassEntry, id) as HostFor<K>
-    default: {
-      const _never: never = kind
-      return _never
-    }
-  }
+  return descriptor(kind).stamp(host, lookupRow(kind, id))
 }
 
 export function catalogId<K extends CatalogKind>(
   kind: K,
   host: HostFor<K>,
 ): string | null {
-  switch (kind) {
-    case 'feat':
-      return (host as FeatEntry).feat.id
-    case 'feature':
-      return (host as FeatureEntry).feature.id
-    case 'spell':
-      return (host as SpellListEntry).spell.id
-    case 'item':
-      return (host as ItemEntry).item.id
-    case 'evolution':
-      return (host as EvolutionEntry).evolution.id
-    case 'race':
-      return (host as Identity).race.id
-    case 'class':
-      return (host as ClassEntry).class.id
-    case 'archetype':
-      return (host as ClassEntry).archetype?.id ?? null
-    default: {
-      const _never: never = kind
-      return _never
-    }
-  }
+  return descriptor(kind).id(host)
 }
 
 export function catalogName<K extends CatalogKind>(
   kind: K,
   host: HostFor<K>,
 ): string {
-  switch (kind) {
-    case 'feat':
-      return (host as FeatEntry).feat.name
-    case 'feature':
-      return (host as FeatureEntry).feature.name
-    case 'spell':
-      return (host as SpellListEntry).spell.name
-    case 'item':
-      return (host as ItemEntry).item.name
-    case 'evolution':
-      return (host as EvolutionEntry).evolution.name
-    case 'race':
-      return (host as Identity).race.name
-    case 'class':
-      return (host as ClassEntry).class.name
-    case 'archetype':
-      return (host as ClassEntry).archetype?.name ?? ''
-    default: {
-      const _never: never = kind
-      return _never
-    }
-  }
+  return descriptor(kind).name(host)
 }
 
 export function setCatalogName<K extends CatalogKind>(
@@ -321,49 +304,5 @@ export function setCatalogName<K extends CatalogKind>(
   host: HostFor<K>,
   name: string,
 ): HostFor<K> {
-  switch (kind) {
-    case 'feat': {
-      const row = host as FeatEntry
-      return { ...row, feat: { ...row.feat, name } } as HostFor<K>
-    }
-    case 'feature': {
-      const row = host as FeatureEntry
-      return { ...row, feature: { ...row.feature, name } } as HostFor<K>
-    }
-    case 'spell': {
-      const row = host as SpellListEntry
-      return { ...row, spell: { ...row.spell, name } } as HostFor<K>
-    }
-    case 'item': {
-      const row = host as ItemEntry
-      return { ...row, item: { ...row.item, name } } as HostFor<K>
-    }
-    case 'evolution': {
-      const row = host as EvolutionEntry
-      return { ...row, evolution: { ...row.evolution, name } } as HostFor<K>
-    }
-    case 'race': {
-      const identity = host as Identity
-      return { ...identity, race: { ...identity.race, name } } as HostFor<K>
-    }
-    case 'class': {
-      const row = host as ClassEntry
-      return { ...row, class: { ...row.class, name } } as HostFor<K>
-    }
-    case 'archetype': {
-      const row = host as ClassEntry
-      return {
-        ...row,
-        archetype: {
-          id: row.archetype?.id ?? null,
-          name,
-          source: row.archetype?.source,
-        },
-      } as HostFor<K>
-    }
-    default: {
-      const _never: never = kind
-      return _never
-    }
-  }
+  return descriptor(kind).withName(host, name)
 }

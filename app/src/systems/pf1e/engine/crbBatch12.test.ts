@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyFeat } from '../character/createRows'
 import { parseCharacterJson } from '../character/saveLoad'
-import { applyCrbFeat } from '../content'
+import { stamp } from '../content'
 import { compute } from './compute'
 import { readRepoFile } from '../../../test/readRepoFile'
 
@@ -11,7 +11,7 @@ describe('CRB batch 12: catalog feats do not fill Combat', () => {
     const character = createEmptyCharacter()
     const beforeCombat = structuredClone(character.combat)
     const beforeAttacks = structuredClone(character.attacks)
-    character.feats = [applyCrbFeat(createEmptyFeat(), 'feat.power-attack')]
+    character.feats = [stamp('feat', createEmptyFeat(), 'feat.power-attack')]
     const view = compute(character)
     expect(character.combat).toEqual(beforeCombat)
     expect(character.attacks).toEqual(beforeAttacks)

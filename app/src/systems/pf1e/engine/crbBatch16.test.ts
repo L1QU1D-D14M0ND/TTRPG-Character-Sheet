@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyAttack, createEmptyItem } from '../character/createRows'
-import { applyCrbItem, lookupCrbItem } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const SIMPLE_MELEE = [
@@ -218,8 +218,8 @@ const SIMPLE_AMMO = [
 describe('CRB batch 16: remaining simple melee', () => {
   it('stamps Medium CRB table numbers for the remaining simple melee weapons', () => {
     for (const row of SIMPLE_MELEE) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.id).toBe(row.id)
       expect(stamped.item.name).toBe(row.name)
       expect(stamped.pounds).toBe(row.pounds)
@@ -229,9 +229,9 @@ describe('CRB batch 16: remaining simple melee', () => {
   })
 
   it('does not add unarmed strike or packed dagger/quarterstaff as new ids', () => {
-    expect(lookupCrbItem('weapon.unarmed-strike')).toBeNull()
-    expect(lookupCrbItem('weapon.dagger')?.weapon?.damageDice).toBe('1d4')
-    expect(lookupCrbItem('weapon.quarterstaff')?.weapon).toEqual({
+    expect(resolve('item', 'weapon.unarmed-strike')).toBeUndefined()
+    expect(resolve('item', 'weapon.dagger')?.weapon?.damageDice).toBe('1d4')
+    expect(resolve('item', 'weapon.quarterstaff')?.weapon).toEqual({
       damageDice: '1d6',
       damageType: 'bludgeoning',
       critRange: 20,
@@ -250,8 +250,8 @@ describe('CRB batch 16: remaining simple melee', () => {
 describe('CRB batch 16: simple ranged and ammo', () => {
   it('stamps Medium CRB table numbers for simple ranged weapons', () => {
     for (const row of SIMPLE_RANGED) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.weapon).toEqual(row.weapon)
       expect(stamped.pounds).toBe(row.pounds)
     }
@@ -259,13 +259,13 @@ describe('CRB batch 16: simple ranged and ammo', () => {
 
   it('stamps ammo as gear with the published bundle weight', () => {
     for (const row of SIMPLE_AMMO) {
-      expect(lookupCrbItem(row.id)).toMatchObject({
+      expect(resolve('item', row.id)).toMatchObject({
         id: row.id,
         name: row.name,
         kind: 'item',
         pounds: row.pounds,
       })
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.id).toBe(row.id)
       expect(stamped.pounds).toBe(row.pounds)
       expect(stamped.weapon).toBeUndefined()
@@ -274,7 +274,7 @@ describe('CRB batch 16: simple ranged and ammo', () => {
   })
 
   it('leaves later gear unknown', () => {
-    expect(lookupCrbItem('item.bedroll')).toBeNull()
+    expect(resolve('item', 'item.bedroll')).toBeUndefined()
   })
 })
 
@@ -283,7 +283,7 @@ describe('CRB batch 16: Combat stays typed', () => {
     const character = createEmptyCharacter()
     const attack = createEmptyAttack()
     character.attacks = [attack]
-    const row = applyCrbItem(createEmptyItem(), 'weapon.spear')
+    const row = stamp('item', createEmptyItem(), 'weapon.spear')
     row.location = 'equipped'
     character.inventory.items = [row]
     const beforeAc = structuredClone(character.armorClass)

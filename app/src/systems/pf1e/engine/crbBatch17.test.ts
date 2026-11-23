@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyAttack, createEmptyItem } from '../character/createRows'
-import { applyCrbItem, lookupCrbItem } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const MARTIAL_LIGHT = [
@@ -185,8 +185,8 @@ const MARTIAL_ONE_HANDED = [
 describe('CRB batch 17: martial light', () => {
   it('stamps Medium CRB table numbers for martial light weapons', () => {
     for (const row of MARTIAL_LIGHT) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.name).toBe(row.name)
       expect(stamped.pounds).toBe(row.pounds)
       expect(stamped.weapon).toEqual(row.weapon)
@@ -194,34 +194,34 @@ describe('CRB batch 17: martial light', () => {
   })
 
   it('does not pack shield-bash or spiked-armor weapon-table lines', () => {
-    expect(lookupCrbItem('weapon.light-shield')).toBeNull()
-    expect(lookupCrbItem('weapon.spiked-armor')).toBeNull()
-    expect(lookupCrbItem('weapon.light-spiked-shield')).toBeNull()
+    expect(resolve('item', 'weapon.light-shield')).toBeUndefined()
+    expect(resolve('item', 'weapon.spiked-armor')).toBeUndefined()
+    expect(resolve('item', 'weapon.light-spiked-shield')).toBeUndefined()
   })
 })
 
 describe('CRB batch 17: remaining martial one-handed', () => {
   it('stamps Medium CRB table numbers for the remaining martial one-handed weapons', () => {
     for (const row of MARTIAL_ONE_HANDED) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.weapon).toEqual(row.weapon)
       expect(stamped.pounds).toBe(row.pounds)
     }
   })
 
   it('keeps packed longsword and skips shield-bash ids', () => {
-    expect(lookupCrbItem('weapon.longsword')?.weapon).toMatchObject({
+    expect(resolve('item', 'weapon.longsword')?.weapon).toMatchObject({
       damageDice: '1d8',
       critRange: 19,
       critMultiplier: 2,
     })
-    expect(lookupCrbItem('weapon.heavy-shield')).toBeNull()
-    expect(lookupCrbItem('weapon.heavy-spiked-shield')).toBeNull()
+    expect(resolve('item', 'weapon.heavy-shield')).toBeUndefined()
+    expect(resolve('item', 'weapon.heavy-spiked-shield')).toBeUndefined()
   })
 
   it('leaves later gear unknown', () => {
-    expect(lookupCrbItem('item.bedroll')).toBeNull()
+    expect(resolve('item', 'item.bedroll')).toBeUndefined()
   })
 })
 
@@ -230,7 +230,7 @@ describe('CRB batch 17: Combat stays typed', () => {
     const character = createEmptyCharacter()
     const attack = createEmptyAttack()
     character.attacks = [attack]
-    const row = applyCrbItem(createEmptyItem(), 'weapon.rapier')
+    const row = stamp('item', createEmptyItem(), 'weapon.rapier')
     row.location = 'equipped'
     character.inventory.items = [row]
     const beforeAc = structuredClone(character.armorClass)

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyAttack, createEmptyItem } from '../character/createRows'
-import { applyCrbItem, lookupCrbItem } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const NONLETHAL_IDS = ['weapon.sap', 'weapon.whip', 'weapon.bolas'] as const
@@ -9,37 +9,37 @@ const NONLETHAL_IDS = ['weapon.sap', 'weapon.whip', 'weapon.bolas'] as const
 describe('CRB W6: nonlethal', () => {
   it('appends nonlethal on matching weapons', () => {
     for (const id of NONLETHAL_IDS) {
-      expect(lookupCrbItem(id)?.weapon?.properties).toContain('nonlethal')
-      const stamped = applyCrbItem(createEmptyItem(), id)
+      expect(resolve('item', id)?.weapon?.properties).toContain('nonlethal')
+      const stamped = stamp('item', createEmptyItem(), id)
       expect(stamped.weapon?.properties).toContain('nonlethal')
     }
   })
 
   it('stamps nonlethal as a one-tag list on the sap', () => {
-    expect(lookupCrbItem('weapon.sap')?.weapon?.properties).toEqual([
+    expect(resolve('item', 'weapon.sap')?.weapon?.properties).toEqual([
       'nonlethal',
     ])
-    const stamped = applyCrbItem(createEmptyItem(), 'weapon.sap')
+    const stamped = stamp('item', createEmptyItem(), 'weapon.sap')
     expect(stamped.weapon?.properties).toEqual(['nonlethal'])
   })
 
   it('appends nonlethal without replacing trip on the bolas', () => {
-    expect(lookupCrbItem('weapon.bolas')?.weapon?.properties).toEqual([
+    expect(resolve('item', 'weapon.bolas')?.weapon?.properties).toEqual([
       'trip',
       'nonlethal',
     ])
-    const stamped = applyCrbItem(createEmptyItem(), 'weapon.bolas')
+    const stamped = stamp('item', createEmptyItem(), 'weapon.bolas')
     expect(stamped.weapon?.properties).toEqual(['trip', 'nonlethal'])
   })
 
   it('appends nonlethal without replacing reach, trip, or disarm on the whip', () => {
-    expect(lookupCrbItem('weapon.whip')?.weapon?.properties).toEqual([
+    expect(resolve('item', 'weapon.whip')?.weapon?.properties).toEqual([
       'reach',
       'trip',
       'disarm',
       'nonlethal',
     ])
-    const stamped = applyCrbItem(createEmptyItem(), 'weapon.whip')
+    const stamped = stamp('item', createEmptyItem(), 'weapon.whip')
     expect(stamped.weapon?.properties).toEqual([
       'reach',
       'trip',
@@ -50,13 +50,13 @@ describe('CRB W6: nonlethal', () => {
 
   it('does not tag nonlethal weapons with double', () => {
     for (const id of NONLETHAL_IDS) {
-      const tags = lookupCrbItem(id)?.weapon?.properties ?? []
+      const tags = resolve('item', id)?.weapon?.properties ?? []
       expect(tags).not.toContain('double')
     }
   })
 
   it('leaves unrelated weapons without a properties field', () => {
-    expect(lookupCrbItem('weapon.longsword')?.weapon).not.toHaveProperty(
+    expect(resolve('item', 'weapon.longsword')?.weapon).not.toHaveProperty(
       'properties',
     )
   })
@@ -67,7 +67,7 @@ describe('CRB W6: Combat stays typed', () => {
     const character = createEmptyCharacter()
     const attack = createEmptyAttack()
     character.attacks = [attack]
-    const row = applyCrbItem(createEmptyItem(), 'weapon.sap')
+    const row = stamp('item', createEmptyItem(), 'weapon.sap')
     row.location = 'equipped'
     character.inventory.items = [row]
     const beforeAc = structuredClone(character.armorClass)

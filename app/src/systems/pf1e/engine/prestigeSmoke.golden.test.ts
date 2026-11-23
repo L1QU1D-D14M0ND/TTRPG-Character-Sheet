@@ -60,6 +60,9 @@ describe('golden PF1e Prestige Smoke: Fighter 5 / Duelist 2', () => {
     expect(view.attacks['atk-rapier']).toEqual({
       attack: 12, // BAB 7 + Dex 4 + misc 1
       damage: '1d6+2',
+      damageDice: '1d6',
+      damageMod: 2,
+      damageAbility: 'str',
       iteratives: [12, 7],
     })
     expect(signed(view.attacks['atk-rapier'].attack)).toBe('+12')

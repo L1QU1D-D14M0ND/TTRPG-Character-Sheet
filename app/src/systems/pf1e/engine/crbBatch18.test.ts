@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyAttack, createEmptyItem } from '../character/createRows'
-import { applyCrbItem, lookupCrbItem } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const MARTIAL_TWO_HANDED = [
@@ -189,8 +189,8 @@ const MARTIAL_RANGED = [
 describe('CRB batch 18: martial two-handed', () => {
   it('stamps Medium CRB table numbers for martial two-handed weapons', () => {
     for (const row of MARTIAL_TWO_HANDED) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.name).toBe(row.name)
       expect(stamped.pounds).toBe(row.pounds)
       expect(stamped.weapon).toEqual(row.weapon)
@@ -201,34 +201,34 @@ describe('CRB batch 18: martial two-handed', () => {
 describe('CRB batch 18: martial ranged and arrows', () => {
   it('stamps Medium CRB table numbers for martial bows', () => {
     for (const row of MARTIAL_RANGED) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.weapon).toEqual(row.weapon)
       expect(stamped.pounds).toBe(row.pounds)
     }
   })
 
   it('stamps arrows as a bundle with the published weight', () => {
-    expect(lookupCrbItem('item.arrows')).toMatchObject({
+    expect(resolve('item', 'item.arrows')).toMatchObject({
       id: 'item.arrows',
       name: 'Arrows',
       kind: 'item',
       pounds: 3,
     })
-    const stamped = applyCrbItem(createEmptyItem(), 'item.arrows')
+    const stamped = stamp('item', createEmptyItem(), 'item.arrows')
     expect(stamped.pounds).toBe(3)
     expect(stamped.weapon).toBeUndefined()
   })
 
   it('does not encode composite Strength rating in the id', () => {
-    expect(lookupCrbItem('weapon.composite-longbow-str-2')).toBeNull()
-    expect(lookupCrbItem('weapon.composite-longbow')?.weapon?.rangeFeet).toBe(
+    expect(resolve('item', 'weapon.composite-longbow-str-2')).toBeUndefined()
+    expect(resolve('item', 'weapon.composite-longbow')?.weapon?.rangeFeet).toBe(
       110,
     )
   })
 
   it('leaves later gear unknown', () => {
-    expect(lookupCrbItem('item.bedroll')).toBeNull()
+    expect(resolve('item', 'item.bedroll')).toBeUndefined()
   })
 })
 
@@ -237,7 +237,7 @@ describe('CRB batch 18: Combat stays typed', () => {
     const character = createEmptyCharacter()
     const attack = createEmptyAttack()
     character.attacks = [attack]
-    const row = applyCrbItem(createEmptyItem(), 'weapon.greatsword')
+    const row = stamp('item', createEmptyItem(), 'weapon.greatsword')
     row.location = 'equipped'
     character.inventory.items = [row]
     const beforeAc = structuredClone(character.armorClass)

@@ -1,47 +1,14 @@
 import type { ClassEntry, SkillEntry } from '../character/types'
 import { STANDARD_SKILLS } from '../character/standardSkills'
-import { lookupClassProgression } from './packRegistry'
+import { resolve } from './catalogIndex'
 
 const STANDARD_SKILL_KEYS = new Set(STANDARD_SKILLS.map((row) => row.key))
-
-/**
- * Stamp HD / BAB / saves from any registered class pack (CRB, APG, …).
- * Leaves levels and favored-class totals unchanged.
- * Unknown id clears `class.id` and does not rewrite progressions.
- * Leaving Summoner clears a stamped Synthesist archetype.
- */
-export function applyClassProgression(
-  row: ClassEntry,
-  id: string | null,
-): ClassEntry {
-  const found = lookupClassProgression(id)
-  if (!found) {
-    return {
-      ...row,
-      class: { ...row.class, id: null },
-      archetype: undefined,
-    }
-  }
-  return {
-    ...row,
-    class: {
-      id: found.id,
-      name: found.name,
-      source: found.source,
-    },
-    hitDie: found.hitDie,
-    babProgression: found.babProgression,
-    saves: { ...found.saves },
-    skillPointsPerLevel: found.skillPointsPerLevel,
-    archetype: found.id === 'class.summoner' ? row.archetype : undefined,
-  }
-}
 
 /** Union of catalog class-skill keys for the given class rows. */
 export function classSkillKeySet(classes: ClassEntry[]): Set<string> {
   const keys = new Set<string>()
   for (const row of classes) {
-    const found = lookupClassProgression(row.class.id)
+    const found = resolve('class', row.class.id)
     if (!found) continue
     for (const key of found.classSkills) keys.add(key)
   }
@@ -67,7 +34,7 @@ export function stampClassSkills(
 /** Row field if present; otherwise catalog; otherwise 0. */
 export function skillPointsPerLevelFor(row: ClassEntry): number {
   if (row.skillPointsPerLevel != null) return row.skillPointsPerLevel
-  return lookupClassProgression(row.class.id)?.skillPointsPerLevel ?? 0
+  return resolve('class', row.class.id)?.skillPointsPerLevel ?? 0
 }
 
 /**
@@ -79,10 +46,9 @@ export function classSpellsPerDayRow(
   classId: string | null | undefined,
   classLevel: number,
 ): Array<number | null> | null {
-  const found = lookupClassProgression(classId)
+  const found = resolve('class', classId)
   if (!found?.spellsPerDay || classLevel < 1) return null
   const index = Math.min(20, classLevel) - 1
   return found.spellsPerDay[index] ?? null
 }
 
-export { lookupClassProgression }

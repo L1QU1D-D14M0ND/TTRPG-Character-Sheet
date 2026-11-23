@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyFeat } from '../character/createRows'
-import { applyCrbFeat, lookupCrbFeat } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const F3C_IDS = [
@@ -25,7 +25,7 @@ const F3C_IDS = [
 describe('CRB batch F3c: General feats (part 3 of 3)', () => {
   it('resolves all 15 F3c general feats in the CRB catalog', () => {
     for (const id of F3C_IDS) {
-      const feat = lookupCrbFeat(id)
+      const feat = resolve('feat', id)
       expect(feat, `Expected ${id} to exist in CRB catalog`).not.toBeNull()
       expect(feat?.id).toBe(id)
       expect(typeof feat?.name).toBe('string')
@@ -37,8 +37,8 @@ describe('CRB batch F3c: General feats (part 3 of 3)', () => {
 
   it('stamps catalog identity and general category onto empty feat rows', () => {
     for (const id of F3C_IDS) {
-      const catalog = lookupCrbFeat(id)!
-      const stamped = applyCrbFeat(createEmptyFeat(), id)
+      const catalog = resolve('feat', id)!
+      const stamped = stamp('feat', createEmptyFeat(), id)
       expect(stamped.feat.id).toBe(id)
       expect(stamped.feat.name).toBe(catalog.name)
       expect(stamped.category).toBe('general')
@@ -52,7 +52,7 @@ describe('CRB batch F3c: General feats (part 3 of 3)', () => {
     const beforeAttacks = structuredClone(character.attacks)
     const beforeAc = structuredClone(character.armorClass)
 
-    character.feats = F3C_IDS.map((id) => applyCrbFeat(createEmptyFeat(), id))
+    character.feats = F3C_IDS.map((id) => stamp('feat', createEmptyFeat(), id))
     const view = compute(character)
 
     expect(character.combat).toEqual(beforeCombat)

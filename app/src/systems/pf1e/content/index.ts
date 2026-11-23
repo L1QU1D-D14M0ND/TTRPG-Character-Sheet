@@ -1,57 +1,13 @@
-export {
-  applyClassProgression,
-  applyCrbClassProgression,
-  applyCrbFeat,
-  applyCrbFeature,
-  applyCrbItem,
-  applyCrbRace,
-  applyCrbSpell,
-  classSkillKeySet,
-  classSpellsPerDayRow,
-  lookupCrbClass,
-  lookupCrbFeat,
-  lookupCrbFeature,
-  lookupCrbItem,
-  lookupCrbRace,
-  lookupCrbSpell,
-  skillPointsPerLevelFor,
-  stampClassSkills,
-  CRB_CLASSES,
-  CRB_FEATS,
-  CRB_FEATURES,
-  CRB_ITEMS,
-  CRB_RACES,
-  CRB_SPELLS,
-} from './crbPack'
-export {
-  applyApgArchetype,
-  applyApgEvolution,
-  applyApgSpell,
-  lookupApgArchetype,
-  lookupApgClass,
-  lookupApgEvolution,
-  lookupApgSpell,
-  APG_ARCHETYPES,
-  APG_CLASSES,
-  APG_EVOLUTIONS,
-  APG_SPELLS,
-} from './apgPack'
-export type {
-  ApgArchetype,
-  ApgClassProgression,
-  ApgEvolution,
-  ApgSpell,
-} from './apgPack'
-export { applySpell, lookupSpell } from './spellLookup'
-export type {
-  CrbClassProgression,
-  CrbFeat,
-  CrbFeature,
-  CrbItem,
-  CrbRace,
-  CrbSpell,
-} from './crbPack'
-export type { ClassProgression } from './packRegistry'
+/**
+ * Public interface of the PF1e content module. Everything a caller outside
+ * `content/` needs: the catalog index (list, resolve, stamp a host), the
+ * class-derived helpers the engine and Identity panel use, localized names,
+ * and the magic overlay (masterwork/enhancement rules, badge, suggested price)
+ * with its CRB special-ability tables.
+ *
+ * Pack modules and the pack registry are internal; reach rows through
+ * `resolve(kind, id)` and stamp through `stamp(kind, host, id)`.
+ */
 export {
   catalogId,
   catalogName,
@@ -69,6 +25,13 @@ export type {
   MechanicsFor,
   MechanicsMap,
 } from './catalogIndex'
+export type { ClassProgression } from './packRegistry'
+export {
+  classSkillKeySet,
+  classSpellsPerDayRow,
+  skillPointsPerLevelFor,
+  stampClassSkills,
+} from './classLookup'
 export {
   displayName,
   localizedIds,
@@ -76,4 +39,19 @@ export {
   LOCALIZED_NAME_ROWS,
 } from './namesPack'
 export type { LocalizedNameRow } from './namesPack'
-export * from './crbMagicProperties'
+export {
+  getPropertiesForKind,
+  CRB_ARMOR_SPECIAL_ABILITIES,
+  CRB_SHIELD_SPECIAL_ABILITIES,
+  CRB_WEAPON_SPECIAL_ABILITIES,
+} from './crbMagicProperties'
+export type { MagicPropertyDescriptor } from './crbMagicProperties'
+export {
+  itemMagicBadge,
+  magicBadge,
+  masterworkChecked,
+  setEnhancement,
+  setMasterwork,
+  suggestedMagicPrice,
+} from './magicOverlay'
+export type { MagicOverlayFields } from './magicOverlay'

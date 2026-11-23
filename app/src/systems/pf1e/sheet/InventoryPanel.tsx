@@ -7,7 +7,9 @@ import {
 } from '../character/itemProperties'
 import {
   getPropertiesForKind,
-  computeSuggestedMagicPrice,
+  itemMagicBadge,
+  suggestedMagicPrice,
+  type MagicOverlayFields,
 } from '../content'
 import type { DerivedView } from '../engine'
 import { formatLoadSummary } from '../engine/encumbrance'
@@ -16,7 +18,6 @@ import { useT } from '../../../shared/i18n'
 import { patchAt, replaceAt, updateAt } from '../../../shared/ui/rows'
 import { CatalogPicker } from './CatalogPicker'
 import { MagicOverlayControls } from './MagicOverlayControls'
-import { magicBadge, type MagicOverlayFields } from './magicOverlay'
 import type { SheetUpdate } from './update'
 
 function placeSlot<T extends MagicOverlayFields>(
@@ -153,36 +154,8 @@ export function InventoryPanel({
             </tr>
           ) : (
             character.inventory.items.map((item, index) => {
-              const suggestedPrice = item.weapon
-                ? computeSuggestedMagicPrice({
-                    kind: 'weapon',
-                    basePriceGp: item.priceGp ?? 0,
-                    masterwork: item.weapon.masterwork,
-                    enhancementBonus: item.weapon.enhancementBonus,
-                    properties: item.weapon.properties,
-                  })
-                : item.armor
-                  ? computeSuggestedMagicPrice({
-                      kind: 'armor',
-                      basePriceGp: item.priceGp ?? 0,
-                      masterwork: item.armor.masterwork,
-                      enhancementBonus: item.armor.enhancementBonus,
-                      properties: item.armor.properties,
-                    })
-                  : item.shield
-                    ? computeSuggestedMagicPrice({
-                        kind: 'shield',
-                        basePriceGp: item.priceGp ?? 0,
-                        masterwork: item.shield.masterwork,
-                        enhancementBonus: item.shield.enhancementBonus,
-                        properties: item.shield.properties,
-                      })
-                    : null
-
-              const badge =
-                magicBadge(item.weapon) ??
-                magicBadge(item.armor) ??
-                magicBadge(item.shield)
+              const suggestedPrice = suggestedMagicPrice(item)
+              const badge = itemMagicBadge(item)
 
               return (
                 <tr key={item.id}>

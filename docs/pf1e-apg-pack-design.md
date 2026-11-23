@@ -35,7 +35,7 @@ Mechanics-only ([ADR 0007](adr/0007-content-licensing.md), [`content-licensing.m
 | Pack | `archetypes.json` one row: `archetype.synthesist` / Synthesist / `classId: class.summoner` |
 | Apply | Picking Summoner stamps HD/BAB/saves/skill points and class-skill checkboxes. Does **not** add a spellcasting entry, features, or fused scores |
 | Archetype | Optional `classes[].archetype` ContentRef. Stamps name only. Leaving Summoner clears it |
-| Lookup | `lookupCrbClass('class.summoner')` stays null. `lookupApgClass` finds it |
+| Lookup | `lookupCrbClass('class.summoner')` stays null. `lookupApgClass` finds it (now `resolve('class', 'class.summoner')`, whose `source.book` is `APG`; see the [ADR 0009](adr/0009-pf1e-catalog-picker.md) postscript) |
 
 **Out:** Fused STR/DEX/CON overlay, costume HP, evolution rows, Summoner spell list, Magical Child / other APG classes, a Synthesist golden, Spanish.
 
@@ -85,7 +85,7 @@ Mechanics-only ([ADR 0007](adr/0007-content-licensing.md), [`content-licensing.m
 | --- | --- |
 | Pack | `content/pf1e/apg/classes.json` — 20-level × 10-spell-level `spellsPerDay` table for `class.summoner` matching standard 6-level spontaneous progression. |
 | Pack | `content/pf1e/apg/spells.json` — 27 mechanics-only APG Summoner spells (levels 1–6: Ant Haul, Rejuvenate Eidolon Lesser/Normal/Greater, Evolution Surge Lesser/Normal/Greater, Summon Eidolon, Pit spells, etc.). |
-| Lookup / Apply | `lookupApgSpell`, `applyApgSpell`, and cross-pack `applySpell` in `app/src/systems/pf1e/content/`. |
+| Lookup / Apply | `lookupApgSpell`, `applyApgSpell`, and cross-pack `applySpell` in `app/src/systems/pf1e/content/` (since replaced by the catalog index's `resolve`/`stamp`). |
 | Picker | `CatalogPicker` groups spells under Core Rulebook and Advanced Player's Guide optgroups. |
 | Golden | `synthesist-5.json` stamps catalog IDs for `spell.mage-armor`, `spell.shield`, `spell.rejuvenate-eidolon-lesser`, `spell.summon-eidolon`. |
 

@@ -126,7 +126,7 @@ Magic item creation (wondrous, arms/armor, potions, scrolls, wands), typical CRB
 | Time | About **1 day per 1,000 gp of market price** (minimum 1 day), or the specific item’s published time |
 | Check | Often Spellcraft DC **5 + caster level**; some items use a different skill — pack says which |
 | Feats | Craft Wondrous Item, Craft Magic Arms and Armor, Scribe Scroll, Brew Potion, Craft Wand, … |
-| Caster level | Item CL vs the PC’s caster level (or the CL they choose to create at, if the recipe allows) |
+| Caster level | Item CL vs the PC’s caster level (or the CL they choose to create at, if the recipe allows). PF1e reads the highest derived caster level on the sheet, overrides included, and 0 with no casting entry. A required feat matches a feat row’s exact name, ignoring case and spacing |
 | Spells | Required spells on the class list / prepared / known — pack lists them; tool checks the sheet’s spell list when present |
 | XP cost | **No XP cost in PF1e** (CRB eliminated D&D 3.5e XP crafting costs; magic item creation costs only gp, time, feats, and Spellcraft/Craft checks). |
 

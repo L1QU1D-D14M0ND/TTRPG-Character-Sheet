@@ -4,7 +4,7 @@ import {
   setEnhancement,
   setMasterwork,
   type MagicOverlayFields,
-} from './magicOverlay'
+} from '../content'
 
 const ENHANCEMENT_BONUSES = [1, 2, 3, 4, 5] as const
 

@@ -1,4 +1,5 @@
-import type { CharacterDocument, FeatEntry } from '../character/types'
+import type { CharacterDocument } from '../character/types'
+import { hasFeat } from '../engine/feats'
 import type { DerivedView } from '../engine/types'
 import type {
   AttackHelperOption,
@@ -14,14 +15,13 @@ export function getPf1eAttackOptions(character: CharacterDocument): AttackHelper
   }))
 }
 
-export function hasFeat(feats: FeatEntry[] | undefined, featIdOrName: string): boolean {
-  if (!feats) return false
-  const target = featIdOrName.toLowerCase()
-  return feats.some(
-    (f) =>
-      (f.feat?.id && f.feat.id.toLowerCase() === target) ||
-      (f.feat?.name && f.feat.name.toLowerCase() === target),
-  )
+const POWER_ATTACK = { id: 'feat.power-attack', name: 'Power Attack' }
+const COMBAT_EXPERTISE = { id: 'feat.combat-expertise', name: 'Combat Expertise' }
+const POINT_BLANK_SHOT = { id: 'feat.point-blank-shot', name: 'Point-Blank Shot' }
+const DEADLY_AIM = { id: 'feat.deadly-aim', name: 'Deadly Aim' }
+const IMPROVED_UNARMED_STRIKE = {
+  id: 'feat.improved-unarmed-strike',
+  name: 'Improved Unarmed Strike',
 }
 
 export function getPf1eAvailableToggles(
@@ -51,7 +51,7 @@ export function getPf1eAvailableToggles(
       labelKey: 'shell.attackHelper.powerAttack',
       labelFallback: 'Power Attack',
       active: false,
-      description: hasFeat(feats, 'feat.power-attack') || hasFeat(feats, 'power attack')
+      description: hasFeat(feats, POWER_ATTACK)
         ? 'Feat available'
         : 'Situational',
     })
@@ -61,7 +61,7 @@ export function getPf1eAvailableToggles(
       labelKey: 'shell.attackHelper.combatExpertise',
       labelFallback: 'Combat Expertise',
       active: false,
-      description: hasFeat(feats, 'feat.combat-expertise') || hasFeat(feats, 'combat expertise')
+      description: hasFeat(feats, COMBAT_EXPERTISE)
         ? 'Feat available'
         : 'Situational',
     })
@@ -87,7 +87,7 @@ export function getPf1eAvailableToggles(
       labelKey: 'shell.attackHelper.pointBlank',
       labelFallback: 'Point-Blank Shot (+1 atk / +1 dmg within 30 ft)',
       active: false,
-      description: hasFeat(feats, 'feat.point-blank-shot') || hasFeat(feats, 'point-blank shot')
+      description: hasFeat(feats, POINT_BLANK_SHOT)
         ? 'Feat available'
         : 'Situational',
     })
@@ -97,7 +97,7 @@ export function getPf1eAvailableToggles(
       labelKey: 'shell.attackHelper.deadlyAim',
       labelFallback: 'Deadly Aim',
       active: false,
-      description: hasFeat(feats, 'feat.deadly-aim') || hasFeat(feats, 'deadly aim')
+      description: hasFeat(feats, DEADLY_AIM)
         ? 'Feat available'
         : 'Situational',
     })
@@ -167,9 +167,8 @@ export function computePf1eAttackHelper(
     damageBreakdownParts.push('Point-Blank Shot: +1 atk / +1 dmg')
   }
 
-  // Two-Handed extra Strength bonus if Str used for damage
-  const dmgKey = attack.damageAbility === undefined ? (attack.attackType === 'melee' ? 'str' : 'dex') : attack.damageAbility
-  if (isTwoHanded && dmgKey === 'str') {
+  // Two-Handed extra Strength bonus if Str adds to damage
+  if (isTwoHanded && baseDerived?.damageAbility === 'str') {
     const strMod = derived.abilityModifiers.str ?? 0
     if (strMod > 0) {
       const extraStr = Math.floor(strMod * 1.5) - strMod
@@ -190,14 +189,9 @@ export function computePf1eAttackHelper(
     return iterBonus >= 0 ? `+${iterBonus}` : `${iterBonus}`
   })
 
-  // Parse base damage
-  const rawBaseDamage = baseDerived?.damage ?? attack.damageDice
-  // Calculate total damage
-  const diceMatch = rawBaseDamage.match(/^(\d+d\d+)(.*)$/)
-  const dice = diceMatch ? diceMatch[1] : attack.damageDice
-  const baseBonusMatch = diceMatch ? parseInt(diceMatch[2], 10) : 0
-  const existingBaseMod = isNaN(baseBonusMatch) ? 0 : baseBonusMatch
-  const totalDamageMod = existingBaseMod + damageMod
+  // Total damage: the engine's dice and modifier, plus the toggles
+  const dice = baseDerived?.damageDice ?? attack.damageDice
+  const totalDamageMod = (baseDerived?.damageMod ?? 0) + damageMod
   const totalDmgSign = totalDamageMod === 0 ? '' : totalDamageMod > 0 ? `+${totalDamageMod}` : `${totalDamageMod}`
   const damageExpression = `${dice}${totalDmgSign}`
 
@@ -212,7 +206,7 @@ export function computePf1eAttackHelper(
     triggers.push('Provokes Attack of Opportunity (ranged weapon in melee)')
   }
   const isUnarmed = attack.name.toLowerCase().includes('unarmed') || attack.name.toLowerCase().includes('punch')
-  const hasIus = hasFeat(character.feats, 'feat.improved-unarmed-strike') || hasFeat(character.feats, 'improved unarmed strike')
+  const hasIus = hasFeat(character.feats, IMPROVED_UNARMED_STRIKE)
   if (isUnarmed && !hasIus) {
     triggers.push('Provokes Attack of Opportunity (unarmed strike without Improved Unarmed Strike)')
   }

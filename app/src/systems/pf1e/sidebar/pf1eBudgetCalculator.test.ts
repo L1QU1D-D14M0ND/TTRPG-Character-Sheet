@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { createEmptyFeat, createEmptySpellcasting } from '../character/createRows'
 import { pf1eModule } from '../module'
 import { calculatePf1eBudget, getPf1eCurrentGold } from './pf1eBudgetCalculator'
 
@@ -53,6 +54,7 @@ describe('pf1eBudgetCalculator', () => {
         saves: { fort: 'poor', ref: 'poor', will: 'good' },
       },
     ]
+    char.spellcasting = [{ ...createEmptySpellcasting(), classRowId: 'c1' }]
     char.feats = [] // No Craft Wondrous Item
     char.inventory.currency = { cp: 0, sp: 0, gp: 200, pp: 0 }
     const derived = pf1eModule.compute(char)
@@ -78,5 +80,66 @@ describe('pf1eBudgetCalculator', () => {
     // Craft materials cost = 2000 gp, purse has 200 -> deficit
     expect(result.summary.isDeficit).toBe(true)
     expect(result.summary.remainingGold).toBe(-1800)
+  })
+
+  describe('reads the engine instead of re-deriving', () => {
+    const wand = {
+      id: 'w',
+      name: 'Wand',
+      marketPrice: 750,
+      quantity: 1,
+      mode: 'craft' as const,
+      isMagic: true,
+      casterLevelRequired: 1,
+      featRequired: 'Craft Wand',
+    }
+
+    function wizard(levels: number) {
+      const char = pf1eModule.createEmpty()
+      char.classes = [
+        {
+          id: 'c1',
+          class: { id: 'class.wizard', name: 'Wizard' },
+          levels,
+          babProgression: 'half',
+          saves: { fort: 'poor', ref: 'poor', will: 'good' },
+        },
+      ]
+      char.spellcasting = [{ ...createEmptySpellcasting(), classRowId: 'c1' }]
+      return char
+    }
+
+    it('uses the derived caster level, including a sheet override', () => {
+      const char = wizard(3)
+      char.overrides = {
+        [`derived.spellcasting.${char.spellcasting[0]!.id}.casterLevel`]: { value: 9 },
+      }
+      const derived = pf1eModule.compute(char)
+      const result = calculatePf1eBudget(char, derived, [
+        { ...wand, casterLevelRequired: 8 },
+      ])
+      expect(result.items[0].reasons).not.toContain('CL 3 < 8')
+      expect(result.items[0].reasons.some((r) => r.startsWith('CL '))).toBe(false)
+    })
+
+    it('treats a character with no casting entries as caster level 0', () => {
+      const char = wizard(3)
+      char.spellcasting = []
+      const result = calculatePf1eBudget(char, pf1eModule.compute(char), [wand])
+      expect(result.items[0].reasons).toContain('CL 0 < 1')
+    })
+
+    it('matches a required feat by exact name, never by substring', () => {
+      const char = wizard(5)
+      const craft = createEmptyFeat()
+      craft.feat = { id: null, name: 'Craft' }
+      char.feats = [craft]
+      let result = calculatePf1eBudget(char, pf1eModule.compute(char), [wand])
+      expect(result.items[0].reasons).toContain('missing Craft Wand')
+
+      craft.feat = { id: null, name: '  craft   wand ' }
+      result = calculatePf1eBudget(char, pf1eModule.compute(char), [wand])
+      expect(result.items[0].reasons).not.toContain('missing Craft Wand')
+    })
   })
 })

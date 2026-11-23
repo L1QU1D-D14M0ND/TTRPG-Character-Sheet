@@ -42,6 +42,8 @@ ADR 0004 forbids extracting a generic UI primitive without a second caller in th
 
 **Postscript (2026-10-25):** The cap is shared across the optgroups round-robin instead of spent in group order. Spells split by book and the Core Rulebook alone fills the cap, so every Advanced Player's Guide spell was absent from the first page until the player typed a narrowing query. A group with rows now always gets some of them.
 
+**Postscript (2026-11-23):** The catalog index became the only module that lists, resolves, and stamps catalog rows. Each catalog kind is one **catalog kind descriptor** in `catalogIndex.ts` (how to read and rename the host, how to stamp a row onto it), backed by a generic per-kind pack registry (`registerPack`, `lookupRow`, `listRows`). Stamping is pack-agnostic: before, `groups` listed feat, feature, item, and race rows from every pack while `stamp` sent those kinds through CRB-only apply functions, so a non-CRB row would have shown in the picker and silently failed to stamp. The row's own `source.book` records its pack. The per-pack `lookupCrb*`/`applyCrb*`/`lookupApg*`/`applyApg*` functions are gone; pack modules only parse, validate, and expose rows, and the catalog index registers them in a fixed order when it loads, so the engine no longer depends on import side effects. Document-wide side effects still stay in the panel callback (Decision 2 unchanged).
+
 ## References
 
 - [ADR 0004 — Shared kernel vs per-system modules](0004-shared-kernel.md)

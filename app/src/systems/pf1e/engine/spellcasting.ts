@@ -152,3 +152,18 @@ export function spellcastingDerived(
   }
   return result
 }
+
+/**
+ * Highest derived caster level across the casting entries, after
+ * `casterLevelOverride` and sheet overrides. 0 when the character casts
+ * nothing.
+ */
+export function highestCasterLevel(view: {
+  spellcasting: Record<string, Pick<SpellcastingDerived, 'casterLevel'>>
+}): number {
+  let highest = 0
+  for (const entry of Object.values(view.spellcasting)) {
+    highest = Math.max(highest, entry.casterLevel)
+  }
+  return highest
+}
