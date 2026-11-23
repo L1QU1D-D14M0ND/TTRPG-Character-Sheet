@@ -1,9 +1,12 @@
 import { describe, expect, it } from 'vitest'
+import { createEmptyItem } from '../character/createRows'
 import {
+  itemMagicBadge,
   magicBadge,
   masterworkChecked,
   setEnhancement,
   setMasterwork,
+  suggestedMagicPrice,
 } from './magicOverlay'
 
 describe('magic overlay', () => {
@@ -44,5 +47,33 @@ describe('magic overlay', () => {
     const cleared = setMasterwork(made, false)
     expect(cleared).not.toHaveProperty('masterwork')
     expect(masterworkChecked({ enhancementBonus: 3 })).toBe(true)
+  })
+
+  describe('on an item row', () => {
+    it('prices a +1 flaming longsword from base, masterwork, and bonus', () => {
+      const item = {
+        ...createEmptyItem(),
+        priceGp: 15,
+        weapon: { ...longsword, enhancementBonus: 1, properties: ['flaming'] },
+      }
+      // 15 + 300 masterwork + (+2)² × 2000
+      expect(suggestedMagicPrice(item)).toBe(8315)
+      expect(itemMagicBadge(item)).toBe('+1')
+    })
+
+    it('prices armor and shields with their own masterwork cost', () => {
+      const armor = { ...createEmptyItem(), priceGp: 150, armor: { masterwork: true } }
+      expect(suggestedMagicPrice(armor)).toBe(300)
+      expect(itemMagicBadge(armor)).toBe('MWK')
+      const shield = { ...createEmptyItem(), priceGp: 9, shield: { enhancementBonus: 2 } }
+      expect(suggestedMagicPrice(shield)).toBe(9 + 150 + 4000)
+    })
+
+    it('has no price or badge for mundane or slotless rows', () => {
+      expect(suggestedMagicPrice(createEmptyItem())).toBeNull()
+      expect(itemMagicBadge(createEmptyItem())).toBeNull()
+      const plain = { ...createEmptyItem(), priceGp: 15, weapon: { ...longsword } }
+      expect(suggestedMagicPrice(plain)).toBeNull()
+    })
   })
 })

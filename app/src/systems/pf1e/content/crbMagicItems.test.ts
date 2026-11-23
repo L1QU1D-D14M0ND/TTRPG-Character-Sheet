@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyItem } from '../character/createRows'
-import { computeSuggestedMagicPrice, stamp } from './index'
+import { computeSuggestedMagicPrice } from './crbMagicProperties'
+import { stamp } from './index'
 import {
   addItemProperty,
   removeItemProperty,
