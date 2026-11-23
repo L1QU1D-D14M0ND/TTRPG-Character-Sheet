@@ -1,16 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import { listRepoFiles, readRepoJson } from '../../../test/readRepoFile'
 import {
-  lookupClassProgression,
-  lookupEvolution,
-  lookupItem,
-  registerClassPack,
-  registerItemPack,
   type ClassProgression,
   type ItemCatalogRow,
+  lookupRow,
+  registerPack,
 } from './packRegistry'
-// Importing the packs registers CRB + APG as a side effect.
-import '.'
+// Importing the catalog index registers CRB + APG.
+import './catalogIndex'
 
 /**
  * Ids are one shared namespace per entity kind. Lookup previously scanned packs
@@ -29,9 +26,9 @@ describe('pack registry id namespace', () => {
       classSkills: [],
     }
 
-    expect(() => registerClassPack([shadow])).toThrow(/class\.wizard/)
+    expect(() => registerPack({ class: [shadow] })).toThrow(/class\.wizard/)
     // The real CRB row is still what lookup returns.
-    expect(lookupClassProgression('class.wizard')?.hitDie).toBe(6)
+    expect(lookupRow('class', 'class.wizard')?.hitDie).toBe(6)
   })
 
   it('rejects a second pack that reuses a registered item id', () => {
@@ -42,8 +39,8 @@ describe('pack registry id namespace', () => {
       pounds: 999,
     }
 
-    expect(() => registerItemPack([shadow])).toThrow(/weapon\.longsword/)
-    expect(lookupItem('weapon.longsword')?.pounds).not.toBe(999)
+    expect(() => registerPack({ item: [shadow] })).toThrow(/weapon\.longsword/)
+    expect(lookupRow('item', 'weapon.longsword')?.pounds).not.toBe(999)
   })
 
   it('treats a re-imported pack as a no-op even with fresh objects', () => {
@@ -58,19 +55,19 @@ describe('pack registry id namespace', () => {
       },
     ]
 
-    registerItemPack(build())
-    expect(() => registerItemPack(build())).not.toThrow()
-    expect(lookupItem('item.registry-idempotency-probe')?.name).toBe('Probe')
+    registerPack({ item: build() })
+    expect(() => registerPack({ item: build() })).not.toThrow()
+    expect(lookupRow('item', 'item.registry-idempotency-probe')?.name).toBe('Probe')
   })
 
   it('still rejects a same-id row whose contents actually disagree', () => {
     const id = 'item.registry-conflict-probe'
-    registerItemPack([{ id, name: 'Probe', kind: 'item', pounds: 1 }])
+    registerPack({ item: [{ id, name: 'Probe', kind: 'item', pounds: 1 }] })
     // Same id, different weight: a genuine conflict, not a re-import.
     expect(() =>
-      registerItemPack([{ id, name: 'Probe', kind: 'item', pounds: 99 }]),
+      registerPack({ item: [{ id, name: 'Probe', kind: 'item', pounds: 99 }] }),
     ).toThrow(new RegExp(id.replace('.', '\\.')))
-    expect(lookupItem(id)?.pounds).toBe(1)
+    expect(lookupRow('item', id)?.pounds).toBe(1)
   })
 
   it('keeps every shipped pack id unique within its entity kind', () => {
@@ -100,7 +97,7 @@ describe('pack registry id namespace', () => {
       'evolution.limbs-arms',
       'evolution.weapon-training',
     ]) {
-      const found = lookupEvolution(id)
+      const found = lookupRow('evolution', id)
       expect(found, id).not.toBeNull()
       expect(found!.id).toBe(id)
       expect(found!.name.length).toBeGreaterThan(0)

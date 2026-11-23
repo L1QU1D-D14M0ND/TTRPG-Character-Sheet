@@ -21,8 +21,12 @@ The sheet object a catalog pick stamps: a feat row, a feature row, a spell entry
 _Avoid_: target, document path
 
 **Catalog index**:
-The single record of every catalog row the loaded content packs have registered.
+The single record of every catalog row the loaded content packs have registered, and the only way to list, resolve, or stamp one. It registers the bundled packs itself.
 _Avoid_: registry, catalog list
+
+**Catalog kind descriptor**:
+Everything the catalog index knows about one catalog kind: how to read and rename its host and how to stamp a catalog row onto it. Stamping does not depend on which pack the row came from.
+_Avoid_: kind handler, adapter
 
 **Magic overlay**:
 Masterwork and enhancement on one weapon, second head, armor, or shield.

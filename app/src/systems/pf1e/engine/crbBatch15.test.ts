@@ -4,7 +4,7 @@ import {
   createEmptyClass,
   createEmptySpellcasting,
 } from '../character/createRows'
-import { classSpellsPerDayRow, lookupCrbClass } from '../content'
+import { classSpellsPerDayRow, resolve } from '../content'
 import { compute } from './compute'
 import { defaultSlotMax } from './spellcasting'
 
@@ -105,8 +105,8 @@ describe('CRB batch 15: class spells-per-day tables', () => {
   })
 
   it('omits spellsPerDay on non-casters and unknown ids', () => {
-    expect(lookupCrbClass('class.fighter')?.spellsPerDay).toBeUndefined()
-    expect(lookupCrbClass('class.summoner')).toBeNull()
+    expect(resolve('class', 'class.fighter')?.spellsPerDay).toBeUndefined()
+    expect(resolve('class', 'class.summoner')?.source?.book).toBe('APG')
     expect(classSpellsPerDayRow('class.fighter', 5)).toBeNull()
     expect(classSpellsPerDayRow('class.barbarian', 1)).toBeNull()
     expect(classSpellsPerDayRow('class.summoner', 5)).toEqual([

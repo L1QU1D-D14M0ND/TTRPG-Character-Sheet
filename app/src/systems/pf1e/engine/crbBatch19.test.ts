@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyAttack, createEmptyItem } from '../character/createRows'
-import { applyCrbItem, lookupCrbItem } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const EXOTIC_MELEE = [
@@ -278,8 +278,8 @@ const DOUBLE_PRIMARY = [
 describe('CRB batch 19: exotic melee', () => {
   it('stamps Medium CRB table numbers for exotic melee weapons', () => {
     for (const row of EXOTIC_MELEE) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.name).toBe(row.name)
       expect(stamped.pounds).toBe(row.pounds)
       expect(stamped.weapon).toEqual(row.weapon)
@@ -288,16 +288,16 @@ describe('CRB batch 19: exotic melee', () => {
 
   it('stamps only the primary head on double weapons', () => {
     for (const id of DOUBLE_PRIMARY) {
-      const dice = lookupCrbItem(id)?.weapon?.damageDice
+      const dice = resolve('item', id)?.weapon?.damageDice
       expect(dice).toBeDefined()
       expect(dice).not.toContain('/')
     }
-    expect(lookupCrbItem('weapon.gnome-hooked-hammer')?.weapon).toMatchObject({
+    expect(resolve('item', 'weapon.gnome-hooked-hammer')?.weapon).toMatchObject({
       damageDice: '1d8',
       damageType: 'bludgeoning',
       critMultiplier: 3,
     })
-    expect(lookupCrbItem('weapon.dwarven-urgrosh')?.weapon).toMatchObject({
+    expect(resolve('item', 'weapon.dwarven-urgrosh')?.weapon).toMatchObject({
       damageDice: '1d8',
       damageType: 'slashing',
       critMultiplier: 3,
@@ -305,21 +305,21 @@ describe('CRB batch 19: exotic melee', () => {
   })
 
   it('does not tag kama, whip, nunchaku, or siangham with double', () => {
-    expect(lookupCrbItem('weapon.kama')?.weapon?.properties).toEqual([
+    expect(resolve('item', 'weapon.kama')?.weapon?.properties).toEqual([
       'trip',
       'monk',
     ])
-    expect(lookupCrbItem('weapon.whip')?.weapon?.properties).toEqual([
+    expect(resolve('item', 'weapon.whip')?.weapon?.properties).toEqual([
       'reach',
       'trip',
       'disarm',
       'nonlethal',
     ])
-    expect(lookupCrbItem('weapon.nunchaku')?.weapon?.properties).toEqual([
+    expect(resolve('item', 'weapon.nunchaku')?.weapon?.properties).toEqual([
       'disarm',
       'monk',
     ])
-    expect(lookupCrbItem('weapon.siangham')?.weapon?.properties).toEqual([
+    expect(resolve('item', 'weapon.siangham')?.weapon?.properties).toEqual([
       'monk',
     ])
   })
@@ -328,40 +328,40 @@ describe('CRB batch 19: exotic melee', () => {
 describe('CRB batch 19: exotic ranged and repeating bolts', () => {
   it('stamps Medium CRB table numbers for exotic ranged weapons', () => {
     for (const row of EXOTIC_RANGED) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.weapon).toEqual(row.weapon)
       expect(stamped.pounds).toBe(row.pounds)
     }
   })
 
   it('stamps a net as range and weight only', () => {
-    expect(lookupCrbItem('weapon.net')).toMatchObject({
+    expect(resolve('item', 'weapon.net')).toMatchObject({
       id: 'weapon.net',
       name: 'Net',
       pounds: 6,
       weapon: { rangeFeet: 10 },
     })
-    const stamped = applyCrbItem(createEmptyItem(), 'weapon.net')
+    const stamped = stamp('item', createEmptyItem(), 'weapon.net')
     expect(stamped.pounds).toBe(6)
     expect(stamped.weapon).toEqual({ rangeFeet: 10 })
     expect(stamped.weapon?.damageDice).toBeUndefined()
   })
 
   it('stamps repeating bolts as a bundle with the published weight', () => {
-    expect(lookupCrbItem('item.repeating-crossbow-bolts')).toMatchObject({
+    expect(resolve('item', 'item.repeating-crossbow-bolts')).toMatchObject({
       id: 'item.repeating-crossbow-bolts',
       name: 'Repeating crossbow bolts',
       kind: 'item',
       pounds: 1,
     })
-    const stamped = applyCrbItem(createEmptyItem(), 'item.repeating-crossbow-bolts')
+    const stamped = stamp('item', createEmptyItem(), 'item.repeating-crossbow-bolts')
     expect(stamped.pounds).toBe(1)
     expect(stamped.weapon).toBeUndefined()
   })
 
   it('leaves later gear unknown', () => {
-    expect(lookupCrbItem('item.bedroll')).toBeNull()
+    expect(resolve('item', 'item.bedroll')).toBeUndefined()
   })
 })
 
@@ -370,7 +370,7 @@ describe('CRB batch 19: Combat stays typed', () => {
     const character = createEmptyCharacter()
     const attack = createEmptyAttack()
     character.attacks = [attack]
-    const row = applyCrbItem(createEmptyItem(), 'weapon.kama')
+    const row = stamp('item', createEmptyItem(), 'weapon.kama')
     row.location = 'equipped'
     character.inventory.items = [row]
     const beforeAc = structuredClone(character.armorClass)

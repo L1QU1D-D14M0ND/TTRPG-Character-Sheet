@@ -6,7 +6,6 @@ import {
   createEmptyItem,
   createEmptySpellListEntry,
 } from '../character/createRows'
-import { applyCrbFeat } from '../content'
 import {
   catalogId,
   catalogName,
@@ -92,7 +91,7 @@ describe('catalog picker kinds', () => {
   })
 
   it('clears the catalog id on Custom without dropping the typed name', () => {
-    const row = applyCrbFeat(createEmptyFeat(), 'feat.power-attack')
+    const row = stamp('feat', createEmptyFeat(), 'feat.power-attack')
     const custom = stamp('feat', row, null)
     expect(catalogId('feat', custom)).toBeNull()
     expect(custom.feat.name).toBe('Power Attack')

@@ -1,11 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { parseCharacterJson, serializeCharacter } from '../character/saveLoad'
-import {
-  lookupCrbFeat,
-  lookupCrbFeature,
-  lookupCrbItem,
-  lookupCrbSpell,
-} from '../content'
+import { resolve } from '../content'
 import { compute } from './compute'
 import { signed } from './types'
 import { readRepoFile } from '../../../test/readRepoFile'
@@ -31,38 +26,38 @@ describe('golden PF1e Wizard 7 Transmutation Specialist (Flare Nightingale)', ()
   })
 
   it('resolves CRB catalog stamps for feats, spells, and features', () => {
-    expect(lookupCrbFeat('feat.scribe-scroll')?.name).toBe('Scribe Scroll')
-    expect(lookupCrbFeat('feat.improved-initiative')?.name).toBe(
+    expect(resolve('feat', 'feat.scribe-scroll')?.name).toBe('Scribe Scroll')
+    expect(resolve('feat', 'feat.improved-initiative')?.name).toBe(
       'Improved Initiative',
     )
-    expect(lookupCrbFeat('feat.point-blank-shot')?.name).toBe('Point-Blank Shot')
-    expect(lookupCrbFeat('feat.eschew-materials')?.name).toBe('Eschew Materials')
-    expect(lookupCrbFeat('feat.craft-wondrous-item')?.name).toBe(
+    expect(resolve('feat', 'feat.point-blank-shot')?.name).toBe('Point-Blank Shot')
+    expect(resolve('feat', 'feat.eschew-materials')?.name).toBe('Eschew Materials')
+    expect(resolve('feat', 'feat.craft-wondrous-item')?.name).toBe(
       'Craft Wondrous Item',
     )
-    expect(lookupCrbFeat('feat.craft-magic-arms-and-armor')?.name).toBe(
+    expect(resolve('feat', 'feat.craft-magic-arms-and-armor')?.name).toBe(
       'Craft Magic Arms and Armor',
     )
-    expect(lookupCrbFeat('feat.craft-construct')?.name).toBe('Craft Construct')
-    expect(lookupCrbFeat('feat.heighten-spell')?.name).toBe('Heighten Spell')
+    expect(resolve('feat', 'feat.craft-construct')?.name).toBe('Craft Construct')
+    expect(resolve('feat', 'feat.heighten-spell')?.name).toBe('Heighten Spell')
 
-    expect(lookupCrbSpell('spell.detect-magic')?.name).toBe('Detect Magic')
-    expect(lookupCrbSpell('spell.mage-armor')?.name).toBe('Mage Armor')
-    expect(lookupCrbSpell('spell.haste')?.name).toBe('Haste')
-    expect(lookupCrbSpell('spell.greater-invisibility')?.name).toBe(
+    expect(resolve('spell', 'spell.detect-magic')?.name).toBe('Detect Magic')
+    expect(resolve('spell', 'spell.mage-armor')?.name).toBe('Mage Armor')
+    expect(resolve('spell', 'spell.haste')?.name).toBe('Haste')
+    expect(resolve('spell', 'spell.greater-invisibility')?.name).toBe(
       'Greater Invisibility',
     )
-    expect(lookupCrbSpell('spell.named-bullet')).toBeNull()
+    expect(resolve('spell', 'spell.named-bullet')).toBeUndefined()
 
-    expect(lookupCrbFeature('feature.arcane-bond')?.name).toBe('Arcane Bond')
-    expect(lookupCrbFeature('feature.physical-enhancement')?.name).toBe(
+    expect(resolve('feature', 'feature.arcane-bond')?.name).toBe('Arcane Bond')
+    expect(resolve('feature', 'feature.physical-enhancement')?.name).toBe(
       'Physical Enhancement',
     )
-    expect(lookupCrbFeature('feature.telekinetic-fist')?.name).toBe(
+    expect(resolve('feature', 'feature.telekinetic-fist')?.name).toBe(
       'Telekinetic Fist',
     )
 
-    expect(lookupCrbItem('item.spellbook')?.name).toBe('Spellbook')
+    expect(resolve('item', 'item.spellbook')?.name).toBe('Spellbook')
   })
 
   it('round-trips Save then Load preserving school and documentary structures', () => {

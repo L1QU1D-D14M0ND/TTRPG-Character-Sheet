@@ -1,9 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyItem } from '../character/createRows'
-import {
-  applyCrbItem,
-  computeSuggestedMagicPrice,
-} from './index'
+import { computeSuggestedMagicPrice, stamp } from './index'
 import {
   addItemProperty,
   removeItemProperty,
@@ -18,7 +15,7 @@ const validateCharacter = createSchemaValidator(characterSchema)
 describe('CRB magic weapons and armor', () => {
   describe('Specific magic items in catalog', () => {
     it('stamps specific magic weapon holy avenger inheriting longsword base stats', () => {
-      const row = applyCrbItem(createEmptyItem(), 'weapon.holy-avenger')
+      const row = stamp('item', createEmptyItem(), 'weapon.holy-avenger')
       expect(row.item.id).toBe('weapon.holy-avenger')
       expect(row.item.name).toBe('Holy avenger')
       expect(row.pounds).toBe(4)
@@ -33,14 +30,14 @@ describe('CRB magic weapons and armor', () => {
     })
 
     it('stamps specific magic weapon flame tongue with flaming-burst', () => {
-      const row = applyCrbItem(createEmptyItem(), 'weapon.flame-tongue')
+      const row = stamp('item', createEmptyItem(), 'weapon.flame-tongue')
       expect(row.weapon?.damageDice).toBe('1d8')
       expect(row.weapon?.enhancementBonus).toBe(1)
       expect(row.weapon?.properties).toEqual(['flaming-burst'])
     })
 
     it('stamps masterwork specific weapons like adamantine dagger', () => {
-      const row = applyCrbItem(createEmptyItem(), 'weapon.adamantine-dagger')
+      const row = stamp('item', createEmptyItem(), 'weapon.adamantine-dagger')
       expect(row.weapon?.damageDice).toBe('1d4')
       expect(row.weapon?.critRange).toBe(19)
       expect(row.weapon?.masterwork).toBe(true)
@@ -48,7 +45,7 @@ describe('CRB magic weapons and armor', () => {
     })
 
     it('stamps celestial armor inheriting chainmail base stats with custom stats', () => {
-      const row = applyCrbItem(createEmptyItem(), 'armor.celestial-armor')
+      const row = stamp('item', createEmptyItem(), 'armor.celestial-armor')
       expect(row.item.name).toBe('Celestial armor')
       expect(row.pounds).toBe(20)
       expect(row.armor).toMatchObject({
@@ -61,7 +58,7 @@ describe('CRB magic weapons and armor', () => {
     })
 
     it('stamps lion shield inheriting heavy steel shield stats with +2 enhancement', () => {
-      const row = applyCrbItem(createEmptyItem(), 'shield.lions-shield')
+      const row = stamp('item', createEmptyItem(), 'shield.lions-shield')
       expect(row.item.name).toBe("Lion's shield")
       expect(row.pounds).toBe(15)
       expect(row.shield).toMatchObject({

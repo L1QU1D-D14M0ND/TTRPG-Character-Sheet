@@ -1,17 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { parseCharacterJson, serializeCharacter } from '../character/saveLoad'
-import {
-  classSpellsPerDayRow,
-  lookupApgArchetype,
-  lookupApgClass,
-  lookupApgEvolution,
-  lookupApgSpell,
-  lookupCrbClass,
-  lookupCrbFeat,
-  lookupCrbItem,
-  lookupCrbRace,
-  lookupCrbSpell,
-} from '../content'
+import { classSpellsPerDayRow, resolve } from '../content'
 import { compute } from './compute'
 import { signed } from './types'
 import { readRepoFile } from '../../../test/readRepoFile'
@@ -36,25 +25,25 @@ describe('golden PF1e Synthesist 5 (Radiant Striker)', () => {
   })
 
   it('keeps Summoner out of the CRB pack and resolves APG stamps', () => {
-    expect(lookupCrbClass('class.summoner')).toBeNull()
-    expect(lookupCrbRace(character.identity.race.id)).toBeNull()
-    expect(lookupApgClass(character.classes[0]?.class.id)?.name).toBe(
+    expect(resolve('class', 'class.summoner')?.source?.book).toBe('APG')
+    expect(resolve('race', character.identity.race.id)).toBeUndefined()
+    expect(resolve('class', character.classes[0]?.class.id)?.name).toBe(
       'Summoner',
     )
-    expect(lookupApgArchetype(character.classes[0]?.archetype?.id)?.name).toBe(
+    expect(resolve('archetype', character.classes[0]?.archetype?.id)?.name).toBe(
       'Synthesist',
     )
-    expect(lookupApgEvolution('evolution.claws')?.name).toBe('Claws')
-    expect(lookupApgEvolution('evolution.pounce')).toBeNull()
-    expect(lookupCrbFeat('feat.improved-initiative')?.name).toBe(
+    expect(resolve('evolution', 'evolution.claws')?.name).toBe('Claws')
+    expect(resolve('evolution', 'evolution.pounce')).toBeUndefined()
+    expect(resolve('feat', 'feat.improved-initiative')?.name).toBe(
       'Improved Initiative',
     )
-    expect(lookupCrbItem('weapon.dagger')?.name).toBe('Dagger')
-    expect(lookupCrbSpell('spell.rejuvenate-eidolon-lesser')).toBeNull()
-    expect(lookupApgSpell('spell.rejuvenate-eidolon-lesser')?.name).toBe(
+    expect(resolve('item', 'weapon.dagger')?.name).toBe('Dagger')
+    expect(resolve('spell', 'spell.rejuvenate-eidolon-lesser')?.source?.book).toBe('APG')
+    expect(resolve('spell', 'spell.rejuvenate-eidolon-lesser')?.name).toBe(
       'Rejuvenate Eidolon, Lesser',
     )
-    expect(lookupApgSpell('spell.summon-eidolon')?.name).toBe('Summon Eidolon')
+    expect(resolve('spell', 'spell.summon-eidolon')?.name).toBe('Summon Eidolon')
   })
 
   it('round-trips Save then Load without derived', () => {

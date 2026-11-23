@@ -10,27 +10,18 @@ import { STANDARD_SKILLS } from '../character/standardSkills'
 import { parseCharacterJson } from '../character/saveLoad'
 import { readRepoFile } from '../../../test/readRepoFile'
 import {
-  applyApgArchetype,
-  applyApgEvolution,
-  applyApgSpell,
-  applyClassProgression,
-  applySpell,
   classSkillKeySet,
   classSpellsPerDayRow,
-  lookupApgArchetype,
-  lookupApgClass,
-  lookupApgEvolution,
-  lookupApgSpell,
-  lookupCrbClass,
-  lookupCrbFeat,
-  lookupCrbSpell,
-  lookupSpell,
+  resolve,
+  stamp,
   stampClassSkills,
+} from './index'
+import {
   APG_ARCHETYPES,
   APG_CLASSES,
   APG_EVOLUTIONS,
   APG_SPELLS,
-} from './index'
+} from './apgPack'
 import { compute } from '../engine/compute'
 import {
   babFromProgression,
@@ -43,8 +34,8 @@ const STANDARD_SKILL_KEY_SET = new Set(STANDARD_SKILLS.map((row) => row.key))
 
 describe('APG slice 1: Summoner catalog + Synthesist name', () => {
   it('keeps Summoner out of the CRB class lookup', () => {
-    expect(lookupCrbClass('class.summoner')).toBeNull()
-    expect(lookupApgClass('class.summoner')?.name).toBe('Summoner')
+    expect(resolve('class', 'class.summoner')?.source?.book).toBe('APG')
+    expect(resolve('class', 'class.summoner')?.name).toBe('Summoner')
     expect(APG_CLASSES.map((row) => row.id)).toEqual(['class.summoner'])
   })
 
@@ -52,7 +43,7 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
     const row = createEmptyClass()
     row.levels = 5
     row.favored = { hp: 2, skillRanks: 1 }
-    const summoner = applyClassProgression(row, 'class.summoner')
+    const summoner = stamp('class', row, 'class.summoner')
     expect(summoner.levels).toBe(5)
     expect(summoner.favored).toEqual({ hp: 2, skillRanks: 1 })
     expect(summoner.hitDie).toBe(8)
@@ -70,15 +61,15 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
 
   it('stamps Synthesist name without rewriting progressions or fused scores', () => {
     expect(APG_ARCHETYPES.map((row) => row.id)).toEqual(['archetype.synthesist'])
-    expect(lookupApgArchetype('archetype.synthesist')?.classId).toBe(
+    expect(resolve('archetype', 'archetype.synthesist')?.classId).toBe(
       'class.summoner',
     )
-    const summoner = applyClassProgression(
+    const summoner = stamp('class', 
       createEmptyClass(),
       'class.summoner',
     )
     summoner.hitDie = 8
-    const fused = applyApgArchetype(summoner, 'archetype.synthesist')
+    const fused = stamp('archetype', summoner, 'archetype.synthesist')
     expect(fused.archetype).toEqual({
       id: 'archetype.synthesist',
       name: 'Synthesist',
@@ -91,18 +82,18 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
   })
 
   it('clears Synthesist when the class leaves Summoner', () => {
-    const summoner = applyApgArchetype(
-      applyClassProgression(createEmptyClass(), 'class.summoner'),
+    const summoner = stamp('archetype', 
+      stamp('class', createEmptyClass(), 'class.summoner'),
       'archetype.synthesist',
     )
-    const fighter = applyClassProgression(summoner, 'class.fighter')
+    const fighter = stamp('class', summoner, 'class.fighter')
     expect(fighter.class.id).toBe('class.fighter')
     expect(fighter.archetype).toBeUndefined()
   })
 
   it('stamps Summoner class skills without spending ranks or adding spellcasting', () => {
     const character = createEmptyCharacter()
-    const row = applyClassProgression(createEmptyClass(), 'class.summoner')
+    const row = stamp('class', createEmptyClass(), 'class.summoner')
     const skills = stampClassSkills(character.skills, [row])
     const flagged = skills
       .filter((skill) => skill.classSkill)
@@ -114,7 +105,7 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
     expect(flagged).not.toContain('climb')
     expect(flagged).not.toContain('perception')
     expect(skills.every((skill) => skill.ranks === 0)).toBe(true)
-    const catalog = lookupApgClass('class.summoner')
+    const catalog = resolve('class', 'class.summoner')
     expect(catalog).not.toBeNull()
     for (const key of catalog!.classSkills) {
       expect(STANDARD_SKILL_KEY_SET.has(key)).toBe(true)
@@ -124,8 +115,8 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
   })
 
   it('unions Summoner with Fighter on the existing checkbox stamp', () => {
-    const fighter = applyClassProgression(createEmptyClass(), 'class.fighter')
-    const summoner = applyClassProgression(
+    const fighter = stamp('class', createEmptyClass(), 'class.fighter')
+    const summoner = stamp('class', 
       createEmptyClass(),
       'class.summoner',
     )
@@ -139,12 +130,12 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
     const character = createEmptyCharacter()
     character.identity.race = { id: 'race.human', name: 'Human' }
     character.abilities.int.score = 10
-    const summoner = applyClassProgression(
+    const summoner = stamp('class', 
       createEmptyClass(),
       'class.summoner',
     )
     summoner.levels = 5
-    character.classes = [applyApgArchetype(summoner, 'archetype.synthesist')]
+    character.classes = [stamp('archetype', summoner, 'archetype.synthesist')]
     character.skills = stampClassSkills(character.skills, character.classes)
     const view = compute(character)
     expect(view.skillRanksBudget).toBe(15)
@@ -166,7 +157,7 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
     const fighter = parseCharacterJson(
       readRepoFile('fixtures/characters/golden/pf1e/fighter-5.json'),
     )
-    expect(lookupCrbClass(fighter.classes[0]?.class.id)).not.toBeNull()
+    expect(resolve('class', fighter.classes[0]?.class.id)).toBeDefined()
     expect(fighter.classes[0]?.class.id).not.toBe('class.summoner')
   })
 
@@ -174,11 +165,11 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
     const character = parseCharacterJson(
       readRepoFile('fixtures/characters/golden/pf1e/synthesist-5.json'),
     )
-    expect(lookupCrbClass(character.classes[0]?.class.id)).toBeNull()
-    expect(lookupApgClass(character.classes[0]?.class.id)?.id).toBe(
+    expect(resolve('class', character.classes[0]?.class.id)?.source?.book).toBe('APG')
+    expect(resolve('class', character.classes[0]?.class.id)?.id).toBe(
       'class.summoner',
     )
-    expect(lookupApgArchetype(character.classes[0]?.archetype?.id)?.id).toBe(
+    expect(resolve('archetype', character.classes[0]?.archetype?.id)?.id).toBe(
       'archetype.synthesist',
     )
     expect(character.companions[0]?.kind).toBe('eidolon')
@@ -188,16 +179,16 @@ describe('APG slice 1: Summoner catalog + Synthesist name', () => {
 
 describe('APG slice 2: documentary evolutions + fused overlay', () => {
   it('stamps evolution names without writing fused scores', () => {
-    expect(lookupCrbFeat('evolution.claws')).toBeNull()
-    expect(lookupApgEvolution('evolution.claws')?.name).toBe('Claws')
+    expect(resolve('feat', 'evolution.claws')).toBeUndefined()
+    expect(resolve('evolution', 'evolution.claws')?.name).toBe('Claws')
     expect(APG_EVOLUTIONS.map((row) => row.id)).toContain('evolution.claws')
-    const stamped = applyApgEvolution(createEmptyEvolution(), 'evolution.claws')
+    const stamped = stamp('evolution', createEmptyEvolution(), 'evolution.claws')
     expect(stamped.evolution).toEqual({
       id: 'evolution.claws',
       name: 'Claws',
       source: { book: 'APG' },
     })
-    const unknown = applyApgEvolution(stamped, 'evolution.not-real')
+    const unknown = stamp('evolution', stamped, 'evolution.not-real')
     expect(unknown.evolution.id).toBeNull()
     expect(unknown.evolution.name).toBe('Claws')
   })
@@ -208,8 +199,8 @@ describe('APG slice 2: documentary evolutions + fused overlay', () => {
     character.abilities.dex.score = 10
     character.abilities.con.score = 10
     character.abilities.int.score = 14
-    const summoner = applyClassProgression(createEmptyClass(), 'class.summoner')
-    character.classes = [applyApgArchetype(summoner, 'archetype.synthesist')]
+    const summoner = stamp('class', createEmptyClass(), 'class.summoner')
+    character.classes = [stamp('archetype', summoner, 'archetype.synthesist')]
     const eidolon = createEmptyEidolon()
     eidolon.fused = {
       active: true,
@@ -219,7 +210,7 @@ describe('APG slice 2: documentary evolutions + fused overlay', () => {
       costumeHp: 42,
     }
     eidolon.evolutions = [
-      applyApgEvolution(createEmptyEvolution(), 'evolution.ability-increase'),
+      stamp('evolution', createEmptyEvolution(), 'evolution.ability-increase'),
     ]
     character.companions = [eidolon]
 
@@ -326,35 +317,35 @@ describe('APG slice 4: Summoner spellsPerDay + APG spells', () => {
   })
 
   it('keeps APG spells out of CRB lookup and resolves in APG', () => {
-    expect(lookupCrbSpell('spell.rejuvenate-eidolon-lesser')).toBeNull()
-    expect(lookupCrbSpell('spell.summon-eidolon')).toBeNull()
-    expect(lookupApgSpell('spell.rejuvenate-eidolon-lesser')).toEqual({
+    expect(resolve('spell', 'spell.rejuvenate-eidolon-lesser')?.source?.book).toBe('APG')
+    expect(resolve('spell', 'spell.summon-eidolon')?.source?.book).toBe('APG')
+    expect(resolve('spell', 'spell.rejuvenate-eidolon-lesser')).toEqual({
       id: 'spell.rejuvenate-eidolon-lesser',
       name: 'Rejuvenate Eidolon, Lesser',
       spellLevel: 1,
       source: { book: 'APG' },
     })
-    expect(lookupApgSpell('spell.summon-eidolon')).toEqual({
+    expect(resolve('spell', 'spell.summon-eidolon')).toEqual({
       id: 'spell.summon-eidolon',
       name: 'Summon Eidolon',
       spellLevel: 2,
       source: { book: 'APG' },
     })
-    expect(lookupApgSpell('spell.mage-armor')).toBeNull()
+    expect(resolve('spell', 'spell.mage-armor')?.source?.book).toBe('CRB')
     expect(APG_SPELLS.length).toBe(27)
   })
 
   it('resolves both CRB and APG spells through unified lookupSpell', () => {
-    expect(lookupSpell('spell.mage-armor')?.name).toBe('Mage Armor')
-    expect(lookupSpell('spell.rejuvenate-eidolon-lesser')?.name).toBe(
+    expect(resolve('spell', 'spell.mage-armor')?.name).toBe('Mage Armor')
+    expect(resolve('spell', 'spell.rejuvenate-eidolon-lesser')?.name).toBe(
       'Rejuvenate Eidolon, Lesser',
     )
-    expect(lookupSpell('spell.non-existent')).toBeNull()
+    expect(resolve('spell', 'spell.non-existent')).toBeUndefined()
   })
 
   it('stamps APG spell id, name, source, and level via applyApgSpell and applySpell', () => {
     const entry = createEmptySpellListEntry()
-    const stampedApg = applyApgSpell(entry, 'spell.rejuvenate-eidolon-lesser')
+    const stampedApg = stamp('spell', entry, 'spell.rejuvenate-eidolon-lesser')
     expect(stampedApg.spell).toEqual({
       id: 'spell.rejuvenate-eidolon-lesser',
       name: 'Rejuvenate Eidolon, Lesser',
@@ -362,15 +353,15 @@ describe('APG slice 4: Summoner spellsPerDay + APG spells', () => {
     })
     expect(stampedApg.spellLevel).toBe(1)
 
-    const unknown = applyApgSpell(stampedApg, 'spell.unknown')
+    const unknown = stamp('spell', stampedApg, 'spell.unknown')
     expect(unknown.spell.id).toBeNull()
     expect(unknown.spell.name).toBe('Rejuvenate Eidolon, Lesser')
 
-    const unifiedCrb = applySpell(entry, 'spell.mage-armor')
+    const unifiedCrb = stamp('spell', entry, 'spell.mage-armor')
     expect(unifiedCrb.spell.id).toBe('spell.mage-armor')
     expect(unifiedCrb.spell.name).toBe('Mage Armor')
 
-    const unifiedApg = applySpell(entry, 'spell.summon-eidolon')
+    const unifiedApg = stamp('spell', entry, 'spell.summon-eidolon')
     expect(unifiedApg.spell.id).toBe('spell.summon-eidolon')
     expect(unifiedApg.spell.name).toBe('Summon Eidolon')
     expect(unifiedApg.spellLevel).toBe(2)

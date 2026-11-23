@@ -10,15 +10,15 @@ import {
   createEmptyClass,
   ensureEidolonCompanion,
 } from '../character'
-import { applyApgArchetype, applyClassProgression } from '../content'
+import { stamp } from '../content'
 import { computeCharacter } from '../engine'
 import { SynthesistPanel } from './SynthesistPanel'
 import type { SheetUpdate } from './update'
 
 function synthesistCharacter() {
   const character = createEmptyCharacter()
-  const summoner = applyClassProgression(createEmptyClass(), 'class.summoner')
-  character.classes = [applyApgArchetype(summoner, 'archetype.synthesist')]
+  const summoner = stamp('class', createEmptyClass(), 'class.summoner')
+  character.classes = [stamp('archetype', summoner, 'archetype.synthesist')]
   character.companions = ensureEidolonCompanion(character.companions)
   return character
 }

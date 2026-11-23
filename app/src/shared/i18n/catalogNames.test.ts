@@ -2,19 +2,10 @@ import { describe, expect, it } from 'vitest'
 import en from '../../locales/en.json'
 import es from '../../locales/es.json'
 import type { MessageTree } from './catalog'
-import {
-  listArchetypes,
-  listClassProgressions,
-  listEvolutions,
-  listFeats,
-  listFeatures,
-  listItems,
-  listRaces,
-  listSpells,
-} from '../../systems/pf1e/content/packRegistry'
+import { listRows } from '../../systems/pf1e/content/packRegistry'
 import { localizedName } from '../../systems/pf1e/content/namesPack'
-import '../../systems/pf1e/content/crbPack'
-import '../../systems/pf1e/content/apgPack'
+// Importing the catalog index registers CRB + APG.
+import '../../systems/pf1e/content/catalogIndex'
 
 /**
  * Phase 5.2 boundary: catalog names are pack content and travel with the row
@@ -40,14 +31,14 @@ const UI_STRINGS = [
 
 function catalogRows() {
   return [
-    ...listClassProgressions(),
-    ...listRaces(),
-    ...listItems(),
-    ...listFeats(),
-    ...listFeatures(),
-    ...listSpells(),
-    ...listArchetypes(),
-    ...listEvolutions(),
+    ...listRows('class'),
+    ...listRows('race'),
+    ...listRows('item'),
+    ...listRows('feat'),
+    ...listRows('feature'),
+    ...listRows('spell'),
+    ...listRows('archetype'),
+    ...listRows('evolution'),
   ]
 }
 

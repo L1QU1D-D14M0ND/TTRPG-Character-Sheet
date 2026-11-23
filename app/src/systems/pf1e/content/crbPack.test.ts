@@ -9,21 +9,8 @@ import {
 } from '../character/createRows'
 import { STANDARD_SKILLS } from '../character/standardSkills'
 import { parseCharacterJson } from '../character/saveLoad'
+import { classSkillKeySet, resolve, stamp, stampClassSkills } from './index'
 import {
-  applyClassProgression,
-  applyCrbFeat,
-  applyCrbFeature,
-  applyCrbItem,
-  applyCrbRace,
-  applyCrbSpell,
-  classSkillKeySet,
-  lookupCrbClass,
-  lookupCrbFeat,
-  lookupCrbFeature,
-  lookupCrbItem,
-  lookupCrbRace,
-  lookupCrbSpell,
-  stampClassSkills,
   CRB_CLASSES,
   CRB_FEATS,
   CRB_FEATURES,
@@ -32,10 +19,7 @@ import {
   CRB_SPELLS,
 } from './crbPack'
 import { readRepoFile, readRepoJson } from '../../../test/readRepoFile'
-import {
-  babFromProgression,
-  saveFromProgression,
-} from '../engine/progressions'
+import { babFromProgression, saveFromProgression } from '../engine/progressions'
 import { compute } from '../engine/compute'
 
 describe('CRB pack batch 1: class progression catalog', () => {
@@ -56,8 +40,8 @@ describe('CRB pack batch 1: class progression catalog', () => {
   })
 
   it('Fighter and Wizard tags match the CRB class tables', () => {
-    const fighter = lookupCrbClass('class.fighter')
-    const wizard = lookupCrbClass('class.wizard')
+    const fighter = resolve('class', 'class.fighter')
+    const wizard = resolve('class', 'class.wizard')
     expect(fighter).toMatchObject({
       hitDie: 10,
       babProgression: 'full',
@@ -75,16 +59,16 @@ describe('CRB pack batch 1: class progression catalog', () => {
   })
 
   it('returns null for an unknown class id (isolate the row)', () => {
-    expect(lookupCrbClass('class.alchemist')).toBeNull()
-    expect(lookupCrbClass(null)).toBeNull()
-    expect(lookupCrbClass('')).toBeNull()
+    expect(resolve('class', 'class.alchemist')).toBeUndefined()
+    expect(resolve('class', null)).toBeUndefined()
+    expect(resolve('class', '')).toBeUndefined()
   })
 
   it('applies catalog tags without changing levels or favored totals', () => {
     const row = createEmptyClass()
     row.levels = 5
     row.favored = { hp: 5, skillRanks: 1 }
-    const fighter = applyClassProgression(row, 'class.fighter')
+    const fighter = stamp('class', row, 'class.fighter')
     expect(fighter.levels).toBe(5)
     expect(fighter.favored).toEqual({ hp: 5, skillRanks: 1 })
     expect(fighter.hitDie).toBe(10)
@@ -99,7 +83,7 @@ describe('CRB pack batch 1: class progression catalog', () => {
     const row = createEmptyClass()
     row.hitDie = 12
     row.babProgression = 'full'
-    const custom = applyClassProgression(row, 'class.alchemist')
+    const custom = stamp('class', row, 'class.alchemist')
     expect(custom.class.id).toBeNull()
     expect(custom.hitDie).toBe(12)
     expect(custom.babProgression).toBe('full')
@@ -115,10 +99,10 @@ describe('CRB pack batch 1: class progression catalog', () => {
     const mixed = parseCharacterJson(
       readRepoFile('fixtures/characters/golden/pf1e/fighter-2-wizard-3.json'),
     )
-    expect(lookupCrbClass(fighter.classes[0]?.class.id)).not.toBeNull()
-    expect(lookupCrbClass(wizard.classes[0]?.class.id)).not.toBeNull()
-    expect(lookupCrbClass(mixed.classes[0]?.class.id)?.id).toBe('class.fighter')
-    expect(lookupCrbClass(mixed.classes[1]?.class.id)?.id).toBe('class.wizard')
+    expect(resolve('class', fighter.classes[0]?.class.id)).toBeDefined()
+    expect(resolve('class', wizard.classes[0]?.class.id)).toBeDefined()
+    expect(resolve('class', mixed.classes[0]?.class.id)?.id).toBe('class.fighter')
+    expect(resolve('class', mixed.classes[1]?.class.id)?.id).toBe('class.wizard')
   })
 
   it('pack manifest records batches 1–21 and W1–W7', () => {
@@ -136,7 +120,7 @@ describe('CRB pack batch 1: class progression catalog', () => {
 
 describe('CRB pack batch 8: Human race catalog', () => {
   it('includes Human with catalog size medium', () => {
-    expect(lookupCrbRace('race.human')).toMatchObject({
+    expect(resolve('race', 'race.human')).toMatchObject({
       id: 'race.human',
       name: 'Human',
       size: 'medium',
@@ -144,9 +128,9 @@ describe('CRB pack batch 8: Human race catalog', () => {
   })
 
   it('returns null for an unknown race id', () => {
-    expect(lookupCrbRace('race.tiefling')).toBeNull()
-    expect(lookupCrbRace(null)).toBeNull()
-    expect(lookupCrbRace('')).toBeNull()
+    expect(resolve('race', 'race.tiefling')).toBeUndefined()
+    expect(resolve('race', null)).toBeUndefined()
+    expect(resolve('race', '')).toBeUndefined()
   })
 
   it('stamps Human id and name without rewriting ability scores', () => {
@@ -154,7 +138,7 @@ describe('CRB pack batch 8: Human race catalog', () => {
     character.identity.size = 'small'
     character.abilities.str.score = 16
     const before = structuredClone(character.abilities)
-    const identity = applyCrbRace(character.identity, 'race.human')
+    const identity = stamp('race', character.identity, 'race.human')
     expect(identity.race.id).toBe('race.human')
     expect(identity.race.name).toBe('Human')
     expect(identity.size).toBe('medium')
@@ -166,7 +150,7 @@ describe('CRB pack batch 8: Human race catalog', () => {
     const character = createEmptyCharacter()
     character.identity.size = 'small'
     character.identity.race = { id: 'race.human', name: 'Half-Elf' }
-    const identity = applyCrbRace(character.identity, 'race.tiefling')
+    const identity = stamp('race', character.identity, 'race.tiefling')
     expect(identity.race.id).toBeNull()
     expect(identity.race.name).toBe('Half-Elf')
     expect(identity.size).toBe('small')
@@ -182,9 +166,9 @@ describe('CRB pack batch 8: Human race catalog', () => {
     const mixed = parseCharacterJson(
       readRepoFile('fixtures/characters/golden/pf1e/fighter-2-wizard-3.json'),
     )
-    expect(lookupCrbRace(fighter.identity.race.id)?.id).toBe('race.human')
-    expect(lookupCrbRace(wizard.identity.race.id)?.id).toBe('race.human')
-    expect(lookupCrbRace(mixed.identity.race.id)?.id).toBe('race.human')
+    expect(resolve('race', fighter.identity.race.id)?.id).toBe('race.human')
+    expect(resolve('race', wizard.identity.race.id)?.id).toBe('race.human')
+    expect(resolve('race', mixed.identity.race.id)?.id).toBe('race.human')
     expect(fighter.abilities.str.score).toBe(18)
     expect(wizard.abilities.int.score).toBe(18)
   })
@@ -192,8 +176,8 @@ describe('CRB pack batch 8: Human race catalog', () => {
 
 describe('CRB pack batch 9: class skills', () => {
   it('lists Fighter and Wizard class skills and 2 skill points per level', () => {
-    const fighter = lookupCrbClass('class.fighter')
-    const wizard = lookupCrbClass('class.wizard')
+    const fighter = resolve('class', 'class.fighter')
+    const wizard = resolve('class', 'class.wizard')
     expect(fighter?.skillPointsPerLevel).toBe(2)
     expect(wizard?.skillPointsPerLevel).toBe(2)
     expect(fighter?.classSkills).toEqual([
@@ -214,7 +198,7 @@ describe('CRB pack batch 9: class skills', () => {
 
   it('stamps Fighter class-skill checkboxes and leaves ranks alone', () => {
     const character = createEmptyCharacter()
-    const row = applyClassProgression(createEmptyClass(), 'class.fighter')
+    const row = stamp('class', createEmptyClass(), 'class.fighter')
     const skills = stampClassSkills(character.skills, [row])
     const flagged = skills.filter((skill) => skill.classSkill).map((skill) => skill.key)
     expect(flagged).toEqual([
@@ -231,8 +215,8 @@ describe('CRB pack batch 9: class skills', () => {
   })
 
   it('unions Fighter and Wizard class skills', () => {
-    const fighter = applyClassProgression(createEmptyClass(), 'class.fighter')
-    const wizard = applyClassProgression(createEmptyClass(), 'class.wizard')
+    const fighter = stamp('class', createEmptyClass(), 'class.fighter')
+    const wizard = stamp('class', createEmptyClass(), 'class.wizard')
     const keys = classSkillKeySet([fighter, wizard])
     expect(keys.has('climb')).toBe(true)
     expect(keys.has('spellcraft')).toBe(true)
@@ -250,7 +234,7 @@ describe('CRB pack batch 9: class skills', () => {
       armorPenaltyApplies: false,
       misc: 0,
     })
-    const row = applyClassProgression(createEmptyClass(), 'class.wizard')
+    const row = stamp('class', createEmptyClass(), 'class.wizard')
     const skills = stampClassSkills(character.skills, [row])
     const craft = skills.find((skill) => skill.key === 'craft-weapons')
     expect(craft?.classSkill).toBe(true)
@@ -397,12 +381,12 @@ describe('CRB pack batch 10: weapons and armor catalog', () => {
       'shield.winged-shield',
       'shield.absorbing-shield',
     ])
-    expect(lookupCrbItem('armor.chainmail')).toMatchObject({
+    expect(resolve('item', 'armor.chainmail')).toMatchObject({
       name: 'Chainmail',
       pounds: 40,
       armor: { acBonus: 6, maxDex: 2, armorCheckPenalty: -5 },
     })
-    expect(lookupCrbItem('weapon.longsword')).toMatchObject({
+    expect(resolve('item', 'weapon.longsword')).toMatchObject({
       name: 'Longsword',
       pounds: 4,
       weapon: { damageDice: '1d8', critRange: 19, critMultiplier: 2 },
@@ -410,16 +394,16 @@ describe('CRB pack batch 10: weapons and armor catalog', () => {
   })
 
   it('returns null for an unknown item id', () => {
-    expect(lookupCrbItem('item.bedroll')).toBeNull()
-    expect(lookupCrbItem(null)).toBeNull()
-    expect(lookupCrbItem('')).toBeNull()
+    expect(resolve('item', 'item.bedroll')).toBeUndefined()
+    expect(resolve('item', null)).toBeUndefined()
+    expect(resolve('item', '')).toBeUndefined()
   })
 
   it('stamps documentary fields without changing quantity or location', () => {
     const row = createEmptyItem()
     row.quantity = 2
     row.location = 'equipped'
-    const chainmail = applyCrbItem(row, 'armor.chainmail')
+    const chainmail = stamp('item', row, 'armor.chainmail')
     expect(chainmail.quantity).toBe(2)
     expect(chainmail.location).toBe('equipped')
     expect(chainmail.item.id).toBe('armor.chainmail')
@@ -435,24 +419,24 @@ describe('CRB pack batch 10: weapons and armor catalog', () => {
   })
 
   it('clears the other subobject when switching kind', () => {
-    const chainmail = applyCrbItem(createEmptyItem(), 'armor.chainmail')
-    const longsword = applyCrbItem(chainmail, 'weapon.longsword')
+    const chainmail = stamp('item', createEmptyItem(), 'armor.chainmail')
+    const longsword = stamp('item', chainmail, 'weapon.longsword')
     expect(longsword.weapon?.damageDice).toBe('1d8')
     expect(longsword.armor).toBeUndefined()
-    const gear = applyCrbItem(longsword, 'item.spellbook')
+    const gear = stamp('item', longsword, 'item.spellbook')
     expect(gear.weapon).toBeUndefined()
     expect(gear.armor).toBeUndefined()
     expect(gear.shield).toBeUndefined()
     expect(gear.pounds).toBe(3)
-    const buckler = applyCrbItem(gear, 'shield.buckler')
+    const buckler = stamp('item', gear, 'shield.buckler')
     expect(buckler.shield?.acBonus).toBe(1)
     expect(buckler.armor).toBeUndefined()
     expect(buckler.weapon).toBeUndefined()
   })
 
   it('unknown apply clears id and leaves the rest of the row', () => {
-    const row = applyCrbItem(createEmptyItem(), 'weapon.longsword')
-    const custom = applyCrbItem(row, 'item.bedroll')
+    const row = stamp('item', createEmptyItem(), 'weapon.longsword')
+    const custom = stamp('item', row, 'item.bedroll')
     expect(custom.item.id).toBeNull()
     expect(custom.item.name).toBe('Longsword')
     expect(custom.pounds).toBe(4)
@@ -471,16 +455,16 @@ describe('CRB pack batch 10: weapons and armor catalog', () => {
     )
     for (const character of [fighter, wizard, mixed]) {
       for (const row of character.inventory.items) {
-        expect(lookupCrbItem(row.item.id)).not.toBeNull()
+        expect(resolve('item', row.item.id)).toBeDefined()
       }
     }
-    expect(lookupCrbItem(fighter.inventory.items[0]?.item.id)?.id).toBe(
+    expect(resolve('item', fighter.inventory.items[0]?.item.id)?.id).toBe(
       'armor.chainmail',
     )
-    expect(lookupCrbItem(wizard.inventory.items[0]?.item.id)?.id).toBe(
+    expect(resolve('item', wizard.inventory.items[0]?.item.id)?.id).toBe(
       'weapon.quarterstaff',
     )
-    expect(lookupCrbItem(mixed.inventory.items[0]?.item.id)?.id).toBe(
+    expect(resolve('item', mixed.inventory.items[0]?.item.id)?.id).toBe(
       'armor.chain-shirt',
     )
   })
@@ -557,7 +541,7 @@ describe('CRB pack batch 11: remaining CRB classes', () => {
     ] as const
 
     for (const expected of table) {
-      const found = lookupCrbClass(expected.id)
+      const found = resolve('class', expected.id)
       expect(found).toMatchObject(expected)
       expect(babFromProgression(found!.babProgression, 5)).toBe(
         expected.babProgression === 'full'
@@ -584,7 +568,7 @@ describe('CRB pack batch 11: remaining CRB classes', () => {
 
   it('stamps Rogue class skills through the existing apply/stamp path', () => {
     const character = createEmptyCharacter()
-    const row = applyClassProgression(createEmptyClass(), 'class.rogue')
+    const row = stamp('class', createEmptyClass(), 'class.rogue')
     const skills = stampClassSkills(character.skills, [row])
     const flagged = skills
       .filter((skill) => skill.classSkill)
@@ -598,8 +582,8 @@ describe('CRB pack batch 11: remaining CRB classes', () => {
   })
 
   it('unions a new CRB class with Fighter using the same checkbox stamp', () => {
-    const fighter = applyClassProgression(createEmptyClass(), 'class.fighter')
-    const rogue = applyClassProgression(createEmptyClass(), 'class.rogue')
+    const fighter = stamp('class', createEmptyClass(), 'class.fighter')
+    const rogue = stamp('class', createEmptyClass(), 'class.rogue')
     const keys = classSkillKeySet([fighter, rogue])
     expect(keys.has('climb')).toBe(true)
     expect(keys.has('disable-device')).toBe(true)
@@ -619,24 +603,24 @@ describe('CRB pack batch 12: feat catalog', () => {
     ]) {
       expect(ids).toContain(goldenId)
     }
-    expect(lookupCrbFeat('feat.power-attack')).toMatchObject({
+    expect(resolve('feat', 'feat.power-attack')).toMatchObject({
       name: 'Power Attack',
       category: 'combat',
     })
-    expect(lookupCrbFeat('feat.scribe-scroll')?.category).toBe('itemCreation')
+    expect(resolve('feat', 'feat.scribe-scroll')?.category).toBe('itemCreation')
   })
 
   it('returns null for an unknown feat id', () => {
-    expect(lookupCrbFeat('feat.extra-evolution')).toBeNull()
-    expect(lookupCrbFeat(null)).toBeNull()
-    expect(lookupCrbFeat('')).toBeNull()
+    expect(resolve('feat', 'feat.extra-evolution')).toBeUndefined()
+    expect(resolve('feat', null)).toBeUndefined()
+    expect(resolve('feat', '')).toBeUndefined()
   })
 
   it('stamps id, name, and category without changing level or summary', () => {
     const row = createEmptyFeat()
     row.levelGained = 3
     row.summary = 'Keep this'
-    const power = applyCrbFeat(row, 'feat.power-attack')
+    const power = stamp('feat', row, 'feat.power-attack')
     expect(power.levelGained).toBe(3)
     expect(power.summary).toBe('Keep this')
     expect(power.feat.id).toBe('feat.power-attack')
@@ -645,9 +629,9 @@ describe('CRB pack batch 12: feat catalog', () => {
   })
 
   it('unknown apply clears id and leaves the typed name', () => {
-    const row = applyCrbFeat(createEmptyFeat(), 'feat.weapon-focus')
+    const row = stamp('feat', createEmptyFeat(), 'feat.weapon-focus')
     row.feat.name = 'Weapon Focus (longsword)'
-    const custom = applyCrbFeat(row, 'feat.extra-evolution')
+    const custom = stamp('feat', row, 'feat.extra-evolution')
     expect(custom.feat.id).toBeNull()
     expect(custom.feat.name).toBe('Weapon Focus (longsword)')
     expect(custom.category).toBe('combat')
@@ -665,11 +649,11 @@ describe('CRB pack batch 12: feat catalog', () => {
     )
     for (const character of [fighter, wizard, mixed]) {
       for (const row of character.feats) {
-        expect(lookupCrbFeat(row.feat.id)).not.toBeNull()
+        expect(resolve('feat', row.feat.id)).toBeDefined()
       }
     }
-    expect(lookupCrbFeat(fighter.feats[0]?.feat.id)?.id).toBe('feat.weapon-focus')
-    expect(lookupCrbFeat(wizard.feats[1]?.feat.id)?.id).toBe('feat.spell-focus')
+    expect(resolve('feat', fighter.feats[0]?.feat.id)?.id).toBe('feat.weapon-focus')
+    expect(resolve('feat', wizard.feats[1]?.feat.id)?.id).toBe('feat.spell-focus')
   })
 })
 
@@ -679,7 +663,7 @@ describe('CRB pack features: Wizard school powers and arcane bond', () => {
     expect(ids).toContain('feature.arcane-bond')
     expect(ids).toContain('feature.physical-enhancement')
     expect(ids).toContain('feature.telekinetic-fist')
-    expect(lookupCrbFeature('feature.physical-enhancement')).toMatchObject({
+    expect(resolve('feature', 'feature.physical-enhancement')).toMatchObject({
       name: 'Physical Enhancement',
     })
   })
@@ -689,7 +673,7 @@ describe('CRB pack features: Wizard school powers and arcane bond', () => {
     row.levelGained = 5
     row.summary = 'Keep summary'
     row.notes = 'Custom notes'
-    const stamped = applyCrbFeature(row, 'feature.physical-enhancement')
+    const stamped = stamp('feature', row, 'feature.physical-enhancement')
     expect(stamped.feature.id).toBe('feature.physical-enhancement')
     expect(stamped.feature.name).toBe('Physical Enhancement')
     expect(stamped.levelGained).toBe(5)
@@ -698,9 +682,9 @@ describe('CRB pack features: Wizard school powers and arcane bond', () => {
   })
 
   it('returns null for an unknown feature id', () => {
-    expect(lookupCrbFeature('feature.unknown')).toBeNull()
-    expect(lookupCrbFeature(null)).toBeNull()
-    expect(lookupCrbFeature('')).toBeNull()
+    expect(resolve('feature', 'feature.unknown')).toBeUndefined()
+    expect(resolve('feature', null)).toBeUndefined()
+    expect(resolve('feature', '')).toBeUndefined()
   })
 })
 
@@ -715,18 +699,18 @@ describe('CRB pack batch 13: spell catalog', () => {
     ]) {
       expect(ids).toContain(goldenId)
     }
-    expect(lookupCrbSpell('spell.fireball')).toMatchObject({
+    expect(resolve('spell', 'spell.fireball')).toMatchObject({
       name: 'Fireball',
       spellLevel: 3,
     })
-    expect(lookupCrbSpell('spell.detect-magic')?.spellLevel).toBe(0)
-    expect(lookupCrbSpell('spell.magic-missile')?.spellLevel).toBe(1)
+    expect(resolve('spell', 'spell.detect-magic')?.spellLevel).toBe(0)
+    expect(resolve('spell', 'spell.magic-missile')?.spellLevel).toBe(1)
   })
 
   it('returns null for an unknown spell id', () => {
-    expect(lookupCrbSpell('spell.unknown-spell-id')).toBeNull()
-    expect(lookupCrbSpell(null)).toBeNull()
-    expect(lookupCrbSpell('')).toBeNull()
+    expect(resolve('spell', 'spell.unknown-spell-id')).toBeUndefined()
+    expect(resolve('spell', null)).toBeUndefined()
+    expect(resolve('spell', '')).toBeUndefined()
   })
 
   it('stamps id, name, and level without changing prepared or summary', () => {
@@ -734,7 +718,7 @@ describe('CRB pack batch 13: spell catalog', () => {
     row.prepared = true
     row.summary = 'Keep this'
     row.usesPerDay = 2
-    const fireball = applyCrbSpell(row, 'spell.fireball')
+    const fireball = stamp('spell', row, 'spell.fireball')
     expect(fireball.prepared).toBe(true)
     expect(fireball.summary).toBe('Keep this')
     expect(fireball.usesPerDay).toBe(2)
@@ -744,9 +728,9 @@ describe('CRB pack batch 13: spell catalog', () => {
   })
 
   it('unknown apply clears id and leaves the typed name and level', () => {
-    const row = applyCrbSpell(createEmptySpellListEntry(), 'spell.fireball')
+    const row = stamp('spell', createEmptySpellListEntry(), 'spell.fireball')
     row.spell.name = 'Fireball (empower)'
-    const custom = applyCrbSpell(row, 'spell.unknown-spell-id')
+    const custom = stamp('spell', row, 'spell.unknown-spell-id')
     expect(custom.spell.id).toBeNull()
     expect(custom.spell.name).toBe('Fireball (empower)')
     expect(custom.spellLevel).toBe(3)
@@ -766,17 +750,17 @@ describe('CRB pack batch 13: spell catalog', () => {
     for (const character of [wizard, mixed]) {
       for (const entry of character.spellcasting) {
         for (const row of [...entry.cantrips, ...entry.spells]) {
-          expect(lookupCrbSpell(row.spell.id)).not.toBeNull()
+          expect(resolve('spell', row.spell.id)).toBeDefined()
         }
       }
     }
-    expect(lookupCrbSpell(wizard.spellcasting[0]?.cantrips[0]?.spell.id)?.id).toBe(
+    expect(resolve('spell', wizard.spellcasting[0]?.cantrips[0]?.spell.id)?.id).toBe(
       'spell.detect-magic',
     )
-    expect(lookupCrbSpell(wizard.spellcasting[0]?.spells[1]?.spell.id)?.id).toBe(
+    expect(resolve('spell', wizard.spellcasting[0]?.spells[1]?.spell.id)?.id).toBe(
       'spell.fireball',
     )
-    expect(lookupCrbSpell(mixed.spellcasting[0]?.spells[0]?.spell.id)?.id).toBe(
+    expect(resolve('spell', mixed.spellcasting[0]?.spells[0]?.spell.id)?.id).toBe(
       'spell.magic-missile',
     )
   })
@@ -793,14 +777,14 @@ describe('CRB pack batch 14: remaining player races and size stamp', () => {
       'race.halfling',
       'race.human',
     ])
-    expect(lookupCrbRace('race.gnome')).toMatchObject({
+    expect(resolve('race', 'race.gnome')).toMatchObject({
       id: 'race.gnome',
       name: 'Gnome',
       size: 'small',
     })
-    expect(lookupCrbRace('race.halfling')?.size).toBe('small')
-    expect(lookupCrbRace('race.elf')?.size).toBe('medium')
-    expect(lookupCrbRace('race.half-elf')?.size).toBe('medium')
+    expect(resolve('race', 'race.halfling')?.size).toBe('small')
+    expect(resolve('race', 'race.elf')?.size).toBe('medium')
+    expect(resolve('race', 'race.half-elf')?.size).toBe('medium')
   })
 
   it('stamps Gnome and Halfling as small without rewriting ability scores', () => {
@@ -808,24 +792,24 @@ describe('CRB pack batch 14: remaining player races and size stamp', () => {
     character.identity.size = 'medium'
     character.abilities.dex.score = 16
     const before = structuredClone(character.abilities)
-    const gnome = applyCrbRace(character.identity, 'race.gnome')
+    const gnome = stamp('race', character.identity, 'race.gnome')
     expect(gnome.race.id).toBe('race.gnome')
     expect(gnome.race.name).toBe('Gnome')
     expect(gnome.size).toBe('small')
-    const halfling = applyCrbRace(character.identity, 'race.halfling')
+    const halfling = stamp('race', character.identity, 'race.halfling')
     expect(halfling.size).toBe('small')
     expect(character.abilities).toEqual(before)
   })
 
   it('does not grant Human extra skill ranks to Half-Elf', () => {
     const character = createEmptyCharacter()
-    const fighter = applyClassProgression(createEmptyClass(), 'class.fighter')
+    const fighter = stamp('class', createEmptyClass(), 'class.fighter')
     fighter.levels = 5
     character.classes = [fighter]
-    character.identity = applyCrbRace(character.identity, 'race.half-elf')
+    character.identity = stamp('race', character.identity, 'race.half-elf')
     expect(character.identity.race.id).toBe('race.half-elf')
     expect(compute(character).skillRanksBudget).toBe(10)
-    character.identity = applyCrbRace(character.identity, 'race.human')
+    character.identity = stamp('race', character.identity, 'race.human')
     expect(compute(character).skillRanksBudget).toBe(15)
   })
 
@@ -837,10 +821,10 @@ describe('CRB pack batch 14: remaining player races and size stamp', () => {
       readRepoFile('fixtures/characters/golden/pf1e/synthesist-5.json'),
     )
     expect(fighter.identity.size).toBe('medium')
-    expect(lookupCrbRace(fighter.identity.race.id)?.id).toBe('race.human')
+    expect(resolve('race', fighter.identity.race.id)?.id).toBe('race.human')
     expect(synthesist.identity.race.id).toBeNull()
     expect(synthesist.identity.race.name).toBe('Half-Elf')
-    expect(lookupCrbRace(synthesist.identity.race.id)).toBeNull()
-    expect(lookupCrbRace('race.half-elf')).not.toBeNull()
+    expect(resolve('race', synthesist.identity.race.id)).toBeUndefined()
+    expect(resolve('race', 'race.half-elf')).toBeDefined()
   })
 })

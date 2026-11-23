@@ -7,7 +7,7 @@ import { I18nProvider } from '../../../shared/i18n'
 import { pickCatalog } from '../../../test/pickCatalog'
 import { createEmptyCharacter, createEmptyClass, type CharacterDocument } from '../character'
 import { computeCharacter } from '../engine'
-import { applyClassProgression } from '../content'
+import { stamp } from '../content'
 import { IdentityPanel } from './IdentityPanel'
 import type { SheetUpdate } from './update'
 
@@ -21,7 +21,7 @@ function IdentityHarness({
   const [character, setCharacter] = useState(() => {
     const c = createEmptyCharacter()
     if (initialWizard) {
-      const wizard = applyClassProgression(createEmptyClass(), 'class.wizard')
+      const wizard = stamp('class', createEmptyClass(), 'class.wizard')
       wizard.levels = 7
       c.classes = [wizard]
     }

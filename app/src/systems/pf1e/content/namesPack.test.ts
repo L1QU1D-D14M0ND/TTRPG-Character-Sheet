@@ -6,29 +6,20 @@ import {
   localizedName,
   LOCALIZED_NAME_ROWS,
 } from './namesPack'
-import {
-  listArchetypes,
-  listClassProgressions,
-  listEvolutions,
-  listFeats,
-  listFeatures,
-  listItems,
-  listRaces,
-  listSpells,
-} from './packRegistry'
-import './crbPack'
-import './apgPack'
+import { listRows } from './packRegistry'
+// Importing the catalog index registers CRB + APG.
+import './catalogIndex'
 
 function allCatalogRows(): { id: string; name: string }[] {
   return [
-    ...listClassProgressions(),
-    ...listRaces(),
-    ...listItems(),
-    ...listFeats(),
-    ...listFeatures(),
-    ...listSpells(),
-    ...listArchetypes(),
-    ...listEvolutions(),
+    ...listRows('class'),
+    ...listRows('race'),
+    ...listRows('item'),
+    ...listRows('feat'),
+    ...listRows('feature'),
+    ...listRows('spell'),
+    ...listRows('archetype'),
+    ...listRows('evolution'),
   ]
 }
 

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyItem } from '../character/createRows'
 import { parseCharacterJson } from '../character/saveLoad'
-import { applyCrbItem } from '../content'
+import { stamp } from '../content'
 import { compute } from './compute'
 import { readRepoFile } from '../../../test/readRepoFile'
 
@@ -10,7 +10,7 @@ describe('CRB batch 10: equipped catalog items do not fill Combat', () => {
   it('keeps empty-sheet AC at 10 after applying equipped chainmail', () => {
     const character = createEmptyCharacter()
     expect(character.armorClass.armorBonus).toBe(0)
-    const row = applyCrbItem(createEmptyItem(), 'armor.chainmail')
+    const row = stamp('item', createEmptyItem(), 'armor.chainmail')
     row.location = 'equipped'
     character.inventory.items = [row]
     const before = structuredClone(character.armorClass)

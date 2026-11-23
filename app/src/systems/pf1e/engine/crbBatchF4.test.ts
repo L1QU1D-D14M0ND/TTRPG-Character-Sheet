@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyFeat } from '../character/createRows'
-import { applyCrbFeat, lookupCrbFeat } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const F4_ITEM_CREATION_IDS = [
@@ -28,7 +28,7 @@ const F4_IDS = [...F4_ITEM_CREATION_IDS, ...F4_METAMAGIC_IDS] as const
 describe('CRB batch F4: Item creation and metamagic feats (finishes feats)', () => {
   it('resolves all 13 F4 item creation and metamagic feats in the CRB catalog', () => {
     for (const id of F4_ITEM_CREATION_IDS) {
-      const feat = lookupCrbFeat(id)
+      const feat = resolve('feat', id)
       expect(feat, `Expected ${id} to exist in CRB catalog`).not.toBeNull()
       expect(feat?.id).toBe(id)
       expect(typeof feat?.name).toBe('string')
@@ -38,7 +38,7 @@ describe('CRB batch F4: Item creation and metamagic feats (finishes feats)', () 
     }
 
     for (const id of F4_METAMAGIC_IDS) {
-      const feat = lookupCrbFeat(id)
+      const feat = resolve('feat', id)
       expect(feat, `Expected ${id} to exist in CRB catalog`).not.toBeNull()
       expect(feat?.id).toBe(id)
       expect(typeof feat?.name).toBe('string')
@@ -50,8 +50,8 @@ describe('CRB batch F4: Item creation and metamagic feats (finishes feats)', () 
 
   it('stamps catalog identity and respective category onto empty feat rows', () => {
     for (const id of F4_IDS) {
-      const catalog = lookupCrbFeat(id)!
-      const stamped = applyCrbFeat(createEmptyFeat(), id)
+      const catalog = resolve('feat', id)!
+      const stamped = stamp('feat', createEmptyFeat(), id)
       expect(stamped.feat.id).toBe(id)
       expect(stamped.feat.name).toBe(catalog.name)
       expect(stamped.category).toBe(catalog.category)
@@ -65,7 +65,7 @@ describe('CRB batch F4: Item creation and metamagic feats (finishes feats)', () 
     const beforeAttacks = structuredClone(character.attacks)
     const beforeAc = structuredClone(character.armorClass)
 
-    character.feats = F4_IDS.map((id) => applyCrbFeat(createEmptyFeat(), id))
+    character.feats = F4_IDS.map((id) => stamp('feat', createEmptyFeat(), id))
     const view = compute(character)
 
     expect(character.combat).toEqual(beforeCombat)

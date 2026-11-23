@@ -4,7 +4,7 @@ import {
   createEmptySpellListEntry,
   createEmptySpellcasting,
 } from '../character/createRows'
-import { applyCrbSpell, lookupCrbSpell } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const S5_SPELLS = [
@@ -96,7 +96,7 @@ const S5_SPELLS = [
 describe('CRB batch S5: remaining spell levels 8 and 9', () => {
   it('resolves all 83 S5 spells in the CRB catalog', () => {
     for (const item of S5_SPELLS) {
-      const spell = lookupCrbSpell(item.id)
+      const spell = resolve('spell', item.id)
       expect(spell, `Expected ${item.id} to exist in CRB catalog`).not.toBeNull()
       expect(spell?.id).toBe(item.id)
       expect(spell?.name).toBe(item.name)
@@ -107,8 +107,8 @@ describe('CRB batch S5: remaining spell levels 8 and 9', () => {
 
   it('stamps catalog identity and spellLevel onto empty spell rows', () => {
     for (const item of S5_SPELLS) {
-      const catalog = lookupCrbSpell(item.id)!
-      const stamped = applyCrbSpell(createEmptySpellListEntry(), item.id)
+      const catalog = resolve('spell', item.id)!
+      const stamped = stamp('spell', createEmptySpellListEntry(), item.id)
       expect(stamped.spell.id).toBe(item.id)
       expect(stamped.spell.name).toBe(catalog.name)
       expect(stamped.spellLevel).toBe(catalog.spellLevel)
@@ -121,7 +121,7 @@ describe('CRB batch S5: remaining spell levels 8 and 9', () => {
     const entry = createEmptySpellcasting()
     const beforeSlots = structuredClone(entry.slots)
     entry.spells = S5_SPELLS.slice(0, 5).map((item) =>
-      applyCrbSpell(createEmptySpellListEntry(), item.id),
+      stamp('spell', createEmptySpellListEntry(), item.id),
     )
     character.spellcasting = [entry]
     const view = compute(character)

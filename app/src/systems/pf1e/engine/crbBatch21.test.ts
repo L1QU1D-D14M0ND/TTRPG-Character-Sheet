@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyAttack, createEmptyItem } from '../character/createRows'
 import { parseCharacterJson, serializeCharacter } from '../character/saveLoad'
-import { applyCrbItem, lookupCrbItem } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const HEAVY_ARMOR = [
@@ -124,8 +124,8 @@ const SHIELDS = [
 describe('CRB batch 21: heavy armor', () => {
   it('stamps Medium CRB table numbers for heavy armor', () => {
     for (const row of HEAVY_ARMOR) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.id).toBe(row.id)
       expect(stamped.item.name).toBe(row.name)
       expect(stamped.pounds).toBe(row.pounds)
@@ -136,8 +136,8 @@ describe('CRB batch 21: heavy armor', () => {
   })
 
   it('keeps packed chainmail and breastplate unchanged', () => {
-    expect(lookupCrbItem('armor.chainmail')?.armor?.acBonus).toBe(6)
-    expect(lookupCrbItem('armor.breastplate')?.armor).toMatchObject({
+    expect(resolve('item', 'armor.chainmail')?.armor?.acBonus).toBe(6)
+    expect(resolve('item', 'armor.breastplate')?.armor).toMatchObject({
       acBonus: 6,
       maxDex: 3,
     })
@@ -147,8 +147,8 @@ describe('CRB batch 21: heavy armor', () => {
 describe('CRB batch 21: shields', () => {
   it('stamps Medium CRB table numbers onto ItemEntry.shield', () => {
     for (const row of SHIELDS) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.id).toBe(row.id)
       expect(stamped.item.name).toBe(row.name)
       expect(stamped.pounds).toBe(row.pounds)
@@ -159,7 +159,7 @@ describe('CRB batch 21: shields', () => {
   })
 
   it('gives the tower shield a Dex cap and 50% spell failure', () => {
-    expect(lookupCrbItem('shield.tower')?.shield).toEqual({
+    expect(resolve('item', 'shield.tower')?.shield).toEqual({
       acBonus: 4,
       maxDex: 2,
       armorCheckPenalty: -10,
@@ -168,13 +168,13 @@ describe('CRB batch 21: shields', () => {
   })
 
   it('does not mint shield-bash weapon-table ids', () => {
-    expect(lookupCrbItem('weapon.light-shield')).toBeNull()
-    expect(lookupCrbItem('weapon.heavy-shield')).toBeNull()
+    expect(resolve('item', 'weapon.light-shield')).toBeUndefined()
+    expect(resolve('item', 'weapon.heavy-shield')).toBeUndefined()
   })
 
   it('clears armor when switching an equipped chainmail row to a buckler', () => {
-    const chainmail = applyCrbItem(createEmptyItem(), 'armor.chainmail')
-    const buckler = applyCrbItem(chainmail, 'shield.buckler')
+    const chainmail = stamp('item', createEmptyItem(), 'armor.chainmail')
+    const buckler = stamp('item', chainmail, 'shield.buckler')
     expect(buckler.shield?.acBonus).toBe(1)
     expect(buckler.armor).toBeUndefined()
     expect(buckler.weapon).toBeUndefined()
@@ -183,19 +183,19 @@ describe('CRB batch 21: shields', () => {
 
 describe('CRB batch 21: mundane extras', () => {
   it('stamps armor spikes and shield spikes as gear with published weight', () => {
-    expect(lookupCrbItem('item.armor-spikes')).toMatchObject({
+    expect(resolve('item', 'item.armor-spikes')).toMatchObject({
       id: 'item.armor-spikes',
       name: 'Armor spikes',
       kind: 'item',
       pounds: 10,
     })
-    expect(lookupCrbItem('item.shield-spikes')).toMatchObject({
+    expect(resolve('item', 'item.shield-spikes')).toMatchObject({
       id: 'item.shield-spikes',
       name: 'Shield spikes',
       kind: 'item',
       pounds: 5,
     })
-    const spikes = applyCrbItem(createEmptyItem(), 'item.armor-spikes')
+    const spikes = stamp('item', createEmptyItem(), 'item.armor-spikes')
     expect(spikes.pounds).toBe(10)
     expect(spikes.weapon).toBeUndefined()
     expect(spikes.armor).toBeUndefined()
@@ -203,7 +203,7 @@ describe('CRB batch 21: mundane extras', () => {
   })
 
   it('stamps a locked gauntlet as a 5 lb weapon with gauntlet dice', () => {
-    expect(lookupCrbItem('weapon.locked-gauntlet')).toMatchObject({
+    expect(resolve('item', 'weapon.locked-gauntlet')).toMatchObject({
       id: 'weapon.locked-gauntlet',
       name: 'Locked gauntlet',
       pounds: 5,
@@ -214,7 +214,7 @@ describe('CRB batch 21: mundane extras', () => {
         critMultiplier: 2,
       },
     })
-    expect(lookupCrbItem('weapon.gauntlet')?.pounds).toBe(1)
+    expect(resolve('item', 'weapon.gauntlet')?.pounds).toBe(1)
   })
 })
 
@@ -223,9 +223,9 @@ describe('CRB batch 21: Combat stays typed', () => {
     const character = createEmptyCharacter()
     const attack = createEmptyAttack()
     character.attacks = [attack]
-    const plate = applyCrbItem(createEmptyItem(), 'armor.full-plate')
+    const plate = stamp('item', createEmptyItem(), 'armor.full-plate')
     plate.location = 'equipped'
-    const tower = applyCrbItem(createEmptyItem(), 'shield.tower')
+    const tower = stamp('item', createEmptyItem(), 'shield.tower')
     tower.location = 'equipped'
     character.inventory.items = [plate, tower]
     const beforeAc = structuredClone(character.armorClass)
@@ -244,7 +244,7 @@ describe('CRB batch 21: Combat stays typed', () => {
   it('round-trips a stamped tower shield through Save/Load', () => {
     const character = createEmptyCharacter()
     character.inventory.items = [
-      applyCrbItem(createEmptyItem(), 'shield.tower'),
+      stamp('item', createEmptyItem(), 'shield.tower'),
     ]
     const reloaded = parseCharacterJson(serializeCharacter(character))
     expect(reloaded.inventory.items[0]?.item.id).toBe('shield.tower')

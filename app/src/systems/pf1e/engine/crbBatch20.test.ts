@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCharacter } from '../character/createEmptyCharacter'
 import { createEmptyAttack, createEmptyItem } from '../character/createRows'
-import { applyCrbItem, lookupCrbItem } from '../content'
+import { resolve, stamp } from '../content'
 import { compute } from './compute'
 
 const LIGHT_ARMOR = [
@@ -79,8 +79,8 @@ const MEDIUM_ARMOR = [
 describe('CRB batch 20: remaining light armor', () => {
   it('stamps Medium CRB table numbers for remaining light armor', () => {
     for (const row of LIGHT_ARMOR) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.id).toBe(row.id)
       expect(stamped.item.name).toBe(row.name)
       expect(stamped.pounds).toBe(row.pounds)
@@ -90,7 +90,7 @@ describe('CRB batch 20: remaining light armor', () => {
   })
 
   it('keeps packed chain shirt unchanged', () => {
-    expect(lookupCrbItem('armor.chain-shirt')).toMatchObject({
+    expect(resolve('item', 'armor.chain-shirt')).toMatchObject({
       name: 'Chain shirt',
       pounds: 25,
       armor: {
@@ -106,8 +106,8 @@ describe('CRB batch 20: remaining light armor', () => {
 describe('CRB batch 20: remaining medium armor', () => {
   it('stamps Medium CRB table numbers for remaining medium armor', () => {
     for (const row of MEDIUM_ARMOR) {
-      expect(lookupCrbItem(row.id)).toMatchObject(row)
-      const stamped = applyCrbItem(createEmptyItem(), row.id)
+      expect(resolve('item', row.id)).toMatchObject(row)
+      const stamped = stamp('item', createEmptyItem(), row.id)
       expect(stamped.item.id).toBe(row.id)
       expect(stamped.item.name).toBe(row.name)
       expect(stamped.pounds).toBe(row.pounds)
@@ -117,7 +117,7 @@ describe('CRB batch 20: remaining medium armor', () => {
   })
 
   it('keeps packed chainmail unchanged', () => {
-    expect(lookupCrbItem('armor.chainmail')).toMatchObject({
+    expect(resolve('item', 'armor.chainmail')).toMatchObject({
       name: 'Chainmail',
       pounds: 40,
       armor: {
@@ -130,7 +130,7 @@ describe('CRB batch 20: remaining medium armor', () => {
   })
 
   it('leaves later gear unknown', () => {
-    expect(lookupCrbItem('item.bedroll')).toBeNull()
+    expect(resolve('item', 'item.bedroll')).toBeUndefined()
   })
 })
 
@@ -139,7 +139,7 @@ describe('CRB batch 20: Combat stays typed', () => {
     const character = createEmptyCharacter()
     const attack = createEmptyAttack()
     character.attacks = [attack]
-    const row = applyCrbItem(createEmptyItem(), 'armor.breastplate')
+    const row = stamp('item', createEmptyItem(), 'armor.breastplate')
     row.location = 'equipped'
     character.inventory.items = [row]
     const beforeAc = structuredClone(character.armorClass)

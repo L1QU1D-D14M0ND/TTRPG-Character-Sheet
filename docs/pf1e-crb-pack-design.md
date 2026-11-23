@@ -74,6 +74,8 @@ applyCrbRace(identity, id) → Identity
 
 The same shape holds for items, feats, features, and spells.
 
+> **Superseded interface (2026-11-23):** the per-pack functions above were replaced by the catalog index: `resolve(kind, id)` and `stamp(kind, host, id)`, pack-agnostic. See the [ADR 0009](adr/0009-pf1e-catalog-picker.md) postscript. The stamping rules described here are unchanged.
+
 - **Missing or unknown id → custom.** Isolate it to that row. Never throw, never reject the whole sheet.
 - **Apply is a UI action**, run when the player picks a catalog row. Load does **not** re-apply the catalog; the saved row is authoritative.
 - A class pick fills the class ref, `hitDie`, `babProgression`, `saves`, and `skillPointsPerLevel`, and stamps class-skill checkboxes from the union of all class rows (`stampClassSkills`). It leaves `levels` and favored-class totals alone.
