@@ -148,6 +148,9 @@ describe('golden PF1e Wizard 7 Transmutation Specialist (Flare Nightingale)', ()
     expect(view.attacks['attack-hoja-oscura']).toEqual({
       attack: 11,
       damage: '1d6+2',
+      damageDice: '1d6',
+      damageMod: 2,
+      damageAbility: 'str',
       iteratives: [11],
     })
     expect(signed(view.attacks['attack-hoja-oscura'].attack)).toBe('+11')

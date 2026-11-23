@@ -8,7 +8,14 @@ export { signed } from '../../../shared/format'
 
 export interface AttackDerived {
   attack: number
+  /** Display form, built from `damageDice` and `damageMod` (e.g. `1d8+3`). */
   damage: string
+  /** The row's damage dice exactly as typed (may be `1d8+1d6` or empty). */
+  damageDice: string
+  /** Ability modifier plus misc damage; the number after the dice. */
+  damageMod: number
+  /** Ability that adds to damage, or null when none does. */
+  damageAbility: AbilityKey | null
   iteratives: number[]
 }
 

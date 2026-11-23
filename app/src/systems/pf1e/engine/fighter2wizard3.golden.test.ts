@@ -92,6 +92,9 @@ describe('golden PF1e Fighter 2 / Wizard 3', () => {
     expect(view.attacks['atk-longsword']).toEqual({
       attack: 6,
       damage: '1d8+3',
+      damageDice: '1d8',
+      damageMod: 3,
+      damageAbility: 'str',
       iteratives: [6],
     })
     expect(signed(view.attacks['atk-longsword'].attack)).toBe('+6')

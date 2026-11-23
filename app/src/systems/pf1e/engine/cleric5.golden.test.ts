@@ -98,6 +98,9 @@ describe('golden PF1e Cleric 5', () => {
     expect(view.attacks['atk-heavy-mace']).toEqual({
       attack: 6, // BAB 3 + Str 2 + misc 1
       damage: '1d8+2',
+      damageDice: '1d8',
+      damageMod: 2,
+      damageAbility: 'str',
       iteratives: [6],
     })
     expect(signed(view.attacks['atk-heavy-mace'].attack)).toBe('+6')

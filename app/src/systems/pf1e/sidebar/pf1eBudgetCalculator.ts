@@ -1,5 +1,7 @@
 import type { CharacterDocument } from '../character/types'
 import type { DerivedView } from '../engine/types'
+import { hasFeatNamed } from '../engine/feats'
+import { highestCasterLevel } from '../engine/spellcasting'
 import type {
   BudgetItemCalculated,
   BudgetItemInput,
@@ -13,33 +15,14 @@ export function getPf1eCurrentGold(character: CharacterDocument): number {
   return Math.round(total * 100) / 100
 }
 
-export function getPf1eCasterLevel(character: CharacterDocument): number {
-  // Sum levels of classes with spellcasting, or highest class level
-  let cl = 0
-  for (const cls of character.classes ?? []) {
-    const classId = (cls.class?.id || '').toLowerCase()
-    // CRB full casters / half casters
-    if (['class.cleric', 'class.wizard', 'class.druid', 'class.sorcerer', 'class.oracle', 'class.witch'].includes(classId)) {
-      cl = Math.max(cl, cls.levels ?? 0)
-    } else if (['class.bard', 'class.magus', 'class.summoner', 'class.inquisitor', 'class.alchemist'].includes(classId)) {
-      cl = Math.max(cl, cls.levels ?? 0)
-    } else if (['class.paladin', 'class.ranger'].includes(classId)) {
-      cl = Math.max(cl, Math.max(0, (cls.levels ?? 0) - 3))
-    }
-  }
-  return cl > 0 ? cl : (character.spellcasting && character.spellcasting.length > 0 ? (character.classes?.[0]?.levels ?? 1) : 0)
-}
-
 export function calculatePf1eBudget(
   character: CharacterDocument,
   derived: DerivedView,
   items: BudgetItemInput[],
 ): { items: BudgetItemCalculated[]; summary: BudgetSummary } {
   const currentGold = getPf1eCurrentGold(character)
-  const charCl = getPf1eCasterLevel(character)
-  const feats = (character.feats ?? []).map((f) =>
-    (f.feat?.name || f.feat?.id || '').toLowerCase(),
-  )
+  // The caster level the sheet shows, overrides included.
+  const charCl = highestCasterLevel(derived)
 
   const spellcraftTotal = derived.skillTotals?.spellcraft ?? 0
 
@@ -69,9 +52,7 @@ export function calculatePf1eBudget(
 
       // Check feat
       if (item.featRequired) {
-        const featTarget = item.featRequired.toLowerCase()
-        const hasFeat = feats.some((f) => f.includes(featTarget) || featTarget.includes(f))
-        if (!hasFeat) {
+        if (!hasFeatNamed(character.feats, item.featRequired)) {
           reasons.push(`missing ${item.featRequired}`)
         }
       }

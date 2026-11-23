@@ -159,11 +159,17 @@ describe('golden PF1e Synthesist 5 (Radiant Striker)', () => {
     expect(view.attacks['atk-claws']).toEqual({
       attack: 7,
       damage: '1d4+4',
+      damageDice: '1d4',
+      damageMod: 4,
+      damageAbility: 'str',
       iteratives: [7],
     })
     expect(view.attacks['atk-bite']).toEqual({
       attack: 7,
       damage: '1d6+4',
+      damageDice: '1d6',
+      damageMod: 4,
+      damageAbility: 'str',
       iteratives: [7],
     })
     expect(signed(view.attacks['atk-claws'].attack)).toBe('+7')

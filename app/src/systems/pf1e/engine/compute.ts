@@ -92,6 +92,9 @@ export function compute(character: ComputeInput): DerivedView {
     attacks[attack.id] = {
       attack: attackBonus,
       damage: `${attack.damageDice}${dmgSign}`,
+      damageDice: attack.damageDice,
+      damageMod: dmgMod,
+      damageAbility: dmgKey,
       iteratives: babIteratives.map((step) => step + attackBonus - bab),
     }
   }

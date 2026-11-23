@@ -71,6 +71,9 @@ describe('golden PF1e Companion Smoke: Ranger 5 with Animal Companion and Famili
     expect(view.attacks['atk-longbow']).toEqual({
       attack: 9, // BAB 5 + Dex 4
       damage: '1d8',
+      damageDice: '1d8',
+      damageMod: 0,
+      damageAbility: null,
       iteratives: [9],
     })
     expect(signed(view.attacks['atk-longbow'].attack)).toBe('+9')
